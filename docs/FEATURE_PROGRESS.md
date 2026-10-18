@@ -95,13 +95,17 @@ states remain required; synthetic guards are preparation only. See
   195 passed, three skipped, exit 0. English resources and native FTP remain
   unextracted/unvalidated; both remain primary.
 
-- Current RA-003: [bounded decoding plan](../research/FDAT_DECODING_PLAN.md).
+- Earlier RA-003: [bounded decoding plan](../research/FDAT_DECODING_PLAN.md).
   Narrow statutory rationale and synthetic decoded-header/extent validation are
   documented; no real decoding or resource/backend mapping. Full suite: 225 passed,
   three skipped, exit 0. Exact variant/dependency/constants provenance is next.
 
+- Current RA-003: [crypto/provenance audit](../research/FDAT_CRYPTO_PROVENANCE.md).
+  Pinned private AES runtime and public constants source; eight primitive tests
+  passed. No real header trial, English resources or FTP backend mapping yet.
+
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003: audit and pin the minimal crypto dependency and public-constant provenance for a bounded private header-decoding trial**.
+packages and validation families. Next single host package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

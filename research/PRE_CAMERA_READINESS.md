@@ -27,7 +27,7 @@ No prepared or passed host package is promoted into a working camera function.
 |---|---|---|
 | RA-001 | Private intake/host baseline prepared; historical errors preserved; model/version/current-language report added | Remaining body/setup facts unknown |
 | RA-002 | Locked source/provenance/rights audit committed | Component reuse and target applicability are separate unresolved gates |
-| RA-003 | Official mainland 2.00 package acquired with recorded consent and size/hash verification; bounded UFU/FDAT observations, pinned extractor audit and synthetic decoded-header validator | Minimal crypto dependency/public-constant provenance, bounded private header trial, later component-specific scope, exact-body correspondence and extraction/child manifest |
+| RA-003 | Official mainland 2.00 package privately acquired/verified; bounded UFU/FDAT observations, synthetic header validator and pinned crypto/public-source audit with eight primitive passes | Authored bounded private header trial, underlying constants derivation, later component-specific scope, exact-body correspondence and extraction/child manifest |
 | RA-004 | [Observation/access preparation](TARGET_EVIDENCE_GAPS.md) | Identity, separately approved observations and exact-target access proposal |
 | RA-005 | Backup coverage inventory/template prepared | Approved route, independent reads/copies and actual protected-state coverage |
 | RA-006 | Architecture/recovery evidence gaps explicit | Target segments/ABI/storage/settings/retained-state mappings and recovery envelope |
@@ -122,3 +122,15 @@ Actual target mappings, acquisition/recovery and all feature acceptance remain
 unproved. Earlier Unknown responses remain historical; the
 [latest intake report](sessions/20261018-owner-mainland-english.md) records supplied facts
 without filling unrelated unknowns. Agent camera commands: **none**.
+
+
+## Later crypto-provenance continuation (2026-10-18)
+
+The [crypto/source audit](FDAT_CRYPTO_PROVENANCE.md) and
+[session result](sessions/20261018-RA-003-crypto-provenance.md) supersede
+the preceding next-step statement. The private AES wheel and public constants
+source are pinned; eight authored primitive tests passed. No actual firmware
+read/decoding or camera action occurred. Constants origin and accepted-contract
+interaction remain unresolved, alongside exact-body correspondence/recovery.
+One predeclared experimental hypothesis is not a target support profile.
+Next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.

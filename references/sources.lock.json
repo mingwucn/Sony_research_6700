@@ -76,14 +76,22 @@
       {"path": "fwtool/sony/dat.py", "git_blob": "362915df714cf6ffb6b58aedb1294cd1272b2ca7", "bytes": 4538, "sha256": "5f5c1324649ee6c1719b14d5fc3b829741daf904c5f79da2ddcab10ef17f8d8e"},
       {"path": "LICENSE.txt", "git_blob": "77b0378407be242b5537f8dca3ed6402c91ba676", "bytes": 1072, "sha256": "a485f27d0b22eb7fd9b9419795695d0a1750ea32c961d11c1dd8ddade564dedf"},
       {"path": "requirements.txt", "git_blob": "bd3da1c6b55b487368e2d3f227d3479f44c07758", "bytes": 33, "sha256": "695864b34ea9a70a2fec2e4925b5ebd42afb2c0fdba83e9fca9358fd20b647f9"},
-      {"path": "devices.yml", "git_blob": "5a0e5986e9401dea60726ce4e137cfa976784cda", "bytes": 7774, "sha256": "89e56add429a28cbd74b8bc84532936f15d508a9e7a53594c8272906f7eb6304"}
+      {"path": "devices.yml", "git_blob": "5a0e5986e9401dea60726ce4e137cfa976784cda", "bytes": 7774, "sha256": "89e56add429a28cbd74b8bc84532936f15d508a9e7a53594c8272906f7eb6304"},
+      {"path": "fwtool/sony/constants.py", "git_blob": "a0908936fe3eb938ca25ca070eb49668e4143109", "bytes": 2312, "sha256": "f9ff02a3889b587cd5bad5f4362fb73fee2f8f3591fc3ed6003eb8ac92d0622a"}
     ],
     "licence_status": "MIT text verified for reviewed code; no grant for Sony proprietary firmware",
     "source_blobs_verified_against_fixed_tree": true,
-    "cryptographic_key_or_constant_files_acquired": false,
+    "cryptographic_key_or_constant_files_acquired": true,
     "execution_performed": false,
     "runtime_dependency_adopted": false,
-    "alpha6700_compatibility_established": false
+    "alpha6700_compatibility_established": false,
+    "constants_review": {
+      "report": "research/FDAT_CRYPTO_PROVENANCE.md",
+      "values_published": false,
+      "source_parsed_as_data_only": true,
+      "underlying_derivation_independently_verified": false,
+      "author_claim_comment": "https://github.com/ma1co/fwtool.py/pull/52#issuecomment-5625960817"
+    }
   },
   "official_sources": [
     {"id": "S1", "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/0411B_creative_look.html"},
@@ -97,5 +105,49 @@
     "version": null,
     "verified": false,
     "reason": "Official download listings timed out; obtain installed version and verify official release notes locally."
+  },
+  "fdat_crypto_dependency": {
+    "name": "pycryptodomex",
+    "version": "3.24.1",
+    "role": "Isolated private AES primitive qualification for bounded format study; not a default repository dependency",
+    "metadata_url": "https://pypi.org/pypi/pycryptodomex/3.24.1/json",
+    "metadata_sha256": "dbff844f4738920e518a84ea0f8b9e9300fe21c97f6688325112cb79cc259e32",
+    "wheel": {
+      "filename": "pycryptodomex-3.24.1-cp37-abi3-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/13/4c/2c1963e4154da534a3b3a4d6ee9549f5cac4ecffe986d3b470d08b9c4df6/pycryptodomex-3.24.1-cp37-abi3-win_amd64.whl",
+      "size": 1825955,
+      "digests": {
+        "blake2b_256": "134c2c1963e4154da534a3b3a4d6ee9549f5cac4ecffe986d3b470d08b9c4df6",
+        "md5": "40ac1345dad21794e6d713199cc7897e",
+        "sha256": "82eb0dd8a95be97f03527b108ee49f9b86a7c534fa47fa7a510be3eab8ea9acd"
+      },
+      "upload_time_iso_8601": "2026-10-11T19:26:25.258374Z",
+      "yanked": false,
+      "has_sig": false
+    },
+    "wheel_metadata_sha256": "e23b7012d6be70d623a1ebd73d716b618cda40662afc506fe3c9e32b05c25dbe",
+    "wheel_tag": "cp37-abi3-win_amd64",
+    "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.6.*",
+    "declared_python_dependencies": [],
+    "license": "BSD, Public Domain",
+    "source_tag": "v3.24.1",
+    "source_commit": "59351474682db6648825f17b11112d6821d66cb9",
+    "source_tag_reference": "https://api.github.com/repos/Legrandin/pycryptodome/git/ref/tags/v3.24.1",
+    "wheel_to_source_reproducibility_verified": false,
+    "local_wheel_size_sha256_verified": true,
+    "record_entries_verified": 351,
+    "private_runtime_tests": {
+      "total": 8,
+      "passed": 8,
+      "exit_code": 0,
+      "runner_seconds": 0.093,
+      "host": "Windows AMD64 / CPython 3.13.12",
+      "scope": "Authored public NIST AES-128 ECB / AES-256 CBC and state/error cases only"
+    },
+    "crypto_native_code_executed": true,
+    "fwtool_or_firmware_executed": false,
+    "lifecycle": "Official docs stop pycryptodomex/Cryptodome releases starting 4.0; no continuing fixes assumed",
+    "report": "research/FDAT_CRYPTO_PROVENANCE.md",
+    "camera_commands": []
   }
 }

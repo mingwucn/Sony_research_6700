@@ -95,3 +95,15 @@ EN-101 now follows restricted-language/resource feasibility on the owner report
 of English absence; matching lawfully inspectable artifacts remain needed.
 See [latest intake](sessions/20261018-owner-mainland-english.md). This dossier
 prepares RA-004/005/006 and the feature queues; it does not complete their acceptance gates. Camera commands: **none**.
+
+
+## Later crypto-provenance continuation (2026-10-18)
+
+The [crypto/source audit](FDAT_CRYPTO_PROVENANCE.md) and
+[session result](sessions/20261018-RA-003-crypto-provenance.md) supersede
+the preceding next-step statement. The private AES wheel and public constants
+source are pinned; eight authored primitive tests passed. No actual firmware
+read/decoding or camera action occurred. Constants origin and accepted-contract
+interaction remain unresolved, alongside exact-body correspondence/recovery.
+One predeclared experimental hypothesis is not a target support profile.
+Next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.

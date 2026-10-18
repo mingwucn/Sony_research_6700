@@ -43,13 +43,19 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [bounded decoding basis/design](../research/FDAT_DECODING_PLAN.md)
+Latest RA-003: [crypto/public-constant provenance](../research/FDAT_CRYPTO_PROVENANCE.md) and
+[commands/results](../research/sessions/20261018-RA-003-crypto-provenance.md). Pinned wheel/source identities and
+eight isolated AES primitive tests are recorded. Native crypto code ran privately;
+no fwtool/firmware or camera execution. One predeclared CXD90057_k8 trial needs
+authored implementation and synthetic qualification; no exact-package key finding.
+Next single work package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**.
+
+Earlier RA-003: [bounded decoding basis/design](../research/FDAT_DECODING_PLAN.md)
 and [commands/results](../research/sessions/20261018-RA-003-decoding-design.md). A pure decoded-header validator
 checks CRC/extent metadata on synthetic inputs. Full suite: 228 total, 225 passed,
 three skipped, exit 0. A narrow statutory rationale is documented; contract
 interaction remains unresolved. No real payload read/decoding, crypto dependency
 adoption or device action occurred.
-Next single work package: **RA-003: audit and pin the minimal crypto dependency and public-constant provenance for a bounded private header-decoding trial**.
 
 Earlier RA-003: [bounded FDAT identification/extractor audit](../research/FDAT_EXTRACTOR_AUDIT.md)
 and [commands/results](../research/sessions/20261018-RA-003-fdat-identification.md).

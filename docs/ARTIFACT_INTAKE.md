@@ -25,7 +25,11 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [bounded decoding basis/design](../research/FDAT_DECODING_PLAN.md)
+Latest continuation: [crypto/public-constant provenance](../research/FDAT_CRYPTO_PROVENANCE.md)
+records eight isolated AES passes and pinned private public-source/artifact inputs,
+with no real firmware read or key/profile acceptance.
+
+Earlier continuation: [bounded decoding basis/design](../research/FDAT_DECODING_PLAN.md)
 and [commands/results](../research/sessions/20261018-RA-003-decoding-design.md). A pure standard-library header
 validator passed synthetic CRC/extent cases; the real opaque payload was not read
 or decoded in this continuation. Narrow statutory rationale is documented, with
@@ -148,5 +152,5 @@ are recorded; no component contents have been extracted. Full proposed analysis
 scope, component-format/extractor suitability, independent exact-build evidence
 and body applicability remain open. Earlier stopped-download journals are retained
 as history. The bounded prefix remains opaque; the later narrow research rationale
-and synthetic validator do not decode it. Next: **RA-003: audit and pin the minimal crypto dependency and public-constant provenance for a bounded private header-decoding trial**. Synthetic tests and framing coverage establish only
+and synthetic validator do not decode it. Next: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. Synthetic tests and framing coverage establish only
 their documented host behaviour. Camera commands: **none**.
