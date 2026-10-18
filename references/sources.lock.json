@@ -149,5 +149,47 @@
     "lifecycle": "Official docs stop pycryptodomex/Cryptodome releases starting 4.0; no continuing fixes assumed",
     "report": "research/FDAT_CRYPTO_PROVENANCE.md",
     "camera_commands": []
+  },
+  "image_header_reference_audit": {
+    "repository": "DavidBuchanan314/fwtool.py",
+    "commit": "3955d7890fc38daf942bb52827599bfe35de4a14",
+    "tree": "63801fd484c6e089f2363095b1c90968c6ee9c0d",
+    "report": "research/IMAGE_HEADER_DESIGN.md",
+    "acquisition": "Four immutable public source GETs; HTTP200; exact sizes/Git blobs; no redirects/retries/execution",
+    "inspected_files": [
+      {
+        "path": "fwtool/archive/axfs.py",
+        "git_blob": "8b1d3b35f7f977ca7868f7fc076b0a66e1d10dc2",
+        "bytes": 3572,
+        "sha256": "a87616bd803f1ee145f37cbaf117e81e463ba38359e4f009bc7f882c78240920"
+      },
+      {
+        "path": "fwtool/archive/ext2.py",
+        "git_blob": "de2180a837cf1929af3fb1c7a2dab775016944b3",
+        "bytes": 3421,
+        "sha256": "d6a8656844e864751efe37c2c141e6087f9f76773eacafdf6cf833c3b6e5a379"
+      },
+      {
+        "path": "fwtool/archive/fat.py",
+        "git_blob": "4612f25ecc1a5c5bf4d24a41eae396ee76a34596",
+        "bytes": 8247,
+        "sha256": "1430374a905ea2e55f2813b4c8c3b7a050798e1c03a0ecc95eb6d20228e84828"
+      },
+      {
+        "path": "fwtool/archive/lzpt.py",
+        "git_blob": "9ce8db2ffa15e236c5ded6413a8bc5553decaf49",
+        "bytes": 1468,
+        "sha256": "771f6a8197f8b16c0a6fd2816ca4b8aae550a78d5a0c116e9097a26ba83a1f4b"
+      }
+    ],
+    "licence_path": "LICENSE.txt",
+    "licence_git_blob": "77b0378407be242b5537f8dca3ed6402c91ba676",
+    "licence_sha256": "a485f27d0b22eb7fd9b9419795695d0a1750ea32c961d11c1dd8ddade564dedf",
+    "licence_claim": "MIT; full notice preserved with private source copies; no per-file override found",
+    "kernel_header_provenance": "LZPT comments name kernel paths without pinned version/licence; no kernel implementation adopted",
+    "reuse": "Independently authored small factual-field predicates/fixtures only; no upstream decoder/writer integration",
+    "execution_performed": false,
+    "runtime_dependency_adopted": false,
+    "alpha6700_compatibility_established": false
   }
 }

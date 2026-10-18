@@ -43,7 +43,19 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [selected-member prefix study](../research/MEMBER_PREFIX_AUDIT.md),
+Latest RA-003: [image-parser/header design](../research/IMAGE_HEADER_DESIGN.md),
+[commands/results](../research/sessions/20261018-RA-003-image-header-design.md).
+Four public parser blobs (**16,708 bytes**) verified at the existing immutable pin;
+published MIT notice reviewed and preserved with private source copies.
+Separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates qualified
+with **251/251 synthetic passes** (49 new plus 202 retained),
+zero skipped, exit **0**, **1.271s**. All 23 baseline files unchanged.
+The new API remains standalone and unintegrated. **No actual firmware, member
+prefix or operational-constants read**; prior five unknown observations unchanged.
+No filesystem, English, native FTP, body-match, recovery or device-write gate.
+Next single work package: **RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage**.
+
+Earlier RA-003: [selected-member prefix study](../research/MEMBER_PREFIX_AUDIT.md),
 [commands/results](../research/sessions/20261018-RA-003-member-prefix.md).
 One selected-member prefix experiment completed, script and host exit **0**, **32.470943s**.
 Synthetic qualification **202/202 passed**, zero skipped, exit **0**, **1.317s**.
@@ -54,7 +66,7 @@ directory equality passed before selected classification. No complete member
 was covered by these prefixes; raw buffers discarded, no child files or links followed.
 Classifier coverage is limited; this does not establish missing formats, English
 resources or FTP code. No decompression/disassembly, camera or feature/write gate.
-Next single work package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.
+Historical next single work package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.
 
 Earlier RA-003: [opaque-link metadata inventory](../research/TAR_LINK_INVENTORY.md),
 [commands/results](../research/sessions/20261018-RA-003-tar-link-inventory.md).

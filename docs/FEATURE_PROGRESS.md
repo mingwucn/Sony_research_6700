@@ -32,17 +32,16 @@ storage copies, an exact inverse and recovery access for the relevant failure
 states remain required; synthetic guards are preparation only. See
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist).
 
-Latest shared RA-003: [selected-member prefix study](../research/MEMBER_PREFIX_AUDIT.md).
-One selected-member prefix experiment completed, script and host exit **0**, **32.470943s**.
-Synthetic qualification **202/202 passed**, zero skipped, exit **0**, **1.317s**.
-**Five regular image-category candidates**, **4,096 bytes each / 20,480 bytes total**;
-all five returned **unknown / unsupported_opaque** under the fixed classifier.
-Complete fresh source/stream/header/span/original-prefix lineage and exact whole
-directory equality passed before selected classification. No complete member
-was covered by these prefixes; raw buffers discarded, no child files or links followed.
-Classifier coverage is limited; this does not establish missing formats, English
-resources or FTP code. No decompression/disassembly, camera or feature/write gate.
-Next shared package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.
+Latest shared RA-003: [image-parser/header design](../research/IMAGE_HEADER_DESIGN.md).
+Four public parser blobs (**16,708 bytes**) verified at the existing immutable pin;
+published MIT notice reviewed and preserved with private source copies.
+Separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates qualified
+with **251/251 synthetic passes** (49 new plus 202 retained),
+zero skipped, exit **0**, **1.271s**. All 23 baseline files unchanged.
+The new API remains standalone and unintegrated. **No actual firmware, member
+prefix or operational-constants read**; prior five unknown observations unchanged.
+No filesystem, English, native FTP, body-match, recovery or device-write gate.
+Next shared package: **RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage**.
 
 ## Verified preparation supporting these functions
 
@@ -133,7 +132,7 @@ Next shared package: **RA-003: audit pinned image-format parser sources and reus
   No directory accepted; the later bounded diagnostic identifies the refusing field/predicate.
 
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.
+packages and validation families. Next single host package: **RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

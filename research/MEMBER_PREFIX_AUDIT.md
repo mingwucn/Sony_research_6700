@@ -112,3 +112,19 @@ change occurred. No format or feature absence follows from these predicates.
 
 Next single package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.
 See [exact commands/results](sessions/20261018-RA-003-member-prefix.md).
+
+
+## Later source-only image-header design (2026-10-19 local / 2026-10-18 UTC)
+
+Earlier next-package recommendations are historical. See [header design](IMAGE_HEADER_DESIGN.md)
+and [commands/results](sessions/20261018-RA-003-image-header-design.md).
+Four public parser blobs (**16,708 bytes**) verified at the existing immutable pin;
+published MIT notice reviewed and preserved with private source copies.
+Separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates qualified
+with **251/251 synthetic passes** (49 new plus 202 retained),
+zero skipped, exit **0**, **1.271s**. All 23 baseline files unchanged.
+The new API remains standalone and unintegrated. **No actual firmware, member
+prefix or operational-constants read**; prior five unknown observations unchanged.
+No filesystem, English, native FTP, body-match, recovery or device-write gate.
+
+Next single package: **RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage**.
