@@ -6,9 +6,12 @@ Initial research and local-Codex hand-off, prepared on 2026-10-18.
 
 ## Objectives
 
-1. Port FL2/FL3 Creative Looks to ILCE-6700, then investigate calibrated custom DCP/LUT-derived still-photo looks as a separate extension.
-2. Enable native English menus on the owner's region-restricted body, preserving its original regional/radio configuration and calibration.
-3. Investigate native camera-to-server FTP over Wi-Fi. Keep an optional host-assisted bridge separate; it is not a native FTP unlock.
+1. **Priority: native English menus**, preserving the body's original regional/radio configuration and calibration. Actual language availability remains unknown.
+2. **Priority: native camera-to-server FTP over Wi-Fi**, manual uploads first, then automatic transfer. Keep an optional host-assisted bridge separate.
+3. **Deferred: FL2/FL3 Creative Looks**, then calibrated custom DCP/LUT-derived still-photo looks as a separately gated extension.
+
+The owner confirmed this priority order on 2026-10-18. FL2/FL3 work must not delay
+English or native FTP; all feature acceptance and device-approval gates still apply.
 
 The currently installed firmware and regional variant are unknown. Do not update firmware, run another model's installer, or change product identifiers merely to begin this project.
 
@@ -31,7 +34,8 @@ Read [AGENTS.md](AGENTS.md) before changing anything. Start with [project state]
 
 Host-only continuation now adds a bounded [artifact probe](docs/ARTIFACT_INTAKE.md),
 [inventory portability repair](docs/INVENTORY_PORTABILITY.md), synthetic-only
-[candidate/transaction models](docs/OFFLINE_GUARDS.md), and a durable
+[candidate/transaction models](docs/OFFLINE_GUARDS.md), a separate
+[durable synthetic transaction journal](docs/DURABLE_SYNTHETIC_JOURNAL.md), and a durable
 [mock transfer queue](docs/FTP_HOST_PROTOCOL.md). A separate opt-in
 [synthetic loopback FTPS lab](docs/FTPS_LOOPBACK_LAB.md) tests a constrained peer
 with pinned private dependencies. No camera adapter or device executor exists.

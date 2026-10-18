@@ -124,6 +124,12 @@ process loses the model and its ownership registry. A durable device executor
 must be separately designed, implemented and reviewed; changing this model's
 status fields cannot authorize one.
 
+A separate [durable synthetic journal](DURABLE_SYNTHETIC_JOURNAL.md) now adds
+append/fsync ordering, cooperative OS ownership and crash/reopen reconciliation
+for invented fixtures. It does not change this simulator's in-memory contract or
+provide a device executor. Its Windows results and POSIX skip are recorded
+separately; neither module establishes camera ownership or recovery.
+
 ## Test evidence and remaining coverage
 
 Command run on CPython 3.13.12, Windows AMD64:

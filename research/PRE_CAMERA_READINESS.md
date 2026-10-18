@@ -5,6 +5,10 @@ gated calibrated custom still-photo looks, native English menus and native Wi-Fi
 FTP; a host-assisted bridge remains optional. It records preparation, not feature
 support. All target facts, USB observations and device approvals remain absent.
 
+Owner priority update (2026-10-18): English and native Wi-Fi FTP are primary;
+FL2/FL3 is deferred, with calibrated custom looks after it. The complete ledger
+below preserves future work without making it a prerequisite for English/FTP.
+
 The broad owner request authorizes continued host-only work beyond RA-002. It does
 not approve a device operation. All target-independent implementation here uses
 authored code and synthetic inputs. No target profile, offsets, assets or source
@@ -24,7 +28,7 @@ No prepared or passed host package is promoted into a working camera function.
 | RA-004 | [Observation/access preparation](TARGET_EVIDENCE_GAPS.md) | Identity, separately approved observations and exact-target access proposal |
 | RA-005 | Backup coverage inventory/template prepared | Approved route, independent reads/copies and actual protected-state coverage |
 | RA-006 | Architecture/recovery evidence gaps explicit | Target segments/ABI/storage/settings/retained-state mappings and recovery envelope |
-| RA-007 | Synthetic candidate guards and transaction simulator | Target evidence/reviews, persistent journal/OS ownership and eventual executor qualification |
+| RA-007 | Candidate/inverse guards, in-memory simulator and durable synthetic journal/OS ownership; Windows subprocess crash/reopen tests | Exact-target semantics/reviews, POSIX and final-revision portability, any future executor qualification |
 | EN-101 | Existing language hypotheses/critical-resource protocol retained | Actual language list, resources and all policy-field consumers |
 | EN-102 | Generic guards available; no candidate generated | EN-101 result, target sources and narrow inverse/preservation proof |
 | EN-103 | Physical validation protocol retained | Accepted candidate, approved hardware test and ENT-01..06 observations |
@@ -59,8 +63,10 @@ gaps dossier lists the minimum real artifacts and observations needed.
 - OFF-10: target instruction boundaries, incoming branches/ABI remain NOT RUN.
 - OFF-11: resource decoding/checksum/UTF coverage remains NOT RUN. Header malformed
   input tests do not substitute for a native resource parser.
-- OFF-12..13: in-memory transaction uncertainty/ownership/boundary simulation.
-  No camera transport, persistent device journal or OS camera lock was tested.
+- OFF-12..13: in-memory simulation plus durable synthetic append/fsync, cooperative
+  OS exclusion and subprocess crash/reopen/reconciliation on Windows. POSIX fork
+  is skipped here. No camera transport, persistent device journal or OS camera
+  lock was tested. See the [journal contract](../docs/DURABLE_SYNTHETIC_JOURNAL.md).
 - OFF-14: explicit path/content review of the proposed local commit. This is not
   a comprehensive automatic secret/content-rights detector.
 - FTT-03..09: mock scenarios and a separately audited custom loopback peer use
@@ -87,14 +93,19 @@ without private inputs/reference checkouts/lab runtime. All 58 exported files
 remained unchanged. This is the same existing Windows host/base stdlib, not a
 clean OS or independent-host result. Remote CI remains NOT RUN.
 
-The next single host package is **RA-007 durable synthetic transaction journal
-and cross-process ownership**. The transaction simulator still lacks durable
-prepared/result records, process exclusion and crash/reopen reconciliation.
-Use synthetic identities and subprocess fault tests, retain uncertainty without
-automatic replay/rollback or stale-lock takeover, and add no device executor.
-This is a future executor prerequisite; it adds no gate before ordinary
-separately approved UI observation. Remote CI and clean-host execution require
-actual observations; prepared workflow files are not results.
+The separate [durable synthetic journal](../docs/DURABLE_SYNTHETIC_JOURNAL.md)
+now has 23 focused passing tests with one POSIX-fork skip. The full suite passed
+152 tests with two skips (POSIX fork and unavailable real symlink), exit 0, on
+this Windows host. Actual hard-link refusal passed. A retained crash example
+reconciled an applied operation without replay. [Session evidence](sessions/20261018-RA-007-durable-journal.md)
+records failed attempts and limits. No device executor exists.
+
+The next single host package is **IN-102 final-revision qualification**: a fresh
+committed authored-tree/no-pip reproduction of this new code and observed results
+from the existing Windows/Linux CI matrix, followed by publication and feature-note
+consistency review. Earlier clean-run evidence remains tied to its older source
+commit. POSIX and remote results remain NOT RUN until observed. These host checks
+add no gate before ordinary separately approved UI observation.
 
 The next target-specific package remains **RA-003**, beginning with the missing
 installed-firmware fact and matching official-package provenance. No latest build

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "pre_camera_clean_authored_tree_passed_target_constraints_pending",
+  "phase": "pre_camera_durable_synthetic_journal_passed_target_constraints_pending",
   "model": "ILCE-6700",
   "installed_firmware": null,
   "regional_variant": null,
@@ -27,18 +27,19 @@
   "remote_ci_executed": false,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
-    "total": 130,
-    "passed": 129,
+    "total": 154,
+    "passed": 152,
     "failed": 0,
     "errors": 0,
-    "skipped": 1,
+    "skipped": 2,
     "exit_code": 0,
-    "interpreter": "CPython 3.13.12 in fresh no-pip Windows AMD64 venv",
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261018-IN-102-clean/reproduce-02.py",
-    "command_kind": "private authored orchestrator; exact suite argv/cwd retained locally",
+    "interpreter": "CPython 3.13.12",
+    "host": "Windows AMD64, kernel build 26300.9711",
+    "command": "C:/ProgramData/miniconda3/python.exe -B -X utf8 -m unittest discover -s tests -v",
+    "runner_seconds": 16.893,
     "evidence_class": "offline-tested",
     "camera_or_real_server_coverage": false,
-    "report": "research/sessions/20261018-IN-102-clean.md"
+    "report": "research/sessions/20261018-RA-007-durable-journal.md"
   },
   "work_packages": {
     "RA-001": {
@@ -71,9 +72,12 @@
       "report": "research/TARGET_EVIDENCE_GAPS.md"
     },
     "RA-007": {
-      "status": "partial_synthetic_foundation_no_target_or_executor",
-      "report": "docs/OFFLINE_GUARDS.md",
-      "focused_tests_passed": 36
+      "status": "partial_durable_synthetic_windows_foundation_no_target_or_executor",
+      "report": "docs/DURABLE_SYNTHETIC_JOURNAL.md",
+      "focused_tests_passed": 36,
+      "session_report": "research/sessions/20261018-RA-007-durable-journal.md",
+      "durable_focused_tests_passed": 23,
+      "durable_focused_tests_skipped": 1
     },
     "FT-102": {
       "status": "partial_constrained_host_lab_passed_native_and_deployment_constraints_pending",
@@ -120,9 +124,10 @@
     "No target recovery envelope or feature mappings are established.",
     "Constrained synthetic loopback FTPS passed only on this host; arbitrary/deployment servers, independent hosts, physical faults, camera media/lifecycle and native constraints remain unqualified.",
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
-    "Clean committed-tree reproduction passed on the same Windows/base stdlib only; clean OS, independent hosts, alternate interpreters and remote matrix results remain unobserved."
+    "Clean committed-tree reproduction passed on the same Windows/base stdlib only; clean OS, independent hosts, alternate interpreters and remote matrix results remain unobserved.",
+    "Durable synthetic journal passed on Windows only; POSIX fork/locking, final-revision clean export and remote matrix remain unobserved; no device executor or physical durability/recovery proof."
   ],
-  "next_work_package": "RA-007: durable synthetic transaction journal and cross-process ownership; no device executor",
+  "next_work_package": "IN-102: qualify final committed RA-007 revision with fresh authored-tree/no-pip reproduction and observed Windows/Linux CI matrix",
   "next_device_action": "none; device work remains unapproved and blocked by missing exact-target evidence",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -169,40 +174,6 @@
         "research/TARGET_EVIDENCE_GAPS.md"
       ]
     },
-    "fl2_fl3_still_looks": {
-      "name": "FL2/FL3 in-camera still photos with matching preview",
-      "priority": "first_look_milestone",
-      "status": "reference_and_guard_preparation_only_no_target_candidate",
-      "camera_validated": false,
-      "progress": "Pinned reference audit and synthetic candidate/inverse/transaction guards prepared",
-      "blockers": [
-        "Exact firmware/AP/CP/resource evidence and stock recipe/photo baseline",
-        "Independent target dispatch/capacity/preview/metadata mapping and conditional recovery"
-      ],
-      "next_package": "CL-101/CL-102 after their target prerequisites",
-      "evidence": [
-        "research/REFERENCE_AUDIT.md",
-        "docs/CREATIVE_LOOKS.md",
-        "docs/OFFLINE_GUARDS.md"
-      ]
-    },
-    "calibrated_custom_still_looks": {
-      "name": "Calibrated selected-slot custom still-photo looks",
-      "priority": "separate_second_phase_after_fl2_fl3",
-      "status": "separately_gated_design_no_calibrated_fit_or_target_slot",
-      "camera_validated": false,
-      "progress": "Domain, selected-slot and holdout requirements specified",
-      "blockers": [
-        "Stable CL-105/106 FL2/FL3 baseline",
-        "Legitimate calibration/holdout inputs and DCP/cube/Sony-ST domain evidence",
-        "Target slot/precision/resource ownership"
-      ],
-      "next_package": "CL-107 after baseline and calibration gates",
-      "evidence": [
-        "docs/CREATIVE_LOOKS.md",
-        "docs/BACKLOG.md"
-      ]
-    },
     "native_wifi_ftp": {
       "name": "Native camera-to-server Wi-Fi FTP, manual then automatic",
       "priority": "primary",
@@ -218,6 +189,41 @@
       "evidence": [
         "docs/FTP.md",
         "research/sessions/20261018-FT-102-loopback.md"
+      ]
+    },
+    "fl2_fl3_still_looks": {
+      "name": "FL2/FL3 in-camera still photos with matching preview",
+      "priority": "deferred_future_work",
+      "status": "reference_and_guard_preparation_only_no_target_candidate",
+      "camera_validated": false,
+      "progress": "Pinned reference audit and synthetic candidate/inverse/durable transaction safeguards prepared; no target mapping or candidate",
+      "blockers": [
+        "Exact firmware/AP/CP/resource evidence and stock recipe/photo baseline",
+        "Independent target dispatch/capacity/preview/metadata mapping and conditional recovery"
+      ],
+      "next_package": "Deferred CL-101/CL-102 when resumed after English/native FTP priorities and target prerequisites",
+      "evidence": [
+        "research/REFERENCE_AUDIT.md",
+        "docs/CREATIVE_LOOKS.md",
+        "docs/OFFLINE_GUARDS.md",
+        "docs/DURABLE_SYNTHETIC_JOURNAL.md"
+      ]
+    },
+    "calibrated_custom_still_looks": {
+      "name": "Calibrated selected-slot custom still-photo looks",
+      "priority": "deferred_after_fl2_fl3",
+      "status": "separately_gated_design_no_calibrated_fit_or_target_slot",
+      "camera_validated": false,
+      "progress": "Domain, selected-slot and holdout requirements specified",
+      "blockers": [
+        "Stable CL-105/106 FL2/FL3 baseline",
+        "Legitimate calibration/holdout inputs and DCP/cube/Sony-ST domain evidence",
+        "Target slot/precision/resource ownership"
+      ],
+      "next_package": "Deferred CL-107 after stable FL2/FL3 baseline and calibration gates",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md",
+        "docs/BACKLOG.md"
       ]
     },
     "optional_host_assisted_bridge": {
@@ -274,5 +280,44 @@
     "camera_coverage": false,
     "evidence_class": "offline-tested",
     "report": "research/sessions/20261018-IN-102-clean.md"
+  },
+  "durable_synthetic_journal": {
+    "status": "passed_synthetic_windows_only",
+    "total": 24,
+    "passed": 23,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "exit_code": 0,
+    "interpreter": "CPython 3.13.12",
+    "host": "Windows AMD64",
+    "command": "python -B -X utf8 -m unittest tests.test_durable_transaction -v",
+    "runner_seconds": 2.406,
+    "evidence_class": "offline-tested",
+    "real_subprocess_exclusion_and_crash_tests": true,
+    "actual_hardlink_refusal_tested": true,
+    "posix_fork_tested": false,
+    "remote_ci_executed": false,
+    "device_executor_exists": false,
+    "device_eligible": false,
+    "camera_commands": [],
+    "report": "research/sessions/20261018-RA-007-durable-journal.md"
+  },
+  "feature_priorities": {
+    "updated_on": "2026-10-18",
+    "evidence_class": "source-report",
+    "source": "Explicit owner instruction in this session",
+    "primary": [
+      "native_english",
+      "native_wifi_ftp"
+    ],
+    "deferred": [
+      "fl2_fl3_still_looks",
+      "calibrated_custom_still_looks"
+    ],
+    "optional": [
+      "optional_host_assisted_bridge"
+    ],
+    "rule": "Prioritize English and native Wi-Fi FTP. FL2/FL3 can wait; calibrated custom looks remain after FL2/FL3. The optional host-assisted bridge stays separate."
   }
 }

@@ -4,11 +4,11 @@ Prepared 2026-10-18. This is a research and engineering programme, not an instal
 
 ## 1. Product definition and interpretation
 
-The first requested function is interpreted as FL2/FL3 Creative Look support comparable to the two supplied projects. Because the current A7C II project also includes six custom DCP/LUT-derived looks, that capability is included as a second, separately gated deliverable. It must not delay or destabilize a smaller FL2/FL3 port. The initial visual target is still-photo output and matching live preview. Movie application of new looks is a separate compatibility question, while preservation of existing movie behaviour is mandatory from the first patch.
+Owner priority update (2026-10-18): native English and native Wi-Fi FTP are the primary goals. FL2/FL3 is deferred to future work and must not delay either priority. Calibrated custom DCP/LUT-derived looks remain a separate later deliverable after a stable FL2/FL3 baseline. The visual target, when that track resumes, is still-photo output and matching live preview. Movie application of new looks is a separate compatibility question, while preservation of existing movie behaviour remains mandatory from the first patch.
 
 English means the camera's own menus, warnings and messages, not an English PC utility or a translated manual. FTP means a camera-resident outbound client delivering files to an owner's server over Wi-Fi without an intermediate computer or phone. Manual selection is the first native FTP milestone; automatic post-capture transfer is the subsequent operational milestone. A host-assisted bridge can produce useful transfers earlier, but cannot close the native-FTP requirement.
 
-The preferred implementation order after shared discovery is the smallest proven English change, then FL2/FL3, then integrated native FTP. Offline analyses can proceed in parallel. Priority is conditional on evidence: English is not automatically easy, and a hidden FTP flag is only one hypothesis. The user does not need to choose a firmware version before the installed baseline is identified.
+After shared discovery, prioritize English feasibility and native FTP feasibility; pursue the smallest fully proved English change and camera-resident manual FTP before deferred looks work. English and FTP analyses can proceed independently; neither requires FL2/FL3. Implementation remains conditional on evidence: English is not automatically easy, and a hidden FTP flag is only one hypothesis. The user does not need to choose a firmware version before the installed baseline is identified.
 
 ## 2. Requirements and acceptance ownership
 
@@ -109,7 +109,7 @@ original-state + architecture -> English feasibility -> English candidate/test
 independent feature results -> composition -> soak / rollback -> release review
 ```
 
-Risk, not guessed calendar duration, controls ordering. Early English implementation is preferred only when a narrow, verified existing setting can be used. FTP analysis should start early because missing backend support could change the architecture. Custom LUT work follows a stable basic look path and a measured colour-domain model. A release GUI comes last.
+Evidence and risk determine which approved step is feasible within the owner's English/FTP priorities. Early English implementation is preferred only when a narrow, verified existing setting can be used. FTP analysis should start early because missing backend support could change the architecture. FL2/FL3 remains deferred; custom LUT work follows its stable basic look path and a measured colour-domain model. A release GUI comes last.
 
 ## 7. Decision records and stopping rules
 

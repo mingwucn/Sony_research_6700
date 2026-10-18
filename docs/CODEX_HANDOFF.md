@@ -6,7 +6,10 @@ This is an initial research hand-off, not an alpha6700 installer. The owner's re
 
 Current host-only tools comprise the inventory helper, bounded artifact-header
 probe, synthetic-only in-memory candidate/transaction APIs and a durable local
-queue with in-memory mock transport. A separately invoked
+queue with in-memory mock transport. A separate
+[durable synthetic journal](DURABLE_SYNTHETIC_JOURNAL.md) records fixture claims
+under cooperative OS ownership, with conservative crash/reopen reconciliation.
+A separately invoked
 [loopback FTPS lab](FTPS_LOOPBACK_LAB.md) tests a constrained local peer using
 synthetic inputs; default tests remain socket-free. See [pre-camera coverage](../research/PRE_CAMERA_READINESS.md)
 and [current state](../research/STATE.json) for actual scope. They do not extract
@@ -21,6 +24,10 @@ Also read [FEATURE_PROGRESS.md](FEATURE_PROGRESS.md) and the internal
 Keep their per-function status, blockers and evidence synchronized with STATE
 after every material change. Work-package completion alone is not feature
 completion; the optional bridge and later custom-look extension stay separate.
+
+Owner priority update (2026-10-18): **native English and native Wi-Fi FTP first**.
+FL2/FL3 is deferred to future work; calibrated custom looks remain later still.
+Neither primary goal depends on FL2/FL3. Retain all evidence and device gates.
 
 ## 2. Responsibilities and continuity
 
@@ -91,7 +98,7 @@ RA-001 can finish with missing owner facts clearly recorded. Its purpose is to e
 
 ## 6. Copy-paste initial Codex prompt
 
-> Work in mingwucn/a6700_research. Read AGENTS.md, README.md, research/STATE.json, docs/CODEX_HANDOFF.md, docs/MASTER_PLAN.md, docs/BACKLOG.md and docs/OWNER_INTAKE.md. Execute RA-001 only: inspect the existing local Git state, record the host environment, run the standard-library synthetic tests, prepare a private owner intake without overwriting existing files, and write a sanitized session report. The goals are FL2/FL3 followed by separately gated calibrated custom still-photo looks, native English menus, and native camera-to-server Wi-Fi FTP; a host-assisted bridge is a separate optional result. Firmware and regional variant are unknown until observed. Do not contact the camera, change drivers or firmware, run upstream launchers or service tools, upload private inputs, or invent target offsets. Treat ordinary Git/source retrieval as host-side work only. Ask only for missing intake facts, continue useful offline work where possible, and finish with exact commands/results, files changed, unresolved prerequisites and the next single work package. Use a topic branch and stage only reviewed files. Do not mark a feature supported or a device-write gate passed.
+> Work in mingwucn/a6700_research. Read AGENTS.md, README.md, research/STATE.json, docs/CODEX_HANDOFF.md, docs/MASTER_PLAN.md, docs/BACKLOG.md and docs/OWNER_INTAKE.md. Execute RA-001 only: inspect the existing local Git state, record the host environment, run the standard-library synthetic tests, prepare a private owner intake without overwriting existing files, and write a sanitized session report. Prioritize native English menus and native camera-to-server Wi-Fi FTP. FL2/FL3 is deferred, with separately gated calibrated custom still-photo looks later; a host-assisted bridge is a separate optional result. Firmware and regional variant are unknown until observed. Do not contact the camera, change drivers or firmware, run upstream launchers or service tools, upload private inputs, or invent target offsets. Treat ordinary Git/source retrieval as host-side work only. Ask only for missing intake facts, continue useful offline work where possible, and finish with exact commands/results, files changed, unresolved prerequisites and the next single work package. Use a topic branch and stage only reviewed files. Do not mark a feature supported or a device-write gate passed.
 
 ## 7. Format for later work requests
 
