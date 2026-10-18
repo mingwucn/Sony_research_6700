@@ -3,7 +3,9 @@
 This ledger preserves the full objective: FL2/FL3 stills and preview, separately
 gated calibrated custom still-photo looks, native English menus and native Wi-Fi
 FTP; a host-assisted bridge remains optional. It records preparation, not feature
-support. All target facts, USB observations and device approvals remain absent.
+support. Owner now reports α6700, firmware 2.00 and current language 简体中文
+(source-report); the full language list is unchecked. Regional identity, exact
+binary identity, agent USB observations and device approvals remain absent.
 
 Owner priority update (2026-10-18): English and native Wi-Fi FTP are primary;
 FL2/FL3 is deferred, with calibrated custom looks after it. The complete ledger
@@ -22,9 +24,9 @@ No prepared or passed host package is promoted into a working camera function.
 
 | Package | Current pre-camera work | Requirement still needing evidence |
 |---|---|---|
-| RA-001 | Private intake/host baseline prepared; historical errors preserved | Owner body/setup facts remain unknown |
+| RA-001 | Private intake/host baseline prepared; historical errors preserved; model/version/current-language report added | Remaining body/setup facts unknown |
 | RA-002 | Locked source/provenance/rights audit committed | Component reuse and target applicability are separate unresolved gates |
-| RA-003 | Inventory repair, bounded probe/lineage/extractor audit and official-source availability refresh | Installed firmware, matching legitimate input and applicable extraction/child manifest |
+| RA-003 | Inventory repair, bounded probe/lineage/extractor audit, official-source refresh and owner-reported 2.00 label | Matching legitimate input, exact-build correspondence and applicable extraction/child manifest |
 | RA-004 | [Observation/access preparation](TARGET_EVIDENCE_GAPS.md) | Identity, separately approved observations and exact-target access proposal |
 | RA-005 | Backup coverage inventory/template prepared | Approved route, independent reads/copies and actual protected-state coverage |
 | RA-006 | Architecture/recovery evidence gaps explicit | Target segments/ABI/storage/settings/retained-state mappings and recovery envelope |
@@ -92,14 +94,17 @@ arbitrary lab peers or repeated unchanged synthetic suites would not resolve the
 missing exact-target evidence.
 
 The [official-source refresh](OFFICIAL_SOURCE_REFRESH.md) resolved earlier public
-catalogue availability. Its observed public version is not the installed version;
-no firmware or SDK package was downloaded, selected for the body or executed.
+catalogue availability. The public listing alone does not identify installed
+firmware; the owner has now separately reported version 2.00. No firmware or SDK
+package was downloaded, selected for the body or executed.
 
-Next single substantive package: **RA-003 exact-build intake**, blocked on the
-installed-firmware fact and legitimate matching-input provenance. The existing
+Next single substantive host package: **RA-003 official-package provenance/intake
+for owner-reported version 2.00**. Legitimate matching input, regional applicability
+and exact-build correspondence remain unresolved. The existing
 RA-004 normal Version/Language UI observation packet is ready when the owner
 separately approves camera contact. It requires no new generic-test, deferred
 look or device-write gate. Normal-menu English remains a possible resolution.
 Actual target mappings, acquisition/recovery and all feature acceptance remain
-unproved. Owner answers already recorded Unknown stand without repeated
-questions. Camera commands: **none**.
+unproved. Earlier Unknown responses remain historical; the
+[new intake report](sessions/20261018-owner-ui-intake.md) records supplied facts
+without filling unrelated unknowns. Agent camera commands: **none**.

@@ -13,7 +13,11 @@ Initial research and local-Codex hand-off, prepared on 2026-10-18.
 The owner confirmed this priority order on 2026-10-18. FL2/FL3 work must not delay
 English or native FTP; all feature acceptance and device-approval gates still apply.
 
-The currently installed firmware and regional variant are unknown. Do not update firmware, run another model's installer, or change product identifiers merely to begin this project.
+Owner intake (2026-10-18, **source-report**): α6700, firmware **2.00**,
+current menu language **简体中文 (Simplified Chinese)**. The full language list
+has not been checked; English availability and regional variant remain unknown.
+Version text does not verify binary identity. Do not update firmware, run another
+model's installer, or change product identifiers merely to begin this project.
 
 ## Reading order
 

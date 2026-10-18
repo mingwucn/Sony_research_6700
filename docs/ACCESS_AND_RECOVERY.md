@@ -83,6 +83,36 @@ Do not intentionally interrupt power during a real firmware write to test the jo
 
 ## 8. Write gate checklist
 
+Owner recommendation adopted on **2026-10-18**: establish a verified rollback and
+recovery system **before any firmware/program write**. Current status:
+**NOT ESTABLISHED; firmware writes remain blocked**. The offline inverse model
+and synthetic journal are preparation only. This requirement does not authorize
+a restore, same-byte write, reboot, service transition or destructive test.
+
+Before a firmware/program-write proposal can pass, RA-005/006/007 must establish:
+
+- Original stock and latest known-good states, complete coverage of every object
+  the proposal can change, fresh source identities, and verified copies on two
+  independent storage devices. Restore must preserve this body's calibration,
+  regional/radio identity and unrelated current settings.
+- An exact inverse for the specific current candidate, plus a reviewed restore
+  sequence, full readback/protected-state checks and explicit stop conditions.
+- An exact-target recovery matrix covering an ordinary functional regression,
+  partial/unknown completion, failed normal boot and unavailable service access.
+  Each route needs evidence of its prerequisites and reachability for that
+  failure state. A restore that needs a working camera OS does not cover a boot
+  failure; a service route does not cover loss of that service route. Unsupported
+  states remain blockers for any write relying on recovery from them.
+- Recorded verification evidence and a separate owner-approved restoration
+  procedure. Do not brick the body or interrupt live writes to demonstrate a
+  route. If adequate recovery cannot be established within scope, continue
+  offline research and leave the firmware-write gate closed.
+
+No automatic rollback follows a timeout or disconnect: enter needs_review and
+reconcile the actual state before proposing a separately approved restore.
+Bootloader/NOR/raw-partition or calibration replacement remains outside scope;
+do not assume an A/B boot slot, Sony updater rescue or donor-body recovery exists.
+
 The owner/reviewer must be shown the exact body/build/source identities; scoped feature and changed objects; complete backup coverage and independent copies; candidate/inverse hashes; source and control-flow review; protected-state comparison; target-specific write/reload sequence; simulated failure results; power/cable/single-owner conditions; and conditional recovery limits. The code must independently recheck eligibility immediately before mutation.
 
 No public installer is permitted before these checks are machine-enforced and tested against wrong/partial/mixed sources. A graphical confirmation button is not a replacement for technical preconditions. The starter repository has no executor and intentionally cannot pass a device-write gate.

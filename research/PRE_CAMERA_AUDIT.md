@@ -16,6 +16,13 @@ functions remain unvalidated. See [per-function progress](../docs/FEATURE_PROGRE
 
 ## Evidence now available
 
+Later owner-intake addendum (2026-10-18): α6700 firmware **2.00** and current
+language **简体中文** are now owner-reported; the full language list is unchecked.
+The Unknown statements in this audit preserve its earlier evidence snapshot.
+See [current intake](sessions/20261018-owner-ui-intake.md) and STATE for current
+facts. English availability, region and exact binary identity remain unknown.
+Next host package remains RA-003, now with the owner-reported version label.
+
 - The [final-code qualification report](sessions/20261018-IN-102-final.md)
   records a NEW export of 63 committed regular files, 628,717 bytes, with Git blob
   identities and SHA-256 values verified before and unchanged after execution.

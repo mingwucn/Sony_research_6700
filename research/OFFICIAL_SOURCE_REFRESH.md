@@ -12,6 +12,13 @@ and regional variant remain **unknown (`null`)**. No package was downloaded,
 selected as a matching target package, hashed or executed. No source-lock or
 profile entry was changed.
 
+Later owner-intake addendum (2026-10-18): the owner reports α6700 firmware
+**2.00**, current language **简体中文**, full language list not checked. The
+Unknown statements above describe the earlier catalogue-review snapshot. See
+[current intake](sessions/20261018-owner-ui-intake.md). Matching version labels
+do not prove exact binary identity or regional applicability; no binary package
+has subsequently been acquired in this intake session.
+
 ## Public catalogue and release-note availability
 
 - [Sony USA ILCE-6700 downloads](https://www.sony.com/electronics/support/e-mount-body-ilce-6000-series/ilce-6700/downloads)

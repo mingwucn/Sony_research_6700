@@ -6,6 +6,14 @@ body program, resource, settings or calibration object has been supplied. The
 workspace's private top-level directories were checked; this is not a search of
 the owner's whole computer or a claim that no package exists elsewhere.
 
+Later intake update (2026-10-18, **source-report**): the owner reports α6700
+firmware **2.00**, current **简体中文**, full language list not checked. The
+Unknown version statement above is the earlier intake snapshot. Regional
+applicability and exact binary identity remain unverified; no matching package
+has been acquired. See [current intake](../research/sessions/20261018-owner-ui-intake.md).
+Owner additionally requires verified rollback/recovery before any firmware write;
+offline package inspection does not establish that recovery system.
+
 ## Available host commands
 
 Both tools use only the standard library and explicitly supplied ordinary local
@@ -78,8 +86,9 @@ remain data. No firmware upgrade is needed to inspect a matching package.
 
 ## Remaining acceptance
 
-RA-003 remains incomplete: installed-firmware evidence, matching official source,
-actual input bytes and a reviewed applicable extractor are absent. Consequently
+RA-003 remains incomplete: independent exact-build evidence, matching official
+source/input bytes and a reviewed applicable extractor are absent. The reported
+2.00 version label is recorded above. Consequently
 there is no target component inventory or private extraction manifest to validate.
 An empty private acquisition ledger records the missing input; it is not an
 unsupported-format diagnosis of an unseen package. The synthetic probe's passing

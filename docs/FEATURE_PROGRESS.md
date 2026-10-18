@@ -6,8 +6,11 @@ records machine-readable evidence. An internal copy is kept in ignored
 `private/feature-progress.json` and `private/feature-progress.md`.
 
 **None of the requested camera functions has been validated on this body.**
-Firmware, regional variant and available languages remain unknown. Camera
-access/writes: none. No device-write gate has passed. Progress below describes
+Owner reports α6700 firmware **2.00** and current menu language **简体中文**
+(Simplified Chinese), **source-report**, 2026-10-18. The full language list has
+not been checked; English availability and regional variant remain unknown.
+Exact binary identity is unverified. Agent camera access/writes: none. No
+device-write gate has passed. Progress below describes
 completed preparation separately from actual feature operation.
 
 | Requested function | Owner priority | Current progress | What is still missing | Next feature package |
@@ -23,10 +26,18 @@ FL2/FL3 is deferred; custom looks follow FL2/FL3 and their own calibration gate.
 The bridge stays optional and separately labelled. A host-generated upload cannot
 be recorded as native camera Wi-Fi FTP.
 
+Owner prerequisite (2026-10-18): **verified rollback/recovery before any firmware
+write**. It is not established on this body. Backup coverage, two independent
+storage copies, an exact inverse and recovery access for the relevant failure
+states remain required; synthetic guards are preparation only. See
+[recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist).
+
 ## Verified preparation supporting these functions
 
-- RA-001: host baseline/private intake prepared; owner body/setup facts remain
-  Unknown. [Initial report](../research/sessions/20261018-RA-001.md).
+- RA-001: host baseline/private intake prepared. Model/version/current-language
+  facts were subsequently supplied; remaining setup facts stay Unknown.
+  [Initial report](../research/sessions/20261018-RA-001.md),
+  [owner intake update](../research/sessions/20261018-owner-ui-intake.md).
 - RA-002: references pinned and static provenance/rights audit recorded;
   reuse/target limitations remain. [Audit](../research/REFERENCE_AUDIT.md).
 - Inventory/probe and synthetic patch/transaction models exist, with no eligible
@@ -50,13 +61,13 @@ be recorded as native camera Wi-Fi FTP.
   and a host-assisted PC Remote path do not establish arbitrary native FTP.
 
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single substantive package: **RA-003
-exact-build intake**, blocked on installed-firmware fact and legitimate matching
-input. Existing Unknown intake answers are retained. The prepared ordinary
-Version/Language UI packet can be used when camera contact is separately approved;
-English may already be offered. No extra generic test or deferred look work is
-required before that observation. Host qualification does not validate any of
-the five camera functions above.
+packages and validation families. Next single host package: **RA-003, official
+package provenance/intake for owner-reported version 2.00**, without executing an
+updater. Legitimate matching-package provenance and exact binary identity remain
+unresolved. EN-101 still needs the full offered-language list, using the existing
+no-change normal-menu instructions; English may already be offered. Earlier
+Unknown responses are preserved as history. Host qualification and this intake
+update do not validate any of the five camera functions above.
 
 ## Keeping the notes current
 

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "pre_camera_recorded_host_qualification_passed_exact_target_inputs_pending",
+  "phase": "owner_model_version_current_language_reported_exact_target_evidence_pending",
   "model": "ILCE-6700",
-  "installed_firmware": null,
+  "installed_firmware": "2.00",
   "regional_variant": null,
   "device_access_performed": false,
   "device_writes_performed": false,
@@ -47,7 +47,7 @@
   "work_packages": {
     "RA-001": {
       "status": "completed_with_diagnosed_host_test_error",
-      "owner_intake": "prepared_privately_owner_facts_pending",
+      "owner_intake": "prepared_privately_model_version_current_language_now_owner_reported_remaining_facts_pending",
       "report": "research/sessions/20261018-RA-001.md",
       "scope": "R0 only; no milestone or device-write gate passed"
     },
@@ -58,14 +58,16 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_public_source_refresh_complete_exact_build_intake_blocked",
+      "status": "partial_owner_version_reported_matching_package_provenance_and_exact_build_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "Bounded header/lineage/extractor audit and official HTML inspection only; no matching package selected or target extraction",
-      "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md"
+      "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
+      "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md"
     },
     "RA-004": {
-      "status": "r0_preparation_only_identity_and_route_blocked",
-      "report": "research/TARGET_EVIDENCE_GAPS.md"
+      "status": "owner_identity_labels_reported_complete_languages_region_and_access_route_pending",
+      "report": "research/TARGET_EVIDENCE_GAPS.md",
+      "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md"
     },
     "RA-005": {
       "status": "coverage_template_only_acquisition_blocked",
@@ -122,7 +124,7 @@
     "Reference transport/native workers are model/build/ABI-specific; no alpha6700 service or write route follows from this static audit.",
     "Third-party integration requires package artifact/transitive/platform locks, secondary provenance and component-specific rights; Sony payload/R2 notes/Ricoh profile reuse grants are not established.",
     "Native source-to-binary correspondence and target runtime behaviour remain unverified; asset hashes establish identity only.",
-    "Owner firmware and regional/language facts are not yet supplied.",
+    "Owner reports alpha6700 firmware 2.00 and current language Simplified Chinese; regional SKU, complete language list and English availability remain unknown.",
     "Owner reports remaining body/setup intake facts unknown; history, health, connection, power/media, recovery tolerance and independent backup storage remain pending.",
     "No alpha6700 service-access route has been reviewed and tested.",
     "No exact-body program/settings/resource acquisition exists.",
@@ -131,11 +133,12 @@
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
     "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
     "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
-    "Official public source availability is refreshed, but installed firmware/region/languages remain unknown; no matching official package was selected or acquired.",
-    "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them."
+    "Owner-reported firmware 2.00 matches the public catalogue version label only; legitimate matching-package provenance, regional applicability and exact binary identity remain unverified; no package was acquired.",
+    "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them.",
+    "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified."
   ],
-  "next_work_package": "RA-003: exact-build intake, blocked on installed-firmware fact and legitimate matching-input provenance",
-  "next_device_action": "none; device work remains unapproved and blocked by missing exact-target evidence",
+  "next_work_package": "RA-003: official-package provenance/intake for owner-reported alpha6700 version 2.00; no updater execution or exact-body/build match claim",
+  "next_device_action": "No agent camera command approved; EN-101 still needs the complete offered-language list using the existing no-change owner UI instructions",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
   "host_loopback_ftps_lab": {
@@ -170,16 +173,17 @@
       "priority": "primary",
       "status": "design_prepared_actual_language_availability_unknown",
       "camera_validated": false,
-      "progress": "Hypotheses, preservation rules and critical-resource coverage plan prepared; no target change. Official model Language documentation refreshed; owner regional availability remains unknown.",
+      "progress": "Language hypotheses, preservation rules and critical-resource plan prepared. Owner reports current Simplified Chinese on alpha6700 version 2.00; full language list unchecked and English availability unknown. No target change.",
       "blockers": [
-        "Observed firmware/region and complete offered-language list",
+        "Regional SKU and complete offered-language list; owner-reported version 2.00 is not independent build/hash evidence",
         "Exact-build resources and narrow policy/all-consumer evidence if English is restricted"
       ],
       "next_package": "EN-101: offered-language observation first when separately approved; exact-build artifacts only if binary analysis is needed",
       "evidence": [
         "docs/ENGLISH_LANGUAGE.md",
         "research/TARGET_EVIDENCE_GAPS.md",
-        "research/OFFICIAL_SOURCE_REFRESH.md"
+        "research/OFFICIAL_SOURCE_REFRESH.md",
+        "research/sessions/20261018-owner-ui-intake.md"
       ]
     },
     "native_wifi_ftp": {
@@ -588,10 +592,54 @@
     "status": "official_usa_html_opened_no_binary_download_or_target_match",
     "public_catalogue_version_observed": "2.00",
     "public_catalogue_date_observed": "2025-06-10",
-    "owner_installed_firmware": null,
+    "owner_installed_firmware": "2.00",
     "owner_regional_variant": null,
     "report": "research/OFFICIAL_SOURCE_REFRESH.md",
     "native_ftp_support_established": false,
-    "native_ftp_field_meaning": "No support claim established; bounded lack of documentation is not backend-absence proof"
+    "native_ftp_field_meaning": "No support claim established; bounded lack of documentation is not backend-absence proof",
+    "owner_installed_firmware_evidence": "source-report; later owner chat report, not inferred from the catalogue",
+    "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md"
+  },
+  "current_menu_language": "简体中文",
+  "available_languages": null,
+  "english_available": null,
+  "owner_intake_observation": {
+    "reported_on": "2026-10-18",
+    "evidence_class": "source-report",
+    "source": "Owner chat report and explicit current-language clarification",
+    "model_label": "a6700",
+    "firmware_version_text": "2.00",
+    "current_menu_language": "简体中文",
+    "complete_language_list_checked": false,
+    "available_languages": null,
+    "english_available": null,
+    "regional_variant": null,
+    "independent_device_readback": false,
+    "exact_binary_identity_verified": false,
+    "version_screen_evidence_supplied": false,
+    "device_action_approval_granted": false,
+    "report": "research/sessions/20261018-owner-ui-intake.md"
+  },
+  "device_access_field_scope": "Agent/tool camera communication only; owner source-report is recorded separately and is not independent readback",
+  "pre_write_recovery": {
+    "recorded_on": "2026-10-18",
+    "evidence_class": "source-report",
+    "source": "Owner recommends a rollback system before new firmware is written; adopted as a pre-write prerequisite",
+    "required_before_firmware_write": true,
+    "status": "not_established_firmware_write_blocked",
+    "target_backup_coverage_verified": false,
+    "two_independent_storage_copies_verified": false,
+    "exact_target_inverse_verified": false,
+    "target_restore_route_verified": false,
+    "failed_normal_boot_recovery_verified": false,
+    "verification_evidence": [],
+    "device_action_approval_granted": false,
+    "automatic_rollback_authorized": false,
+    "contract": "docs/ACCESS_AND_RECOVERY.md#8-write-gate-checklist",
+    "work_packages": [
+      "RA-005",
+      "RA-006",
+      "RA-007"
+    ]
   }
 }

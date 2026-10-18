@@ -29,6 +29,17 @@ Owner priority update (2026-10-18): **native English and native Wi-Fi FTP first*
 FL2/FL3 is deferred to future work; calibrated custom looks remain later still.
 Neither primary goal depends on FL2/FL3. Retain all evidence and device gates.
 
+Latest owner intake (2026-10-18, **source-report**): α6700, firmware **2.00**,
+current menu language **简体中文**. The owner clarified that the full language
+list has not been checked. Regional SKU and English availability remain unknown;
+no exact-build hash or device approval follows. See the
+[intake update](../research/sessions/20261018-owner-ui-intake.md).
+
+Owner also requires a verified rollback/recovery system before any firmware
+write. No such target system is established. Follow the
+[recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
+prerequisite, not permission to test a restore or write.
+
 ## 2. Responsibilities and continuity
 
 | Participant | Responsibility | Must not claim |
