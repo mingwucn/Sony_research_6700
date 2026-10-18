@@ -27,7 +27,20 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [tar-directory refusal](../research/TAR_DIRECTORY_AUDIT.md),
+Latest continuation: [bounded path/link diagnostic](../research/TAR_PATH_DIAGNOSTIC.md),
+[commands/results](../research/sessions/20261018-RA-003-tar-path-diagnostic.md).
+One bounded first-refusal diagnostic completed, script and host exit **0**, **28.299963s**.
+Synthetic qualification **171/171 passed**, zero skipped, exit **0**, **0.916s**.
+The first refused field is **link_target**, origin **header**,
+predicate **empty_or_parent_component**. Combined categories retain their stated ambiguity.
+Complete parent/logical-stream identities, header, declared spans and both prior
+prefixes agree. Semantic tar parsing stopped permanently at the unchanged guard;
+no directory accepted or tar-end/tail validation. One private bounded event,
+no path text/raw bytes in it. No retry/fallback, child files, decompression,
+disassembly, camera contact or feature/write gate. Earlier failed evidence is preserved.
+Next single work package: **RA-003: review the observed path/link predicate, qualify an explicit metadata-only policy and run one bounded directory inventory with complete lineage and no child files**.
+
+Earlier continuation: [tar-directory refusal](../research/TAR_DIRECTORY_AUDIT.md),
 [commands/results](../research/sessions/20261018-RA-003-tar-directory.md).
 One newly scoped tar-directory experiment stopped at the fixed **unsafe_path**
 guard, **needs_review**, script exit **2**, host-tool exit **1**, **28.603684s**.
@@ -39,7 +52,7 @@ member count 0 does not mean an empty archive. Both observers cleared.
 The offending member-name/link-target category is unknown. No retry, parser
 fallback, threshold relaxation, child files, decompression/disassembly, camera
 contact or feature/write gate. Prior measured observations remain unchanged.
-Next single package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.
+Historical next single package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.
 
 Earlier continuation: [component-prefix identification](../research/COMPONENT_PREFIX_AUDIT.md),
 [commands/results](../research/sessions/20261018-RA-003-component-prefix.md): 93/93 synthetic passes and one real

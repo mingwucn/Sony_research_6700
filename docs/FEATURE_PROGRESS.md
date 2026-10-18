@@ -32,18 +32,17 @@ storage copies, an exact inverse and recovery access for the relevant failure
 states remain required; synthetic guards are preparation only. See
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist).
 
-Latest shared RA-003: [tar-directory refusal](../research/TAR_DIRECTORY_AUDIT.md).
-One newly scoped tar-directory experiment stopped at the fixed **unsafe_path**
-guard, **needs_review**, script exit **2**, host-tool exit **1**, **28.603684s**.
-Combined synthetic qualification **133/133 passed**, zero skipped, exit **0**,
-**0.749s**. Preliminary complete-parent hash passed; actual-pass final hashes,
-fresh lineage acceptance and tar end/tail checks did not complete. No directory
-accepted. Tentative header counter 114 is not a member inventory; post-discard
-member count 0 does not mean an empty archive. Both observers cleared.
-The offending member-name/link-target category is unknown. No retry, parser
-fallback, threshold relaxation, child files, decompression/disassembly, camera
-contact or feature/write gate. Prior measured observations remain unchanged.
-Next shared package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.
+Latest shared RA-003: [bounded path/link diagnostic](../research/TAR_PATH_DIAGNOSTIC.md).
+One bounded first-refusal diagnostic completed, script and host exit **0**, **28.299963s**.
+Synthetic qualification **171/171 passed**, zero skipped, exit **0**, **0.916s**.
+The first refused field is **link_target**, origin **header**,
+predicate **empty_or_parent_component**. Combined categories retain their stated ambiguity.
+Complete parent/logical-stream identities, header, declared spans and both prior
+prefixes agree. Semantic tar parsing stopped permanently at the unchanged guard;
+no directory accepted or tar-end/tail validation. One private bounded event,
+no path text/raw bytes in it. No retry/fallback, child files, decompression,
+disassembly, camera contact or feature/write gate. Earlier failed evidence is preserved.
+Next shared package: **RA-003: review the observed path/link predicate, qualify an explicit metadata-only policy and run one bounded directory inventory with complete lineage and no child files**.
 
 ## Verified preparation supporting these functions
 
@@ -130,11 +129,11 @@ Next shared package: **RA-003: qualify and run one bounded tar path/link diagnos
   Bounded SquashFS v4/ustar header candidates, with lineage and metadata only.
   No complete component format or English/FTP finding follows.
 
-- Current RA-003: [tar-directory trial](../research/TAR_DIRECTORY_AUDIT.md).
-  No directory accepted; fixed path-policy refusal needs a bounded diagnostic.
+- Earlier RA-003: [tar-directory trial](../research/TAR_DIRECTORY_AUDIT.md).
+  No directory accepted; the later bounded diagnostic identifies the refusing field/predicate.
 
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.
+packages and validation families. Next single host package: **RA-003: review the observed path/link predicate, qualify an explicit metadata-only policy and run one bounded directory inventory with complete lineage and no child files**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

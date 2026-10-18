@@ -142,6 +142,19 @@ fallback, threshold relaxation, child files, decompression/disassembly, camera
 contact or feature/write gate. Prior measured observations remain unchanged.
 Earlier continuations are historical. Next single package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.
 
+Path/link diagnostic continuation (2026-10-19 local / 2026-10-18 UTC):
+[audit](../research/TAR_PATH_DIAGNOSTIC.md) and [commands/results](../research/sessions/20261018-RA-003-tar-path-diagnostic.md).
+One bounded first-refusal diagnostic completed, script and host exit **0**, **28.299963s**.
+Synthetic qualification **171/171 passed**, zero skipped, exit **0**, **0.916s**.
+The first refused field is **link_target**, origin **header**,
+predicate **empty_or_parent_component**. Combined categories retain their stated ambiguity.
+Complete parent/logical-stream identities, header, declared spans and both prior
+prefixes agree. Semantic tar parsing stopped permanently at the unchanged guard;
+no directory accepted or tar-end/tail validation. One private bounded event,
+no path text/raw bytes in it. No retry/fallback, child files, decompression,
+disassembly, camera contact or feature/write gate. Earlier failed evidence is preserved.
+Earlier continuations are historical. Next single package: **RA-003: review the observed path/link predicate, qualify an explicit metadata-only policy and run one bounded directory inventory with complete lineage and no child files**.
+
 ### RA-004 — Establish identity and review an access route
 
 Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remains a distinct decision. Obtain normal UI facts and, after approval, ordinary host USB descriptors. Identify a candidate service path from reviewed exact-target evidence. Describe every command's effects, re-enumeration, helper ABI, expected result, timeout and reconciliation procedure. Write transport mocks for known readiness/error cases.
@@ -315,7 +328,7 @@ FL2/FL3 is deferred; calibrated custom looks remain separately gated after it.
 Keep existing work for later use. EN/FT feasibility does not depend on CL work.
 The optional host-assisted bridge remains a separate result.
 
-RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**. Official package size/hash, five UFU spans, complete experimental FDAT length/SHA and measured-size declared extent checks are recorded. Component formats, full later analysis scope and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
+RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003: review the observed path/link predicate, qualify an explicit metadata-only policy and run one bounded directory inventory with complete lineage and no child files**. Official package size/hash, five UFU spans, complete experimental FDAT length/SHA and measured-size declared extent checks are recorded. Component formats, full later analysis scope and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
 
 Owner requirement (2026-10-18): **verified rollback/recovery before any firmware
 write**. RA-005/006/007 cover backups, exact inverse, target recovery reachability
