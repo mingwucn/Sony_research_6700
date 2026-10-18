@@ -52,6 +52,15 @@ unpacking/static analysis**, using the prepared inquiry or another documented
 applicable licence/statutory basis. Download agreement acceptance alone does not
 establish that scope; no blanket prohibition on ordinary hashing is inferred.
 
+China-scope continuation (2026-10-18): [facts, acquisition results and commands](../research/sessions/20261018-RA-003-cn-scope.md)
+record the owner's China/personal/noncommercial scope and explicit limited
+download consent. The initial request stopped on the recorded HTTP 302; any
+separately approved destination result is recorded in STATE. No extraction or
+execution. China Article 17 is a candidate basis; activity-specific analysis
+rights and exact-body/build correspondence remain unestablished. Next single
+package: **RA-003 activity-specific rights-basis resolution for proprietary
+unpacking/static analysis**; English and native FTP retain priority.
+
 ### RA-004 — Establish identity and review an access route
 
 Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remains a distinct decision. Obtain normal UI facts and, after approval, ordinary host USB descriptors. Identify a candidate service path from reviewed exact-target evidence. Describe every command's effects, re-enumeration, helper ABI, expected result, timeout and reconciliation procedure. Write transport mocks for known readiness/error cases.

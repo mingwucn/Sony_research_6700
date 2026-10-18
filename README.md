@@ -23,9 +23,10 @@ model's installer, or change product identifiers merely to begin this project.
 
 Current [RA-003 package/rights findings](research/OFFICIAL_PACKAGE_INTAKE.md):
 the [official mainland 2.00 source and its agreement](research/MAINLAND_FIRMWARE_SOURCE.md)
-are now identified. Download acceptance and the rights basis for proprietary
-unpacking/static disassembly remain separate unresolved steps; no firmware
-bytes were acquired. The earlier owner rights answer remains **No / unknown**.
+are identified. The [China-scope continuation](research/sessions/20261018-RA-003-cn-scope.md)
+records personal/noncommercial research and scoped download consent/results.
+The activity-specific basis for proprietary unpacking/static disassembly remains
+unestablished; the earlier owner rights answer stays **No / unknown**.
 Recovery is unproved; separate OSS offers are static leads only. No native
 feature is validated.
 

@@ -43,7 +43,13 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003 continuation: [official mainland 2.00 source/terms](../research/MAINLAND_FIRMWARE_SOURCE.md)
+Latest RA-003: [China scope and limited acquisition results](../research/sessions/20261018-RA-003-cn-scope.md).
+Owner confirms inspection in China for personal/noncommercial use. Download
+consent is scoped; Article 17 is a candidate, not an established analysis basis.
+See STATE for the recorded request/result, and the source dossier for scope.
+No native feature, recovery route or write gate is validated.
+
+Earlier RA-003 continuation: [official mainland 2.00 source/terms](../research/MAINLAND_FIRMWARE_SOURCE.md)
 and [session results](../research/sessions/20261018-RA-003-mainland.md) are recorded.
 No firmware URL GET/HEAD, agreement acceptance or external inquiry occurred.
 Next single package: resolve the rights basis for proprietary offline unpacking/

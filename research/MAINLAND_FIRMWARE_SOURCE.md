@@ -25,12 +25,14 @@ Its `returnData.Data.downloadPath` array contains:
 https://support.d-imaging.sony.co.jp/download/NEX/tF4c94033c/BODYDATA.DAT?fm=cn
 ```
 
-That asset was **not requested**, even with HEAD. Use the official landing-page
-workflow for any later approved acquisition; the recorded URL is provenance,
-not a substitute for agreement review. `fm=cn` does not prove a distinct regional
+During the original source review, that asset was **not requested**, even with
+HEAD. The later consented GET and stopped redirect are recorded below. Use the
+official landing-page workflow for approved acquisition; the recorded URL is
+provenance, not a substitute for agreement review. `fm=cn` does not prove a distinct regional
 binary, equality with another market's bytes, or the installed body's build.
 No published firmware digest was observed in the inspected page/selected metadata.
-No payload, payload hash, container inventory or source/binary correspondence exists.
+Current acquisition status is recorded below; a container inventory and
+source/binary correspondence remain unestablished.
 
 ## What permission is needed
 
@@ -46,7 +48,7 @@ The practical distinction is:
 | Activity | Current basis / unresolved point |
 |---|---|
 | Read public documentation and published metadata | Authorized host-side research; completed |
-| Obtain a normal download and record its size/hash | Review and accept applicable download terms deliberately; no acceptance or firmware request occurred here. Hashing alone is not treated as synonymous with disassembly. |
+| Obtain a normal download and record its size/hash | Limited terms acceptance and the initial stopped GET are recorded below. Hashing alone is not treated as synonymous with disassembly. |
 | Unpack/decompress the proprietary container, extract resources or statically disassemble programs | A suitable rights basis is unestablished: an express applicable licence, scope-specific permission from an authorized rights holder, or a documented applicable statutory basis. Owner authorization alone does not resolve third-party rights. |
 | Inspect separately offered OSS source | Apply each component's accompanying licence and notice. The previous two-source approval remains limited to those two archives. |
 
@@ -61,6 +63,73 @@ separately identifies GPLv2/other licensed components and source availability.
 Those component rights do not automatically extend to proprietary applications,
 language resources or the complete update container. It also describes
 product-local licence files; **no camera connection was made to retrieve them**.
+
+## China inspection scope — 2026-10-18
+
+The owner reports **China** as the inspection country and confirms **personal,
+noncommercial use**. These facts do not accept the download agreement or grant
+analysis rights. The earlier **No / unknown** rights answer remains recorded.
+
+The [Ministry of Justice consolidated Software Protection Regulations](https://xzfg.moj.gov.cn/front/law/detail?LawID=581)
+show the 2013 second revision; the [CAC publication](https://www.cac.gov.cn/2013-02/08/c_12648744.htm)
+corroborates that text. Relevant provisions, **source-report**:
+
+- Article 6 excludes underlying ideas, processes, methods and mathematical
+  concepts from software copyright protection.
+- Article 16 gives lawful-copy owners specified loading, protective-backup and
+  necessary-modification rights, with restrictions on providing modified copies.
+- Article 17 permits specified software use for studying its underlying design
+  ideas/principles without copyright-holder permission or payment.
+- Article 24 separately addresses deliberate circumvention of protective measures.
+
+**Static-inference:** Article 17 is a concrete candidate basis, not a settled
+authorization for this research. The text does not expressly name container
+unpacking/static disassembly or resolve Sony contract enforceability. Match the
+proposed acts, lawful acquisition, applicable terms and any protection issue to
+the claimed basis before that analysis. Personal/noncommercial use is a Sony
+download condition; it is not an express condition stated in Article 17.
+Neither blanket reverse-engineering permission nor invalidity of Sony's terms
+is established. Rights-holder permission remains one possible route.
+
+## Prepared ordinary-acquisition decision
+
+The previous sequencing placed inspection-rights resolution before acquisition.
+This is refined: an ordinary download plus size/SHA-256 inventory can be decided
+separately from unpacking/disassembly. A hash supplies a byte fingerprint and
+transfer/storage consistency; without an independent reference it does not
+establish authenticity, analysis permission, exact-body compatibility or recovery.
+
+The concrete proposed acquisition is the official mainland **BODYDATA.DAT**
+reference above, declared **1,024,017,848 bytes**, after deliberate acceptance of
+the [mainland download agreement](https://service.sony.com.cn/download/firm/00003046.html).
+A prepared local helper would make one GET, save only into a new ignored private
+folder, enforce the declared size and compare transfer/stored SHA-256 hashes.
+It requires a matching explicit consent record, journals before requesting,
+records and stops on redirects, retains partial/failure evidence and never
+retries automatically. No unpacking, disassembly, execution, camera connection,
+driver change, installation or upload is included. The old zero-byte failed
+attempt remains evidence and will not be rerun.
+
+The owner subsequently **approved this limited download under the agreement**.
+The one GET returned HTTP 302 to:
+
+```text
+https://di.update.sony.net/NEX/tF4c94033c/BODYDATA.DAT
+```
+
+The helper stopped as scoped: exit 1, zero firmware bytes, no payload file,
+`needs_review`, no retry. The empty partial SHA-256 in the private failure
+journal is not a firmware identity. The original source/terms review above
+describes the earlier pre-request snapshot.
+
+The recorded redirect supplies **source-report** provenance for a new exact-
+destination proposal, not evidence of payload contents. A separate helper is
+prepared for **one GET of that exact destination into a fresh private folder**,
+with the same size/hash, no-further-redirect, no-retry and no-analysis limits.
+That destination has not been requested. The previous consent covered the
+original URL and stopping at redirects; it is not reused as destination consent.
+Acquisition approval does not establish proprietary analysis rights or resolve
+any accompanying terms.
 
 ## Prepared inquiry, not sent
 
@@ -83,10 +152,11 @@ modification, redistribution or device operation remains separately scoped.
 
 **RA-003: resolve and record the rights basis for mainland 2.00 offline
 unpacking/static analysis**, using a scope-specific rights-holder response or
-another documented applicable basis. Then plan acquisition under the applicable
-terms, preserve immutable bytes/size/hash, and establish source/build
-correspondence before choosing an extractor. No additional download is requested
-by this report.
+another documented applicable basis, including the China candidate above. The
+limited original acquisition was approved and stopped on the recorded redirect.
+The separate exact-destination decision is pending. After approved acquisition,
+retain immutable bytes/size/hash and establish source/build correspondence before
+choosing an extractor. Unpacking/static analysis still needs its scoped basis.
 
 English resource presence and restriction policy remain unknown; the owner report
 of English absence is retained. The prior BusyBox FTP source findings remain

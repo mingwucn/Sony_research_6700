@@ -67,17 +67,22 @@ states remain required; synthetic guards are preparation only. See
   Supplied FTPGET/FTPPUT flags and spec file lists are leads; final binaries,
   body applicability, native invocation and FTPS remain unverified.
 
-- Latest RA-003: [official mainland source and actual download terms](../research/MAINLAND_FIRMWARE_SOURCE.md)
+- Earlier mainland source/terms snapshot: [official mainland source and actual download terms](../research/MAINLAND_FIRMWARE_SOURCE.md)
   identified; published asset reference is provenance only. No firmware request,
   agreement acceptance or permission inquiry. Component rights, owner consent
   and the basis for proprietary unpacking/disassembly remain distinct.
+
+- Current RA-003: [China scope and limited acquisition consent/results](../research/sessions/20261018-RA-003-cn-scope.md).
+  Both public and private notes retain the owner's China/personal/noncommercial
+  facts, bounded acquisition result and pending activity-specific analysis basis.
+  These do not establish English resources or a native FTP implementation.
 
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
 packages and validation families. Next single host package: **RA-003, resolve
 the rights basis for mainland 2.00 offline unpacking/static analysis**, using
 the prepared inquiry or another documented applicable licence/statutory basis.
-Legitimate input acquisition and source/binary correspondence follow only after
-reviewing the applicable scope and download terms. Exact binary identity remains
+Ordinary acquisition consent/results are now recorded separately; source/binary
+correspondence and the exact permitted analysis steps remain unresolved. Exact binary identity remains
 unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource
 feasibility; a full-list transcription is no longer the immediate blocker.
