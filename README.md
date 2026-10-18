@@ -34,8 +34,10 @@ rationale and a synthetic decoded-header validator. The later
 [crypto/provenance audit](research/FDAT_CRYPTO_PROVENANCE.md) pins private inputs and records eight
 isolated AES primitive tests. The later
 [bounded header trial](research/FDAT_HEADER_TRIAL.md) passed one predeclared real
-hypothesis after 45 synthetic cases; full-stream length, component bounds and
-feature mapping remain unverified. China
+hypothesis. The latest [stream validation](research/FDAT_STREAM_VALIDATION.md) checked
+all 1,000,017 physical blocks, measured 1,020,017,152 logical bytes and checked declared
+extent bounds/non-overlap after 45 new synthetic passes. Component formats and
+English/FTP mapping remain unverified; no decoded component files were retained. China
 Copyright Law Article 50(5) expressly addresses reverse-engineering research;
 its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains

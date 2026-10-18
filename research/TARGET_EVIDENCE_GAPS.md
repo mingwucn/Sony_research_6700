@@ -81,14 +81,14 @@ enum is selected. Existing reference reports remain source-report. Every physica
 CLT/ENT/FTT requirement in VALIDATION.md is NOT RUN. Host queue tests cannot prove
 native FTP, a camera capture-completion signal or a host-assisted camera leg.
 
-## Smallest next work package
+## Earlier next work package
 
 The [official mainland 2.00 offer](MAINLAND_FIRMWARE_SOURCE.md) was acquired
 privately with recorded consent and size/SHA-256 verification. Exact-body/build
 correspondence remains unresolved. The [decoding plan](FDAT_DECODING_PLAN.md)
 documents a narrow statutory research rationale and unresolved contract
 interaction; only the new decoded-header validator has synthetic test evidence.
-No real decoding or component copying occurred. Next single host package:
+No real decoding or component copying occurred. Historical next single host package:
 **RA-003: audit and pin the minimal crypto dependency and public-constant
 provenance for a bounded private header-decoding trial**.
 EN-101 now follows restricted-language/resource feasibility on the owner report
@@ -106,7 +106,7 @@ source are pinned; eight authored primitive tests passed. No actual firmware
 read/decoding or camera action occurred. Constants origin and accepted-contract
 interaction remain unresolved, alongside exact-body correspondence/recovery.
 One predeclared experimental hypothesis is not a target support profile.
-Next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.
+Historical next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.
 
 
 ## Later bounded-header continuation (2026-10-18)
@@ -119,4 +119,19 @@ decoded length, component bounds, resources/backend or body correspondence is pr
 Earlier opaque-prefix/no-decoding observations remain historical; no child files,
 upstream execution, camera action or feature/write gate occurred here. Contract
 interaction, constants derivation and verified rollback/recovery remain unresolved.
-Next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+Historical next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+
+## Later full-stream continuation (2026-10-18)
+
+Earlier next-package recommendations are historical. The
+[stream result](FDAT_STREAM_VALIDATION.md) and
+[session commands/results](sessions/20261018-RA-003-stream-validation.md)
+supersede them. **Offline-tested:** 45 new synthetic cases passed, exit 0,
+0.415 seconds. One real pipeline used two source-hashed passes, exit 0,
+28.836450 seconds: all 1,000,017 physical blocks were checked and
+1,020,017,152 logical bytes measured. Declared bounds/non-overlap passed against
+that measured size. No decoded-stream/component files were retained; component
+formats, authentication, body correspondence, features and device-write gates
+remain unverified. Camera commands: **none**. English and native FTP stay first.
+
+Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.

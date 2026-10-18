@@ -78,10 +78,25 @@ media/network lifecycle remain unmapped. No requested function, rollback system
 or device-write gate passed. FL2/FL3 remains deferred; calibrated custom looks
 follow separately; a bridge remains optional and **HOST-ASSISTED**.
 
-Next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+Historical next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
 Document necessity/acts/retention before the read. Keep the same single hypothesis;
 validate every envelope and terminal state before accepting a measured length/hash.
 Only then can the existing extent validator check declared bounds/non-overlap.
 No child files, decompression, disassembly or camera contact belong in that package.
 See the [session report](sessions/20261018-RA-003-header-trial.md) for exact commands,
 interpreter, failures and changed files.
+
+## Later full-stream continuation (2026-10-18)
+
+Earlier next-package recommendations are historical. The
+[stream result](FDAT_STREAM_VALIDATION.md) and
+[session commands/results](sessions/20261018-RA-003-stream-validation.md)
+supersede them. **Offline-tested:** 45 new synthetic cases passed, exit 0,
+0.415 seconds. One real pipeline used two source-hashed passes, exit 0,
+28.836450 seconds: all 1,000,017 physical blocks were checked and
+1,020,017,152 logical bytes measured. Declared bounds/non-overlap passed against
+that measured size. No decoded-stream/component files were retained; component
+formats, authentication, body correspondence, features and device-write gates
+remain unverified. Camera commands: **none**. English and native FTP stay first.
+
+Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.

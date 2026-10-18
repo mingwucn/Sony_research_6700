@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "one_bounded_fdat_header_hypothesis_passed_full_stream_measurement_and_feature_mapping_pending",
+  "phase": "bounded_fdat_stream_and_declared_extents_checked_component_formats_and_feature_mapping_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -68,19 +68,20 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_one_bounded_real_fdat_header_hypothesis_passed_no_full_stream_or_component_inventory",
+      "status": "partial_measured_fdat_stream_and_declared_extents_checked_component_formats_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 authored private bounded header study; 45 synthetic cases and one real first-block trial; no component files, upstream execution or camera access",
+      "scope": "R0 private bounded-memory full-stream format validation and measured-size extent checks; no component files, upstream execution or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261018-RA-003-header-trial.md",
+      "session_report": "research/sessions/20261018-RA-003-stream-validation.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
       "decoding_design": "research/FDAT_DECODING_PLAN.md",
       "crypto_provenance": "research/FDAT_CRYPTO_PROVENANCE.md",
-      "header_trial": "research/FDAT_HEADER_TRIAL.md"
+      "header_trial": "research/FDAT_HEADER_TRIAL.md",
+      "stream_validation": "research/FDAT_STREAM_VALIDATION.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -151,12 +152,12 @@
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
     "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
     "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
-    "Official package identity/framing recorded, prefix remains opaque. Minimal AES dependency and public constants pinned/reviewed with eight isolated primitive tests passed. One predeclared CXD90057_k8 experimental header trial needs authored implementation and independent synthetic qualification; no accepted exact-package key/profile, real decoding or component map. Constants derivation, accepted-contract interaction, full later component-copy scope and exact-body correspondence remain unresolved.",
+    "Official package and complete experimental FDAT stream have matching recorded identities; all physical envelopes/terminal state and measured-size declared extents passed. Selected component formats, English resources/restrictions and FTP backend remain unmapped. Constants derivation, accepted-contract interaction, later component-copy scope and exact-body correspondence remain unresolved; no accepted target profile.",
     "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them.",
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files",
+  "next_work_package": "RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -192,7 +193,7 @@
       "priority": "primary",
       "status": "owner_reports_english_absent_mainland_version_feasibility_unverified",
       "camera_validated": false,
-      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now records official package size/hash, five UFU spans and one bounded real header hypothesis passing envelope/CRC predicates after 45 synthetic cases. No full-stream decoded length, component bounds, resources/backend or exact-body correspondence is established.",
+      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now measures 1,020,017,152 logical bytes after checking all 1,000,017 physical blocks and declared extent bounds/non-overlap; no component formats, English resources, FTP backend or exact-body correspondence is established.",
       "blockers": [
         "Lawfully inspectable matching exact-build artifacts and regional applicability; exact SKU/internal product identity and binary hashes unverified",
         "Distinguish present-but-restricted English resources from missing/incomplete resources; prove narrow language policy and all consumers before any candidate"
@@ -216,7 +217,9 @@
         "research/FDAT_CRYPTO_PROVENANCE.md",
         "research/sessions/20261018-RA-003-crypto-provenance.md",
         "research/FDAT_HEADER_TRIAL.md",
-        "research/sessions/20261018-RA-003-header-trial.md"
+        "research/sessions/20261018-RA-003-header-trial.md",
+        "research/FDAT_STREAM_VALIDATION.md",
+        "research/sessions/20261018-RA-003-stream-validation.md"
       ]
     },
     "native_wifi_ftp": {
@@ -224,7 +227,7 @@
       "priority": "primary",
       "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified",
       "camera_validated": false,
-      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now records official package size/hash, five UFU spans and one bounded real header hypothesis passing envelope/CRC predicates after 45 synthetic cases. No full-stream decoded length, component bounds, resources/backend or exact-body correspondence is established.",
+      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now measures 1,020,017,152 logical bytes after checking all 1,000,017 physical blocks and declared extent bounds/non-overlap; no component formats, English resources, FTP backend or exact-body correspondence is established.",
       "blockers": [
         "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
@@ -248,7 +251,9 @@
         "research/FDAT_CRYPTO_PROVENANCE.md",
         "research/sessions/20261018-RA-003-crypto-provenance.md",
         "research/FDAT_HEADER_TRIAL.md",
-        "research/sessions/20261018-RA-003-header-trial.md"
+        "research/sessions/20261018-RA-003-header-trial.md",
+        "research/FDAT_STREAM_VALIDATION.md",
+        "research/sessions/20261018-RA-003-stream-validation.md"
       ]
     },
     "fl2_fl3_still_looks": {
@@ -1421,10 +1426,11 @@
       "component_contents_written_or_output": false,
       "rights_holder_permission_only_possible_basis": false,
       "blanket_component_copying_or_distribution_clearance": false,
-      "remaining": "Necessary full-stream-study scope, authored streaming implementation/synthetic qualification, measured decoded length/hash and every envelope/terminal check; later component copies separately assessed",
-      "operational_scope": "Pinned one-block/header experiment only",
-      "performed_scope": "One predeclared hypothesis; 1024 physical plaintext bytes in private memory; 512-byte header checks; no raw output or child files",
-      "header_trial_report": "research/FDAT_HEADER_TRIAL.md"
+      "remaining": "Selected-component necessity/terms/retention/lineage and bounded format identification; any component copies separately assessed",
+      "operational_scope": "One pinned hypothesis, preliminary and actual-decoding-pass parent hashes, bounded-memory full-stream format validation",
+      "performed_scope": "All 1000017 physical blocks; logical length/SHA and measured-size declared extent checks; no raw output or component files",
+      "header_trial_report": "research/FDAT_HEADER_TRIAL.md",
+      "stream_validation_report": "research/FDAT_STREAM_VALIDATION.md"
     }
   },
   "latest_fdat_probe_tests": {
@@ -1556,10 +1562,11 @@
     "cryptographic_key_or_constant_files_acquired": true,
     "reuse_licence": "MIT text verified for reviewed code only; no proprietary firmware grant",
     "direct_use_accepted": false,
-    "reason": "Missing bounds/overlap/model validation and malformed-input handling; actual prefix remains opaque",
+    "reason": "Direct upstream use remains rejected for bounds/overlap/model and malformed-input gaps; authored private pipeline later measured the stream, not component formats or exact-body correspondence",
     "constants_provenance_report": "research/FDAT_CRYPTO_PROVENANCE.md",
     "author_claim_comment": "https://github.com/ma1co/fwtool.py/pull/52#issuecomment-5625960817",
-    "authored_header_trial_report": "research/FDAT_HEADER_TRIAL.md"
+    "authored_header_trial_report": "research/FDAT_HEADER_TRIAL.md",
+    "authored_stream_validation_report": "research/FDAT_STREAM_VALIDATION.md"
   },
   "latest_fdat_header_tests": {
     "evidence_class": "offline-tested",
@@ -1600,7 +1607,7 @@
     "real_decoding_performed": true,
     "dependency_and_public_constant_provenance_review_complete": true,
     "decoded_header_validator": "tools/fdat_header.py",
-    "validator_input_scope": "Synthetic decoded headers only in this session; pure API, no files or crypto",
+    "validator_input_scope": "Synthetic headers and later real decoded header; actual stream validator supplied the measured logical length, with its pure API result nested",
     "address_type": "decoded_fdat_file_offset",
     "header_bytes": 512,
     "header_crc_span": [
@@ -1616,10 +1623,14 @@
     "crypto_provenance_report": "research/FDAT_CRYPTO_PROVENANCE.md",
     "review_scope": "Pinned artifact, licence/public history and AST shapes reviewed; underlying constants derivation remains unverified",
     "predeclared_trial_hypothesis": "CXD90057_k8, experimental only; no accepted exact-package profile",
-    "operational_scope": "Only the pinned first-block/header experiment; full-stream decoder not implemented or qualified",
-    "real_decoding_scope": "1024 physical plaintext bytes in private memory, 512 logical header bytes checked; no plaintext saved",
+    "operational_scope": "Pinned single-hypothesis bounded-memory full-stream validation; no component extraction/decompression/disassembly",
+    "real_decoding_scope": "All physical blocks streamed through bounded memory; only 512 header bytes accumulated, digests/counters/declared spans retained",
     "header_trial_report": "research/FDAT_HEADER_TRIAL.md",
-    "header_trial_session_report": "research/sessions/20261018-RA-003-header-trial.md"
+    "header_trial_session_report": "research/sessions/20261018-RA-003-header-trial.md",
+    "stream_validation_report": "research/FDAT_STREAM_VALIDATION.md",
+    "stream_validation_session_report": "research/sessions/20261018-RA-003-stream-validation.md",
+    "measured_decoded_size_available": true,
+    "validator_size_basis": "Measured by complete envelope/terminal validation and same-pass parent hashing"
   },
   "fdat_decoding_design_history": [
     {
@@ -1682,6 +1693,42 @@
       "crypto_provenance_report": "research/FDAT_CRYPTO_PROVENANCE.md",
       "review_scope": "Pinned artifact, licence/public history and AST shapes reviewed; underlying constants derivation remains unverified",
       "predeclared_trial_hypothesis": "CXD90057_k8, experimental only; no accepted exact-package profile"
+    },
+    {
+      "report": "research/FDAT_DECODING_PLAN.md",
+      "session_report": "research/sessions/20261018-RA-003-decoding-design.md",
+      "evidence_class": [
+        "source-report",
+        "static-inference",
+        "offline-tested"
+      ],
+      "source_revision": "3955d7890fc38daf942bb52827599bfe35de4a14",
+      "statutory_research_rationale_documented": true,
+      "accepted_contract_interaction_resolved": false,
+      "bounded_decoding_operationally_ready": true,
+      "real_decoding_performed": true,
+      "dependency_and_public_constant_provenance_review_complete": true,
+      "decoded_header_validator": "tools/fdat_header.py",
+      "validator_input_scope": "Synthetic decoded headers only in this session; pure API, no files or crypto",
+      "address_type": "decoded_fdat_file_offset",
+      "header_bytes": 512,
+      "header_crc_span": [
+        12,
+        512
+      ],
+      "full_decoded_size_is_caller_claim": true,
+      "strict_subset_is_not_target_support": true,
+      "selected_cipher_or_key_profile": null,
+      "cryptographic_key_or_constant_files_acquired": true,
+      "component_copying_performed": false,
+      "source_binary_or_body_correspondence_established": false,
+      "crypto_provenance_report": "research/FDAT_CRYPTO_PROVENANCE.md",
+      "review_scope": "Pinned artifact, licence/public history and AST shapes reviewed; underlying constants derivation remains unverified",
+      "predeclared_trial_hypothesis": "CXD90057_k8, experimental only; no accepted exact-package profile",
+      "operational_scope": "Only the pinned first-block/header experiment; full-stream decoder not implemented or qualified",
+      "real_decoding_scope": "1024 physical plaintext bytes in private memory, 512 logical header bytes checked; no plaintext saved",
+      "header_trial_report": "research/FDAT_HEADER_TRIAL.md",
+      "header_trial_session_report": "research/sessions/20261018-RA-003-header-trial.md"
     }
   ],
   "fdat_extractor_audit_history": [
@@ -1704,6 +1751,29 @@
       "reuse_licence": "MIT text verified for reviewed code only; no proprietary firmware grant",
       "direct_use_accepted": false,
       "reason": "Missing bounds/overlap/model validation and malformed-input handling; actual prefix remains opaque"
+    },
+    {
+      "repository": "DavidBuchanan314/fwtool.py",
+      "commit": "3955d7890fc38daf942bb52827599bfe35de4a14",
+      "report": "research/FDAT_EXTRACTOR_AUDIT.md",
+      "evidence_class": [
+        "source-report",
+        "static-inference"
+      ],
+      "reviewed_source_files": 8,
+      "source_blobs_verified_against_fixed_tree": true,
+      "source_only_capture": true,
+      "author_reports_ilce6700": true,
+      "exact_200_mainland_package_support_established": false,
+      "runtime_adopted": false,
+      "execution_performed": false,
+      "cryptographic_key_or_constant_files_acquired": true,
+      "reuse_licence": "MIT text verified for reviewed code only; no proprietary firmware grant",
+      "direct_use_accepted": false,
+      "reason": "Missing bounds/overlap/model validation and malformed-input handling; actual prefix remains opaque",
+      "constants_provenance_report": "research/FDAT_CRYPTO_PROVENANCE.md",
+      "author_claim_comment": "https://github.com/ma1co/fwtool.py/pull/52#issuecomment-5625960817",
+      "authored_header_trial_report": "research/FDAT_HEADER_TRIAL.md"
     }
   ],
   "fdat_crypto_provenance": {
@@ -1734,9 +1804,11 @@
     "exact_package_profile_accepted": false,
     "trial_implementation_and_synthetic_qualification_complete": true,
     "camera_commands": [],
-    "firmware_read_or_decoded_scope": "Later bounded header trial only; original eight-test provenance session used public synthetic vectors only",
+    "firmware_read_or_decoded_scope": "Later bounded header and full-stream format trials; original eight-test provenance session used public synthetic vectors only",
     "later_header_trial_report": "research/FDAT_HEADER_TRIAL.md",
-    "later_header_trial_session_report": "research/sessions/20261018-RA-003-header-trial.md"
+    "later_header_trial_session_report": "research/sessions/20261018-RA-003-header-trial.md",
+    "later_stream_validation_report": "research/FDAT_STREAM_VALIDATION.md",
+    "later_stream_validation_session_report": "research/sessions/20261018-RA-003-stream-validation.md"
   },
   "fdat_crypto_provenance_history": [
     {
@@ -1767,6 +1839,38 @@
       "exact_package_profile_accepted": false,
       "trial_implementation_and_synthetic_qualification_complete": false,
       "camera_commands": []
+    },
+    {
+      "report": "research/FDAT_CRYPTO_PROVENANCE.md",
+      "session_report": "research/sessions/20261018-RA-003-crypto-provenance.md",
+      "evidence_class": [
+        "source-report",
+        "static-inference",
+        "offline-tested"
+      ],
+      "dependency_name": "pycryptodomex",
+      "dependency_version": "3.24.1",
+      "wheel_sha256": "82eb0dd8a95be97f03527b108ee49f9b86a7c534fa47fa7a510be3eab8ea9acd",
+      "constants_source_sha256": "f9ff02a3889b587cd5bad5f4362fb73fee2f8f3591fc3ed6003eb8ac92d0622a",
+      "wheel_record_hashes_verified": 351,
+      "constants_source_ast_only": true,
+      "constants_origin_independently_verified": false,
+      "operational_values_published": false,
+      "runtime_test_total": 8,
+      "runtime_test_passed": 8,
+      "runtime_test_exit_code": 0,
+      "runtime_test_seconds": 0.093,
+      "crypto_native_code_executed": true,
+      "fwtool_executed": false,
+      "firmware_read_or_decoded": true,
+      "accepted_contract_interaction_resolved": false,
+      "predeclared_trial_hypothesis": "CXD90057_k8",
+      "exact_package_profile_accepted": false,
+      "trial_implementation_and_synthetic_qualification_complete": true,
+      "camera_commands": [],
+      "firmware_read_or_decoded_scope": "Later bounded header trial only; original eight-test provenance session used public synthetic vectors only",
+      "later_header_trial_report": "research/FDAT_HEADER_TRIAL.md",
+      "later_header_trial_session_report": "research/sessions/20261018-RA-003-header-trial.md"
     }
   ],
   "bounded_fdat_header_trial": {
@@ -1834,6 +1938,94 @@
       "fdat_trial.py": "57e8b894e9ec1293b9780d1dfa0a64fde1c7a634b03b1dca4251b2427e55fa7c",
       "test_trial.py": "4549d1b5adbc4122eead842c5dd663a7845d02dafd27967c6ff3d702bbd80ca0",
       "run-real.py": "a26a75bba280e2584c0c76051d0aec373beae156a9ef674756809e37e0bac039"
+    }
+  },
+  "bounded_fdat_stream_validation": {
+    "report": "research/FDAT_STREAM_VALIDATION.md",
+    "session_report": "research/sessions/20261018-RA-003-stream-validation.md",
+    "evidence_class": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "status": "complete_measured_stream_and_declared_extent_checks_passed",
+    "hypothesis": "CXD90057_k8",
+    "pipeline_attempts": 1,
+    "descriptor_passes": 2,
+    "automatic_retry_or_fallback": false,
+    "input_package_bytes": 1024017848,
+    "input_package_sha256": "d3c7db5b9b40c89b11ecf03addf0f6ff1d9b917acf9f55e46360462e86db847c",
+    "preliminary_parent_hash_verified": true,
+    "actual_decoding_pass_parent_hash_verified": true,
+    "source_observable_state_stable": true,
+    "original_readonly_attribute_preserved": true,
+    "physical_blocks_checked": 1000017,
+    "physical_plaintext_bytes_processed": 1024017408,
+    "logical_decoded_bytes_measured": 1020017152,
+    "logical_decoded_sha256": "e48b05235ddba0d8098fa4d71dd88d85ffe4e5ab440581003c6c3b4d5a813373",
+    "zero_payload_blocks": 0,
+    "short_nonterminal_payload_blocks": 0,
+    "final_payload_bytes": 832,
+    "continuous_cbc_state": true,
+    "all_envelope_sums_and_terminal_positions_checked": true,
+    "decoded_header_sha256": "c2e4682189cbc4f2c4c327598b0666801e143cfda72b6dffe0a9f38160091d27",
+    "logical_header_retained_bytes": 512,
+    "per_source_read_limit_bytes": 1048576,
+    "crypto_batch_limit_bytes": 65536,
+    "managed_io_crypto_buffer_budget_bytes": 4194304,
+    "whole_process_memory_capped": false,
+    "declared_extent_address_type": "decoded_fdat_file_offset",
+    "declared_extent_bounds_and_nonoverlap_checked_against_measured_size": true,
+    "declared_firmware_span": {
+      "offset": 1253888,
+      "bytes": 1018763264,
+      "end_offset_exclusive": 1020017152
+    },
+    "declared_filesystem_slots": [
+      {
+        "slot_index": 0,
+        "mode": "U",
+        "offset": 512,
+        "bytes": 1253376,
+        "end_offset_exclusive": 1253888
+      },
+      {
+        "slot_index": 1,
+        "mode": "P",
+        "offset": 512,
+        "bytes": 0,
+        "end_offset_exclusive": 512
+      }
+    ],
+    "declared_count_semantics_verified": false,
+    "decryption_performed": true,
+    "nested_pure_validator_decryption_performed": false,
+    "omitted_tail_bytes": 256,
+    "omitted_tail_interpreted": false,
+    "authentication_verified": false,
+    "signature_verified": false,
+    "component_formats_validated": false,
+    "complete_container_semantics_validated": false,
+    "exact_package_profile_accepted": false,
+    "body_correspondence_verified": false,
+    "component_files_written": false,
+    "decoded_stream_file_written": false,
+    "raw_decoded_output": false,
+    "upstream_execution_performed": false,
+    "firmware_execution_performed": false,
+    "feature_or_device_write_gate_passed": false,
+    "camera_commands": [],
+    "synthetic_total": 45,
+    "synthetic_passed": 45,
+    "synthetic_skipped": 0,
+    "synthetic_exit_code": 0,
+    "synthetic_unittest_seconds": 0.415,
+    "real_exit_code": 0,
+    "real_elapsed_seconds": 28.83645,
+    "private_implementation_sha256": {
+      "fdat_stream.py": "fab63e0ad3d68a737e37baa181dab796b6c41da6caff4b2d4332fce3485c558a",
+      "test_stream.py": "c5fcb6c09bdcb2186b203a5ea941b2df48324b8165444965dda4f0c1fbea57db",
+      "run-real.py": "24966a18f242e3c508d07fec02f9bf0c789c8eeeaaa9fc253116f2a177e0af13"
     }
   }
 }

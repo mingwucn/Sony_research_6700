@@ -1,9 +1,9 @@
 # RA-003 artifact intake and bounded inspection
 
 Status: official mainland 2.00 package acquired; UFU framing inventoried.
-One bounded real FDAT header hypothesis passed envelope/CRC checks.
-Full-stream measurement and component extraction remain unperformed.
-Exact-body correspondence and the full extraction/analysis scope remain unresolved.
+The bounded-memory FDAT stream trial measured logical length/SHA and checked
+declared extents against measured EOF. No component files retained or formats
+identified; exact-body correspondence and later copying/analysis scope remain open.
 Current intake (2026-10-18, **source-report**): the owner reports α6700
 firmware **2.00**, current **简体中文**, **Chinese mainland version**, and
 **English unavailable**. The full list is not supplied; exact SKU and binary
@@ -25,10 +25,14 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [bounded header trial](../research/FDAT_HEADER_TRIAL.md) and
-[commands/results](../research/sessions/20261018-RA-003-header-trial.md): 45 corrected synthetic passes and one real first-block/header result.
-No full-stream decoded length, extent bounds or feature mapping; no child files.
-Next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+Latest continuation: [stream validation](../research/FDAT_STREAM_VALIDATION.md) and
+[commands/results](../research/sessions/20261018-RA-003-stream-validation.md): 45/45 synthetic passes; one real pipeline
+passed all 1,000,017 blocks, measured 1,020,017,152 logical bytes and checked
+declared bounds/non-overlap. No component files, format/body/feature verification.
+Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+
+Earlier continuation: [bounded header trial](../research/FDAT_HEADER_TRIAL.md)
+passed first-block/header predicates only. That session did not measure the stream.
 
 Earlier continuation: [crypto/public-constant provenance](../research/FDAT_CRYPTO_PROVENANCE.md)
 records eight isolated AES passes and pinned private public-source/artifact inputs,
@@ -152,10 +156,11 @@ remain data. No firmware upgrade is needed to inspect a matching package.
 
 ## Remaining acceptance
 
-RA-003 remains incomplete. Official input size/hash and bounded directory metadata
-are recorded; no component contents have been extracted. Full proposed analysis
-scope, component-format/extractor suitability, independent exact-build evidence
-and body applicability remain open. Earlier stopped-download journals are retained
-as history. The bounded prefix remains opaque; the later narrow research rationale
-and synthetic validator do not decode it. Next: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. Synthetic tests and framing coverage establish only
-their documented host behaviour. Camera commands: **none**.
+RA-003 remains incomplete. Official source identity, bounded directory framing,
+complete experimental stream measurement and measured-size declared extent checks
+are recorded. No component contents have been retained or their formats validated.
+Selected-component necessity/terms/lineage, independent exact-build evidence and
+body applicability remain open. Earlier negative/stopped trials stay preserved.
+Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+Host tests and format consistency do not establish authentication, English/FTP,
+recovery or a device-write gate. Camera commands: **none**.

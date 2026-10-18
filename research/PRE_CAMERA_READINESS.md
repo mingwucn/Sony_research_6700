@@ -27,7 +27,7 @@ No prepared or passed host package is promoted into a working camera function.
 |---|---|---|
 | RA-001 | Private intake/host baseline prepared; historical errors preserved; model/version/current-language report added | Remaining body/setup facts unknown |
 | RA-002 | Locked source/provenance/rights audit committed | Component reuse and target applicability are separate unresolved gates |
-| RA-003 | Official mainland package verified; one real bounded header hypothesis passes after 45 synthetic cases; crypto/source provenance recorded | Measured full decoded length/hash and all-block checks, declared extent validation, later component scope/manifest, underlying constants derivation and exact-body correspondence |
+| RA-003 | Official package, bounded header and measured full-stream length/hash; all 1,000,017 envelopes/terminal state and declared bounds/non-overlap checked after 45 new synthetic cases | Selected-component scope/identification/lineage, component formats, underlying constants derivation, accepted-contract interaction and exact-body correspondence |
 | RA-004 | [Observation/access preparation](TARGET_EVIDENCE_GAPS.md) | Identity, separately approved observations and exact-target access proposal |
 | RA-005 | Backup coverage inventory/template prepared | Approved route, independent reads/copies and actual protected-state coverage |
 | RA-006 | Architecture/recovery evidence gaps explicit | Target segments/ABI/storage/settings/retained-state mappings and recovery envelope |
@@ -85,7 +85,7 @@ and private raw logs. Owner-Windows actual-symlink creation remains unavailable;
 hosted Windows and Ubuntu passed that actual test. Recorded CI images and Python
 versions do not qualify arbitrary filesystems, private inputs or camera behavior.
 
-## Remaining useful work and next target package
+## Earlier remaining work and target package
 
 The [completion audit](PRE_CAMERA_AUDIT.md) reconciles all package, validation and
 gate requirements. The constrained loopback peer, durable synthetic journal,
@@ -106,7 +106,7 @@ earlier zero-byte stopped acquisition and separate Sony OSS list. The
 [latest decoding plan](FDAT_DECODING_PLAN.md) documents a narrow statutory
 research rationale, the unresolved interaction with accepted contract terms,
 and a synthetic-only decoded-header validator. It records no real decoding.
-Next single substantive host package: **RA-003: audit and pin the minimal crypto
+Historical next single substantive host package: **RA-003: audit and pin the minimal crypto
 dependency and public-constant provenance for a bounded private header-decoding
 trial**. The [official mainland offer/terms](MAINLAND_FIRMWARE_SOURCE.md) and
 successful private acquisition are recorded; source/binary and exact-body
@@ -133,7 +133,7 @@ source are pinned; eight authored primitive tests passed. No actual firmware
 read/decoding or camera action occurred. Constants origin and accepted-contract
 interaction remain unresolved, alongside exact-body correspondence/recovery.
 One predeclared experimental hypothesis is not a target support profile.
-Next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.
+Historical next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.
 
 
 ## Later bounded-header continuation (2026-10-18)
@@ -146,4 +146,19 @@ decoded length, component bounds, resources/backend or body correspondence is pr
 Earlier opaque-prefix/no-decoding observations remain historical; no child files,
 upstream execution, camera action or feature/write gate occurred here. Contract
 interaction, constants derivation and verified rollback/recovery remain unresolved.
-Next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+Historical next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+
+## Later full-stream continuation (2026-10-18)
+
+Earlier next-package recommendations are historical. The
+[stream result](FDAT_STREAM_VALIDATION.md) and
+[session commands/results](sessions/20261018-RA-003-stream-validation.md)
+supersede them. **Offline-tested:** 45 new synthetic cases passed, exit 0,
+0.415 seconds. One real pipeline used two source-hashed passes, exit 0,
+28.836450 seconds: all 1,000,017 physical blocks were checked and
+1,020,017,152 logical bytes measured. Declared bounds/non-overlap passed against
+that measured size. No decoded-stream/component files were retained; component
+formats, authentication, body correspondence, features and device-write gates
+remain unverified. Camera commands: **none**. English and native FTP stay first.
+
+Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.

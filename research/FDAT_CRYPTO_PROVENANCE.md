@@ -131,7 +131,7 @@ must stay **unverified**; do not feed a ciphertext-derived estimate to the exten
 validator and call bounds verified. Success authenticates neither the candidate,
 container nor body. A negative result establishes no English/FTP absence.
 
-Next single package: **RA-003: implement, synthetically qualify and run one
+Historical next single package: **RA-003: implement, synthetically qualify and run one
 bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**.
 No trial was run here. Exact-body/build/resource correspondence and verified
 rollback/recovery remain absent; no feature or device-write gate passed.
@@ -147,4 +147,19 @@ decoded length, component bounds, resources/backend or body correspondence is pr
 Earlier opaque-prefix/no-decoding observations remain historical; no child files,
 upstream execution, camera action or feature/write gate occurred here. Contract
 interaction, constants derivation and verified rollback/recovery remain unresolved.
-Next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+Historical next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+
+## Later full-stream continuation (2026-10-18)
+
+Earlier next-package recommendations are historical. The
+[stream result](FDAT_STREAM_VALIDATION.md) and
+[session commands/results](sessions/20261018-RA-003-stream-validation.md)
+supersede them. **Offline-tested:** 45 new synthetic cases passed, exit 0,
+0.415 seconds. One real pipeline used two source-hashed passes, exit 0,
+28.836450 seconds: all 1,000,017 physical blocks were checked and
+1,020,017,152 logical bytes measured. Declared bounds/non-overlap passed against
+that measured size. No decoded-stream/component files were retained; component
+formats, authentication, body correspondence, features and device-write gates
+remain unverified. Camera commands: **none**. English and native FTP stay first.
+
+Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.

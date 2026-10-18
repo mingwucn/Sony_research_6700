@@ -32,7 +32,7 @@ accepted download agreement and successful private size/hash-verified acquisitio
 The latest [decoding plan](FDAT_DECODING_PLAN.md) documents a narrow statutory
 research rationale, unresolved contract interaction and a synthetic-only
 decoded-header validator; no real decoding or component copying occurred.
-Next single host package: **RA-003: audit and pin the minimal crypto dependency
+Historical next single host package: **RA-003: audit and pin the minimal crypto dependency
 and public-constant provenance for a bounded private header-decoding trial**.
 Earlier exhaustion, missing-byte and next-step statements below describe the
 preceding snapshot. Exact-body correspondence, recovery and feature acceptance
@@ -80,7 +80,7 @@ tests does not establish independent camera reproduction, recovery or a feature.
 |---|---|---|
 | RA-001 | Host/intake/session baseline; historical test failure and diagnosis retained | Owner body/setup facts remain Unknown; later host repairs do not rewrite the original result |
 | RA-002 | Locked reference trees, entry-point/side-effect and component-rights audit | Exact-target applicability, native source/binary equivalence and rights for any future reuse remain separate |
-| RA-003 | Inventory, bounded header probe, private lineage template, extractor text audit and official-source refresh | Observed installed firmware, legitimate matching input, applicable reviewed extraction and child manifests; a header match is not extraction |
+| RA-003 | Official package and measured full-stream length/hash; all envelopes/terminal state and declared bounds/non-overlap checked after 45 new synthetic cases | Exact-body/build correspondence, selected-component scope/identification/lineage and component formats remain unproved |
 | RA-004 | Existing R0 normal-UI observation/access dossier and device-facts template | Actual identity/language observations; separately approved USB scope if needed; reviewed exact-target acquisition proposal before service access |
 | RA-005 | Backup coverage gaps and blank catalogue | Approved acquisition route, actual objects/metadata, independent reads where suitable, two verified copies on separate storage where possible, and protected-state coverage |
 | RA-006 | Explicit architecture/storage/settings/recovery questions | Exact AP/CP ABI and segments, file/VA/runtime mapping, save/load semantics, protected objects and a reachable recovery envelope |
@@ -168,7 +168,7 @@ by this audit. Unknown ports/apps/readiness do not justify probing them.
 Backups, an executor, another lab or a CI result add no new gate before the
 ordinary separately approved UI observation.
 
-## Next single substantive package
+## Historical next single substantive package
 
 **RA-003 exact-build intake**: reconcile observed installed firmware with a
 legitimate matching package, record source provenance/unchanged hashes privately,
@@ -201,7 +201,7 @@ source are pinned; eight authored primitive tests passed. No actual firmware
 read/decoding or camera action occurred. Constants origin and accepted-contract
 interaction remain unresolved, alongside exact-body correspondence/recovery.
 One predeclared experimental hypothesis is not a target support profile.
-Next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.
+Historical next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.
 
 
 ## Later bounded-header continuation (2026-10-18)
@@ -214,4 +214,19 @@ decoded length, component bounds, resources/backend or body correspondence is pr
 Earlier opaque-prefix/no-decoding observations remain historical; no child files,
 upstream execution, camera action or feature/write gate occurred here. Contract
 interaction, constants derivation and verified rollback/recovery remain unresolved.
-Next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+Historical next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+
+## Later full-stream continuation (2026-10-18)
+
+Earlier next-package recommendations are historical. The
+[stream result](FDAT_STREAM_VALIDATION.md) and
+[session commands/results](sessions/20261018-RA-003-stream-validation.md)
+supersede them. **Offline-tested:** 45 new synthetic cases passed, exit 0,
+0.415 seconds. One real pipeline used two source-hashed passes, exit 0,
+28.836450 seconds: all 1,000,017 physical blocks were checked and
+1,020,017,152 logical bytes measured. Declared bounds/non-overlap passed against
+that measured size. No decoded-stream/component files were retained; component
+formats, authentication, body correspondence, features and device-write gates
+remain unverified. Camera commands: **none**. English and native FTP stay first.
+
+Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
