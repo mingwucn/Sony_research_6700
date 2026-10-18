@@ -83,8 +83,10 @@ native FTP, a camera capture-completion signal or a host-assisted camera leg.
 
 ## Smallest next work package
 
-RA-003 official-package provenance/intake for owner-reported 2.00 is the next host
-package; regional applicability and exact-build verification remain unresolved.
+The [official mainland 2.00 offer](MAINLAND_FIRMWARE_SOURCE.md) is now identified.
+Next single host package: RA-003 rights-basis resolution for proprietary offline
+unpacking/static analysis, using the prepared inquiry or another documented
+applicable basis. Exact-body/build verification and acquisition remain unresolved.
 EN-101 now follows restricted-language/resource feasibility on the owner report
 of English absence; matching lawfully inspectable artifacts remain needed.
 See [latest intake](sessions/20261018-owner-mainland-english.md). This dossier

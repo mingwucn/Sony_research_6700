@@ -67,11 +67,18 @@ states remain required; synthetic guards are preparation only. See
   Supplied FTPGET/FTPPUT flags and spec file lists are leads; final binaries,
   body applicability, native invocation and FTPS remain unverified.
 
+- Latest RA-003: [official mainland source and actual download terms](../research/MAINLAND_FIRMWARE_SOURCE.md)
+  identified; published asset reference is provenance only. No firmware request,
+  agreement acceptance or permission inquiry. Component rights, owner consent
+  and the basis for proprietary unpacking/disassembly remain distinct.
+
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003,
-rights-cleared exact-2.00 binary intake and source/binary correspondence**,
-blocked on suitable proprietary firmware inspection rights and legitimate
-applicable input bytes. Exact binary identity remains unresolved. EN-101 uses
+packages and validation families. Next single host package: **RA-003, resolve
+the rights basis for mainland 2.00 offline unpacking/static analysis**, using
+the prepared inquiry or another documented applicable licence/statutory basis.
+Legitimate input acquisition and source/binary correspondence follow only after
+reviewing the applicable scope and download terms. Exact binary identity remains
+unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource
 feasibility; a full-list transcription is no longer the immediate blocker.
 See [latest intake](../research/sessions/20261018-owner-mainland-english.md).

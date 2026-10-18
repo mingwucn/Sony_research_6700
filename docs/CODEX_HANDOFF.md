@@ -43,7 +43,15 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003 [provenance/rights review](../research/OFFICIAL_PACKAGE_INTAKE.md):
+Latest RA-003 continuation: [official mainland 2.00 source/terms](../research/MAINLAND_FIRMWARE_SOURCE.md)
+and [session results](../research/sessions/20261018-RA-003-mainland.md) are recorded.
+No firmware URL GET/HEAD, agreement acceptance or external inquiry occurred.
+Next single package: resolve the rights basis for proprietary offline unpacking/
+static analysis using the prepared inquiry or another documented applicable
+licence/statutory basis. Owner task authorization does not substitute for
+third-party rights. Ordinary hashing is not equated with disassembly.
+
+Earlier RA-003 [provenance/rights review](../research/OFFICIAL_PACKAGE_INTAKE.md):
 the owner has **No / unknown** firmware inspection permission. One firmware GET
 stopped at an unreviewed redirect with zero bytes and no retry; analysis remains
 blocked. A separate Sony OSS page lists 34 source packages. The owner approved

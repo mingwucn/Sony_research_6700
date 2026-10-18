@@ -29,6 +29,10 @@ metadata, a zero-byte stopped GET and owner inspection permission **No / unknown
 It also records two owner-approved OSS source/configuration audits, with FTP
 client flags as static leads only. Next single package is RA-003 rights-cleared
 exact-2.00 binary intake/correspondence, blocked on rights and applicable bytes.
+The later [mainland-source review](MAINLAND_FIRMWARE_SOURCE.md) identifies the
+official distribution offer and actual download agreement. Rights-basis
+resolution for proprietary unpacking/static analysis is the current single
+RA-003 step; no firmware request, agreement acceptance or inquiry occurred.
 Earlier exhaustion/next-step statements below describe the preceding snapshot;
 this new source lead does not close any target prerequisite.
 

@@ -21,6 +21,12 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
+Latest continuation: [Sony China source and inspection-rights review](../research/MAINLAND_FIRMWARE_SOURCE.md)
+identifies the mainland 2.00 offer and published asset reference. No agreement
+was accepted or firmware requested. Resolve a documented basis for proprietary
+unpacking/static disassembly before that analysis; ordinary public-document
+reads and hashing are distinct activities. The unsent inquiry is prepared.
+
 ## Available host commands
 
 Both tools use only the standard library and explicitly supplied ordinary local

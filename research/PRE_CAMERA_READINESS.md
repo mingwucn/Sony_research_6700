@@ -27,7 +27,7 @@ No prepared or passed host package is promoted into a working camera function.
 |---|---|---|
 | RA-001 | Private intake/host baseline prepared; historical errors preserved; model/version/current-language report added | Remaining body/setup facts unknown |
 | RA-002 | Locked source/provenance/rights audit committed | Component reuse and target applicability are separate unresolved gates |
-| RA-003 | Inventory/probe/lineage/extractor audit, official 2.00 metadata and two owner-approved OSS source/config/rights audits | Proprietary firmware inspection rights (owner No / unknown), legitimate matching input/build, binary correspondence and extraction/child manifest |
+| RA-003 | Inventory/probe/lineage/extractor audit, official mainland 2.00 source/terms and two earlier approved OSS source audits | Documented rights basis for proprietary unpacking/static analysis, acquisition under applicable terms, exact-build correspondence and extraction/child manifest |
 | RA-004 | [Observation/access preparation](TARGET_EVIDENCE_GAPS.md) | Identity, separately approved observations and exact-target access proposal |
 | RA-005 | Backup coverage inventory/template prepared | Approved route, independent reads/copies and actual protected-state coverage |
 | RA-006 | Architecture/recovery evidence gaps explicit | Target segments/ABI/storage/settings/retained-state mappings and recovery envelope |
@@ -101,9 +101,11 @@ package was downloaded, selected for the body or executed.
 
 The [RA-003 provenance/rights review](OFFICIAL_PACKAGE_INTAKE.md) adds the
 zero-byte stopped acquisition and separate Sony OSS list. Next single substantive
-host package: **RA-003 rights-cleared exact-2.00 binary intake and source/binary
-correspondence**, blocked on suitable firmware inspection rights and legitimate
-applicable bytes. Two source RPMs were owner-approved and audited; their FTP
+host package: **RA-003 rights-basis resolution for mainland 2.00 offline
+unpacking/static analysis**. The [official mainland offer/terms](MAINLAND_FIRMWARE_SOURCE.md)
+are identified; acquisition under applicable terms and source/binary
+correspondence remain future steps. Two source RPMs were owner-approved and
+audited; their FTP
 config flags do not establish target binaries or operation. Regional applicability
 and exact-build correspondence remain unresolved. The existing
 RA-004 normal Version/Language UI observation packet is ready when the owner

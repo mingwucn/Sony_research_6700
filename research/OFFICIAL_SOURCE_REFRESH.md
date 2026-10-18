@@ -89,3 +89,12 @@ approved device identification/access and recovery evidence. This refresh adds
 no target offsets, eligible profile or implementation. Historical initial
 source-access failures and the unchanged source lock remain distinct from this
 new observation.
+
+## Mainland-source continuation — 2026-10-18
+
+The [official mainland offer/terms review](MAINLAND_FIRMWARE_SOURCE.md) now
+identifies the distribution source for the owner-reported mainland version.
+No firmware request, agreement acceptance or exact-body/build match. The next
+RA-003 step is rights-basis resolution for unpacking/static analysis; a prepared
+inquiry remains unsent. Earlier catalogue findings above retain their original
+scope; native English/FTP and recovery remain unverified.

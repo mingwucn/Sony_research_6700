@@ -6,6 +6,12 @@ bounded source-text review. No firmware bytes were acquired and no firmware
 extractor or downloaded source was executed. Two owner-approved source RPMs
 were read as data. No camera was contacted. RA-003 remains incomplete.
 
+Latest mainland continuation: [Sony China offer and its actual terms](MAINLAND_FIRMWARE_SOURCE.md)
+are now identified. No new firmware request or agreement acceptance occurred.
+The source route is resolved; proprietary unpacking/static-analysis rights and
+exact-build correspondence remain unresolved. The earlier acquisition/source
+audit below is preserved. See [new session](sessions/20261018-RA-003-mainland.md).
+
 ## Version label and acquisition result
 
 The owner reports **a6700, version 2.00**, with **简体中文** as the current
