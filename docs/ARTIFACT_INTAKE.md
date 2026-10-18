@@ -27,7 +27,21 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [bounded path/link diagnostic](../research/TAR_PATH_DIAGNOSTIC.md),
+Latest continuation: [opaque-link metadata inventory](../research/TAR_LINK_INVENTORY.md),
+[commands/results](../research/sessions/20261018-RA-003-tar-link-inventory.md).
+One bounded opaque-link directory inventory completed, script and host exit **0**, **29.409064s**.
+Synthetic qualification **171/171 passed**, zero skipped, exit **0**, **1.060s**.
+Private inventory: **137 members** (97 regular files, 39 directories,
+0 hard links, 1 symbolic link); **80182** compact UTF-8 JSON bytes.
+Complete source/stream/header/span/prefix lineage, tar framing, member padding,
+two end blocks and zero remainder checked. Link targets are opaque private
+metadata, never followed/resolved/materialized or claimed safe for extraction.
+Member-path guards unchanged; the link-policy change was documented before
+this trial. No child files, decompression/disassembly, camera or feature/write gate.
+Member formats and English/FTP mapping remain unverified; earlier evidence preserved.
+Next single work package: **RA-003: review the private directory to select minimal English/FTP-relevant members, then document, qualify and run bounded in-memory prefix identification with full lineage and no child files**.
+
+Earlier continuation: [bounded path/link diagnostic](../research/TAR_PATH_DIAGNOSTIC.md),
 [commands/results](../research/sessions/20261018-RA-003-tar-path-diagnostic.md).
 One bounded first-refusal diagnostic completed, script and host exit **0**, **28.299963s**.
 Synthetic qualification **171/171 passed**, zero skipped, exit **0**, **0.916s**.
@@ -38,7 +52,7 @@ prefixes agree. Semantic tar parsing stopped permanently at the unchanged guard;
 no directory accepted or tar-end/tail validation. One private bounded event,
 no path text/raw bytes in it. No retry/fallback, child files, decompression,
 disassembly, camera contact or feature/write gate. Earlier failed evidence is preserved.
-Next single work package: **RA-003: review the observed path/link predicate, qualify an explicit metadata-only policy and run one bounded directory inventory with complete lineage and no child files**.
+Historical next single work package: **RA-003: review the observed path/link predicate, qualify an explicit metadata-only policy and run one bounded directory inventory with complete lineage and no child files**.
 
 Earlier continuation: [tar-directory refusal](../research/TAR_DIRECTORY_AUDIT.md),
 [commands/results](../research/sessions/20261018-RA-003-tar-directory.md).

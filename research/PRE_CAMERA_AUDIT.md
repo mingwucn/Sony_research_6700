@@ -281,3 +281,21 @@ no path text/raw bytes in it. No retry/fallback, child files, decompression,
 disassembly, camera contact or feature/write gate. Earlier failed evidence is preserved.
 
 English and native Wi-Fi FTP remain first. Next single package: **RA-003: review the observed path/link predicate, qualify an explicit metadata-only policy and run one bounded directory inventory with complete lineage and no child files**.
+
+
+## Later opaque-link metadata inventory (2026-10-19 local / 2026-10-18 UTC)
+
+Earlier next-package recommendations are historical. See [inventory audit](TAR_LINK_INVENTORY.md)
+and [commands/results](sessions/20261018-RA-003-tar-link-inventory.md).
+One bounded opaque-link directory inventory completed, script and host exit **0**, **29.409064s**.
+Synthetic qualification **171/171 passed**, zero skipped, exit **0**, **1.060s**.
+Private inventory: **137 members** (97 regular files, 39 directories,
+0 hard links, 1 symbolic link); **80182** compact UTF-8 JSON bytes.
+Complete source/stream/header/span/prefix lineage, tar framing, member padding,
+two end blocks and zero remainder checked. Link targets are opaque private
+metadata, never followed/resolved/materialized or claimed safe for extraction.
+Member-path guards unchanged; the link-policy change was documented before
+this trial. No child files, decompression/disassembly, camera or feature/write gate.
+Member formats and English/FTP mapping remain unverified; earlier evidence preserved.
+
+English and native Wi-Fi FTP remain first. Next single package: **RA-003: review the private directory to select minimal English/FTP-relevant members, then document, qualify and run bounded in-memory prefix identification with full lineage and no child files**.

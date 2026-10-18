@@ -45,7 +45,9 @@ The later [tar-directory trial](research/TAR_DIRECTORY_AUDIT.md) stopped at its
 fixed `unsafe_path` guard after 133 synthetic passes. No directory was accepted;
 the later [bounded path/link diagnostic](research/TAR_PATH_DIAGNOSTIC.md)
 identifies the first refused field/predicate after complete source lineage checks.
-A metadata-only policy review and full directory inventory remain next. China
+The later [opaque-link metadata inventory](research/TAR_LINK_INVENTORY.md)
+checks the complete tar directory privately; links are never followed or written.
+Member formats and English/FTP mapping remain next. China
 Copyright Law Article 50(5) expressly addresses reverse-engineering research;
 its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains
