@@ -31,8 +31,9 @@ official landing-page workflow for approved acquisition; the recorded URL is
 provenance, not a substitute for agreement review. `fm=cn` does not prove a distinct regional
 binary, equality with another market's bytes, or the installed body's build.
 No published firmware digest was observed in the inspected page/selected metadata.
-Current acquisition status is recorded below; a container inventory and
-source/binary correspondence remain unestablished.
+Current acquisition status is recorded below. A later
+[scoped UFU directory audit](UFU_CONTAINER_AUDIT.md) records framing metadata;
+component formats and source/binary correspondence remain unestablished.
 
 ## What permission is needed
 
@@ -48,14 +49,15 @@ The practical distinction is:
 | Activity | Current basis / unresolved point |
 |---|---|
 | Read public documentation and published metadata | Authorized host-side research; completed |
-| Obtain a normal download and record its size/hash | Limited terms acceptance and the initial stopped GET are recorded below. Hashing alone is not treated as synonymous with disassembly. |
+| Obtain a normal download and record its size/hash | Limited terms acceptance, initial stopped GET and separately consented completed destination GET are recorded below. Hashing alone is not treated as synonymous with disassembly. |
+| Local structural directory, without content extraction | Narrow statutory assessment and actual bounded result are recorded in the [act/parser audit](UFU_CONTAINER_AUDIT.md). |
 | Unpack/decompress the proprietary container, extract resources or statically disassemble programs | A suitable rights basis is unestablished: an express applicable licence, scope-specific permission from an authorized rights holder, or a documented applicable statutory basis. Owner authorization alone does not resolve third-party rights. |
 | Inspect separately offered OSS source | Apply each component's accompanying licence and notice. The previous two-source approval remains limited to those two archives. |
 
 This review does not decide enforceability or whether a statutory exception
 applies. That depends on the activity and relevant jurisdiction; neither a
-blanket prohibition on all private inspection nor an exception covering this
-research is established. A protection-bypass step, if ever proposed, requires
+blanket prohibition on all private inspection nor blanket clearance for the
+full proposed research is established. A protection-bypass step, if ever proposed, requires
 its own rights/scope review and is absent from this work.
 
 The exact-model [Help Guide licence page](https://helpguide.sony.net/ilc/2320/v1/zh-cn/contents/1005_license.html)
@@ -198,12 +200,17 @@ modification, redistribution or device operation remains separately scoped.
 
 ## Next single work package
 
-**RA-003: assess the exact container-inventory/extraction acts against the China
-statutory research route and accepted terms, then audit the applicable parser
-before use.** Legitimate input, byte identity and a bounded signature candidate
-are recorded. Full unpacking/static-analysis scope, source/build correspondence
-and exact-body applicability remain unresolved. Written rights-holder permission
-is one possible route; the express statutory route must also be assessed.
+The [act/parser continuation](UFU_CONTAINER_AUDIT.md) documents the narrow
+statutory assessment for ordinary local metadata reading, audits the locator
+and records an authored bounded directory result. Five chunk spans cover the
+input under the reviewed framing; component contents were not interpreted or
+output. That assessment does not settle every later extraction/disassembly act.
+
+**RA-003: bounded FDAT format identification and applicable-extractor audit
+before component copying/decompression.** Full proposed analysis scope,
+source/build correspondence and exact-body applicability remain unresolved.
+Written rights-holder permission remains one possible route alongside the
+documented statutory provisions; it is not the only possible basis.
 
 English resource presence and restriction policy remain unknown; the owner report
 of English absence is retained. The prior BusyBox FTP source findings remain

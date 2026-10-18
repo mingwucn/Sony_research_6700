@@ -77,16 +77,22 @@ states remain required; synthetic guards are preparation only. See
   facts, bounded acquisition result and pending activity-specific analysis basis.
   These do not establish English resources or a native FTP implementation.
 
-- Current RA-003: [package acquisition and express statutory research route](../research/sessions/20261018-RA-003-package-law.md).
+- Earlier RA-003: [package acquisition and express statutory research route](../research/sessions/20261018-RA-003-package-law.md).
   Separately consented HTTP 200 acquired the declared size with matching hashes;
   bounded identification found a UFU signature candidate only. No English
   resources or native FTP backend have been extracted or validated. Full proposed
   analysis scope and exact-body correspondence remain unresolved.
 
+- Current RA-003: [scoped UFU directory/parser audit](../research/UFU_CONTAINER_AUDIT.md).
+  The authored reader reports DATV, PROV, UDID, FDAT and DEND, with one bounded
+  FDAT span. Full-suite local result: 176 passed, three skipped, exit 0.
+  This is container-directory progress only; no English resources, FTP program,
+  component semantics or exact-body correspondence are established.
+
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003, assess the
-exact container-inventory/extraction acts against the China statutory research
-route and accepted terms, then audit the applicable parser before use**.
+packages and validation families. Next single host package: **RA-003, bounded
+FDAT format identification and applicable-extractor audit before copying or
+decompression**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

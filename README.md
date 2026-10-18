@@ -24,7 +24,9 @@ model's installer, or change product identifiers merely to begin this project.
 Current [RA-003 package/rights findings](research/OFFICIAL_PACKAGE_INTAKE.md):
 the [official mainland 2.00 source and its agreement](research/MAINLAND_FIRMWARE_SOURCE.md)
 are identified. The [package/statutory-route continuation](research/sessions/20261018-RA-003-package-law.md)
-records consented acquisition, size/hash and bounded UFU identification. China
+records consented acquisition, size/hash and bounded UFU identification. The later
+[scoped directory audit](research/UFU_CONTAINER_AUDIT.md) records five bounded
+chunks and one FDAT span, without extracting contents. China
 Copyright Law Article 50(5) expressly addresses reverse-engineering research;
 its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains

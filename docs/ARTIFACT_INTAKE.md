@@ -1,6 +1,7 @@
 # RA-003 artifact intake and bounded inspection
 
-Status: official mainland 2.00 package acquired; bounded identification only.
+Status: official mainland 2.00 package acquired; bounded identification and
+authored UFU directory inventory recorded, without component extraction.
 Exact-body correspondence and the full extraction/analysis scope remain unresolved.
 Current intake (2026-10-18, **source-report**): the owner reports α6700
 firmware **2.00**, current **简体中文**, **Chinese mainland version**, and
@@ -23,7 +24,14 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Current continuation: [package acquisition, bounded identification and statutory route](../research/sessions/20261018-RA-003-package-law.md).
+Latest continuation: [scoped UFU directory/parser audit](../research/UFU_CONTAINER_AUDIT.md)
+and [commands/results](../research/sessions/20261018-RA-003-ufu-inventory.md).
+Five chunk spans cover the file under the reviewed framing; one nonempty FDAT
+is bounded. No chunk payload contents were interpreted or output. Full format
+semantics and component formats remain unverified. The narrow statutory
+assessment for local structural reading does not clear all later extraction.
+
+Earlier continuation: [package acquisition, bounded identification and statutory route](../research/sessions/20261018-RA-003-package-law.md).
 The separately approved destination GET succeeded; size and two acquisition
 hashes agree. Existing authored probe reports a UFU signature candidate only.
 Copyright Law Article 50(5) is an express research exception; full proposed
@@ -41,7 +49,7 @@ reads and hashing are distinct activities. The unsent inquiry is prepared.
 
 ## Available host commands
 
-Both tools use only the standard library and explicitly supplied ordinary local
+All three tools use only the standard library and explicitly supplied ordinary local
 files. Paths and content prefixes are omitted from their JSON. Model, firmware,
 kind and aliases remain user-supplied labels, not authenticated observations.
 Write output only to a new private file; never redirect over any input.
@@ -49,7 +57,9 @@ Write output only to a new private file; never redirect over any input.
 ```text
 python tools/offline_inventory.py --help
 python tools/artifact_probe.py --help
+python tools/ufu_inventory.py --help
 python -m unittest discover -s tests -p test_artifact_probe.py -v
+python -m unittest tests.test_ufu_inventory -v
 ```
 
 After a legitimate input has been supplied, the probe accepts
@@ -66,6 +76,12 @@ It does not verify archive checksums, signing chains, encryption, compression,
 incremental-update dependencies or omitted per-body state. Numeric machine codes
 describe header bytes; they do not establish the target's ABI or storage layout.
 The [inventory portability note](INVENTORY_PORTABILITY.md) records filesystem limits.
+
+The [UFU directory reader](../research/UFU_CONTAINER_AUDIT.md) additionally requires
+`--input ACTUAL_PRIVATE_PATH --expect-sha256 EXPECTED_SHA256 --expect-bytes EXPECTED_BYTES`.
+These placeholders are explanatory; use the recorded acquisition identity.
+It streams the whole file for hash verification and interprets framing only,
+with 2 GiB / 4,096 chunk / 1 MiB read limits. No component contents are output.
 
 Header references: [ELF gABI](https://gabi.xinuos.com/elf/02-eheader.html) and
 [Microsoft PE/COFF](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format).
@@ -111,12 +127,10 @@ remain data. No firmware upgrade is needed to inspect a matching package.
 
 ## Remaining acceptance
 
-RA-003 remains incomplete: suitable firmware inspection rights, independent
-exact-build evidence, matching official input bytes and a reviewed applicable
-extractor are absent. The reported
-2.00 version label is recorded above. Consequently
-there is no target component inventory or private extraction manifest to validate.
-A private acquisition-failure journal now records the zero-byte stopped attempt;
-it is not an unsupported-format diagnosis of an unseen package. The synthetic
-probe's passing tests establish only the documented local behavior. Camera
-commands: **none**.
+RA-003 remains incomplete. Official input size/hash and bounded directory metadata
+are recorded; no component contents have been extracted. Full proposed analysis
+scope, component-format/extractor suitability, independent exact-build evidence
+and body applicability remain open. Earlier stopped-download journals are retained
+as history. Next: bounded FDAT format identification and applicable-extractor audit
+before copying/decompression. Synthetic tests and framing coverage establish only
+their documented host behaviour. Camera commands: **none**.

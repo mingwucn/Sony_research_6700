@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "official_mainland_200_package_size_hash_and_ufu_signature_recorded_analysis_scope_pending",
+  "phase": "official_package_ufu_directory_recorded_fdat_format_and_component_inventory_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -27,22 +27,29 @@
   "remote_ci_executed": true,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
-    "total": 154,
-    "passed": 152,
+    "total": 179,
+    "passed": 176,
     "failed": 0,
     "errors": 0,
-    "skipped": 2,
+    "skipped": 3,
     "exit_code": 0,
     "interpreter": "CPython 3.13.12",
     "host": "Windows AMD64, kernel build 26300.9711",
-    "command": "python -I -S -B -X utf8 private/sessions/20261018-IN-102-final/reproduce-final.py",
-    "runner_seconds": 16.918,
+    "command": "python -B -X utf8 -m unittest discover -s tests -v",
+    "runner_seconds": 21.475,
+    "wrapper_elapsed_seconds": 22.066025,
     "evidence_class": "offline-tested",
     "camera_or_real_server_coverage": false,
-    "report": "research/sessions/20261018-IN-102-final.md",
-    "source_commit": "fb32370052a0ffe5d8a529edba971f962ce57654",
-    "discovery_and_runner_seconds": 17.214,
-    "source_scope": "NEW committed authored-tree export; fresh no-pip stdlib environment on same owner Windows host"
+    "report": "research/sessions/20261018-RA-003-ufu-inventory.md",
+    "source_scope": "Current authored working tree on same owner Windows host; new UFU reader included, no fresh export or hosted CI claimed",
+    "evidence_basis_commit": "0a04be8494d087b7f886c0284e95b7805795a0a1",
+    "new_reader_sha256": "fb20ab0a69f9612a5c46570649f49f0f702beab2e5b03d8a1dc4db8812670e17",
+    "new_test_sha256": "88b9a3d336fc8f41c65c1a3408ce0a1b56f95ee8d3f420a52a3e990dd805cc2d",
+    "skips": [
+      "POSIX fork inheritance on Windows",
+      "Real symlink creation: existing inventory",
+      "Real symlink creation: UFU reader"
+    ]
   },
   "work_packages": {
     "RA-001": {
@@ -58,14 +65,15 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_official_package_acquired_size_hash_and_bounded_signature_recorded_analysis_scope_and_build_correspondence_pending",
+      "status": "partial_official_package_and_bounded_ufu_directory_recorded_component_format_extraction_and_body_match_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "Official mainland 2.00 package acquired after separate owner consents; whole-file size/hash and bounded identification only; two earlier approved OSS source audits. No firmware extraction/execution, source-build correspondence or target compatibility established",
+      "scope": "Consented official mainland 2.00 package; size/hash, bounded signature and authored directory framing inventory only. No component extraction, decompression, firmware execution or target compatibility established",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261018-RA-003-package-law.md",
-      "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md"
+      "session_report": "research/sessions/20261018-RA-003-ufu-inventory.md",
+      "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
+      "container_audit": "research/UFU_CONTAINER_AUDIT.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -136,12 +144,12 @@
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
     "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
     "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
-    "Official mainland 2.00 package acquired privately: declared size and transfer/stored SHA-256 agree; bounded probe found Sony-UFU signature candidate only. China statutory research route includes express Copyright Law Article 50(5), but exact unpacking/resource-extraction/static-analysis scope, accepted-contract interaction, parser suitability and exact-body/build correspondence remain unresolved. Earlier failed GETs are preserved.",
+    "Official mainland 2.00 package acquired privately: declared size and transfer/stored SHA-256 agree; bounded probe and authored directory reader record UFU framing and five bounded spans only. China statutory research route includes express Copyright Law Article 50(5), but FDAT/component formats, exact extraction/static-analysis scope, accepted-contract interaction, applicable-extractor suitability and exact-body/build correspondence remain unresolved. Earlier failed GETs are preserved.",
     "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them.",
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: assess and document the exact container-inventory/extraction acts against the China statutory research route and accepted terms, then audit the applicable parser before use",
+  "next_work_package": "RA-003: identify the bounded FDAT format and audit an applicable extractor before component copying or decompression",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -177,7 +185,7 @@
       "priority": "primary",
       "status": "owner_reports_english_absent_mainland_version_feasibility_unverified",
       "camera_validated": false,
-      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change.",
+      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now records the official package hash and five bounded UFU chunk spans, without component extraction; this does not establish feature resources/backend or installed-build correspondence.",
       "blockers": [
         "Lawfully inspectable matching exact-build artifacts and regional applicability; exact SKU/internal product identity and binary hashes unverified",
         "Distinguish present-but-restricted English resources from missing/incomplete resources; prove narrow language policy and all consumers before any candidate"
@@ -191,7 +199,9 @@
         "research/sessions/20261018-owner-mainland-english.md",
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/sessions/20261018-RA-003-cn-scope.md",
-        "research/sessions/20261018-RA-003-package-law.md"
+        "research/sessions/20261018-RA-003-package-law.md",
+        "research/UFU_CONTAINER_AUDIT.md",
+        "research/sessions/20261018-RA-003-ufu-inventory.md"
       ]
     },
     "native_wifi_ftp": {
@@ -199,7 +209,7 @@
       "priority": "primary",
       "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified",
       "camera_validated": false,
-      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed.",
+      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now records the official package hash and five bounded UFU chunk spans, without component extraction; this does not establish feature resources/backend or installed-build correspondence.",
       "blockers": [
         "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
@@ -213,7 +223,9 @@
         "research/OFFICIAL_PACKAGE_INTAKE.md",
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/sessions/20261018-RA-003-cn-scope.md",
-        "research/sessions/20261018-RA-003-package-law.md"
+        "research/sessions/20261018-RA-003-package-law.md",
+        "research/UFU_CONTAINER_AUDIT.md",
+        "research/sessions/20261018-RA-003-ufu-inventory.md"
       ]
     },
     "fl2_fl3_still_looks": {
@@ -701,11 +713,13 @@
       "firmware_supplied": false,
       "report": "research/sessions/20261018-RA-003-package.md"
     },
-    "report": "research/sessions/20261018-RA-003-package-law.md",
+    "report": "research/sessions/20261018-RA-003-ufu-inventory.md",
     "source_region": "Official mainland China offer; source reference plus separately approved exact redirect destination",
     "asset_get_attempts_scope": "Current mainland acquisition: one GET of published URL stopped302, one separately approved destination GET completed200; older Japan failure retained in history",
     "source_to_body_correspondence_established": false,
-    "container_validated": false
+    "container_validated": false,
+    "acquisition_report": "research/sessions/20261018-RA-003-package-law.md",
+    "bounded_directory_inventory_recorded": true
   },
   "official_oss_source_offers": {
     "checked_on": "2026-10-18",
@@ -857,7 +871,7 @@
     "contact_page": "https://service.sony.com.cn/content/casch/contact-us.html",
     "contact_role": "Public support routing channel; authority to grant rights not established",
     "report": "research/MAINLAND_FIRMWARE_SOURCE.md",
-    "session_report": "research/sessions/20261018-RA-003-package-law.md",
+    "session_report": "research/sessions/20261018-RA-003-ufu-inventory.md",
     "acceptance_scope": "Normal private download, declared-size check and whole-file SHA-256 only",
     "observed_redirect": "https://di.update.sony.net/NEX/tF4c94033c/BODYDATA.DAT",
     "source_terms_session_report": "research/sessions/20261018-RA-003-mainland.md",
@@ -865,7 +879,9 @@
     "acquisition_http_status": 200,
     "further_redirects_followed": false,
     "bounded_identification_performed": true,
-    "proprietary_analysis_rights_field_scope": "Full proposed unpacking/resource extraction/static disassembly under applicable terms; ordinary inventory is separately recorded"
+    "proprietary_analysis_rights_field_scope": "Full proposed unpacking/resource extraction/static disassembly under applicable terms; ordinary inventory is separately recorded",
+    "ordinary_directory_inventory_performed": true,
+    "ordinary_directory_scope_assessment": "research/UFU_CONTAINER_AUDIT.md"
   },
   "artifact_probe_test_history": [
     {
@@ -1037,7 +1053,9 @@
       "protection_bypass_procedure_authorized": false,
       "protection_bypass_performed": false,
       "report": "research/MAINLAND_FIRMWARE_SOURCE.md#express-reverse-engineering-research-provision--2026-10-18"
-    }
+    },
+    "activity_specific_basis_field_scope": "Full proposed extraction/resource/static-disassembly research; narrow A directory assessment is separate in analysis_act_scope",
+    "ordinary_structural_read_assessment": "research/UFU_CONTAINER_AUDIT.md"
   },
   "ordinary_firmware_acquisition": {
     "owner_approved": true,
@@ -1163,5 +1181,149 @@
       },
       "report": "research/OFFICIAL_PACKAGE_INTAKE.md"
     }
-  ]
+  ],
+  "host_synthetic_suite_history": [
+    {
+      "total": 154,
+      "passed": 152,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 2,
+      "exit_code": 0,
+      "interpreter": "CPython 3.13.12",
+      "host": "Windows AMD64, kernel build 26300.9711",
+      "command": "python -I -S -B -X utf8 private/sessions/20261018-IN-102-final/reproduce-final.py",
+      "runner_seconds": 16.918,
+      "evidence_class": "offline-tested",
+      "camera_or_real_server_coverage": false,
+      "report": "research/sessions/20261018-IN-102-final.md",
+      "source_commit": "fb32370052a0ffe5d8a529edba971f962ce57654",
+      "discovery_and_runner_seconds": 17.214,
+      "source_scope": "NEW committed authored-tree export; fresh no-pip stdlib environment on same owner Windows host"
+    }
+  ],
+  "latest_ufu_inventory_tests": {
+    "evidence_class": "offline-tested",
+    "total": 25,
+    "passed": 24,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "exit_code": 0,
+    "command": "python -B -X utf8 -m unittest tests.test_ufu_inventory -v",
+    "interpreter": "CPython 3.13.12",
+    "runner_seconds": 0.097,
+    "scope": "Synthetic fixtures only, independent test-author run; included again in full root suite",
+    "report": "research/sessions/20261018-RA-003-ufu-inventory.md"
+  },
+  "bounded_ufu_inventory": {
+    "address_type": "package_file_offset",
+    "bytes": 1024017848,
+    "camera_access_performed": false,
+    "checksums_verified": false,
+    "chunk_count": 5,
+    "chunk_semantics_verified": false,
+    "chunks": [
+      {
+        "end_file_offset_exclusive": 20,
+        "header_file_offset": 8,
+        "index": 0,
+        "payload_bytes": 4,
+        "payload_file_offset": 16,
+        "type_ascii": "DATV",
+        "type_hex": "44415456"
+      },
+      {
+        "end_file_offset_exclusive": 32,
+        "header_file_offset": 20,
+        "index": 1,
+        "payload_bytes": 4,
+        "payload_file_offset": 28,
+        "type_ascii": "PROV",
+        "type_hex": "50524f56"
+      },
+      {
+        "end_file_offset_exclusive": 148,
+        "header_file_offset": 32,
+        "index": 2,
+        "payload_bytes": 108,
+        "payload_file_offset": 40,
+        "type_ascii": "UDID",
+        "type_hex": "55444944"
+      },
+      {
+        "end_file_offset_exclusive": 1024017836,
+        "header_file_offset": 148,
+        "index": 3,
+        "payload_bytes": 1024017680,
+        "payload_file_offset": 156,
+        "type_ascii": "FDAT",
+        "type_hex": "46444154"
+      },
+      {
+        "end_file_offset_exclusive": 1024017848,
+        "header_file_offset": 1024017836,
+        "index": 4,
+        "payload_bytes": 4,
+        "payload_file_offset": 1024017844,
+        "type_ascii": "DEND",
+        "type_hex": "44454e44"
+      }
+    ],
+    "compatibility": "UNVERIFIED",
+    "container_validated": false,
+    "decompression_performed": false,
+    "decryption_performed": false,
+    "evidence_class": "offline-tested",
+    "execution_performed": false,
+    "extraction_performed": false,
+    "fdat_status": "single_bounded_span",
+    "format": "sony_ufu_framing_candidate",
+    "identity_inferred": false,
+    "schema_version": 1,
+    "sha256": "d3c7db5b9b40c89b11ecf03addf0f6ff1d9b917acf9f55e46360462e86db847c",
+    "signature_verified": false,
+    "status": "framing_spans_entire_file",
+    "tool": "ufu_inventory",
+    "tool_version": "0.1.0",
+    "report": "research/UFU_CONTAINER_AUDIT.md",
+    "session_report": "research/sessions/20261018-RA-003-ufu-inventory.md",
+    "interpreter": "CPython 3.13.12",
+    "exit_code": 0,
+    "elapsed_seconds": 1.617467,
+    "tool_file_sha256": "fb20ab0a69f9612a5c46570649f49f0f702beab2e5b03d8a1dc4db8812670e17",
+    "original_size_mtime_attributes_unchanged": true,
+    "exact_input_argv_recorded_privately": true,
+    "source_lineage": "Official mainland offer and separately consented redirect download; whole-file acquisition identity matches this same-pass read",
+    "payload_contents_interpreted_or_output": false,
+    "full_component_inventory_established": false,
+    "exact_body_correspondence_established": false
+  },
+  "analysis_act_scope": {
+    "evidence_class": "static-inference",
+    "report": "research/UFU_CONTAINER_AUDIT.md",
+    "jurisdiction": "China (owner-reported)",
+    "purpose": "Personal/noncommercial research (owner-reported)",
+    "A_directory": {
+      "assessment": "Documented narrow Software Protection Regulations Article 17/private-study basis for ordinary local structural metadata",
+      "performed": true,
+      "component_contents_written_or_output": false,
+      "technical_measure_avoidance_performed": false
+    },
+    "B_extraction": {
+      "scope_cleared": false,
+      "performed": false,
+      "next_assessment": "Selected components, actual copies/operations, private retention and component terms"
+    },
+    "C_disassembly": {
+      "scope_cleared": false,
+      "performed": false
+    },
+    "D_distribution": {
+      "proprietary_content_redistribution_cleared": false
+    },
+    "contract_enforceability_decided": false,
+    "sony_permission_only_possible_basis": false,
+    "device_authorization_granted": false
+  }
 }

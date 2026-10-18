@@ -43,7 +43,16 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [official package, bounded identification and statutory route](../research/sessions/20261018-RA-003-package-law.md).
+Latest RA-003: [scoped UFU directory and parser audit](../research/UFU_CONTAINER_AUDIT.md)
+and [commands/results](../research/sessions/20261018-RA-003-ufu-inventory.md).
+An authored bounded reader and 179-test local suite passed (176 passed, three
+skipped). Five chunk spans cover the acquired file under the audited framing;
+one FDAT span is bounded. No payload contents were interpreted or output. Full
+container semantics, component formats, extraction scope and installed-build
+correspondence remain open. Next is bounded FDAT identification/extractor audit.
+No camera command or feature/write gate passed.
+
+Earlier RA-003: [official package, bounded identification and statutory route](../research/sessions/20261018-RA-003-package-law.md).
 Separate destination consent led to HTTP 200, declared-size agreement and matching
 transfer/stored SHA-256. Authored probe: UFU signature candidate; container not
 validated. Article 50(5) expressly addresses software reverse-engineering research;
