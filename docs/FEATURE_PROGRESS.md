@@ -32,12 +32,12 @@ storage copies, an exact inverse and recovery access for the relevant failure
 states remain required; synthetic guards are preparation only. See
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist).
 
-Latest shared RA-003: [bounded-memory stream validation](../research/FDAT_STREAM_VALIDATION.md)
-checked all 1,000,017 blocks, measured 1,020,017,152 logical bytes and checked
-declared extent bounds/non-overlap. New synthetic qualification: 45/45 passed.
-Component formats, English resources/restrictions and native FTP backend remain
-unmapped; body identity, recovery and all feature/write gates remain open.
-Next shared package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+Latest shared RA-003: [bounded prefix identification](../research/COMPONENT_PREFIX_AUDIT.md).
+U-slot SquashFS v4 and firmware ustar header candidates guide parser selection;
+each prefix is limited to 4,096 bytes. New synthetic suite 93/93 passed; full
+source/stream/header/span lineage agrees. No component contents/directory,
+English mechanism, native FTP binary or exact-body/recovery proof. All gates stay open.
+Next shared package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
 
 ## Verified preparation supporting these functions
 
@@ -115,13 +115,17 @@ Next shared package: **RA-003: document the necessary private selected-component
   One predeclared hypothesis passed envelope/header checks after 45 synthetic
   cases. That session did not measure full-stream length or validate component bounds.
 
-- Current RA-003: [stream validation](../research/FDAT_STREAM_VALIDATION.md).
+- Earlier RA-003: [stream validation](../research/FDAT_STREAM_VALIDATION.md).
   All physical envelopes/terminal positions checked; logical length/SHA measured
   and declared bounds/non-overlap checked against measured EOF. No component
   formats, English/FTP mechanism or body correspondence established.
 
+- Current RA-003: [component prefixes](../research/COMPONENT_PREFIX_AUDIT.md).
+  Bounded SquashFS v4/ustar header candidates, with lineage and metadata only.
+  No complete component format or English/FTP finding follows.
+
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+packages and validation families. Next single host package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

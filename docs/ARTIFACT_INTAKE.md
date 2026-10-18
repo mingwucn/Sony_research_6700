@@ -3,7 +3,9 @@
 Status: official mainland 2.00 package acquired; UFU framing inventoried.
 The bounded-memory FDAT stream trial measured logical length/SHA and checked
 declared extents against measured EOF. No component files retained or formats
-identified; exact-body correspondence and later copying/analysis scope remain open.
+validated. Later bounded prefixes match SquashFS v4 and ustar header predicates;
+these are candidates, with directory contents, body correspondence and later
+copying/analysis scope still open.
 Current intake (2026-10-18, **source-report**): the owner reports α6700
 firmware **2.00**, current **简体中文**, **Chinese mainland version**, and
 **English unavailable**. The full list is not supplied; exact SKU and binary
@@ -25,11 +27,17 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [stream validation](../research/FDAT_STREAM_VALIDATION.md) and
+Latest continuation: [component-prefix identification](../research/COMPONENT_PREFIX_AUDIT.md),
+[commands/results](../research/sessions/20261018-RA-003-component-prefix.md): 93/93 synthetic passes and one real
+pipeline passed, exit 0. Exactly 4,096 bytes per selected extent; U-slot SquashFS
+v4 and firmware ustar header candidates. No raw prefix files or child inventory.
+Next single package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
+
+Earlier continuation: [stream validation](../research/FDAT_STREAM_VALIDATION.md) and
 [commands/results](../research/sessions/20261018-RA-003-stream-validation.md): 45/45 synthetic passes; one real pipeline
 passed all 1,000,017 blocks, measured 1,020,017,152 logical bytes and checked
 declared bounds/non-overlap. No component files, format/body/feature verification.
-Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+Historical next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
 
 Earlier continuation: [bounded header trial](../research/FDAT_HEADER_TRIAL.md)
 passed first-block/header predicates only. That session did not measure the stream.
@@ -161,6 +169,6 @@ complete experimental stream measurement and measured-size declared extent check
 are recorded. No component contents have been retained or their formats validated.
 Selected-component necessity/terms/lineage, independent exact-build evidence and
 body applicability remain open. Earlier negative/stopped trials stay preserved.
-Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+Next single package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
 Host tests and format consistency do not establish authentication, English/FTP,
 recovery or a device-write gate. Camera commands: **none**.

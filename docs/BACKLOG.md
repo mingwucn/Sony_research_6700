@@ -120,6 +120,14 @@ pipeline exit 0 in 28.836450s. No component files/formats, body correspondence,
 English/FTP finding or recovery/write gate. Earlier continuations above are history.
 RA-003 stays partial. Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
 
+Component-prefix continuation (2026-10-18): [bounded result](../research/COMPONENT_PREFIX_AUDIT.md)
+and [commands/results](../research/sessions/20261018-RA-003-component-prefix.md). U-slot SquashFS v4 and firmware
+ustar header candidates; 4,096 bytes each, complete source/stream lineage
+revalidated. New suite 93/93 passed; one real pipeline exit 0, 23.899888s.
+No raw output, child files/directory, decompression, disassembly, body match
+or feature/write gate. Earlier continuations above are history.
+Next single package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
+
 ### RA-004 — Establish identity and review an access route
 
 Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remains a distinct decision. Obtain normal UI facts and, after approval, ordinary host USB descriptors. Identify a candidate service path from reviewed exact-target evidence. Describe every command's effects, re-enumeration, helper ABI, expected result, timeout and reconciliation procedure. Write transport mocks for known readiness/error cases.
@@ -293,7 +301,7 @@ FL2/FL3 is deferred; calibrated custom looks remain separately gated after it.
 Keep existing work for later use. EN/FT feasibility does not depend on CL work.
 The optional host-assisted bridge remains a separate result.
 
-RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**. Official package size/hash, five UFU spans, complete experimental FDAT length/SHA and measured-size declared extent checks are recorded. Component formats, full later analysis scope and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
+RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**. Official package size/hash, five UFU spans, complete experimental FDAT length/SHA and measured-size declared extent checks are recorded. Component formats, full later analysis scope and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
 
 Owner requirement (2026-10-18): **verified rollback/recovery before any firmware
 write**. RA-005/006/007 cover backups, exact inverse, target recovery reachability

@@ -80,7 +80,7 @@ tests does not establish independent camera reproduction, recovery or a feature.
 |---|---|---|
 | RA-001 | Host/intake/session baseline; historical test failure and diagnosis retained | Owner body/setup facts remain Unknown; later host repairs do not rewrite the original result |
 | RA-002 | Locked reference trees, entry-point/side-effect and component-rights audit | Exact-target applicability, native source/binary equivalence and rights for any future reuse remain separate |
-| RA-003 | Official package and measured full-stream length/hash; all envelopes/terminal state and declared bounds/non-overlap checked after 45 new synthetic cases | Exact-body/build correspondence, selected-component scope/identification/lineage and component formats remain unproved |
+| RA-003 | Package/full-stream identity and measured extent checks; bounded U-slot SquashFS and firmware ustar prefix candidates after 93 combined synthetic cases | Bounded tar-directory inventory, complete component formats and exact-body/build correspondence remain unproved |
 | RA-004 | Existing R0 normal-UI observation/access dossier and device-facts template | Actual identity/language observations; separately approved USB scope if needed; reviewed exact-target acquisition proposal before service access |
 | RA-005 | Backup coverage gaps and blank catalogue | Approved acquisition route, actual objects/metadata, independent reads where suitable, two verified copies on separate storage where possible, and protected-state coverage |
 | RA-006 | Explicit architecture/storage/settings/recovery questions | Exact AP/CP ABI and segments, file/VA/runtime mapping, save/load semantics, protected objects and a reachable recovery envelope |
@@ -229,4 +229,21 @@ that measured size. No decoded-stream/component files were retained; component
 formats, authentication, body correspondence, features and device-write gates
 remain unverified. Camera commands: **none**. English and native FTP stay first.
 
-Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+Historical next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+
+## Later component-prefix continuation (2026-10-18)
+
+Earlier next-package recommendations are historical. The
+[bounded prefix audit](COMPONENT_PREFIX_AUDIT.md) and
+[session commands/results](sessions/20261018-RA-003-component-prefix.md)
+record 93 combined synthetic tests passed, exit 0, 0.441 seconds. One real
+pipeline passed with two source-hashed passes, exit 0, 23.899888 seconds.
+It observed 4,096 prefix bytes per declared extent (8,192 total): the U-slot
+returned a SquashFS header candidate and firmware a ustar header candidate,
+both `header_only`. Source/stream lineage and measured extent checks passed.
+These are bounded identification leads; component formats, authentication,
+body correspondence, features and device-write gates remain unverified.
+No raw prefixes or component files were retained. Camera commands: **none**.
+English and native FTP remain first.
+
+Next single package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.

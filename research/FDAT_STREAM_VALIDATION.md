@@ -108,8 +108,25 @@ measurement/cap of whole-process memory. Complete format semantics, authenticati
 installed-body/build identity, English resources/restrictions, native FTP,
 conditional recovery and feature/device gates remain unverified.
 
-Next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+Historical next single package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
 Identify bounded prefixes before choosing any component copier/decompressor;
 retain parent hash, measured-stream hash, explicitly labelled file spans, probe
 revision/limits and classifier metadata. No component extraction, decompression,
 disassembly or camera action is cleared by this result. See [session commands/results](sessions/20261018-RA-003-stream-validation.md).
+
+## Later component-prefix continuation (2026-10-18)
+
+Earlier next-package recommendations are historical. The
+[bounded prefix audit](COMPONENT_PREFIX_AUDIT.md) and
+[session commands/results](sessions/20261018-RA-003-component-prefix.md)
+record 93 combined synthetic tests passed, exit 0, 0.441 seconds. One real
+pipeline passed with two source-hashed passes, exit 0, 23.899888 seconds.
+It observed 4,096 prefix bytes per declared extent (8,192 total): the U-slot
+returned a SquashFS header candidate and firmware a ustar header candidate,
+both `header_only`. Source/stream lineage and measured extent checks passed.
+These are bounded identification leads; component formats, authentication,
+body correspondence, features and device-write gates remain unverified.
+No raw prefixes or component files were retained. Camera commands: **none**.
+English and native FTP remain first.
+
+Next single package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.

@@ -43,14 +43,16 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [bounded-memory full-stream validation](../research/FDAT_STREAM_VALIDATION.md) and
-[commands/results](../research/sessions/20261018-RA-003-stream-validation.md). All 1,000,017 blocks checked; measured
-1,020,017,152 logical bytes. Declared extents fit measured EOF without overlap.
-New qualification: 45/45 synthetic cases passed, exit 0; real pipeline exit 0,
-28.836450s. One hypothesis, two predeclared source-hashed passes, no retry.
-No retained stream/components, component-format or English/FTP finding, body
-correspondence, authentication or recovery/write gate. Camera commands: none.
-Next single work package: **RA-003: document the necessary private selected-component scope, then synthetically qualify and run bounded in-memory identification of the declared U-slot and firmware extent prefixes, retaining lineage metadata only**.
+Latest RA-003: [bounded component prefixes](../research/COMPONENT_PREFIX_AUDIT.md) and
+[commands/results](../research/sessions/20261018-RA-003-component-prefix.md). U-slot SquashFS v4 and firmware ustar
+header candidates, 4,096 bytes each. Complete parent/stream/header/spans agree
+with prior lineage. Qualification 93/93 passed, exit 0; one real two-pass pipeline
+exit 0, 23.899888s. No raw prefix/component files, decompression or disassembly.
+No complete format, body, English/FTP, recovery or feature/write gate result.
+Next single work package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
+
+Earlier RA-003: [full-stream validation](../research/FDAT_STREAM_VALIDATION.md)
+measured logical length/SHA and checked declared bounds without identifying children.
 
 Earlier RA-003: [one bounded private header trial](../research/FDAT_HEADER_TRIAL.md).
 That first-block observation remains preserved; the later stream result is separate.
