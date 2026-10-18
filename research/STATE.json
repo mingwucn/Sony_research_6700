@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "initial_planning_and_offline_scaffold",
+  "phase": "offline_workspace_intake_prepared_with_diagnosed_host_test_error",
   "model": "ILCE-6700",
   "installed_firmware": null,
   "regional_variant": null,
@@ -9,17 +9,41 @@
   "device_writes_performed": false,
   "validated_features": [],
   "upstream_revisions_locked": true,
-  "offline_inventory_synthetic_tests": {"passed": 15, "failed": 0, "hardware_coverage": false},
+  "offline_inventory_synthetic_tests": {
+    "passed": 13,
+    "failed": 0,
+    "errors": 1,
+    "skipped": 1,
+    "total": 15,
+    "exit_code": 1,
+    "interpreter": "CPython 3.13.12",
+    "host": "Windows AMD64, kernel build 26300.9711",
+    "hardware_coverage": false,
+    "evidence_class": "offline-tested",
+    "report": "research/sessions/20261018-RA-001.md"
+  },
+  "local_host_environment_recorded": true,
   "local_host_and_usb_validation": false,
   "remote_ci_executed": false,
+  "work_packages": {
+    "RA-001": {
+      "status": "completed_with_diagnosed_host_test_error",
+      "owner_intake": "prepared_privately_owner_facts_pending",
+      "report": "research/sessions/20261018-RA-001.md",
+      "scope": "R0 only; no milestone or device-write gate passed"
+    }
+  },
   "blockers": [
+    "Windows inventory portability: lstat/fstat st_ctime_ns disagreement can reject unchanged synthetic files; helper reliability is not established on this host.",
+    "Symlink rejection test skipped because symlink creation was unavailable; this host coverage remains untested.",
     "Owner firmware and regional/language facts are not yet supplied.",
+    "Owner reports remaining body/setup intake facts unknown; history, health, connection, power/media, recovery tolerance and independent backup storage remain pending.",
     "No alpha6700 service-access route has been reviewed and tested.",
     "No exact-body program/settings/resource acquisition exists.",
     "No target recovery envelope or feature mappings are established."
   ],
-  "next_work_package": "RA-001: reproduce the offline workspace and complete the private owner intake",
-  "next_device_action": "none; first session remains offline-only",
-  "private_state_location": "private/session-state.json (create locally; never commit)",
+  "next_work_package": "RA-002: pin and audit reference code and reuse rights (R0; not executed in RA-001)",
+  "next_device_action": "none; device work remains unapproved and blocked by missing exact-target evidence",
+  "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions."
 }

@@ -10,7 +10,9 @@ Read MASTER_PLAN.md for requirements and milestones, ACCESS_AND_RECOVERY.md for 
 
 Dependencies: none. Risk: R0. Read AGENTS, this backlog and CODEX_HANDOFF; record host OS/CPU/Python and current Git state. Run the 15 synthetic inventory tests. Create private owner-intake and session-state files without overwriting existing evidence. Ask only for missing facts from OWNER_INTAKE; no firmware update or USB access is required.
 
-Deliver: sanitized research/sessions/YYYYMMDD-RA-001.md, test command/results and an updated STATE with remaining unknowns. Accept when the tests pass on the actual local host or failures are precisely diagnosed, private files are ignored, and no camera contact occurred. Missing camera facts do not block useful environment work. This is the next package to execute.
+Deliver: sanitized research/sessions/YYYYMMDD-RA-001.md, test command/results and an updated STATE with remaining unknowns. Accept when the tests pass on the actual local host or failures are precisely diagnosed, private files are ignored, and no camera contact occurred. Missing camera facts do not block useful environment work.
+
+Status (2026-10-18): COMPLETED with a diagnosed host test error; see [session report](../research/sessions/20261018-RA-001.md). Windows AMD64 / CPython 3.13.12 ran 15 tests: 13 passed, one error and one symlink-creation skip, exit 1. A bounded synthetic diagnostic reproduced cross-API `st_ctime_ns` disagreement in 198/200 cycles, explaining the helper's unchanged-file rejection on this host; underlying OS/CPython cause remains unproven. Helper/tests were left unchanged, and Windows inventory reliability and symlink coverage remain unresolved. Private intake/state were created without overwriting evidence; owner answered unknown to remaining body/setup facts. No camera contact occurred. This closes RA-001's documented failure-diagnosis alternative, not all M0 work or any device-write gate. RA-002 is next; no later package was executed.
 
 ### RA-002 — Pin and audit reference code and reuse rights
 
@@ -178,6 +180,6 @@ Deliver: exact support matrix, known limitations, user procedure, repair-risk di
 
 ## Work sequencing and closure
 
-Start RA-001 now. RA-002 and RA-003 can then run as independent host tasks. EN-101/CL-102/FT-101 share acquired evidence but remain separate dossiers. The preferred first hardware feature is the smallest fully proved reversible change, often a language setting when that hypothesis is established; priority is not a prediction that it will be easy.
+RA-001 has completed its offline acceptance scope with the diagnosed host limitation recorded above. The next single package is RA-002; RA-003 still needs firmware facts for target-specific retrieval. EN-101/CL-102/FT-101 share acquired evidence but remain separate dossiers. The preferred first hardware feature is the smallest fully proved reversible change, often a language setting when that hypothesis is established; priority is not a prediction that it will be easy.
 
 Do not close a package because its document exists. Close it when its stated evidence is present, or explicitly resolve it as blocked/superseded with the reason and next action. Optional bridge/custom-look work must not hide missing primary requirements. Update STATE and the session report after every local work package.
