@@ -33,7 +33,7 @@ values were populated from the references.
 | CL-106 | Preview/load-state protocol retained | Target evidence and physical no-shutter/transition/performance tests |
 | CL-107 | Domain/holdout/selected-slot requirements retained | Stable FL23 baseline, calibration inputs/rights and target slot/resource ownership |
 | FT-101 | Native backend hypothesis and dependency queue prepared | Target backend/task/UI/network/media evidence; no route selected |
-| FT-102 | Durable synthetic queue and in-memory transport failure tests | Real isolated server/protocol/TLS tests and eventual native constraints |
+| FT-102 | Durable mock queue plus 19-case constrained loopback FTPS run, full read-back/TLS/race/fault tests | Independent/deployment peers, physical faults, real media and native constraints |
 | FT-103 | Native-origin acceptance remains explicit | One approved camera-resident upload and end-to-end server equality |
 | FT-104 | Generic queue grouping/reconciliation can be simulated | Target media-completion/lifecycle events and native automatic capture |
 | FT-105 | Security/resource acceptance protocol retained | Target certificate behavior, coexistence, shooting/thermal/battery measurements |
@@ -59,9 +59,10 @@ gaps dossier lists the minimum real artifacts and observations needed.
   No camera transport, persistent device journal or OS camera lock was tested.
 - OFF-14: explicit path/content review of the proposed local commit. This is not
   a comprehensive automatic secret/content-rights detector.
-- FTT-03..09: applicable queue scenarios use synthetic local spool bytes and a
-  mock with explicitly stronger capabilities than generic FTP. They are partial
-  host evidence, not full real-server/native FTT passes.
+- FTT-03..09: mock scenarios and a separately audited custom loopback peer use
+  synthetic spool bytes. The lab tests real TLS, full retrieval and exclusive
+  operations for that peer only; host fault injections are not physical faults.
+  These remain partial host evidence, not complete native FTT passes.
 - All CLT-01..11, ENT-01..07, native FTT-01..12, target recovery/readback and
   independent reproduction remain NOT RUN. No device-write gate passes here.
 
@@ -72,11 +73,13 @@ actual run is inspected, irrespective of a workflow file being present.
 
 ## Remaining useful work and next target package
 
-Real FTP/FTPS server capability, hash/read-back, no-clobber finalization, certificate
-failure and restart semantics remain host-side work after the mock foundation.
-The adapter must not claim server guarantees supplied only by its mock. Remote
-CI and clean-host execution likewise require actual observations. These pending
-items are not silently marked complete or replaced with synthetic results.
+The [loopback lab](../docs/FTPS_LOOPBACK_LAB.md) now supplies observed host evidence
+for its constrained peer, hash read-back, no-clobber finalization, certificate
+failure and queue reload/reconciliation. Its link/unlink extension is not generic
+FTP rename semantics or power-loss proof. Other peers, physical faults and target
+constraints remain untested. The next single host package is **IN-102 clean
+authored-tree offline reproduction**. Remote CI and clean-host execution require
+actual observations; prepared workflow files are not results.
 
 The next target-specific package remains **RA-003**, beginning with the missing
 installed-firmware fact and matching official-package provenance. No latest build

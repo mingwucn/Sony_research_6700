@@ -4,8 +4,10 @@ Status: **offline-tested foundation only**. `tools/transfer_queue.py` supplies a
 local queue and an in-memory mock. It contains no socket, FTP/FTPS client,
 credentials, camera API, automatic worker or command-line uploader. This is
 neither native FTP support nor a HOST-ASSISTED bridge. FT-101 remains blocked by
-missing target acquisition/ABI evidence. FT-102's real-server work remains NOT
-RUN; its full acceptance is not closed by these tests.
+missing target acquisition/ABI evidence. A separate opt-in
+[loopback FTPS lab](FTPS_LOOPBACK_LAB.md) now tests this queue against a constrained
+independent peer. Mock results remain distinct from that evidence; neither closes
+native constraints or arbitrary-server compatibility.
 
 ## Executable boundary
 
@@ -22,8 +24,9 @@ nonempty regular file, refusing source symlinks. The synthetic file limit is
 32 MiB and the queue limit is 10,000 objects. These are host implementation
 bounds, not support limits for camera JPEG, RAW, video or large files.
 `run_one(id, MockTransport(), now=...)` performs at most one caller-triggered
-attempt. `reconcile` performs only in-memory remote observations and changes
-local queue state; it never uploads, renames or deletes a remote object.
+attempt. `reconcile` performs only observations through the supplied transport and
+changes local state; it never uploads, renames or deletes a remote object. The
+mock uses in-memory observations; the lab adapter uses authenticated read-back.
 
 The spool and queue directory must be private and controlled by one owner.
 This foundation does not defend against an attacker concurrently replacing
@@ -126,7 +129,8 @@ upload/rename; FTP rename is **not assumed universally atomic or no-clobber**.
 A real adapter lacking proved capabilities must refuse this contract rather
 than overwrite, treat size as equality, bypass TLS or fall back to plaintext.
 SFTP is a separate protocol and is not implemented. No real-server test or
-dependency acquisition was performed for this foundation.
+dependency acquisition was performed for the original mock foundation. Later
+isolated dependency/protocol evidence is recorded in the linked lab report.
 
 ## Synthetic results and outstanding tests
 
@@ -146,14 +150,13 @@ Exact interpreter, command, exit code and final count are recorded in the
 sanitized session report, not inferred from this specification.
 
 These are generic `offline-tested` subcases related to FTT-02..09/11; they do
-not pass the complete FTT hardware/server acceptance rows. The following are
-NOT RUN: any server, localhost listener, FTP/FTPS handshake, real TLS validation,
-network fault, actual camera file/capture completion event, native Wi-Fi,
+not pass the complete FTT hardware/server acceptance rows. The separate lab adds
+only its explicitly observed custom-peer/TLS/injected-fault results. Remaining
+NOT RUN cases include actual camera file/capture completion events, native Wi-Fi,
 camera-to-host API, sleep/power/card lifecycle, large camera files, real
 non-ASCII path negotiation, hardware performance, Windows crash/power-loss
 durability and independent-host reproduction.
 
-Next FTP package: complete the separately scoped FT-102 isolated-server
-capability/failure harness and review a real adapter after owner-controlled
-endpoint/configuration and dependency decisions exist. Native FT-101 still
+Next FTP evidence: actual native constraints or a separately selected deployment
+peer must be established before adapting the lab contract. Native FT-101 still
 requires exact-target evidence before any native route can be selected.

@@ -5,6 +5,12 @@ Evidence class: **static-inference** for the workflow review. Remote CI status:
 matrix result, clean-host result, camera feature, or device-write eligibility.
 No push or workflow dispatch was performed in this preparation session.
 
+The later [loopback FTPS lab](FTPS_LOOPBACK_LAB.md) is a separate opt-in runtime
+with locked private dependencies. Its `lab_tests/` directory is outside this
+workflow's discovery path. New client/archive policy tests under `tests/` use
+only the standard library and mocks/synthetic archives; they never start the
+server, create the dependency environment or retrieve artifacts.
+
 Local standard-library text assertions passed with exit 0: two full action
 pins, four declared matrix combinations, read-only token scope, disabled
 credential persistence, the two expected Python commands, and absence of secret

@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "purpose": "FT-102 isolated loopback host laboratory only; not camera reference/support data",
+  "created_on": "2026-10-18",
+  "runtime": {
+    "implementation": "cpython",
+    "python_version": [
+      3,
+      13,
+      12
+    ],
+    "os_name": "nt",
+    "machine": "AMD64",
+    "include_system_site_packages": false,
+    "pip": false
+  },
+  "server_source": {
+    "repository": "https://github.com/giampaolo/pyftpdlib.git",
+    "tag": "release-2.2.0",
+    "annotated_tag_object": "08f25ef1f02962bcc1b9170641061a67cd3fa336",
+    "commit": "ace15a9ef5e60e14ecc25788025821f3f5d364f9",
+    "sdist_package_files_matching_git": 20
+  },
+  "artifacts": [
+    {
+      "name": "pyftpdlib",
+      "version": "2.2.0",
+      "filename": "pyftpdlib-2.2.0.tar.gz",
+      "sha256": "4ba0642078792df63dd3b2e9c8f838f2a3ecf428c7518d5921c0530d53512acf",
+      "size": 189150,
+      "url": "https://files.pythonhosted.org/packages/f9/42/8751c5f58ae59b09e070da4fa322ae9693a340d2cc456b5a380b2c1ee47a/pyftpdlib-2.2.0.tar.gz",
+      "metadata_url": "https://pypi.org/pypi/pyftpdlib/2.2.0/json",
+      "requires_dist": [
+        "pyasynchat; python_version >= \"3.12\"",
+        "pyasyncore; python_version >= \"3.12\"",
+        "black; extra == \"dev\"",
+        "build; extra == \"dev\"",
+        "check-manifest; extra == \"dev\"",
+        "coverage; extra == \"dev\"",
+        "pdbpp; os_name == \"nt\" and extra == \"dev\"",
+        "pylint; extra == \"dev\"",
+        "pyreadline3; os_name == \"nt\" and extra == \"dev\"",
+        "pytest-cov; extra == \"dev\"",
+        "pytest-xdist; extra == \"dev\"",
+        "rstcheck; extra == \"dev\"",
+        "ruff; extra == \"dev\"",
+        "toml-sort; extra == \"dev\"",
+        "twine; extra == \"dev\"",
+        "PyOpenSSL; extra == \"ssl\"",
+        "psutil; extra == \"test\"",
+        "pyasynchat; python_version >= \"3.12\" and extra == \"test\"",
+        "pyasyncore; python_version >= \"3.12\" and extra == \"test\"",
+        "pyopenssl; extra == \"test\"",
+        "pytest; extra == \"test\"",
+        "pytest-instafail; extra == \"test\"",
+        "pytest-xdist; extra == \"test\"",
+        "pywin32; os_name == \"nt\" and extra == \"test\"",
+        "setuptools; extra == \"test\""
+      ],
+      "native_files": [],
+      "license_files": [
+        "pyftpdlib-2.2.0/LICENSE"
+      ],
+      "rights_review": "MIT; LICENSE identical to pinned Git source",
+      "allowed_roots": [
+        "pyftpdlib"
+      ],
+      "source_exports": {
+        "pyftpdlib-2.2.0/LICENSE": {
+          "sha256": "67a832551570a5ac5f7901eaa5ece4b9491fda7f2d8c93957c3bbc68a5a76d88",
+          "size": 1074
+        },
+        "pyftpdlib-2.2.0/PKG-INFO": {
+          "sha256": "b2ca3514c9f02fde8be1299adb29e8c680e7e2dd7a2a5d16268dc6ebd0d20ebf",
+          "size": 12637
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/__init__.py": {
+          "sha256": "cc7a5f97321218e1d01a39d7a1e792031b043592f5006fbfa813b3d4f4159319",
+          "size": 2845
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/__main__.py": {
+          "sha256": "358455d6082fba4a72ae89b1134dd6c088cb039c51ca217a7047f58418feb936",
+          "size": 12482
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/authorizers.py": {
+          "sha256": "41cceb449aa5eb681c2039ce49884b32f87ce442d4ec1395a65e63bd6741a8e6",
+          "size": 34520
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/exceptions.py": {
+          "sha256": "5b2bd47384a3ca3387b37de1e572de7ee65956162c28a16fb9543c4c5657668f",
+          "size": 1050
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/filesystems.py": {
+          "sha256": "e8bd027c9c823c54fcf82e30dacf5618728947c3b957c43e3d530017f5d42488",
+          "size": 21351
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/__init__.py": {
+          "sha256": "b43aa19ffe7e32783eadc1cbf879c7d31de7178260c95fa74e12266ee525697b",
+          "size": 507
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/ftp/__init__.py": {
+          "sha256": "b5eab9b5808530b3591e0cd7e8f58888968c98892257d745612a2102f1cb7752",
+          "size": 155
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/ftp/control.py": {
+          "sha256": "de6328ab7fd662309781c8d59cf39241ba6d8328684969ca19180bb02905cedb",
+          "size": 88602
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/ftp/data.py": {
+          "sha256": "61824e83a989712296f6d033a515d13861c159a0503b0fce54fe1e7b05cfb542",
+          "size": 18100
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/ftp/dispatchers.py": {
+          "sha256": "1a988a68b6b573dfc00cd48dace64bfbf97868b6fd0ecdbf91bbdf1f4e75fef7",
+          "size": 11694
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/ftp/producers.py": {
+          "sha256": "aadd76136dc73cb9ff9f217d1571519c8ffb026a56fe346bdd68812da1daa151",
+          "size": 2597
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/ftps/__init__.py": {
+          "sha256": "b5eab9b5808530b3591e0cd7e8f58888968c98892257d745612a2102f1cb7752",
+          "size": 155
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/ftps/control.py": {
+          "sha256": "ea4b2b9ca0c96f993fae30b03d1a01b30198ff23ebcd7475482f5a7e6a393b3e",
+          "size": 8386
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/ftps/data.py": {
+          "sha256": "b7e9280ee5e86ac9d4e18a18c2d58b32ecfb277d09e434a6efe99cc36762dd50",
+          "size": 1242
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/handlers/ftps/ssl.py": {
+          "sha256": "096d890f9a9338e3a0702a40537112aad7bdd229cdeb81ed69c68f39a3ddfec1",
+          "size": 12485
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/ioloop.py": {
+          "sha256": "ea358a956938c412000e108b5e77148c653f41635487f309baf39aff3682a0d7",
+          "size": 36888
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/log.py": {
+          "sha256": "26abc7323c649b8ac6b115d79d920faa2d410d6f4686fbe4e91f0aff7a474ecd",
+          "size": 6097
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/prefork.py": {
+          "sha256": "d09f2d78198c0580de56646c3fd4339a50098a4531c08b579b039d5b6f95b32b",
+          "size": 3743
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/servers.py": {
+          "sha256": "08637c315d818b5d9324f8828d3c283565363e8d42153d926c47d17d4a816971",
+          "size": 22200
+        },
+        "pyftpdlib-2.2.0/pyftpdlib/utils.py": {
+          "sha256": "558dd31352a2c9bf4ae37085a7a9dabace156cb09c8449a784f997f6f108f3a1",
+          "size": 2787
+        }
+      },
+      "artifact_requires_dist": [
+        "pyasynchat; python_version >= \"3.12\"",
+        "pyasyncore; python_version >= \"3.12\"",
+        "black; extra == \"dev\"",
+        "build; extra == \"dev\"",
+        "check-manifest; extra == \"dev\"",
+        "coverage; extra == \"dev\"",
+        "pdbpp; os_name == \"nt\" and extra == \"dev\"",
+        "pylint; extra == \"dev\"",
+        "pyreadline3; os_name == \"nt\" and extra == \"dev\"",
+        "pytest-cov; extra == \"dev\"",
+        "pytest-xdist; extra == \"dev\"",
+        "rstcheck; extra == \"dev\"",
+        "ruff; extra == \"dev\"",
+        "toml-sort; extra == \"dev\"",
+        "twine; extra == \"dev\"",
+        "PyOpenSSL; extra == \"ssl\"",
+        "psutil; extra == \"test\"",
+        "pyasynchat; python_version >= \"3.12\" and extra == \"test\"",
+        "pyasyncore; python_version >= \"3.12\" and extra == \"test\"",
+        "pyopenssl; extra == \"test\"",
+        "pytest; extra == \"test\"",
+        "pytest-instafail; extra == \"test\"",
+        "pytest-xdist; extra == \"test\"",
+        "pywin32; os_name == \"nt\" and extra == \"test\"",
+        "setuptools; extra == \"test\""
+      ]
+    },
+    {
+      "name": "pyasynchat",
+      "version": "1.0.5",
+      "filename": "pyasynchat-1.0.5-py3-none-any.whl",
+      "sha256": "35b7859515693e479e8d95ebe9f32cbf4d6312ab7599ced39fc24699e51de46f",
+      "size": 7869,
+      "url": "https://files.pythonhosted.org/packages/48/e8/e5ad498cb6a834c16af910e259926fd545dd7873a2da451f3a2bb228d7ee/pyasynchat-1.0.5-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pyasynchat/1.0.5/json",
+      "requires_dist": [
+        "pyasyncore>=1.0.2"
+      ],
+      "native_files": [],
+      "license_files": [
+        "pyasynchat-1.0.5.dist-info/licenses/LICENSE"
+      ],
+      "rights_review": "PSF-2.0; preserve licence/copyright and modification summary if distributed",
+      "allowed_roots": [
+        "asynchat",
+        "pyasynchat-1.0.5.dist-info"
+      ],
+      "artifact_requires_dist": [
+        "pyasyncore>=1.0.2"
+      ]
+    },
+    {
+      "name": "pyasyncore",
+      "version": "1.0.5",
+      "filename": "pyasyncore-1.0.5-py3-none-any.whl",
+      "sha256": "269bbc5252671827387636822841a1fb721ec6e858b23a3e12cf92eb1f97da2a",
+      "size": 10237,
+      "url": "https://files.pythonhosted.org/packages/1f/ab/b10cee56269ae150763f3f83b3e9305a11f42f50b3dcd58eeb8f7988f0bb/pyasyncore-1.0.5-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pyasyncore/1.0.5/json",
+      "requires_dist": null,
+      "native_files": [],
+      "license_files": [
+        "pyasyncore-1.0.5.dist-info/licenses/LICENSE"
+      ],
+      "rights_review": "PSF-2.0; preserve licence/copyright and modification summary if distributed",
+      "allowed_roots": [
+        "asyncore",
+        "pyasyncore-1.0.5.dist-info"
+      ],
+      "artifact_requires_dist": []
+    },
+    {
+      "name": "pyOpenSSL",
+      "version": "26.4.0",
+      "filename": "pyopenssl-26.4.0-py3-none-any.whl",
+      "sha256": "f0eb0cb2d581d3ad2b9c489468485e7f2ab6727d08401bcf9d824c3caddf3c1c",
+      "size": 56026,
+      "url": "https://files.pythonhosted.org/packages/51/ad/2cf6d3fa2fae5c79e1ed9960c0d42badd0f94d81dd12b50604cdc839e648/pyopenssl-26.4.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pyOpenSSL/26.4.0/json",
+      "requires_dist": [
+        "cryptography<51,>=49.0.0",
+        "typing-extensions>=4.9; python_version < \"3.13\"",
+        "pytest-rerunfailures; extra == \"test\"",
+        "pretend; extra == \"test\"",
+        "pytest>=3.0.1; extra == \"test\"",
+        "sphinx!=5.2.0,!=5.2.0.post0,!=7.2.5; extra == \"docs\"",
+        "sphinx_rtd_theme; extra == \"docs\""
+      ],
+      "native_files": [],
+      "license_files": [
+        "pyopenssl-26.4.0.dist-info/licenses/LICENSE"
+      ],
+      "rights_review": "Apache-2.0; retain licence and applicable notices; mark modifications",
+      "allowed_roots": [
+        "OpenSSL",
+        "pyopenssl-26.4.0.dist-info"
+      ],
+      "artifact_requires_dist": [
+        "cryptography<51,>=49.0.0",
+        "typing-extensions>=4.9; python_version < \"3.13\"",
+        "pytest-rerunfailures; extra == \"test\"",
+        "pretend; extra == \"test\"",
+        "pytest>=3.0.1; extra == \"test\"",
+        "sphinx!=5.2.0,!=5.2.0.post0,!=7.2.5; extra == \"docs\"",
+        "sphinx_rtd_theme; extra == \"docs\""
+      ]
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.0",
+      "filename": "cryptography-50.0.0-cp311-abi3-win_amd64.whl",
+      "sha256": "bd1c592e4d5974f0d08d4888e432157adba757c66da0246918e43677fafa2d30",
+      "size": 3840395,
+      "url": "https://files.pythonhosted.org/packages/32/2e/c9db68a0c4bfa28e310707527c0ee3a2bd254104d2e02e68f368e197aa4c/cryptography-50.0.0-cp311-abi3-win_amd64.whl",
+      "metadata_url": "https://pypi.org/pypi/cryptography/50.0.0/json",
+      "requires_dist": [
+        "cffi>=2.0.0; platform_python_implementation != \"PyPy\"",
+        "typing-extensions>=4.13.2; python_full_version < \"3.11\"",
+        "bcrypt>=3.1.5; extra == \"ssh\""
+      ],
+      "native_files": [
+        "cryptography/hazmat/bindings/_rust.pyd"
+      ],
+      "license_files": [
+        "cryptography-50.0.0.dist-info/licenses/LICENSE",
+        "cryptography-50.0.0.dist-info/licenses/LICENSE.APACHE",
+        "cryptography-50.0.0.dist-info/licenses/LICENSE.BSD"
+      ],
+      "rights_review": "Apache-2.0 OR BSD-3-Clause; native bundled-component inventory not established",
+      "allowed_roots": [
+        "cryptography",
+        "cryptography-50.0.0.dist-info"
+      ],
+      "artifact_requires_dist": [
+        "cffi>=2.0.0 ; platform_python_implementation != 'PyPy'",
+        "typing-extensions>=4.13.2 ; python_full_version < '3.11'",
+        "bcrypt>=3.1.5 ; extra == 'ssh'"
+      ]
+    },
+    {
+      "name": "cffi",
+      "version": "2.0.0",
+      "filename": "cffi-2.0.0-cp313-cp313-win_amd64.whl",
+      "sha256": "19f705ada2530c1167abacb171925dd886168931e0a7b78f5bffcae5c6b5be75",
+      "size": 183402,
+      "url": "https://files.pythonhosted.org/packages/37/18/6519e1ee6f5a1e579e04b9ddb6f1676c17368a7aba48299c3759bbc3c8b3/cffi-2.0.0-cp313-cp313-win_amd64.whl",
+      "metadata_url": "https://pypi.org/pypi/cffi/2.0.0/json",
+      "requires_dist": [
+        "pycparser; implementation_name != \"PyPy\""
+      ],
+      "native_files": [
+        "_cffi_backend.cp313-win_amd64.pyd"
+      ],
+      "license_files": [
+        "cffi-2.0.0.dist-info/licenses/AUTHORS",
+        "cffi-2.0.0.dist-info/licenses/LICENSE"
+      ],
+      "rights_review": "Actual wheel LICENSE is MIT No Attribution (MIT-0), with per-file exceptions; metadata merely says MIT",
+      "allowed_roots": [
+        "cffi",
+        "_cffi_backend.cp313-win_amd64.pyd",
+        "cffi-2.0.0.dist-info"
+      ],
+      "artifact_requires_dist": [
+        "pycparser; implementation_name != \"PyPy\""
+      ]
+    },
+    {
+      "name": "pycparser",
+      "version": "2.23",
+      "filename": "pycparser-2.23-py3-none-any.whl",
+      "sha256": "e5c6e8d3fbad53479cab09ac03729e0a9faf2bee3db8208a550daf5af81a5934",
+      "size": 118140,
+      "url": "https://files.pythonhosted.org/packages/a0/e3/59cd50310fc9b59512193629e1984c1f95e5c8ae6e5d8c69532ccc65a7fe/pycparser-2.23-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pycparser/2.23/json",
+      "requires_dist": null,
+      "native_files": [],
+      "license_files": [
+        "pycparser-2.23.dist-info/LICENSE"
+      ],
+      "rights_review": "BSD-3-Clause; bundled PLY headers require separate retained notices",
+      "allowed_roots": [
+        "pycparser",
+        "pycparser-2.23.dist-info"
+      ],
+      "artifact_requires_dist": []
+    }
+  ],
+  "limits": {
+    "total_uncompressed_bytes": 67108864,
+    "member_bytes": 16777216,
+    "member_count": 1000
+  },
+  "execution_scope": "Reviewed local test harness only; literal127.0.0.1 control/passive data; no camera/native/bridge claim",
+  "publication_rights_complete": false
+}

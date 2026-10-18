@@ -30,8 +30,10 @@ Read [AGENTS.md](AGENTS.md) before changing anything. Start with [project state]
 Host-only continuation now adds a bounded [artifact probe](docs/ARTIFACT_INTAKE.md),
 [inventory portability repair](docs/INVENTORY_PORTABILITY.md), synthetic-only
 [candidate/transaction models](docs/OFFLINE_GUARDS.md), and a durable
-[mock transfer queue](docs/FTP_HOST_PROTOCOL.md). No device executor or FTP client
-exists in these modules. [Pre-camera coverage](research/PRE_CAMERA_READINESS.md)
+[mock transfer queue](docs/FTP_HOST_PROTOCOL.md). A separate opt-in
+[synthetic loopback FTPS lab](docs/FTPS_LOOPBACK_LAB.md) tests a constrained peer
+with pinned private dependencies. No camera adapter or device executor exists.
+[Pre-camera coverage](research/PRE_CAMERA_READINESS.md)
 keeps all 27 work packages and their remaining evidence requirements visible.
 [CI preparation](docs/HOST_VALIDATION.md) is separate from actual remote results.
 

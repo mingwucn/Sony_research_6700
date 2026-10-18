@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "pre_camera_host_foundations_target_facts_pending",
+  "phase": "pre_camera_loopback_lab_passed_native_constraints_pending",
   "model": "ILCE-6700",
   "installed_firmware": null,
   "regional_variant": null,
@@ -27,8 +27,8 @@
   "remote_ci_executed": false,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
-    "total": 97,
-    "passed": 96,
+    "total": 130,
+    "passed": 129,
     "failed": 0,
     "errors": 0,
     "skipped": 1,
@@ -37,7 +37,7 @@
     "command": "python -m unittest discover -s tests -v",
     "evidence_class": "offline-tested",
     "camera_or_real_server_coverage": false,
-    "report": "research/sessions/20261018-pre-camera-R0.md"
+    "report": "research/sessions/20261018-FT-102-loopback.md"
   },
   "work_packages": {
     "RA-001": {
@@ -75,9 +75,13 @@
       "focused_tests_passed": 36
     },
     "FT-102": {
-      "status": "partial_durable_mock_queue_real_server_pending",
-      "report": "docs/FTP_HOST_PROTOCOL.md",
-      "focused_tests_passed": 25
+      "status": "partial_constrained_host_lab_passed_native_and_deployment_constraints_pending",
+      "report": "docs/FTPS_LOOPBACK_LAB.md",
+      "focused_tests_passed": 25,
+      "mock_queue_tests_passed": 25,
+      "client_policy_tests_passed": 17,
+      "archive_guard_tests_passed": 16,
+      "loopback_cases_passed": 19
     },
     "IN-102": {
       "status": "partial_local_windows_and_pinned_ci_preparation_remote_not_run",
@@ -92,7 +96,11 @@
     "third_party_code_or_payloads_integrated": false,
     "native_source_binary_equivalence_verified": false,
     "newer_r1_revision_adopted": false,
-    "evidence": ["source-report", "static-inference", "offline-tested"]
+    "evidence": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ]
   },
   "blockers": [
     "Reference transport/native workers are model/build/ABI-specific; no alpha6700 service or write route follows from this static audit.",
@@ -105,10 +113,36 @@
     "No alpha6700 service-access route has been reviewed and tested.",
     "No exact-body program/settings/resource acquisition exists.",
     "No target recovery envelope or feature mappings are established.",
-    "Real FTP/FTPS protocol, server no-clobber/hash/TLS behavior and native constraints remain untested; mock capabilities are not server evidence."
+    "Constrained synthetic loopback FTPS passed only on this host; arbitrary/deployment servers, independent hosts, physical faults, camera media/lifecycle and native constraints remain unqualified.",
+    "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git."
   ],
-  "next_work_package": "FT-102: isolated host-side server capability/failure harness; RA-003 target-specific acquisition remains blocked on installed firmware",
+  "next_work_package": "IN-102: clean authored-tree offline reproduction without private/reference/lab dependencies; target-specific RA-003 remains gated on installed firmware",
   "next_device_action": "none; device work remains unapproved and blocked by missing exact-target evidence",
   "private_state_location": "private/session-state.json (created locally; never commit)",
-  "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions."
+  "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
+  "host_loopback_ftps_lab": {
+    "status": "passed_for_custom_synthetic_peer_only",
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "interpreter": "CPython 3.13.12 in new isolated Windows AMD64 private venv",
+    "command": "private/ftps-lab-20261018/Scripts/python.exe -I tools/run_ftps_lab.py --artifact-dir external/ft102-reviewed-artifacts-20261018 --workspace private/ftps-run-05",
+    "evidence_class": "offline-tested",
+    "synthetic_files": 100,
+    "synthetic_raw_jpeg_groups": 50,
+    "lab_servers_started_and_stopped": 21,
+    "live_lab_threads": 0,
+    "open_lab_control_listeners": 0,
+    "camera_coverage": false,
+    "native_ftp_validated": false,
+    "host_assisted_bridge_validated": false,
+    "host_lab_lock_sha256": "8dc9e161805509212684afc8cf28e7ba5446f5076861231377c458a3ba69f2dc",
+    "host_lab_dependency_runtime_executed": true,
+    "camera_reference_upstream_execution_performed": false,
+    "publication_rights_complete": false,
+    "report": "research/sessions/20261018-FT-102-loopback.md"
+  }
 }

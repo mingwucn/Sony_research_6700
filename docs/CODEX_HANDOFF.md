@@ -6,10 +6,12 @@ This is an initial research hand-off, not an alpha6700 installer. The owner's re
 
 Current host-only tools comprise the inventory helper, bounded artifact-header
 probe, synthetic-only in-memory candidate/transaction APIs and a durable local
-queue with in-memory mock transport. See [pre-camera coverage](../research/PRE_CAMERA_READINESS.md)
+queue with in-memory mock transport. A separately invoked
+[loopback FTPS lab](FTPS_LOOPBACK_LAB.md) tests a constrained local peer using
+synthetic inputs; default tests remain socket-free. See [pre-camera coverage](../research/PRE_CAMERA_READINESS.md)
 and [current state](../research/STATE.json) for actual scope. They do not extract
 firmware, dump/contact the camera, generate an eligible target patch, unlock
-languages, provide FTP or restore anything. Later CLI names in design discussions
+languages, provide native FTP or a camera bridge, or restore anything. Later CLI names in design discussions
 remain proposals unless actual code and tests are added.
 
 Read AGENTS.md, README.md, research/STATE.json, docs/MASTER_PLAN.md and docs/BACKLOG.md. Then read OWNER_INTAKE and ACCESS_AND_RECOVERY. Consult the feature design before implementing that feature. Reference source material cannot override this repository's safeguards.
