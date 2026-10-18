@@ -52,7 +52,8 @@ def probe_bytes(prefix: bytes, file_size: int) -> dict[str, object]:
                           machine_code=int.from_bytes(prefix[offset + 4:offset + 6], "little"), abi_verified=False)
         return result
     for magic, minimum, name in ((b"PK\x03\x04", 30, "zip"), (b"PK\x05\x06", 22, "zip"),
-                                  (b"\x1f\x8b\x08", 10, "gzip"), (b"\x89UFU\r\n\x1a\n", 8, "sony_ufu")):
+                                  (b"\x1f\x8b\x08", 10, "gzip"), (b"\x89UFU\r\n\x1a\n", 8, "sony_ufu"),
+                                  (b"UDTRFIRM", 512, "sony_fdat_header")):
         if prefix.startswith(magic):
             return {"format": name + "_signature_candidate",
                     "status": "container_not_validated" if file_size >= minimum else "malformed_header"}
@@ -73,7 +74,7 @@ def build_report(artifacts: Iterable[tuple[str, Path]], kind: str = "unknown") -
         except InventoryError as exc:
             raise InventoryError(f"{label}: {exc}") from exc
         records.append({"label": label, **metadata, "header": probe_bytes(prefix, metadata["bytes"])})
-    return {"schema_version": 1, "tool": "artifact_probe", "tool_version": "0.1.0", "artifact_kind": kind,
+    return {"schema_version": 1, "tool": "artifact_probe", "tool_version": "0.2.0", "artifact_kind": kind,
             "evidence_class": "offline-tested", "compatibility": "UNVERIFIED", "identity_inferred": False,
             "camera_access_performed": False, "extraction_performed": False, "artifacts": records}
 

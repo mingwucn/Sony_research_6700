@@ -59,6 +59,32 @@
       "alpha6700_compatibility_established": false
     }
   ],
+  "fdat_extractor_candidate": {
+    "repository": "DavidBuchanan314/fwtool.py",
+    "commit": "3955d7890fc38daf942bb52827599bfe35de4a14",
+    "role": "Source-text-only FDAT candidate audit; no runtime adoption or code integration",
+    "upstream_repository": "ma1co/fwtool.py",
+    "upstream_baseline_commit": "cdba742b73eed5981480c326aeb30033aabf0223",
+    "pull_request": "https://github.com/ma1co/fwtool.py/pull/52",
+    "pull_request_state_observed": "open_unmerged",
+    "source_tree": "63801fd484c6e089f2363095b1c90968c6ee9c0d",
+    "audit_report": "research/FDAT_EXTRACTOR_AUDIT.md",
+    "inspected_files": [
+      {"path": "fwtool/sony/fdat.py", "git_blob": "3236a4292b933c38766952ec31ef887a3b90eaad", "bytes": 9791, "sha256": "ea1feccdc115fa46cdb29061cfa6cd1bb7277bb454892c0c7f8e9f6257c6d628"},
+      {"path": "fwtool/io/__init__.py", "git_blob": "e60edf3bb9209cbf698f4c7b4d24b0fbbc86d48e", "bytes": 1942, "sha256": "6981352a7a39e1427555468e11ef301b7e4bc3e40ae02b09e86e05a2d96e6963"},
+      {"path": "fwtool/util/__init__.py", "git_blob": "c3e65dd22b5ef02b32e8256b46de6d939d839c01", "bytes": 1934, "sha256": "befbfdb6f5a096f4cc33ca68a5cd5690dbc67b630aa0a56e007fec90f45596b6"},
+      {"path": "fwtool/sony/dat.py", "git_blob": "362915df714cf6ffb6b58aedb1294cd1272b2ca7", "bytes": 4538, "sha256": "5f5c1324649ee6c1719b14d5fc3b829741daf904c5f79da2ddcab10ef17f8d8e"},
+      {"path": "LICENSE.txt", "git_blob": "77b0378407be242b5537f8dca3ed6402c91ba676", "bytes": 1072, "sha256": "a485f27d0b22eb7fd9b9419795695d0a1750ea32c961d11c1dd8ddade564dedf"},
+      {"path": "requirements.txt", "git_blob": "bd3da1c6b55b487368e2d3f227d3479f44c07758", "bytes": 33, "sha256": "695864b34ea9a70a2fec2e4925b5ebd42afb2c0fdba83e9fca9358fd20b647f9"},
+      {"path": "devices.yml", "git_blob": "5a0e5986e9401dea60726ce4e137cfa976784cda", "bytes": 7774, "sha256": "89e56add429a28cbd74b8bc84532936f15d508a9e7a53594c8272906f7eb6304"}
+    ],
+    "licence_status": "MIT text verified for reviewed code; no grant for Sony proprietary firmware",
+    "source_blobs_verified_against_fixed_tree": true,
+    "cryptographic_key_or_constant_files_acquired": false,
+    "execution_performed": false,
+    "runtime_dependency_adopted": false,
+    "alpha6700_compatibility_established": false
+  },
   "official_sources": [
     {"id": "S1", "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/0411B_creative_look.html"},
     {"id": "S2", "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/0601_language.html"},

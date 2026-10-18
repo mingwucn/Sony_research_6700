@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "official_package_ufu_directory_recorded_fdat_format_and_component_inventory_pending",
+  "phase": "bounded_fdat_prefix_opaque_extractor_candidate_pinned_decoding_design_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -27,24 +27,27 @@
   "remote_ci_executed": true,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
-    "total": 179,
-    "passed": 176,
+    "total": 198,
+    "passed": 195,
     "failed": 0,
     "errors": 0,
     "skipped": 3,
     "exit_code": 0,
+    "runner_seconds": 19.03,
+    "wrapper_elapsed_seconds": 19.515032,
     "interpreter": "CPython 3.13.12",
     "host": "Windows AMD64, kernel build 26300.9711",
     "command": "python -B -X utf8 -m unittest discover -s tests -v",
-    "runner_seconds": 21.475,
-    "wrapper_elapsed_seconds": 22.066025,
     "evidence_class": "offline-tested",
     "camera_or_real_server_coverage": false,
-    "report": "research/sessions/20261018-RA-003-ufu-inventory.md",
-    "source_scope": "Current authored working tree on same owner Windows host; new UFU reader included, no fresh export or hosted CI claimed",
-    "evidence_basis_commit": "0a04be8494d087b7f886c0284e95b7805795a0a1",
-    "new_reader_sha256": "fb20ab0a69f9612a5c46570649f49f0f702beab2e5b03d8a1dc4db8812670e17",
-    "new_test_sha256": "88b9a3d336fc8f41c65c1a3408ce0a1b56f95ee8d3f420a52a3e990dd805cc2d",
+    "report": "research/sessions/20261018-RA-003-fdat-identification.md",
+    "source_scope": "Current authored working tree on same owner Windows host; no fresh export or hosted CI claimed for these changes",
+    "evidence_basis_commit": "e1bc6f995ad3014a8c5b821700288573c2182e86",
+    "code_sha256": {
+      "tools/ufu_inventory.py": "d014198b5189b173419e1a7489e1d298acd215afa2a251b1eb43ca99de7a980f",
+      "tools/artifact_probe.py": "54fbda68197b54547793b72aae1afececb92422dc3f29362c6515f8f86384071",
+      "tests/test_fdat_probe.py": "9ef5fde41f1e1b832ca6d7e2e8262c121e87d062440694cd5a23c54fa4dbce74"
+    },
     "skips": [
       "POSIX fork inheritance on Windows",
       "Real symlink creation: existing inventory",
@@ -65,15 +68,16 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_official_package_and_bounded_ufu_directory_recorded_component_format_extraction_and_body_match_pending",
+      "status": "partial_official_package_ufu_directory_and_opaque_fdat_diagnosis_recorded_decoding_and_body_match_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "Consented official mainland 2.00 package; size/hash, bounded signature and authored directory framing inventory only. No component extraction, decompression, firmware execution or target compatibility established",
+      "scope": "R0 ordinary local hash/framing and bounded in-memory FDAT identification; source-only candidate audit. No decoding, component copying or target compatibility established",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261018-RA-003-ufu-inventory.md",
+      "session_report": "research/sessions/20261018-RA-003-fdat-identification.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
-      "container_audit": "research/UFU_CONTAINER_AUDIT.md"
+      "container_audit": "research/UFU_CONTAINER_AUDIT.md",
+      "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -144,12 +148,12 @@
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
     "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
     "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
-    "Official mainland 2.00 package acquired privately: declared size and transfer/stored SHA-256 agree; bounded probe and authored directory reader record UFU framing and five bounded spans only. China statutory research route includes express Copyright Law Article 50(5), but FDAT/component formats, exact extraction/static-analysis scope, accepted-contract interaction, applicable-extractor suitability and exact-body/build correspondence remain unresolved. Earlier failed GETs are preserved.",
+    "Official mainland 2.00 package acquired privately; same-pass hashes/framing agree. Bounded 4096-byte FDAT prefix is unknown/unsupported_opaque, not proof of encryption. Source-only extractor candidate is pinned/audited; actual decoding/copying scope, decoder applicability, full component formats, exact-body/build correspondence and contract interaction remain unresolved.",
     "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them.",
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: identify the bounded FDAT format and audit an applicable extractor before component copying or decompression",
+  "next_work_package": "RA-003: establish an act-specific FDAT decoding basis and bounded decoder design before real decryption or component copying",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -185,7 +189,7 @@
       "priority": "primary",
       "status": "owner_reports_english_absent_mainland_version_feasibility_unverified",
       "camera_validated": false,
-      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now records the official package hash and five bounded UFU chunk spans, without component extraction; this does not establish feature resources/backend or installed-build correspondence.",
+      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now records the official package hash and five bounded UFU chunk spans, without component extraction; this does not establish feature resources/backend or installed-build correspondence. Later bounded FDAT prefix identification returned unknown/unsupported_opaque; a source-only extractor candidate is pinned but no real decoding or feature evidence exists.",
       "blockers": [
         "Lawfully inspectable matching exact-build artifacts and regional applicability; exact SKU/internal product identity and binary hashes unverified",
         "Distinguish present-but-restricted English resources from missing/incomplete resources; prove narrow language policy and all consumers before any candidate"
@@ -201,7 +205,9 @@
         "research/sessions/20261018-RA-003-cn-scope.md",
         "research/sessions/20261018-RA-003-package-law.md",
         "research/UFU_CONTAINER_AUDIT.md",
-        "research/sessions/20261018-RA-003-ufu-inventory.md"
+        "research/sessions/20261018-RA-003-ufu-inventory.md",
+        "research/FDAT_EXTRACTOR_AUDIT.md",
+        "research/sessions/20261018-RA-003-fdat-identification.md"
       ]
     },
     "native_wifi_ftp": {
@@ -209,7 +215,7 @@
       "priority": "primary",
       "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified",
       "camera_validated": false,
-      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now records the official package hash and five bounded UFU chunk spans, without component extraction; this does not establish feature resources/backend or installed-build correspondence.",
+      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now records the official package hash and five bounded UFU chunk spans, without component extraction; this does not establish feature resources/backend or installed-build correspondence. Later bounded FDAT prefix identification returned unknown/unsupported_opaque; a source-only extractor candidate is pinned but no real decoding or feature evidence exists.",
       "blockers": [
         "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
@@ -225,7 +231,9 @@
         "research/sessions/20261018-RA-003-cn-scope.md",
         "research/sessions/20261018-RA-003-package-law.md",
         "research/UFU_CONTAINER_AUDIT.md",
-        "research/sessions/20261018-RA-003-ufu-inventory.md"
+        "research/sessions/20261018-RA-003-ufu-inventory.md",
+        "research/FDAT_EXTRACTOR_AUDIT.md",
+        "research/sessions/20261018-RA-003-fdat-identification.md"
       ]
     },
     "fl2_fl3_still_looks": {
@@ -719,7 +727,8 @@
     "source_to_body_correspondence_established": false,
     "container_validated": false,
     "acquisition_report": "research/sessions/20261018-RA-003-package-law.md",
-    "bounded_directory_inventory_recorded": true
+    "bounded_directory_inventory_recorded": true,
+    "bounded_fdat_identification_recorded": true
   },
   "official_oss_source_offers": {
     "checked_on": "2026-10-18",
@@ -1200,6 +1209,31 @@
       "source_commit": "fb32370052a0ffe5d8a529edba971f962ce57654",
       "discovery_and_runner_seconds": 17.214,
       "source_scope": "NEW committed authored-tree export; fresh no-pip stdlib environment on same owner Windows host"
+    },
+    {
+      "total": 179,
+      "passed": 176,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 3,
+      "exit_code": 0,
+      "interpreter": "CPython 3.13.12",
+      "host": "Windows AMD64, kernel build 26300.9711",
+      "command": "python -B -X utf8 -m unittest discover -s tests -v",
+      "runner_seconds": 21.475,
+      "wrapper_elapsed_seconds": 22.066025,
+      "evidence_class": "offline-tested",
+      "camera_or_real_server_coverage": false,
+      "report": "research/sessions/20261018-RA-003-ufu-inventory.md",
+      "source_scope": "Current authored working tree on same owner Windows host; new UFU reader included, no fresh export or hosted CI claimed",
+      "evidence_basis_commit": "0a04be8494d087b7f886c0284e95b7805795a0a1",
+      "new_reader_sha256": "fb20ab0a69f9612a5c46570649f49f0f702beab2e5b03d8a1dc4db8812670e17",
+      "new_test_sha256": "88b9a3d336fc8f41c65c1a3408ce0a1b56f95ee8d3f420a52a3e990dd805cc2d",
+      "skips": [
+        "POSIX fork inheritance on Windows",
+        "Real symlink creation: existing inventory",
+        "Real symlink creation: UFU reader"
+      ]
     }
   ],
   "latest_ufu_inventory_tests": {
@@ -1324,6 +1358,146 @@
     },
     "contract_enforceability_decided": false,
     "sony_permission_only_possible_basis": false,
-    "device_authorization_granted": false
+    "device_authorization_granted": false,
+    "A_prefix_identification": {
+      "assessment": "Extension of documented narrow Article 17/private-study basis to at most 4096 in-memory signature bytes; accepted-contract interaction unresolved",
+      "report": "research/FDAT_EXTRACTOR_AUDIT.md",
+      "performed": true,
+      "prefix_limit": 4096,
+      "component_contents_written_or_output": false,
+      "technical_measure_avoidance_performed": false,
+      "new_owner_approval_required_for_this_ordinary_read": false
+    }
+  },
+  "latest_fdat_probe_tests": {
+    "evidence_class": "offline-tested",
+    "total": 19,
+    "passed": 19,
+    "skipped": 0,
+    "failed": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "runner_seconds": 0.071,
+    "interpreter": "CPython 3.13.12",
+    "command": "python -B -X utf8 -m unittest tests.test_fdat_probe -v",
+    "scope": "Independent synthetic test-author run, included again in root full suite",
+    "report": "research/sessions/20261018-RA-003-fdat-identification.md"
+  },
+  "bounded_fdat_identification": {
+    "address_type": "package_file_offset",
+    "bytes": 1024017848,
+    "camera_access_performed": false,
+    "checksums_verified": false,
+    "chunk_count": 5,
+    "chunk_semantics_verified": false,
+    "chunks": [
+      {
+        "end_file_offset_exclusive": 20,
+        "header_file_offset": 8,
+        "index": 0,
+        "payload_bytes": 4,
+        "payload_file_offset": 16,
+        "type_ascii": "DATV",
+        "type_hex": "44415456"
+      },
+      {
+        "end_file_offset_exclusive": 32,
+        "header_file_offset": 20,
+        "index": 1,
+        "payload_bytes": 4,
+        "payload_file_offset": 28,
+        "type_ascii": "PROV",
+        "type_hex": "50524f56"
+      },
+      {
+        "end_file_offset_exclusive": 148,
+        "header_file_offset": 32,
+        "index": 2,
+        "payload_bytes": 108,
+        "payload_file_offset": 40,
+        "type_ascii": "UDID",
+        "type_hex": "55444944"
+      },
+      {
+        "end_file_offset_exclusive": 1024017836,
+        "header_file_offset": 148,
+        "index": 3,
+        "payload_bytes": 1024017680,
+        "payload_file_offset": 156,
+        "type_ascii": "FDAT",
+        "type_hex": "46444154"
+      },
+      {
+        "end_file_offset_exclusive": 1024017848,
+        "header_file_offset": 1024017836,
+        "index": 4,
+        "payload_bytes": 4,
+        "payload_file_offset": 1024017844,
+        "type_ascii": "DEND",
+        "type_hex": "44454e44"
+      }
+    ],
+    "compatibility": "UNVERIFIED",
+    "container_validated": false,
+    "decompression_performed": false,
+    "decryption_performed": false,
+    "evidence_class": "offline-tested",
+    "execution_performed": false,
+    "extraction_performed": false,
+    "fdat_probe": {
+      "candidate": {
+        "format": "unknown",
+        "status": "unsupported_opaque"
+      },
+      "prefix_bytes_observed": 4096,
+      "prefix_limit": 4096,
+      "raw_prefix_output": false,
+      "status": "signature_only"
+    },
+    "fdat_status": "single_bounded_span",
+    "format": "sony_ufu_framing_candidate",
+    "identity_inferred": false,
+    "schema_version": 1,
+    "sha256": "d3c7db5b9b40c89b11ecf03addf0f6ff1d9b917acf9f55e46360462e86db847c",
+    "signature_verified": false,
+    "status": "framing_spans_entire_file",
+    "tool": "ufu_inventory",
+    "tool_version": "0.2.0",
+    "report": "research/FDAT_EXTRACTOR_AUDIT.md",
+    "session_report": "research/sessions/20261018-RA-003-fdat-identification.md",
+    "interpreter": "CPython 3.13.12",
+    "exit_code": 0,
+    "elapsed_seconds": 1.486305,
+    "original_size_mtime_attributes_unchanged": true,
+    "exact_input_argv_recorded_privately": true,
+    "code_sha256": {
+      "tools/ufu_inventory.py": "d014198b5189b173419e1a7489e1d298acd215afa2a251b1eb43ca99de7a980f",
+      "tools/artifact_probe.py": "54fbda68197b54547793b72aae1afececb92422dc3f29362c6515f8f86384071",
+      "tests/test_fdat_probe.py": "9ef5fde41f1e1b832ca6d7e2e8262c121e87d062440694cd5a23c54fa4dbce74"
+    },
+    "payload_prefix_interpreted": true,
+    "prefix_contents_written_or_output": false,
+    "full_component_inventory_established": false,
+    "exact_body_correspondence_established": false
+  },
+  "fdat_extractor_audit": {
+    "repository": "DavidBuchanan314/fwtool.py",
+    "commit": "3955d7890fc38daf942bb52827599bfe35de4a14",
+    "report": "research/FDAT_EXTRACTOR_AUDIT.md",
+    "evidence_class": [
+      "source-report",
+      "static-inference"
+    ],
+    "reviewed_source_files": 7,
+    "source_blobs_verified_against_fixed_tree": true,
+    "source_only_capture": true,
+    "author_reports_ilce6700": true,
+    "exact_200_mainland_package_support_established": false,
+    "runtime_adopted": false,
+    "execution_performed": false,
+    "cryptographic_key_or_constant_files_acquired": false,
+    "reuse_licence": "MIT text verified for reviewed code only; no proprietary firmware grant",
+    "direct_use_accepted": false,
+    "reason": "Missing bounds/overlap/model validation and malformed-input handling; actual prefix remains opaque"
   }
 }

@@ -206,8 +206,12 @@ and records an authored bounded directory result. Five chunk spans cover the
 input under the reviewed framing; component contents were not interpreted or
 output. That assessment does not settle every later extraction/disassembly act.
 
-**RA-003: bounded FDAT format identification and applicable-extractor audit
-before component copying/decompression.** Full proposed analysis scope,
+The later [FDAT/extractor audit](FDAT_EXTRACTOR_AUDIT.md) records a 4,096-byte
+in-memory opaque prefix result and source-only candidate pin, with no actual
+decoding. The preceding no-payload-interpretation statement describes only the
+earlier directory run.
+
+**RA-003: establish an act-specific FDAT decoding basis and bounded decoder design before real decryption or component copying.** Full proposed analysis scope,
 source/build correspondence and exact-body applicability remain unresolved.
 Written rights-holder permission remains one possible route alongside the
 documented statutory provisions; it is not the only possible basis.

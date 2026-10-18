@@ -1,7 +1,8 @@
 # RA-003 artifact intake and bounded inspection
 
 Status: official mainland 2.00 package acquired; bounded identification and
-authored UFU directory inventory recorded, without component extraction.
+authored UFU directory inventory and bounded opaque FDAT identification recorded,
+without component extraction or decoding.
 Exact-body correspondence and the full extraction/analysis scope remain unresolved.
 Current intake (2026-10-18, **source-report**): the owner reports α6700
 firmware **2.00**, current **简体中文**, **Chinese mainland version**, and
@@ -24,7 +25,14 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [scoped UFU directory/parser audit](../research/UFU_CONTAINER_AUDIT.md)
+Latest continuation: [bounded FDAT identification/extractor audit](../research/FDAT_EXTRACTOR_AUDIT.md)
+and [commands/results](../research/sessions/20261018-RA-003-fdat-identification.md).
+The classifier interpreted 4,096 prefix bytes in memory and returned unknown /
+unsupported_opaque; no prefix contents were output or saved. A source-only
+extractor candidate is pinned, with no adoption/execution or exact-package support
+claim. Decryption, component copying and full semantics remain unestablished.
+
+Earlier continuation: [scoped UFU directory/parser audit](../research/UFU_CONTAINER_AUDIT.md)
 and [commands/results](../research/sessions/20261018-RA-003-ufu-inventory.md).
 Five chunk spans cover the file under the reviewed framing; one nonempty FDAT
 is bounded. No chunk payload contents were interpreted or output. Full format
@@ -66,7 +74,7 @@ After a legitimate input has been supplied, the probe accepts
 `--kind official-package --artifact package=ACTUAL_PRIVATE_PATH`. Substitute a real
 existing path; the placeholder is not an acquisition command. It hashes the entire
 file and inspects at most 4096 bytes from that same validated read. It reports
-bounded ELF/PE header candidates, ZIP/gzip/Sony-UFU signature candidates, malformed
+bounded ELF/PE header candidates, ZIP/gzip/Sony-UFU/decoded-FDAT signature candidates, malformed
 headers, a PE header outside the probe, or opaque unsupported data. File extensions
 do not select a parser. An opaque input is not automatically encrypted.
 
@@ -80,8 +88,10 @@ The [inventory portability note](INVENTORY_PORTABILITY.md) records filesystem li
 The [UFU directory reader](../research/UFU_CONTAINER_AUDIT.md) additionally requires
 `--input ACTUAL_PRIVATE_PATH --expect-sha256 EXPECTED_SHA256 --expect-bytes EXPECTED_BYTES`.
 These placeholders are explanatory; use the recorded acquisition identity.
-It streams the whole file for hash verification and interprets framing only,
-with 2 GiB / 4,096 chunk / 1 MiB read limits. No component contents are output.
+By default it streams the whole file for hash verification and interprets framing only,
+with 2 GiB / 4,096 chunk / 1 MiB read limits. Optional `--probe-fdat` retains
+at most 4,096 bytes of one FDAT prefix in memory and classifies after the full
+framing/hash pass; duplicate FDAT is refused in this mode. No raw contents output.
 
 Header references: [ELF gABI](https://gabi.xinuos.com/elf/02-eheader.html) and
 [Microsoft PE/COFF](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format).
@@ -131,6 +141,7 @@ RA-003 remains incomplete. Official input size/hash and bounded directory metada
 are recorded; no component contents have been extracted. Full proposed analysis
 scope, component-format/extractor suitability, independent exact-build evidence
 and body applicability remain open. Earlier stopped-download journals are retained
-as history. Next: bounded FDAT format identification and applicable-extractor audit
-before copying/decompression. Synthetic tests and framing coverage establish only
+as history. The later bounded prefix remains opaque. Next: **RA-003: establish an
+act-specific FDAT decoding basis and bounded decoder design before real decryption
+or component copying**. Synthetic tests and framing coverage establish only
 their documented host behaviour. Camera commands: **none**.

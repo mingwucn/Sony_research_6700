@@ -43,7 +43,16 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [scoped UFU directory and parser audit](../research/UFU_CONTAINER_AUDIT.md)
+Latest RA-003: [bounded FDAT identification/extractor audit](../research/FDAT_EXTRACTOR_AUDIT.md)
+and [commands/results](../research/sessions/20261018-RA-003-fdat-identification.md).
+The prefix classifier returned unknown/unsupported_opaque; that is not proof of
+encryption. Whole-file identity and previous spans agree. Local suite: 198 total,
+195 passed, three skipped, exit 0. The open upstream PR candidate is source-only
+and unvalidated for this exact package. This run interpreted a bounded prefix in
+memory; it saved/output no prefix contents. No decoding or feature/write gate.
+Next single work package: **RA-003: establish an act-specific FDAT decoding basis and bounded decoder design before real decryption or component copying**.
+
+Earlier RA-003: [scoped UFU directory and parser audit](../research/UFU_CONTAINER_AUDIT.md)
 and [commands/results](../research/sessions/20261018-RA-003-ufu-inventory.md).
 An authored bounded reader and 179-test local suite passed (176 passed, three
 skipped). Five chunk spans cover the acquired file under the audited framing;

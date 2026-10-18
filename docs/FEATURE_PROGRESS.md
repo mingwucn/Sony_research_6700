@@ -83,16 +83,20 @@ states remain required; synthetic guards are preparation only. See
   resources or native FTP backend have been extracted or validated. Full proposed
   analysis scope and exact-body correspondence remain unresolved.
 
-- Current RA-003: [scoped UFU directory/parser audit](../research/UFU_CONTAINER_AUDIT.md).
+- Earlier RA-003: [scoped UFU directory/parser audit](../research/UFU_CONTAINER_AUDIT.md).
   The authored reader reports DATV, PROV, UDID, FDAT and DEND, with one bounded
   FDAT span. Full-suite local result: 176 passed, three skipped, exit 0.
   This is container-directory progress only; no English resources, FTP program,
   component semantics or exact-body correspondence are established.
 
+- Current RA-003: [FDAT identification/extractor audit](../research/FDAT_EXTRACTOR_AUDIT.md).
+  The 4,096-byte in-memory prefix is unknown/unsupported_opaque; no encryption or
+  feature inference follows. Candidate source is pinned, not run. Full suite:
+  195 passed, three skipped, exit 0. English resources and native FTP remain
+  unextracted/unvalidated; both remain primary.
+
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003, bounded
-FDAT format identification and applicable-extractor audit before copying or
-decompression**.
+packages and validation families. Next single host package: **RA-003: establish an act-specific FDAT decoding basis and bounded decoder design before real decryption or component copying**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

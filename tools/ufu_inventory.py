@@ -16,6 +16,13 @@ import stat
 import sys
 from typing import BinaryIO
 
+try:
+    from .artifact_probe import probe_bytes
+except ImportError:
+    if __package__:
+        raise
+    from artifact_probe import probe_bytes
+
 MAGIC = b"\x89UFU\r\n\x1a\n"
 MAX_BYTES = 2 * 1024**3
 MAX_CHUNKS = 4096
@@ -28,12 +35,14 @@ class UFUError(ValueError):
 
 
 def index_stream(stream: BinaryIO, file_size: int, expected_sha256: str,
-                 *, max_chunks: int = MAX_CHUNKS) -> dict[str, object]:
-    """Consume one bounded stream; retain directory metadata, never payloads.
+                 *, max_chunks: int = MAX_CHUNKS, probe_fdat: bool = False) -> dict[str, object]:
+    """Consume one bounded stream, optionally classifying an in-memory prefix.
 
     Offsets are zero-based PACKAGE FILE offsets, never process/flash addresses.
     Exact EOF coverage means only that the reviewed framing spans this stream.
     No checksum, signature, end-marker or chunk-order semantics are inferred.
+    With probe_fdat, retain at most 4096 bytes from a single FDAT only until
+    classification. No prefix bytes or component contents enter the result.
     """
     if type(file_size) is not int or not len(MAGIC) <= file_size <= MAX_BYTES:
         raise UFUError("file size outside the bounded inventory policy")
@@ -41,6 +50,8 @@ def index_stream(stream: BinaryIO, file_size: int, expected_sha256: str,
         raise UFUError("provide an exact lowercase SHA-256")
     if type(max_chunks) is not int or not 1 <= max_chunks <= MAX_CHUNKS:
         raise UFUError("invalid chunk-count policy")
+    if type(probe_fdat) is not bool:
+        raise UFUError("invalid FDAT probe policy")
     digest = hashlib.sha256()
 
     def read_exact(length: int) -> bytes:
@@ -58,6 +69,8 @@ def index_stream(stream: BinaryIO, file_size: int, expected_sha256: str,
         raise UFUError("unsupported UFU identifier")
     offset = 8
     chunks = []
+    fdat_seen = False
+    fdat_prefix = bytearray()
     while offset < file_size:
         if len(chunks) >= max_chunks:
             raise UFUError("chunk-count limit reached")
@@ -69,6 +82,11 @@ def index_stream(stream: BinaryIO, file_size: int, expected_sha256: str,
         payload_offset = offset + 8
         if size > file_size - payload_offset:
             raise UFUError("declared chunk extends beyond the file")
+        capture_prefix = probe_fdat and tag == b"FDAT"
+        if capture_prefix:
+            if fdat_seen:
+                raise UFUError("FDAT probe requires an unambiguous single span")
+            fdat_seen = True
         chunks.append({"index": len(chunks), "type_hex": tag.hex(),
                        "type_ascii": tag.decode("ascii") if all(32 <= b < 127 for b in tag) else None,
                        "header_file_offset": offset, "payload_file_offset": payload_offset,
@@ -79,6 +97,8 @@ def index_stream(stream: BinaryIO, file_size: int, expected_sha256: str,
             if not part:
                 raise UFUError("truncated chunk payload")
             digest.update(part)
+            if capture_prefix and len(fdat_prefix) < 4096:
+                fdat_prefix.extend(part[:4096 - len(fdat_prefix)])
             remaining -= len(part)
         offset = payload_offset + size  # Eight-byte header guarantees progress even for size zero.
     if stream.read(1):
@@ -89,7 +109,7 @@ def index_stream(stream: BinaryIO, file_size: int, expected_sha256: str,
     fdat = [chunk for chunk in chunks if chunk["type_hex"] == "46444154"]
     fdat_status = ("absent" if not fdat else "ambiguous_multiple" if len(fdat) > 1
                    else "empty" if fdat[0]["payload_bytes"] == 0 else "single_bounded_span")
-    return {"schema_version": 1, "tool": "ufu_inventory", "tool_version": "0.1.0",
+    result = {"schema_version": 1, "tool": "ufu_inventory", "tool_version": "0.2.0",
             "evidence_class": "offline-tested", "bytes": file_size, "sha256": actual_sha256,
             "format": "sony_ufu_framing_candidate", "status": "framing_spans_entire_file",
             "address_type": "package_file_offset", "chunk_count": len(chunks), "chunks": chunks,
@@ -99,6 +119,14 @@ def index_stream(stream: BinaryIO, file_size: int, expected_sha256: str,
             "extraction_performed": False, "decompression_performed": False,
             "decryption_performed": False, "execution_performed": False,
             "camera_access_performed": False}
+    if probe_fdat:
+        # Classify only after the entire original file and its hash passed.
+        result["fdat_probe"] = {"prefix_limit": 4096, "prefix_bytes_observed": len(fdat_prefix),
+                                "raw_prefix_output": False,
+                                "candidate": probe_bytes(bytes(fdat_prefix), fdat[0]["payload_bytes"])
+                                if fdat_status == "single_bounded_span" else None,
+                                "status": "signature_only" if fdat_status == "single_bounded_span" else fdat_status}
+    return result
 
 
 def _stamp(info: os.stat_result, *, ctime: bool = True) -> tuple[int, ...]:
@@ -106,7 +134,8 @@ def _stamp(info: os.stat_result, *, ctime: bool = True) -> tuple[int, ...]:
     return common + (info.st_ctime_ns,) if ctime else common
 
 
-def inspect_file(path: Path, expected_sha256: str, expected_bytes: int) -> dict[str, object]:
+def inspect_file(path: Path, expected_sha256: str, expected_bytes: int,
+                 *, probe_fdat: bool = False) -> dict[str, object]:
     """Read a regular file in a trusted workspace, detecting observable changes.
 
     Intermediate directories must be trusted, as for offline_inventory. These
@@ -128,7 +157,7 @@ def inspect_file(path: Path, expected_sha256: str, expected_bytes: int) -> dict[
             raise UFUError("source identity or size changed before reading")
         # Keep descriptor ownership in finally, including parser failures.
         with os.fdopen(fd, "rb", closefd=False) as stream:
-            result = index_stream(stream, before.st_size, expected_sha256)
+            result = index_stream(stream, before.st_size, expected_sha256, probe_fdat=probe_fdat)
         after = os.fstat(fd)
         named_after = path.lstat()
         if (not stat.S_ISREG(named_after.st_mode)
@@ -149,9 +178,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--input", type=Path, required=True)
     parser.add_argument("--expect-sha256", required=True)
     parser.add_argument("--expect-bytes", type=int, required=True)
+    parser.add_argument("--probe-fdat", action="store_true",
+                        help="classify at most 4096 FDAT prefix bytes in memory; never output the bytes")
     args = parser.parse_args(argv)
     try:
-        result = inspect_file(args.input, args.expect_sha256, args.expect_bytes)
+        result = inspect_file(args.input, args.expect_sha256, args.expect_bytes,
+                              probe_fdat=args.probe_fdat)
     except UFUError as exc:
         print(f"UFU inventory refused: {exc}", file=sys.stderr)
         return 2
