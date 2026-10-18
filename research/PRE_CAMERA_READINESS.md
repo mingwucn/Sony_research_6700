@@ -3,9 +3,10 @@
 This ledger preserves the full objective: FL2/FL3 stills and preview, separately
 gated calibrated custom still-photo looks, native English menus and native Wi-Fi
 FTP; a host-assisted bridge remains optional. It records preparation, not feature
-support. Owner now reports α6700, firmware 2.00 and current language 简体中文
-(source-report); the full language list is unchecked. Regional identity, exact
-binary identity, agent USB observations and device approvals remain absent.
+support. Owner now reports α6700, firmware 2.00, current language 简体中文,
+Chinese mainland version and English unavailable (source-report). The full list
+is not supplied; exact SKU/binary identity, agent USB observations and device
+approvals remain absent.
 
 Owner priority update (2026-10-18): English and native Wi-Fi FTP are primary;
 FL2/FL3 is deferred, with calibrated custom looks after it. The complete ledger
@@ -31,7 +32,7 @@ No prepared or passed host package is promoted into a working camera function.
 | RA-005 | Backup coverage inventory/template prepared | Approved route, independent reads/copies and actual protected-state coverage |
 | RA-006 | Architecture/recovery evidence gaps explicit | Target segments/ABI/storage/settings/retained-state mappings and recovery envelope |
 | RA-007 | Candidate/inverse guards, in-memory simulator and durable synthetic journal/OS ownership; Windows subprocess crash/reopen tests plus observed Windows/Linux CI including POSIX fork | Exact-target semantics/reviews, unqualified filesystems and any future executor qualification |
-| EN-101 | Existing language hypotheses/critical-resource protocol retained | Actual language list, resources and all policy-field consumers |
+| EN-101 | Owner reports English absent on mainland version; hypotheses/critical-resource protocol retained | Rights-cleared exact-build resources, restriction-policy evidence and all consumers; exact SKU unverified |
 | EN-102 | Generic guards available; no candidate generated | EN-101 result, target sources and narrow inverse/preservation proof |
 | EN-103 | Physical validation protocol retained | Accepted candidate, approved hardware test and ENT-01..06 observations |
 | EN-104 | Resource/uninstall dependencies specified | Individually proven features and ENT-07 integration evidence |
@@ -107,8 +108,10 @@ config flags do not establish target binaries or operation. Regional applicabili
 and exact-build correspondence remain unresolved. The existing
 RA-004 normal Version/Language UI observation packet is ready when the owner
 separately approves camera contact. It requires no new generic-test, deferred
-look or device-write gate. Normal-menu English remains a possible resolution.
+look or device-write gate. The latest owner report places English on the
+restricted-language/resource investigation branch; no unlock feasibility is
+established. See [latest intake](sessions/20261018-owner-mainland-english.md).
 Actual target mappings, acquisition/recovery and all feature acceptance remain
 unproved. Earlier Unknown responses remain historical; the
-[new intake report](sessions/20261018-owner-ui-intake.md) records supplied facts
+[latest intake report](sessions/20261018-owner-mainland-english.md) records supplied facts
 without filling unrelated unknowns. Agent camera commands: **none**.

@@ -9,8 +9,11 @@ were read as data. No camera was contacted. RA-003 remains incomplete.
 ## Version label and acquisition result
 
 The owner reports **a6700, version 2.00**, with **简体中文** as the current
-language. The complete language list, English availability and regional SKU
-remain unknown. These labels are not independently verified binary identity.
+language. A later [owner report](sessions/20261018-owner-mainland-english.md)
+adds **Chinese mainland version** and **English unavailable** (source-report).
+The complete language list is not supplied; exact regional SKU and binary
+identity remain unverified. This does not establish applicability of the UK/JP
+package metadata or the separate OSS offers to the owner's exact body/build.
 
 The [Sony UK version 2.00 page](https://www.sony.co.uk/electronics/support/e-mount-body-ilce-6000-series/ilce-6700l/software/00298439)
 lists **BODYDATA.DAT**, **1,024,017,848 bytes**, released **2025-06-10**.

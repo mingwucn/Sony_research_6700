@@ -7,15 +7,15 @@ records machine-readable evidence. An internal copy is kept in ignored
 
 **None of the requested camera functions has been validated on this body.**
 Owner reports α6700 firmware **2.00** and current menu language **简体中文**
-(Simplified Chinese), **source-report**, 2026-10-18. The full language list has
-not been checked; English availability and regional variant remain unknown.
-Exact binary identity is unverified. Agent camera access/writes: none. No
-device-write gate has passed. Progress below describes
+(Simplified Chinese), **Chinese mainland version**, and **English unavailable**
+(**source-report**, 2026-10-18). The full offered-language list is not supplied;
+exact regional SKU and binary identity are unverified. Agent camera access/writes:
+none. No device-write gate has passed. Progress below describes
 completed preparation separately from actual feature operation.
 
 | Requested function | Owner priority | Current progress | What is still missing | Next feature package |
 |---|---|---|---|---|
-| **Native English menus** | Primary | Language hypotheses, preservation rules and critical-message validation plan prepared. Actual English availability is unknown. | Actual language list; if restricted, exact-build resources and narrow policy-field/all-consumer evidence. English already offered would allow the normal-menu branch. | EN-101: offered-language observation first; exact-build acquisition if binary analysis is needed |
+| **Native English menus** | Primary | Owner reports English absent on mainland version; hypotheses, preservation rules and critical-message plan prepared. No unlock feasibility established. | Rights-cleared matching resources/binaries; distinguish restricted selection from missing resources, with narrow policy/all-consumer evidence. Exact SKU unverified; full list not supplied. | EN-101: restricted-language/resource feasibility after RA-003 |
 | **Native camera-to-server Wi-Fi FTP** | Primary | Host queue/protocol foundation tested. Two owner-approved Sony source configs enable FTPGET/FTPPUT; client text is plain FTP. This is a static lead, with final binary/body mapping unproved. | Exact target backend/ABI/applet/invocation/media/network/lifecycle evidence; then one camera-resident manual upload with full server equality. Automatic post-capture transfer is a later, separate step. | FT-101; later FT-103 manual, FT-104 automatic |
 | **FL2/FL3 still-photo looks and matching preview** | Deferred | Reference-code/rights audit, synthetic candidate/inverse guards and durable synthetic transaction safeguards prepared. No alpha6700 mapping or candidate exists. | Exact firmware/AP/CP/resource evidence, stock looks/recipes and photo baseline, capacity/dispatch/metadata/preview mapping, conditional recovery. | CL-101/CL-102 when resumed, after target prerequisites |
 | **Calibrated custom still-photo looks** | Later, after FL2/FL3 | Separately gated second phase specified. No calibrated fit or target slot is proved. | Stable FL2/FL3 still/preview baseline; explicit DCP/cube/Sony-ST domain; legitimate calibration and holdout inputs; target slot, precision and resource ownership. | CL-107, after CL-105/106 and calibration inputs |
@@ -71,10 +71,11 @@ The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
 packages and validation families. Next single host package: **RA-003,
 rights-cleared exact-2.00 binary intake and source/binary correspondence**,
 blocked on suitable proprietary firmware inspection rights and legitimate
-applicable input bytes. Exact binary identity remains unresolved. EN-101 needs
-the full offered-language list, using the existing
-no-change normal-menu instructions; English may already be offered. Earlier
-Unknown responses are preserved as history. Host qualification and this intake
+applicable input bytes. Exact binary identity remains unresolved. EN-101 uses
+the owner-reported English absence to pursue restricted-language/resource
+feasibility; a full-list transcription is no longer the immediate blocker.
+See [latest intake](../research/sessions/20261018-owner-mainland-english.md).
+Earlier Unknown responses are preserved as history. Host qualification and this intake
 update do not validate any of the five camera functions above.
 
 ## Keeping the notes current

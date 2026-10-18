@@ -17,10 +17,12 @@ functions remain unvalidated. See [per-function progress](../docs/FEATURE_PROGRE
 ## Evidence now available
 
 Later owner-intake addendum (2026-10-18): α6700 firmware **2.00** and current
-language **简体中文** are now owner-reported; the full language list is unchecked.
-The Unknown statements in this audit preserve its earlier evidence snapshot.
-See [current intake](sessions/20261018-owner-ui-intake.md) and STATE for current
-facts. English availability, region and exact binary identity remain unknown.
+language **简体中文**, **Chinese mainland version** and **English unavailable**
+are now owner-reported. The complete language list is not supplied; exact SKU
+and binary identity remain unverified. The Unknown statements below preserve
+the earlier audit snapshot. See
+[current intake](sessions/20261018-owner-mainland-english.md) and STATE for
+current facts; the full list is no longer the immediate English blocker.
 Next host package remains RA-003, now with the owner-reported version label.
 The later [package/rights review](OFFICIAL_PACKAGE_INTAKE.md) records official
 metadata, a zero-byte stopped GET and owner inspection permission **No / unknown**.
@@ -77,7 +79,7 @@ tests does not establish independent camera reproduction, recovery or a feature.
 | RA-005 | Backup coverage gaps and blank catalogue | Approved acquisition route, actual objects/metadata, independent reads where suitable, two verified copies on separate storage where possible, and protected-state coverage |
 | RA-006 | Explicit architecture/storage/settings/recovery questions | Exact AP/CP ABI and segments, file/VA/runtime mapping, save/load semantics, protected objects and a reachable recovery envelope |
 | RA-007 | Synthetic guards/inverse, in-memory and durable journals, ownership/crash/reopen tests; Windows/Linux CI | Target semantics and OFF-08/10/11, source/control-flow review, target profile/candidate and any later executor qualification; always device-ineligible now |
-| EN-101 | No-change branch, language-policy hypotheses and critical-resource investigation protocol | Complete offered-language list; if English absent, target locale/resources and every consumer of a proposed restriction field |
+| EN-101 | Owner reports English absent on mainland version; language-policy hypotheses and critical-resource protocol retained | Rights-cleared target locale/resources, exact SKU/build correspondence and every consumer of a proposed restriction field |
 | EN-102 | Generic exact-source/preservation/inverse guards | Accepted EN-101 route, exact source/settings units, critical resources and a narrow candidate with fresh-state inverse/preservation proof |
 | EN-103 | ENT-01..06 and shared-regression procedure | Accepted candidate if needed, applicable owner approval, native screens/persistence/protected comparisons and controlled reversal |
 | EN-104 | Resource-ID/uninstall dependency requirements | Independently accepted relevant features and ENT-07 composition evidence; deferred looks are not an English prerequisite |

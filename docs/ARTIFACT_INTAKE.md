@@ -2,8 +2,10 @@
 
 Status: host tooling available; exact-target acquisition and extraction **BLOCKED**.
 Current intake (2026-10-18, **source-report**): the owner reports α6700
-firmware **2.00**, current **简体中文**, full language list not checked. The
-regional SKU, English availability and exact binary identity remain unverified.
+firmware **2.00**, current **简体中文**, **Chinese mainland version**, and
+**English unavailable**. The full list is not supplied; exact SKU and binary
+identity remain unverified. This is an owner report, not a target resource or
+restriction-field finding. See [latest intake](../research/sessions/20261018-owner-mainland-english.md).
 No official target package, body program, resource, settings or calibration object
 has been supplied. Earlier private-directory checks were not a whole-computer
 search. See [owner intake](../research/sessions/20261018-owner-ui-intake.md).

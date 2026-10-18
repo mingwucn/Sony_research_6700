@@ -49,7 +49,7 @@ Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remain
 
 Deliver: device-facts and access-proposal, including what is not supported. Accept when identity is consistent and the owner can approve or decline a bounded next action. Standard USB recognition does not authorize service authentication. A blocked service path leaves RA-003 and offline analysis available.
 
-Continuation: R0 [observation/access preparation](../research/TARGET_EVIDENCE_GAPS.md) written. Owner subsequently reported α6700, firmware 2.00 and current menu language 简体中文; full list not checked. This is source-report, not independently verified identity or access evidence. Regional SKU and an applicable command-level route remain absent; RA-004 acceptance remains BLOCKED. Agent camera/USB commands and device approvals: none.
+Continuation: R0 [observation/access preparation](../research/TARGET_EVIDENCE_GAPS.md) written. Owner subsequently reported α6700, firmware 2.00, current menu language 简体中文, Chinese mainland version and English unavailable. This is source-report; the full offered-language list is not supplied. Exact regional SKU, independently verified binary identity and an applicable command-level route remain absent; RA-004 acceptance remains BLOCKED. Agent camera/USB commands and device approvals: none.
 
 ### RA-005 — Acquire and verify original-state coverage
 
@@ -83,7 +83,7 @@ Depends on RA-001 and RA-003/005 for binary analysis. Risk: R0; approved ordinar
 
 Deliver: language feasibility record and critical-resource coverage table. Accept when a narrow hypothesis and falsifying evidence are identified, or normal menu selection resolves the request. Stop before mutation if English resources are incomplete or a shared region field is unexplained.
 
-Latest intake (2026-10-18): current language is 简体中文, not a complete offered-language list. EN-101 still needs every offered language, following the existing no-change UI instructions; English availability remains unknown. No restriction, regional variant, unlock requirement or feature success is inferred. Next single host package: RA-003 official-package provenance/intake for owner-reported version 2.00.
+Latest [intake](../research/sessions/20261018-owner-mainland-english.md) (2026-10-18, source-report): owner reports Chinese mainland version, English unavailable, current 简体中文 and version 2.00. The full list and exact SKU/build remain unverified. EN-101 now investigates restricted-language/resource feasibility with lawful matching artifacts; do not repeat the full-list request merely to establish English absence. No resource absence, restriction mechanism, simple unlock or feature success is inferred. Next single host package remains RA-003 rights-cleared exact-2.00 binary intake and source/binary correspondence, blocked on suitable inspection rights and legitimate applicable bytes.
 
 ### EN-102 — Build a narrow candidate and inverse
 
@@ -216,7 +216,7 @@ FL2/FL3 is deferred; calibrated custom looks remain separately gated after it.
 Keep existing work for later use. EN/FT feasibility does not depend on CL work.
 The optional host-assisted bridge remains a separate result.
 
-RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are now recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003 official-package provenance/intake for owner-reported version 2.00**; legitimate matching input and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; normal-menu English remains possible until observed. No camera feature or device gate passes from host results.
+RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are now recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003 official-package provenance/intake for owner-reported version 2.00**; legitimate matching input and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
 
 Owner requirement (2026-10-18): **verified rollback/recovery before any firmware
 write**. RA-005/006/007 cover backups, exact inverse, target recovery reachability

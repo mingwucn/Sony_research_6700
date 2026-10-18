@@ -1,12 +1,12 @@
 # English-language enablement: target-specific design
 
-Goal: native English menus, warnings and messages on the owner's ILCE-6700, without transplanting another region's complete identity or settings. The regional SKU and current language menu are unknown. Sony's normal Language page is source S2 in REFERENCE_ANALYSIS.md. Work packages EN-101 through EN-104 apply.
+Goal: native English menus, warnings and messages on the owner's ILCE-6700, without transplanting another region's complete identity or settings. Owner reports α6700 version 2.00, current 简体中文, Chinese mainland version and English unavailable (source-report, 2026-10-18). The exact SKU, complete offered-language list and binary/resource identity are unverified. See [latest intake](../research/sessions/20261018-owner-mainland-english.md). Sony's normal Language page is source S2 in REFERENCE_ANALYSIS.md. Work packages EN-101 through EN-104 apply.
 
-## 1. Start with the no-modification branch
+## 1. Owner observation and the no-modification branch
 
-Inspect the actual Language menu. If English is already offered, use normal menu selection with the owner's approval, document the result, and close the unlock investigation as unnecessary for this body. A computer's English UI, a multilingual manual or a global firmware-download page is not evidence that English is selectable on a domestic camera.
+For this body, the owner reports English absent: continue with the resource/policy hypotheses below, without requesting a repeat full-list check merely to establish that absence. This does not prove English resources are absent or a simple unlock exists. The generic decision branch remains: if later evidence shows English is already offered, use normal menu selection with the owner's approval, document the result, and close the unlock investigation as unnecessary for this body. A computer's English UI, a multilingual manual or a global firmware-download page is not evidence that English is selectable on a domestic camera.
 
-If English is absent, record all offered languages and the market/SKU from owner evidence. Do not assume a Japanese restriction merely because the current menu is Japanese; do not assume a China-market body from the user's previous Chinese questions. Preserve the original language and any visible region-related settings.
+Keep the reported mainland market label separate from an exact regional SKU or internal product identity. A full offered-language transcription remains useful supporting evidence when available; it is not required to record the explicit report of English absence. Preserve the original language and any visible region-related settings. No candidate may globally change region identity merely to expose English.
 
 ## 2. Hypotheses and distinguishing evidence
 

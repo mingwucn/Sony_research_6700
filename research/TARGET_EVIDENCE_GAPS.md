@@ -2,15 +2,15 @@
 
 Evidence date: 2026-10-18. This is an R0 preparation dossier, with no device
 command, USB adapter, target mapping or approved access route. Owner reports
-α6700 firmware 2.00 and current menu language 简体中文 (**source-report**,
-2026-10-18); full language list not checked. Region, English availability and
-exact binary identity remain unknown. The UNVERIFIED profile remains a blocker
-and is not a support registry.
+α6700 firmware 2.00, current menu language 简体中文, Chinese mainland version
+and English unavailable (**source-report**, 2026-10-18). The full language list
+is not supplied; exact SKU and binary/resource identity remain unverified. The
+UNVERIFIED profile remains a blocker and is not a support registry.
 
 ## Identity and access (RA-004)
 
 The model/version label is now owner-reported. Retain exact model/version-screen
-evidence privately when available; purchase market/SKU, complete language list,
+evidence privately when available; purchase location/exact SKU, complete language list,
 modification/repair history and ordinary health remain missing. Existing records
 may be supplied privately; no camera action is requested or performed by this session.
 
@@ -18,8 +18,9 @@ When the owner later chooses to contact the camera, the smallest observation
 package is normal UI/label inspection only: model/version and offered languages,
 with original-language context retained. It needs its own R1 approval under
 ACCESS_AND_RECOVERY.md. Avoid destructive confirmations; preserve serial-bearing
-original evidence privately and redact shareable copies. English already offered
-would change EN-101 to the normal-selection branch.
+original evidence privately and redact shareable copies. The owner now reports
+English absent; repeating the full-list request is not the immediate next step.
+Only contrary later evidence would reopen the normal-selection branch.
 
 USB identity observation is a later separately scoped R1 step. No USB command is
 proposed now: existing ports/cables/apps, owner readiness and the observation method
@@ -84,6 +85,7 @@ native FTP, a camera capture-completion signal or a host-assisted camera leg.
 
 RA-003 official-package provenance/intake for owner-reported 2.00 is the next host
 package; regional applicability and exact-build verification remain unresolved.
-EN-101 still needs the complete offered-language list, using the existing
-no-change normal-menu instructions. This dossier prepares RA-004/005/006 and the
-feature queues; it does not complete their acceptance gates. Camera commands: **none**.
+EN-101 now follows restricted-language/resource feasibility on the owner report
+of English absence; matching lawfully inspectable artifacts remain needed.
+See [latest intake](sessions/20261018-owner-mainland-english.md). This dossier
+prepares RA-004/005/006 and the feature queues; it does not complete their acceptance gates. Camera commands: **none**.

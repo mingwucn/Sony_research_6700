@@ -13,10 +13,11 @@ selected as a matching target package, hashed or executed. No source-lock or
 profile entry was changed.
 
 Later owner-intake addendum (2026-10-18): the owner reports α6700 firmware
-**2.00**, current language **简体中文**, full language list not checked. The
-Unknown statements above describe the earlier catalogue-review snapshot. See
-[current intake](sessions/20261018-owner-ui-intake.md). Matching version labels
-do not prove exact binary identity or regional applicability; no binary package
+**2.00**, current language **简体中文**, **Chinese mainland version**, and
+**English unavailable**. The complete list is not supplied; exact SKU remains
+unverified. The Unknown statements above describe the earlier catalogue-review
+snapshot. See [current intake](sessions/20261018-owner-mainland-english.md).
+Matching version labels do not prove exact binary identity or regional applicability; no binary package
 has subsequently been acquired in this intake session.
 
 Later RA-003 [package/rights review](OFFICIAL_PACKAGE_INTAKE.md) records the UK

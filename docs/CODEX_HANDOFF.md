@@ -30,10 +30,13 @@ FL2/FL3 is deferred to future work; calibrated custom looks remain later still.
 Neither primary goal depends on FL2/FL3. Retain all evidence and device gates.
 
 Latest owner intake (2026-10-18, **source-report**): α6700, firmware **2.00**,
-current menu language **简体中文**. The owner clarified that the full language
-list has not been checked. Regional SKU and English availability remain unknown;
-no exact-build hash or device approval follows. See the
-[intake update](../research/sessions/20261018-owner-ui-intake.md).
+current menu language **简体中文**, **Chinese mainland version**, and **English
+unavailable**. The latest report supersedes the earlier unknown English/market
+status; it supplies no complete language list, exact SKU or binary hash. EN-101
+now follows restricted-language/resource feasibility; do not ask for the full
+list again merely to establish English absence. No unlock mechanism or device
+approval follows. See the
+[intake update](../research/sessions/20261018-owner-mainland-english.md).
 
 Owner also requires a verified rollback/recovery system before any firmware
 write. No such target system is established. Follow the

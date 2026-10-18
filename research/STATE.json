@@ -4,7 +4,7 @@
   "phase": "official_oss_ftp_source_config_reviewed_firmware_rights_and_exact_binary_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
-  "regional_variant": null,
+  "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
   "device_access_performed": false,
   "device_writes_performed": false,
   "validated_features": [],
@@ -47,7 +47,7 @@
   "work_packages": {
     "RA-001": {
       "status": "completed_with_diagnosed_host_test_error",
-      "owner_intake": "prepared_privately_model_version_current_language_now_owner_reported_remaining_facts_pending",
+      "owner_intake": "prepared_privately_model_version_current_language_mainland_version_and_english_absence_owner_reported_remaining_facts_pending",
       "report": "research/sessions/20261018-RA-001.md",
       "scope": "R0 only; no milestone or device-write gate passed"
     },
@@ -62,14 +62,14 @@
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "Official metadata/terms, zero-byte stopped firmware GET, two owner-approved source RPM licence/config/client-text reviews; no firmware acquisition, firmware extraction, build or downloaded source execution",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
-      "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md",
+      "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
       "session_report": "research/sessions/20261018-RA-003-package.md"
     },
     "RA-004": {
-      "status": "owner_identity_labels_reported_complete_languages_region_and_access_route_pending",
+      "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
       "report": "research/TARGET_EVIDENCE_GAPS.md",
-      "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md"
+      "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md"
     },
     "RA-005": {
       "status": "coverage_template_only_acquisition_blocked",
@@ -126,7 +126,7 @@
     "Reference transport/native workers are model/build/ABI-specific; no alpha6700 service or write route follows from this static audit.",
     "Third-party integration requires package artifact/transitive/platform locks, secondary provenance and component-specific rights; Sony payload/R2 notes/Ricoh profile reuse grants are not established.",
     "Native source-to-binary correspondence and target runtime behaviour remain unverified; asset hashes establish identity only.",
-    "Owner reports alpha6700 firmware 2.00 and current language Simplified Chinese; regional SKU, complete language list and English availability remain unknown.",
+    "Owner reports alpha6700 firmware 2.00, current Simplified Chinese, Chinese mainland version and English unavailable; exact regional SKU, full offered-language transcription and exact build/resources remain unverified. Full-list transcription is not required to record the reported English absence.",
     "Owner reports remaining body/setup intake facts unknown; history, health, connection, power/media, recovery tolerance and independent backup storage remain pending.",
     "No alpha6700 service-access route has been reviewed and tested.",
     "No exact-body program/settings/resource acquisition exists.",
@@ -141,7 +141,7 @@
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
   "next_work_package": "RA-003: rights-cleared exact-2.00 binary intake and source/binary correspondence; blocked on suitable firmware inspection rights and legitimate applicable bytes",
-  "next_device_action": "No agent camera command approved; EN-101 still needs the complete offered-language list using the existing no-change owner UI instructions",
+  "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
   "host_loopback_ftps_lab": {
@@ -174,19 +174,20 @@
     "native_english": {
       "name": "Native English menus, warnings and messages",
       "priority": "primary",
-      "status": "design_prepared_actual_language_availability_unknown",
+      "status": "owner_reports_english_absent_mainland_version_feasibility_unverified",
       "camera_validated": false,
-      "progress": "Language hypotheses, preservation rules and critical-resource plan prepared. Owner reports current Simplified Chinese on alpha6700 version 2.00; full language list unchecked and English availability unknown. No target change.",
+      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change.",
       "blockers": [
-        "Regional SKU and complete offered-language list; owner-reported version 2.00 is not independent build/hash evidence",
-        "Exact-build resources and narrow policy/all-consumer evidence if English is restricted"
+        "Lawfully inspectable matching exact-build artifacts and regional applicability; exact SKU/internal product identity and binary hashes unverified",
+        "Distinguish present-but-restricted English resources from missing/incomplete resources; prove narrow language policy and all consumers before any candidate"
       ],
-      "next_package": "EN-101: offered-language observation first when separately approved; exact-build artifacts only if binary analysis is needed",
+      "next_package": "EN-101: restricted-language/resource feasibility using rights-cleared matching artifacts after RA-003; no unlock mechanism or device action selected",
       "evidence": [
         "docs/ENGLISH_LANGUAGE.md",
         "research/TARGET_EVIDENCE_GAPS.md",
         "research/OFFICIAL_SOURCE_REFRESH.md",
-        "research/sessions/20261018-owner-ui-intake.md"
+        "research/sessions/20261018-owner-ui-intake.md",
+        "research/sessions/20261018-owner-mainland-english.md"
       ]
     },
     "native_wifi_ftp": {
@@ -597,34 +598,38 @@
     "public_catalogue_version_observed": "2.00",
     "public_catalogue_date_observed": "2025-06-10",
     "owner_installed_firmware": "2.00",
-    "owner_regional_variant": null,
+    "owner_regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
     "report": "research/OFFICIAL_SOURCE_REFRESH.md",
     "native_ftp_support_established": false,
     "native_ftp_field_meaning": "No support claim established; bounded lack of documentation is not backend-absence proof",
     "owner_installed_firmware_evidence": "source-report; later owner chat report, not inferred from the catalogue",
-    "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md",
+    "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
     "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
     "session_report": "research/sessions/20261018-RA-003-package.md"
   },
   "current_menu_language": "简体中文",
   "available_languages": null,
-  "english_available": null,
+  "english_available": false,
   "owner_intake_observation": {
     "reported_on": "2026-10-18",
     "evidence_class": "source-report",
-    "source": "Owner chat report and explicit current-language clarification",
+    "source": "Owner chat report: English is unavailable; this is the Chinese mainland version",
     "model_label": "a6700",
     "firmware_version_text": "2.00",
     "current_menu_language": "简体中文",
     "complete_language_list_checked": false,
     "available_languages": null,
-    "english_available": null,
-    "regional_variant": null,
+    "english_available": false,
+    "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
     "independent_device_readback": false,
     "exact_binary_identity_verified": false,
     "version_screen_evidence_supplied": false,
     "device_action_approval_granted": false,
-    "report": "research/sessions/20261018-owner-ui-intake.md"
+    "report": "research/sessions/20261018-owner-mainland-english.md",
+    "english_absence_reported": true,
+    "regional_sku": null,
+    "complete_language_list_supplied": false,
+    "language_list_scope": "Earlier full-list-not-checked answer retained; latest report establishes English absence only, without a full transcription or new full-list checking claim"
   },
   "device_access_field_scope": "Agent/tool camera communication only; owner source-report is recorded separately and is not independent readback",
   "pre_write_recovery": {
@@ -774,5 +779,24 @@
     "wrapper_seconds": 0.422,
     "firmware_source_archive_or_camera_coverage": false,
     "report": "research/sessions/20261018-RA-003-package.md"
-  }
+  },
+  "owner_intake_history": [
+    {
+      "reported_on": "2026-10-18",
+      "evidence_class": "source-report",
+      "source": "Owner chat report and explicit current-language clarification",
+      "model_label": "a6700",
+      "firmware_version_text": "2.00",
+      "current_menu_language": "简体中文",
+      "complete_language_list_checked": false,
+      "available_languages": null,
+      "english_available": null,
+      "regional_variant": null,
+      "independent_device_readback": false,
+      "exact_binary_identity_verified": false,
+      "version_screen_evidence_supplied": false,
+      "device_action_approval_granted": false,
+      "report": "research/sessions/20261018-owner-ui-intake.md"
+    }
+  ]
 }
