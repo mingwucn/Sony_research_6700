@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-18",
+  "phase": "initial_planning_and_offline_scaffold",
+  "model": "ILCE-6700",
+  "installed_firmware": null,
+  "regional_variant": null,
+  "device_access_performed": false,
+  "device_writes_performed": false,
+  "validated_features": [],
+  "upstream_revisions_locked": true,
+  "offline_inventory_synthetic_tests": {"passed": 15, "failed": 0, "hardware_coverage": false},
+  "local_host_and_usb_validation": false,
+  "remote_ci_executed": false,
+  "blockers": [
+    "Owner firmware and regional/language facts are not yet supplied.",
+    "No alpha6700 service-access route has been reviewed and tested.",
+    "No exact-body program/settings/resource acquisition exists.",
+    "No target recovery envelope or feature mappings are established."
+  ],
+  "next_work_package": "RA-001: reproduce the offline workspace and complete the private owner intake",
+  "next_device_action": "none; first session remains offline-only",
+  "private_state_location": "private/session-state.json (create locally; never commit)",
+  "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions."
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "profile_status": "UNVERIFIED_TEMPLATE_NOT_AN_ALLOWLIST",
+  "model": "ILCE-6700",
+  "firmware": null,
+  "regional_variant": null,
+  "source_identities": [],
+  "usb_identities": [],
+  "architectures": {"ap": null, "cp": null},
+  "storage_objects": [],
+  "parameter_identifiers": [],
+  "address_mappings": [],
+  "supported_transitions": [],
+  "device_access_reviewed": false,
+  "device_writes_allowed": false,
+  "recovery_validated": false,
+  "notes": "No target offsets, Backup IDs, USB IDs or firmware hashes have been established. This file must never authorize a writer."
+}

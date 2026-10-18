@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "UNPOPULATED_TEMPLATE",
+  "body_alias": "body-01",
+  "observed_model": null,
+  "observed_firmware": null,
+  "regional_sku": null,
+  "market_of_purchase": null,
+  "available_languages": null,
+  "english_already_selectable": null,
+  "prior_modifications": null,
+  "normal_operation_baseline": null,
+  "host": {"os": null, "architecture": null, "python": null},
+  "identity_evidence": [],
+  "usb_observations": [],
+  "approved_device_actions": [],
+  "backup_catalogue": null,
+  "current_transaction_state": "no_device_access",
+  "unresolved_questions": [],
+  "notes": "Copy into a new ignored private workspace before populating. Do not add serials, passwords, keys or sensitive paths to a shared version. This form does not authorize device access."
+}

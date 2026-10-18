@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "inspected_on": "2026-10-18",
+  "repositories": [
+    {
+      "repository": "QAQLeonard/a7c2-fl23-research",
+      "commit": "c0930d5b0ccd49c0a092dc883054cd6dce199649",
+      "role": "FL23 architecture, exact-source planning and custom-look research",
+      "inspected_files": ["docs/en/fl23.md", "docs/en/ai.md", "docs/en/technical/integration.md", "docs/en/technical/failures.md", "src/fl23/core.py"],
+      "execution_performed": false,
+      "alpha6700_compatibility_established": false
+    },
+    {
+      "repository": "lzh2016zzz/a7cr-fl23-research",
+      "commit": "43ba74441c8f10459ade41e84a379ad8005e6ef4",
+      "role": "FL23 layer mapping and donor-data research notes",
+      "inspected_files": ["README.md"],
+      "execution_performed": false,
+      "alpha6700_compatibility_established": false
+    },
+    {
+      "repository": "ma1co/Sony-PMCA-RE",
+      "commit": null,
+      "inspected_readme_blob": "1c47cad4ceffcc0dfd574c83badbb1026419d6ee",
+      "role": "Access-method background only; pin full code before any local use",
+      "execution_performed": false,
+      "alpha6700_compatibility_established": false
+    }
+  ],
+  "official_sources": [
+    {"id": "S1", "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/0411B_creative_look.html"},
+    {"id": "S2", "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/0601_language.html"},
+    {"id": "S3", "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/221h_list_of_menu_items_ilc2320.html"},
+    {"id": "S4", "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/0903_pc_remote_function.html"},
+    {"id": "S5", "url": "https://support.d-imaging.sony.co.jp/app/sdk/en/index.html"},
+    {"id": "S6", "url": "https://helpguide.sony.net/ilc/2110/v1/en/contents/TP1000653558.html"}
+  ],
+  "alpha6700_latest_firmware": {
+    "version": null,
+    "verified": false,
+    "reason": "Official download listings timed out; obtain installed version and verify official release notes locally."
+  }
+}
