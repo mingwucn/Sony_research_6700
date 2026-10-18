@@ -27,11 +27,25 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [component-prefix identification](../research/COMPONENT_PREFIX_AUDIT.md),
+Latest continuation: [tar-directory refusal](../research/TAR_DIRECTORY_AUDIT.md),
+[commands/results](../research/sessions/20261018-RA-003-tar-directory.md).
+One newly scoped tar-directory experiment stopped at the fixed **unsafe_path**
+guard, **needs_review**, script exit **2**, host-tool exit **1**, **28.603684s**.
+Combined synthetic qualification **133/133 passed**, zero skipped, exit **0**,
+**0.749s**. Preliminary complete-parent hash passed; actual-pass final hashes,
+fresh lineage acceptance and tar end/tail checks did not complete. No directory
+accepted. Tentative header counter 114 is not a member inventory; post-discard
+member count 0 does not mean an empty archive. Both observers cleared.
+The offending member-name/link-target category is unknown. No retry, parser
+fallback, threshold relaxation, child files, decompression/disassembly, camera
+contact or feature/write gate. Prior measured observations remain unchanged.
+Next single package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.
+
+Earlier continuation: [component-prefix identification](../research/COMPONENT_PREFIX_AUDIT.md),
 [commands/results](../research/sessions/20261018-RA-003-component-prefix.md): 93/93 synthetic passes and one real
 pipeline passed, exit 0. Exactly 4,096 bytes per selected extent; U-slot SquashFS
 v4 and firmware ustar header candidates. No raw prefix files or child inventory.
-Next single package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
+Historical next single package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
 
 Earlier continuation: [stream validation](../research/FDAT_STREAM_VALIDATION.md) and
 [commands/results](../research/sessions/20261018-RA-003-stream-validation.md): 45/45 synthetic passes; one real pipeline
@@ -169,6 +183,6 @@ complete experimental stream measurement and measured-size declared extent check
 are recorded. No component contents have been retained or their formats validated.
 Selected-component necessity/terms/lineage, independent exact-build evidence and
 body applicability remain open. Earlier negative/stopped trials stay preserved.
-Next single package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
+Historical next single package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
 Host tests and format consistency do not establish authentication, English/FTP,
 recovery or a device-write gate. Camera commands: **none**.

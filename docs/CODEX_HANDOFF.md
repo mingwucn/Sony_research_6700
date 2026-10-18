@@ -43,13 +43,27 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [bounded component prefixes](../research/COMPONENT_PREFIX_AUDIT.md) and
+Latest RA-003: [tar-directory refusal](../research/TAR_DIRECTORY_AUDIT.md) and
+[commands/results](../research/sessions/20261018-RA-003-tar-directory.md).
+One newly scoped tar-directory experiment stopped at the fixed **unsafe_path**
+guard, **needs_review**, script exit **2**, host-tool exit **1**, **28.603684s**.
+Combined synthetic qualification **133/133 passed**, zero skipped, exit **0**,
+**0.749s**. Preliminary complete-parent hash passed; actual-pass final hashes,
+fresh lineage acceptance and tar end/tail checks did not complete. No directory
+accepted. Tentative header counter 114 is not a member inventory; post-discard
+member count 0 does not mean an empty archive. Both observers cleared.
+The offending member-name/link-target category is unknown. No retry, parser
+fallback, threshold relaxation, child files, decompression/disassembly, camera
+contact or feature/write gate. Prior measured observations remain unchanged.
+Next single work package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.
+
+Earlier RA-003: [bounded component prefixes](../research/COMPONENT_PREFIX_AUDIT.md) and
 [commands/results](../research/sessions/20261018-RA-003-component-prefix.md). U-slot SquashFS v4 and firmware ustar
 header candidates, 4,096 bytes each. Complete parent/stream/header/spans agree
 with prior lineage. Qualification 93/93 passed, exit 0; one real two-pass pipeline
 exit 0, 23.899888s. No raw prefix/component files, decompression or disassembly.
 No complete format, body, English/FTP, recovery or feature/write gate result.
-Next single work package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
+Historical next single work package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
 
 Earlier RA-003: [full-stream validation](../research/FDAT_STREAM_VALIDATION.md)
 measured logical length/SHA and checked declared bounds without identifying children.

@@ -122,3 +122,20 @@ Next single package: **RA-003: document and qualify a bounded-memory, metadata-o
 The directory inventory must establish supported tar variants, framing/checksums,
 bounded metadata and parent-child lineage before any child copy is selected.
 No automatic decompression or fallback parser. See [session commands/results](sessions/20261018-RA-003-component-prefix.md).
+
+
+## Later tar-directory trial (2026-10-19 local / 2026-10-18 UTC)
+
+Earlier next-package recommendations are historical. See [trial audit](TAR_DIRECTORY_AUDIT.md) and [session commands/results](sessions/20261018-RA-003-tar-directory.md).
+One newly scoped tar-directory experiment stopped at the fixed **unsafe_path**
+guard, **needs_review**, script exit **2**, host-tool exit **1**, **28.603684s**.
+Combined synthetic qualification **133/133 passed**, zero skipped, exit **0**,
+**0.749s**. Preliminary complete-parent hash passed; actual-pass final hashes,
+fresh lineage acceptance and tar end/tail checks did not complete. No directory
+accepted. Tentative header counter 114 is not a member inventory; post-discard
+member count 0 does not mean an empty archive. Both observers cleared.
+The offending member-name/link-target category is unknown. No retry, parser
+fallback, threshold relaxation, child files, decompression/disassembly, camera
+contact or feature/write gate. Prior measured observations remain unchanged.
+
+English and native Wi-Fi FTP remain first. Next single package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.

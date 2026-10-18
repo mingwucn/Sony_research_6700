@@ -40,7 +40,10 @@ extent bounds/non-overlap after 45 new synthetic passes. Component formats and
 English/FTP mapping remain unverified; no decoded component files were retained.
 The latest [component-prefix experiment](research/COMPONENT_PREFIX_AUDIT.md) found
 SquashFS v4 and ustar header candidates, 4,096 bytes each, after 93 synthetic
-passes and full lineage revalidation. No component directory or feature mapping yet. China
+passes and full lineage revalidation. No component directory or feature mapping yet.
+The later [tar-directory trial](research/TAR_DIRECTORY_AUDIT.md) stopped at its
+fixed `unsafe_path` guard after 133 synthetic passes. No directory was accepted;
+a bounded path/link diagnostic is next. China
 Copyright Law Article 50(5) expressly addresses reverse-engineering research;
 its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains

@@ -1,6 +1,6 @@
 # Requested functions: progress and next evidence
 
-Updated: **2026-10-18**. This is the feature-level progress note; the
+Updated: **2026-10-19**. This is the feature-level progress note; the
 [backlog](BACKLOG.md) tracks work packages and [STATE](../research/STATE.json)
 records machine-readable evidence. An internal copy is kept in ignored
 `private/feature-progress.json` and `private/feature-progress.md`.
@@ -32,12 +32,18 @@ storage copies, an exact inverse and recovery access for the relevant failure
 states remain required; synthetic guards are preparation only. See
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist).
 
-Latest shared RA-003: [bounded prefix identification](../research/COMPONENT_PREFIX_AUDIT.md).
-U-slot SquashFS v4 and firmware ustar header candidates guide parser selection;
-each prefix is limited to 4,096 bytes. New synthetic suite 93/93 passed; full
-source/stream/header/span lineage agrees. No component contents/directory,
-English mechanism, native FTP binary or exact-body/recovery proof. All gates stay open.
-Next shared package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
+Latest shared RA-003: [tar-directory refusal](../research/TAR_DIRECTORY_AUDIT.md).
+One newly scoped tar-directory experiment stopped at the fixed **unsafe_path**
+guard, **needs_review**, script exit **2**, host-tool exit **1**, **28.603684s**.
+Combined synthetic qualification **133/133 passed**, zero skipped, exit **0**,
+**0.749s**. Preliminary complete-parent hash passed; actual-pass final hashes,
+fresh lineage acceptance and tar end/tail checks did not complete. No directory
+accepted. Tentative header counter 114 is not a member inventory; post-discard
+member count 0 does not mean an empty archive. Both observers cleared.
+The offending member-name/link-target category is unknown. No retry, parser
+fallback, threshold relaxation, child files, decompression/disassembly, camera
+contact or feature/write gate. Prior measured observations remain unchanged.
+Next shared package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.
 
 ## Verified preparation supporting these functions
 
@@ -120,12 +126,15 @@ Next shared package: **RA-003: document and qualify a bounded-memory, metadata-o
   and declared bounds/non-overlap checked against measured EOF. No component
   formats, English/FTP mechanism or body correspondence established.
 
-- Current RA-003: [component prefixes](../research/COMPONENT_PREFIX_AUDIT.md).
+- Earlier RA-003: [component prefixes](../research/COMPONENT_PREFIX_AUDIT.md).
   Bounded SquashFS v4/ustar header candidates, with lineage and metadata only.
   No complete component format or English/FTP finding follows.
 
+- Current RA-003: [tar-directory trial](../research/TAR_DIRECTORY_AUDIT.md).
+  No directory accepted; fixed path-policy refusal needs a bounded diagnostic.
+
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files**.
+packages and validation families. Next single host package: **RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

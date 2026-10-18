@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-18",
-  "phase": "component_prefix_candidates_identified_tar_directory_inventory_and_feature_mapping_pending",
+  "updated_on": "2026-10-19",
+  "phase": "tar_directory_trial_needs_review_path_diagnostic_before_directory_acceptance",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -68,13 +68,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_squashfs_and_ustar_prefix_candidates_directory_inventory_pending",
+      "status": "partial_tar_directory_trial_refused_path_policy_diagnostic_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 bounded-memory prefix identification after complete source/stream lineage checks; no raw prefix/component files or camera",
+      "scope": "R0 one private metadata-only tar trial; path guard refused; no accepted inventory, child files or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261018-RA-003-component-prefix.md",
+      "session_report": "research/sessions/20261018-RA-003-tar-directory.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -82,7 +82,8 @@
       "crypto_provenance": "research/FDAT_CRYPTO_PROVENANCE.md",
       "header_trial": "research/FDAT_HEADER_TRIAL.md",
       "stream_validation": "research/FDAT_STREAM_VALIDATION.md",
-      "component_prefix_audit": "research/COMPONENT_PREFIX_AUDIT.md"
+      "component_prefix_audit": "research/COMPONENT_PREFIX_AUDIT.md",
+      "tar_directory_audit": "research/TAR_DIRECTORY_AUDIT.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -153,12 +154,12 @@
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
     "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
     "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
-    "Official package/stream identities and declared extent bounds are recorded. Bounded U-slot SquashFS v4 and firmware ustar header candidates now guide parser selection, but complete component formats/directory contents, English resources/restrictions, FTP backend and exact-body correspondence remain unproved. Accepted-contract interaction, independent constants derivation and later component-copy scope remain unresolved; no accepted target profile.",
+    "Official package/stream identities and declared extent bounds are recorded. Bounded U-slot SquashFS v4 and firmware ustar header candidates now guide parser selection, but complete component formats/directory contents, English resources/restrictions, FTP backend and exact-body correspondence remain unproved. Accepted-contract interaction, independent constants derivation and later component-copy scope remain unresolved; no accepted target profile. The new tar-directory trial refused unsafe_path near its end; tentative counters are not an accepted inventory. Diagnose member-name versus link-target category without relaxing the rule or accepting a directory.",
     "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them.",
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: document and qualify a bounded-memory, metadata-only tar-directory inventory of the candidate ustar firmware extent, then run it with full source/stream lineage checks and no child files",
+  "next_work_package": "RA-003: qualify and run one bounded tar path/link diagnostic that records the first refusal category privately, completes source/stream lineage validation, and accepts no directory or child files",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -194,7 +195,7 @@
       "priority": "primary",
       "status": "owner_reports_english_absent_mainland_version_feasibility_unverified",
       "camera_validated": false,
-      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established.",
+      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established. A later metadata-only tar trial stopped at the fixed unsafe_path guard; no directory was accepted. The first refused field/category remains unidentified and needs a bounded diagnostic; no feature conclusion follows.",
       "blockers": [
         "Lawfully inspectable matching exact-build artifacts and regional applicability; exact SKU/internal product identity and binary hashes unverified",
         "Distinguish present-but-restricted English resources from missing/incomplete resources; prove narrow language policy and all consumers before any candidate"
@@ -222,7 +223,9 @@
         "research/FDAT_STREAM_VALIDATION.md",
         "research/sessions/20261018-RA-003-stream-validation.md",
         "research/COMPONENT_PREFIX_AUDIT.md",
-        "research/sessions/20261018-RA-003-component-prefix.md"
+        "research/sessions/20261018-RA-003-component-prefix.md",
+        "research/TAR_DIRECTORY_AUDIT.md",
+        "research/sessions/20261018-RA-003-tar-directory.md"
       ]
     },
     "native_wifi_ftp": {
@@ -230,7 +233,7 @@
       "priority": "primary",
       "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified",
       "camera_validated": false,
-      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established.",
+      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established. A later metadata-only tar trial stopped at the fixed unsafe_path guard; no directory was accepted. The first refused field/category remains unidentified and needs a bounded diagnostic; no feature conclusion follows.",
       "blockers": [
         "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
@@ -258,7 +261,9 @@
         "research/FDAT_STREAM_VALIDATION.md",
         "research/sessions/20261018-RA-003-stream-validation.md",
         "research/COMPONENT_PREFIX_AUDIT.md",
-        "research/sessions/20261018-RA-003-component-prefix.md"
+        "research/sessions/20261018-RA-003-component-prefix.md",
+        "research/TAR_DIRECTORY_AUDIT.md",
+        "research/sessions/20261018-RA-003-tar-directory.md"
       ]
     },
     "fl2_fl3_still_looks": {
@@ -1447,6 +1452,16 @@
       "raw_prefix_files_or_output": false,
       "component_copying_decompression_disassembly_or_distribution_cleared": false,
       "device_authorization_granted": false
+    },
+    "B_tar_directory_trial": {
+      "report": "research/TAR_DIRECTORY_AUDIT.md",
+      "assessment": "Necessary private directory-format study under the documented narrow rationale; accepted-contract interaction and constants derivation remain unresolved",
+      "performed": true,
+      "directory_accepted": false,
+      "accepted_directory_metadata_retained": false,
+      "raw_payload_or_component_files": false,
+      "component_copying_decompression_disassembly_or_distribution_cleared": false,
+      "device_authorization_granted": false
     }
   },
   "latest_fdat_probe_tests": {
@@ -2133,6 +2148,71 @@
       "test_classifier.py": "94f78df61e2733472cd74637b643e6a5df81b3b84ff03f0e279018ea8d9237b3",
       "test_all.py": "272d556c57243e9ec3aeb11f1715dbb6f42e874449863c9cd79995b3749a8930",
       "run-real.py": "a055a3d9f28e0ba39c3c53ae0c964b15e08fee81f158ec723eeab191f17257bd"
+    }
+  },
+  "bounded_tar_directory_trial": {
+    "report": "research/TAR_DIRECTORY_AUDIT.md",
+    "session_report": "research/sessions/20261018-RA-003-tar-directory.md",
+    "evidence_class": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "status": "needs_review_path_policy_refusal",
+    "hypothesis": "CXD90057_k8",
+    "pipeline_attempts": 1,
+    "automatic_retry_or_fallback": false,
+    "preliminary_parent_hash_verified": true,
+    "preliminary_parent_bytes": 1024017848,
+    "preliminary_parent_sha256": "d3c7db5b9b40c89b11ecf03addf0f6ff1d9b917acf9f55e46360462e86db847c",
+    "actual_decoding_pass_completed": false,
+    "fresh_actual_pass_parent_and_logical_stream_hashes_accepted": false,
+    "fresh_header_span_prefix_lineage_accepted": false,
+    "directory_accepted": false,
+    "reason_code": "unsafe_path",
+    "tentative_physical_headers_encountered": 114,
+    "tentative_counters_are_not_an_accepted_inventory": true,
+    "post_discard_member_count_is_not_archive_member_count": true,
+    "offending_field_role_or_value_identified": false,
+    "tentative_observers_discarded": true,
+    "raw_payload_output": false,
+    "component_files_written": false,
+    "decoded_stream_file_written": false,
+    "decompression_performed": false,
+    "disassembly_performed": false,
+    "upstream_execution_performed": false,
+    "firmware_execution_performed": false,
+    "component_formats_validated": false,
+    "authentication_verified": false,
+    "signature_verified": false,
+    "body_correspondence_verified": false,
+    "exact_package_profile_accepted": false,
+    "feature_or_device_write_gate_passed": false,
+    "camera_commands": [],
+    "synthetic_total": 133,
+    "synthetic_passed": 133,
+    "synthetic_skipped": 0,
+    "synthetic_exit_code": 0,
+    "synthetic_unittest_seconds": 0.749,
+    "script_terminal_exit_code": 2,
+    "host_tool_reported_exit_code": 1,
+    "real_elapsed_seconds": 28.603684,
+    "managed_pipeline_design_budget_bytes": 8388608,
+    "whole_process_memory_capped": false,
+    "private_implementation_sha256": {
+      "fdat_stream.py": "c1f7072c975c94044b43a1ffa31b1c7acb01008e9078b1841867b85e7c2523a1",
+      "test_stream.py": "c5fcb6c09bdcb2186b203a5ea941b2df48324b8165444965dda4f0c1fbea57db",
+      "test_observer.py": "c670a8b5f7bf999f6cfab6aa375e6239cb845d72002bb3d002a91b795f17c7e7",
+      "prefix.py": "e385fa70dd9fe91513b756d4256f38efc450acd1244f0114bc9c97983a1dd623",
+      "test_prefix.py": "bbdcb2a587b76f0c9dd5f6258306337d2bc8387a3d2750210b03ce42a7ce2eb2",
+      "classifier.py": "662036ae5966319621fc359191b59784c6b411777aece1034c21db95601c758a",
+      "test_classifier.py": "94f78df61e2733472cd74637b643e6a5df81b3b84ff03f0e279018ea8d9237b3",
+      "tar_inventory.py": "edb92477ab6ca4b164ff9964644a201b8711f4f76aa88361baf7bfe3261c8ed6",
+      "test_tar_inventory.py": "d71bf8e388e3b719df6daf5aab97a4946d988fbc6bab85cfb43c79e60f50a9b7",
+      "acceptance.py": "e2ee49ee8a419946947ce266a1959d4206b3cb99a3ad6d7ee4f9152a1ec901da",
+      "test_acceptance.py": "242fc7974e9b3a1b759eecb2033b65848bf945055a9d5f7901c79a817ab0bb6b",
+      "test_pipeline.py": "69b71753bd1034ff3c8457d068de127c7d37984decb226ca62a04e4a5434e987",
+      "test_all.py": "1fd59fce47afdbb584ef4c93cb48902039ab83eacf89d61d92f536669acff4fd",
+      "run-real.py": "0b54744b7e42b687e87203515e4d98e4cd5d1ac76edb66512f8078de63223252"
     }
   }
 }
