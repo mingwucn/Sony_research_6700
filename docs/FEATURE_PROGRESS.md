@@ -30,12 +30,18 @@ cannot be recorded as native camera Wi-Fi FTP.
   reuse/target limitations remain. [Audit](../research/REFERENCE_AUDIT.md).
 - Inventory/probe and synthetic patch/transaction models exist, with no eligible
   device profile or executor. [Coverage](../research/PRE_CAMERA_READINESS.md).
-- Latest standard-library suite: **129 passed, 1 skipped**, exit 0.
+- Latest standard-library suite: **129 passed, 1 skipped**, exit 0, from a clean
+  committed 58-file export and fresh no-pip environment on the same Windows host.
+  No private inputs, reference checkouts or optional lab runtime were present;
+  [clean-run evidence and first harness failure](../research/sessions/20261018-IN-102-clean.md)
+  are retained. This is not a clean OS or independent-host result.
   Constrained loopback lab: **19 cases passed**, including 100 synthetic files
   in 50 groups; all 21 lab servers stopped. This proves only the documented host
   cases. [Exact commands/results](../research/sessions/20261018-FT-102-loopback.md).
 
-Current shared host package: **IN-102 clean authored-tree offline reproduction**.
+Next shared host package: **RA-007 durable synthetic transaction journal and
+cross-process ownership**, with no device executor. IN-102 remains partial for
+remote CI, other hosts, real-symlink coverage and publication rights.
 The next target-specific package remains RA-003 once installed firmware and
 legitimate matching-package provenance are available. Existing Unknown intake
 answers are retained; no camera operation is implied by this note.

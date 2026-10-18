@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "pre_camera_loopback_lab_passed_native_constraints_pending",
+  "phase": "pre_camera_clean_authored_tree_passed_target_constraints_pending",
   "model": "ILCE-6700",
   "installed_firmware": null,
   "regional_variant": null,
@@ -33,11 +33,12 @@
     "errors": 0,
     "skipped": 1,
     "exit_code": 0,
-    "interpreter": "CPython 3.13.12",
-    "command": "python -m unittest discover -s tests -v",
+    "interpreter": "CPython 3.13.12 in fresh no-pip Windows AMD64 venv",
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261018-IN-102-clean/reproduce-02.py",
+    "command_kind": "private authored orchestrator; exact suite argv/cwd retained locally",
     "evidence_class": "offline-tested",
     "camera_or_real_server_coverage": false,
-    "report": "research/sessions/20261018-FT-102-loopback.md"
+    "report": "research/sessions/20261018-IN-102-clean.md"
   },
   "work_packages": {
     "RA-001": {
@@ -84,8 +85,12 @@
       "loopback_cases_passed": 19
     },
     "IN-102": {
-      "status": "partial_local_windows_and_pinned_ci_preparation_remote_not_run",
-      "report": "docs/HOST_VALIDATION.md"
+      "status": "partial_same_windows_clean_authored_tree_passed_remote_and_other_hosts_not_run",
+      "report": "docs/HOST_VALIDATION.md",
+      "session_report": "research/sessions/20261018-IN-102-clean.md",
+      "clean_export_tests_passed": 129,
+      "clean_export_tests_skipped": 1,
+      "clean_os_or_independent_host": false
     }
   },
   "pre_camera_coverage": "research/PRE_CAMERA_READINESS.md",
@@ -114,9 +119,10 @@
     "No exact-body program/settings/resource acquisition exists.",
     "No target recovery envelope or feature mappings are established.",
     "Constrained synthetic loopback FTPS passed only on this host; arbitrary/deployment servers, independent hosts, physical faults, camera media/lifecycle and native constraints remain unqualified.",
-    "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git."
+    "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
+    "Clean committed-tree reproduction passed on the same Windows/base stdlib only; clean OS, independent hosts, alternate interpreters and remote matrix results remain unobserved."
   ],
-  "next_work_package": "IN-102: clean authored-tree offline reproduction without private/reference/lab dependencies; target-specific RA-003 remains gated on installed firmware",
+  "next_work_package": "RA-007: durable synthetic transaction journal and cross-process ownership; no device executor",
   "next_device_action": "none; device work remains unapproved and blocked by missing exact-target evidence",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -231,5 +237,42 @@
         "docs/FTP_HOST_PROTOCOL.md"
       ]
     }
+  },
+  "clean_authored_tree_reproduction": {
+    "status": "passed_on_same_existing_windows_host_only",
+    "source_commit": "9d5f4bafe5046f0de4e5dcdd0455bac362ba8a64",
+    "file_count": 58,
+    "source_bytes": 526953,
+    "source_unchanged": true,
+    "fresh_environment_without_pip_or_system_packages": true,
+    "private_reference_or_lab_runtime_inputs_used": false,
+    "total": 130,
+    "passed": 129,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "exit_code": 0,
+    "interpreter": "CPython 3.13.12",
+    "runner_seconds": 17.558,
+    "discovery_and_runner_seconds": 17.863,
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261018-IN-102-clean/reproduce-02.py",
+    "parent_prohibited_socket_events": 0,
+    "local_hostname_metadata_events": 1,
+    "audit_scope": "parent Python process only; no OS/subprocess network boundary",
+    "authored_module_entries": 16,
+    "non_namespace_authored_modules_from_export": true,
+    "first_attempt": {
+      "exit_code": 1,
+      "passed": 123,
+      "errors": 6,
+      "skipped": 1,
+      "cause": "Harness blocked local socket.gethostname metadata; corrected in NEW harness/workspace without changing tests"
+    },
+    "clean_os": false,
+    "independent_host": false,
+    "remote_ci_executed": false,
+    "camera_coverage": false,
+    "evidence_class": "offline-tested",
+    "report": "research/sessions/20261018-IN-102-clean.md"
   }
 }

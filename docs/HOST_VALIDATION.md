@@ -89,6 +89,43 @@ filesystem coverage. Passing synthetic inventory, candidate or queue tests does
 not qualify extraction completeness, a device access route, actual FTP/FTPS
 semantics, backup recovery, or an alpha6700 feature.
 
+## Observed clean authored-tree reproduction
+
+On 2026-10-18, a NEW export of commit
+`9d5f4bafe5046f0de4e5dcdd0455bac362ba8a64` supplied 58 committed regular files
+(526,953 bytes). Each Git blob identity and SHA-256 was checked before execution;
+the whole exported source set was identical afterward. No `.git`, ignored
+private inputs, reference checkouts, dependency artifacts or lab runtime were
+copied. Lock metadata and authored lab/policy-test source are ordinary committed
+files; the opt-in server suite was not run.
+
+A NEW stdlib venv was created using CPython 3.13.12 with `-I -S -B -X utf8 -m
+venv --without-pip --copies`. Its system-site option was false and its
+site-packages directory was empty. Pip and the seven optional lab packages were
+not discoverable. From an unrelated working directory, the venv interpreter ran
+an authored wrapper with `-I -S -B -X utf8`; the wrapper explicitly added only the
+export root and discovered its absolute `tests/` directory. All 16 recorded
+authored/test module entries were within the export, except the expected
+`tools` namespace entry without a file. Result: **130 total, 129 passed, 1 skipped,
+exit 0**. The skip is unavailable real-symlink creation, still NOT TESTED.
+
+The first wrapper mistakenly prohibited `socket.gethostname`, which stdlib
+`platform.machine()` uses for local metadata on Windows. It produced 123 passes,
+six setup errors and one skip, exit 1. That workspace, source and logs were
+preserved. A reviewed NEW harness/workspace allowed and logged only that exact
+local read, retaining all other `socket.*` prohibitions; tests and their
+acceptance were unchanged. The successful run recorded one local hostname event,
+zero prohibited socket events and no loaded pip/lab-package modules. The hook
+covers its parent Python process, not subprocesses or an OS network boundary.
+
+This is a clean source tree and fresh environment on the same existing Windows
+host/base stdlib, **not** a clean OS, independent-host or remote CI result.
+Native SSL/OS trust and inherited SSL configuration remain host dependencies;
+checking selected module names is not a universal package scanner. Other
+platforms/interpreters, real symlinks, physical faults and camera behavior remain
+unproved. No dependency was installed/downloaded, and no network connection,
+listener or camera operation was requested. [Exact commands and retained evidence](../research/sessions/20261018-IN-102-clean.md).
+
 ## Local release-content policy
 
 Before staging, inspect `git status --short --branch`, review each authored

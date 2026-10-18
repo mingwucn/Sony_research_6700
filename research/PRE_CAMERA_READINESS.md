@@ -43,7 +43,7 @@ No prepared or passed host package is promoted into a working camera function.
 | FT-105 | Security/resource acceptance protocol retained | Target certificate behavior, coexistence, shooting/thermal/battery measurements |
 | FT-106 | Optional bridge architecture retained | Model-specific PC Remote/SDK evidence and separately approved camera leg |
 | IN-101 | Composition/uninstall protocol retained | Independently accepted target features and complete combination matrix |
-| IN-102 | Local synthetic checks, CI preparation and publication policy | Actual remote Windows/Linux CI runs and broader host/release evidence |
+| IN-102 | Local synthetic checks, clean committed-tree/no-pip reproduction on the same Windows host, CI preparation and publication policy | Actual remote Windows/Linux CI, clean OS/independent hosts, real-symlink and broader release evidence |
 | IN-103 | Soak/reversal/reproduction protocol retained | Accepted features, hardware qualification and independent eligible reproduction |
 
 The original detailed deliverables/thresholds in BACKLOG.md, MASTER_PLAN.md and
@@ -81,8 +81,19 @@ The [loopback lab](../docs/FTPS_LOOPBACK_LAB.md) now supplies observed host evid
 for its constrained peer, hash read-back, no-clobber finalization, certificate
 failure and queue reload/reconciliation. Its link/unlink extension is not generic
 FTP rename semantics or power-loss proof. Other peers, physical faults and target
-constraints remain untested. The next single host package is **IN-102 clean
-authored-tree offline reproduction**. Remote CI and clean-host execution require
+constraints remain untested. [Clean authored-tree reproduction](sessions/20261018-IN-102-clean.md)
+now passed 129 tests with one real-symlink skip in a fresh no-pip environment,
+without private inputs/reference checkouts/lab runtime. All 58 exported files
+remained unchanged. This is the same existing Windows host/base stdlib, not a
+clean OS or independent-host result. Remote CI remains NOT RUN.
+
+The next single host package is **RA-007 durable synthetic transaction journal
+and cross-process ownership**. The transaction simulator still lacks durable
+prepared/result records, process exclusion and crash/reopen reconciliation.
+Use synthetic identities and subprocess fault tests, retain uncertainty without
+automatic replay/rollback or stale-lock takeover, and add no device executor.
+This is a future executor prerequisite; it adds no gate before ordinary
+separately approved UI observation. Remote CI and clean-host execution require
 actual observations; prepared workflow files are not results.
 
 The next target-specific package remains **RA-003**, beginning with the missing
