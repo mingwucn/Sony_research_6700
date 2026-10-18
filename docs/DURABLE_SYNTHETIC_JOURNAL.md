@@ -73,9 +73,15 @@ A retained private demonstration reconciled an applied-before-result crash and
 completed only the next operation, preserving the earlier journal prefix and an
 unselected fixture. [Exact commands, failures and results](../research/sessions/20261018-RA-007-durable-journal.md).
 
-This is `offline-tested` evidence on this Windows host. POSIX fork/locking,
-other interpreters/filesystems, remote CI and a clean export of this new revision
-remain unobserved. Caller observations are unauthenticated fixture claims. A hash
+That focused result is `offline-tested` evidence on the owner Windows host.
+Later qualification at `fb32370052a0ffe5d8a529edba971f962ce57654` passed a NEW
+63-file clean export (152 passed/two skipped), plus four observed Ubuntu/Windows
+CI jobs on Python 3.10/3.13 (153 passed/one platform skip per job). Ubuntu passed
+the POSIX inherited-lock test and actual symlink refusal; hosted Windows also
+passed actual symlink refusal. The local owner-host symlink gap remains.
+[Exact run/job evidence](../research/sessions/20261018-IN-102-final.md) is retained.
+Recorded host coverage does not qualify other filesystems or physical durability.
+Caller observations are unauthenticated fixture claims. A hash
 chain provides no authentication or anti-rollback guarantee. Cooperative OS locks
 do not establish exclusive camera access. Flush/fsync and process-crash tests do
 not prove power-loss or directory-entry durability. Journal/lock paths,

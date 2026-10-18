@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "pre_camera_durable_synthetic_journal_passed_target_constraints_pending",
+  "phase": "pre_camera_recorded_host_qualification_passed_exact_target_inputs_pending",
   "model": "ILCE-6700",
   "installed_firmware": null,
   "regional_variant": null,
@@ -24,7 +24,7 @@
   },
   "local_host_environment_recorded": true,
   "local_host_and_usb_validation": false,
-  "remote_ci_executed": false,
+  "remote_ci_executed": true,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
     "total": 154,
@@ -35,11 +35,14 @@
     "exit_code": 0,
     "interpreter": "CPython 3.13.12",
     "host": "Windows AMD64, kernel build 26300.9711",
-    "command": "C:/ProgramData/miniconda3/python.exe -B -X utf8 -m unittest discover -s tests -v",
-    "runner_seconds": 16.893,
+    "command": "python -I -S -B -X utf8 private/sessions/20261018-IN-102-final/reproduce-final.py",
+    "runner_seconds": 16.918,
     "evidence_class": "offline-tested",
     "camera_or_real_server_coverage": false,
-    "report": "research/sessions/20261018-RA-007-durable-journal.md"
+    "report": "research/sessions/20261018-IN-102-final.md",
+    "source_commit": "fb32370052a0ffe5d8a529edba971f962ce57654",
+    "discovery_and_runner_seconds": 17.214,
+    "source_scope": "NEW committed authored-tree export; fresh no-pip stdlib environment on same owner Windows host"
   },
   "work_packages": {
     "RA-001": {
@@ -55,9 +58,10 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_host_probe_ready_target_acquisition_blocked",
+      "status": "partial_public_source_refresh_complete_exact_build_intake_blocked",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "Header identification and extractor text audit only; no real target package/extraction"
+      "scope": "Bounded header/lineage/extractor audit and official HTML inspection only; no matching package selected or target extraction",
+      "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md"
     },
     "RA-004": {
       "status": "r0_preparation_only_identity_and_route_blocked",
@@ -72,12 +76,13 @@
       "report": "research/TARGET_EVIDENCE_GAPS.md"
     },
     "RA-007": {
-      "status": "partial_durable_synthetic_windows_foundation_no_target_or_executor",
+      "status": "partial_durable_synthetic_recorded_windows_ubuntu_foundation_no_target_or_executor",
       "report": "docs/DURABLE_SYNTHETIC_JOURNAL.md",
       "focused_tests_passed": 36,
       "session_report": "research/sessions/20261018-RA-007-durable-journal.md",
       "durable_focused_tests_passed": 23,
-      "durable_focused_tests_skipped": 1
+      "durable_focused_tests_skipped": 1,
+      "qualification_report": "research/sessions/20261018-IN-102-final.md"
     },
     "FT-102": {
       "status": "partial_constrained_host_lab_passed_native_and_deployment_constraints_pending",
@@ -89,12 +94,14 @@
       "loopback_cases_passed": 19
     },
     "IN-102": {
-      "status": "partial_same_windows_clean_authored_tree_passed_remote_and_other_hosts_not_run",
+      "status": "partial_final_code_clean_export_and_observed_matrix_passed_release_requirements_pending",
       "report": "docs/HOST_VALIDATION.md",
-      "session_report": "research/sessions/20261018-IN-102-clean.md",
-      "clean_export_tests_passed": 129,
-      "clean_export_tests_skipped": 1,
-      "clean_os_or_independent_host": false
+      "session_report": "research/sessions/20261018-IN-102-final.md",
+      "clean_export_tests_passed": 152,
+      "clean_export_tests_skipped": 2,
+      "clean_os_or_independent_host": false,
+      "remote_host_matrix_observed": true,
+      "note": "Fresh export uses same owner OS/base stdlib; hosted CI is a separate recorded matrix, not a pristine-OS or camera qualification"
     }
   },
   "pre_camera_coverage": "research/PRE_CAMERA_READINESS.md",
@@ -115,8 +122,6 @@
     "Reference transport/native workers are model/build/ABI-specific; no alpha6700 service or write route follows from this static audit.",
     "Third-party integration requires package artifact/transitive/platform locks, secondary provenance and component-specific rights; Sony payload/R2 notes/Ricoh profile reuse grants are not established.",
     "Native source-to-binary correspondence and target runtime behaviour remain unverified; asset hashes establish identity only.",
-    "Windows inventory cross-API ctime false refusals repaired with same-API mutation checks retained; other hosts/filesystems and remote CI remain unqualified.",
-    "Symlink rejection test skipped because symlink creation was unavailable; this host coverage remains untested.",
     "Owner firmware and regional/language facts are not yet supplied.",
     "Owner reports remaining body/setup intake facts unknown; history, health, connection, power/media, recovery tolerance and independent backup storage remain pending.",
     "No alpha6700 service-access route has been reviewed and tested.",
@@ -124,10 +129,12 @@
     "No target recovery envelope or feature mappings are established.",
     "Constrained synthetic loopback FTPS passed only on this host; arbitrary/deployment servers, independent hosts, physical faults, camera media/lifecycle and native constraints remain unqualified.",
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
-    "Clean committed-tree reproduction passed on the same Windows/base stdlib only; clean OS, independent hosts, alternate interpreters and remote matrix results remain unobserved.",
-    "Durable synthetic journal passed on Windows only; POSIX fork/locking, final-revision clean export and remote matrix remain unobserved; no device executor or physical durability/recovery proof."
+    "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
+    "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
+    "Official public source availability is refreshed, but installed firmware/region/languages remain unknown; no matching official package was selected or acquired.",
+    "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them."
   ],
-  "next_work_package": "IN-102: qualify final committed RA-007 revision with fresh authored-tree/no-pip reproduction and observed Windows/Linux CI matrix",
+  "next_work_package": "RA-003: exact-build intake, blocked on installed-firmware fact and legitimate matching-input provenance",
   "next_device_action": "none; device work remains unapproved and blocked by missing exact-target evidence",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -163,15 +170,16 @@
       "priority": "primary",
       "status": "design_prepared_actual_language_availability_unknown",
       "camera_validated": false,
-      "progress": "Hypotheses, preservation rules and critical-resource coverage plan prepared; no target change",
+      "progress": "Hypotheses, preservation rules and critical-resource coverage plan prepared; no target change. Official model Language documentation refreshed; owner regional availability remains unknown.",
       "blockers": [
         "Observed firmware/region and complete offered-language list",
         "Exact-build resources and narrow policy/all-consumer evidence if English is restricted"
       ],
-      "next_package": "EN-101 after exact-target prerequisites; retain normal-menu branch if English exists",
+      "next_package": "EN-101: offered-language observation first when separately approved; exact-build artifacts only if binary analysis is needed",
       "evidence": [
         "docs/ENGLISH_LANGUAGE.md",
-        "research/TARGET_EVIDENCE_GAPS.md"
+        "research/TARGET_EVIDENCE_GAPS.md",
+        "research/OFFICIAL_SOURCE_REFRESH.md"
       ]
     },
     "native_wifi_ftp": {
@@ -179,7 +187,7 @@
       "priority": "primary",
       "status": "host_protocol_foundation_tested_native_route_uninvestigated",
       "camera_validated": false,
-      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed; no camera-resident implementation",
+      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed; no camera-resident implementation. Official model menu/release notes refreshed without documented arbitrary FTP; this does not establish backend absence.",
       "blockers": [
         "Target backend/ABI/media/network/lifecycle evidence and selected native route",
         "Camera-origin manual upload and full server equality",
@@ -188,7 +196,8 @@
       "next_package": "FT-101; FT-103 manual and FT-104 automatic remain later separate proofs",
       "evidence": [
         "docs/FTP.md",
-        "research/sessions/20261018-FT-102-loopback.md"
+        "research/sessions/20261018-FT-102-loopback.md",
+        "research/OFFICIAL_SOURCE_REFRESH.md"
       ]
     },
     "fl2_fl3_still_looks": {
@@ -231,7 +240,7 @@
       "priority": "optional_separate_result",
       "status": "architecture_and_synthetic_host_leg_only_no_camera_adapter",
       "camera_validated": false,
-      "progress": "Bridge architecture and reusable synthetic host transfer leg prepared",
+      "progress": "Bridge architecture and reusable synthetic host transfer leg prepared. Official model PC Remote/SDK landing-page leads refreshed; per-function SDK/capture support remains unverified.",
       "blockers": [
         "Model/firmware/SDK capabilities and capture-completion signal",
         "Physical-shutter/remote-trigger/formats/card-retention qualification",
@@ -240,49 +249,48 @@
       "next_package": "FT-106 only if pursued; never closes native FTP",
       "evidence": [
         "docs/FTP.md",
-        "docs/FTP_HOST_PROTOCOL.md"
+        "docs/FTP_HOST_PROTOCOL.md",
+        "research/OFFICIAL_SOURCE_REFRESH.md"
       ]
     }
   },
   "clean_authored_tree_reproduction": {
-    "status": "passed_on_same_existing_windows_host_only",
-    "source_commit": "9d5f4bafe5046f0de4e5dcdd0455bac362ba8a64",
-    "file_count": 58,
-    "source_bytes": 526953,
+    "status": "passed_final_code_on_same_owner_windows_host",
+    "source_commit": "fb32370052a0ffe5d8a529edba971f962ce57654",
+    "file_count": 63,
+    "source_bytes": 628717,
     "source_unchanged": true,
     "fresh_environment_without_pip_or_system_packages": true,
     "private_reference_or_lab_runtime_inputs_used": false,
-    "total": 130,
-    "passed": 129,
+    "total": 154,
+    "passed": 152,
     "failed": 0,
     "errors": 0,
-    "skipped": 1,
+    "skipped": 2,
     "exit_code": 0,
     "interpreter": "CPython 3.13.12",
-    "runner_seconds": 17.558,
-    "discovery_and_runner_seconds": 17.863,
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261018-IN-102-clean/reproduce-02.py",
+    "runner_seconds": 16.918,
+    "discovery_and_runner_seconds": 17.214,
+    "command": "python -I -S -B -X utf8 private/sessions/20261018-IN-102-final/reproduce-final.py",
     "parent_prohibited_socket_events": 0,
     "local_hostname_metadata_events": 1,
     "audit_scope": "parent Python process only; no OS/subprocess network boundary",
-    "authored_module_entries": 16,
+    "authored_module_entries": 18,
     "non_namespace_authored_modules_from_export": true,
-    "first_attempt": {
-      "exit_code": 1,
-      "passed": 123,
-      "errors": 6,
-      "skipped": 1,
-      "cause": "Harness blocked local socket.gethostname metadata; corrected in NEW harness/workspace without changing tests"
-    },
     "clean_os": false,
     "independent_host": false,
-    "remote_ci_executed": false,
+    "remote_ci_executed": true,
     "camera_coverage": false,
     "evidence_class": "offline-tested",
-    "report": "research/sessions/20261018-IN-102-clean.md"
+    "report": "research/sessions/20261018-IN-102-final.md",
+    "authored_module_files": 17,
+    "skip_reasons": [
+      "POSIX fork unavailable on owner Windows",
+      "actual symlink creation unavailable on owner Windows"
+    ]
   },
   "durable_synthetic_journal": {
-    "status": "passed_synthetic_windows_only",
+    "status": "passed_synthetic_recorded_windows_and_ubuntu_hosts_only",
     "total": 24,
     "passed": 23,
     "failed": 0,
@@ -296,12 +304,16 @@
     "evidence_class": "offline-tested",
     "real_subprocess_exclusion_and_crash_tests": true,
     "actual_hardlink_refusal_tested": true,
-    "posix_fork_tested": false,
-    "remote_ci_executed": false,
+    "posix_fork_tested": true,
+    "remote_ci_executed": true,
     "device_executor_exists": false,
     "device_eligible": false,
     "camera_commands": [],
-    "report": "research/sessions/20261018-RA-007-durable-journal.md"
+    "report": "research/sessions/20261018-RA-007-durable-journal.md",
+    "qualification_report": "research/sessions/20261018-IN-102-final.md",
+    "focused_result_scope": "Original owner-Windows focused run; later full-suite remote evidence recorded separately",
+    "posix_evidence": "Ubuntu CI inherited-lock test passed in both Python jobs",
+    "actual_symlink_evidence": "Hosted Windows and Ubuntu passed; owner Windows creation unavailable"
   },
   "feature_priorities": {
     "updated_on": "2026-10-18",
@@ -319,5 +331,267 @@
       "optional_host_assisted_bridge"
     ],
     "rule": "Prioritize English and native Wi-Fi FTP. FL2/FL3 can wait; calibrated custom looks remain after FL2/FL3. The optional host-assisted bridge stays separate."
+  },
+  "clean_authored_tree_reproduction_history": [
+    {
+      "status": "passed_on_same_existing_windows_host_only",
+      "source_commit": "9d5f4bafe5046f0de4e5dcdd0455bac362ba8a64",
+      "file_count": 58,
+      "source_bytes": 526953,
+      "source_unchanged": true,
+      "fresh_environment_without_pip_or_system_packages": true,
+      "private_reference_or_lab_runtime_inputs_used": false,
+      "total": 130,
+      "passed": 129,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "exit_code": 0,
+      "interpreter": "CPython 3.13.12",
+      "runner_seconds": 17.558,
+      "discovery_and_runner_seconds": 17.863,
+      "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261018-IN-102-clean/reproduce-02.py",
+      "parent_prohibited_socket_events": 0,
+      "local_hostname_metadata_events": 1,
+      "audit_scope": "parent Python process only; no OS/subprocess network boundary",
+      "authored_module_entries": 16,
+      "non_namespace_authored_modules_from_export": true,
+      "first_attempt": {
+        "exit_code": 1,
+        "passed": 123,
+        "errors": 6,
+        "skipped": 1,
+        "cause": "Harness blocked local socket.gethostname metadata; corrected in NEW harness/workspace without changing tests"
+      },
+      "clean_os": false,
+      "independent_host": false,
+      "remote_ci_executed": false,
+      "camera_coverage": false,
+      "evidence_class": "offline-tested",
+      "report": "research/sessions/20261018-IN-102-clean.md"
+    }
+  ],
+  "remote_ci": {
+    "source_commit": "fb32370052a0ffe5d8a529edba971f962ce57654",
+    "workflow": ".github/workflows/offline-tests.yml",
+    "source_report": "observed GitHub Actions job logs and API metadata",
+    "runs": [
+      {
+        "id": 39149570514,
+        "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149570514",
+        "event": "push",
+        "head_sha": "fb32370052a0ffe5d8a529edba971f962ce57654",
+        "status": "completed",
+        "conclusion": "success",
+        "jobs": [
+          {
+            "id": 117740252564,
+            "name": "ubuntu-24.04 / Python 3.13",
+            "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149570514/job/117740252564",
+            "conclusion": "success",
+            "interpreter": "3.13.16",
+            "total": 154,
+            "passed": 153,
+            "skipped": 1,
+            "failed": 0,
+            "errors": 0,
+            "exit_code": 0,
+            "runner_seconds": 8.963,
+            "runner_image": "ubuntu-24.04",
+            "runner_image_version": "20261012.334.1",
+            "observed_checkout_commits": [
+              "fb32370052a0ffe5d8a529edba971f962ce57654"
+            ],
+            "posix_inherited_lock_test_passed": true,
+            "actual_symlink_test_passed": true,
+            "skip_reason": "Windows path-syntax policy applies only on Windows"
+          },
+          {
+            "id": 117740252737,
+            "name": "windows-2025 / Python 3.13",
+            "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149570514/job/117740252737",
+            "conclusion": "success",
+            "interpreter": "3.13.16",
+            "total": 154,
+            "passed": 153,
+            "skipped": 1,
+            "failed": 0,
+            "errors": 0,
+            "exit_code": 0,
+            "runner_seconds": 21.621,
+            "runner_image": "windows-2025-vs2026",
+            "runner_image_version": "20261007.264.1",
+            "observed_checkout_commits": [
+              "fb32370052a0ffe5d8a529edba971f962ce57654"
+            ],
+            "posix_inherited_lock_test_passed": false,
+            "actual_symlink_test_passed": true,
+            "skip_reason": "POSIX fork unavailable on Windows"
+          },
+          {
+            "id": 117740252738,
+            "name": "ubuntu-24.04 / Python 3.10",
+            "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149570514/job/117740252738",
+            "conclusion": "success",
+            "interpreter": "3.10.22",
+            "total": 154,
+            "passed": 153,
+            "skipped": 1,
+            "failed": 0,
+            "errors": 0,
+            "exit_code": 0,
+            "runner_seconds": 7.091,
+            "runner_image": "ubuntu-24.04",
+            "runner_image_version": "20261012.334.1",
+            "observed_checkout_commits": [
+              "fb32370052a0ffe5d8a529edba971f962ce57654"
+            ],
+            "posix_inherited_lock_test_passed": true,
+            "actual_symlink_test_passed": true,
+            "skip_reason": "Windows path-syntax policy applies only on Windows"
+          },
+          {
+            "id": 117740252743,
+            "name": "windows-2025 / Python 3.10",
+            "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149570514/job/117740252743",
+            "conclusion": "success",
+            "interpreter": "3.10.11",
+            "total": 154,
+            "passed": 153,
+            "skipped": 1,
+            "failed": 0,
+            "errors": 0,
+            "exit_code": 0,
+            "runner_seconds": 30.633,
+            "runner_image": "windows-2025-vs2026",
+            "runner_image_version": "20261007.264.1",
+            "observed_checkout_commits": [
+              "fb32370052a0ffe5d8a529edba971f962ce57654"
+            ],
+            "posix_inherited_lock_test_passed": false,
+            "actual_symlink_test_passed": true,
+            "skip_reason": "POSIX fork unavailable on Windows"
+          }
+        ]
+      },
+      {
+        "id": 39149603684,
+        "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149603684",
+        "event": "pull_request",
+        "head_sha": "fb32370052a0ffe5d8a529edba971f962ce57654",
+        "status": "completed",
+        "conclusion": "success",
+        "jobs": [
+          {
+            "id": 117740349674,
+            "name": "windows-2025 / Python 3.13",
+            "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149603684/job/117740349674",
+            "conclusion": "success",
+            "interpreter": "3.13.16",
+            "total": 154,
+            "passed": 153,
+            "skipped": 1,
+            "failed": 0,
+            "errors": 0,
+            "exit_code": 0,
+            "runner_seconds": 24.309,
+            "runner_image": "windows-2025-vs2026",
+            "runner_image_version": "20261007.264.1",
+            "observed_checkout_commits": [
+              "ad726f40a0bfc20aa565da704425140846c4dc19"
+            ],
+            "posix_inherited_lock_test_passed": false,
+            "actual_symlink_test_passed": true,
+            "skip_reason": "POSIX fork unavailable on Windows"
+          },
+          {
+            "id": 117740349833,
+            "name": "ubuntu-24.04 / Python 3.10",
+            "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149603684/job/117740349833",
+            "conclusion": "success",
+            "interpreter": "3.10.22",
+            "total": 154,
+            "passed": 153,
+            "skipped": 1,
+            "failed": 0,
+            "errors": 0,
+            "exit_code": 0,
+            "runner_seconds": 7.019,
+            "runner_image": "ubuntu-24.04",
+            "runner_image_version": "20261012.334.1",
+            "observed_checkout_commits": [
+              "ad726f40a0bfc20aa565da704425140846c4dc19"
+            ],
+            "posix_inherited_lock_test_passed": true,
+            "actual_symlink_test_passed": true,
+            "skip_reason": "Windows path-syntax policy applies only on Windows"
+          },
+          {
+            "id": 117740349845,
+            "name": "ubuntu-24.04 / Python 3.13",
+            "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149603684/job/117740349845",
+            "conclusion": "success",
+            "interpreter": "3.13.16",
+            "total": 154,
+            "passed": 153,
+            "skipped": 1,
+            "failed": 0,
+            "errors": 0,
+            "exit_code": 0,
+            "runner_seconds": 6.956,
+            "runner_image": "ubuntu-24.04",
+            "runner_image_version": "20261012.334.1",
+            "observed_checkout_commits": [
+              "ad726f40a0bfc20aa565da704425140846c4dc19"
+            ],
+            "posix_inherited_lock_test_passed": true,
+            "actual_symlink_test_passed": true,
+            "skip_reason": "Windows path-syntax policy applies only on Windows"
+          },
+          {
+            "id": 117740349886,
+            "name": "windows-2025 / Python 3.10",
+            "url": "https://github.com/mingwucn/a6700_research/actions/runs/39149603684/job/117740349886",
+            "conclusion": "success",
+            "interpreter": "3.10.11",
+            "total": 154,
+            "passed": 153,
+            "skipped": 1,
+            "failed": 0,
+            "errors": 0,
+            "exit_code": 0,
+            "runner_seconds": 19.24,
+            "runner_image": "windows-2025-vs2026",
+            "runner_image_version": "20261007.264.1",
+            "observed_checkout_commits": [
+              "ad726f40a0bfc20aa565da704425140846c4dc19"
+            ],
+            "posix_inherited_lock_test_passed": false,
+            "actual_symlink_test_passed": true,
+            "skip_reason": "POSIX fork unavailable on Windows"
+          }
+        ]
+      }
+    ],
+    "camera_commands": [],
+    "evidence_class": "offline-tested",
+    "camera_coverage": false,
+    "report": "research/sessions/20261018-IN-102-final.md",
+    "full_job_logs_inspected": 8,
+    "pr_merge_checkout": "ad726f40a0bfc20aa565da704425140846c4dc19",
+    "pr_merge_tree_matches_code": true
+  },
+  "pre_camera_completion_audit": "research/PRE_CAMERA_AUDIT.md",
+  "public_source_availability": {
+    "checked_on": "2026-10-18",
+    "evidence_class": "source-report",
+    "status": "official_usa_html_opened_no_binary_download_or_target_match",
+    "public_catalogue_version_observed": "2.00",
+    "public_catalogue_date_observed": "2025-06-10",
+    "owner_installed_firmware": null,
+    "owner_regional_variant": null,
+    "report": "research/OFFICIAL_SOURCE_REFRESH.md",
+    "native_ftp_support_established": false,
+    "native_ftp_field_meaning": "No support claim established; bounded lack of documentation is not backend-absence proof"
   }
 }

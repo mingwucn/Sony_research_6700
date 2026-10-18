@@ -41,7 +41,10 @@ Host-only continuation now adds a bounded [artifact probe](docs/ARTIFACT_INTAKE.
 with pinned private dependencies. No camera adapter or device executor exists.
 [Pre-camera coverage](research/PRE_CAMERA_READINESS.md)
 keeps all 27 work packages and their remaining evidence requirements visible.
-[CI preparation](docs/HOST_VALIDATION.md) is separate from actual remote results.
+[Observed host validation](docs/HOST_VALIDATION.md) now records a clean final-code
+export and passing four-job Windows/Linux CI. The [completion audit](research/PRE_CAMERA_AUDIT.md)
+and [official-source refresh](research/OFFICIAL_SOURCE_REFRESH.md) preserve remaining
+exact-target inputs and feature limits.
 
 ## Start locally
 

@@ -58,8 +58,10 @@ python tools/artifact_probe.py --help
 On Windows, use an existing supported Python 3.10+ interpreter, for example py -3 instead of python. Do not install a USB driver, firmware updater or third-party camera package to run these standard-library tests. Initialization tests passed under Python 3.13.5 on the webchat Linux host; Windows and the owner's computer remain untested.
 
 That is the historical initialization result. Later local Windows tests and the
-ctime portability repair are recorded in STATE and session reports. Prepared
-remote Windows/Linux CI remains NOT RUN until a real run is inspected. See
+ctime portability repair are recorded in STATE and session reports. A final-code
+clean export and the observed four-job Windows/Linux CI matrix have now passed;
+see the [qualification report](../research/sessions/20261018-IN-102-final.md).
+No camera function or device-write gate is established. See
 [artifact intake](ARTIFACT_INTAKE.md) for the probe and
 [host validation](HOST_VALIDATION.md) for current CI and publication limits.
 

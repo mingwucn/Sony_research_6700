@@ -1,9 +1,11 @@
 # Host validation and release-content review
 
-Evidence class: **static-inference** for the workflow review. Remote CI status:
-**NOT RUN**. Creating this configuration does not establish any Windows/Linux
-matrix result, clean-host result, camera feature, or device-write eligibility.
-No push or workflow dispatch was performed in this preparation session.
+Evidence class: **offline-tested** for observed synthetic runs; **static-inference**
+for publication/workflow review. The final-code clean export and all four actual
+Windows/Linux CI jobs passed on 2026-10-18. Results apply to the recorded
+revision/interpreters/runner images, without camera feature or device eligibility.
+The original preparation session performed no push; the later qualification
+session pushed reviewed authored source and opened draft PR #5.
 
 The later [loopback FTPS lab](FTPS_LOOPBACK_LAB.md) is a separate opt-in runtime
 with locked private dependencies. Its `lab_tests/` directory is outside this
@@ -89,7 +91,7 @@ filesystem coverage. Passing synthetic inventory, candidate or queue tests does
 not qualify extraction completeness, a device access route, actual FTP/FTPS
 semantics, backup recovery, or an alpha6700 feature.
 
-## Observed clean authored-tree reproduction
+## Earlier clean authored-tree reproduction (historical)
 
 On 2026-10-18, a NEW export of commit
 `9d5f4bafe5046f0de4e5dcdd0455bac362ba8a64` supplied 58 committed regular files
@@ -121,10 +123,53 @@ covers its parent Python process, not subprocesses or an OS network boundary.
 This is a clean source tree and fresh environment on the same existing Windows
 host/base stdlib, **not** a clean OS, independent-host or remote CI result.
 Native SSL/OS trust and inherited SSL configuration remain host dependencies;
-checking selected module names is not a universal package scanner. Other
-platforms/interpreters, real symlinks, physical faults and camera behavior remain
+checking selected module names is not a universal package scanner. At that earlier
+revision, other platforms/interpreters and real symlinks were unobserved. The later qualification
+below supplies recorded host results; physical faults and camera behavior remain
 unproved. No dependency was installed/downloaded, and no network connection,
 listener or camera operation was requested. [Exact commands and retained evidence](../research/sessions/20261018-IN-102-clean.md).
+
+## Final-code qualification observed on 2026-10-18
+
+Code revision: `fb32370052a0ffe5d8a529edba971f962ce57654`. A NEW verified export
+contained **63 files / 628,717 bytes**, all unchanged after execution. A fresh
+no-pip stdlib environment on the same Windows AMD64 host / CPython 3.13.12 ran
+**154 total / 152 passed / two skipped / zero failures or errors, exit 0**.
+The local skips are POSIX fork and unavailable real-symlink creation. Actual
+hard-link refusal passed. No private/reference/lab runtime inputs were used.
+The parent audit hook is a process-local check, without an OS/subprocess network
+boundary; one local hostname metadata event was permitted and recorded.
+
+[Push run 39149570514](https://github.com/mingwucn/a6700_research/actions/runs/39149570514)
+tested that exact commit. Each job ran `python -VV` and
+`python -m unittest discover -s tests -v`, with **154 total / 153 passed /
+one platform-specific skip / zero failures or errors, exit 0**:
+
+| Runner selector | Requested Python | Observed CPython | Suite seconds |
+|---|---|---|---|
+| Ubuntu 24.04 | 3.10 | 3.10.22 | 7.091 |
+| Ubuntu 24.04 | 3.13 | 3.13.16 | 8.963 |
+| Windows 2025 | 3.10 | 3.10.11 | 30.633 |
+| Windows 2025 | 3.13 | 3.13.16 | 21.621 |
+
+Observed images: Ubuntu `20261012.334.1`; Windows `windows-2025-vs2026` /
+`20261007.264.1`. Ubuntu passed POSIX inherited-lock and actual symlink tests;
+its skip is Windows path syntax. Hosted Windows passed actual symlink and
+Windows path-policy tests; its skip is POSIX fork. This does not remove the
+owner host's actual-symlink gap or qualify every filesystem/interpreter.
+
+Supplemental [PR run 39149603684](https://github.com/mingwucn/a6700_research/actions/runs/39149603684)
+also passed all four jobs with the same counts. Its merge checkout tree exactly
+matches the tested code tree. All eight full job logs and API metadata were
+inspected and retained privately. No failed job was hidden by rerunning.
+
+The [session report](../research/sessions/20261018-IN-102-final.md) contains exact
+commands, versions, job links, limits and the publication audit. The historical
+58-file run above remains tied to its own older source revision. Current
+qualification edits change documentation/state only; code, tests, workflow,
+locks, target profile and acceptance thresholds remain byte-identical to the
+qualified code revision. IN-102 remains partial for broader release/rights and
+exact-target requirements; no pristine OS or camera qualification is claimed.
 
 ## Local release-content policy
 
@@ -155,5 +200,7 @@ own applicable evidence and authorization; no CI result passes a device-write
 gate. These manual checks are a review policy, not an implemented secret scanner
 or a guarantee that every prohibited datum can be detected automatically.
 
-Camera commands in this CI-preparation work: **none**. Host network activity was
-limited to official action refs and source text; no private inputs were uploaded.
+Camera commands in CI preparation and qualification: **none**. Host network
+activity was limited to public official/reference material and authenticated
+repository/CI operations. Only reviewed authored source and sanitized summaries
+were pushed; private inputs and raw evidence were not uploaded.
