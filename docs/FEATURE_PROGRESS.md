@@ -32,6 +32,11 @@ storage copies, an exact inverse and recovery access for the relevant failure
 states remain required; synthetic guards are preparation only. See
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist).
 
+Latest shared RA-003: [one bounded header hypothesis](../research/FDAT_HEADER_TRIAL.md)
+passed envelope/header CRC checks after 45 synthetic cases. Full-stream length,
+component bounds and English/FTP mapping remain unverified. Exact-body/recovery
+and all feature/write gates remain open. Next shared package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+
 ## Verified preparation supporting these functions
 
 - RA-001: host baseline/private intake prepared. Model/version/current-language
@@ -100,12 +105,16 @@ states remain required; synthetic guards are preparation only. See
   documented; no real decoding or resource/backend mapping. Full suite: 225 passed,
   three skipped, exit 0. Exact variant/dependency/constants provenance is next.
 
-- Current RA-003: [crypto/provenance audit](../research/FDAT_CRYPTO_PROVENANCE.md).
+- Earlier RA-003: [crypto/provenance audit](../research/FDAT_CRYPTO_PROVENANCE.md).
   Pinned private AES runtime and public constants source; eight primitive tests
-  passed. No real header trial, English resources or FTP backend mapping yet.
+  passed. That session did not perform a real header trial or feature mapping.
+
+- Current RA-003: [bounded private header trial](../research/FDAT_HEADER_TRIAL.md).
+  One predeclared hypothesis passed envelope/header checks after 45 synthetic
+  cases. Full-stream length, component bounds and feature mapping remain unverified.
 
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**.
+packages and validation families. Next single host package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

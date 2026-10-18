@@ -1,8 +1,8 @@
 # RA-003 artifact intake and bounded inspection
 
-Status: official mainland 2.00 package acquired; bounded identification and
-authored UFU directory inventory and bounded opaque FDAT identification recorded,
-without component extraction or decoding.
+Status: official mainland 2.00 package acquired; UFU framing inventoried.
+One bounded real FDAT header hypothesis passed envelope/CRC checks.
+Full-stream measurement and component extraction remain unperformed.
 Exact-body correspondence and the full extraction/analysis scope remain unresolved.
 Current intake (2026-10-18, **source-report**): the owner reports α6700
 firmware **2.00**, current **简体中文**, **Chinese mainland version**, and
@@ -25,7 +25,12 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [crypto/public-constant provenance](../research/FDAT_CRYPTO_PROVENANCE.md)
+Latest continuation: [bounded header trial](../research/FDAT_HEADER_TRIAL.md) and
+[commands/results](../research/sessions/20261018-RA-003-header-trial.md): 45 corrected synthetic passes and one real first-block/header result.
+No full-stream decoded length, extent bounds or feature mapping; no child files.
+Next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+
+Earlier continuation: [crypto/public-constant provenance](../research/FDAT_CRYPTO_PROVENANCE.md)
 records eight isolated AES passes and pinned private public-source/artifact inputs,
 with no real firmware read or key/profile acceptance.
 

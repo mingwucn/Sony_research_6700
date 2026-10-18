@@ -32,7 +32,10 @@ chunks and one FDAT span, without extracting contents. The latest
 [decoding plan](research/FDAT_DECODING_PLAN.md) documents the narrow research
 rationale and a synthetic decoded-header validator. The later
 [crypto/provenance audit](research/FDAT_CRYPTO_PROVENANCE.md) pins private inputs and records eight
-isolated AES primitive tests; no real decoding has occurred. China
+isolated AES primitive tests. The later
+[bounded header trial](research/FDAT_HEADER_TRIAL.md) passed one predeclared real
+hypothesis after 45 synthetic cases; full-stream length, component bounds and
+feature mapping remain unverified. China
 Copyright Law Article 50(5) expressly addresses reverse-engineering research;
 its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains

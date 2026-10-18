@@ -43,7 +43,13 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [crypto/public-constant provenance](../research/FDAT_CRYPTO_PROVENANCE.md) and
+Latest RA-003: [one bounded private header trial](../research/FDAT_HEADER_TRIAL.md) and
+[commands/results](../research/sessions/20261018-RA-003-header-trial.md). One predeclared hypothesis passed envelope/header CRC checks,
+exit 0; 45 corrected synthetic cases passed. No full decoded length, component bounds,
+resource/backend mapping or body correspondence. No child files/upstream execution/camera.
+Next single work package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
+
+Earlier RA-003: [crypto/public-constant provenance](../research/FDAT_CRYPTO_PROVENANCE.md) and
 [commands/results](../research/sessions/20261018-RA-003-crypto-provenance.md). Pinned wheel/source identities and
 eight isolated AES primitive tests are recorded. Native crypto code ran privately;
 no fwtool/firmware or camera execution. One predeclared CXD90057_k8 trial needs

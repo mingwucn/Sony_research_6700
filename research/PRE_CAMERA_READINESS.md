@@ -27,7 +27,7 @@ No prepared or passed host package is promoted into a working camera function.
 |---|---|---|
 | RA-001 | Private intake/host baseline prepared; historical errors preserved; model/version/current-language report added | Remaining body/setup facts unknown |
 | RA-002 | Locked source/provenance/rights audit committed | Component reuse and target applicability are separate unresolved gates |
-| RA-003 | Official mainland 2.00 package privately acquired/verified; bounded UFU/FDAT observations, synthetic header validator and pinned crypto/public-source audit with eight primitive passes | Authored bounded private header trial, underlying constants derivation, later component-specific scope, exact-body correspondence and extraction/child manifest |
+| RA-003 | Official mainland package verified; one real bounded header hypothesis passes after 45 synthetic cases; crypto/source provenance recorded | Measured full decoded length/hash and all-block checks, declared extent validation, later component scope/manifest, underlying constants derivation and exact-body correspondence |
 | RA-004 | [Observation/access preparation](TARGET_EVIDENCE_GAPS.md) | Identity, separately approved observations and exact-target access proposal |
 | RA-005 | Backup coverage inventory/template prepared | Approved route, independent reads/copies and actual protected-state coverage |
 | RA-006 | Architecture/recovery evidence gaps explicit | Target segments/ABI/storage/settings/retained-state mappings and recovery envelope |
@@ -134,3 +134,16 @@ read/decoding or camera action occurred. Constants origin and accepted-contract
 interaction remain unresolved, alongside exact-body correspondence/recovery.
 One predeclared experimental hypothesis is not a target support profile.
 Next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.
+
+
+## Later bounded-header continuation (2026-10-18)
+
+The [one-shot header result](FDAT_HEADER_TRIAL.md) and
+[session commands/results](sessions/20261018-RA-003-header-trial.md) supersede
+the preceding next-step statements. One predeclared hypothesis passed first-block
+envelope/header predicates, exit 0; 45 corrected synthetic cases passed. No full-stream
+decoded length, component bounds, resources/backend or body correspondence is proved.
+Earlier opaque-prefix/no-decoding observations remain historical; no child files,
+upstream execution, camera action or feature/write gate occurred here. Contract
+interaction, constants derivation and verified rollback/recovery remain unresolved.
+Next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.

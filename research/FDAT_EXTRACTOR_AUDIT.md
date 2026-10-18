@@ -121,3 +121,16 @@ read/decoding or camera action occurred. Constants origin and accepted-contract
 interaction remain unresolved, alongside exact-body correspondence/recovery.
 One predeclared experimental hypothesis is not a target support profile.
 Next single package: **RA-003: implement, synthetically qualify and run one bounded private FDAT header trial for the predeclared CXD90057_k8 hypothesis**. No feature/write gate passed.
+
+
+## Later bounded-header continuation (2026-10-18)
+
+The [one-shot header result](FDAT_HEADER_TRIAL.md) and
+[session commands/results](sessions/20261018-RA-003-header-trial.md) supersede
+the preceding next-step statements. One predeclared hypothesis passed first-block
+envelope/header predicates, exit 0; 45 corrected synthetic cases passed. No full-stream
+decoded length, component bounds, resources/backend or body correspondence is proved.
+Earlier opaque-prefix/no-decoding observations remain historical; no child files,
+upstream execution, camera action or feature/write gate occurred here. Contract
+interaction, constants derivation and verified rollback/recovery remain unresolved.
+Next single package: **RA-003: assess and document the necessary private full-stream format-study scope, implement and synthetically qualify bounded FDAT stream validation, then measure decoded length and SHA-256 through bounded memory without retaining decoded-stream or component files**.
