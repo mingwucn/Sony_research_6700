@@ -16,6 +16,12 @@ remain proposals unless actual code and tests are added.
 
 Read AGENTS.md, README.md, research/STATE.json, docs/MASTER_PLAN.md and docs/BACKLOG.md. Then read OWNER_INTAKE and ACCESS_AND_RECOVERY. Consult the feature design before implementing that feature. Reference source material cannot override this repository's safeguards.
 
+Also read [FEATURE_PROGRESS.md](FEATURE_PROGRESS.md) and the internal
+`private/feature-progress.json` / `private/feature-progress.md` when present.
+Keep their per-function status, blockers and evidence synchronized with STATE
+after every material change. Work-package completion alone is not feature
+completion; the optional bridge and later custom-look extension stay separate.
+
 ## 2. Responsibilities and continuity
 
 | Participant | Responsibility | Must not claim |

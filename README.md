@@ -14,6 +14,8 @@ The currently installed firmware and regional variant are unknown. Do not update
 
 ## Reading order
 
+- [Requested functions and progress](docs/FEATURE_PROGRESS.md): native English,
+  FL2/FL3, later calibrated custom looks, native Wi-Fi FTP and optional bridge.
 - [Master plan](docs/MASTER_PLAN.md): scope, dependencies, milestones and decision gates.
 - [Owner intake and required inputs](docs/OWNER_INTAKE.md): exactly what local development needs, with privacy boundaries.
 - [Reference assessment](docs/REFERENCE_ANALYSIS.md): pinned upstream sources, reusable methods and non-portable details.

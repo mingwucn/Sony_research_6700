@@ -10,6 +10,10 @@ not approve a device operation. All target-independent implementation here uses
 authored code and synthetic inputs. No target profile, offsets, assets or source
 values were populated from the references.
 
+The [feature progress note](../docs/FEATURE_PROGRESS.md) and ignored internal
+feature note summarize the requested functions independently of package status.
+No prepared or passed host package is promoted into a working camera function.
+
 ## Every work package and its evidence boundary
 
 | Package | Current pre-camera work | Requirement still needing evidence |

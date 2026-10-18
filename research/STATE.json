@@ -144,5 +144,92 @@
     "camera_reference_upstream_execution_performed": false,
     "publication_rights_complete": false,
     "report": "research/sessions/20261018-FT-102-loopback.md"
+  },
+  "feature_progress_note": "docs/FEATURE_PROGRESS.md",
+  "requested_features": {
+    "native_english": {
+      "name": "Native English menus, warnings and messages",
+      "priority": "primary",
+      "status": "design_prepared_actual_language_availability_unknown",
+      "camera_validated": false,
+      "progress": "Hypotheses, preservation rules and critical-resource coverage plan prepared; no target change",
+      "blockers": [
+        "Observed firmware/region and complete offered-language list",
+        "Exact-build resources and narrow policy/all-consumer evidence if English is restricted"
+      ],
+      "next_package": "EN-101 after exact-target prerequisites; retain normal-menu branch if English exists",
+      "evidence": [
+        "docs/ENGLISH_LANGUAGE.md",
+        "research/TARGET_EVIDENCE_GAPS.md"
+      ]
+    },
+    "fl2_fl3_still_looks": {
+      "name": "FL2/FL3 in-camera still photos with matching preview",
+      "priority": "first_look_milestone",
+      "status": "reference_and_guard_preparation_only_no_target_candidate",
+      "camera_validated": false,
+      "progress": "Pinned reference audit and synthetic candidate/inverse/transaction guards prepared",
+      "blockers": [
+        "Exact firmware/AP/CP/resource evidence and stock recipe/photo baseline",
+        "Independent target dispatch/capacity/preview/metadata mapping and conditional recovery"
+      ],
+      "next_package": "CL-101/CL-102 after their target prerequisites",
+      "evidence": [
+        "research/REFERENCE_AUDIT.md",
+        "docs/CREATIVE_LOOKS.md",
+        "docs/OFFLINE_GUARDS.md"
+      ]
+    },
+    "calibrated_custom_still_looks": {
+      "name": "Calibrated selected-slot custom still-photo looks",
+      "priority": "separate_second_phase_after_fl2_fl3",
+      "status": "separately_gated_design_no_calibrated_fit_or_target_slot",
+      "camera_validated": false,
+      "progress": "Domain, selected-slot and holdout requirements specified",
+      "blockers": [
+        "Stable CL-105/106 FL2/FL3 baseline",
+        "Legitimate calibration/holdout inputs and DCP/cube/Sony-ST domain evidence",
+        "Target slot/precision/resource ownership"
+      ],
+      "next_package": "CL-107 after baseline and calibration gates",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md",
+        "docs/BACKLOG.md"
+      ]
+    },
+    "native_wifi_ftp": {
+      "name": "Native camera-to-server Wi-Fi FTP, manual then automatic",
+      "priority": "primary",
+      "status": "host_protocol_foundation_tested_native_route_uninvestigated",
+      "camera_validated": false,
+      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed; no camera-resident implementation",
+      "blockers": [
+        "Target backend/ABI/media/network/lifecycle evidence and selected native route",
+        "Camera-origin manual upload and full server equality",
+        "Separate automatic post-capture lifecycle qualification"
+      ],
+      "next_package": "FT-101; FT-103 manual and FT-104 automatic remain later separate proofs",
+      "evidence": [
+        "docs/FTP.md",
+        "research/sessions/20261018-FT-102-loopback.md"
+      ]
+    },
+    "optional_host_assisted_bridge": {
+      "name": "Optional HOST-ASSISTED camera-to-host-to-server bridge",
+      "priority": "optional_separate_result",
+      "status": "architecture_and_synthetic_host_leg_only_no_camera_adapter",
+      "camera_validated": false,
+      "progress": "Bridge architecture and reusable synthetic host transfer leg prepared",
+      "blockers": [
+        "Model/firmware/SDK capabilities and capture-completion signal",
+        "Physical-shutter/remote-trigger/formats/card-retention qualification",
+        "Separately approved camera-to-host leg"
+      ],
+      "next_package": "FT-106 only if pursued; never closes native FTP",
+      "evidence": [
+        "docs/FTP.md",
+        "docs/FTP_HOST_PROTOCOL.md"
+      ]
+    }
   }
 }
