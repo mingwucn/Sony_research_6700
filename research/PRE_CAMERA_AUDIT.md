@@ -23,18 +23,20 @@ and binary identity remain unverified. The Unknown statements below preserve
 the earlier audit snapshot. See
 [current intake](sessions/20261018-owner-mainland-english.md) and STATE for
 current facts; the full list is no longer the immediate English blocker.
-Next host package remains RA-003, now with the owner-reported version label.
-The later [package/rights review](OFFICIAL_PACKAGE_INTAKE.md) records official
-metadata, a zero-byte stopped GET and owner inspection permission **No / unknown**.
-It also records two owner-approved OSS source/configuration audits, with FTP
-client flags as static leads only. Next single package is RA-003 rights-cleared
-exact-2.00 binary intake/correspondence, blocked on rights and applicable bytes.
-The later [mainland-source review](MAINLAND_FIRMWARE_SOURCE.md) identifies the
-official distribution offer and actual download agreement. Rights-basis
-resolution for proprietary unpacking/static analysis is the current single
-RA-003 step; no firmware request, agreement acceptance or inquiry occurred.
-Earlier exhaustion/next-step statements below describe the preceding snapshot;
-this new source lead does not close any target prerequisite.
+The [package/rights review](OFFICIAL_PACKAGE_INTAKE.md) preserves earlier official
+metadata, the zero-byte stopped GET and the owner's original inspection-permission
+answer **No / unknown**. Two owner-approved OSS source/configuration audits provide
+FTP client flags as static leads only. The subsequent
+[mainland-source review](MAINLAND_FIRMWARE_SOURCE.md) records the official offer,
+accepted download agreement and successful private size/hash-verified acquisition.
+The latest [decoding plan](FDAT_DECODING_PLAN.md) documents a narrow statutory
+research rationale, unresolved contract interaction and a synthetic-only
+decoded-header validator; no real decoding or component copying occurred.
+Next single host package: **RA-003: audit and pin the minimal crypto dependency
+and public-constant provenance for a bounded private header-decoding trial**.
+Earlier exhaustion, missing-byte and next-step statements below describe the
+preceding snapshot. Exact-body correspondence, recovery and feature acceptance
+remain unproved; no camera contact or write gate was approved.
 
 - The [final-code qualification report](sessions/20261018-IN-102-final.md)
   records a NEW export of 63 committed regular files, 628,717 bytes, with Git blob

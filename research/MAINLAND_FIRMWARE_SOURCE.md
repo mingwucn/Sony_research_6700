@@ -211,7 +211,12 @@ in-memory opaque prefix result and source-only candidate pin, with no actual
 decoding. The preceding no-payload-interpretation statement describes only the
 earlier directory run.
 
-**RA-003: establish an act-specific FDAT decoding basis and bounded decoder design before real decryption or component copying.** Full proposed analysis scope,
+The [decoding plan](FDAT_DECODING_PLAN.md) now records a narrow statutory
+rationale for private in-memory format study and a synthetic header validator.
+The lack of separate Sony permission alone is not the next blocker; operational
+crypto provenance/variant selection and the accepted-contract interaction remain.
+
+**RA-003: audit and pin the minimal crypto dependency and public-constant provenance for a bounded private header-decoding trial.** Full proposed analysis scope,
 source/build correspondence and exact-body applicability remain unresolved.
 Written rights-holder permission remains one possible route alongside the
 documented statutory provisions; it is not the only possible basis.

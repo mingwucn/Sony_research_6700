@@ -89,6 +89,14 @@ exit 0. RA-003 stays partial; exact-body/build, actual decoding scope and compon
 formats remain unresolved. Next single package: **RA-003: establish an act-specific FDAT decoding basis and bounded decoder design before real decryption or component copying**.
 No native feature or recovery/write gate passed.
 
+Decoding-design continuation (2026-10-18): [plan](../research/FDAT_DECODING_PLAN.md)
+and [commands/results](../research/sessions/20261018-RA-003-decoding-design.md). Narrow statutory research rationale
+is documented for bounded private in-memory format study; accepted-contract
+interaction remains unresolved. A pure decoded-header validator passed 30 final
+focused cases; full suite 225 passed, 3 skipped, 228 total, exit 0. No real decoding,
+component copy or dependency/key adoption occurred. Next single package:
+**RA-003: audit and pin the minimal crypto dependency and public-constant provenance for a bounded private header-decoding trial**. RA-003 stays partial.
+
 ### RA-004 — Establish identity and review an access route
 
 Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remains a distinct decision. Obtain normal UI facts and, after approval, ordinary host USB descriptors. Identify a candidate service path from reviewed exact-target evidence. Describe every command's effects, re-enumeration, helper ABI, expected result, timeout and reconciliation procedure. Write transport mocks for known readiness/error cases.
@@ -129,7 +137,7 @@ Depends on RA-001 and RA-003/005 for binary analysis. Risk: R0; approved ordinar
 
 Deliver: language feasibility record and critical-resource coverage table. Accept when a narrow hypothesis and falsifying evidence are identified, or normal menu selection resolves the request. Stop before mutation if English resources are incomplete or a shared region field is unexplained.
 
-Latest [intake](../research/sessions/20261018-owner-mainland-english.md) (2026-10-18, source-report): owner reports Chinese mainland version, English unavailable, current 简体中文 and version 2.00. The full list and exact SKU/build remain unverified. EN-101 now investigates restricted-language/resource feasibility with lawful matching artifacts; do not repeat the full-list request merely to establish English absence. No resource absence, restriction mechanism, simple unlock or feature success is inferred. Official version-labelled bytes are now acquired; bounded FDAT identification remains opaque. The next RA-003 package establishes the act-specific decoding basis and bounded decoder design. Exact-body/build correspondence and English resource/restriction evidence remain unresolved.
+Latest [intake](../research/sessions/20261018-owner-mainland-english.md) (2026-10-18, source-report): owner reports Chinese mainland version, English unavailable, current 简体中文 and version 2.00. The full list and exact SKU/build remain unverified. EN-101 now investigates restricted-language/resource feasibility with lawful matching artifacts; do not repeat the full-list request merely to establish English absence. No resource absence, restriction mechanism, simple unlock or feature success is inferred. Official version-labelled bytes are now acquired; bounded FDAT identification remains opaque. RA-003 has documented a narrow decoding rationale and synthetic header checks; minimal crypto dependency/public-constant provenance and a bounded private trial remain next. Exact-body/build correspondence and English resource/restriction evidence remain unresolved.
 
 ### EN-102 — Build a narrow candidate and inverse
 
@@ -262,7 +270,7 @@ FL2/FL3 is deferred; calibrated custom looks remain separately gated after it.
 Keep existing work for later use. EN/FT feasibility does not depend on CL work.
 The optional host-assisted bridge remains a separate result.
 
-RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are now recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003: establish an act-specific FDAT decoding basis and bounded decoder design before real decryption or component copying**; official package size/hash, five bounded UFU spans, an opaque prefix result and a source-only extractor audit are recorded. Component formats, full later analysis scope and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
+RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are now recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003: audit and pin the minimal crypto dependency and public-constant provenance for a bounded private header-decoding trial**; official package size/hash, five bounded UFU spans, an opaque prefix result and a source-only extractor audit are recorded. Component formats, full later analysis scope and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
 
 Owner requirement (2026-10-18): **verified rollback/recovery before any firmware
 write**. RA-005/006/007 cover backups, exact inverse, target recovery reachability

@@ -83,10 +83,14 @@ native FTP, a camera capture-completion signal or a host-assisted camera leg.
 
 ## Smallest next work package
 
-The [official mainland 2.00 offer](MAINLAND_FIRMWARE_SOURCE.md) is now identified.
-Next single host package: RA-003 rights-basis resolution for proprietary offline
-unpacking/static analysis, using the prepared inquiry or another documented
-applicable basis. Exact-body/build verification and acquisition remain unresolved.
+The [official mainland 2.00 offer](MAINLAND_FIRMWARE_SOURCE.md) was acquired
+privately with recorded consent and size/SHA-256 verification. Exact-body/build
+correspondence remains unresolved. The [decoding plan](FDAT_DECODING_PLAN.md)
+documents a narrow statutory research rationale and unresolved contract
+interaction; only the new decoded-header validator has synthetic test evidence.
+No real decoding or component copying occurred. Next single host package:
+**RA-003: audit and pin the minimal crypto dependency and public-constant
+provenance for a bounded private header-decoding trial**.
 EN-101 now follows restricted-language/resource feasibility on the owner report
 of English absence; matching lawfully inspectable artifacts remain needed.
 See [latest intake](sessions/20261018-owner-mainland-english.md). This dossier

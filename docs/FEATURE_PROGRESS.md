@@ -89,14 +89,19 @@ states remain required; synthetic guards are preparation only. See
   This is container-directory progress only; no English resources, FTP program,
   component semantics or exact-body correspondence are established.
 
-- Current RA-003: [FDAT identification/extractor audit](../research/FDAT_EXTRACTOR_AUDIT.md).
+- Earlier RA-003: [FDAT identification/extractor audit](../research/FDAT_EXTRACTOR_AUDIT.md).
   The 4,096-byte in-memory prefix is unknown/unsupported_opaque; no encryption or
   feature inference follows. Candidate source is pinned, not run. Full suite:
   195 passed, three skipped, exit 0. English resources and native FTP remain
   unextracted/unvalidated; both remain primary.
 
+- Current RA-003: [bounded decoding plan](../research/FDAT_DECODING_PLAN.md).
+  Narrow statutory rationale and synthetic decoded-header/extent validation are
+  documented; no real decoding or resource/backend mapping. Full suite: 225 passed,
+  three skipped, exit 0. Exact variant/dependency/constants provenance is next.
+
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003: establish an act-specific FDAT decoding basis and bounded decoder design before real decryption or component copying**.
+packages and validation families. Next single host package: **RA-003: audit and pin the minimal crypto dependency and public-constant provenance for a bounded private header-decoding trial**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

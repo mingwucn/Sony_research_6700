@@ -27,7 +27,7 @@ No prepared or passed host package is promoted into a working camera function.
 |---|---|---|
 | RA-001 | Private intake/host baseline prepared; historical errors preserved; model/version/current-language report added | Remaining body/setup facts unknown |
 | RA-002 | Locked source/provenance/rights audit committed | Component reuse and target applicability are separate unresolved gates |
-| RA-003 | Inventory/probe/lineage/extractor audit, official mainland 2.00 source/terms and two earlier approved OSS source audits | Documented rights basis for proprietary unpacking/static analysis, acquisition under applicable terms, exact-build correspondence and extraction/child manifest |
+| RA-003 | Official mainland 2.00 package acquired with recorded consent and size/hash verification; bounded UFU/FDAT observations, pinned extractor audit and synthetic decoded-header validator | Minimal crypto dependency/public-constant provenance, bounded private header trial, later component-specific scope, exact-body correspondence and extraction/child manifest |
 | RA-004 | [Observation/access preparation](TARGET_EVIDENCE_GAPS.md) | Identity, separately approved observations and exact-target access proposal |
 | RA-005 | Backup coverage inventory/template prepared | Approved route, independent reads/copies and actual protected-state coverage |
 | RA-006 | Architecture/recovery evidence gaps explicit | Target segments/ABI/storage/settings/retained-state mappings and recovery envelope |
@@ -96,18 +96,23 @@ missing exact-target evidence.
 
 The [official-source refresh](OFFICIAL_SOURCE_REFRESH.md) resolved earlier public
 catalogue availability. The public listing alone does not identify installed
-firmware; the owner has now separately reported version 2.00. No firmware or SDK
-package was downloaded, selected for the body or executed.
+firmware; the owner has separately reported version 2.00. The official mainland
+2.00 firmware package was subsequently downloaded privately under recorded owner
+approval and its size/SHA-256 verified. It was not executed or selected for a
+device write; exact-body correspondence remains unverified. No SDK was acquired.
 
-The [RA-003 provenance/rights review](OFFICIAL_PACKAGE_INTAKE.md) adds the
-zero-byte stopped acquisition and separate Sony OSS list. Next single substantive
-host package: **RA-003 rights-basis resolution for mainland 2.00 offline
-unpacking/static analysis**. The [official mainland offer/terms](MAINLAND_FIRMWARE_SOURCE.md)
-are identified; acquisition under applicable terms and source/binary
-correspondence remain future steps. Two source RPMs were owner-approved and
-audited; their FTP
-config flags do not establish target binaries or operation. Regional applicability
-and exact-build correspondence remain unresolved. The existing
+The [RA-003 provenance/rights review](OFFICIAL_PACKAGE_INTAKE.md) preserves the
+earlier zero-byte stopped acquisition and separate Sony OSS list. The
+[latest decoding plan](FDAT_DECODING_PLAN.md) documents a narrow statutory
+research rationale, the unresolved interaction with accepted contract terms,
+and a synthetic-only decoded-header validator. It records no real decoding.
+Next single substantive host package: **RA-003: audit and pin the minimal crypto
+dependency and public-constant provenance for a bounded private header-decoding
+trial**. The [official mainland offer/terms](MAINLAND_FIRMWARE_SOURCE.md) and
+successful private acquisition are recorded; source/binary and exact-body
+correspondence remain unresolved. Two source RPMs were owner-approved and
+audited; their FTP config flags do not establish target binaries or operation.
+The existing
 RA-004 normal Version/Language UI observation packet is ready when the owner
 separately approves camera contact. It requires no new generic-test, deferred
 look or device-write gate. The latest owner report places English on the

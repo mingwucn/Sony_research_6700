@@ -28,7 +28,9 @@ records consented acquisition, size/hash and bounded UFU identification. The lat
 [scoped directory audit](research/UFU_CONTAINER_AUDIT.md) records five bounded
 chunks and one FDAT span, without extracting contents. The latest
 [FDAT/extractor audit](research/FDAT_EXTRACTOR_AUDIT.md) records an opaque
-4,096-byte prefix result and a pinned source-only candidate, with no real decoding. China
+4,096-byte prefix result and a pinned source-only candidate. The later
+[decoding plan](research/FDAT_DECODING_PLAN.md) documents the narrow research
+rationale and a synthetic decoded-header validator; no real decoding has occurred. China
 Copyright Law Article 50(5) expressly addresses reverse-engineering research;
 its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains
