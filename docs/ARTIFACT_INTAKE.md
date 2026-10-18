@@ -1,18 +1,23 @@
 # RA-003 artifact intake and bounded inspection
 
 Status: host tooling available; exact-target acquisition and extraction **BLOCKED**.
-Installed firmware and regional variant remain unknown. No official target package,
-body program, resource, settings or calibration object has been supplied. The
-workspace's private top-level directories were checked; this is not a search of
-the owner's whole computer or a claim that no package exists elsewhere.
-
-Later intake update (2026-10-18, **source-report**): the owner reports α6700
+Current intake (2026-10-18, **source-report**): the owner reports α6700
 firmware **2.00**, current **简体中文**, full language list not checked. The
-Unknown version statement above is the earlier intake snapshot. Regional
-applicability and exact binary identity remain unverified; no matching package
-has been acquired. See [current intake](../research/sessions/20261018-owner-ui-intake.md).
+regional SKU, English availability and exact binary identity remain unverified.
+No official target package, body program, resource, settings or calibration object
+has been supplied. Earlier private-directory checks were not a whole-computer
+search. See [owner intake](../research/sessions/20261018-owner-ui-intake.md).
 Owner additionally requires verified rollback/recovery before any firmware write;
 offline package inspection does not establish that recovery system.
+
+The [version 2.00 provenance/rights review](../research/OFFICIAL_PACKAGE_INTAKE.md)
+now identifies official package metadata, but one asset GET stopped at an
+unreviewed redirect with zero firmware bytes and no file. Owner inspection
+permission is **No / unknown**; proprietary firmware analysis remains blocked.
+Sony separately lists 34 open-source packages. The owner approved two BusyBox
+source downloads under its notice; their licences, supplied FTP-enabled configs
+and client source were reviewed privately as data. No downloaded source was
+executed. Neither route establishes exact-body correspondence or recovery.
 
 ## Available host commands
 
@@ -86,10 +91,12 @@ remain data. No firmware upgrade is needed to inspect a matching package.
 
 ## Remaining acceptance
 
-RA-003 remains incomplete: independent exact-build evidence, matching official
-source/input bytes and a reviewed applicable extractor are absent. The reported
+RA-003 remains incomplete: suitable firmware inspection rights, independent
+exact-build evidence, matching official input bytes and a reviewed applicable
+extractor are absent. The reported
 2.00 version label is recorded above. Consequently
 there is no target component inventory or private extraction manifest to validate.
-An empty private acquisition ledger records the missing input; it is not an
-unsupported-format diagnosis of an unseen package. The synthetic probe's passing
-tests establish only the documented local behavior. Camera commands: **none**.
+A private acquisition-failure journal now records the zero-byte stopped attempt;
+it is not an unsupported-format diagnosis of an unseen package. The synthetic
+probe's passing tests establish only the documented local behavior. Camera
+commands: **none**.

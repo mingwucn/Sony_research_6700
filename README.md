@@ -19,6 +19,11 @@ has not been checked; English availability and regional variant remain unknown.
 Version text does not verify binary identity. Do not update firmware, run another
 model's installer, or change product identifiers merely to begin this project.
 
+Current [RA-003 package/rights findings](research/OFFICIAL_PACKAGE_INTAKE.md):
+firmware inspection permission is unestablished (owner **No / unknown**), no
+firmware bytes were acquired, and recovery remains unproved. Separate Sony
+open-source offers are leads only; no native feature is validated.
+
 ## Reading order
 
 - [Requested functions and progress](docs/FEATURE_PROGRESS.md): native English,

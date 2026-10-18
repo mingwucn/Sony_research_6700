@@ -22,6 +22,13 @@ The Unknown statements in this audit preserve its earlier evidence snapshot.
 See [current intake](sessions/20261018-owner-ui-intake.md) and STATE for current
 facts. English availability, region and exact binary identity remain unknown.
 Next host package remains RA-003, now with the owner-reported version label.
+The later [package/rights review](OFFICIAL_PACKAGE_INTAKE.md) records official
+metadata, a zero-byte stopped GET and owner inspection permission **No / unknown**.
+It also records two owner-approved OSS source/configuration audits, with FTP
+client flags as static leads only. Next single package is RA-003 rights-cleared
+exact-2.00 binary intake/correspondence, blocked on rights and applicable bytes.
+Earlier exhaustion/next-step statements below describe the preceding snapshot;
+this new source lead does not close any target prerequisite.
 
 - The [final-code qualification report](sessions/20261018-IN-102-final.md)
   records a NEW export of 63 committed regular files, 628,717 bytes, with Git blob

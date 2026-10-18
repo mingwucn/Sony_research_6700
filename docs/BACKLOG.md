@@ -30,6 +30,19 @@ Deliver: private package/extraction manifests and sanitized component inventory.
 
 Continuation (2026-10-18): IN PROGRESS, target acquisition BLOCKED. [Artifact intake](ARTIFACT_INTAKE.md) records a same-read bounded header probe, lineage template and static review of the pinned PMCA DAT locator. The [official-source refresh](../research/OFFICIAL_SOURCE_REFRESH.md) resolved public catalogue access and observed the USA 2.00 listing. A later [owner report](../research/sessions/20261018-owner-ui-intake.md) supplies installed version 2.00, but does not verify regional applicability or exact binary identity. No exact-target package was supplied, selected or downloaded. Legitimate matching-input provenance/extraction remains unresolved. Synthetic recognition and matching version labels do not close RA-003.
 
+Latest continuation: [official-package provenance/rights](../research/OFFICIAL_PACKAGE_INTAKE.md)
+and [session commands/results](../research/sessions/20261018-RA-003-package.md)
+record 2.00 metadata and a single zero-byte asset GET stopped on an unreviewed
+redirect, without retry. Owner firmware inspection permission: **No / unknown**.
+Firmware analysis is blocked; recovery remains unproved. Sony's separate
+version-labelled OSS page has 34 package links. The owner approved two BusyBox
+source downloads; both were acquired once and audited privately for component
+licences, configs/specs and client source. Both supplied configs enable
+FTPGET/FTPPUT, a static lead only. Next single package: **RA-003 rights-cleared
+exact-2.00 binary intake and source/binary correspondence**, blocked on suitable
+firmware inspection rights and legitimate applicable bytes. No target binary,
+updater execution, native transfer or recovery proof exists.
+
 ### RA-004 — Establish identity and review an access route
 
 Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remains a distinct decision. Obtain normal UI facts and, after approval, ordinary host USB descriptors. Identify a candidate service path from reviewed exact-target evidence. Describe every command's effects, re-enumeration, helper ABI, expected result, timeout and reconciliation procedure. Write transport mocks for known readiness/error cases.

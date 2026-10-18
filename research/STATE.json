@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "owner_model_version_current_language_reported_exact_target_evidence_pending",
+  "phase": "official_oss_ftp_source_config_reviewed_firmware_rights_and_exact_binary_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": null,
@@ -58,11 +58,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_owner_version_reported_matching_package_provenance_and_exact_build_pending",
+      "status": "partial_official_200_metadata_and_two_oss_source_archives_audited_proprietary_firmware_rights_blocked",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "Bounded header/lineage/extractor audit and official HTML inspection only; no matching package selected or target extraction",
+      "scope": "Official metadata/terms, zero-byte stopped firmware GET, two owner-approved source RPM licence/config/client-text reviews; no firmware acquisition, firmware extraction, build or downloaded source execution",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
-      "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md"
+      "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md",
+      "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
+      "session_report": "research/sessions/20261018-RA-003-package.md"
     },
     "RA-004": {
       "status": "owner_identity_labels_reported_complete_languages_region_and_access_route_pending",
@@ -133,11 +135,12 @@
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
     "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
     "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
-    "Owner-reported firmware 2.00 matches the public catalogue version label only; legitimate matching-package provenance, regional applicability and exact binary identity remain unverified; no package was acquired.",
+    "Owner-reported firmware 2.00 matches public catalogue labels only; official metadata is recorded, but firmware inspection permission is No / unknown, a single GET stopped at an unreviewed redirect with zero bytes, and regional/exact-body correspondence remain unverified.",
     "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them.",
-    "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified."
+    "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
+    "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: official-package provenance/intake for owner-reported alpha6700 version 2.00; no updater execution or exact-body/build match claim",
+  "next_work_package": "RA-003: rights-cleared exact-2.00 binary intake and source/binary correspondence; blocked on suitable firmware inspection rights and legitimate applicable bytes",
   "next_device_action": "No agent camera command approved; EN-101 still needs the complete offered-language list using the existing no-change owner UI instructions",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -189,11 +192,11 @@
     "native_wifi_ftp": {
       "name": "Native camera-to-server Wi-Fi FTP, manual then automatic",
       "priority": "primary",
-      "status": "host_protocol_foundation_tested_native_route_uninvestigated",
+      "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified",
       "camera_validated": false,
-      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed; no camera-resident implementation. Official model menu/release notes refreshed without documented arbitrary FTP; this does not establish backend absence.",
+      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed.",
       "blockers": [
-        "Target backend/ABI/media/network/lifecycle evidence and selected native route",
+        "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
         "Separate automatic post-capture lifecycle qualification"
       ],
@@ -201,7 +204,8 @@
       "evidence": [
         "docs/FTP.md",
         "research/sessions/20261018-FT-102-loopback.md",
-        "research/OFFICIAL_SOURCE_REFRESH.md"
+        "research/OFFICIAL_SOURCE_REFRESH.md",
+        "research/OFFICIAL_PACKAGE_INTAKE.md"
       ]
     },
     "fl2_fl3_still_looks": {
@@ -589,7 +593,7 @@
   "public_source_availability": {
     "checked_on": "2026-10-18",
     "evidence_class": "source-report",
-    "status": "official_usa_html_opened_no_binary_download_or_target_match",
+    "status": "official_200_metadata_and_oss_listing_recorded_zero_firmware_bytes_no_target_match",
     "public_catalogue_version_observed": "2.00",
     "public_catalogue_date_observed": "2025-06-10",
     "owner_installed_firmware": "2.00",
@@ -598,7 +602,9 @@
     "native_ftp_support_established": false,
     "native_ftp_field_meaning": "No support claim established; bounded lack of documentation is not backend-absence proof",
     "owner_installed_firmware_evidence": "source-report; later owner chat report, not inferred from the catalogue",
-    "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md"
+    "owner_intake_report": "research/sessions/20261018-owner-ui-intake.md",
+    "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
+    "session_report": "research/sessions/20261018-RA-003-package.md"
   },
   "current_menu_language": "简体中文",
   "available_languages": null,
@@ -641,5 +647,132 @@
       "RA-006",
       "RA-007"
     ]
+  },
+  "firmware_inspection_permission": {
+    "reported_on": "2026-10-18",
+    "evidence_class": "source-report",
+    "source": "Owner response to existing firmware inspection/extraction rights question",
+    "answer": "No / unknown",
+    "permission_established": false,
+    "scope": "Offline inspection/extraction of alpha6700 proprietary firmware; not a legal determination",
+    "documents_supplied": false,
+    "firmware_supplied": false,
+    "report": "research/sessions/20261018-RA-003-package.md"
+  },
+  "official_package_intake": {
+    "checked_on": "2026-10-18",
+    "evidence_class": "source-report",
+    "declared_model": "ILCE-6700",
+    "declared_version": "2.00",
+    "declared_filename": "BODYDATA.DAT",
+    "declared_bytes": 1024017848,
+    "declared_release_date": "2025-06-10",
+    "package_acquired": false,
+    "firmware_bytes_received": 0,
+    "asset_get_attempts": 1,
+    "automatic_retry": false,
+    "acquisition_status": "needs_review_acquisition_incomplete",
+    "failure": "Unreviewed redirect destination; stopped before firmware bytes",
+    "package_sha256": null,
+    "exact_body_match_verified": false,
+    "owner_regional_applicability_verified": false,
+    "inspection_permission": {
+      "reported_on": "2026-10-18",
+      "evidence_class": "source-report",
+      "source": "Owner response to existing firmware inspection/extraction rights question",
+      "answer": "No / unknown",
+      "permission_established": false,
+      "scope": "Offline inspection/extraction of alpha6700 proprietary firmware; not a legal determination",
+      "documents_supplied": false,
+      "firmware_supplied": false,
+      "report": "research/sessions/20261018-RA-003-package.md"
+    },
+    "report": "research/OFFICIAL_PACKAGE_INTAKE.md"
+  },
+  "official_oss_source_offers": {
+    "checked_on": "2026-10-18",
+    "evidence_class": "source-report",
+    "source_page": "https://oss.sony.net/Products/Linux/DI/ILCE-6700_Ver200.html",
+    "notice": "https://oss.sony.net/Products/Linux/notice.html",
+    "declared_model_version": "ILCE-6700 Ver.2.00",
+    "package_links": 34,
+    "archives_acquired": 2,
+    "bounded_candidate_packages": [
+      "sony-target-dev-busybox-1.26.2-14000003.src.rpm",
+      "sony-target-dev-busybox-1.34.1-14000103.src.rpm"
+    ],
+    "download_notice_decision": "approved_by_owner_for_two_source_archives_only",
+    "component_licences_inspected": true,
+    "contents_or_configuration_inspected": true,
+    "running_body_correspondence_verified": false,
+    "native_ftp_support_established": false,
+    "report": "research/OFFICIAL_PACKAGE_INTAKE.md",
+    "owner_answer": "Approve the two source downloads under that notice",
+    "component_licence_scope": "Two BusyBox package LICENSE files, RPM licence declarations and reviewed FTP source headers only; not all 34 packages or every source member",
+    "upstream_source_executed": false,
+    "third_party_code_integrated": false,
+    "archives": [
+      {
+        "filename": "sony-target-dev-busybox-1.26.2-14000003.src.rpm",
+        "bytes": 2145431,
+        "sha256": "d71511020e02c363f0f280ae176004ddcc54275515bbbb2e780aa4381365fba9",
+        "http_status": 200,
+        "attempts": 1
+      },
+      {
+        "filename": "sony-target-dev-busybox-1.34.1-14000103.src.rpm",
+        "bytes": 2498983,
+        "sha256": "25eb74466448f5bec6db9b3c7b8740ac9823a60d2a9510daab2e407536bd426c",
+        "http_status": 200,
+        "attempts": 1
+      }
+    ],
+    "licence_declarations": {
+      "package_distribution": "GPL version2",
+      "rpm_specs": "GPL2",
+      "reviewed_ftp_source_headers": "GPLv2 or later"
+    },
+    "stock_binary_correspondence_verified": false,
+    "architecture_or_component_variant_mapping_verified": false,
+    "ftps_support_established": false,
+    "config_findings": [
+      {
+        "version": "1.26.2",
+        "evidence_class": "static-inference",
+        "supplied_config_ftpget": true,
+        "supplied_config_ftpput": true,
+        "supplied_config_ftpd": false,
+        "supplied_config_wget": false,
+        "spec_lists_client_install_paths": true,
+        "final_build_config_verified": false,
+        "runtime_availability_verified": false
+      },
+      {
+        "version": "1.34.1",
+        "evidence_class": "static-inference",
+        "supplied_config_ftpget": true,
+        "supplied_config_ftpput": true,
+        "supplied_config_ftpd": false,
+        "supplied_config_wget": false,
+        "spec_lists_client_install_paths": true,
+        "final_build_config_verified": false,
+        "runtime_availability_verified": false
+      }
+    ]
+  },
+  "latest_artifact_probe_tests": {
+    "evidence_class": "offline-tested",
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "interpreter": "CPython 3.13.12",
+    "command": "python -B -X utf8 -m unittest tests.test_artifact_probe -v",
+    "runner_seconds": 0.014,
+    "wrapper_seconds": 0.422,
+    "firmware_source_archive_or_camera_coverage": false,
+    "report": "research/sessions/20261018-RA-003-package.md"
   }
 }

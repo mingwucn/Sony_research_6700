@@ -19,6 +19,14 @@ Unknown statements above describe the earlier catalogue-review snapshot. See
 do not prove exact binary identity or regional applicability; no binary package
 has subsequently been acquired in this intake session.
 
+Later RA-003 [package/rights review](OFFICIAL_PACKAGE_INTAKE.md) records the UK
+metadata, Japan-page provenance and a single asset GET stopped at an unreviewed
+redirect with zero firmware bytes. Owner inspection permission is **No / unknown**.
+The separate Sony OSS model/version page lists 34 source packages. The owner
+approved two BusyBox source downloads under its notice; their licences and
+FTP-enabled supplied configs/specs/client text were reviewed privately. This
+does not establish final binary/body correspondence, native FTP or recovery.
+
 ## Public catalogue and release-note availability
 
 - [Sony USA ILCE-6700 downloads](https://www.sony.com/electronics/support/e-mount-body-ilce-6000-series/ilce-6700/downloads)

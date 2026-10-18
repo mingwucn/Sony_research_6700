@@ -16,7 +16,7 @@ completed preparation separately from actual feature operation.
 | Requested function | Owner priority | Current progress | What is still missing | Next feature package |
 |---|---|---|---|---|
 | **Native English menus** | Primary | Language hypotheses, preservation rules and critical-message validation plan prepared. Actual English availability is unknown. | Actual language list; if restricted, exact-build resources and narrow policy-field/all-consumer evidence. English already offered would allow the normal-menu branch. | EN-101: offered-language observation first; exact-build acquisition if binary analysis is needed |
-| **Native camera-to-server Wi-Fi FTP** | Primary | Host queue/protocol foundation tested, including a constrained loopback FTPS peer. Native backend/route remains uninvestigated on the target. | Target backend/ABI/media/network/lifecycle evidence; then one camera-resident manual upload with full server equality. Automatic post-capture transfer is a later, separate step. | FT-101; later FT-103 manual, FT-104 automatic |
+| **Native camera-to-server Wi-Fi FTP** | Primary | Host queue/protocol foundation tested. Two owner-approved Sony source configs enable FTPGET/FTPPUT; client text is plain FTP. This is a static lead, with final binary/body mapping unproved. | Exact target backend/ABI/applet/invocation/media/network/lifecycle evidence; then one camera-resident manual upload with full server equality. Automatic post-capture transfer is a later, separate step. | FT-101; later FT-103 manual, FT-104 automatic |
 | **FL2/FL3 still-photo looks and matching preview** | Deferred | Reference-code/rights audit, synthetic candidate/inverse guards and durable synthetic transaction safeguards prepared. No alpha6700 mapping or candidate exists. | Exact firmware/AP/CP/resource evidence, stock looks/recipes and photo baseline, capacity/dispatch/metadata/preview mapping, conditional recovery. | CL-101/CL-102 when resumed, after target prerequisites |
 | **Calibrated custom still-photo looks** | Later, after FL2/FL3 | Separately gated second phase specified. No calibrated fit or target slot is proved. | Stable FL2/FL3 still/preview baseline; explicit DCP/cube/Sony-ST domain; legitimate calibration and holdout inputs; target slot, precision and resource ownership. | CL-107, after CL-105/106 and calibration inputs |
 | **Optional HOST-ASSISTED bridge** | Optional, separate result | Architecture and reusable synthetic host-transfer leg prepared. No camera-to-host adapter exists. | Verified model/firmware/SDK capabilities, capture-completion signal, physical-shutter versus remote-trigger behavior, formats/card retention and a separately approved camera leg. | FT-106 only if pursued; does not satisfy native FTP |
@@ -59,12 +59,20 @@ states remain required; synthetic guards are preparation only. See
   Remote pages inspected. This does not identify installed firmware, establish
   regional English availability or prove a native FTP backend. Creators' Cloud
   and a host-assisted PC Remote path do not establish arbitrary native FTP.
+- [RA-003 provenance/rights review](../research/OFFICIAL_PACKAGE_INTAKE.md):
+  official 2.00 package metadata recorded; one GET stopped with zero firmware
+  bytes. Owner firmware inspection permission is **No / unknown**. Sony's
+  separate source-offer list includes two BusyBox archives, explicitly approved
+  by the owner and audited privately for licences/config/spec/client text.
+  Supplied FTPGET/FTPPUT flags and spec file lists are leads; final binaries,
+  body applicability, native invocation and FTPS remain unverified.
 
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003, official
-package provenance/intake for owner-reported version 2.00**, without executing an
-updater. Legitimate matching-package provenance and exact binary identity remain
-unresolved. EN-101 still needs the full offered-language list, using the existing
+packages and validation families. Next single host package: **RA-003,
+rights-cleared exact-2.00 binary intake and source/binary correspondence**,
+blocked on suitable proprietary firmware inspection rights and legitimate
+applicable input bytes. Exact binary identity remains unresolved. EN-101 needs
+the full offered-language list, using the existing
 no-change normal-menu instructions; English may already be offered. Earlier
 Unknown responses are preserved as history. Host qualification and this intake
 update do not validate any of the five camera functions above.

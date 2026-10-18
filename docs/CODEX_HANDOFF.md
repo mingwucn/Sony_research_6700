@@ -40,6 +40,16 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
+Latest RA-003 [provenance/rights review](../research/OFFICIAL_PACKAGE_INTAKE.md):
+the owner has **No / unknown** firmware inspection permission. One firmware GET
+stopped at an unreviewed redirect with zero bytes and no retry; analysis remains
+blocked. A separate Sony OSS page lists 34 source packages. The owner approved
+only the two BusyBox source downloads under its notice. Both were audited
+privately: supplied configs enable FTPGET/FTPPUT; final binary/body mapping is
+unproved. No downloaded source was executed or integrated. Next single host
+package: rights-cleared exact-2.00 binary intake/correspondence, blocked on rights
+and legitimate applicable bytes. No native feature or recovery follows.
+
 ## 2. Responsibilities and continuity
 
 | Participant | Responsibility | Must not claim |

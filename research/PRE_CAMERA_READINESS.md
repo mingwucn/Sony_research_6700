@@ -26,7 +26,7 @@ No prepared or passed host package is promoted into a working camera function.
 |---|---|---|
 | RA-001 | Private intake/host baseline prepared; historical errors preserved; model/version/current-language report added | Remaining body/setup facts unknown |
 | RA-002 | Locked source/provenance/rights audit committed | Component reuse and target applicability are separate unresolved gates |
-| RA-003 | Inventory repair, bounded probe/lineage/extractor audit, official-source refresh and owner-reported 2.00 label | Matching legitimate input, exact-build correspondence and applicable extraction/child manifest |
+| RA-003 | Inventory/probe/lineage/extractor audit, official 2.00 metadata and two owner-approved OSS source/config/rights audits | Proprietary firmware inspection rights (owner No / unknown), legitimate matching input/build, binary correspondence and extraction/child manifest |
 | RA-004 | [Observation/access preparation](TARGET_EVIDENCE_GAPS.md) | Identity, separately approved observations and exact-target access proposal |
 | RA-005 | Backup coverage inventory/template prepared | Approved route, independent reads/copies and actual protected-state coverage |
 | RA-006 | Architecture/recovery evidence gaps explicit | Target segments/ABI/storage/settings/retained-state mappings and recovery envelope |
@@ -98,8 +98,12 @@ catalogue availability. The public listing alone does not identify installed
 firmware; the owner has now separately reported version 2.00. No firmware or SDK
 package was downloaded, selected for the body or executed.
 
-Next single substantive host package: **RA-003 official-package provenance/intake
-for owner-reported version 2.00**. Legitimate matching input, regional applicability
+The [RA-003 provenance/rights review](OFFICIAL_PACKAGE_INTAKE.md) adds the
+zero-byte stopped acquisition and separate Sony OSS list. Next single substantive
+host package: **RA-003 rights-cleared exact-2.00 binary intake and source/binary
+correspondence**, blocked on suitable firmware inspection rights and legitimate
+applicable bytes. Two source RPMs were owner-approved and audited; their FTP
+config flags do not establish target binaries or operation. Regional applicability
 and exact-build correspondence remain unresolved. The existing
 RA-004 normal Version/Language UI observation packet is ready when the owner
 separately approves camera contact. It requires no new generic-test, deferred
