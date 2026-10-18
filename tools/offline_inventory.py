@@ -15,7 +15,8 @@ import stat
 import sys
 from typing import Iterable
 
-TOOL_VERSION = "0.1.0"
+TOOL_VERSION = "0.2.0"
+MAX_PREFIX_BYTES = 4096
 LABEL = re.compile(r"[a-z][a-z0-9_-]{0,47}\Z")
 MODEL = re.compile(r"[A-Z0-9-]{1,32}\Z")
 FIRMWARE = re.compile(r"[A-Za-z0-9._-]{1,32}\Z")
@@ -26,17 +27,27 @@ class InventoryError(ValueError):
     """An input could not be inventoried without ambiguity."""
 
 
-def _fingerprint(info: os.stat_result) -> tuple[int, ...]:
+def _shared_fingerprint(info: os.stat_result) -> tuple[int, ...]:
     return (info.st_dev, info.st_ino, info.st_size,
-            info.st_mtime_ns, info.st_ctime_ns)
+            info.st_mtime_ns)
 
 
-def hash_artifact(path: Path) -> dict[str, object]:
-    """Read one nonempty regular file, rejecting detectable concurrent changes.
+def _fingerprint(info: os.stat_result) -> tuple[int, ...]:
+    return (*_shared_fingerprint(info), info.st_ctime_ns)
+
+
+def inspect_artifact(path: Path, prefix_limit: int = MAX_PREFIX_BYTES
+                     ) -> tuple[dict[str, object], bytes]:
+    """Hash one nonempty regular file and retain a bounded prefix from that read.
 
     No directory recursion is performed. Intermediate directories must belong
     to a trusted local workspace; this is not an adversarial-filesystem sandbox.
+    Metadata checks detect observable changes, not every possible concurrent
+    mutation on every filesystem. Prefix bytes are private input, not a report;
+    callers must not publish them or treat a signature as compatibility proof.
     """
+    if type(prefix_limit) is not int or not 0 <= prefix_limit <= MAX_PREFIX_BYTES:
+        raise InventoryError("prefix limit must be an integer from 0 to 4096")
     fd = None
     try:
         initial = path.lstat()
@@ -46,32 +57,45 @@ def hash_artifact(path: Path) -> dict[str, object]:
         flags |= getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0)
         fd = os.open(path, flags)
         before = os.fstat(fd)
-        if not stat.S_ISREG(before.st_mode) or _fingerprint(initial) != _fingerprint(before):
+        # lstat and fstat can report different ctime values for an unchanged
+        # file on Windows. Compare ctime only within each API's own sequence;
+        # retain identity, size and mtime checks between the path and descriptor.
+        if (not stat.S_ISREG(before.st_mode)
+                or _shared_fingerprint(initial) != _shared_fingerprint(before)):
             raise InventoryError("input changed before reading")
         digest = hashlib.sha256()
         length = 0
+        prefix = bytearray()
         while True:
             chunk = os.read(fd, 1024 * 1024)
             if not chunk:
                 break
             length += len(chunk)
             digest.update(chunk)
+            prefix.extend(chunk[:prefix_limit - len(prefix)])
         after = os.fstat(fd)
         named_after = path.lstat()
         if (_fingerprint(before) != _fingerprint(after)
-                or _fingerprint(after) != _fingerprint(named_after)
+                or _fingerprint(initial) != _fingerprint(named_after)
+                or _shared_fingerprint(after) != _shared_fingerprint(named_after)
                 or not stat.S_ISREG(named_after.st_mode)
                 or length != before.st_size):
             raise InventoryError("input changed during reading; no inventory is valid")
         if length == 0:
             raise InventoryError("empty artifacts are not accepted")
-        return {"bytes": length, "sha256": digest.hexdigest()}
+        return {"bytes": length, "sha256": digest.hexdigest()}, bytes(prefix)
     except OSError as exc:
         # Do not include local paths or OS error strings in shareable output.
         raise InventoryError("artifact is missing, inaccessible, or changed") from exc
     finally:
         if fd is not None:
             os.close(fd)
+
+
+def hash_artifact(path: Path) -> dict[str, object]:
+    """Read and hash a regular artifact without returning input bytes."""
+    record, _ = inspect_artifact(path, prefix_limit=0)
+    return record
 
 
 def build_inventory(model: str, firmware: str, alias: str,
