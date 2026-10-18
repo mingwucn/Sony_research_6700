@@ -32,18 +32,17 @@ storage copies, an exact inverse and recovery access for the relevant failure
 states remain required; synthetic guards are preparation only. See
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist).
 
-Latest shared RA-003: [opaque-link metadata inventory](../research/TAR_LINK_INVENTORY.md).
-One bounded opaque-link directory inventory completed, script and host exit **0**, **29.409064s**.
-Synthetic qualification **171/171 passed**, zero skipped, exit **0**, **1.060s**.
-Private inventory: **137 members** (97 regular files, 39 directories,
-0 hard links, 1 symbolic link); **80182** compact UTF-8 JSON bytes.
-Complete source/stream/header/span/prefix lineage, tar framing, member padding,
-two end blocks and zero remainder checked. Link targets are opaque private
-metadata, never followed/resolved/materialized or claimed safe for extraction.
-Member-path guards unchanged; the link-policy change was documented before
-this trial. No child files, decompression/disassembly, camera or feature/write gate.
-Member formats and English/FTP mapping remain unverified; earlier evidence preserved.
-Next shared package: **RA-003: review the private directory to select minimal English/FTP-relevant members, then document, qualify and run bounded in-memory prefix identification with full lineage and no child files**.
+Latest shared RA-003: [selected-member prefix study](../research/MEMBER_PREFIX_AUDIT.md).
+One selected-member prefix experiment completed, script and host exit **0**, **32.470943s**.
+Synthetic qualification **202/202 passed**, zero skipped, exit **0**, **1.317s**.
+**Five regular image-category candidates**, **4,096 bytes each / 20,480 bytes total**;
+all five returned **unknown / unsupported_opaque** under the fixed classifier.
+Complete fresh source/stream/header/span/original-prefix lineage and exact whole
+directory equality passed before selected classification. No complete member
+was covered by these prefixes; raw buffers discarded, no child files or links followed.
+Classifier coverage is limited; this does not establish missing formats, English
+resources or FTP code. No decompression/disassembly, camera or feature/write gate.
+Next shared package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.
 
 ## Verified preparation supporting these functions
 
@@ -134,7 +133,7 @@ Next shared package: **RA-003: review the private directory to select minimal En
   No directory accepted; the later bounded diagnostic identifies the refusing field/predicate.
 
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003: review the private directory to select minimal English/FTP-relevant members, then document, qualify and run bounded in-memory prefix identification with full lineage and no child files**.
+packages and validation families. Next single host package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

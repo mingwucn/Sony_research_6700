@@ -47,7 +47,9 @@ the later [bounded path/link diagnostic](research/TAR_PATH_DIAGNOSTIC.md)
 identifies the first refused field/predicate after complete source lineage checks.
 The later [opaque-link metadata inventory](research/TAR_LINK_INVENTORY.md)
 checks the complete tar directory privately; links are never followed or written.
-Member formats and English/FTP mapping remain next. China
+The latest [selected-member prefix study](research/MEMBER_PREFIX_AUDIT.md)
+checked five private image-category candidates; all were unknown under the limited
+classifier. Bounded format diagnostics and English/FTP mapping remain next. China
 Copyright Law Article 50(5) expressly addresses reverse-engineering research;
 its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains

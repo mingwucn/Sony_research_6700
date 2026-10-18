@@ -231,3 +231,20 @@ this trial. No child files, decompression/disassembly, camera or feature/write g
 Member formats and English/FTP mapping remain unverified; earlier evidence preserved.
 
 English and native Wi-Fi FTP remain first. Next single package: **RA-003: review the private directory to select minimal English/FTP-relevant members, then document, qualify and run bounded in-memory prefix identification with full lineage and no child files**.
+
+
+## Later selected-member prefix study (2026-10-19 local / 2026-10-18 UTC)
+
+Earlier next-package recommendations are historical. See [prefix audit](MEMBER_PREFIX_AUDIT.md)
+and [commands/results](sessions/20261018-RA-003-member-prefix.md).
+One selected-member prefix experiment completed, script and host exit **0**, **32.470943s**.
+Synthetic qualification **202/202 passed**, zero skipped, exit **0**, **1.317s**.
+**Five regular image-category candidates**, **4,096 bytes each / 20,480 bytes total**;
+all five returned **unknown / unsupported_opaque** under the fixed classifier.
+Complete fresh source/stream/header/span/original-prefix lineage and exact whole
+directory equality passed before selected classification. No complete member
+was covered by these prefixes; raw buffers discarded, no child files or links followed.
+Classifier coverage is limited; this does not establish missing formats, English
+resources or FTP code. No decompression/disassembly, camera or feature/write gate.
+
+English and native Wi-Fi FTP remain first. Next single package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.

@@ -27,7 +27,20 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [opaque-link metadata inventory](../research/TAR_LINK_INVENTORY.md),
+Latest continuation: [selected-member prefix study](../research/MEMBER_PREFIX_AUDIT.md),
+[commands/results](../research/sessions/20261018-RA-003-member-prefix.md).
+One selected-member prefix experiment completed, script and host exit **0**, **32.470943s**.
+Synthetic qualification **202/202 passed**, zero skipped, exit **0**, **1.317s**.
+**Five regular image-category candidates**, **4,096 bytes each / 20,480 bytes total**;
+all five returned **unknown / unsupported_opaque** under the fixed classifier.
+Complete fresh source/stream/header/span/original-prefix lineage and exact whole
+directory equality passed before selected classification. No complete member
+was covered by these prefixes; raw buffers discarded, no child files or links followed.
+Classifier coverage is limited; this does not establish missing formats, English
+resources or FTP code. No decompression/disassembly, camera or feature/write gate.
+Next single work package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.
+
+Earlier continuation: [opaque-link metadata inventory](../research/TAR_LINK_INVENTORY.md),
 [commands/results](../research/sessions/20261018-RA-003-tar-link-inventory.md).
 One bounded opaque-link directory inventory completed, script and host exit **0**, **29.409064s**.
 Synthetic qualification **171/171 passed**, zero skipped, exit **0**, **1.060s**.
@@ -39,7 +52,7 @@ metadata, never followed/resolved/materialized or claimed safe for extraction.
 Member-path guards unchanged; the link-policy change was documented before
 this trial. No child files, decompression/disassembly, camera or feature/write gate.
 Member formats and English/FTP mapping remain unverified; earlier evidence preserved.
-Next single work package: **RA-003: review the private directory to select minimal English/FTP-relevant members, then document, qualify and run bounded in-memory prefix identification with full lineage and no child files**.
+Historical next single work package: **RA-003: review the private directory to select minimal English/FTP-relevant members, then document, qualify and run bounded in-memory prefix identification with full lineage and no child files**.
 
 Earlier continuation: [bounded path/link diagnostic](../research/TAR_PATH_DIAGNOSTIC.md),
 [commands/results](../research/sessions/20261018-RA-003-tar-path-diagnostic.md).

@@ -169,6 +169,19 @@ this trial. No child files, decompression/disassembly, camera or feature/write g
 Member formats and English/FTP mapping remain unverified; earlier evidence preserved.
 Earlier continuations are historical. Next single package: **RA-003: review the private directory to select minimal English/FTP-relevant members, then document, qualify and run bounded in-memory prefix identification with full lineage and no child files**.
 
+Selected-member prefix continuation (2026-10-19 local / 2026-10-18 UTC):
+[audit](../research/MEMBER_PREFIX_AUDIT.md) and [commands/results](../research/sessions/20261018-RA-003-member-prefix.md).
+One selected-member prefix experiment completed, script and host exit **0**, **32.470943s**.
+Synthetic qualification **202/202 passed**, zero skipped, exit **0**, **1.317s**.
+**Five regular image-category candidates**, **4,096 bytes each / 20,480 bytes total**;
+all five returned **unknown / unsupported_opaque** under the fixed classifier.
+Complete fresh source/stream/header/span/original-prefix lineage and exact whole
+directory equality passed before selected classification. No complete member
+was covered by these prefixes; raw buffers discarded, no child files or links followed.
+Classifier coverage is limited; this does not establish missing formats, English
+resources or FTP code. No decompression/disassembly, camera or feature/write gate.
+Earlier continuations are historical. Next single package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**.
+
 ### RA-004 — Establish identity and review an access route
 
 Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remains a distinct decision. Obtain normal UI facts and, after approval, ordinary host USB descriptors. Identify a candidate service path from reviewed exact-target evidence. Describe every command's effects, re-enumeration, helper ABI, expected result, timeout and reconciliation procedure. Write transport mocks for known readiness/error cases.
@@ -342,7 +355,7 @@ FL2/FL3 is deferred; calibrated custom looks remain separately gated after it.
 Keep existing work for later use. EN/FT feasibility does not depend on CL work.
 The optional host-assisted bridge remains a separate result.
 
-RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003: review the private directory to select minimal English/FTP-relevant members, then document, qualify and run bounded in-memory prefix identification with full lineage and no child files**. Official package size/hash, five UFU spans, complete experimental FDAT length/SHA and measured-size declared extent checks are recorded. Component formats, full later analysis scope and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
+RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003: audit pinned image-format parser sources and reuse rights, then design and synthetically qualify bounded structural header predicates for the five opaque candidates before another actual read**. Official package size/hash, five UFU spans, complete experimental FDAT length/SHA and measured-size declared extent checks are recorded. Component formats, full later analysis scope and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
 
 Owner requirement (2026-10-18): **verified rollback/recovery before any firmware
 write**. RA-005/006/007 cover backups, exact inverse, target recovery reachability
