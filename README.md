@@ -27,6 +27,14 @@ The currently installed firmware and regional variant are unknown. Do not update
 
 Read [AGENTS.md](AGENTS.md) before changing anything. Start with [project state](research/STATE.json), not a remembered chat conclusion. The executable starter is an offline artifact-inventory helper, not a patcher or camera-dump tool. [Source lock](references/sources.lock.json) records the upstream revisions used for this plan.
 
+Host-only continuation now adds a bounded [artifact probe](docs/ARTIFACT_INTAKE.md),
+[inventory portability repair](docs/INVENTORY_PORTABILITY.md), synthetic-only
+[candidate/transaction models](docs/OFFLINE_GUARDS.md), and a durable
+[mock transfer queue](docs/FTP_HOST_PROTOCOL.md). No device executor or FTP client
+exists in these modules. [Pre-camera coverage](research/PRE_CAMERA_READINESS.md)
+keeps all 27 work packages and their remaining evidence requirements visible.
+[CI preparation](docs/HOST_VALIDATION.md) is separate from actual remote results.
+
 ## Start locally
 
 ```sh

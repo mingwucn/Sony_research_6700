@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "record_status": "TEMPLATE_NO_BACKUP_OR_RECOVERY_EVIDENCE",
+  "body_alias": null,
+  "current_state_identity": null,
+  "state_class": null,
+  "independent_acquisitions": [],
+  "storage_copies": [],
+  "coverage": {
+    "ap_programs": "unobserved",
+    "cp_programs_and_processing_data": "unobserved",
+    "resources": "unobserved",
+    "product_and_language_configuration": "unobserved",
+    "user_settings_and_recipes": "unobserved",
+    "device_calibration_and_identity": "unobserved",
+    "filesystem_metadata": "unobserved",
+    "retained_and_loaded_state": "unobserved"
+  },
+  "validated_recovery_routes": [],
+  "conditional_recovery_limits": [],
+  "complete_backup_established": false,
+  "device_writes_allowed": false,
+  "notes": "Private records must distinguish original stock from latest known-good modified state, independent reads from storage copies, and separate physical storage from directories on one drive. No recovery or authorization follows from this template."
+}

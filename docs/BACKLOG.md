@@ -28,11 +28,15 @@ Depends on RA-001; firmware facts needed for target-specific retrieval. Risk: R0
 
 Deliver: private package/extraction manifests and sanitized component inventory. Accept when every extracted object has source lineage and deterministic sizes/hashes, or a precise unsupported-format diagnosis. Do not flash to make a convenient package match the body. Package availability is not a device-write route.
 
+Continuation (2026-10-18): IN PROGRESS, target acquisition BLOCKED. [Artifact intake](ARTIFACT_INTAKE.md) records a same-read bounded header probe, lineage template and static review of the pinned PMCA DAT locator. No exact-target package was supplied or selected; unknown installed firmware blocks matching-package acquisition/extraction. Synthetic format recognition does not close RA-003.
+
 ### RA-004 — Establish identity and review an access route
 
 Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remains a distinct decision. Obtain normal UI facts and, after approval, ordinary host USB descriptors. Identify a candidate service path from reviewed exact-target evidence. Describe every command's effects, re-enumeration, helper ABI, expected result, timeout and reconciliation procedure. Write transport mocks for known readiness/error cases.
 
 Deliver: device-facts and access-proposal, including what is not supported. Accept when identity is consistent and the owner can approve or decline a bounded next action. Standard USB recognition does not authorize service authentication. A blocked service path leaves RA-003 and offline analysis available.
+
+Continuation: R0 [observation/access preparation](../research/TARGET_EVIDENCE_GAPS.md) written. Identity and an applicable command-level route are absent; RA-004 acceptance remains BLOCKED. No observation, USB command or device approval occurred.
 
 ### RA-005 — Acquire and verify original-state coverage
 
@@ -40,17 +44,23 @@ Depends on an approved and technically reviewed RA-004 route. Risk: R2 if tempor
 
 Deliver: private backup catalogue, coverage gaps and original-state manifest; share only a sanitized summary. Accept when all objects needed for the proposed feature are covered and immutable hashes agree, or the hardware track is explicitly blocked. Do not describe a few program files as a full camera backup.
 
+Continuation: coverage gaps and a blank backup-catalogue template prepared; no acquisition, copies or recovery coverage established. RA-005 remains BLOCKED on its approved route and actual evidence.
+
 ### RA-006 — Map architecture, storage, persistence and recovery
 
 Depends on RA-003/005 as applicable. Risk: R0 analysis; additional observation requires its own approved tier. Establish AP/CP format, instruction state, address translation, load extents, storage objects, native settings save semantics and retained-state behaviour. Map each contemplated failure to recovery mechanisms that actually remain reachable.
 
 Deliver: target architecture dossier and conditional recovery matrix. Accept when file offsets/VA/runtime addresses are unambiguous and each changed object has an understood inverse/recovery envelope. No guessed target values enter an executable profile. Do not test recovery by deliberately interrupting a live write.
 
+Continuation: target architecture/recovery gaps recorded without populating any mapping. RA-006 remains BLOCKED on exact-target artifacts and access evidence.
+
 ### RA-007 — Implement offline candidate guards and transaction models
 
 Depends on RA-002 and enough RA-006 evidence for any target-specific fields. Risk: R0. Build reusable exact-source validation, bounded/non-overlapping edits, preservation comparisons, inverse generation and journal-state simulation with synthetic fixtures first. Keep USB code out of the offline module. The UNVERIFIED profile must always fail eligibility.
 
 Deliver: tested host modules, manifest/schema proposal and OFF-01..14 results as applicable. Accept when wrong/partial/mixed source states, replay and ambiguous results are rejected. A generic passing engine is not an alpha6700 patch and does not authorize a device executor.
+
+Continuation: [synthetic candidate guards and transaction simulator](OFFLINE_GUARDS.md) implemented with 36 focused passing tests. Generic OFF-01..07/09/12/13 subcases are covered; target OFF-08/10/11, durable device journal/process exclusion and real-target review remain absent. RA-007 is PARTIAL, synthetic-only and always device-ineligible.
 
 ## English track
 
@@ -136,6 +146,8 @@ Depends on FT-101 for native constraints; generic synthetic design can start aft
 
 Deliver: protocol specification, queue module, private server setup and FTT-03..08 host results. Accept when no source deletion, credential leak, silent plaintext fallback or uncontrolled retry exists. Distinguish a size check from end-to-end hash verification.
 
+Continuation: [durable mock queue/protocol foundation](FTP_HOST_PROTOCOL.md) implemented and host-tested with synthetic spool files, 100 objects/50 pairs, hash reconciliation and persistence failures. This is PARTIAL FT-102: no server/socket/TLS handshake/client or native constraint qualification exists. Real isolated-server capability/failure testing is the next independent host package.
+
 ### FT-103 — Prove one native camera-to-server upload
 
 Depends on FT-101/102, RA safety gates and exact-target candidate review. Risk: R2 for an approved transient proof, or R3/R4 for a reviewed native enablement. Prefer an existing complete client; otherwise use the smallest bounded one-shot implementation before any resident startup hook. Use one non-sensitive test file and a constrained destination.
@@ -174,6 +186,8 @@ Depends on stable host modules; can evolve before hardware readiness. Risk: R0. 
 
 Deliver: CI configuration and actual run evidence when executed, release-content policy and licence inventory. Accept when remote CI results are recorded rather than inferred from local tests. No licence for third-party firmware/assets is implied by project code licensing.
 
+Continuation: Windows inventory false refusals repaired with same-API mutation checks retained; real symlink fixture still unavailable. [CI/host policy](HOST_VALIDATION.md) and pinned Windows/Linux matrix prepared. Local results do not prove remote CI; IN-102 remains PARTIAL with remote runs NOT RUN and rights limits retained.
+
 ### IN-103 — Soak, inverse and release qualification
 
 Depends on IN-101/102 and relevant hardware results. Risk: approved physical use and reviewed inverses only. Execute the expanded restart/preview/queue/load targets in VALIDATION, record failures, test supported uninstall paths and document the conditional recovery envelope. Seek independent eligible-body reproduction before broad compatibility claims.
@@ -182,6 +196,6 @@ Deliver: exact support matrix, known limitations, user procedure, repair-risk di
 
 ## Work sequencing and closure
 
-RA-001 and RA-002 have completed their stated offline scopes with host/reuse limitations recorded above. The next single package is RA-003; installed firmware remains a prerequisite for target-specific retrieval. EN-101/CL-102/FT-101 share acquired evidence but remain separate dossiers. The preferred first hardware feature is the smallest fully proved reversible change, often a language setting when that hypothesis is established; priority is not a prediction that it will be easy.
+RA-001 and RA-002 completed their stated offline scopes. The owner's broader pre-camera request permits independent generic RA-003/007, FT-102 and IN-102 preparation; [coverage](../research/PRE_CAMERA_READINESS.md) records all package boundaries. The next single available host package is FT-102 isolated-server capability/failure testing; target-specific RA-003 retrieval still requires installed firmware. EN-101/CL-102/FT-101 share acquired evidence but remain separate dossiers. The preferred first hardware feature is the smallest fully proved reversible change, often a language setting when that hypothesis is established; priority is not a prediction that it will be easy.
 
 Do not close a package because its document exists. Close it when its stated evidence is present, or explicitly resolve it as blocked/superseded with the reason and next action. Optional bridge/custom-look work must not hide missing primary requirements. Update STATE and the session report after every local work package.

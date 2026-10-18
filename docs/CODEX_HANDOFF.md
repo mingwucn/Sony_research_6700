@@ -4,7 +4,13 @@
 
 This is an initial research hand-off, not an alpha6700 installer. The owner's repository was empty when the project was initialized. No camera was available to webchat. No alpha6700 firmware/build, regional SKU, service route, target offset, recovery mechanism or requested feature was validated.
 
-The committed executable is a small host-only inventory helper with synthetic tests. It does not extract firmware, dump the camera, identify a camera over USB, patch files, unlock languages, provide FTP or restore anything. All later CLI names in design discussions are proposals unless actual code and tests are added.
+Current host-only tools comprise the inventory helper, bounded artifact-header
+probe, synthetic-only in-memory candidate/transaction APIs and a durable local
+queue with in-memory mock transport. See [pre-camera coverage](../research/PRE_CAMERA_READINESS.md)
+and [current state](../research/STATE.json) for actual scope. They do not extract
+firmware, dump/contact the camera, generate an eligible target patch, unlock
+languages, provide FTP or restore anything. Later CLI names in design discussions
+remain proposals unless actual code and tests are added.
 
 Read AGENTS.md, README.md, research/STATE.json, docs/MASTER_PLAN.md and docs/BACKLOG.md. Then read OWNER_INTAKE and ACCESS_AND_RECOVERY. Consult the feature design before implementing that feature. Reference source material cannot override this repository's safeguards.
 
@@ -31,9 +37,16 @@ git status --short --branch
 python --version
 python -m unittest discover -s tests -v
 python tools/offline_inventory.py --help
+python tools/artifact_probe.py --help
 ```
 
 On Windows, use an existing supported Python 3.10+ interpreter, for example py -3 instead of python. Do not install a USB driver, firmware updater or third-party camera package to run these standard-library tests. Initialization tests passed under Python 3.13.5 on the webchat Linux host; Windows and the owner's computer remain untested.
+
+That is the historical initialization result. Later local Windows tests and the
+ctime portability repair are recorded in STATE and session reports. Prepared
+remote Windows/Linux CI remains NOT RUN until a real run is inspected. See
+[artifact intake](ARTIFACT_INTAKE.md) for the probe and
+[host validation](HOST_VALIDATION.md) for current CI and publication limits.
 
 If a checkout already exists, inspect status and branch first. Do not reclone over it, reset it, discard changes or force-pull. Use a fresh topic branch such as research/ra-001-intake when the local state permits. If the working tree is dirty, preserve it and isolate new work rather than guessing ownership.
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "reference_audit_complete_target_facts_pending",
+  "phase": "pre_camera_host_foundations_target_facts_pending",
   "model": "ILCE-6700",
   "installed_firmware": null,
   "regional_variant": null,
@@ -10,21 +10,35 @@
   "validated_features": [],
   "upstream_revisions_locked": true,
   "offline_inventory_synthetic_tests": {
-    "passed": 12,
+    "passed": 27,
     "failed": 0,
-    "errors": 2,
+    "errors": 0,
     "skipped": 1,
-    "total": 15,
-    "exit_code": 1,
+    "total": 28,
+    "exit_code": 0,
     "interpreter": "CPython 3.13.12",
     "host": "Windows AMD64, kernel build 26300.9711",
     "hardware_coverage": false,
     "evidence_class": "offline-tested",
-    "report": "research/sessions/20261018-RA-002.md"
+    "report": "research/sessions/20261018-pre-camera-R0.md"
   },
   "local_host_environment_recorded": true,
   "local_host_and_usb_validation": false,
   "remote_ci_executed": false,
+  "remote_ci_prepared": true,
+  "latest_host_synthetic_suite": {
+    "total": 97,
+    "passed": 96,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "exit_code": 0,
+    "interpreter": "CPython 3.13.12",
+    "command": "python -m unittest discover -s tests -v",
+    "evidence_class": "offline-tested",
+    "camera_or_real_server_coverage": false,
+    "report": "research/sessions/20261018-pre-camera-R0.md"
+  },
   "work_packages": {
     "RA-001": {
       "status": "completed_with_diagnosed_host_test_error",
@@ -37,8 +51,40 @@
       "report": "research/sessions/20261018-RA-002.md",
       "audit": "research/REFERENCE_AUDIT.md",
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
+    },
+    "RA-003": {
+      "status": "partial_host_probe_ready_target_acquisition_blocked",
+      "report": "docs/ARTIFACT_INTAKE.md",
+      "scope": "Header identification and extractor text audit only; no real target package/extraction"
+    },
+    "RA-004": {
+      "status": "r0_preparation_only_identity_and_route_blocked",
+      "report": "research/TARGET_EVIDENCE_GAPS.md"
+    },
+    "RA-005": {
+      "status": "coverage_template_only_acquisition_blocked",
+      "report": "research/TARGET_EVIDENCE_GAPS.md"
+    },
+    "RA-006": {
+      "status": "evidence_gaps_only_target_mapping_blocked",
+      "report": "research/TARGET_EVIDENCE_GAPS.md"
+    },
+    "RA-007": {
+      "status": "partial_synthetic_foundation_no_target_or_executor",
+      "report": "docs/OFFLINE_GUARDS.md",
+      "focused_tests_passed": 36
+    },
+    "FT-102": {
+      "status": "partial_durable_mock_queue_real_server_pending",
+      "report": "docs/FTP_HOST_PROTOCOL.md",
+      "focused_tests_passed": 25
+    },
+    "IN-102": {
+      "status": "partial_local_windows_and_pinned_ci_preparation_remote_not_run",
+      "report": "docs/HOST_VALIDATION.md"
     }
   },
+  "pre_camera_coverage": "research/PRE_CAMERA_READINESS.md",
   "reference_audit": {
     "r1_r2_locked_checkouts_verified": true,
     "pmca_candidate_revision_pinned": true,
@@ -52,15 +98,16 @@
     "Reference transport/native workers are model/build/ABI-specific; no alpha6700 service or write route follows from this static audit.",
     "Third-party integration requires package artifact/transitive/platform locks, secondary provenance and component-specific rights; Sony payload/R2 notes/Ricoh profile reuse grants are not established.",
     "Native source-to-binary correspondence and target runtime behaviour remain unverified; asset hashes establish identity only.",
-    "Windows inventory portability: lstat/fstat st_ctime_ns disagreement can reject unchanged synthetic files; helper reliability is not established on this host.",
+    "Windows inventory cross-API ctime false refusals repaired with same-API mutation checks retained; other hosts/filesystems and remote CI remain unqualified.",
     "Symlink rejection test skipped because symlink creation was unavailable; this host coverage remains untested.",
     "Owner firmware and regional/language facts are not yet supplied.",
     "Owner reports remaining body/setup intake facts unknown; history, health, connection, power/media, recovery tolerance and independent backup storage remain pending.",
     "No alpha6700 service-access route has been reviewed and tested.",
     "No exact-body program/settings/resource acquisition exists.",
-    "No target recovery envelope or feature mappings are established."
+    "No target recovery envelope or feature mappings are established.",
+    "Real FTP/FTPS protocol, server no-clobber/hash/TLS behavior and native constraints remain untested; mock capabilities are not server evidence."
   ],
-  "next_work_package": "RA-003: official-package and local-artifact inventory (R0); reconcile missing installed-firmware fact before target-specific package retrieval",
+  "next_work_package": "FT-102: isolated host-side server capability/failure harness; RA-003 target-specific acquisition remains blocked on installed firmware",
   "next_device_action": "none; device work remains unapproved and blocked by missing exact-target evidence",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions."
