@@ -2,13 +2,15 @@
 
 Inspection date: 2026-10-18. The live GitHub connector was used to resolve revisions and read current files. The initially retrieved A7C II web page contained an older layout than the live repository. The locked Git commit, not a cached page or mutable release attachment, is the reproducibility anchor.
 
+Local RA-002 follow-up: [reference code and reuse-rights audit](../research/REFERENCE_AUDIT.md) verifies the locked R1/R2 source trees, traces entry/transport/native paths and records component-specific rights. PMCA candidate provenance is now pinned to `a82f5baaa8e9c3d9f28f94699e860fb2e48cc8e0`; all 19 files in R1's vendored subset match that revision. The initial observations below remain historical; the audit does not adopt newer R1 commits, third-party code or any alpha6700 access route.
+
 ## 1. Pinned references
 
 | ID | Source | Exact identity used |
 |---|---|---|
 | R1 | QAQLeonard/a7c2-fl23-research | c0930d5b0ccd49c0a092dc883054cd6dce199649; commit dated 2026-10-18 |
 | R2 | lzh2016zzz/a7cr-fl23-research | 43ba74441c8f10459ade41e84a379ad8005e6ef4; commit dated 2026-10-16 |
-| R3 | ma1co/Sony-PMCA-RE README only | README blob 1c47cad4ceffcc0dfd574c83badbb1026419d6ee; full tool revision/support not validated |
+| R3 | ma1co/Sony-PMCA-RE candidate provenance | Full commit a82f5baaa8e9c3d9f28f94699e860fb2e48cc8e0 verified in RA-002; initial README blob 1c47cad4ceffcc0dfd574c83badbb1026419d6ee matches; tool/target support not validated |
 
 R1 now has src/fl23, src/looks and docs/en. Historical look-toolkit paths and preview ZIP names from older descriptions should not be assumed current. Release downloads can change independently of a checkout; record their separate SHA-256 values before any use.
 
@@ -76,7 +78,7 @@ R1 AI guide: https://github.com/QAQLeonard/a7c2-fl23-research/blob/c0930d5b0ccd4
 
 R2: https://github.com/lzh2016zzz/a7cr-fl23-research/blob/43ba74441c8f10459ade41e84a379ad8005e6ef4/README.md
 
-R3 (mutable URL; compare the locked README blob): https://github.com/ma1co/Sony-PMCA-RE/blob/master/README.md
+R3 (RA-002 pinned candidate revision; target support remains unvalidated): https://github.com/ma1co/Sony-PMCA-RE/blob/a82f5baaa8e9c3d9f28f94699e860fb2e48cc8e0/README.md
 
 S1: https://helpguide.sony.net/ilc/2320/v1/en/contents/0411B_creative_look.html
 

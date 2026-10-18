@@ -7,6 +7,18 @@
       "commit": "c0930d5b0ccd49c0a092dc883054cd6dce199649",
       "role": "FL23 architecture, exact-source planning and custom-look research",
       "inspected_files": ["docs/en/fl23.md", "docs/en/ai.md", "docs/en/technical/integration.md", "docs/en/technical/failures.md", "src/fl23/core.py"],
+      "ra002_audit": {
+        "report": "research/REFERENCE_AUDIT.md",
+        "checkout_verified": true,
+        "tracked_file_blobs_verified": 119,
+        "python_files_syntax_parsed_without_execution": 57,
+        "asset_manifest_hashes_verified": 6,
+        "native_source_binary_equivalence_verified": false,
+        "reviewed_groups": ["Windows and Python launchers", "FL23 core/app/GUI/transport", "four native workers", "vendored PMCA call path and provenance", "custom-look candidate builders", "component licences, notices and dependencies"],
+        "observed_remote_default_head": "c423bf277636bec660bf4c7f2908c1b8b84fcbe7",
+        "newer_revision_review": "diff-stat only; not checked out, fully audited or adopted",
+        "reuse_decision": "method reference only; no code or payload integration"
+      },
       "execution_performed": false,
       "alpha6700_compatibility_established": false
     },
@@ -15,14 +27,34 @@
       "commit": "43ba74441c8f10459ade41e84a379ad8005e6ef4",
       "role": "FL23 layer mapping and donor-data research notes",
       "inspected_files": ["README.md"],
+      "ra002_audit": {
+        "report": "research/REFERENCE_AUDIT.md",
+        "checkout_verified": true,
+        "tracked_file_blobs_verified": 1,
+        "complete_tree": ["README.md"],
+        "licence_status": "no explicit reuse grant found in pinned tree",
+        "reuse_decision": "authored methodological summaries only; no nontrivial copying"
+      },
       "execution_performed": false,
       "alpha6700_compatibility_established": false
     },
     {
       "repository": "ma1co/Sony-PMCA-RE",
-      "commit": null,
+      "commit": "a82f5baaa8e9c3d9f28f94699e860fb2e48cc8e0",
       "inspected_readme_blob": "1c47cad4ceffcc0dfd574c83badbb1026419d6ee",
-      "role": "Access-method background only; pin full code before any local use",
+      "role": "Pinned candidate-dependency provenance for R1's vendored PMCA subset; no alpha6700 runtime adoption",
+      "ra002_audit": {
+        "report": "research/REFERENCE_AUDIT.md",
+        "pin_origin": "R1 docs/en/notices.md:9; independently fetched and verified as a commit",
+        "acquisition": "Git objects only; no working-tree checkout or execution",
+        "readme_matches_initial_blob": true,
+        "license_path": "LICENSE.txt",
+        "license_blob": "77b0378407be242b5537f8dca3ed6402c91ba676",
+        "license_text_matches_r1_copy": true,
+        "vendored_subset": {"files_compared": 19, "identical": 19, "modified": 0, "vendor_only": 0, "upstream_files_not_vendored_or_audited": 32},
+        "licence_status": "MIT text verified; secondary embedded provenance remains to review before reuse",
+        "runtime_dependency_adopted": false
+      },
       "execution_performed": false,
       "alpha6700_compatibility_established": false
     }

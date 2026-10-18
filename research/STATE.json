@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-18",
-  "phase": "offline_workspace_intake_prepared_with_diagnosed_host_test_error",
+  "phase": "reference_audit_complete_target_facts_pending",
   "model": "ILCE-6700",
   "installed_firmware": null,
   "regional_variant": null,
@@ -10,9 +10,9 @@
   "validated_features": [],
   "upstream_revisions_locked": true,
   "offline_inventory_synthetic_tests": {
-    "passed": 13,
+    "passed": 12,
     "failed": 0,
-    "errors": 1,
+    "errors": 2,
     "skipped": 1,
     "total": 15,
     "exit_code": 1,
@@ -20,7 +20,7 @@
     "host": "Windows AMD64, kernel build 26300.9711",
     "hardware_coverage": false,
     "evidence_class": "offline-tested",
-    "report": "research/sessions/20261018-RA-001.md"
+    "report": "research/sessions/20261018-RA-002.md"
   },
   "local_host_environment_recorded": true,
   "local_host_and_usb_validation": false,
@@ -31,9 +31,27 @@
       "owner_intake": "prepared_privately_owner_facts_pending",
       "report": "research/sessions/20261018-RA-001.md",
       "scope": "R0 only; no milestone or device-write gate passed"
+    },
+    "RA-002": {
+      "status": "completed_static_audit_with_reuse_and_target_blockers",
+      "report": "research/sessions/20261018-RA-002.md",
+      "audit": "research/REFERENCE_AUDIT.md",
+      "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     }
   },
+  "reference_audit": {
+    "r1_r2_locked_checkouts_verified": true,
+    "pmca_candidate_revision_pinned": true,
+    "pmca_vendored_files_identical_to_pin": 19,
+    "third_party_code_or_payloads_integrated": false,
+    "native_source_binary_equivalence_verified": false,
+    "newer_r1_revision_adopted": false,
+    "evidence": ["source-report", "static-inference", "offline-tested"]
+  },
   "blockers": [
+    "Reference transport/native workers are model/build/ABI-specific; no alpha6700 service or write route follows from this static audit.",
+    "Third-party integration requires package artifact/transitive/platform locks, secondary provenance and component-specific rights; Sony payload/R2 notes/Ricoh profile reuse grants are not established.",
+    "Native source-to-binary correspondence and target runtime behaviour remain unverified; asset hashes establish identity only.",
     "Windows inventory portability: lstat/fstat st_ctime_ns disagreement can reject unchanged synthetic files; helper reliability is not established on this host.",
     "Symlink rejection test skipped because symlink creation was unavailable; this host coverage remains untested.",
     "Owner firmware and regional/language facts are not yet supplied.",
@@ -42,7 +60,7 @@
     "No exact-body program/settings/resource acquisition exists.",
     "No target recovery envelope or feature mappings are established."
   ],
-  "next_work_package": "RA-002: pin and audit reference code and reuse rights (R0; not executed in RA-001)",
+  "next_work_package": "RA-003: official-package and local-artifact inventory (R0); reconcile missing installed-firmware fact before target-specific package retrieval",
   "next_device_action": "none; device work remains unapproved and blocked by missing exact-target evidence",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions."
