@@ -6,7 +6,11 @@ bounded source-text review. No firmware bytes were acquired and no firmware
 extractor or downloaded source was executed. Two owner-approved source RPMs
 were read as data. No camera was contacted. RA-003 remains incomplete.
 
-Current status: [China-scope and limited acquisition continuation](sessions/20261018-RA-003-cn-scope.md).
+Current status: [acquired official package and statutory-route continuation](sessions/20261018-RA-003-package-law.md).
+The consented destination request and bounded signature result supersede earlier
+no-bytes snapshots; exact-body identity and full analysis scope remain open.
+
+Earlier China-scope snapshot: [China-scope and limited acquisition continuation](sessions/20261018-RA-003-cn-scope.md).
 The source/rights review below is retained as its earlier snapshot; current
 download consent/result is in STATE and does not establish analysis rights.
 

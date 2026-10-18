@@ -61,6 +61,15 @@ rights and exact-body/build correspondence remain unestablished. Next single
 package: **RA-003 activity-specific rights-basis resolution for proprietary
 unpacking/static analysis**; English and native FTP retain priority.
 
+Package/statutory continuation (2026-10-18): [commands/results](../research/sessions/20261018-RA-003-package-law.md).
+Separate owner destination consent led to HTTP 200 and the declared 1,024,017,848
+bytes, with matching transfer/stored SHA-256. Authored identification probe:
+UFU signature candidate, container not validated; no extraction/execution.
+Copyright Law Article 50(5) expressly recognizes reverse-engineering research
+as a technical-measure exception with conditions. Next single package:
+**RA-003 exact act/terms assessment and applicable-parser audit**. This is not
+an English/FTP result, exact-body match, recovery proof or write-gate pass.
+
 ### RA-004 — Establish identity and review an access route
 
 Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remains a distinct decision. Obtain normal UI facts and, after approval, ordinary host USB descriptors. Identify a candidate service path from reviewed exact-target evidence. Describe every command's effects, re-enumeration, helper ABI, expected result, timeout and reconciliation procedure. Write transport mocks for known readiness/error cases.
@@ -234,7 +243,7 @@ FL2/FL3 is deferred; calibrated custom looks remain separately gated after it.
 Keep existing work for later use. EN/FT feasibility does not depend on CL work.
 The optional host-assisted bridge remains a separate result.
 
-RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are now recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003 rights-basis resolution for mainland 2.00 offline unpacking/static analysis**; the official mainland offer is identified, but permission basis, input bytes and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
+RA-001 and RA-002 completed their stated offline scopes. Generic RA-003/007, FT-102 and IN-102 host preparation, final-code clean reproduction and observed four-job CI are now recorded in the [completion audit](../research/PRE_CAMERA_AUDIT.md). The official-source refresh is complete within its bounded scope. Next single substantive host package: **RA-003 exact container-inventory/extraction act assessment against the China statutory research route and accepted terms, then applicable-parser audit**; official package bytes/size/hash and a bounded signature candidate are recorded, while full analysis scope and exact-body/build correspondence remain unresolved. Earlier Unknown answers are historical; remaining setup facts stay unknown. The existing RA-004 ordinary Version/Language UI packet is ready when the owner separately approves camera contact; more generic tests, deferred CL work or a backup/write gate are not prerequisites to that bounded UI observation. EN-101 and FT-101 require their own target evidence; the latest owner report places this body on the English-absent branch without establishing a restriction mechanism. No camera feature or device gate passes from host results.
 
 Owner requirement (2026-10-18): **verified rollback/recovery before any firmware
 write**. RA-005/006/007 cover backups, exact inverse, target recovery reachability

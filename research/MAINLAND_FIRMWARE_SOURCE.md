@@ -89,9 +89,43 @@ proposed acts, lawful acquisition, applicable terms and any protection issue to
 the claimed basis before that analysis. Personal/noncommercial use is a Sony
 download condition; it is not an express condition stated in Article 17.
 Neither blanket reverse-engineering permission nor invalidity of Sony's terms
-is established. Rights-holder permission remains one possible route.
+is established. Rights-holder permission remains one possible route. The later
+Copyright Law finding below strengthens this statutory assessment; Article 17's
+wording alone is not the endpoint of the analysis.
 
-## Prepared ordinary-acquisition decision
+## Express reverse-engineering research provision — 2026-10-18
+
+The [National Copyright Administration's consolidated Copyright Law](https://www.ncac.gov.cn/xxfb/flfg/flfg_532/202103/t20210309_50530.html)
+expressly includes **computer-software reverse-engineering research** in
+**Article 50(5)**, an exception allowing avoidance of technical measures.
+Article 49 preserves statutory exceptions. Article 50's opening conditions
+prohibit providing bypass technologies/devices/components to others and
+infringing other lawful rights. These are **source-report** findings, not an
+implied research grant in Sony's agreement.
+
+The [official corroborating text](https://www.nsfc.gov.cn/p1/2871/2872/69475.html)
+also records personal-study/research limitations in Article 24, rights-management
+information in Article 51, permission or statutory grounds as alternative
+evidence in Article 59, and separate contract liability in Article 61.
+The [2020 amending decision](https://www.ncac.gov.cn/xxfb/ywxx/202011/t20201112_47358.html)
+sets **2021-06-01** as its effective date; consolidated Article 67 retains the
+original law's 1991 date.
+
+**Static-inference:** China provides a specific statutory research route;
+Sony's separate written permission is not the only possible basis. Assess
+Regulation Article 17 together with Copyright Law Articles 24/49/50 against
+each proposed local act. This does not settle reproduction/resource extraction,
+Sony contract enforceability, distribution or device modification. Article 50(5)
+does not state an interoperability-only purpose requirement. No protection-
+bypass procedure is proposed, performed or approved by this finding.
+
+A bounded official-case search found no directly applicable firmware-analysis
+holding. The closest [Shanghai court-hosted commentary](https://www.shzcfy.gov.cn/detail.jhtml?id=171144)
+mentions Article 17 study while discussing commercial pirated game servers;
+it does not decide private firmware disassembly or this agreement. Search
+coverage was limited; absence of a located case is not absence of a legal basis.
+
+## Ordinary acquisition and bounded identification
 
 The previous sequencing placed inspection-rights resolution before acquisition.
 This is refined: an ordinary download plus size/SHA-256 inventory can be decided
@@ -122,14 +156,28 @@ The helper stopped as scoped: exit 1, zero firmware bytes, no payload file,
 journal is not a firmware identity. The original source/terms review above
 describes the earlier pre-request snapshot.
 
-The recorded redirect supplies **source-report** provenance for a new exact-
-destination proposal, not evidence of payload contents. A separate helper is
-prepared for **one GET of that exact destination into a fresh private folder**,
-with the same size/hash, no-further-redirect, no-retry and no-analysis limits.
-That destination has not been requested. The previous consent covered the
-original URL and stopping at redirects; it is not reused as destination consent.
-Acquisition approval does not establish proprietary analysis rights or resolve
-any accompanying terms.
+The owner then separately **approved the reviewed destination request**. A fresh
+private acquisition made one GET of that exact destination: **HTTP 200, exit 0,
+1,024,017,848 bytes**, with no further redirect or retry. Transfer and stored-file
+SHA-256 values agree:
+
+```text
+d3c7db5b9b40c89b11ecf03addf0f6ff1d9b917acf9f55e46360462e86db847c
+```
+
+The original bytes remain private. A reversible Windows read-only attribute was
+set with size/mtime unchanged; this is not tamper-proof storage, an independent
+backup or recovery proof. The earlier failure and both consent records remain.
+
+The existing authored identification probe then hashed the whole file and
+classified at most 4,096 prefix bytes from the same read: **exit 0**,
+`sony_ufu_signature_candidate`, `container_not_validated`, `UNVERIFIED`.
+Its hash agrees with acquisition. It did not walk container chunks, unpack,
+decrypt, disassemble, load or execute firmware. The raw prefix and input path
+are omitted from its private JSON report. A signature candidate does not verify
+format validity, encryption, signing, component layout, ABI or installed build.
+Acquisition and this ordinary identification do not resolve later proprietary
+analysis rights or accompanying terms. See [commands/results](sessions/20261018-RA-003-package-law.md).
 
 ## Prepared inquiry, not sent
 
@@ -150,13 +198,12 @@ modification, redistribution or device operation remains separately scoped.
 
 ## Next single work package
 
-**RA-003: resolve and record the rights basis for mainland 2.00 offline
-unpacking/static analysis**, using a scope-specific rights-holder response or
-another documented applicable basis, including the China candidate above. The
-limited original acquisition was approved and stopped on the recorded redirect.
-The separate exact-destination decision is pending. After approved acquisition,
-retain immutable bytes/size/hash and establish source/build correspondence before
-choosing an extractor. Unpacking/static analysis still needs its scoped basis.
+**RA-003: assess the exact container-inventory/extraction acts against the China
+statutory research route and accepted terms, then audit the applicable parser
+before use.** Legitimate input, byte identity and a bounded signature candidate
+are recorded. Full unpacking/static-analysis scope, source/build correspondence
+and exact-body applicability remain unresolved. Written rights-holder permission
+is one possible route; the express statutory route must also be assessed.
 
 English resource presence and restriction policy remain unknown; the owner report
 of English absence is retained. The prior BusyBox FTP source findings remain

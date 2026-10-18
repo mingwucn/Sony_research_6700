@@ -1,18 +1,20 @@
 # RA-003 artifact intake and bounded inspection
 
-Status: host tooling available; exact-target acquisition and extraction **BLOCKED**.
+Status: official mainland 2.00 package acquired; bounded identification only.
+Exact-body correspondence and the full extraction/analysis scope remain unresolved.
 Current intake (2026-10-18, **source-report**): the owner reports α6700
 firmware **2.00**, current **简体中文**, **Chinese mainland version**, and
 **English unavailable**. The full list is not supplied; exact SKU and binary
 identity remain unverified. This is an owner report, not a target resource or
 restriction-field finding. See [latest intake](../research/sessions/20261018-owner-mainland-english.md).
-No official target package, body program, resource, settings or calibration object
-has been supplied. Earlier private-directory checks were not a whole-computer
+The later ordinary download supplies an official version-labelled package,
+without proving exact-body applicability. No body program/resource/settings/
+calibration readback has been supplied. Earlier private-directory checks were not a whole-computer
 search. See [owner intake](../research/sessions/20261018-owner-ui-intake.md).
 Owner additionally requires verified rollback/recovery before any firmware write;
 offline package inspection does not establish that recovery system.
 
-The [version 2.00 provenance/rights review](../research/OFFICIAL_PACKAGE_INTAKE.md)
+Earlier snapshot: the [version 2.00 provenance/rights review](../research/OFFICIAL_PACKAGE_INTAKE.md)
 now identifies official package metadata, but one asset GET stopped at an
 unreviewed redirect with zero firmware bytes and no file. Owner inspection
 permission is **No / unknown**; proprietary firmware analysis remains blocked.
@@ -21,7 +23,13 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Current continuation: [China scope, limited acquisition consent and results](../research/sessions/20261018-RA-003-cn-scope.md).
+Current continuation: [package acquisition, bounded identification and statutory route](../research/sessions/20261018-RA-003-package-law.md).
+The separately approved destination GET succeeded; size and two acquisition
+hashes agree. Existing authored probe reports a UFU signature candidate only.
+Copyright Law Article 50(5) is an express research exception; full proposed
+analysis acts and accepted terms still require assessment.
+
+Earlier China-scope snapshot: [China scope, limited acquisition consent and results](../research/sessions/20261018-RA-003-cn-scope.md).
 Country/purpose facts, download acceptance and proprietary-analysis rights are
 separate records; consult STATE for acquired bytes/hash and current blockers.
 

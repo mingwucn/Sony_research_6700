@@ -43,7 +43,15 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [China scope and limited acquisition results](../research/sessions/20261018-RA-003-cn-scope.md).
+Latest RA-003: [official package, bounded identification and statutory route](../research/sessions/20261018-RA-003-package-law.md).
+Separate destination consent led to HTTP 200, declared-size agreement and matching
+transfer/stored SHA-256. Authored probe: UFU signature candidate; container not
+validated. Article 50(5) expressly addresses software reverse-engineering research;
+assess its conditions, exact acts and contract interaction before full analysis.
+No unpacking/execution or camera contact occurred. Next single package is the
+scoped RA-003 analysis/parser review in STATE.
+
+Earlier RA-003: [China scope and limited acquisition results](../research/sessions/20261018-RA-003-cn-scope.md).
 Owner confirms inspection in China for personal/noncommercial use. Download
 consent is scoped; Article 17 is a candidate, not an established analysis basis.
 See STATE for the recorded request/result, and the source dossier for scope.

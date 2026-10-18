@@ -23,8 +23,10 @@ model's installer, or change product identifiers merely to begin this project.
 
 Current [RA-003 package/rights findings](research/OFFICIAL_PACKAGE_INTAKE.md):
 the [official mainland 2.00 source and its agreement](research/MAINLAND_FIRMWARE_SOURCE.md)
-are identified. The [China-scope continuation](research/sessions/20261018-RA-003-cn-scope.md)
-records personal/noncommercial research and scoped download consent/results.
+are identified. The [package/statutory-route continuation](research/sessions/20261018-RA-003-package-law.md)
+records consented acquisition, size/hash and bounded UFU identification. China
+Copyright Law Article 50(5) expressly addresses reverse-engineering research;
+its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains
 unestablished; the earlier owner rights answer stays **No / unknown**.
 Recovery is unproved; separate OSS offers are static leads only. No native

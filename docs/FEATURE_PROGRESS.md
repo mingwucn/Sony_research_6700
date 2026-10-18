@@ -72,18 +72,23 @@ states remain required; synthetic guards are preparation only. See
   agreement acceptance or permission inquiry. Component rights, owner consent
   and the basis for proprietary unpacking/disassembly remain distinct.
 
-- Current RA-003: [China scope and limited acquisition consent/results](../research/sessions/20261018-RA-003-cn-scope.md).
+- Earlier China-scope snapshot: [China scope and limited acquisition consent/results](../research/sessions/20261018-RA-003-cn-scope.md).
   Both public and private notes retain the owner's China/personal/noncommercial
   facts, bounded acquisition result and pending activity-specific analysis basis.
   These do not establish English resources or a native FTP implementation.
 
+- Current RA-003: [package acquisition and express statutory research route](../research/sessions/20261018-RA-003-package-law.md).
+  Separately consented HTTP 200 acquired the declared size with matching hashes;
+  bounded identification found a UFU signature candidate only. No English
+  resources or native FTP backend have been extracted or validated. Full proposed
+  analysis scope and exact-body correspondence remain unresolved.
+
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003, resolve
-the rights basis for mainland 2.00 offline unpacking/static analysis**, using
-the prepared inquiry or another documented applicable licence/statutory basis.
-Ordinary acquisition consent/results are now recorded separately; source/binary
-correspondence and the exact permitted analysis steps remain unresolved. Exact binary identity remains
-unresolved. EN-101 uses
+packages and validation families. Next single host package: **RA-003, assess the
+exact container-inventory/extraction acts against the China statutory research
+route and accepted terms, then audit the applicable parser before use**.
+Ordinary acquisition and bounded signature evidence are recorded separately;
+source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource
 feasibility; a full-list transcription is no longer the immediate blocker.
 See [latest intake](../research/sessions/20261018-owner-mainland-english.md).
