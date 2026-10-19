@@ -104,6 +104,7 @@ class FakeOps:
         return dict(isolated=True, no_site=True, no_user_site=True, no_bytecode=True,
             preloaded_package_aliases=[], bootstrap_boundary=self.policy['bootstrap_boundary'])
     def audit_install(self, hook): self.hook = hook
+    def audit_probe(self, token): self.hook(subject.PROBE_EVENT, (token,))
     def bootstrap(self): return self.modules
     def load(self, path, **kwargs):
         self.loader_calls += 1
@@ -299,6 +300,21 @@ class ProducerTests(unittest.TestCase):
     def test_cli_refuses_without_opening_inputs(self):
         with patch('builtins.print') as output: self.assertEqual(subject.main(), 2)
         self.assertEqual(json.loads(output.call_args.args[0])['camera_commands'], [])
+    def test_missing_audit_acknowledgement_prevents_bootstrap_and_native_use(self):
+        data, ops = fixture(); ops.audit_probe = lambda token: None
+        ops.bootstrap = lambda: self.fail('bootstrap must not begin')
+        self.refused(data, ops, 'audit_not_acknowledged'); self.assertEqual(ops.loader_calls, 0)
+    def test_replayed_audit_probe_is_sticky(self):
+        data, ops = fixture()
+        def probe(token):
+            ops.hook(subject.PROBE_EVENT, (token,))
+            try: ops.hook(subject.PROBE_EVENT, (token,))
+            except core.EvidenceError: pass
+        ops.audit_probe = probe
+        self.refused(data, ops, 'audit_not_acknowledged'); self.assertEqual(ops.loader_calls, 0)
+    def test_wrong_audit_nonce_refuses_before_bootstrap(self):
+        data, ops = fixture(); ops.audit_probe = lambda token: ops.hook(subject.PROBE_EVENT, ('wrong',))
+        self.refused(data, ops, 'audit_probe'); self.assertEqual(ops.loader_calls, 0)
     def test_preloaded_package_alias_refuses_before_output(self):
         data, ops = fixture(); sys.modules['Cryptodome'] = types.ModuleType('Cryptodome')
         with self.assertRaisesRegex(core.EvidenceError, '^preloaded_alias$'): self.execute(data, ops)
@@ -410,6 +426,10 @@ data,ops=fixture()
 helper=types.ModuleType(HELPER);helper.new=ops.new
 sys.modules[HELPER]=helper;sys.modules['ctypes']=ops.modules['ctypes']
 def install(hook):
+ if scenario=='suppressed_install':
+  def suppress(event,args):
+   if event=='sys.addaudithook':raise RuntimeError('invented suppression')
+  sys.addaudithook(suppress)
  sys.addaudithook(hook)
  ops.hook=lambda event,args:sys.audit(event,*args)
 ops.audit_install=install
@@ -424,7 +444,8 @@ with tempfile.TemporaryDirectory() as folder:
   result=subject.produce_invented(**data,folder=str(pathlib.Path(folder)/'attempt'),ops=ops)
   assert scenario=='success' and result['test_injection_used'] is True
  except core.EvidenceError as error:
-  assert scenario=='swallowed_process' and str(error)=='sticky_guard_failure'
+  assert ((scenario=='swallowed_process' and str(error)=='sticky_guard_failure') or
+          (scenario=='suppressed_install' and str(error)=='audit_not_acknowledged' and ops.loader_calls==0))
  assert not any(n=='Cryptodome' or n.startswith('Cryptodome.') for n in sys.modules)
  assert ops.modules['ctypes'].CDLL is ops.original
  # Audit hooks cannot be removed; this event returns only because it is inert.
@@ -438,6 +459,7 @@ print(json.dumps(dict(scenario=scenario,inert_after_cleanup=True,native_loader_e
         self.assertTrue(receipt['inert_after_cleanup']); self.assertFalse(receipt['native_loader_executed'])
     def test_real_inert_audit_hook_in_disposable_child(self): self.child('success')
     def test_real_audit_swallowed_process_event_is_sticky(self): self.child('swallowed_process')
+    def test_real_suppressed_audit_install_prevents_native_loader(self): self.child('suppressed_install')
 
 
 class HandleProxy:

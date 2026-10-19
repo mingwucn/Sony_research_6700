@@ -102,3 +102,11 @@ package/root evidence before execution, reject an absent/suppressed audit hook,
 define a bounded once-only invocation and reconcile uncertain child outcomes.
 Actual installation/bootstrap compatibility, protected-input inspection and
 camera access remain separate prerequisites. No device gate is advanced here.
+
+2026-10-19 continuation: [bound-buffer child preflight](DEPENDENCY_CHILD_PREFLIGHT.md)
+now qualifies authored-source loading and real audit-hook acknowledgement in a
+disposable child. The producer also requires nonce acknowledgement before its
+dependency bootstrap. This is a later source revision; the earlier session report
+and source pins above remain historical. Full producer invocation and fresh
+installed-package/native observation remain unperformed. No historical blocker
+or operational/device gate is cleared.

@@ -27,6 +27,7 @@ NATIVES = {'cpuid':'Cryptodome/Util/_cpuid_c.pyd','aes':'Cryptodome/Cipher/_raw_
     'aesni':'Cryptodome/Cipher/_raw_aesni.pyd','ecb':'Cryptodome/Cipher/_raw_ecb.pyd',
     'cbc':'Cryptodome/Cipher/_raw_cbc.pyd'}
 TRUSTED = ('ctypes', '_ctypes', 'ctypes.util', 'ctypes._endian', 'platform')
+PROBE_EVENT = 'a6700.dependency.guard_probe'
 
 
 def encoded(value): return core._canonical(value) + b'\n'
@@ -134,10 +135,14 @@ class Guard:
     def __init__(self, policy, reader, emit):
         self.policy=policy;self.reader=reader;self.emit=emit;self.loads={};self.pending=None
         self.failed=False;self.active=True;self.bootstrap=True;self.finished=False;self.bootstrap_seen=set()
+        self.probe_token=os.urandom(16).hex();self.probe_count=0
         self.paths={target(policy,row).casefold():name for name,row in policy['native_libraries'].items()}
     def audit(self, event, args):
         if not self.active: return
         try:
+            if event==PROBE_EVENT:
+                need(args==(self.probe_token,) and self.probe_count==0 and self.bootstrap,'audit_probe')
+                self.probe_count+=1;return
             need(event not in ('subprocess.Popen','os.system','os.posix_spawn','os.spawn'),'process_forbidden')
             if event!='ctypes.dlopen':return
             if self.bootstrap and args in ((None,),('kernel32',)):
@@ -280,6 +285,7 @@ class RuntimeOps:
             preloaded_package_aliases=[n for n in sys.modules if n=='Cryptodome' or n.startswith('Cryptodome.')],
             bootstrap_boundary=['interpreter','stdlib','_ctypes','os_loader'])
     def audit_install(self,hook):sys.addaudithook(hook)
+    def audit_probe(self,token):sys.audit(PROBE_EVENT,token)
     def bootstrap(self):return {name:importlib.import_module(name) for name in TRUSTED}
     def callback(self,AES,vectors):run_vectors(AES,vectors)
 
@@ -300,7 +306,12 @@ def _produce(*,expectation,package,binding,config_json,cache_json,source_buffers
     try:
         out.reserve(policy,binding);out.emit('expectation_bound',dict(sha256=core._hash(policy)))
         trusted={name:ops.reader(target(policy,row),row)[1] for name,row in policy['trusted_origins'].items()}
-        ops.audit_install(guard.audit);modules=ops.bootstrap();core._shape(modules,TRUSTED)
+        ops.audit_install(guard.audit);ops.audit_probe(guard.probe_token)
+        need(guard.probe_count==1 and not guard.failed,'audit_not_acknowledged')
+        out.small('audit-acknowledgement.json',dict(schema='dependency_audit_acknowledgement_v1',
+            operation_id=policy['operation_id'],probe_event=PROBE_EVENT,probe_token=guard.probe_token,
+            acknowledged=True,test_injection_used=invented))
+        modules=ops.bootstrap();core._shape(modules,TRUSTED)
         for name,row in policy['trusted_origins'].items():
             need(core._loader_path(modules[name].__file__)==target(policy,row),'trusted_origin')
             need(core._canonical(ops.reader(target(policy,row),row)[1])==core._canonical(trusted[name]),'trusted_changed')
@@ -376,6 +387,7 @@ def _produce(*,expectation,package,binding,config_json,cache_json,source_buffers
     result=dict(schema='prospective_dependency_producer_result_v1',status='produced_consistent_dependency_records',
         observation=observation,consistency=consistency,source_execution_trace=finder.trace,
         test_injection_used=invented,audit_hook_retained_inert=True,
+        audit_hook_acknowledged=True,audit_acknowledgement_is_invented=invented,
         source_buffers_are_caller_supplied=True,executing_producer_authenticated=False,
         prior_binding_is_caller_declaration=True,operational_acceptance=False,
         execution_authorized=False,feature_supported=False,recovery_proven=False,device_write_gate_passed=False,camera_commands=[])
