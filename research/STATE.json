@@ -5464,5 +5464,29 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: audit each production dependency-manifest/native-policy predicate against existing saved dependency-only receipts and pinned source schemas, then qualify a closed proposal on invented inputs; no blocker clearing, dependency loading or protected-input execution."
+  },
+  "a6700_reference_recheck_163558": {
+    "report": "research/sessions/20261019-a6700-reference-recheck.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "head_unchanged": true,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "text_files_verified": 4,
+    "tree_blobs": 39,
+    "tests": 228,
+    "passed": 225,
+    "skipped": 3,
+    "exit_code": 0,
+    "suite_seconds": 17.324,
+    "wrapper_seconds": 17.81431899999734,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "FT-101: prepare a source-only FTP evidence checklist against the pinned revision; no camera operation or author contact."
   }
 }
