@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "runtime_packet_prepared_reviewed_dependency_observation_pending",
+  "phase": "collected_dependency_runtime_observed_protected_integration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -282,7 +282,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: review one exact once-only dependency-runtime driver against this frozen request, then perform and reconcile a single dependency-only observation if its fresh bindings pass; public vectors only, no protected continuation or camera.",
+  "next_work_package": "RA-003: reconcile the observed dependency contract with the frozen GDT entry and implement/qualify the required successor composition on invented streams, keeping its dependency guard alive through the controller; independently review before any protected replay.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -7293,5 +7293,99 @@
     "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_external_source_refresh_only",
     "current_goal_turn": "progress_fresh_packet_prepared_and_reviewed",
     "next_work_package": "RA-003: review one exact once-only dependency-runtime driver against this frozen request, then perform and reconcile a single dependency-only observation if its fresh bindings pass; public vectors only, no protected continuation or camera."
+  },
+  "dependency_collected_runtime_20261019": {
+    "status": "dependency_only_runtime_observed_reconciled",
+    "report": "research/sessions/20261019-RA-003-runtime-observation.md",
+    "evidence_classes": [
+      "offline-tested",
+      "runtime-observed"
+    ],
+    "source_reviews": {
+      "status": "accepted_host_only_driver_source",
+      "reviewers": [
+        "gate_review",
+        "runtime_review"
+      ],
+      "driver_sha256": "fb964415682babea3bdcbdcebc53b4d42639b4cbf47332c7e571335c549cc00b",
+      "findings": [],
+      "scope": "one dependency collection/public-vector child; no protected continuation",
+      "actual_inputs_reviewed": false,
+      "parent_authenticated": false,
+      "camera_commands": []
+    },
+    "saved_output_reviews": {
+      "status": "accepted_saved_metadata_consistency_only",
+      "reviewers": [
+        "gate_review",
+        "runtime_review"
+      ],
+      "findings": [],
+      "actual_input_paths_followed": false,
+      "execution_repeated": false,
+      "native_or_process_authentication_established": false
+    },
+    "observation": {
+      "status": "saved_runtime_metadata_reconciled",
+      "child_exit_code": 0,
+      "child_termination": "reaped",
+      "package_files": 351,
+      "trusted_files": 5,
+      "collection_bytes": 4459844,
+      "python_sources": 11,
+      "native_loads": 5,
+      "vector_cases": 12,
+      "vector_comparisons": 24,
+      "journal_events": 39,
+      "callbacks": 1,
+      "artifacts": {
+        "collection.json": "1c138c059a9a684961ff085558e37ae0f044065600f722818cb5e2db10a75acb",
+        "completion.json": "eb9073c7b888944787e4818463995769b2349085c7c621ca6779794c229405f4",
+        "producer/audit-acknowledgement.json": "bcf51dbf9a0e50a68941041ac82bca50c1fdadc3327d7d6ef71cb2b0a724a80a",
+        "producer/binding.json": "d02fffc20c194e4d4c5e035064a84da663491186f4ed9fee77e50d0c3e45b496",
+        "producer/expectation.json": "4b8e0b47e749081b8c94bb66e5d78cee51acb14a90f8d997850d1b0713b75f18",
+        "producer/journal.jsonl": "a3b917b07410c9c8dab3eb7e3b13f8d73b8cf07f8944196231451ffad0bfcec4",
+        "producer/raw.json": "67c9c1ced4b132d791d34c2ae1ec73babdc9a7a4478cfd91c05aabfc6ff842f3",
+        "producer/result.json": "74a35639722498c05f7051243b991496e991684bc3df1b466012731dd02c94d5",
+        "started.json": "e913773146acfad359338130988b2f259ee4abd409d6e658f3ed764abc358c6d",
+        "transition.json": "aa6eb29b9ee506f8f7f1710e172b9d2941f0bfea4c4467ee48e46c0be70af7f1",
+        "verification.json": "91bc6ec76b15920367bfcc581180232e9a3cc53b379662cf231e6b711853b88e"
+      },
+      "driver_completion_sha256": "5543b7ad7e3636c7ad8af1886aefe40a8bf8e72ccc370d422cd0de3c50099e3d",
+      "child_completion_sha256": "466fff990ba8eeb88f48efcc366e29990792e9e35591503bea0c4151134cba68",
+      "metadata_only": true,
+      "actual_input_paths_followed": false,
+      "camera_commands": []
+    },
+    "focused_tests": {
+      "total": 42,
+      "passed": 42,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 74.7161154000205,
+      "source_stable": true,
+      "log_sha256": "9241063ed71e14ad624750edf0247edca840159bbc0fe019c689a9963f217329",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "exit_code": 0
+    },
+    "source_pins_unchanged": 45,
+    "actual_dependency_observation_performed": true,
+    "installed_dependency_bootstrap_performed": true,
+    "protected_continuation_performed": false,
+    "native_mapped_bytes_attested": false,
+    "transitive_dlls_attested": false,
+    "atomic_snapshot_proven": false,
+    "parent_execution_authenticated": false,
+    "historical_seventeen_blockers_retained": true,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_fresh_runtime_packet_prepared_and_reviewed",
+    "current_goal_turn": "progress_actual_dependency_child_completed_and_reconciled",
+    "next_work_package": "RA-003: reconcile the observed dependency contract with the frozen GDT entry and implement/qualify the required successor composition on invented streams, keeping its dependency guard alive through the controller; independently review before any protected replay."
   }
 }

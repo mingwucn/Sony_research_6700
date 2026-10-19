@@ -24,3 +24,6 @@ guard or retry an uncertain attempt. Timeout/interruption requires inspection
 of process disposition and retained records. This is a cooperative-filesystem
 observation, not an atomic snapshot or security sandbox. No protected firmware
 callback, camera transport or feature/write authorization is included.
+
+
+2026-10-19 successor: [complete collected runtime observation](DEPENDENCY_COLLECTED_RUNTIME.md) completed the prepared dependency-only child, exit 0/reaped, with fresh 351+5 collection and public vectors. This does not integrate or authorize a protected GDT continuation, authenticate the parent, or pass feature/recovery/write gates. Preceding results and limits remain historical.

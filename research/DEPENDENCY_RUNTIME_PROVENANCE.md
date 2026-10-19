@@ -23,3 +23,6 @@ Exact-body/build correspondence, English resource/restriction mapping, native FT
 Camera commands: **none**. [Exact commands/results](sessions/20261019-RA-003-dependency-runtime.md).
 
 Next single package: **RA-003: integrate the observed dependency origins/startup and durable native receipts into a separately qualified GDT entry and review its exact operational basis; no GDT replay or camera contact**.
+
+
+2026-10-19 successor: [complete collected runtime observation](DEPENDENCY_COLLECTED_RUNTIME.md) completed the prepared dependency-only child, exit 0/reaped, with fresh 351+5 collection and public vectors. This does not integrate or authorize a protected GDT continuation, authenticate the parent, or pass feature/recovery/write gates. Preceding results and limits remain historical.
