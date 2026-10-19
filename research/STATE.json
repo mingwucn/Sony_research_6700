@@ -8705,5 +8705,35 @@
     "previous_goal_turn": "requested_reference_refresh_only_no_shared_pre_camera_implementation_progress",
     "current_goal_turn": "progress_six_retained_basis_roles_recomputed_and_qualified",
     "next_work_package": "RA-003: implement and qualify current authored-source manifest/receipt binding, then compose the six basis-role and two dependency-role validators against the same checked source inventory and explicit dependency anchors. Reject source rebinding/stale receipts; preserve legacy-plan/successor-dependency compatibility and activity/qualification authority gaps. Runtime disabled; no actual firmware/constants/native payload reads or camera."
+  },
+  "a6700_reference_review_20261020_b": {
+    "report": "research/sessions/20261020-a6700-reference-review-b.md",
+    "evidence_class": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "unchanged_from_prior_audit": true,
+    "documents_verified": 4,
+    "tree_entries": 51,
+    "tests": {
+      "total": 17,
+      "passed": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.5778669000137597,
+      "exit_code": 0,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "log_sha256": "a15c1f55b0720a74af338687814770c5e155c2ebce7e2dea338e020605ea4604",
+      "camera_commands": []
+    },
+    "native_english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_verified": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: review public FTP implementation and direct camera-to-server Wi-Fi evidence when published, against the existing checklist."
   }
 }
