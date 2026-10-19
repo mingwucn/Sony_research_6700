@@ -27,7 +27,17 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [preflight comparison](../research/PREFLIGHT_COMPARISON.md),
+Latest continuation: [ext-superblock design](../research/EXT_SUPERBLOCK_DESIGN.md),
+[commands/results](../research/sessions/20261019-RA-003-ext-superblock-design.md).
+Independent ext-superblock design: **52/52 synthetic passes**, zero skipped, exit **0**, **0.029s**; **4** qualified authored source/test pins.
+Eight immutable Linux v6.6 reference texts (**398,478 bytes**) and GPL-2.0-only notices are pinned; signed-release authentication is not established. The separate observer copies no upstream implementation.
+Only invented buffers were tested. No actual firmware, member prefix, operational constants or actual replay; all prior actual results, forty-source seal and analysis acts remain unchanged. Historical suites were not rerun.
+The initial harness refused (host **1**, child **0**): its regex counted zero although the preserved log shows **52 passes**, zero skips, **0.027s**. A reviewed parser-view CRLF correction preserved raw logs and observer/tests/thresholds; one corrected qualification supplied the accepted result above.
+Conditional geometry and conservative feature handling are a synthetic design result, not observed member capabilities, a usable read plan, filesystem validity or English/native FTP support. Planning authorization remains false. No traversal, checksum verification, child/raw files, private upload, upstream/firmware execution, camera, feature/write or recovery gate.
+
+Next single package: **RA-003: freeze and synthetically qualify a bounded two-lead ext-superblock metadata-observation runner with complete prior lineage checks; no actual replay or directory traversal in that runner-design package**.
+
+Earlier continuation: [preflight comparison](../research/PREFLIGHT_COMPARISON.md),
 [commands/results](../research/sessions/20261019-RA-003-preflight-comparison.md).
 Qualification **346/346 passed**, zero skipped, exit **0**, **12.080s**; **26 new + 320 retained** cases; all **35** predecessor files and **32** historical failed-trial pins preserved.
 Actual terminal **complete_private_preflight_expanded_member_comparison**, script **0** / host **0**, **37.595937s**; pipeline attempts **1**, expanded callback attempts **5**.
@@ -37,7 +47,7 @@ No retry, fallback, child/decoded/raw-prefix files, decompression/disassembly, u
 Earlier five unknown outcomes and prior refusal remain unchanged; no retroactive runtime-stage claim.
 Sanitized header-lead counts: ext_family_header_candidate/header_only: 2; fat_legacy_header_candidate/malformed_header: 2; unknown/unsupported_opaque: 1.
 Selected raw retention remains bounded separately from metadata copies. Six retained prior trees and seven gate snapshots may coexist, each with a 2MiB serialized-role limit, plus caller objects/overhead/other buffers. Historical20MiB pipeline allowance is not an aggregate managed/process memory cap.
-Next single package: **RA-003: design and synthetically qualify a bounded ext-family superblock capability and geometry gate using pinned authoritative format sources; no actual replay or directory traversal**.
+Historical next single package: **RA-003: design and synthetically qualify a bounded ext-family superblock capability and geometry gate using pinned authoritative format sources; no actual replay or directory traversal**.
 
 Earlier continuation: [metadata preflight](../research/METADATA_PREFLIGHT.md),
 [commands/results](../research/sessions/20261019-RA-003-metadata-preflight.md).

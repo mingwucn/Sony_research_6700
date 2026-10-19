@@ -191,5 +191,92 @@
     "execution_performed": false,
     "runtime_dependency_adopted": false,
     "alpha6700_compatibility_established": false
+  },
+  "ext_superblock_reference_audit": {
+    "repository": "torvalds/linux",
+    "tag": "v6.6",
+    "annotated_tag": "5260836abb7056beed3f3f0d0e4262c11f36f0d0",
+    "commit": "ffc253263a1375a65fa6c9f62a893e9767fbebfa",
+    "report": "research/EXT_SUPERBLOCK_DESIGN.md",
+    "acquisition": "Initial raw GitHub GET stopped at HTTP429 with zero source texts; separately scoped Gitiles directory request and eight immutable text GETs completed without redirects/retries",
+    "source_files": 8,
+    "source_bytes": 398478,
+    "inspected_files": [
+      {
+        "path": "fs/ext4/ext4.h",
+        "url": "https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/ffc253263a1375a65fa6c9f62a893e9767fbebfa/fs/ext4/ext4.h?format=TEXT",
+        "bytes": 135813,
+        "sha256": "657f76d3774c26bef5ccc1ad57cd66e38500b2a45cd8c2bf89f6020efd290db2",
+        "git_blob_sha1": "9418359b1d9d3b0fb8f57d26f3dfdfb3970fb4ba",
+        "observed_spdx": "GPL-2.0"
+      },
+      {
+        "path": "fs/ext4/super.c",
+        "url": "https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/ffc253263a1375a65fa6c9f62a893e9767fbebfa/fs/ext4/super.c?format=TEXT",
+        "bytes": 210512,
+        "sha256": "d92b0e719989c88aaf41c8b5afab831093fa9985e5d23e262130548cf33e7cd4",
+        "git_blob_sha1": "dbebd8b3127e514e7dc165ced48da0b6ff3cd7da",
+        "observed_spdx": "GPL-2.0"
+      },
+      {
+        "path": "Documentation/filesystems/ext4/super.rst",
+        "url": "https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/ffc253263a1375a65fa6c9f62a893e9767fbebfa/Documentation/filesystems/ext4/super.rst?format=TEXT",
+        "bytes": 23527,
+        "sha256": "812f0ade6b1c91adf80e7e3442463cdf2fb610b9c73370d3755b7b5077afd3c4",
+        "git_blob_sha1": "a1eb4a11a1d0f97fe3a34fcbfe01856aaf1d3ef4",
+        "observed_spdx": "GPL-2.0"
+      },
+      {
+        "path": "Documentation/filesystems/ext4/overview.rst",
+        "url": "https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/ffc253263a1375a65fa6c9f62a893e9767fbebfa/Documentation/filesystems/ext4/overview.rst?format=TEXT",
+        "bytes": 1025,
+        "sha256": "5f3f4427b76db27786e187462cb42eb68b99af168d9f215b4415facf4b528e95",
+        "git_blob_sha1": "0fad6eda6e15d1ec029154fa9aaec5a387604551",
+        "observed_spdx": "GPL-2.0"
+      },
+      {
+        "path": "Documentation/filesystems/ext4/group_descr.rst",
+        "url": "https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/ffc253263a1375a65fa6c9f62a893e9767fbebfa/Documentation/filesystems/ext4/group_descr.rst?format=TEXT",
+        "bytes": 5442,
+        "sha256": "eb49db3816aad31add17f659810038509ef146e8bb0202ece9b2b7d549abbc3f",
+        "git_blob_sha1": "392ec44f8fb00d4fb5a21fee9907b3fbffd3ca39",
+        "observed_spdx": "GPL-2.0"
+      },
+      {
+        "path": "Documentation/filesystems/ext4/checksums.rst",
+        "url": "https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/ffc253263a1375a65fa6c9f62a893e9767fbebfa/Documentation/filesystems/ext4/checksums.rst?format=TEXT",
+        "bytes": 2934,
+        "sha256": "a95961107e4db26a1b7057b8d62cb153c9e39fb7d837dcfe9b1eb5dbfa5f3339",
+        "git_blob_sha1": "e232749daf5f3046ca4311406f9fb78e1ea8c7aa",
+        "observed_spdx": "GPL-2.0"
+      },
+      {
+        "path": "COPYING",
+        "url": "https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/ffc253263a1375a65fa6c9f62a893e9767fbebfa/COPYING?format=TEXT",
+        "bytes": 496,
+        "sha256": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+        "git_blob_sha1": "a635a38ef9405fdfcfe97f3a435393c1e9cae971",
+        "observed_spdx": "GPL-2.0 WITH Linux-syscall-note"
+      },
+      {
+        "path": "LICENSES/preferred/GPL-2.0",
+        "url": "https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/ffc253263a1375a65fa6c9f62a893e9767fbebfa/LICENSES/preferred/GPL-2.0?format=TEXT",
+        "bytes": 18729,
+        "sha256": "f6b78c087c3ebdf0f3c13415070dd480a3f35d8fc76f3d02180a407c1c812f79",
+        "git_blob_sha1": "ff0812fd89cc41fc1b1ed6732a621057d30ed2ad",
+        "observed_spdx": "GPL-2.0"
+      }
+    ],
+    "content_licence": "GPL-2.0-only; all six content files explicitly identify GPL-2.0; full text/notices preserved privately",
+    "root_copying_exception_limit": "Repository COPYING mentions a syscall exception; these six per-file notices contain no WITH exception, and none is relied on",
+    "signature_authenticated": false,
+    "signature_verification_reason": "unknown_key",
+    "provenance_limit": "Exact revision/API relation and local text/Git blob identities; no signed-release or full-tree authentication claim",
+    "reuse": "Reference only; independently authored factual-field/arithmetic observer; no upstream implementation copied or adapted",
+    "project_wide_licence_selected": false,
+    "upstream_execution_performed": false,
+    "upstream_runtime_dependency_adopted": false,
+    "proprietary_firmware_permission_inferred": false,
+    "alpha6700_compatibility_established": false
   }
 }
