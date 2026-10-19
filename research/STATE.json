@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "saved_plan_and_nine_role_predicates_reconciled_dependency_native_policy_gaps_pending",
+  "phase": "saved_dependency_manifest_reconciled_successor_native_contract_required",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -285,7 +285,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: audit each production dependency-manifest/native-policy predicate against existing saved dependency-only receipts and pinned source schemas, then qualify a closed proposal on invented inputs; no blocker clearing, dependency loading or protected-input execution.",
+  "next_work_package": "RA-003: implement the closed successor dependency/native-evidence contract on invented inputs, preserving root domains, bootstrap boundaries and event/durability ordering; independently review it before applying it to saved actual receipts or authorizing any runtime/protected-input act.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -5488,5 +5488,62 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "FT-101: prepare a source-only FTP evidence checklist against the pinned revision; no camera operation or author contact."
+  },
+  "ra003_dependency_policy_gap_audit": {
+    "report": "research/sessions/20261019-RA-003-dependency-policy-gap-audit.md",
+    "design": "research/DEPENDENCY_POLICY_GAP_AUDIT.md",
+    "status": "saved_manifest_and_installed_proof_reconciled_native_contract_differs",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "previous_goal_turn": "progress",
+    "current_goal_turn": "progress",
+    "tests": 22,
+    "passed": 22,
+    "skipped": 0,
+    "test_exit_code": 0,
+    "suite_seconds": 0.527,
+    "wrapper_seconds": 0.8430001999950036,
+    "saved_comparison_exit_code": 0,
+    "saved_comparison_seconds": 0.243941199965775,
+    "saved_comparison_attempts": 1,
+    "automatic_retry": false,
+    "saved_input_pins": 6,
+    "payload_files": 351,
+    "installed_receipts": 351,
+    "installed_proof_recomputed_equal": true,
+    "package_python_origins": 11,
+    "trusted_origins_incompatible_with_old_paths": 5,
+    "native_intents": 5,
+    "native_completions": 5,
+    "native_receipt_direct_shape_refusal": "invalid_shape",
+    "old_complete_before_cipher_use_not_established": true,
+    "source_reviewers": 1,
+    "source_review_findings_resolved": [
+      "type_sensitive_saved_proof_validation",
+      "bounded_fixed_roster_ordinary_reads"
+    ],
+    "retained_historical_binding_blockers": [
+      "dependency_manifest_unobserved",
+      "native_policy_unobserved"
+    ],
+    "source_sha256": {
+      "check_saved.py": "11d9b0f208c319429814c5d4a24f55890a98546eefa4bd9bdc02891a93aafc51",
+      "test_contract.py": "be2e6f00dc0d9ccbe5e8918bc01ce3a0624c7b190602c7875ec1643e69d01e2e",
+      "activation_binding.snapshot.py": "22558080636f15300590c22b9987216216f650b4edc58d7df89092643722de74"
+    },
+    "comparison_result_sha256": "f193d67d907fe523cba8e8d7dea975a3ac7919d7ba547229297f4c617807175d",
+    "continuation_runtime_source_sha256": "4a64bd6c63ff6e43b56ab7298e5fb84a6304e3576990eaa4aa020c551aeba8f1",
+    "execution_authorized": false,
+    "operational_acceptance": false,
+    "firmware_opened": false,
+    "installed_dependency_executed": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: implement the closed successor dependency/native-evidence contract on invented inputs, preserving root domains, bootstrap boundaries and event/durability ordering; independently review it before applying it to saved actual receipts or authorizing any runtime/protected-input act."
   }
 }
