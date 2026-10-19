@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "successor_helpers_wiring_invented_qualified_outer_binding_pending",
+  "phase": "invented_successor_outer_qualified_operational_scope_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -28,26 +28,26 @@
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
     "mode": "full_public",
-    "total": 739,
-    "passed": 736,
+    "total": 748,
+    "passed": 745,
     "failures": 0,
     "errors": 0,
     "skipped": 3,
-    "seconds": 381.5612082000007,
+    "seconds": 388.0491059999913,
     "exit_code": 0,
     "source_stable": true,
-    "log_sha256": "65856393c15ba84933b8240f40a4bf4de8193624447b0e5c78668019fa67d6ef",
+    "log_sha256": "19538163a2e3215193183d660c13cece9fb006a87f8af95f980a766f52042440",
     "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
     "actual_inputs_accessed": false,
     "camera_commands": [],
-    "public_test_total": 739,
+    "public_test_total": 748,
     "private_helper_test_total": 0,
     "evidence_class": "offline-tested",
     "hardware_coverage": false,
     "camera_or_real_server_coverage": false,
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-successor-loaders/qualify.py",
-    "report": "research/sessions/20261019-RA-003-successor-loaders.md",
-    "source_scope": "739 public standard-library host cases; four additional private cases reported separately"
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-outer-successor/qualify.py full",
+    "report": "research/sessions/20261019-RA-003-successor-outer.md",
+    "source_scope": "748 public host cases before final private publication fix; public source/test pins unchanged; final private cases reported separately"
   },
   "work_packages": {
     "RA-001": {
@@ -63,7 +63,7 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_successor_helpers_wiring_qualified_outer_binding_pending",
+      "status": "partial_invented_outer_qualified_operational_scope_review_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
@@ -207,7 +207,8 @@
       "stream_contract_binding": "research/STREAM_CONTRACT_BINDING.md",
       "parent_migration": "research/DEPENDENCY_PARENT_MIGRATION.md",
       "operational_binding_specification": "research/OPERATIONAL_BINDING_SPEC.md",
-      "successor_helpers": "research/SUCCESSOR_HELPER_LOADERS.md"
+      "successor_helpers": "research/SUCCESSOR_HELPER_LOADERS.md",
+      "latest_report": "research/sessions/20261019-RA-003-successor-outer.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -283,7 +284,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement and qualify the invented-only exact-buffer outer child with one declared source closure, namespace ownership planned before activation, the current collected dependency contract held through the real controller, and independent parent verification of dependency/controller/close/release results; exercise stop and unknown-completion reconciliation and obtain source review before any protected-input activation preparation. No actual dependency activation, firmware/constants reads or camera.",
+  "next_work_package": "RA-003: prepare and independently review the source-only operational successor adapter delta and non-executable scope packet; specify the closed internal runtime observer and saved-runtime verifier, exact prospective source/interpreter/argv/input roles and retained rights/trust blockers. Keep runtime disabled; no actual activation, firmware/constants/native payload reads, executable actual request or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8276,5 +8277,120 @@
     "feature_or_write_gate_passed": false,
     "report": "research/sessions/20261019-owner-project-check-h.md",
     "next_reference_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published, including exact build identity, transfer equality, failure handling and reversal/recovery coverage."
+  },
+  "dependency_successor_outer": {
+    "date": "2026-10-19",
+    "status": "invented_outer_chain_qualified_operational_scope_pending",
+    "report": "research/sessions/20261019-RA-003-successor-outer.md",
+    "design": "research/SUCCESSOR_OUTER_ADAPTER.md",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "full_public": {
+      "mode": "full",
+      "total": 748,
+      "passed": 745,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "seconds": 388.0491059999913,
+      "source_stable": true,
+      "log_sha256": "19538163a2e3215193183d660c13cece9fb006a87f8af95f980a766f52042440",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "actual_inputs_accessed": false,
+      "camera_commands": [],
+      "exit_code": 0
+    },
+    "original_outer_before_final_publication_fix": {
+      "mode": "outer",
+      "total": 23,
+      "passed": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 378.02808150002966,
+      "source_stable": true,
+      "log_sha256": "e28b70c26b0ebeb7b7a03a22af3bc0d5d61672a053887ed0b57c37b0375dace5",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "actual_inputs_accessed": false,
+      "camera_commands": [],
+      "exit_code": 0
+    },
+    "final_lifecycle_and_fallback": {
+      "mode": "final_lifecycle",
+      "total": 9,
+      "passed": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.009632900008000433,
+      "source_stable": true,
+      "log_sha256": "32f3883d8cf7192828fcfdc081c26133028872ab1b29040b075545188e055c07",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "actual_inputs_accessed": false,
+      "camera_commands": [],
+      "exit_code": 0
+    },
+    "final_process_delta": {
+      "mode": "delta",
+      "total": 5,
+      "passed": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 66.50222989998292,
+      "source_stable": true,
+      "log_sha256": "950a0ddd03c59341611e9e21949dcbba6145d4affb690584be207c61ad7ddf99",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "actual_inputs_accessed": false,
+      "camera_commands": [],
+      "exit_code": 0
+    },
+    "public_source_test_pins_unchanged": 59,
+    "initial_source_test_pin_count": 121,
+    "final_source_test_pin_count": 122,
+    "final_authored_source_sha256": {
+      "private/sessions/20261019-RA-003-outer-successor/build_sources.py": "204dfdf53ef50cc9989963ea77f83037a82234a9a4681ca6baac3a27b94af0bb",
+      "private/sessions/20261019-RA-003-outer-successor/composition.py": "3765434cec7cf989aa9692d20d167b45ebac7e25b3f2487cc0060bfdc59377c5",
+      "private/sessions/20261019-RA-003-outer-successor/driver.py": "acca534fcef45c3298056cc87fa7735a1e02a23ab0073825602ae237c0612729",
+      "private/sessions/20261019-RA-003-outer-successor/entry_v4.py": "cff8a9620f817dc5568edecb06db57db8b33df0f20af5078ef14b9d73806c95d",
+      "private/sessions/20261019-RA-003-outer-successor/outer.py": "2f72c1aaa15239164fa762cbc1aad336d97c0d0b2f4f39380cac9b948af1cf09",
+      "private/sessions/20261019-RA-003-outer-successor/qualify.py": "9cfe0743b679012abe82e069e5f69dc153d45760fde0772eed6bd895acb3ce0e",
+      "private/sessions/20261019-RA-003-outer-successor/test_lifecycle.py": "2f4769b1516ddf0cb92292f2718c50c9d0b9227bd91f24d985992fb28122e22e",
+      "private/sessions/20261019-RA-003-outer-successor/test_outer.py": "a3f2f0a2a8b78ad2b0bb3029b6596ff6df3497e252fce0874d187a4161aaaa64",
+      "private/sessions/20261019-RA-003-outer-successor/test_parent_fallback.py": "49db0c996dab95a0c2ff32184954be238b65c473897e1227835e5242d20327ee"
+    },
+    "source_roles": 44,
+    "child_helper_roles": 5,
+    "parent_helper_roles": 5,
+    "ordinary_parent_roles": 23,
+    "protected_parent_roles_loaded": 0,
+    "dependency_artifacts_verified": 11,
+    "bridge_envelopes_verified": 2,
+    "completion_outcomes": [
+      "success",
+      "refused",
+      "unknown"
+    ],
+    "source_reviewers": [
+      "gate_review",
+      "runtime_review"
+    ],
+    "runtime_observer_dispatch_observed": false,
+    "saved_runtime_verifier_observed": false,
+    "operational_packet_assembled": false,
+    "public_runtime_enabled": false,
+    "actual_dependency_observation_performed": false,
+    "historical_seventeen_blockers_retained": true,
+    "actual_inputs_accessed": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_unchanged_reference_refresh_only",
+    "current_goal_turn": "progress_invented_outer_binding_ownership_and_terminal_chain_reviewed_qualified",
+    "next_work_package": "RA-003: prepare and independently review the source-only operational successor adapter delta and non-executable scope packet; specify the closed internal runtime observer and saved-runtime verifier, exact prospective source/interpreter/argv/input roles and retained rights/trust blockers. Keep runtime disabled; no actual activation, firmware/constants/native payload reads, executable actual request or camera contact."
   }
 }
