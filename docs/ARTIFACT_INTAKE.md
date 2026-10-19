@@ -27,7 +27,17 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [image-parser/header design](../research/IMAGE_HEADER_DESIGN.md),
+Latest continuation: [refused expanded-prefix trial](../research/EXPANDED_PREFIX_AUDIT.md),
+[commands/results](../research/sessions/20261018-RA-003-expanded-prefix.md).
+One frozen same-five expanded-header trial stopped **needs_review**, script exit **2**, host exit **1**, **38.945781s**.
+Qualification **278/278 passed**, zero skipped, exit **0**, **2.001s**; 27 new cases plus 251 retained, all 27 foundation files unchanged.
+Failure code **expanded_prefix_acceptance_failed**; no accepted expanded candidates, fresh directory or persisted stream-validation result.
+Static source/metadata review finds float timing fields in prior summaries rejected by the new freezer; this is a sufficient blocker, not a logged precise runtime stage.
+Observer cleanup reported no failures. No retry, fallback, changed threshold, child files or raw-prefix output.
+Earlier five unknown classifications and all prior evidence remain unchanged. No decompression/disassembly, upstream/firmware execution, camera or feature/write gate.
+Next single work package: **RA-003: design and synthetically qualify exact prior-metadata preflight using preserved production summaries, resolving the timing-field schema mismatch before any new actual prefix read**.
+
+Earlier continuation: [image-parser/header design](../research/IMAGE_HEADER_DESIGN.md),
 [commands/results](../research/sessions/20261018-RA-003-image-header-design.md).
 Four public parser blobs (**16,708 bytes**) verified at the existing immutable pin;
 published MIT notice reviewed and preserved with private source copies.
@@ -37,7 +47,7 @@ zero skipped, exit **0**, **1.271s**. All 23 baseline files unchanged.
 The new API remains standalone and unintegrated. **No actual firmware, member
 prefix or operational-constants read**; prior five unknown observations unchanged.
 No filesystem, English, native FTP, body-match, recovery or device-write gate.
-Next single work package: **RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage**.
+Historical next single work package: **RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage**.
 
 Earlier continuation: [selected-member prefix study](../research/MEMBER_PREFIX_AUDIT.md),
 [commands/results](../research/sessions/20261018-RA-003-member-prefix.md).

@@ -139,3 +139,17 @@ No filesystem, English, native FTP, body-match, recovery or device-write gate.
 
 See [exact commands/results](sessions/20261018-RA-003-image-header-design.md).
 Next single package: **RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage**.
+
+
+## Later refused expanded trial (2026-10-19 local / 2026-10-18 UTC)
+
+Earlier next-package recommendations are historical. See [trial](EXPANDED_PREFIX_AUDIT.md)
+and [commands/results](sessions/20261018-RA-003-expanded-prefix.md).
+One frozen same-five expanded-header trial stopped **needs_review**, script exit **2**, host exit **1**, **38.945781s**.
+Qualification **278/278 passed**, zero skipped, exit **0**, **2.001s**; 27 new cases plus 251 retained, all 27 foundation files unchanged.
+Failure code **expanded_prefix_acceptance_failed**; no accepted expanded candidates, fresh directory or persisted stream-validation result.
+Static source/metadata review finds float timing fields in prior summaries rejected by the new freezer; this is a sufficient blocker, not a logged precise runtime stage.
+Observer cleanup reported no failures. No retry, fallback, changed threshold, child files or raw-prefix output.
+Earlier five unknown classifications and all prior evidence remain unchanged. No decompression/disassembly, upstream/firmware execution, camera or feature/write gate.
+
+Next single package: **RA-003: design and synthetically qualify exact prior-metadata preflight using preserved production summaries, resolving the timing-field schema mismatch before any new actual prefix read**.

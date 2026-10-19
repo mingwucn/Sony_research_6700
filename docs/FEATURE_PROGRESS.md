@@ -32,16 +32,14 @@ storage copies, an exact inverse and recovery access for the relevant failure
 states remain required; synthetic guards are preparation only. See
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist).
 
-Latest shared RA-003: [image-parser/header design](../research/IMAGE_HEADER_DESIGN.md).
-Four public parser blobs (**16,708 bytes**) verified at the existing immutable pin;
-published MIT notice reviewed and preserved with private source copies.
-Separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates qualified
-with **251/251 synthetic passes** (49 new plus 202 retained),
-zero skipped, exit **0**, **1.271s**. All 23 baseline files unchanged.
-The new API remains standalone and unintegrated. **No actual firmware, member
-prefix or operational-constants read**; prior five unknown observations unchanged.
-No filesystem, English, native FTP, body-match, recovery or device-write gate.
-Next shared package: **RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage**.
+Latest shared RA-003: [refused expanded-prefix trial](../research/EXPANDED_PREFIX_AUDIT.md).
+One frozen same-five expanded-header trial stopped **needs_review**, script exit **2**, host exit **1**, **38.945781s**.
+Qualification **278/278 passed**, zero skipped, exit **0**, **2.001s**; 27 new cases plus 251 retained, all 27 foundation files unchanged.
+Failure code **expanded_prefix_acceptance_failed**; no accepted expanded candidates, fresh directory or persisted stream-validation result.
+Static source/metadata review finds float timing fields in prior summaries rejected by the new freezer; this is a sufficient blocker, not a logged precise runtime stage.
+Observer cleanup reported no failures. No retry, fallback, changed threshold, child files or raw-prefix output.
+Earlier five unknown classifications and all prior evidence remain unchanged. No decompression/disassembly, upstream/firmware execution, camera or feature/write gate.
+Next shared package: **RA-003: design and synthetically qualify exact prior-metadata preflight using preserved production summaries, resolving the timing-field schema mismatch before any new actual prefix read**.
 
 ## Verified preparation supporting these functions
 
@@ -132,7 +130,7 @@ Next shared package: **RA-003: implement and qualify an all-prefix reconciliatio
   No directory accepted; the later bounded diagnostic identifies the refusing field/predicate.
 
 The [completion audit](../research/PRE_CAMERA_AUDIT.md) accounts for all 27
-packages and validation families. Next single host package: **RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage**.
+packages and validation families. Next single host package: **RA-003: design and synthetically qualify exact prior-metadata preflight using preserved production summaries, resolving the timing-field schema mismatch before any new actual prefix read**.
 Ordinary acquisition and bounded signature evidence are recorded separately;
 source/binary correspondence and exact-body identity remain unresolved. EN-101 uses
 the owner-reported English absence to pursue restricted-language/resource

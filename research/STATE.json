@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "expanded_image_header_predicates_synthetic_qualified_full_lineage_integration_pending",
+  "phase": "expanded_prefix_trial_needs_review_prior_metadata_schema_blocker",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -68,13 +68,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_image_header_design_qualified_actual_comparison_and_feature_mapping_pending",
+      "status": "partial_expanded_prefix_trial_refused_metadata_schema_preflight_next",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 four immutable public-source parser audits and standalone synthetic header predicates; no actual firmware read or camera",
+      "scope": "R0 single same-five bounded comparison refused at acceptance; no accepted expanded result, no child files or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261018-RA-003-image-header-design.md",
+      "session_report": "research/sessions/20261018-RA-003-expanded-prefix.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -87,7 +87,8 @@
       "tar_path_diagnostic": "research/TAR_PATH_DIAGNOSTIC.md",
       "tar_link_inventory": "research/TAR_LINK_INVENTORY.md",
       "member_prefix_identification": "research/MEMBER_PREFIX_AUDIT.md",
-      "image_header_design": "research/IMAGE_HEADER_DESIGN.md"
+      "image_header_design": "research/IMAGE_HEADER_DESIGN.md",
+      "expanded_member_prefix_identification": "research/EXPANDED_PREFIX_AUDIT.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -158,12 +159,12 @@
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
     "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
     "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
-    "Official package/stream and private tar-directory identities are recorded. Five selected regular image-category prefixes remain unknown under the original classifier. Separate expanded header predicates are source-audited and synthetically qualified but unintegrated and unapplied. Full-lineage all-prefix reconciliation and a separately frozen actual comparison remain next. Child content, English resources/restrictions, native FTP backend and exact-body correspondence remain unproved; accepted-contract interaction, constants derivation and later copy/decompression/disassembly/distribution scope remain unresolved. No accepted target profile.",
+    "Official package/stream and prior private directory/member identities remain recorded. The single expanded-prefix trial was refused at acceptance with no expanded result or fresh lineage accepted. Static review finds float timing fields in whole prior summaries rejected by the new primitive-only freezer; production-metadata preflight must be designed and qualified before another actual read. Earlier five unknown classifications remain preserved. Full child formats/content, English resources/restrictions, native FTP backend and exact-body correspondence remain unproved; contract/constants/later-act scope and recovery/write gates remain unresolved.",
     "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them.",
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement and qualify an all-prefix reconciliation gate, then run one frozen expanded-header comparison on the same five members with full prior lineage",
+  "next_work_package": "RA-003: design and synthetically qualify exact prior-metadata preflight using preserved production summaries, resolving the timing-field schema mismatch before any new actual prefix read",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -199,7 +200,7 @@
       "priority": "primary",
       "status": "owner_reports_english_absent_mainland_version_feasibility_unverified",
       "camera_validated": false,
-      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established. A later metadata-only tar trial stopped at the fixed unsafe_path guard; no directory was accepted. That earlier trial did not identify the first refused field/category; the later diagnostic below supplies it. No feature conclusion follows. A later full-lineage diagnostic identifies the first refused field as link_target, origin header, predicate empty_or_parent_component. That diagnostic stopped semantic parsing and accepted no directory or feature. A separately qualified opaque-link metadata policy now permits a private directory inventory of 137 members after complete source/stream/header/span/prefix and tar framing checks. Links are not followed or materialized; no child formats, English resources or native FTP implementation are established. A later full-lineage selected-member prefix experiment checked five regular image-category candidates, 4,096 bytes each, against an exactly matching fresh directory. All five were unknown/unsupported_opaque under the fixed classifier; this does not prove format, English-resource or FTP-backend absence. Raw prefixes were discarded; no child files or feature result. Four pinned public image-parser sources and their published MIT notice were audited; separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates passed synthetic qualification. They remain unintegrated and were not applied to firmware; the five earlier unknown outcomes and all feature/device gates are unchanged.",
+      "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established. A later metadata-only tar trial stopped at the fixed unsafe_path guard; no directory was accepted. That earlier trial did not identify the first refused field/category; the later diagnostic below supplies it. No feature conclusion follows. A later full-lineage diagnostic identifies the first refused field as link_target, origin header, predicate empty_or_parent_component. That diagnostic stopped semantic parsing and accepted no directory or feature. A separately qualified opaque-link metadata policy now permits a private directory inventory of 137 members after complete source/stream/header/span/prefix and tar framing checks. Links are not followed or materialized; no child formats, English resources or native FTP implementation are established. A later full-lineage selected-member prefix experiment checked five regular image-category candidates, 4,096 bytes each, against an exactly matching fresh directory. All five were unknown/unsupported_opaque under the fixed classifier; this does not prove format, English-resource or FTP-backend absence. Raw prefixes were discarded; no child files or feature result. Four pinned public image-parser sources and their published MIT notice were audited; separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates passed synthetic qualification. They remain unintegrated and were not applied to firmware; the five earlier unknown outcomes and all feature/device gates are unchanged. One same-five expanded-header trial was refused at acceptance (needs_review); no expanded result or fresh lineage accepted. Static metadata review identifies float timing fields rejected by the new freezer. Earlier five unknown results remain unchanged; production-summary preflight is next, with no actual replay.",
       "blockers": [
         "Lawfully inspectable matching exact-build artifacts and regional applicability; exact SKU/internal product identity and binary hashes unverified",
         "Distinguish present-but-restricted English resources from missing/incomplete resources; prove narrow language policy and all consumers before any candidate"
@@ -237,7 +238,9 @@
         "research/MEMBER_PREFIX_AUDIT.md",
         "research/sessions/20261018-RA-003-member-prefix.md",
         "research/IMAGE_HEADER_DESIGN.md",
-        "research/sessions/20261018-RA-003-image-header-design.md"
+        "research/sessions/20261018-RA-003-image-header-design.md",
+        "research/EXPANDED_PREFIX_AUDIT.md",
+        "research/sessions/20261018-RA-003-expanded-prefix.md"
       ]
     },
     "native_wifi_ftp": {
@@ -245,7 +248,7 @@
       "priority": "primary",
       "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified",
       "camera_validated": false,
-      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established. A later metadata-only tar trial stopped at the fixed unsafe_path guard; no directory was accepted. That earlier trial did not identify the first refused field/category; the later diagnostic below supplies it. No feature conclusion follows. A later full-lineage diagnostic identifies the first refused field as link_target, origin header, predicate empty_or_parent_component. That diagnostic stopped semantic parsing and accepted no directory or feature. A separately qualified opaque-link metadata policy now permits a private directory inventory of 137 members after complete source/stream/header/span/prefix and tar framing checks. Links are not followed or materialized; no child formats, English resources or native FTP implementation are established. A later full-lineage selected-member prefix experiment checked five regular image-category candidates, 4,096 bytes each, against an exactly matching fresh directory. All five were unknown/unsupported_opaque under the fixed classifier; this does not prove format, English-resource or FTP-backend absence. Raw prefixes were discarded; no child files or feature result. Four pinned public image-parser sources and their published MIT notice were audited; separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates passed synthetic qualification. They remain unintegrated and were not applied to firmware; the five earlier unknown outcomes and all feature/device gates are unchanged.",
+      "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established. A later metadata-only tar trial stopped at the fixed unsafe_path guard; no directory was accepted. That earlier trial did not identify the first refused field/category; the later diagnostic below supplies it. No feature conclusion follows. A later full-lineage diagnostic identifies the first refused field as link_target, origin header, predicate empty_or_parent_component. That diagnostic stopped semantic parsing and accepted no directory or feature. A separately qualified opaque-link metadata policy now permits a private directory inventory of 137 members after complete source/stream/header/span/prefix and tar framing checks. Links are not followed or materialized; no child formats, English resources or native FTP implementation are established. A later full-lineage selected-member prefix experiment checked five regular image-category candidates, 4,096 bytes each, against an exactly matching fresh directory. All five were unknown/unsupported_opaque under the fixed classifier; this does not prove format, English-resource or FTP-backend absence. Raw prefixes were discarded; no child files or feature result. Four pinned public image-parser sources and their published MIT notice were audited; separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates passed synthetic qualification. They remain unintegrated and were not applied to firmware; the five earlier unknown outcomes and all feature/device gates are unchanged. One same-five expanded-header trial was refused at acceptance (needs_review); no expanded result or fresh lineage accepted. Static metadata review identifies float timing fields rejected by the new freezer. Earlier five unknown results remain unchanged; production-summary preflight is next, with no actual replay.",
       "blockers": [
         "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
@@ -283,7 +286,9 @@
         "research/MEMBER_PREFIX_AUDIT.md",
         "research/sessions/20261018-RA-003-member-prefix.md",
         "research/IMAGE_HEADER_DESIGN.md",
-        "research/sessions/20261018-RA-003-image-header-design.md"
+        "research/sessions/20261018-RA-003-image-header-design.md",
+        "research/EXPANDED_PREFIX_AUDIT.md",
+        "research/sessions/20261018-RA-003-expanded-prefix.md"
       ]
     },
     "fl2_fl3_still_looks": {
@@ -1518,6 +1523,20 @@
       "names_or_unknown_results_are_not_feature_evidence": true,
       "component_copying_decompression_disassembly_or_distribution_cleared": false,
       "device_authorization_granted": false
+    },
+    "B_expanded_member_prefix_identification": {
+      "report": "research/EXPANDED_PREFIX_AUDIT.md",
+      "assessment": "Same-five bounded private format-study trial within the existing documented narrow rationale; accepted-contract interaction and constants derivation unresolved",
+      "performed": true,
+      "planned_selected_regular_members": 5,
+      "planned_prefix_bytes": 20480,
+      "raw_prefix_output": false,
+      "all_prior_prefixes_and_original_outcomes_reconciled": false,
+      "whole_measured_and_directory_exact": false,
+      "reconciliation_not_accepted": true,
+      "container_or_feature_validation": false,
+      "component_copying_decompression_disassembly_or_distribution_cleared": false,
+      "device_authorization_granted": false
     }
   },
   "latest_fdat_probe_tests": {
@@ -2581,5 +2600,64 @@
       "test_header_review.py": "eeb7f90d08730f29d1cb52e770d6094627babbed125049ebf5b4aef55cf77405",
       "test_design_all.py": "c8a41697b0e741547afc5d299a0667bca5a647ecefaae708c806d95447599c53"
     }
+  },
+  "bounded_expanded_member_prefix_identification": {
+    "report": "research/EXPANDED_PREFIX_AUDIT.md",
+    "session_report": "research/sessions/20261018-RA-003-expanded-prefix.md",
+    "evidence_class": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "status": "needs_review_expanded_prefix_acceptance_failed",
+    "synthetic_total": 278,
+    "synthetic_passed": 278,
+    "synthetic_skipped": 0,
+    "synthetic_exit_code": 0,
+    "synthetic_unittest_seconds": 2.001,
+    "retained_baseline_sources": 27,
+    "retained_baseline_tests": 251,
+    "new_synthetic_tests": 27,
+    "actual_exit_code": 2,
+    "host_exit_code": 1,
+    "actual_elapsed_seconds": 38.945781,
+    "pipeline_attempts": 1,
+    "planned_same_descriptor_passes": 2,
+    "automatic_retry_or_fallback": false,
+    "planned_selected_regular_members": 5,
+    "prefix_limit_bytes": 4096,
+    "planned_prefix_bytes": 20480,
+    "phase": "complete_prior_lineage_directory_all_prefix_reconciliation_then_expanded_headers",
+    "error_type": "ExpandedAcceptanceError",
+    "bounded_reason_code": "expanded_prefix_acceptance_failed",
+    "accepted_inventory_present": false,
+    "fresh_stream_validation_persisted": false,
+    "expanded_candidates_accepted": false,
+    "full_prior_lineage_accepted": false,
+    "runtime_internal_refusal_stage_recorded": false,
+    "static_diagnosis": "Whole prior stream and component-prefix summaries contain float timing fields rejected by the new primitive-only freezer; this is a sufficient deterministic pre-acceptance blocker, not a logged precise runtime stage",
+    "static_inference_expanded_calls_unreached": true,
+    "observer_cleanup": {
+      "tar_discard_failed": false,
+      "prefix_discard_failed": false,
+      "member_discard_failed": false
+    },
+    "earlier_actual_results_preserved": true,
+    "sealed_code_changed_after_trial": false,
+    "maximum_combined_raw_selected_bytes": 65536,
+    "planned_combined_raw_selected_bytes": 40960,
+    "managed_design_allowance_bytes": 20971520,
+    "whole_process_memory_cap": false,
+    "raw_prefix_output": false,
+    "component_files_written": false,
+    "decoded_stream_file_written": false,
+    "private_input_upload": false,
+    "decompression_performed": false,
+    "disassembly_performed": false,
+    "upstream_execution_performed": false,
+    "firmware_execution_performed": false,
+    "component_formats_validated": false,
+    "body_correspondence_verified": false,
+    "feature_or_device_write_gate_passed": false,
+    "camera_commands": []
   }
 }
