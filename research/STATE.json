@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "two_dependency_input_roles_qualified_remaining_semantics_pending",
+  "phase": "six_basis_roles_recomputed_prior_two_dependency_roles_separate_remaining_semantics_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -284,7 +284,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement and independently review basis, source-manifest and prerequisite cross-validation against the existing ordinary role-planning and pure GDT preflight contracts, using invented records and authored checked-buffer sources. Bind the nine-role basis, protected source/constants identity labels and current role/import plan; preserve the two-role dependency checks and explicitly track the other pending ordinary roles. Qualify stale/rebound/mismatched metadata refusal. Keep runtime disabled; no actual activation records, dependency activation, firmware/constants/native payload reads or camera.",
+  "next_work_package": "RA-003: implement and qualify current authored-source manifest/receipt binding, then compose the six basis-role and two dependency-role validators against the same checked source inventory and explicit dependency anchors. Reject source rebinding/stale receipts; preserve legacy-plan/successor-dependency compatibility and activity/qualification authority gaps. Runtime disabled; no actual firmware/constants/native payload reads or camera.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8481,24 +8481,24 @@
     }
   },
   "latest_host_focused_suite": {
-    "total": 66,
-    "passed": 66,
+    "total": 96,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "seconds": 3.9564369000145234,
+    "seconds": 10.482354000036139,
     "source_stable": true,
     "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
     "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
-    "log_sha256": "f09b72fbae84e02c2b206e8192e5148aca5ea41754f1aef7e24208779e276e40",
-    "loaded_dependency_aliases": [],
     "actual_inputs_accessed": false,
+    "installed_dependency_aliases": [],
     "execution_authorized": false,
     "camera_commands": [],
+    "log_sha256": "b8fa07447a1507125ce8ac4594dcb14463f2ccaeaa2f29ac0382ae721df748f1",
     "exit_code": 0,
-    "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
+    "passed": 96,
+    "report": "research/sessions/20261020-RA-003-basis-recompute.md",
     "hardware_coverage": false,
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-dependency-input-semantics/final/qualify.py"
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-basis-recompute/final/qualify.py"
   },
   "owner_project_check_20261019_i": {
     "date": "2026-10-19",
@@ -8572,7 +8572,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
+  "latest_report": "research/sessions/20261020-RA-003-basis-recompute.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -8652,5 +8652,58 @@
       "camera_commands": []
     },
     "next_reference_package": "FT-101: assess public FTP implementation and direct camera-to-server Wi-Fi evidence when published"
+  },
+  "basis_role_recomputation": {
+    "status": "six_basis_roles_retained_contract_recomputed_invented_only",
+    "report": "research/sessions/20261020-RA-003-basis-recompute.md",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "focused_tests": {
+      "total": 96,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 10.482354000036139,
+      "source_stable": true,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "actual_inputs_accessed": false,
+      "installed_dependency_aliases": [],
+      "execution_authorized": false,
+      "camera_commands": [],
+      "log_sha256": "b8fa07447a1507125ce8ac4594dcb14463f2ccaeaa2f29ac0382ae721df748f1",
+      "exit_code": 0
+    },
+    "source_test_scope_pins": 93,
+    "retained_tests": 66,
+    "new_public_tests": 12,
+    "new_private_integration_tests": 18,
+    "checked_roles": [
+      "basis",
+      "binding_plan",
+      "binding_schema",
+      "prerequisites",
+      "role_authority",
+      "source_manifest"
+    ],
+    "pending_ordinary_roles_this_api": 8,
+    "prior_dependency_roles_revalidated_here": false,
+    "protected_role_code_executed": false,
+    "pinned_authored_validators_executed": 11,
+    "role_sources_ast_checked": 26,
+    "dependency_bridge_verified": false,
+    "metadata_freshness_verified": false,
+    "actual_startup_verified": false,
+    "actual_inputs_accessed": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "requested_reference_refresh_only_no_shared_pre_camera_implementation_progress",
+    "current_goal_turn": "progress_six_retained_basis_roles_recomputed_and_qualified",
+    "next_work_package": "RA-003: implement and qualify current authored-source manifest/receipt binding, then compose the six basis-role and two dependency-role validators against the same checked source inventory and explicit dependency anchors. Reject source rebinding/stale receipts; preserve legacy-plan/successor-dependency compatibility and activity/qualification authority gaps. Runtime disabled; no actual firmware/constants/native payload reads or camera."
   }
 }
