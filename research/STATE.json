@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "binding_basis_composition_30_qualified_reviewed_saved_diagnostic_pending",
+  "phase": "saved_complete_binding_plan_and_nine_role_preflight_reconciled_semantics_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -68,13 +68,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_v4_factory_source_gate_qualified_parent_composition_pending",
+      "status": "partial_saved_binding_plan_and_preflight_reconciled_semantics_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 ordinary Python source preparation and invented v4 gate/loader tests; parent/child integration pending",
+      "scope": "R0 ordinary saved metadata and reviewed pure helper composition; full semantics and operational acceptance pending",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-factory-source-gate.md",
+      "session_report": "research/sessions/20261019-RA-003-binding-basis-diagnostic.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -107,9 +107,16 @@
       ],
       "gdt_outer_source_preparation": "research/GDT_OUTER_BINDING_PREPARATION.md",
       "latest_host_continuation": {
-        "report": "research/sessions/20261019-RA-003-dependency-continuation.md",
-        "status": "dependency_only_continuation_observed_operational_basis_review_pending"
-      }
+        "report": "research/sessions/20261019-RA-003-binding-basis-diagnostic.md",
+        "status": "saved_complete_binding_plan_and_nine_role_preflight_reconciled_semantics_pending"
+      },
+      "status_history": [
+        {
+          "status": "partial_v4_factory_source_gate_qualified_parent_composition_pending",
+          "session_report": "research/sessions/20261019-RA-003-factory-source-gate.md",
+          "scope": "R0 ordinary Python source preparation and invented v4 gate/loader tests; parent/child integration pending"
+        }
+      ]
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -185,7 +192,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: prepare and independently review a once-only ordinary-metadata diagnostic binding the eleven pure helper hashes to the frozen v6 source graph; recompute the entire binding plan with the real interpreter namespace and rerun the existing nine-role preflight, retaining full semantics and execution gates as unresolved.",
+  "next_work_package": "RA-003: implement and qualify comprehensive saved-only semantic predicates for the nine-role basis, explicitly retaining claims requiring fresh observation as blockers; obtain independent source review before any new actual metadata or protected-input act.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4984,5 +4991,117 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "FT-101: assess published FTP implementation and direct camera-to-server Wi-Fi evidence against the saved checklist when available."
+  },
+  "ra003_binding_basis_diagnostic": {
+    "report": "research/sessions/20261019-RA-003-binding-basis-diagnostic.md",
+    "status": "saved_complete_binding_plan_and_nine_role_preflight_reconciled_semantics_pending",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "previous_goal_turn": "external_reference_unchanged_no_pre_camera_gate_advance",
+    "current_goal_turn": "progress",
+    "tests": 76,
+    "passed": 76,
+    "skipped": 0,
+    "test_groups": [
+      11,
+      13,
+      16,
+      19,
+      17
+    ],
+    "test_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "suite_seconds": [
+      0.093,
+      0.041,
+      0.157,
+      2.316,
+      0.867
+    ],
+    "final_source_log_pins": 15,
+    "original_snapshot_pins_preserved": 12,
+    "source_reviewers": 2,
+    "outcome_reviewers": 2,
+    "source_review_sha256": {
+      "gate-diagnostic-source-review-r2.json": "165247e6baada6adc48024ca7fca015dbfae2d515ccdf34a520a53ba0afcf73d",
+      "runtime-diagnostic-source-review-r2.json": "974489c793dde8b86a43883d9864177cf10f4becd8751302efdce8cf8059bd04"
+    },
+    "outcome_review_sha256": {
+      "gate-diagnostic-outcome-review.json": "7262251974f2b8cd5b8676d1f9566ae72769f7b131f030bafbf9b5e80e33bfb1",
+      "runtime-diagnostic-outcome-review.json": "e31119ebcaedf88d2fa79dbee2956c29829131af381db8f2e4787c45cceeb4cc"
+    },
+    "diagnostic_attempts": 1,
+    "diagnostic_exit_code": 0,
+    "supervisor_exit_code": 0,
+    "separate_host_completion_receipt": true,
+    "child_wall_seconds": 0.68248560000211,
+    "passed_stages": [
+      "reviewed_v6_qualification_evidence",
+      "historical_parent_evidence",
+      "old_integration_snapshot_current_qualifications",
+      "reviewed_source_repairs",
+      "reviewed_factory_sources",
+      "complete_ordinary_source_cache",
+      "reviewed_dependency_completion_and_cache",
+      "observed_no_site_startup_profile",
+      "saved_native_anchor",
+      "observed_runtime_source_identity",
+      "observed_dependency_profile_and_sources",
+      "basis_identity_and_roster",
+      "basis_role_digests",
+      "basis_source_package_identity",
+      "prerequisite_roles",
+      "binding_orders",
+      "complete_plan_and_nine_role_preflight"
+    ],
+    "read_receipts": 53,
+    "ordinary_read_bytes": 2397309,
+    "fixed_bootstrap_documents": 17,
+    "supplemental_documents": 9,
+    "mapped_documents": 27,
+    "cached_source_buffers": 47,
+    "cached_source_bytes": 814219,
+    "role_buffers_AST_checked": 26,
+    "effective_qualified_sources": 29,
+    "basis_roles": 9,
+    "pure_cached_helpers_executed": 11,
+    "observed_namespace_aliases": 97,
+    "namespace_unchanged_during_checks": true,
+    "complete_binding_plan_recomputed": true,
+    "nine_role_preflight_crossbindings_validated": true,
+    "complete_saved_basis_semantic_revalidation": false,
+    "fresh_observations_revalidated": false,
+    "retained_binding_blockers": [
+      "dependency_manifest_unobserved",
+      "native_policy_unobserved"
+    ],
+    "source_sha256": "360e2fa4690cf4e7766ce5708c46ce014a01c910d0b308aa8a4c94b288f154bb",
+    "supervisor_sha256": "1ec59955e7d519cf45920e9637e00fde44af80cd98b3697bff54cc5ccfb617bf",
+    "freeze_sha256": "d33ef44a2c228b3e7f4e71d59b76f8eedfe5eb3bf18949d75d919ad01022ceb7",
+    "result_sha256": "e7ddef7a3321f6d0e9ae85bf9dead888f7acebf0a996722563a628b1a5bbbec1",
+    "ledger_sha256": "535757cf33e7a78422e9d9620b52077ec939c8ef6616af00cd22ba25cec3f4e0",
+    "host_completion_sha256": "338c8e86bbd30a0ec8a0a74347bbbb171efa3048fe4ffe6566c318628cf6556d",
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "actual_gdt_replay": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "saved_raw_prefix_opened": false,
+    "installed_dependency_executed": false,
+    "protected_cached_sources_executed": false,
+    "private_upload": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: implement and qualify comprehensive saved-only semantic predicates for the nine-role basis, explicitly retaining claims requiring fresh observation as blockers; obtain independent source review before any new actual metadata or protected-input act."
   }
 }

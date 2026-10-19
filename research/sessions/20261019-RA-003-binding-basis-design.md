@@ -38,14 +38,14 @@ Both final source/evidence reviews accepted the corrected design with no finding
 
 ## Commands and results
 
-Interpreter: `C:ProgramDataminiconda3python.exe`, CPython **3.13.12**, Windows AMD64.
+Interpreter: `C:/ProgramData/miniconda3/python.exe`, CPython **3.13.12**, Windows AMD64.
 
 ```powershell
 git status --short --branch
 git switch -c codex/ra003-binding-basis-design
-C:ProgramDataminiconda3python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-binding-basis-design/test_metadata_checks.py *> private/sessions/20261019-RA-003-binding-basis-design/tests-initial.log
-C:ProgramDataminiconda3python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-binding-basis-design/test_metadata_checks.py *> private/sessions/20261019-RA-003-binding-basis-design/tests-r2.log
-C:ProgramDataminiconda3python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-binding-basis-design/test_metadata_checks.py *> private/sessions/20261019-RA-003-binding-basis-design/tests-final.log
+C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-binding-basis-design/test_metadata_checks.py *> private/sessions/20261019-RA-003-binding-basis-design/tests-initial.log
+C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-binding-basis-design/test_metadata_checks.py *> private/sessions/20261019-RA-003-binding-basis-design/tests-r2.log
+C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-binding-basis-design/test_metadata_checks.py *> private/sessions/20261019-RA-003-binding-basis-design/tests-final.log
 ```
 
 All exit **0**, with case counts/times above. Host-only metadata/source/hash preparation scripts used `python.exe -I -S -B -X utf8 -`. One exploratory `rg` command used an unsupported Windows glob and found no matching files, exit 1; subsequent explicit paths resolved it. No implementation or test failure caused a protected-input read. Initial publication verifier expected both reviewers to use the same findings field and stopped with KeyError before any continuity mutation. Their exact distinct schemas were then inspected and checked; no review or acceptance threshold changed. JSON/hash/link checks and `git diff --check` pass before staging. Historical suites/diagnostic are not replayed.
