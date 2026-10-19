@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "invented_outer_child_qualified_operational_delta_pending",
+  "phase": "operational_delta_reviewed_successor_continuation_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -73,7 +73,7 @@
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-clean-outer-child.md",
+      "session_report": "research/sessions/20261019-RA-003-operational-delta.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -7884,5 +7884,66 @@
     "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_external_source_refresh_only",
     "current_goal_turn": "progress_invented_clean_outer_child_and_parent_failure_reconciliation_qualified",
     "next_work_package": "RA-003: reconcile the invented clean-child source closure and neutral import semantics with the frozen operational binding/dependency contract; prepare and independently review a source-only operational delta and remaining-blocker matrix. No dependency activation, firmware/constants reads or camera."
+  },
+  "dependency_operational_delta": {
+    "date": "2026-10-19",
+    "status": "source_only_operational_delta_prepared",
+    "report": "research/sessions/20261019-RA-003-operational-delta.md",
+    "matrix": "research/DEPENDENCY_OPERATIONAL_DELTA.md",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "source_files": 14,
+    "static_checks": 18,
+    "static_audit_modules_imported": false,
+    "focused_tests": {
+      "total": 38,
+      "passed": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 32.83505409996724,
+      "exit_code": 0,
+      "source_stable": true,
+      "log_sha256": "ba053311f845f958474e7296e01d2a4f6ab715c5177cb5028ca4c43102225b85"
+    },
+    "source_audit_sha256": "e8197f9a0e09c38119dbfa5e7f8f652053439a66930cb31c81d8a23228c18356",
+    "runtime_continuation_api_gap": true,
+    "old_verifier_schema_migration_pending": true,
+    "operational_packet_assembled": false,
+    "historical_seventeen_blockers_retained": true,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_invented_clean_outer_child_and_parent_reconciliation_qualified",
+    "current_goal_turn": "progress_operational_api_and_verifier_gaps_source_verified_delta_prepared",
+    "next_work_package": "RA-003: implement and independently review a shared internal collected-controller continuation with internally constructed runtime observers and no injectable observer on the runtime path; expose only invented qualification while runtime entry/CLI remains disabled. Qualify operation/source/ownership/receipt/refusal behavior on invented inputs. No dependency activation, firmware/constants reads or camera."
+  },
+  "owner_project_check_20261019_e": {
+    "date": "2026-10-19",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "unchanged_from_locked_revision": true,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "immutable_documents_verified": 4,
+    "tree_entries": 51,
+    "tree_blobs": 39,
+    "english": "No unlock located in unchanged previously audited sources or refreshed documents",
+    "ftp": "Author-reported RAW+JPEG success; implementation unpublished; direct Wi-Fi/no-relay reproduction pending",
+    "recovery": "Full storage coverage and restoration unverified",
+    "test_total": 17,
+    "test_passed": 17,
+    "test_exit_code": 0,
+    "test_seconds": 1.7722840000060387,
+    "camera_commands": [],
+    "feature_or_write_gate_passed": false,
+    "report": "research/sessions/20261019-owner-project-check-e.md",
+    "next_reference_package": "FT-101: source-only audit of the FTP implementation and direct camera-to-server Wi-Fi test evidence when published; establish exact build identity, source/payload correspondence, transfer equality, failure handling and reversal/recovery coverage before considering any device step."
   }
 }
