@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "operational_delta_reviewed_successor_continuation_pending",
+  "phase": "internal_continuation_invented_qualified_parent_migration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -73,7 +73,7 @@
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-operational-delta.md",
+      "session_report": "research/sessions/20261019-RA-003-internal-continuation.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -7945,5 +7945,64 @@
     "feature_or_write_gate_passed": false,
     "report": "research/sessions/20261019-owner-project-check-e.md",
     "next_reference_package": "FT-101: source-only audit of the FTP implementation and direct camera-to-server Wi-Fi test evidence when published; establish exact build identity, source/payload correspondence, transfer equality, failure handling and reversal/recovery coverage before considering any device step."
+  },
+  "dependency_internal_continuation": {
+    "date": "2026-10-19",
+    "status": "invented_internal_continuation_qualified",
+    "report": "research/sessions/20261019-RA-003-internal-continuation.md",
+    "design": "research/DEPENDENCY_INTERNAL_CONTINUATION.md",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "full_public": {
+      "total": 679,
+      "passed": 676,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "seconds": 270.64993700000923,
+      "source_stable": true,
+      "exit_code": 0,
+      "log_sha256": "037224865959a1d7fc0b2581d7b3800bc1db8aa65c73497ab41470a50ebc5b31"
+    },
+    "real_invented_outer": {
+      "total": 18,
+      "passed": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 246.0673260000185,
+      "source_stable": true,
+      "exit_code": 0,
+      "log_sha256": "37a1a569eace7ba3b151156f28cf6c35400d57e2106a37cd4f32d4df5f4e0a5f"
+    },
+    "terminal_fallback": {
+      "total": 3,
+      "passed": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 25.054357399989385,
+      "source_stable": true,
+      "exit_code": 0,
+      "log_sha256": "b219e0ece49c1c352f041b3ba0499a2c23803563265f560b2ac1c634aa528f44"
+    },
+    "source_pin_count": 107,
+    "runtime_observer_internally_constructed": true,
+    "public_controller_runtime_enabled": false,
+    "runtime_controller_composition_observed": false,
+    "parent_schema_migration_pending": true,
+    "historical_seventeen_blockers_retained": true,
+    "operational_packet_assembled": false,
+    "execution_authorized": false,
+    "actual_dependency_observation_performed": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_reference_refresh_only",
+    "current_goal_turn": "progress_shared_internal_continuation_implemented_reviewed_and_invented_qualified",
+    "next_work_package": "RA-003: migrate the frozen operational parent/wiring to the current collected-controller contract using invented inputs only; derive the exact successor source closure, verify all eleven dependency artifacts and both bridge envelopes, retain ordinary-only parent loading and single-owner cleanup, and qualify refusal/unknown-completion reconciliation. Keep runtime entry disabled; no dependency activation, firmware/constants reads or camera."
   }
 }

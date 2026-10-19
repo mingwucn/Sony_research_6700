@@ -302,6 +302,26 @@ class RuntimeGrammarTests(unittest.TestCase):
         self.assertEqual(value,'not executed');self.assertIs(type(run.call_args.kwargs['ops']),producer.RuntimeOps)
         self.assertIs(run.call_args.kwargs['invented'],False)
 
+    def test_internal_continuation_keeps_concrete_runtime_observer_construction(self):
+        continuation = lambda AES, vectors: None
+        with self.modeled_runtime(), patch.object(execution, '_produce_collected', return_value='not executed') as run:
+            value = execution._produce_collected_runtime(inputs=self.data, folder='unused', continuation=continuation)
+        self.assertEqual(value, 'not executed')
+        self.assertIs(type(run.call_args.kwargs['ops']), producer.RuntimeOps)
+        self.assertIs(run.call_args.kwargs['continuation'], continuation)
+        self.assertIs(run.call_args.kwargs['invented'], False)
+
+    def test_public_runtime_api_cannot_receive_observer_or_continuation(self):
+        for key in ('ops', 'continuation', 'callback'):
+            with self.subTest(key=key), self.assertRaises(TypeError):
+                execution.produce_collected_runtime(inputs=self.data, folder='unused', **{key: object()})
+
+    def test_invalid_internal_continuation_refuses_before_observer_construction(self):
+        with patch.object(producer, 'RuntimeOps') as ops:
+            with self.assertRaisesRegex(core.EvidenceError, '^controller_continuation$'):
+                execution._produce_collected_runtime(inputs=self.data, folder='unused', continuation=object())
+        ops.assert_not_called()
+
     def test_unsupported_runtime_refuses_before_ops_or_outputs(self):
         for change in ('platform','implementation','flags','preloaded'):
             with self.subTest(change=change),self.modeled_runtime(),patch.object(producer,'RuntimeOps') as ops,patch.object(

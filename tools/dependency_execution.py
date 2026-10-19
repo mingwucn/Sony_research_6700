@@ -139,18 +139,31 @@ def produce_collected_runtime(*, inputs, folder):
     No custom observer or callback accepted. A reviewed exact activation packet
     and independent current expectations are prerequisites, not supplied here.
     """
+    return _produce_collected_runtime(inputs=inputs, folder=folder)
+
+
+def _produce_collected_runtime(*, inputs, folder, continuation=None):
+    """Internal composition seam; the concrete observer is always constructed here.
+
+    A continuation belongs to reviewed authored code, not a runtime packet or
+    observer supplied by an entry caller. This function is not an authority check.
+    The controller's public runtime entry remains disabled.
+    """
+    core._need(continuation is None or callable(continuation), 'controller_continuation')
     core._need(producer.os.name=='nt' and producer.sys.implementation.name=='cpython','runtime_platform')
     core._need(producer.sys.flags.isolated==1 and producer.sys.flags.no_site==1 and
         producer.sys.flags.no_user_site==1 and producer.sys.dont_write_bytecode is True and
         producer.sys.flags.optimize==0,'runtime_flags')
     core._need(not any(n.split('.')[0] in ('ctypes','_ctypes','platform','cffi','_cffi_backend','pycparser','Cryptodome')
         for n in producer.sys.modules),'preloaded_runtime_origin')
-    return _produce_collected(inputs=inputs,ops=producer.RuntimeOps(),folder=folder,invented=False)
+    kwargs = {} if continuation is None else dict(continuation=continuation)
+    return _produce_collected(inputs=inputs,ops=producer.RuntimeOps(),folder=folder,invented=False,**kwargs)
 
 
-def _produce_collected(*, inputs, ops, folder, invented):
+def _produce_collected(*, inputs, ops, folder, invented, continuation=None):
     from tools import dependency_package_preflight as collector
     core._need(type(invented) is bool,'collection_mode')
+    core._need(continuation is None or callable(continuation), 'controller_continuation')
     mode='invented' if invented else 'saved_records'
     core._shape(inputs,('expectation','package','binding','config_json','cache_json','source_buffers'))
     policy,package,binding,_,_=producer.bind_inputs(**inputs)
@@ -167,7 +180,8 @@ def _produce_collected(*, inputs, ops, folder, invented):
             evidence_mode=mode,test_injection_used=invented)
         output.small('collection.json',collection);output.small('transition.json',transition)
         stage='producer'
-        producer._produce(**observed,ops=ops,folder=str(output.folder/'producer'),invented=invented)
+        producer._produce(**observed,ops=ops,folder=str(output.folder/'producer'),invented=invented,
+                          continuation=continuation)
         stage='verification'
         core._need(set(p.name for p in (output.folder/'producer').iterdir())==set(ARTIFACTS),'artifact_roster')
         artifacts={name:producer.read_verified(str(output.folder/'producer'/name),limit=4*1024**2)[0]

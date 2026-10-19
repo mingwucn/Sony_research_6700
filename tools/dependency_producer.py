@@ -290,8 +290,10 @@ class RuntimeOps:
     def callback(self,AES,vectors):run_vectors(AES,vectors)
 
 
-def _produce(*,expectation,package,binding,config_json,cache_json,source_buffers,folder,ops,invented):
+def _produce(*,expectation,package,binding,config_json,cache_json,source_buffers,folder,ops,invented,
+             continuation=None):
     """Internal engine; future real activation needs a separately reviewed outer entry."""
+    need(continuation is None or callable(continuation),'controller_continuation')
     policy,package,binding,config,buffers=bind_inputs(expectation,package,binding,config_json,cache_json,source_buffers)
     old_meta=list(sys.meta_path);old_path=list(sys.path)
     need(not any(n=='Cryptodome' or n.startswith('Cryptodome.') or n.split('.')[0] in ('cffi','_cffi_backend','pycparser') for n in sys.modules),'preloaded_alias')
@@ -332,6 +334,17 @@ def _produce(*,expectation,package,binding,config_json,cache_json,source_buffers
             trusted_origins=trusted,native_loads=guard.loads,vectors=vectors,events=list(out.events))
         raw,anchor=out.publish(transcript,policy['operation_id']);out.verify_raw(raw)
         out.emit('callback_claimed',anchor);ops.callback(AES,config['vectors'])
+        if continuation is not None:
+            # Keep observer construction/behavior independent of the authored
+            # controller. Never hide a swallowed observer failure by entering it.
+            need(not guard.failed and not finder.failed and guard.pending is None,'sticky_guard_failure')
+            need(sys.meta_path==[finder]+old_meta and sys.path==old_path and backend.CDLL is wrapped,'runtime_changed')
+            for alias,module in finder.owned.items():need(sys.modules.get(alias) is module,'source_ownership')
+            need(roots=={name:ops.root(row['path']) for name,row in policy['roots'].items()},'root_changed')
+            out.verify_raw(raw)
+            continuation(AES,config['vectors'])
+            # The current raw receipt must also survive the controller/release.
+            out.verify_raw(raw)
         need(not guard.failed and not finder.failed and guard.pending is None,'sticky_guard_failure')
         need(sys.meta_path==[finder]+old_meta and sys.path==old_path and backend.CDLL is wrapped,'runtime_changed')
         for alias,module in finder.owned.items():need(sys.modules.get(alias) is module,'source_ownership')

@@ -213,6 +213,168 @@ class ControllerTests(unittest.TestCase):
             self.execute(make_callbacks_after_receipt=factory)
         self.assertEqual(self.releases, 1)
 
+    def test_observer_callback_is_preserved_before_internal_continuation(self):
+        seen = []
+        self.ops.callback_action = lambda op, AES: seen.append((self.controller_calls, self.factories))
+        self.execute()
+        self.assertEqual(seen, [(0, 0)])
+        self.assertEqual((self.ops.callback_calls, self.ops.cipher_calls), (1, 72))
+
+    def test_swallowed_observer_load_failure_prevents_controller_entry(self):
+        def callback(op, AES):
+            try: op.modules['ctypes'].CDLL('C:/invented/forbidden.pyd')
+            except core.EvidenceError: pass
+        self.ops.callback_action = callback
+        with self.assertRaisesRegex(core.EvidenceError, '^sticky_guard_failure$'): self.execute()
+        self.assertEqual((self.controller_calls, self.factories, self.releases, self.closes), (0, 0, 0, 1))
+
+    def test_observer_raw_receipt_change_prevents_controller_entry(self):
+        def callback(op, AES):
+            (self.folder/'collected/producer/raw.json').write_bytes(b'{}')
+        self.ops.callback_action = callback
+        with self.assertRaisesRegex(core.EvidenceError, '^raw_readback$'): self.execute()
+        self.assertEqual((self.controller_calls, self.releases, self.closes), (0, 0, 1))
+
+    def test_source_owner_changed_before_internal_continuation_refuses(self):
+        self.ops.callback_action = lambda op, AES: sys.modules.__setitem__('Cryptodome.Random', types.ModuleType('foreign'))
+        with self.assertRaisesRegex(core.EvidenceError, '^source_ownership$'): self.execute()
+        self.assertEqual((self.controller_calls, self.releases, self.closes), (0, 0, 1))
+
+    def test_internal_factory_can_be_claimed_only_once(self):
+        def run(**kwargs):
+            kwargs['make_callbacks'](object(), object())
+            kwargs['make_callbacks'](object(), object())
+            return self.result
+        self.control.run_child_reserved = run
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_factory_reentry$'): self.execute()
+        self.assertEqual((self.factories, self.releases, self.closes), (1, 1, 1))
+
+    def test_controller_success_without_factory_is_refused(self):
+        self.control.run_child_reserved = lambda **kwargs: self.result
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_factory$'): self.execute()
+        self.assertEqual((self.factories, self.releases, self.closes), (0, 1, 1))
+
+    def test_swallowed_factory_failure_cannot_be_promoted_to_success(self):
+        def fail(*args): raise ValueError('factory failed')
+        def run(**kwargs):
+            try: kwargs['make_callbacks'](object(), object())
+            except ValueError: pass
+            return self.result
+        self.control.run_child_reserved = run
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_factory$'):
+            self.execute(make_callbacks_after_receipt=fail)
+        self.assertEqual((self.releases, self.closes), (1, 1))
+
+    def test_swallowed_factory_reentry_cannot_be_promoted_to_success(self):
+        def run(**kwargs):
+            kwargs['make_callbacks'](object(), object())
+            try: kwargs['make_callbacks'](object(), object())
+            except core.EvidenceError: pass
+            return self.result
+        self.control.run_child_reserved = run
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_factory$'): self.execute()
+        self.assertEqual((self.factories, self.releases, self.closes), (1, 1, 1))
+
+    def test_factory_failure_keeps_primary_and_releases_once(self):
+        def fail(*args): raise KeyboardInterrupt('factory failed')
+        def release(): self.releases += 1; raise OSError('release failed')
+        with self.assertRaisesRegex(KeyboardInterrupt, 'factory failed'):
+            self.execute(make_callbacks_after_receipt=fail, release_callbacks_after_controller=release)
+        self.assertEqual((self.releases, self.closes), (1, 1))
+
+    def test_factory_refuses_operation_change_after_controller_entry(self):
+        def run(**kwargs):
+            self.identity['operation_id'] = 'other_valid_operation'
+            kwargs['make_callbacks'](object(), object())
+            return self.result
+        self.control.run_child_reserved = run
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_context$'): self.execute()
+        self.assertEqual((self.factories, self.releases, self.closes), (0, 1, 1))
+
+    def test_factory_refuses_receipt_change_after_controller_entry(self):
+        def run(**kwargs):
+            (self.folder/'collected/producer/raw.json').write_bytes(b'{}')
+            kwargs['make_callbacks'](object(), object())
+            return self.result
+        self.control.run_child_reserved = run
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_receipt$'): self.execute()
+        self.assertEqual((self.factories, self.releases, self.closes), (0, 1, 1))
+
+    def test_release_receipt_change_prevents_completion(self):
+        def release():
+            self.release()
+            (self.folder/'collected/producer/raw.json').write_bytes(b'{}')
+        with self.assertRaisesRegex(core.EvidenceError, '^raw_readback$'):
+            self.execute(release_callbacks_after_controller=release)
+        self.assertEqual((self.releases, self.closes), (1, 1))
+        self.assertEqual(json.loads((self.folder/'completion.json').read_bytes())['status'], 'needs_review')
+
+    def test_controller_operation_mutation_after_factory_refuses(self):
+        def run(**kwargs):
+            kwargs['make_callbacks'](object(), object())
+            self.context['operation_id'] = self.identity['operation_id'] = 'other_valid_operation'
+            return self.result
+        self.control.run_child_reserved = run
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_operation$'): self.execute()
+        self.assertEqual((self.factories, self.releases, self.closes), (1, 1, 1))
+
+    def test_release_operation_mutation_refuses(self):
+        def release():
+            self.release()
+            self.identity['operation_id'] = 'other_valid_operation'
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_operation$'):
+            self.execute(release_callbacks_after_controller=release)
+        self.assertEqual((self.releases, self.closes), (1, 1))
+
+    def test_release_context_mutation_refuses(self):
+        self.control.verify_context = lambda context: not context.get('invalid', False)
+        def release():
+            self.release()
+            self.context['invalid'] = True
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_context$'):
+            self.execute(release_callbacks_after_controller=release)
+        self.assertEqual((self.releases, self.closes), (1, 1))
+
+    def test_public_runtime_entry_refuses_without_inspecting_arguments(self):
+        with patch.object(producer, 'bind_inputs', side_effect=AssertionError('inputs inspected')):
+            with self.assertRaisesRegex(core.EvidenceError, '^real_activation_pending$'):
+                subject.run_runtime(inputs=object(), ops=object(), folder=self.folder)
+        self.assertFalse(self.folder.exists())
+
+    def test_internal_runtime_route_cannot_accept_custom_observer(self):
+        with self.assertRaisesRegex(core.EvidenceError, '^controller_observer$'):
+            subject._run(inputs=self.data, folder=self.folder, control=self.control,
+                context=self.context, records=self.records, make_callbacks_after_receipt=self.factory,
+                release_callbacks_after_controller=self.release, monotonic=lambda: 0.,
+                identity=self.identity, invented=False, ops=self.ops)
+        self.assertEqual(self.ops.reads, [])
+        self.assertFalse(self.folder.exists())
+
+    def test_internal_runtime_dispatch_has_no_observer_argument_and_owns_cleanup(self):
+        # Wiring check only: no runtime observer is constructed or called.
+        with patch.object(execution, '_produce_collected_runtime', side_effect=RuntimeError('dispatch stopped')) as run:
+            with self.assertRaisesRegex(RuntimeError, 'dispatch stopped'):
+                subject._run(inputs=self.data, folder=self.folder, control=self.control,
+                    context=self.context, records=self.records, make_callbacks_after_receipt=self.factory,
+                    release_callbacks_after_controller=self.release, monotonic=lambda: 0.,
+                    identity=self.identity, invented=False)
+        self.assertEqual(set(run.call_args.kwargs), {'inputs', 'folder', 'continuation'})
+        self.assertTrue(callable(run.call_args.kwargs['continuation']))
+        self.assertEqual((self.closes, self.releases, self.controller_calls), (1, 0, 0))
+        self.assertEqual(self.ops.reads, [])
+        failure = json.loads((self.folder/'completion.json').read_bytes())
+        self.assertNotIn('actual_dependency_observation_performed', failure)
+        self.assertIs(failure['actual_dependency_observation_completed'], False)
+        self.assertEqual(failure['dependency_observation_status'], 'incomplete_or_unknown')
+
+    def test_parent_saved_verifier_refuses_changed_dependency_completion(self):
+        self.execute()
+        path = self.folder/'collected/completion.json'
+        value = json.loads(path.read_bytes()); value['verification_sha256'] = '0'*64
+        path.write_text(json.dumps(value), encoding='utf-8')
+        with self.assertRaisesRegex(core.EvidenceError, '^saved_completion$'):
+            execution.validate_saved_composition(self.folder/'collected', self.data, invented=True)
+
 
 if __name__ == '__main__':
     unittest.main()
