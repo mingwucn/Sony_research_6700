@@ -7200,5 +7200,29 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_work_package": "RA-003: prepare and independently review one dependency-only runtime activation packet with fresh ordinary input/runtime/root/source expectations and explicit once-only stop/reconciliation rules; no activation, protected firmware/constants/native-body reads or camera contact in that preparation."
+  },
+  "owner_project_check_20261019_b": {
+    "date": "2026-10-19",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "unchanged_from_locked_revision": true,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "tree_entries": 51,
+    "tree_blobs": 39,
+    "immutable_documents_verified": 4,
+    "english": "No unlock located in previously audited unchanged source or refreshed documents",
+    "ftp": "Author-reported RAW+JPEG success; implementation unpublished; direct Wi-Fi/no-relay proof pending",
+    "recovery": "Complete storage coverage and restoration unverified; owner rollback prerequisite unmet",
+    "test_total": 17,
+    "test_passed": 17,
+    "test_skipped": 0,
+    "test_exit_code": 0,
+    "camera_commands": [],
+    "feature_or_write_gate_passed": false,
+    "report": "research/sessions/20261019-owner-project-check-b.md",
+    "next_reference_package": "FT-101: source-only assessment of published FTP implementation, direct Wi-Fi evidence and reversal/recovery coverage when available"
   }
 }
