@@ -5709,5 +5709,61 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: bind the adapter, shared validator and exact producer identities into one saved-metadata diagnostic with explicitly retrospective expectations; qualify source substitutions and complete input cross-bindings, then obtain independent source review before a once-only ordinary saved-record application. No native dependency loading, protected-input inspection or camera contact."
+  },
+  "a6700_reference_check_172116": {
+    "checked_at_utc": "2026-10-19T17:21:18.885893+00:00",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "head_unchanged": true,
+    "tree_blobs": 39,
+    "documents": [
+      {
+        "path": "README.md",
+        "bytes": 1830,
+        "git_blob": "ebb0bc382555c93d7c1ae0de45a2f18209a62d8f",
+        "sha256": "d98be2070528eec837f40757b889268178ebfa6589538e3049d4948d3124da90"
+      },
+      {
+        "path": "开发计划与进展.md",
+        "bytes": 3495,
+        "git_blob": "a343c73d97e724e36e6e7615e2383caf23987adf",
+        "sha256": "731cb52984c5001222e8f54c088a6e7edc3932cecfb006f08cff77f640753371"
+      },
+      {
+        "path": "操作手册.md",
+        "bytes": 7345,
+        "git_blob": "a41951a9e95c84288e8da027431b91fa029868b0",
+        "sha256": "2a6abb808a08233ca2855149464cc7825e18ac2bb83cf2956aea530e1d06ca7d"
+      },
+      {
+        "path": "NOTICE",
+        "bytes": 804,
+        "git_blob": "6eac5cabd05e71b7824df368fed0837dd31c3166",
+        "sha256": "7599f6b0fa2a8388f84a8315e11ef504b10076e8f8a1747792a828b3c49f4b6b"
+      }
+    ],
+    "camera_commands": [],
+    "report": "research/sessions/20261019-a6700-reference-check-172116.md",
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "tests": {
+      "total": 17,
+      "passed": 17,
+      "skipped": 0,
+      "exit_code": 0,
+      "suite_seconds": 1.567,
+      "scope": "host FTP policy mocks only; no server/camera connection"
+    },
+    "initial_test_invocation": {
+      "exit_code": 1,
+      "cause": "isolated unittest discovery omitted repository import root; lab import failed before tests"
+    },
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "next_single_work_package": "RA-003: bind the reviewed legacy adapter, shared validator and exact producer identities into a retrospective saved-metadata diagnostic; qualify source substitutions and cross-bindings and review the exact source before a once-only ordinary saved-record application. No native dependency loading, protected-input inspection or camera contact."
   }
 }
