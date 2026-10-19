@@ -5862,5 +5862,62 @@
       "gate-outcome-review.json": "735f873fcf356fe475f35a3b4178d5222d960fa0ce9ad91853c4033423c0358b",
       "runtime-outcome-review.json": "5726d71c39d21e07bfd4550b8eac318781e26d70711e9fad5f972d4e1dbb33b2"
     }
+  },
+  "a6700_reference_current_review": {
+    "checked_at_utc": "2026-10-19T17:41:16.602812+00:00",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "head_unchanged": true,
+    "tree_entries": 51,
+    "tree_blobs": 39,
+    "documents": [
+      {
+        "path": "README.md",
+        "bytes": 1830,
+        "git_blob": "ebb0bc382555c93d7c1ae0de45a2f18209a62d8f",
+        "sha256": "d98be2070528eec837f40757b889268178ebfa6589538e3049d4948d3124da90"
+      },
+      {
+        "path": "\u5f00\u53d1\u8ba1\u5212\u4e0e\u8fdb\u5c55.md",
+        "bytes": 3495,
+        "git_blob": "a343c73d97e724e36e6e7615e2383caf23987adf",
+        "sha256": "731cb52984c5001222e8f54c088a6e7edc3932cecfb006f08cff77f640753371"
+      },
+      {
+        "path": "\u64cd\u4f5c\u624b\u518c.md",
+        "bytes": 7345,
+        "git_blob": "a41951a9e95c84288e8da027431b91fa029868b0",
+        "sha256": "2a6abb808a08233ca2855149464cc7825e18ac2bb83cf2956aea530e1d06ca7d"
+      },
+      {
+        "path": "NOTICE",
+        "bytes": 804,
+        "git_blob": "6eac5cabd05e71b7824df368fed0837dd31c3166",
+        "sha256": "7599f6b0fa2a8388f84a8315e11ef504b10076e8f8a1747792a828b3c49f4b6b"
+      }
+    ],
+    "report": "research/sessions/20261019-a6700-reference-current-review.md",
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "host_policy_tests": {
+      "total": 17,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "wrapper_seconds": 1.7292391999508254,
+      "log_sha256": "bcacc598c40ecf44464ad3041236b14a512dfbd9c993ec32370011d1e3b43b35",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]"
+    },
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_reference_work_package": "FT-101: assess the FTP implementation and direct Wi-Fi transfer evidence against the existing checklist when they are published; no camera operation or author contact.",
+    "shared_ra003_phase_unchanged": true
   }
 }
