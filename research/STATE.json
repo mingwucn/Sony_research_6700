@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "saved_consistency_with_blockers_prospective_producer_pending",
+  "phase": "prospective_producer_source_qualified_actual_activation_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -27,27 +27,29 @@
   "remote_ci_executed": true,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
-    "total": 411,
-    "passed": 408,
+    "total": 459,
+    "passed": 456,
     "failed": 0,
     "errors": 0,
     "skipped": 3,
     "exit_code": 0,
-    "runner_seconds": 65.888,
-    "wrapper_elapsed_seconds": 66.2369148999569,
+    "runner_seconds": 76.462,
+    "wrapper_elapsed_seconds": 76.8864651999902,
     "interpreter": "CPython 3.13.12",
     "host": "Windows AMD64",
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-cache-domain-comparison/full_host.py",
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-prospective-producer/qualify.py full",
     "evidence_class": "offline-tested",
     "camera_or_real_server_coverage": false,
-    "report": "research/sessions/20261019-RA-003-binding-localization.md",
-    "source_scope": "All current authored public test modules; no private wrapper tests, protected inputs, native dependencies or camera",
-    "log_sha256": "d7c1f4711f2dbbb57e95d054b8514fd511b2a4864af069a1f5c1e11a1c12eb13",
+    "report": "research/sessions/20261019-RA-003-prospective-producer.md",
+    "source_scope": "All current authored public test modules; invented dependencies and manual audit events only; no actual installed dependency/native execution, protected inputs, camera or real server",
+    "log_sha256": "ade05e31d5f2f11416d0e0e601bda9e914b5a5d67f8411dc553499605b1c6099",
     "skips": [
       "POSIX fork inheritance on Windows",
       "Real symlink creation: existing inventory",
       "Real symlink creation: UFU reader"
-    ]
+    ],
+    "camera_commands": [],
+    "hardware_coverage": false
   },
   "work_packages": {
     "RA-001": {
@@ -280,7 +282,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: design and qualify a prospective dependency-only producer for the successor contract, with expectations fixed before execution and explicit guard, durability, callback and cleanup events; independently review its source before any installed-dependency or protected-input act.",
+  "next_work_package": "RA-003: design and synthetically qualify the frozen disposable-child outer entry, including exact executing-source/runtime bindings and positive audit-hook installation acknowledgement before any loader use; obtain independent source review before an actual dependency observation.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -6115,5 +6117,87 @@
     "device_write_gate_passed": false,
     "next_single_reference_work_package": "FT-101: assess the published FTP implementation, direct camera-to-server Wi-Fi transfer evidence and reversal/recovery coverage when available; source-only, no camera contact.",
     "shared_ra003_phase_unchanged": true
+  },
+  "ra003_prospective_dependency_producer": {
+    "report": "research/sessions/20261019-RA-003-prospective-producer.md",
+    "design": "research/PROSPECTIVE_DEPENDENCY_PRODUCER.md",
+    "status": "prospective_producer_source_qualified_actual_activation_pending",
+    "previous_goal_turn": "progress",
+    "previous_goal_turn_scope": "Owner-requested public-reference identity refresh and saved assessment",
+    "current_goal_turn": "progress",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "focused_tests": {
+      "total": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 48,
+      "wall_seconds": 13.056839800032321,
+      "source_stable": true,
+      "source_sha256": {
+        "tools/dependency_producer.py": "b68e0da3a28089ca97b64d6e2c37b62d77989930e684a973d2eb177732ede1fa",
+        "tools/dependency_evidence.py": "63eb311df4c818458edd28dd9853c3c20234460f3cf145eb16886ef0abbb12f3",
+        "tools/dependency_legacy.py": "13c6f6e7ca84d9cd24bdbd2060310e355fea697f5af743c3f3fe765efbef76af",
+        "tests/test_dependency_producer.py": "1bc1058a495043b6f3c58a721e4c73a453bfc1a4817540c3410639c5d2075f87",
+        "tests/test_dependency_legacy.py": "7c466935ddf4e34e94d571edc7e007fcfbeb302869ccafeaa8a3a0e1b9c7812c"
+      },
+      "log_sha256": "a35a4e5a1af65d57106e07b0b80abbe03208a2ccd05775c98a905efd6308a914",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "exit_code": 0
+    },
+    "full_host_tests": {
+      "total": 459,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "passed": 456,
+      "wall_seconds": 76.8864651999902,
+      "source_stable": true,
+      "log_sha256": "ade05e31d5f2f11416d0e0e601bda9e914b5a5d67f8411dc553499605b1c6099",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "exit_code": 0
+    },
+    "full_host_source_pins": 36,
+    "source_reviewers": 2,
+    "source_review_findings_resolved": [
+      "optional_backend_fallthrough_to_later_finder",
+      "cleanup_exception_skipped_remaining_resources_and_output_close"
+    ],
+    "cli_exit_code": 2,
+    "cli_refusal_code": "real_activation_pending",
+    "historical_blockers_retained": true,
+    "actual_dependency_observation_performed": false,
+    "source_cache_read": false,
+    "installed_dependency_executed": false,
+    "native_payload_opened": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "private_upload": false,
+    "executing_producer_authenticated": false,
+    "prior_binding_is_caller_declaration": true,
+    "actual_audit_installation_qualified": false,
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: design and synthetically qualify the frozen disposable-child outer entry, including exact executing-source/runtime bindings and positive audit-hook installation acknowledgement before any loader use; obtain independent source review before an actual dependency observation.",
+    "receipt_sha256": {
+      "qualify.py": "f949df211beda7e0a738468bed0008c6464cc1f2b58ff799118e24ba8764aee8",
+      "focused-started.json": "d1f0f430df62b667052e4438e87e1e9116fc3175ef3658284397a03a1614df8c",
+      "focused-result.json": "bac5065fdb44b14d1cb8275bee6c1f725aca0b43c8ecfd2c748a314554b9bc9b",
+      "full-started.json": "dba52804cfde1db940a3989c19f94115648b43e04e2da1e3d599e7284b8c0925",
+      "full-result.json": "333c283ac7e79a420cd20e3d657d40411b7652d4ddf2c14d5fd99535d1d241b2",
+      "gate-source-review.json": "9be55beedc228d8748066f53ee661d036bde55388e6f149e0425fc2008db5535",
+      "runtime-source-review.json": "083e5317fd7c9c1f9aeb6a07adc5c3ed310d28ae4a46250886b53f92c34bb6cb",
+      "cli-refusal.json": "ae1317f8e1706068a9964ecb0b5edd81ad4631908dd349a34a56f145dd17756d"
+    }
   }
 }
