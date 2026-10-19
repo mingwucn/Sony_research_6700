@@ -4603,5 +4603,17 @@
     "download_or_install": false,
     "private_upload": false,
     "next_single_work_package": "RA-003: reconcile and independently review the saved operational source/basis packet against the frozen v5 entry and dependency-continuation evidence, resolving remaining chain bindings before any actual metadata observation."
+  },
+  "a6700_powerful_current_check": {
+    "checked_at_utc": "2026-10-19T14:28:03.684548+00:00",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "report": "research/sessions/20261019-a6700-powerful-current-check.md",
+    "status": "unchanged_public_reference_author_report_only",
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "FT-101: assess published FTP implementation and direct transfer evidence against the saved source-only checklist when available."
   }
 }
