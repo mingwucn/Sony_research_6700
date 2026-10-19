@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "invented_collected_controller_qualified_outer_child_pending",
+  "phase": "invented_outer_child_qualified_operational_delta_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -27,29 +27,31 @@
   "remote_ci_executed": true,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
-    "total": 619,
-    "passed": 616,
-    "failed": 0,
+    "total": 657,
+    "passed": 654,
     "errors": 0,
     "skipped": 3,
+    "seconds": 233.32084850000683,
+    "source_stable": true,
+    "log_sha256": "6898a6f0357498ca7469b9b3f1b393e1858656163373827c64126a583f7cac02",
     "exit_code": 0,
-    "runner_seconds": 199.801,
-    "wrapper_elapsed_seconds": 200.2585296999896,
     "interpreter": "CPython 3.13.12",
     "host": "Windows AMD64",
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-collected-child/qualify.py full-final",
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-clean-outer-child/qualify.py full full-a",
     "evidence_class": "offline-tested",
     "camera_or_real_server_coverage": false,
-    "report": "research/sessions/20261019-RA-003-collected-child.md",
-    "source_scope": "Forty-five authored Python sources/tests; invented complete collected child and full host regressions, no actual installed/protected inputs or camera",
-    "log_sha256": "48ab336cc82b12d87425a0615be3daaae39f9c6fe35228fd4815add5a901ee72",
+    "hardware_coverage": false,
+    "report": "research/sessions/20261019-RA-003-clean-outer-child.md",
+    "camera_commands": [],
+    "source_scope": "Full public host suite; final public sources unchanged. Private-only parent cleanup/PID repairs subsequently covered by focused and final targeted qualification.",
     "skips": [
       "POSIX fork inheritance on Windows",
       "Real symlink creation: existing inventory",
       "Real symlink creation: UFU reader"
     ],
-    "camera_commands": [],
-    "hardware_coverage": false
+    "failed": 0,
+    "runner_seconds": 232.866,
+    "wrapper_elapsed_seconds": 233.32084850000683
   },
   "work_packages": {
     "RA-001": {
@@ -71,7 +73,7 @@
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-stream-contract-binding.md",
+      "session_report": "research/sessions/20261019-RA-003-clean-outer-child.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -7813,5 +7815,74 @@
     "feature_or_write_gate_passed": false,
     "report": "research/sessions/20261019-owner-project-check-d.md",
     "next_reference_package": "FT-101: source-only review of FTP implementation, direct camera-to-server Wi-Fi evidence and recovery coverage when published"
+  },
+  "dependency_clean_outer_child": {
+    "date": "2026-10-19",
+    "status": "invented_outer_child_qualified_operational_delta_pending",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "report": "research/sessions/20261019-RA-003-clean-outer-child.md",
+    "design": "research/DEPENDENCY_CLEAN_OUTER_CHILD.md",
+    "focused": {
+      "total": 36,
+      "passed": 36,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 235.9777860000031,
+      "source_stable": true,
+      "log_sha256": "851d08d37510a1ad4117c03049db6663e7a0deb80eee3a17498d1afe77c22160",
+      "exit_code": 0
+    },
+    "final_fallback": {
+      "total": 3,
+      "passed": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 25.17400539998198,
+      "source_stable": true,
+      "log_sha256": "9ad20c4573b41ea94f156e40cab51e45cd88e34e6376f770c36548cd9deb096b",
+      "exit_code": 0
+    },
+    "full_public": {
+      "total": 657,
+      "passed": 654,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "seconds": 233.32084850000683,
+      "source_stable": true,
+      "log_sha256": "6898a6f0357498ca7469b9b3f1b393e1858656163373827c64126a583f7cac02",
+      "exit_code": 0
+    },
+    "focused_source_pin_count": 107,
+    "final_source_pins": {
+      "private/sessions/20261019-RA-003-clean-outer-child/outer.py": "be9afaa71fbf56abc18ea1845e27a66d768cc2c8edad70399fa4fab2fd2027f8",
+      "private/sessions/20261019-RA-003-clean-outer-child/driver.py": "f18f356504f625abc64d32d64b2d5a33cd103d611cb00d7dc7a39bfd5237abcd",
+      "private/sessions/20261019-RA-003-clean-outer-child/test_parent_fallback.py": "7c7c7d2c3d16df77b7444d0c92ae91522af3afb2ae557d75ddd33e3d3d2fac0f",
+      "private/sessions/20261019-RA-003-clean-outer-child/test_outer.py": "b339648aab0f396a93c4606d67ab97f53e9063f082d0c66cba88f632c202d48f",
+      "private/sessions/20261019-RA-003-clean-outer-child/qualify.py": "57a972e95d802b5c70b59a44f69da2068c9d0d9e452ac463a0a3f4c785abcbaf",
+      "tools/dependency_namespace.py": "0d08f642ca891a51b0dbb622c16bd8179c4b6fb968e6fd52477e37e102a094ab",
+      "tests/test_dependency_namespace.py": "361a9094bee17d83ce0b26196aa75b36034af89e0b1b305295a57389f67372c2"
+    },
+    "source_closure_roles": 58,
+    "neutral_namespace": "_a6700_collected",
+    "ordinary_parent_validation_roles": 23,
+    "protected_parent_roles_loaded": 0,
+    "production_namespace_bootstrap_qualified": false,
+    "actual_dependency_observation_performed": false,
+    "protected_continuation_performed": false,
+    "historical_seventeen_blockers_retained": true,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_external_source_refresh_only",
+    "current_goal_turn": "progress_invented_clean_outer_child_and_parent_failure_reconciliation_qualified",
+    "next_work_package": "RA-003: reconcile the invented clean-child source closure and neutral import semantics with the frozen operational binding/dependency contract; prepare and independently review a source-only operational delta and remaining-blocker matrix. No dependency activation, firmware/constants reads or camera."
   }
 }
