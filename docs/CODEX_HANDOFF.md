@@ -43,7 +43,17 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [ext-superblock design](../research/EXT_SUPERBLOCK_DESIGN.md),
+Latest RA-003: [ext-superblock runner design](../research/EXT_SUPERBLOCK_RUNNER_DESIGN.md),
+[commands/results](../research/sessions/20261019-RA-003-ext-runner-design.md).
+Bounded ext-superblock runner design: **320/320 synthetic passes**, zero skipped, exit **0**, **17.064s**; **53** qualified source/test pins.
+This qualification includes the unchanged **52** pure-observer cases and relevant standard-library lineage/gate regressions, plus new runner cases. Composition: **205** selected inherited regressions + **52** observer cases + **63** new cases. Two historical crypto-dependent cases are excluded, not skipped. This new 320-case suite differs from the historical 320-case preflight suite; historical suites were not rerun in full.
+The frozen eight-role basis and complete prior four-key inventory must reconcile before either of two superblock callbacks. Their additional raw-retention allowance is **8,192 bytes**, alongside the inherited **65,536-byte** allowance; neither is an aggregate managed-memory or whole-process cap.
+Raw buffers/logical streams were invented and callbacks synthetic; saved structured-metadata preflight was also qualified. No actual firmware, member prefix, operational constants or actual replay; all prior actual results, forty-source seal, four observer pins and analysis acts remain unchanged. The source lock is byte-identical; no new public-source acquisition.
+The runner design prepares a later separately frozen metadata observation; it establishes no actual geometry, filesystem validity, usable read plan, English resources or native FTP backend. Planning authorization remains false. No traversal, checksum verification, component/raw files, private upload, upstream/firmware execution, camera, feature/write or recovery gate.
+
+Next single package: **RA-003: separately freeze and review one actual two-lead ext-superblock metadata observation, then execute once with full fresh lineage and no traversal or raw output**.
+
+Earlier RA-003: [ext-superblock design](../research/EXT_SUPERBLOCK_DESIGN.md),
 [commands/results](../research/sessions/20261019-RA-003-ext-superblock-design.md).
 Independent ext-superblock design: **52/52 synthetic passes**, zero skipped, exit **0**, **0.029s**; **4** qualified authored source/test pins.
 Eight immutable Linux v6.6 reference texts (**398,478 bytes**) and GPL-2.0-only notices are pinned; signed-release authentication is not established. The separate observer copies no upstream implementation.
@@ -51,7 +61,7 @@ Only invented buffers were tested. No actual firmware, member prefix, operationa
 The initial harness refused (host **1**, child **0**): its regex counted zero although the preserved log shows **52 passes**, zero skips, **0.027s**. A reviewed parser-view CRLF correction preserved raw logs and observer/tests/thresholds; one corrected qualification supplied the accepted result above.
 Conditional geometry and conservative feature handling are a synthetic design result, not observed member capabilities, a usable read plan, filesystem validity or English/native FTP support. Planning authorization remains false. No traversal, checksum verification, child/raw files, private upload, upstream/firmware execution, camera, feature/write or recovery gate.
 
-Next single package: **RA-003: freeze and synthetically qualify a bounded two-lead ext-superblock metadata-observation runner with complete prior lineage checks; no actual replay or directory traversal in that runner-design package**.
+Historical next single package: **RA-003: freeze and synthetically qualify a bounded two-lead ext-superblock metadata-observation runner with complete prior lineage checks; no actual replay or directory traversal in that runner-design package**.
 
 Earlier RA-003: [preflight comparison](../research/PREFLIGHT_COMPARISON.md),
 [commands/results](../research/sessions/20261019-RA-003-preflight-comparison.md).
