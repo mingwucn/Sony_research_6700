@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "invented_dependency_contract_qualified_existing_producer_adapter_pending",
+  "phase": "legacy_dependency_envelope_qualified_source_bound_saved_application_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -285,7 +285,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: audit the existing authored dependency producer and saved-record schemas, then implement and qualify a lossless adapter on invented old-format receipts, preserving original transcript bytes, unknown fields and unsupported claims as explicit refusals/blockers; obtain independent source review before applying it to saved actual records. No dependency execution, protected-input inspection or camera contact.",
+  "next_work_package": "RA-003: bind the adapter, shared validator and exact producer identities into one saved-metadata diagnostic with explicitly retrospective expectations; qualify source substitutions and complete input cross-bindings, then obtain independent source review before a once-only ordinary saved-record application. No native dependency loading, protected-input inspection or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -5627,5 +5627,87 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: audit the existing authored dependency producer and saved-record schemas, then implement and qualify a lossless adapter on invented old-format receipts, preserving original transcript bytes, unknown fields and unsupported claims as explicit refusals/blockers; obtain independent source review before applying it to saved actual records. No dependency execution, protected-input inspection or camera contact."
+  },
+  "ra003_legacy_dependency_adapter": {
+    "report": "research/sessions/20261019-RA-003-legacy-dependency-adapter.md",
+    "design": "research/LEGACY_DEPENDENCY_ADAPTER.md",
+    "status": "invented_legacy_envelope_qualified_reviewed_actual_application_pending",
+    "previous_goal_turn": "progress",
+    "previous_goal_turn_scope": "Qualified and reviewed pure successor contract; no actual records applied",
+    "current_goal_turn": "progress",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "focused_tests": {
+      "total": 60,
+      "passed": 60,
+      "skipped": 0,
+      "exit_code": 0,
+      "suite_seconds": 13.984,
+      "wrapper_seconds": 14.19006300001638
+    },
+    "full_host_tests": {
+      "total": 377,
+      "passed": 374,
+      "skipped": 3,
+      "exit_code": 0,
+      "suite_seconds": 53.688,
+      "wrapper_seconds": 54.54892450000625,
+      "inherited_cases": 317,
+      "new_cases": 60
+    },
+    "initial_tests": {
+      "total": 50,
+      "passed": 49,
+      "failed": 1,
+      "exit_code": 1,
+      "cause": "Test expected legacy_vectors but correctly refused malformed Boolean as integer; expected error corrected without relaxing production predicates"
+    },
+    "independent_source_reviewers": 2,
+    "independently_reproduced": false,
+    "source_sha256": {
+      "tools/dependency_evidence.py": "63eb311df4c818458edd28dd9853c3c20234460f3cf145eb16886ef0abbb12f3",
+      "tools/dependency_legacy.py": "13c6f6e7ca84d9cd24bdbd2060310e355fea697f5af743c3f3fe765efbef76af",
+      "tests/test_dependency_legacy.py": "7c466935ddf4e34e94d571edc7e007fcfbeb302869ccafeaa8a3a0e1b9c7812c"
+    },
+    "producer_sha256": {
+      "runtime_entry.py": "4a64bd6c63ff6e43b56ab7298e5fb84a6304e3576990eaa4aa020c551aeba8f1",
+      "continuation_probe.py": "75ab70f9445ee9d1f072252fabaab8d0dca54c576b8b3b5b6ec874005a609592"
+    },
+    "public_vector_plan_sha256": "a914aca415d20a87a56440f36944f7ac6082ecbc36387b68694175a579bc43b5",
+    "test_log_sha256": "21ed70197f5bbf6f38531ff45cc63f048d975edec959513c6ed0f006ad7c1123",
+    "review_findings_resolved": [
+      "exact_public_vector_plan",
+      "preloaded_ctypes_snapshot_correlation",
+      "source_byte_limits",
+      "source_execution_before_vectors",
+      "native_completion_before_vectors",
+      "producer_publication_and_event_bounds"
+    ],
+    "legacy_original_text_preservation_qualified": true,
+    "successor_contract_applied": false,
+    "actual_saved_records_applied": false,
+    "producer_source_authority_bound": false,
+    "historical_events_authenticated": false,
+    "fresh_observation_performed": false,
+    "source_cache_read": false,
+    "retained_historical_binding_blockers": [
+      "dependency_manifest_unobserved",
+      "native_policy_unobserved"
+    ],
+    "execution_authorized": false,
+    "operational_acceptance": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "native_payload_opened": false,
+    "installed_dependency_executed": false,
+    "private_upload": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: bind the adapter, shared validator and exact producer identities into one saved-metadata diagnostic with explicitly retrospective expectations; qualify source substitutions and complete input cross-bindings, then obtain independent source review before a once-only ordinary saved-record application. No native dependency loading, protected-input inspection or camera contact."
   }
 }
