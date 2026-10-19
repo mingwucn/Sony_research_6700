@@ -5103,5 +5103,26 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: implement and qualify comprehensive saved-only semantic predicates for the nine-role basis, explicitly retaining claims requiring fresh observation as blockers; obtain independent source review before any new actual metadata or protected-input act."
+  },
+  "a6700_powerful_check_175309": {
+    "checked_at_utc": "2026-10-19T15:53:17.885528+00:00",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "report": "research/sessions/20261019-a6700-powerful-check-175309.md",
+    "status": "unchanged_reference_FTP_author_report_implementation_unpublished",
+    "tree_entries": 51,
+    "verified_text_documents": 4,
+    "host_tests": {
+      "total": 228,
+      "passed": 225,
+      "skipped": 3,
+      "exit_code": 0,
+      "suite_seconds": 18.07
+    },
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "FT-101: assess published FTP implementation and direct camera-to-server Wi-Fi evidence against the saved checklist when available."
   }
 }
