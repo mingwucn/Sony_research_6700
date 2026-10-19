@@ -8873,5 +8873,36 @@
     "previous_goal_turn": "progress_fourteen_invented_contracts_composed",
     "current_goal_turn": "progress_legacy_successor_cross_comparison_and_fixture_conflict_qualified",
     "next_work_package": "RA-003: implement and independently qualify a versioned invented candidate envelope that binds an explicit operation ID and current dependency/source/activity/bridge context anchors across candidate, review, decision and seal. Keep the legacy envelope comparison-only; do not infer authority from a matching digest. Exact bootstrap/source ownership, freshness, rights and actual runtime remain separate prerequisites. Authored texts/invented records only; runtime disabled, no protected inputs or camera."
+  },
+  "a6700_reference_review_20261020_c": {
+    "report": "research/sessions/20261020-a6700-reference-review-c.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "checked_at_utc": "2026-10-19T22:41:49.876650+00:00",
+    "unchanged_from_prior_audit": true,
+    "documents_verified": 4,
+    "tree_entries": 51,
+    "tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.657323399966117,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "exit_code": 0,
+      "camera_commands": [],
+      "log_sha256": "159cb3346551ac8e865b4184e0d308e085d06dd5c7ffd73e5c780722dc731a2e"
+    },
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "native_english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit public FTP implementation and direct camera-to-server Wi-Fi evidence when published."
   }
 }
