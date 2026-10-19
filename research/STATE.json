@@ -6624,5 +6624,26 @@
     },
     "final_demonstration_folder": "final-demo",
     "whitespace_only_source_repair": "Extra EOF blank removed; identical AST; exact final bytes requalified and reviewed"
+  },
+  "owner_reference_refresh_20261019_current": {
+    "date": "2026-10-19",
+    "report": "research/sessions/20261019-reference-refresh-owner.md",
+    "repository": "xyzhangxin/sony-a6700-powerful",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "revision_changed": false,
+    "documents_verified": 4,
+    "tree_blobs": 39,
+    "english": "unresolved_no_published_unlock_found",
+    "ftp": "author_report_implementation_unpublished",
+    "rollback": "full_restore_unverified",
+    "test_total": 17,
+    "test_passed": 17,
+    "test_skipped": 0,
+    "test_exit_code": 0,
+    "camera_commands": [],
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "next_reference_package": "FT-101: source-only assessment of published FTP implementation, direct Wi-Fi/server evidence and reversal/recovery coverage when available"
   }
 }
