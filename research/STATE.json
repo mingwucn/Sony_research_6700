@@ -3962,5 +3962,46 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: preserve frozen sources, repair the five review findings in a new revision, add cross-module invented-data regressions and requalify; then obtain source re-review before any activation."
+  },
+  "gdt_review_repairs": {
+    "status": "six_scoped_source_repairs_reviewed_synthetic_pass_operational_migration_pending",
+    "report": "research/sessions/20261019-RA-003-gdt-review-fixes.md",
+    "evidence": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "original_findings": 5,
+    "additional_host_interruption_findings": 1,
+    "scoped_findings_resolved": 6,
+    "reviewers": 3,
+    "review_artifact_sha256": {
+      "gate-rereview-162.json": "fefcc325d6eabdf9b10bacb3477c1f2d427afc7ea667d97b0431f23e104abece",
+      "runtime-rereview-162.json": "70cc2aab1db0d31b779f9fa1e94c7dacc4f847beec11bba2d9b341e25ce674dc",
+      "io-rereview-162.json": "3a6230701d731441ac605d6903c4c4681c443b7fb4ef737e93de2c46f4825567"
+    },
+    "synthetic_tests": 162,
+    "passed": 162,
+    "retained_cases": 124,
+    "new_cases": 38,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 3.277,
+    "wrapper_seconds": 3.6534459000104107,
+    "original_source_pins_preserved": 38,
+    "current_packet_pins_verified": 41,
+    "qualification_pins_verified": 12,
+    "independent_source_delta_accepted": true,
+    "independent_operational_review_complete": false,
+    "operational_source_cache_migration_complete": false,
+    "execution_authorized": false,
+    "actual_entry_ready": false,
+    "actual_activation": false,
+    "actual_gdt_replay": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: migrate and independently review the ordinary source-cache, role, reference and qualification chain to the repaired revision, with fresh bounded source receipts and invented host/child composition checks; no actual activation or GDT replay."
   }
 }
