@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "source_ancestry_35_qualified_reviewed_full_chain_migration_pending",
+  "phase": "ancestry_v6_chain_305_qualified_reviewed_saved_reconciliation_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -185,7 +185,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: bind the reviewed ancestry successor and its qualification into a versioned gate/entry source chain, then qualify complete invented parent/child composition before a fresh saved-metadata diagnostic.",
+  "next_work_package": "RA-003: prepare and independently review one v6 saved-metadata reconciliation diagnostic against the frozen qualification and explicit ancestry, then run only that ordinary-metadata diagnostic; no protected-input inspection or runtime activation.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4716,5 +4716,114 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "FT-101: assess published FTP implementation and direct transfer evidence against the saved source-only checklist when available."
+  },
+  "ra003_ancestry_chain_v6": {
+    "report": "research/sessions/20261019-RA-003-ancestry-chain-v6.md",
+    "status": "ancestry_v6_chain_305_qualified_reviewed_saved_reconciliation_pending",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "tests_run": 305,
+    "passed": 305,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "child_exit_code": 0,
+    "wrapper_exit_code": 0,
+    "suite_seconds": 114.266,
+    "wrapper_seconds": 114.78642710001441,
+    "groups": {
+      "unit": 284,
+      "bootstrap": 14,
+      "real_process_invented_composition": 7
+    },
+    "unit_breakdown": {
+      "adapted_retained": 234,
+      "ported_ancestry": 35,
+      "new_chain": 15
+    },
+    "input_roles": 29,
+    "source_buffers": 47,
+    "ancestry_rows": 29,
+    "unchanged_ancestry_rows": 26,
+    "reviewed_replacement_rows": 3,
+    "qualified_source_fixture_pins": 89,
+    "fixed_nonbootstrap_policy_pins": 86,
+    "dynamic_bootstrap_pins": 3,
+    "predecessor_inputs_unchanged": 84,
+    "full_chain_qualification_sha256": "f4e1575dfee32753abfef0df79e60a378cad1ac0402c0c9062526ca8360443e8",
+    "gate_unit_qualification_sha256": "110242c957dea9a99372496630ac26265d67a1cc21100db2d93cbcfdb44a94b6",
+    "current_qualification_review_sha256": "bf5821920d8d7142128688d4fb29990a541898d9b21f64812394edbb532a452a",
+    "authored_source_sha256": {
+      "outer/outer_gate.py": "9643b1547eb4363ce87451913dbe40c83b0e51b7b5e58720bb93354478e1e35a",
+      "outer/entry_v2.py": "b79fd860efebd660a0f199f843cee57700c5a0870ce5632ef57bc61eec8932d1",
+      "outer/ordinary_io.py": "9ff5c852603d7cc115d53fc1296d21892dafa460400e08698440c1367205231d",
+      "successor_runner.py": "13a899c25b30d40eba3e97a7d465b41713ff1e731351dc5ebf9b2d1f1e7bc5bb",
+      "qualify_chain.py": "2c5953ff8dd7df008166821aa53d7449a6954369cc294791cf7c562a4be37c91",
+      "prepare_qualification_result.py": "7d6f8ccf4a450030c2841d0da16e2f8e2b8fd5959ab36fbd0a0d72bdb00232e5",
+      "source-ancestry.json": "8c424160ee6567f436e8259d986092b414be8569eff927f4d6d109ddf7c58f5c",
+      "ancestry-evidence.json": "a92b6276e292a86fe92e7214404283af4a0c266ddb7b27e1db241d24446b18d0"
+    },
+    "independent_source_evidence_review_sha256": {
+      "v6-gate-final-source-review.json": "bf30877906f280f484bea22fec65e18380c0cce7a7ab48b82db72583781259e2",
+      "v6-runtime-final-source-review.json": "766bb0eb60a2b77a30c854b86d68179a3a34337230ea4c9c0558fb81623ea72e",
+      "v6-gate-final-evidence-review.json": "e78336129cd21eedc16a4d4f3dedd06e96766e394fd09a113828221e8fc97577",
+      "v6-runtime-final-evidence-review.json": "d53a62045b0eb0303d542106327c96a4a738aa4de95aff2fd5d338e47424fc34"
+    },
+    "reviewers": [
+      "gate_review",
+      "runtime_review"
+    ],
+    "review_scope": "Authored source and saved invented qualification evidence; no independent execution/reproduction",
+    "development_outcomes": [
+      {
+        "tests": 234,
+        "passed": 232,
+        "failed": 1,
+        "errors": 1,
+        "suite_seconds": 7.67
+      },
+      {
+        "tests": 284,
+        "passed": 282,
+        "failed": 0,
+        "errors": 2,
+        "suite_seconds": 8.992
+      },
+      {
+        "tests": 305,
+        "passed": 284,
+        "failed": 0,
+        "errors": 21,
+        "suite_seconds": 11.123
+      },
+      {
+        "tests": 305,
+        "passed": 305,
+        "failed": 0,
+        "errors": 0,
+        "suite_seconds": 108.934
+      }
+    ],
+    "scope_limits": [
+      "Four inherited unit HostBoundary cases substitute an inert source-validation boundary",
+      "Successful real-process computation uses invented streams and injected AES/native adapters; strict outer acceptance refuses",
+      "Exact main launches an unchanged child which refuses invented references; fixed production acceptance is not established",
+      "Raw 305-case evidence and normalized 284-unit gate projection are distinct and hash-bound",
+      "Historical dependency-only noninjected evidence remains separate",
+      "No new saved operational diagnostic, actual protected input or GDT observation"
+    ],
+    "fixed_production_policy_acceptance": false,
+    "actual_saved_bundle_validated": false,
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "independently_reproduced": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: prepare and independently review one v6 saved-metadata reconciliation diagnostic against the frozen qualification and explicit ancestry, then run only that ordinary-metadata diagnostic; no protected-input inspection or runtime activation."
   }
 }
