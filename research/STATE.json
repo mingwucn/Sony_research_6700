@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "operational_binding_specification_reviewed_successor_implementation_pending",
+  "phase": "successor_helpers_wiring_invented_qualified_outer_binding_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -27,27 +27,27 @@
   "remote_ci_executed": true,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
-    "mode": "full",
-    "total": 713,
-    "passed": 710,
+    "mode": "full_public",
+    "total": 739,
+    "passed": 736,
     "failures": 0,
     "errors": 0,
     "skipped": 3,
-    "seconds": 377.00351419998333,
+    "seconds": 381.5612082000007,
+    "exit_code": 0,
     "source_stable": true,
-    "log_sha256": "c016f40c3e37d69c8e23ad5f27d93cc12cb23fb554daf7c3e501e918bde39851",
+    "log_sha256": "65856393c15ba84933b8240f40a4bf4de8193624447b0e5c78668019fa67d6ef",
     "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
     "actual_inputs_accessed": false,
     "camera_commands": [],
-    "exit_code": 0,
-    "public_test_total": 708,
-    "private_helper_test_total": 5,
+    "public_test_total": 739,
+    "private_helper_test_total": 0,
     "evidence_class": "offline-tested",
     "hardware_coverage": false,
     "camera_or_real_server_coverage": false,
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-parent-migration/qualify.py full",
-    "report": "research/sessions/20261019-RA-003-parent-migration.md",
-    "source_scope": "708 public host cases plus five private checked-buffer parent-helper cases"
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-successor-loaders/qualify.py",
+    "report": "research/sessions/20261019-RA-003-successor-loaders.md",
+    "source_scope": "739 public standard-library host cases; four additional private cases reported separately"
   },
   "work_packages": {
     "RA-001": {
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_operational_binding_spec_reviewed_successor_implementation_pending",
+      "status": "partial_successor_helpers_wiring_qualified_outer_binding_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-operational-binding-spec.md",
+      "session_report": "research/sessions/20261019-RA-003-successor-loaders.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -206,7 +206,8 @@
       "semantic_binding_diagnostic": "research/SEMANTIC_BINDING_DIAGNOSTIC.md",
       "stream_contract_binding": "research/STREAM_CONTRACT_BINDING.md",
       "parent_migration": "research/DEPENDENCY_PARENT_MIGRATION.md",
-      "operational_binding_specification": "research/OPERATIONAL_BINDING_SPEC.md"
+      "operational_binding_specification": "research/OPERATIONAL_BINDING_SPEC.md",
+      "successor_helpers": "research/SUCCESSOR_HELPER_LOADERS.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -8186,5 +8187,70 @@
     "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_unchanged_reference_refresh_only",
     "current_goal_turn": "progress_source_closure_and_operational_binding_specification_reviewed_and_regressions_reconciled",
     "next_work_package": "RA-003: implement the source-only successor helper-loader and closed runtime-wiring changes against the operational binding specification, with public runtime entry disabled. Qualify exact child/parent five-role graphs, startup/packet mode, record ownership and refusal/unknown-completion behavior on invented inputs. Preserve the frozen adapter and evidence. No executable operational activation request, actual dependency activation, firmware/constants read or camera."
+  },
+  "dependency_successor_loaders": {
+    "date": "2026-10-19",
+    "status": "successor_helper_loaders_and_closed_wiring_invented_qualified",
+    "report": "research/sessions/20261019-RA-003-successor-loaders.md",
+    "design": "research/SUCCESSOR_HELPER_LOADERS.md",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "full_public": {
+      "total": 739,
+      "passed": 736,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "seconds": 381.5612082000007,
+      "exit_code": 0,
+      "source_stable": true,
+      "log_sha256": "65856393c15ba84933b8240f40a4bf4de8193624447b0e5c78668019fa67d6ef"
+    },
+    "interruptions": {
+      "total": 2,
+      "passed": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.29110529995523393,
+      "exit_code": 0,
+      "source_stable": true,
+      "log_sha256": "4f65427aa269049bccdee5be922303b4f75350e1d38927c83e687cc9632c5d3e"
+    },
+    "parent_graph": {
+      "total": 2,
+      "passed": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 8.849586799973622,
+      "exit_code": 0,
+      "source_stable": true,
+      "log_sha256": "ca2e8ee7ac40527c3456680a233876d4016e57333ff8dd792ca44a81cfef51b7"
+    },
+    "source_pin_count": 120,
+    "child_helper_roles": 5,
+    "parent_helper_roles": 5,
+    "public_new_tests": 31,
+    "actual_isolated_windows_startup_checked": true,
+    "public_cli_exit_code": 2,
+    "full_outer_authority_and_terminal_binding_qualified": false,
+    "actual_runtime_controller_path_observed": false,
+    "source_roster_complete": false,
+    "operational_packet_assembled": false,
+    "public_runtime_enabled": false,
+    "actual_dependency_observation_performed": false,
+    "protected_continuation_performed": false,
+    "historical_seventeen_blockers_retained": true,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_operational_binding_specification_source_reviewed_and_evidence_reconciled",
+    "current_goal_turn": "progress_successor_five_helper_loaders_and_closed_wiring_implemented_reviewed_and_invented_qualified",
+    "next_work_package": "RA-003: integrate successor helpers and wiring into a new source-only outer host/child/parent adapter with a closed authority/input roster, exact interpreter/argv/request/source binding and separate success/refusal/unknown terminal grammar. Qualify the complete chain on invented inputs, including single-owner release and supervised interruptions; independently review the source. Preserve frozen predecessors; public runtime remains disabled. No executable actual activation packet, actual dependency/firmware/constants reads or camera."
   }
 }
