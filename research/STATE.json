@@ -4702,5 +4702,19 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: bind the reviewed ancestry successor and its qualification into a versioned gate/entry source chain, then qualify complete invented parent/child composition before a fresh saved-metadata diagnostic."
+  },
+  "a6700_powerful_source_check": {
+    "checked_at_utc": "2026-10-19T14:50:39.209959+00:00",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "report": "research/sessions/20261019-a6700-powerful-source-check.md",
+    "status": "unchanged_public_reference_author_report_only",
+    "tree_entries": 51,
+    "text_blob_identities_verified": 4,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "FT-101: assess published FTP implementation and direct transfer evidence against the saved source-only checklist when available."
   }
 }
