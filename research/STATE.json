@@ -5545,5 +5545,28 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: implement the closed successor dependency/native-evidence contract on invented inputs, preserving root domains, bootstrap boundaries and event/durability ordering; independently review it before applying it to saved actual receipts or authorizing any runtime/protected-input act."
+  },
+  "a6700_reference_review_latest": {
+    "report": "research/sessions/20261019-a6700-reference-review-latest.md",
+    "checked_at_utc": "2026-10-19T16:58:53.244088+00:00",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "head_unchanged": true,
+    "documents_verified": 4,
+    "tree_blobs": 39,
+    "tests": {
+      "total": 228,
+      "passed": 225,
+      "skipped": 3,
+      "exit_code": 0,
+      "suite_seconds": 16.068,
+      "wrapper_seconds": 16.520155400037766,
+      "scope": "tracked tests only"
+    },
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_reference_work_package": "FT-101: assess published FTP implementation and direct Wi-Fi evidence against existing checklist when available."
   }
 }
