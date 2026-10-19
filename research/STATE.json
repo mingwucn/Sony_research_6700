@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "dependency_only_continuation_observed_operational_basis_review_pending",
+  "phase": "saved_metadata_diagnostic_refused_historical_source_namespace_mismatch",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -185,7 +185,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: reconcile and independently review the saved operational source/basis packet against the frozen v5 entry and dependency-continuation evidence, resolving remaining chain bindings before any actual metadata observation.",
+  "next_work_package": "RA-003: implement and independently review an explicit historical source-namespace migration in a successor gate, qualify all 29 archived identities and negative collision/substitution cases, and bind the successor source/qualification chain before a fresh saved-metadata diagnostic.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4615,5 +4615,38 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "FT-101: assess published FTP implementation and direct transfer evidence against the saved source-only checklist when available."
+  },
+  "operational_reconciliation": {
+    "report": "research/sessions/20261019-RA-003-operational-reconciliation.md",
+    "status": "saved_metadata_diagnostic_refused_historical_source_namespace_mismatch",
+    "previous_goal_turn": "no_progress_external_reference_refresh_only",
+    "current_goal_turn": "progress",
+    "source_revision": "r3",
+    "source_sha256": "1152e29a021f429479860600d39a3da1aff8bb25164c17657872af974e1bf35b",
+    "source_reviewers": 2,
+    "new_tests": 24,
+    "passed": 24,
+    "skipped": 0,
+    "test_exit_code": 0,
+    "boundary_suite_seconds": 0.084,
+    "completion_suite_seconds": 0.025,
+    "diagnostic_exit_code": 1,
+    "passed_stages": [
+      "historical_parent_evidence",
+      "old_integration_snapshot_current_qualifications"
+    ],
+    "read_receipt_count": 40,
+    "ordinary_input_documents": 25,
+    "historical_source_lookup_misses": 29,
+    "explicit_ancestor_mapping_candidate_matches": 29,
+    "migration_accepted": false,
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: implement and independently review an explicit historical source-namespace migration in a successor gate, qualify all 29 archived identities and negative collision/substitution cases, and bind the successor source/qualification chain before a fresh saved-metadata diagnostic."
   }
 }
