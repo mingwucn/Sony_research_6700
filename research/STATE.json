@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "v4_factory_source_gate_qualified_parent_composition_pending",
+  "phase": "invented_parent_child_composition_qualified_production_bootstrap_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -181,7 +181,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: qualify the successor v4 gate, loader and parent/child composition on invented inputs using the reviewed factory and prepared source identities; resolve independent review findings before selecting any actual metadata act.",
+  "next_work_package": "RA-003: qualify production bootstrap on invented inputs and bind/review the repaired parent-loader revision in the complete successor source/qualification chain; no actual metadata act or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4362,5 +4362,59 @@
     "qualification_summary_sha256": "b8120b67cdc1b61e1cb314a3a810f86259c98ebb1f828b44970deae08a96c962",
     "initial_summary_parser_mismatch_corrected": true,
     "raw_test_logs_and_thresholds_unchanged": true
+  },
+  "factory_parent_child_composition": {
+    "status": "invented_real_process_7_qualified_parent_loader_repair_source_reviewed_production_bootstrap_pending",
+    "report": "research/sessions/20261019-RA-003-parent-child-composition.md",
+    "evidence": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "previous_goal_turn": "progress",
+    "current_goal_turn": "progress",
+    "composition": {
+      "tests": 7,
+      "passed": 7,
+      "skipped": 0,
+      "exit_code": 0,
+      "suite_seconds": 67.528,
+      "wrapper_seconds": 67.90742780000437,
+      "source_pins": 81,
+      "current_and_snapshot_pins_match": true,
+      "result_sha256": "0f9393137b88e3078ca8db531bd256fd6e9f501c158f0422a6b4ca617fbc331a",
+      "stderr_sha256": "1aa63516c631377aea8067d18904b3bb702060a262b1fef60d9b074b46593e1b"
+    },
+    "adapted_unit_regressions": {
+      "tests": 207,
+      "passed": 207,
+      "skipped": 0,
+      "exit_code": 0,
+      "suite_seconds": 5.309,
+      "wrapper_seconds": 5.737711999972817,
+      "source_pins": 82,
+      "current_and_snapshot_pins_match": true,
+      "result_sha256": "262b01030dcd10d1f71feb28070952635632f53ecebfa1e1403f069bbe93b055",
+      "stderr_sha256": "9d55dc4450f105245f62bb15e3d062e6db3abc94513832c5f9e86450fbf860c2"
+    },
+    "review_sha256": {
+      "runtime-rereview.json": "659b07a72e25a22f8b9e25c5f1b38bd3d292b2dcc8e156bfc8775a6005cda77b",
+      "io-review.json": "db8014f4a49966f759bdde2fd572538440ebdd29bbac3a06db272d44b8f4553e",
+      "io-retained-review.json": "0a68cc32ec33689443fcb8d435c373771ad837ed751d3f38f42102d31a2390d0"
+    },
+    "baseline_copies": 76,
+    "changed_baseline_paths": [
+      "outer/entry_v2.py"
+    ],
+    "production_bootstrap_qualified": false,
+    "noninjected_dependency_qualified": false,
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: qualify production bootstrap on invented inputs and bind/review the repaired parent-loader revision in the complete successor source/qualification chain; no actual metadata act or camera contact.",
+    "historical_207_test_ids_equal": true
   }
 }
