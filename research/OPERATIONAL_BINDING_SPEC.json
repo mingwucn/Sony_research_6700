@@ -1,0 +1,354 @@
+{
+  "schema": "source_only_operational_binding_spec_v1",
+  "purpose": "authored_source_review_only",
+  "source_inventory": {
+    "role:acceptance": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/acceptance.py",
+      "bytes": 7169,
+      "sha256": "e2ee49ee8a419946947ce266a1959d4206b3cb99a3ad6d7ee4f9152a1ec901da",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:artifact_probe": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/artifact_probe.py",
+      "bytes": 5070,
+      "sha256": "54fbda68197b54547793b72aae1afececb92422dc3f29362c6515f8f86384071",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:capture": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/capture.py",
+      "bytes": 9877,
+      "sha256": "57e8b894e9ec1293b9780d1dfa0a64fde1c7a634b03b1dca4251b2427e55fa7c",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:classifier": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/classifier.py",
+      "bytes": 4617,
+      "sha256": "662036ae5966319621fc359191b59784c6b411777aece1034c21db95601c758a",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:core": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/core.py",
+      "bytes": 10838,
+      "sha256": "c1f7072c975c94044b43a1ffa31b1c7acb01008e9078b1841867b85e7c2523a1",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:expanded_gate": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/expanded_gate.py",
+      "bytes": 11117,
+      "sha256": "bc598272b37b46e1230db286e5c4494de088f299b139301a89a99f8554490687",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:ext_gate": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/ext_gate.py",
+      "bytes": 12337,
+      "sha256": "df2fbdeb9ab44d2cee23d41a7e4da9e63dcef7139194edb848b43b321109976d",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:ext_preflight": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/ext_preflight.py",
+      "bytes": 6715,
+      "sha256": "e6106e6c72b6aee7d16c4db67e03803d22b5108199f644641b539721daa36775",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:ext_read_planner": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/ext_read_planner.py",
+      "bytes": 11450,
+      "sha256": "7ea688107813156e4bdd43a78d0b8f88e9bd8279fcd81885b7bc39f7e0cf886b",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:ext_superblock": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/ext_superblock.py",
+      "bytes": 13063,
+      "sha256": "b838b2fe8f4f3af18ddd4d8f3609acbe51e1aa992343615c84ec8119879750f5",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:gdt_adapter": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/gdt_adapter.py",
+      "bytes": 6754,
+      "sha256": "531dd53fa5bd60cefcb99976b6914ecf5a7b45e592975b3121cba463c533a95d",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:gdt_cleanup": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/gdt_cleanup.py",
+      "bytes": 5355,
+      "sha256": "c85bc84c055874e6fc06f338d5856c1a5d78ee373a7bf9a097f8ff7f0906397e",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:gdt_gate": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/gdt_gate.py",
+      "bytes": 19042,
+      "sha256": "917c88b52b954d25920b44c83ae397ca1debe36491c19d0e3e0149458010b65c",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:gdt_preflight": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/gdt_preflight.py",
+      "bytes": 20272,
+      "sha256": "9f984f8c26437e2000492c4014372334e506ea67bdd6f3cf93ffebff69cf4368",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:gdt_runner": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/gdt_runner.py",
+      "bytes": 21677,
+      "sha256": "73c03899e3a44a1ce586ef32d2e620275bc1bede3643a55824e6d20fab89bafa",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:header_candidates": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/header_candidates.py",
+      "bytes": 5038,
+      "sha256": "522bf2d978454240e6e4c72994f9ef46fc44e47ea93711964d8432406c7ad507",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:io_adapter": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/io_adapter.py",
+      "bytes": 19733,
+      "sha256": "6dc64ce25a4c43185e5b2660fc802e314a6451908dba369beffd54ce4d097f81",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:link_acceptance": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/link_acceptance.py",
+      "bytes": 11627,
+      "sha256": "56ee869b40b59900bfb0452653175895ed7be1d1e97f1db6579db008ff4ad8d1",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:member_acceptance": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/member_acceptance.py",
+      "bytes": 9435,
+      "sha256": "e1e717554d21546fb4a2c0aede8473ff0debc8b4b9680210b3dc2e900c408809",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:member_prefix": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/member_prefix.py",
+      "bytes": 12945,
+      "sha256": "6e4b3ff43815a1b89150ff0b2abd4a8d9c579abc69ed32f9f89cd4d648fce431",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:metadata_preflight": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/metadata_preflight.py",
+      "bytes": 6629,
+      "sha256": "b92b8064bc234ed138bc084040d0206ba879219edc8f4efa15431847cc16fa32",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:metadata_tar": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/metadata_tar.py",
+      "bytes": 9681,
+      "sha256": "f2494afc74384bfe34d52bc2fd892464c8669eac86cbddb47a9c588f6cc429cb",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:offline_inventory": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/offline_inventory.py",
+      "bytes": 6980,
+      "sha256": "3bd0a8eddb4cc9f3aa9589bf625f6ad14daace386180a97332385f7fbd8fa3c7",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:prefix": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/prefix.py",
+      "bytes": 13374,
+      "sha256": "e385fa70dd9fe91513b756d4256f38efc450acd1244f0114bc9c97983a1dd623",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:tar_inventory": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/tar_inventory.py",
+      "bytes": 17751,
+      "sha256": "edb92477ab6ca4b164ff9964644a201b8711f4f76aa88361baf7bfe3261c8ed6",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "role:validator": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/roles/validator.py",
+      "bytes": 5175,
+      "sha256": "6d78dc186355919d5457d8cb01b765422d24aca354519f1a76a1554368cdf117",
+      "disposition": "retain_role_contract_rebind_only"
+    },
+    "shared:dependency_evidence": {
+      "path": "tools/dependency_evidence.py",
+      "bytes": 22057,
+      "sha256": "63eb311df4c818458edd28dd9853c3c20234460f3cf145eb16886ef0abbb12f3",
+      "disposition": "retain_current_shared_source"
+    },
+    "shared:dependency_producer": {
+      "path": "tools/dependency_producer.py",
+      "bytes": 26629,
+      "sha256": "7211bd4ed46e821df79fb2f7660aefef9c04b0ee11f2500b3053c6f6c8dc05ce",
+      "disposition": "retain_current_shared_source"
+    },
+    "shared:dependency_package_preflight": {
+      "path": "tools/dependency_package_preflight.py",
+      "bytes": 4980,
+      "sha256": "b323e8094ff8206a10d9cc804446990a811b9829c25c12d477b185a19c33d588",
+      "disposition": "retain_current_shared_source"
+    },
+    "shared:dependency_execution": {
+      "path": "tools/dependency_execution.py",
+      "bytes": 22255,
+      "sha256": "578b44a9bc029a0d90d209c0643fdbf6be4f216bca59910e0a36411e4871513b",
+      "disposition": "retain_current_shared_source"
+    },
+    "shared:dependency_controller": {
+      "path": "tools/dependency_controller.py",
+      "bytes": 11870,
+      "sha256": "81b138a9b548b71640ab1ebc10249a481f622991812b1b838d1a52e0810e365f",
+      "disposition": "retain_current_shared_source"
+    },
+    "shared:dependency_parent": {
+      "path": "tools/dependency_parent.py",
+      "bytes": 6372,
+      "sha256": "280f56ca440144fecc10a5b12e8a9b84126e4c1b493053f83610a7d62da60cc7",
+      "disposition": "retain_current_shared_source"
+    },
+    "wiring": {
+      "path": "tools/dependency_wiring.py",
+      "bytes": 1162,
+      "sha256": "7d8397bc7436f62c1872efbd2703f219c1fa7a38aa28df7dd1f3e9846adccc7c",
+      "disposition": "needs_runtime_dispatch_successor"
+    },
+    "role_planner": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/activation/activation_binding.py",
+      "bytes": 36442,
+      "sha256": "22558080636f15300590c22b9987216216f650b4edc58d7df89092643722de74",
+      "disposition": "retain_closed_role_planning_not_authority"
+    },
+    "controller": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/activation/io_entry.py",
+      "bytes": 58942,
+      "sha256": "70a2ed3a0265894adace48e5285c0eb8962c666975f7df1a8e4f6141b918bb43",
+      "disposition": "retain_bare_controller_and_supervisor"
+    },
+    "factory": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/integration/prospective_child.py",
+      "bytes": 8861,
+      "sha256": "3cd438eb42db7d64c18752fab3580b47915de8ccd2d95efc431fd67fe3b0e08c",
+      "disposition": "retain_factory_after_current_anchor_binding"
+    },
+    "ordinary_reader": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/outer/ordinary_io.py",
+      "bytes": 3948,
+      "sha256": "9ff5c852603d7cc115d53fc1296d21892dafa460400e08698440c1367205231d",
+      "disposition": "retain_bounded_reader"
+    },
+    "authority_gate": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/outer/outer_gate.py",
+      "bytes": 76257,
+      "sha256": "faa196abe6dbea4ef141deab810558f8f0e03fdda9bc0b9d9c4b6acda2f25172",
+      "disposition": "needs_successor_input_and_binding_contract"
+    },
+    "child_source_loader": {
+      "path": "tools/dependency_namespace.py",
+      "bytes": 5781,
+      "sha256": "0d08f642ca891a51b0dbb622c16bd8179c4b6fb968e6fd52477e37e102a094ab",
+      "disposition": "needs_explicit_runtime_roster_without_invented_helper"
+    },
+    "parent_source_loader": {
+      "path": "private/sessions/20261019-RA-003-parent-migration/parent_sources.py",
+      "bytes": 3293,
+      "sha256": "26295b5ad62381fdebd7cc0ead15dd592dd02913eef9896c14b45bb076b6b305",
+      "disposition": "needs_explicit_five_helper_roster"
+    },
+    "successor_parent_entry": {
+      "path": "private/sessions/20261019-RA-003-parent-migration/entry_v3.py",
+      "bytes": 709,
+      "sha256": "6c41cc54b0de29c0856b4ba75084903f1ccd962b749ec984a3d39911853376be",
+      "disposition": "needs_runtime_saved_record_mode_and_bound_gate"
+    },
+    "successor_child_entry": {
+      "path": "private/sessions/20261019-RA-003-parent-migration/outer.py",
+      "bytes": 10113,
+      "sha256": "a8c2a9f50d9a2490c5f07569befba15e33e5a1a461f3516c9407f2f328a658cc",
+      "disposition": "needs_runtime_startup_packet_and_internal_dispatch"
+    },
+    "successor_host_entry": {
+      "path": "private/sessions/20261019-RA-003-parent-migration/driver.py",
+      "bytes": 19085,
+      "sha256": "6f693b69c9ac51055825133304a194c736505aa5b5069c17a0fa844b45ccac1c",
+      "disposition": "needs_runtime_packet_and_terminal_refusal_binding"
+    },
+    "excluded:legacy_entry": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/outer/entry_v2.py",
+      "bytes": 26912,
+      "sha256": "d09ecb6eb76a7fbfb9303590fb1a9131b00b68835467be74f86a2ecfa681b8c3",
+      "disposition": "historical_comparison_only"
+    },
+    "excluded:legacy_runtime": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/integration/runtime_entry.py",
+      "bytes": 31690,
+      "sha256": "4a64bd6c63ff6e43b56ab7298e5fb84a6304e3576990eaa4aa020c551aeba8f1",
+      "disposition": "historical_comparison_only"
+    },
+    "excluded:legacy_wiring": {
+      "path": "private/sessions/20261019-RA-003-parent-evidence-v5/integration/gdt_wiring.py",
+      "bytes": 4049,
+      "sha256": "c1117307de2c6a0230b0bf848472dce30eaa766535cf498d4b945becbdb07d85",
+      "disposition": "historical_comparison_only"
+    }
+  },
+  "selected_existing_source_roles": 43,
+  "operational_roster_complete": false,
+  "operational_roster_reason": "successor source changes and requalification required",
+  "ordinary_parent_role_order": [
+    "acceptance",
+    "link_acceptance",
+    "member_acceptance",
+    "metadata_preflight",
+    "expanded_gate",
+    "ext_superblock",
+    "ext_preflight",
+    "ext_read_planner",
+    "ext_gate",
+    "gdt_preflight",
+    "gdt_cleanup",
+    "gdt_gate",
+    "gdt_adapter",
+    "gdt_runner",
+    "prefix",
+    "offline_inventory",
+    "artifact_probe",
+    "classifier",
+    "tar_inventory",
+    "metadata_tar",
+    "member_prefix",
+    "header_candidates",
+    "io_adapter"
+  ],
+  "protected_child_role_order": [
+    "validator",
+    "capture",
+    "core"
+  ],
+  "child_shared_helpers": [
+    "dependency_controller",
+    "dependency_evidence",
+    "dependency_execution",
+    "dependency_package_preflight",
+    "dependency_producer"
+  ],
+  "parent_shared_helpers": [
+    "dependency_evidence",
+    "dependency_execution",
+    "dependency_package_preflight",
+    "dependency_parent",
+    "dependency_producer"
+  ],
+  "source_closure_exclusions": [
+    "dependency_invented",
+    "legacy dependency source cache",
+    "legacy runtime_entry",
+    "legacy gdt_wiring"
+  ],
+  "unimplemented_bindings": [
+    "successor authority/input grammar",
+    "runtime startup/request binding",
+    "explicit child and parent source-loader rosters",
+    "runtime-only closed wiring call",
+    "parent runtime success/refusal reconciliation"
+  ],
+  "source_review_performed": true,
+  "activation_request_assembled": false,
+  "source_roster_is_execution_allowlist": false,
+  "actual_inputs_accessed": false,
+  "dependency_activation_performed": false,
+  "execution_authorized": false,
+  "feature_supported": false,
+  "recovery_proven": false,
+  "device_write_gate_passed": false,
+  "camera_commands": [],
+  "ast_audit_imported_inspected_modules": false,
+  "regression_stage_shared_helpers_imported": true
+}

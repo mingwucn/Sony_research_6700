@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "invented_parent_wiring_adapter_qualified_operational_binding_pending",
+  "phase": "operational_binding_specification_reviewed_successor_implementation_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_invented_parent_wiring_qualified_operational_binding_pending",
+      "status": "partial_operational_binding_spec_reviewed_successor_implementation_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-parent-migration.md",
+      "session_report": "research/sessions/20261019-RA-003-operational-binding-spec.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -205,7 +205,8 @@
       ],
       "semantic_binding_diagnostic": "research/SEMANTIC_BINDING_DIAGNOSTIC.md",
       "stream_contract_binding": "research/STREAM_CONTRACT_BINDING.md",
-      "parent_migration": "research/DEPENDENCY_PARENT_MIGRATION.md"
+      "parent_migration": "research/DEPENDENCY_PARENT_MIGRATION.md",
+      "operational_binding_specification": "research/OPERATIONAL_BINDING_SPEC.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -8126,5 +8127,64 @@
     "feature_or_write_gate_passed": false,
     "report": "research/sessions/20261019-owner-project-check-g.md",
     "next_reference_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published, including exact build identity, transfer equality, failure handling and reversal/recovery coverage."
+  },
+  "dependency_operational_binding_spec": {
+    "date": "2026-10-19",
+    "status": "source_only_operational_binding_specification_reviewed",
+    "report": "research/sessions/20261019-RA-003-operational-binding-spec.md",
+    "design": "research/OPERATIONAL_BINDING_SPEC.md",
+    "source_inventory": "research/OPERATIONAL_BINDING_SPEC.json",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "authored_sources_audited": 46,
+    "selected_existing_source_roles": 43,
+    "historical_comparison_sources": 3,
+    "ordinary_parent_roles": 23,
+    "protected_child_roles": 3,
+    "child_shared_helpers": [
+      "dependency_controller",
+      "dependency_evidence",
+      "dependency_execution",
+      "dependency_package_preflight",
+      "dependency_producer"
+    ],
+    "parent_shared_helpers": [
+      "dependency_evidence",
+      "dependency_execution",
+      "dependency_package_preflight",
+      "dependency_parent",
+      "dependency_producer"
+    ],
+    "focused_regressions": {
+      "total": 98,
+      "passed": 98,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 145.23285480000777,
+      "exit_code": 0,
+      "source_stable": true,
+      "log_sha256": "3b46c4c0b754cd69370989e9177a46f647e4c4a5fa9077a01fa007fedfc819d3"
+    },
+    "source_stability_scope": "46 inventoried authored sources before/after qualification and later recheck",
+    "test_hash_scope": "post-run snapshots; four selected files also match prior qualified baseline; no before/after test-file claim",
+    "ast_stage_imported_inspected_modules": false,
+    "regression_stage_imported_shared_helpers": true,
+    "operational_roster_complete": false,
+    "operational_packet_assembled": false,
+    "public_runtime_enabled": false,
+    "actual_dependency_observation_performed": false,
+    "protected_continuation_performed": false,
+    "historical_seventeen_blockers_retained": true,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_unchanged_reference_refresh_only",
+    "current_goal_turn": "progress_source_closure_and_operational_binding_specification_reviewed_and_regressions_reconciled",
+    "next_work_package": "RA-003: implement the source-only successor helper-loader and closed runtime-wiring changes against the operational binding specification, with public runtime entry disabled. Qualify exact child/parent five-role graphs, startup/packet mode, record ownership and refusal/unknown-completion behavior on invented inputs. Preserve the frozen adapter and evidence. No executable operational activation request, actual dependency activation, firmware/constants read or camera."
   }
 }
