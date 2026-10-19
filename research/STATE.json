@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "operational_source_scope_gaps_assessed_actual_adapter_unbound",
+  "phase": "prepared_adapter_call_binding_qualified_outer_launcher_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_operational_source_scope_gap_assessed_actual_adapter_unbound",
+      "status": "partial_prepared_adapter_call_binding_qualified_outer_launcher_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-operational-path-assessment.md",
+      "session_report": "research/sessions/20261020-RA-003-adapter-binding.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -208,7 +208,8 @@
       "parent_migration": "research/DEPENDENCY_PARENT_MIGRATION.md",
       "operational_binding_specification": "research/OPERATIONAL_BINDING_SPEC.md",
       "successor_helpers": "research/SUCCESSOR_HELPER_LOADERS.md",
-      "latest_report": "research/sessions/20261019-RA-003-operational-scope.md"
+      "latest_report": "research/sessions/20261020-RA-003-adapter-binding.md",
+      "prepared_adapter_binding": "research/SUCCESSOR_ADAPTER_BINDING.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -284,7 +285,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement the exact act/source/request mapping for the six replacement adapter roles and connect the existing runtime continuation and saved-parent verification seams. Keep the public runtime disabled and qualify the connected path only with invented inputs under the frozen GDT limits. Account explicitly for the source closure and decision placeholders; no generic gate layer, actual activation records, installed dependency activation, firmware/constants/native payload reads or camera contact.",
+  "next_work_package": "RA-003: migrate the isolated outer bootstrap and neutral source loading to the prepared adapter, reuse the existing supervisor with frozen GDT limits (300/5/1 seconds, 2 MiB per pipe), and qualify the complete two-phase invented-stream/controller/saved-parent path including source substitutions and refused/unknown cleanup outcomes. Keep actual observation and public runtime disabled; no actual activation record, installed dependency activation, protected-input read or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8481,25 +8482,40 @@
     }
   },
   "latest_host_focused_suite": {
-    "total": 14,
-    "passed": 14,
+    "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+    "flags": {
+      "isolated": 1,
+      "no_site": 1,
+      "no_user_site": 1,
+      "no_bytecode": true,
+      "optimize": 0
+    },
+    "suites": [
+      "test_dependency_adapter_binding",
+      "test_dependency_operational_scope",
+      "test_dependency_successor_wiring"
+    ],
+    "total": 48,
+    "passed": 48,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "exit_code": 0,
-    "seconds": 0.23526679998030886,
-    "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
-    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
-    "log_sha256": "c77220466f269166544d9dc3823a22d293c254fddbbfbfde799d976bc3fbd452",
+    "seconds": 36.556082399969455,
+    "source_pin_count": 84,
     "source_stable": true,
-    "source_pin_count": 119,
-    "report": "research/sessions/20261020-RA-003-operational-path-assessment.md",
-    "hardware_coverage": false,
-    "evidence_class": "offline-tested",
-    "mode": "synthetic_scope_policy_only",
+    "log_sha256": "b56a3d191058c97f902f1e9c698d1dc7f6cca268e1e6776c29b265a62871f884",
+    "actual_observer_constructor_blocked": true,
+    "runtime_dispatch_spied_only": true,
+    "full_gdt_pipeline_executed": false,
     "actual_inputs_accessed": false,
     "camera_commands": [],
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-operational-path-assessment-v2/audit.py"
+    "exit_code": 0,
+    "report": "research/sessions/20261020-RA-003-adapter-binding.md",
+    "hardware_coverage": false,
+    "evidence_class": "offline-tested",
+    "mode": "prepared_adapter_invented_controller_parent_and_policy",
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-adapter-binding/qualify.py"
   },
   "owner_project_check_20261019_i": {
     "date": "2026-10-19",
@@ -8573,7 +8589,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261020-RA-003-operational-path-assessment.md",
+  "latest_report": "research/sessions/20261020-RA-003-adapter-binding.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -9177,5 +9193,66 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_reference_work_package": "FT-101: audit public FTP implementation and direct camera-to-server Wi-Fi evidence when published."
+  },
+  "prepared_adapter_binding": {
+    "report": "research/sessions/20261020-RA-003-adapter-binding.md",
+    "assessment": "research/SUCCESSOR_ADAPTER_BINDING.md",
+    "status": "prepared_call_binding_qualified_outer_launcher_pending",
+    "qualification": {
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "flags": {
+        "isolated": 1,
+        "no_site": 1,
+        "no_user_site": 1,
+        "no_bytecode": true,
+        "optimize": 0
+      },
+      "suites": [
+        "test_dependency_adapter_binding",
+        "test_dependency_operational_scope",
+        "test_dependency_successor_wiring"
+      ],
+      "total": 48,
+      "passed": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 36.556082399969455,
+      "source_pin_count": 84,
+      "source_stable": true,
+      "log_sha256": "b56a3d191058c97f902f1e9c698d1dc7f6cca268e1e6776c29b265a62871f884",
+      "actual_observer_constructor_blocked": true,
+      "runtime_dispatch_spied_only": true,
+      "full_gdt_pipeline_executed": false,
+      "actual_inputs_accessed": false,
+      "camera_commands": [],
+      "exit_code": 0
+    },
+    "source_role_labels": 46,
+    "replacement_function_roles": 6,
+    "extra_import_roles": 2,
+    "reviewed_source_sha256": {
+      "tools/dependency_adapter_binding.py": "10cdb88564766bc17c3a69c5571a11a0036691c608fe64489342b07688903c60",
+      "tests/test_dependency_adapter_binding.py": "d5d568f19eb0400e54950f572d0cd3fbd4a09c4deb291a0ca6bc76b9e4ba2bbc"
+    },
+    "independent_source_review": "repaired_parent_anchors_accepted",
+    "source_byte_binding_qualified": true,
+    "controller_and_saved_parent_invented_composition_qualified": true,
+    "executable_outer_launcher_migrated": false,
+    "live_adapter_source_ownership_qualified": false,
+    "frozen_supervisor_connected": false,
+    "full_gdt_pipeline_executed": false,
+    "decisions": "five_activity_specific_questions_pending",
+    "operational_roster_complete": false,
+    "actual_inputs_accessed": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_reference_refresh_committed_957f701",
+    "current_goal_turn": "progress_prepared_adapter_binding_and_invented_controller_parent_qualified",
+    "next_work_package": "RA-003: migrate the isolated outer bootstrap and neutral source loading to the prepared adapter, reuse the existing supervisor with frozen GDT limits (300/5/1 seconds, 2 MiB per pipe), and qualify the complete two-phase invented-stream/controller/saved-parent path including source substitutions and refused/unknown cleanup outcomes. Keep actual observation and public runtime disabled; no actual activation record, installed dependency activation, protected-input read or camera contact."
   }
 }
