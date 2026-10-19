@@ -48,16 +48,21 @@ are detached and bounded, and failures clear owned references without deleting
 foreign process modules. Independent source review findings were repaired and
 the final bytes requalified; earlier logs remain preserved.
 
-The next single host package is a reviewed no-site disposable entry that captures
-the loader/audit helper bytes against an external review anchor before executing
-the invented-only composition. Startup argv, source origins, import policy and
-cleanup/refusals must be bound and observed. Loader/audit bootstrap and complete
-interpreter/stdlib trust are not yet established; operational runtime stays
-disabled. Checked host execution is not permission to inspect more firmware.
+The [isolated invented metadata entry](sessions/20261020-RA-003-isolated-metadata-entry.md)
+now captures and pins both bootstrap helper buffers before executing either,
+then runs the fourteen-public/eleven-retained composition in a disposable
+Python child with site loading disabled. Final qualification: **77/77** tests
+passed, zero skipped, exit 0; **117** stable pins. Four full invented
+compositions completed and two deliberate conflicts refused. Exact startup
+argv/flags/path, typed wire, source labels and cleanup/refusals were observed.
+These labels are synthetic; digests do not authenticate review, permission,
+freshness, the interpreter distribution or stdlib origins. Runtime stays disabled.
+
+Next single host package: RA-003: reconcile the isolated invented-only entry and checked source closure with the frozen primary-GDT scope; produce one executable-path gap assessment that identifies the exact activity-specific rights/consent and source-origin prerequisites for any actual metadata observation. Do not add a generic gate layer or activate anything; no firmware/constants/native payload reads, installed dependency activation or camera contact.
 
 English restriction/resource mapping, a native FTP backend with direct Wi-Fi
 evidence, exact-body correspondence, backup coverage and usable rollback/recovery
-remain incomplete. The [current external reference check](sessions/20261020-a6700-reference-review-c.md)
+remain incomplete. The [current external reference check](sessions/20261020-a6700-reference-review-d.md)
 confirms unchanged author-reported FTP RAW+JPEG success, unpublished implementation,
 no identified English unlock and unverified complete restoration. Inspection-rights
 answer remains **No / unknown**; no new legal conclusion. These gaps cannot be

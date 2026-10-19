@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "invented_public_buffer_execution_qualified_loader_bootstrap_authority_pending",
+  "phase": "invented_isolated_metadata_startup_qualified_operational_binding_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,7 +63,7 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_legacy_successor_shared_metadata_compared_context_authority_pending",
+      "status": "partial_isolated_invented_startup_qualified_operational_binding_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
@@ -284,7 +284,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement, independently review and qualify a no-site disposable host entry that captures the metadata loader and source-audit helper bytes against an external review anchor before executing them, then invokes the checked fourteen-public/eleven-retained validator composition on invented metadata only. Bind exact startup argv, source origins and import policy; observe startup/cleanup and refusal behavior without claiming complete interpreter/stdlib trust. No actual activation records, installed dependency activation, firmware/constants/native payload reads or camera; operational runtime remains disabled.",
+  "next_work_package": "RA-003: reconcile the isolated invented-only entry and checked source closure with the frozen primary-GDT scope; produce one executable-path gap assessment that identifies the exact activity-specific rights/consent and source-origin prerequisites for any actual metadata observation. Do not add a generic gate layer or activate anything; no firmware/constants/native payload reads, installed dependency activation or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8481,26 +8481,26 @@
     }
   },
   "latest_host_focused_suite": {
-    "total": 48,
-    "passed": 48,
+    "total": 77,
+    "passed": 77,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "seconds": 19.69031899998663,
+    "seconds": 31.639054899977054,
     "source_stable": true,
+    "source_pin_count": 117,
     "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
     "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
-    "log_sha256": "7dd312443dfcab88e824c1a4a013ec9930f3778892c2adc34fbc98b235ead71c",
-    "installed_dependency_aliases": [],
+    "log_sha256": "b3ea62daeb95538e2f9a3c0da9b57f200b603f64cbf23f7474951055bdae835e",
+    "observations_sha256": "369230d2475306016223d5c6a4f1987f974e834c4024c3e84cce2b434bf89778",
     "actual_inputs_accessed": false,
     "execution_authorized": false,
     "camera_commands": [],
     "exit_code": 0,
-    "report": "research/sessions/20261020-RA-003-detached-metadata-loader.md",
-    "source_pin_count": 113,
+    "report": "research/sessions/20261020-RA-003-isolated-metadata-entry.md",
     "hardware_coverage": false,
     "evidence_class": "offline-tested",
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-detached-metadata-loader-v2/qualify.py"
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-isolated-metadata-entry-v2/qualify.py"
   },
   "owner_project_check_20261019_i": {
     "date": "2026-10-19",
@@ -8574,7 +8574,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261020-RA-003-detached-metadata-loader.md",
+  "latest_report": "research/sessions/20261020-RA-003-isolated-metadata-entry.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -9067,5 +9067,52 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_reference_work_package": "FT-101: audit public FTP implementation and direct camera-to-server Wi-Fi evidence when published."
+  },
+  "isolated_metadata_startup": {
+    "report": "research/sessions/20261020-RA-003-isolated-metadata-entry.md",
+    "status": "invented_isolated_startup_qualified_operational_binding_pending",
+    "qualification": {
+      "total": 77,
+      "passed": 77,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 31.639054899977054,
+      "source_stable": true,
+      "source_pin_count": 117,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "log_sha256": "b3ea62daeb95538e2f9a3c0da9b57f200b603f64cbf23f7474951055bdae835e",
+      "observations_sha256": "369230d2475306016223d5c6a4f1987f974e834c4024c3e84cce2b434bf89778",
+      "actual_inputs_accessed": false,
+      "execution_authorized": false,
+      "camera_commands": [],
+      "exit_code": 0
+    },
+    "source_pin_count": 117,
+    "retained_tests": 41,
+    "new_public_tests": 30,
+    "nonstub_integration_tests": 6,
+    "real_invented_child_compositions": 6,
+    "successful_invented_child_compositions": 4,
+    "refused_invented_child_compositions": 2,
+    "checked_helper_buffers_executed": true,
+    "exact_child_argv_flags_observed": true,
+    "no_site_observed": true,
+    "synthetic_source_origin_labels_bound": true,
+    "loader_cleanup_observed": true,
+    "interpreter_distribution_authenticated": false,
+    "stdlib_origins_verified": false,
+    "review_authenticated": false,
+    "validator_execution_owned": false,
+    "actual_inputs_accessed": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_requested_reference_refresh_committed_a46fb12",
+    "current_goal_turn": "progress_isolated_invented_metadata_entry_independently_reviewed_and_qualified",
+    "next_work_package": "RA-003: reconcile the isolated invented-only entry and checked source closure with the frozen primary-GDT scope; produce one executable-path gap assessment that identifies the exact activity-specific rights/consent and source-origin prerequisites for any actual metadata observation. Do not add a generic gate layer or activate anything; no firmware/constants/native payload reads, installed dependency activation or camera contact."
   }
 }
