@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "invented_parent_child_composition_qualified_production_bootstrap_pending",
+  "phase": "bootstrap_invented_qualified_successor_parent_evidence_contract_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -181,7 +181,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: qualify production bootstrap on invented inputs and bind/review the repaired parent-loader revision in the complete successor source/qualification chain; no actual metadata act or camera contact.",
+  "next_work_package": "RA-003: implement and qualify the closed successor parent-evidence contract, bind gate/entry references, then qualify final source and parent/child composition with independent source review; no actual metadata act or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4416,5 +4416,49 @@
     "camera_commands": [],
     "next_single_work_package": "RA-003: qualify production bootstrap on invented inputs and bind/review the repaired parent-loader revision in the complete successor source/qualification chain; no actual metadata act or camera contact.",
     "historical_207_test_ids_equal": true
+  },
+  "bootstrap_invented_qualification": {
+    "tests": 14,
+    "passed": 14,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 24.535,
+    "wrapper_seconds": 24.89459830004489,
+    "snapshot_and_current_pins_match": true,
+    "unchanged_predecessor_copies": 82,
+    "result_sha256": "771abcb9e95e231505e9676af0385db4f944c44312cdc68095f974687199c4ba",
+    "stderr_sha256": "db4debbe269f8797c1d0f3abdfbb07b88f009511f5d0b9c7d031ed01bd3a998e",
+    "review_artifact_sha256": {
+      "bootstrap-runtime-review.json": "2b61b2831b246b2d25af5de7f84e48ed60267dc9ae78ee535b6d773802ed885c",
+      "bootstrap-runtime-rereview.json": "d2d359cab669a3c741b7e550a978de06860e8ae467d9ff6e6351b8673d7d1d08",
+      "bootstrap-gate-review.json": "33b5854b75815765b9df61d496c86db571cad26dfd957c43785ea2d9798242e9"
+    },
+    "parent_evidence_sha256": "8b9dc7a70894802799a66cc747cd171ddaf9f0e565c04cb2cc0a3e9ad7975b24",
+    "parent_evidence_consumed_by_gate": false,
+    "remaining_findings": [
+      "BOOT-GR-001"
+    ],
+    "positive_reference_policy": "invented_test_override",
+    "fixed_production_policy_acceptance": false,
+    "noninjected_dependency_qualified": false,
+    "operational_acceptance": false,
+    "camera_commands": [],
+    "status": "bootstrap_invented_policy_14_qualified_parent_evidence_contract_pending",
+    "report": "research/sessions/20261019-RA-003-bootstrap-qualification.md",
+    "evidence": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "previous_goal_turn": "progress",
+    "current_goal_turn": "progress",
+    "qualified_source_and_fixture_pins": 85,
+    "production_bootstrap_tested_with_invented_policy": true,
+    "production_fixed_policy_acceptance": false,
+    "successor_parent_contract_implemented": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "next_single_work_package": "RA-003: implement and qualify the closed successor parent-evidence contract, bind gate/entry references, then qualify final source and parent/child composition with independent source review; no actual metadata act or camera contact."
   }
 }
