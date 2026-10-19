@@ -511,3 +511,8 @@ Next single package: **RA-003: independently review the frozen 38-source packet,
 Latest RA-003: [source review packet and proposed act](../research/GDT_REVIEW_PACKET.md), [commands/results](../research/sessions/20261019-RA-003-gdt-review-packet.md).
 A private review packet now freezes **38 authored Python sources / 767,313 bytes**, eight review questions and a non-executable draft of the later metadata act. Packet checks verified **279 historical preservation entries** and **143 starting paths**, with all gate/source hashes unchanged. No new synthetic suite or actual observation ran. The prior 124-case result remains historical evidence, not a new pass or execution authority. Independent review remains pending; English/native FTP, exact-body correspondence and rollback remain unverified.
 Next single package: **RA-003: independently review the frozen 38-source packet, corrected bootstrap and 124-case qualification against the metadata-act draft, then resolve findings; no actual activation or GDT replay before review passes**.
+
+
+Current blocking prerequisite: [independent-review audit](../research/sessions/20261019-RA-003-independent-review-blocker.md).
+The source packet and proposed act are ready, but required independent review has not happened. The local-reviewer authorization request is unanswered. This same prerequisite is recorded in three consecutive completed goal turns; the current audit verified all 38 frozen source hashes and found no substantive next step that can bypass the review. The broad pre-camera goal is **blocked, not complete**. No code or tests changed and no camera/protected-input operation ran.
+Next single package remains the independent review of the frozen source packet and act draft.
