@@ -85,7 +85,7 @@ def expectations(value):
         root_sha256={k: core._hash(v) for k, v in value['roots'].items()})
 
 
-def unpack(value, fixed, source_buffers, review_sha256):
+def unpack(value, fixed, source_buffers, review_sha256, *, complete=False):
     core._shape(value, ('schema', 'inputs', 'contents', 'observed', 'roots'))
     subject.need(value['schema'] == 'invented_dependency_packet_v1', 'invented_only')
     core._shape(fixed, ('expectation_sha256', 'package_sha256', 'root_sha256'))
@@ -97,6 +97,8 @@ def unpack(value, fixed, source_buffers, review_sha256):
     contents = {k: bytes.fromhex(v) for k, v in value['contents'].items()}
     paths = {subject.target(policy, row) for group in ('python_origins', 'native_libraries', 'trusted_origins')
              for row in policy[group].values()}
+    if complete:
+        paths |= {policy['roots']['package']['path'].rstrip('/')+'/'+p for p in data['package']['manifest']['files']}
     core._shape(contents, paths); core._shape(value['observed'], paths)
     core._shape(value['roots'], policy['roots'])
     for group in ('python_origins', 'native_libraries', 'trusted_origins'):
@@ -104,6 +106,12 @@ def unpack(value, fixed, source_buffers, review_sha256):
             path = subject.target(policy, row)
             subject.need(subject.sha(contents[path]) == row['sha256'] and len(contents[path]) == row['size'], 'invented_bytes')
             core._receipt(value['observed'][path], path, row['sha256'], row['size'], row['identity'])
+    if complete:
+        for relative,row in data['package']['manifest']['files'].items():
+            path=policy['roots']['package']['path'].rstrip('/')+'/'+relative
+            subject.need(subject.sha(contents[path])==row['sha256'] and len(contents[path])==row['size'],'invented_bytes')
+            identity={k:data['package']['installed_receipts'][relative]['lstat_before'][k] for k in core.CROSS}
+            core._receipt(value['observed'][path],path,row['sha256'],row['size'],identity)
     for name, row in policy['roots'].items():
         subject.need(core._hash(value['roots'][name]) == row['identity_sha256'], 'root_identity')
     return dict(data, source_buffers=source_buffers), FakeOps(policy, contents, value['observed'], value['roots'], config['vectors'])
@@ -165,9 +173,9 @@ def validate_saved(folder, value, fixed, source_buffers, review_sha256):
     return {name: subject.sha(buf) for name, buf in raw.items()}
 
 
-def execute(value, fixed, source_buffers, review_sha256, folder):
+def execute(value, fixed, source_buffers, review_sha256, folder, *, collected=False):
     """Real Python audit delivery, invented reader/loader/cipher, one callback."""
-    data, ops = unpack(value, fixed, source_buffers, review_sha256)
+    data, ops = unpack(value, fixed, source_buffers, review_sha256, complete=collected)
     subject.need(HELPER not in sys.modules and 'ctypes' not in sys.modules, 'preloaded_invented_helper')
     helper = types.ModuleType(HELPER); helper.new = ops.new
     sys.modules[HELPER] = helper; sys.modules['ctypes'] = ops.modules['ctypes']
@@ -179,7 +187,11 @@ def execute(value, fixed, source_buffers, review_sha256, folder):
     ops.audit_install = install
     primary = None
     try:
-        subject.produce_invented(**data, ops=ops, folder=folder)
+        if collected:
+            from tools import dependency_execution as execution
+            execution.produce_collected_invented(inputs=data,ops=ops,folder=folder)
+        else:
+            subject.produce_invented(**data, ops=ops, folder=folder)
     except BaseException as error:
         primary = error
     finally:
@@ -194,4 +206,6 @@ def execute(value, fixed, source_buffers, review_sha256, folder):
     subject.need(not any(n == 'Cryptodome' or n.startswith('Cryptodome.') for n in sys.modules), 'invented_cleanup')
     sys.audit(subject.PROBE_EVENT, 'inert_after_cleanup')
     sys.audit('ctypes.dlopen', 'inert_after_cleanup')
+    if collected:
+        return execution.validate_saved_composition(folder,data,invented=True)
     return validate_saved(folder, value, fixed, source_buffers, review_sha256)

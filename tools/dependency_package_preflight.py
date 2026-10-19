@@ -20,7 +20,8 @@ def _read(ops, path, row):
     return raw, copy.deepcopy(receipt)
 
 
-def _collect(*, ops, inputs):
+def _collect(*, ops, inputs, invented=True):
+    producer.need(type(invented) is bool, 'collection_mode')
     policy, package, _, _, sources = producer.bind_inputs(**inputs)
     manifest = package['manifest']; original = package['installed_receipts']
     # Apply the concrete ordinary reader's bound before making any observation.
@@ -58,15 +59,16 @@ def _collect(*, ops, inputs):
         **{k: False for k in core.FLAGS}, camera_commands=[])
     observed = dict(manifest=manifest, installed_receipts=projected, installed_proof=proof)
     core._package(observed)
-    return dict(schema='dependency_package_collection_v1', status='complete_invented_package_collection',
-        evidence_mode='invented', prior_package_sha256=core._hash(package),
+    return dict(schema='dependency_package_collection_v1',
+        status='complete_invented_package_collection' if invented else 'complete_package_collection',
+        evidence_mode='invented' if invented else 'saved_records', prior_package_sha256=core._hash(package),
         observed_package_sha256=core._hash(observed), package=observed,
         absolute_receipts=absolute, relative_projection=projection, trusted_origins=trusted,
         root_before=before, root_after=after, source_aliases=sorted(checked),
         raw_cache_sha256=policy['cache_sha256'],
         package_reads=len(absolute), trusted_reads=len(trusted),
-        test_injection_used=True, dependency_bootstrap_performed=False,
-        actual_installation_observed=False, atomic_snapshot_proven=False,
+        test_injection_used=invented, dependency_bootstrap_performed=False,
+        actual_installation_observed=not invented, atomic_snapshot_proven=False,
         operational_acceptance=False, execution_authorized=False,
         feature_supported=False, recovery_proven=False, device_write_gate_passed=False, camera_commands=[])
 

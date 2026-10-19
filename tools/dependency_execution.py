@@ -1,6 +1,6 @@
 """Prospective dependency input transition and pure saved-record verification.
 
-No activation entry, dependency bootstrap, native load or camera operation.
+Runtime activation requires a separately reviewed exact-buffer child packet.
 Caller records establish consistency only, never execution permission or truth.
 """
 import copy
@@ -51,13 +51,15 @@ def prepare_texts(*, operation_id, vectors, sources):
         cache_object_sha256=core._hash(core._json_text(cache)))
 
 
-def bind_collection(*, collection, inputs):
+def bind_collection(*, collection, inputs, evidence_mode='invented', test_injection_used=True):
     """Pure revalidation and deterministic proof transition, no file observation.
 
-    Collection is currently invented-only. Retain original input and receipt
-    hashes; changing a proof binding does not create a new independent approval.
+    A declared record mode never proves actual observation. Retain original input
+    and receipt hashes; changing a proof binding creates no independent approval.
     """
     policy, package, binding, _, _ = producer.bind_inputs(**inputs)
+    core._need(type(test_injection_used) is bool and (evidence_mode,test_injection_used) in
+               (('invented',True),('saved_records',False)), 'collection_mode')
     core._shape(collection, ('schema','status','evidence_mode','prior_package_sha256',
         'observed_package_sha256','package','absolute_receipts','relative_projection',
         'trusted_origins','root_before','root_after','source_aliases','raw_cache_sha256',
@@ -72,10 +74,11 @@ def bind_collection(*, collection, inputs):
     trusted = core._bounded_copy(collection['trusted_origins'])
     roots = core._bounded_copy([collection['root_before'], collection['root_after']])
     core._need(collection['schema']=='dependency_package_collection_v1' and
-               collection['status']=='complete_invented_package_collection' and
-               collection['evidence_mode']=='invented' and collection['test_injection_used'] is True,
+               collection['status']==('complete_invented_package_collection' if test_injection_used else 'complete_package_collection') and
+               collection['evidence_mode']==evidence_mode and collection['test_injection_used'] is test_injection_used,
                'collection_mode')
-    for key in ('dependency_bootstrap_performed','actual_installation_observed','atomic_snapshot_proven',
+    core._need(collection['actual_installation_observed'] is (not test_injection_used), 'collection_authority')
+    for key in ('dependency_bootstrap_performed','atomic_snapshot_proven',
                 'operational_acceptance','execution_authorized','feature_supported','recovery_proven','device_write_gate_passed'):
         core._need(collection[key] is False, 'collection_authority')
     core._need(collection['camera_commands']==[], 'collection_authority')
@@ -115,7 +118,7 @@ def bind_collection(*, collection, inputs):
         original_binding_sha256=core._hash(binding),collection_sha256=core._hash(collection),
         observed_expectation_sha256=core._hash(observed_policy),observed_package_sha256=core._hash(fresh),
         observed_binding_sha256=core._hash(observed_binding),review_sha256=binding['review_sha256'],
-        changed_policy_fields=[k for k in policy if policy[k]!=observed_policy[k]],test_injection_used=True,
+        changed_policy_fields=[k for k in policy if policy[k]!=observed_policy[k]],test_injection_used=test_injection_used,
         independent_approval_created=False,execution_authorized=False,camera_commands=[])
     return observed_inputs, transition
 
@@ -126,8 +129,29 @@ def produce_collected_invented(*, inputs, ops, folder):
     No real observer accepted. The eventual bound child must execute the complete
     source closure and preserve this ordering with a separately qualified route.
     """
-    from tools import dependency_package_preflight as collector
     core._need(not isinstance(ops,producer.RuntimeOps),'real_activation_pending')
+    return _produce_collected(inputs=inputs,ops=ops,folder=folder,invented=True)
+
+
+def produce_collected_runtime(*, inputs, folder):
+    """Bound-child runtime branch. Calling this API is not consent or authority.
+
+    No custom observer or callback accepted. A reviewed exact activation packet
+    and independent current expectations are prerequisites, not supplied here.
+    """
+    core._need(producer.os.name=='nt' and producer.sys.implementation.name=='cpython','runtime_platform')
+    core._need(producer.sys.flags.isolated==1 and producer.sys.flags.no_site==1 and
+        producer.sys.flags.no_user_site==1 and producer.sys.dont_write_bytecode is True and
+        producer.sys.flags.optimize==0,'runtime_flags')
+    core._need(not any(n.split('.')[0] in ('ctypes','_ctypes','platform','cffi','_cffi_backend','pycparser','Cryptodome')
+        for n in producer.sys.modules),'preloaded_runtime_origin')
+    return _produce_collected(inputs=inputs,ops=producer.RuntimeOps(),folder=folder,invented=False)
+
+
+def _produce_collected(*, inputs, ops, folder, invented):
+    from tools import dependency_package_preflight as collector
+    core._need(type(invented) is bool,'collection_mode')
+    mode='invented' if invented else 'saved_records'
     core._shape(inputs,('expectation','package','binding','config_json','cache_json','source_buffers'))
     policy,package,binding,_,_=producer.bind_inputs(**inputs)
     inputs=dict(expectation=policy,package=package,binding=binding,
@@ -136,25 +160,22 @@ def produce_collected_invented(*, inputs, ops, folder):
     stage='collection'
     output.small('started.json',dict(schema='dependency_collection_producer_started_v1',
         expectation_sha256=core._hash(inputs['expectation']),package_sha256=core._hash(inputs['package']),
-        test_injection_used=True,automatic_retry=False,execution_authorized=False,camera_commands=[]))
+        test_injection_used=invented,automatic_retry=False,execution_authorized=False,camera_commands=[]))
     try:
-        collection=collector.collect_invented(ops=ops,**inputs)
-        stage='transition';observed,transition=bind_collection(collection=collection,inputs=inputs)
+        collection=collector._collect(ops=ops,inputs=inputs,invented=invented)
+        stage='transition';observed,transition=bind_collection(collection=collection,inputs=inputs,
+            evidence_mode=mode,test_injection_used=invented)
         output.small('collection.json',collection);output.small('transition.json',transition)
         stage='producer'
-        producer.produce_invented(**observed,ops=ops,folder=str(output.folder/'producer'))
+        producer._produce(**observed,ops=ops,folder=str(output.folder/'producer'),invented=invented)
         stage='verification'
         core._need(set(p.name for p in (output.folder/'producer').iterdir())==set(ARTIFACTS),'artifact_roster')
         artifacts={name:producer.read_verified(str(output.folder/'producer'/name),limit=4*1024**2)[0]
                    for name in ARTIFACTS}
         verification=verify_records(artifacts=artifacts,inputs=observed,
-            evidence_mode='invented',test_injection_used=True)
+            evidence_mode=mode,test_injection_used=invented)
         output.small('verification.json',verification)
-        completion=dict(schema='dependency_collection_producer_completion_v1',status='complete_invented_composition',
-            collection_sha256=core._hash(collection),transition_sha256=core._hash(transition),
-            verification_sha256=core._hash(verification),test_injection_used=True,automatic_retry=False,
-            actual_dependency_observation_performed=False,execution_authorized=False,feature_supported=False,
-            recovery_proven=False,device_write_gate_passed=False,camera_commands=[])
+        completion=completion_record(collection,transition,verification,invented=invented)
         stage='completion';output.small('completion.json',completion)
         return completion
     except BaseException as primary:
@@ -163,11 +184,63 @@ def produce_collected_invented(*, inputs, ops, folder):
         if stage!='completion':
             try:
                 output.small('completion.json',dict(schema='dependency_collection_producer_completion_v1',
-                    status='needs_review',failed_stage=stage,test_injection_used=True,automatic_retry=False,
+                    status='needs_review',failed_stage=stage,test_injection_used=invented,automatic_retry=False,
                     execution_authorized=False,camera_commands=[]))
             except BaseException as publication:
                 raise primary from publication
         raise
+
+
+def completion_record(collection, transition, verification, *, invented):
+    return dict(schema='dependency_collection_producer_completion_v1',
+        status='complete_invented_composition' if invented else 'complete_dependency_composition',
+        collection_sha256=core._hash(collection),transition_sha256=core._hash(transition),
+        verification_sha256=core._hash(verification),test_injection_used=invented,automatic_retry=False,
+        actual_dependency_observation_performed=not invented,execution_authorized=False,feature_supported=False,
+        recovery_proven=False,device_write_gate_passed=False,camera_commands=[])
+
+
+def bind_runtime_packet(value, fixed, source_buffers, review_sha256):
+    """Closed prospective runtime packet. No invented contents/observers allowed."""
+    core._shape(value,('schema','inputs'))
+    core._need(value['schema']=='runtime_dependency_packet_v1','packet_mode')
+    data=value['inputs']
+    core._shape(data,('expectation','package','binding','config_json','cache_json'))
+    policy,package,binding,_,_=producer.bind_inputs(**data,source_buffers=source_buffers)
+    core._shape(fixed,('expectation_sha256','package_sha256','root_sha256'))
+    expected=dict(expectation_sha256=core._hash(policy),package_sha256=core._hash(package),
+        root_sha256={k:row['identity_sha256'] for k,row in policy['roots'].items()})
+    core._need(core._canonical(fixed)==core._canonical(expected),'fixed_expectations')
+    core._need(binding['review_sha256']==review_sha256,'review_binding')
+    return dict(expectation=policy,package=package,binding=binding,
+        config_json=data['config_json'],cache_json=data['cache_json'],source_buffers=dict(source_buffers))
+
+
+def validate_saved_composition(folder, inputs, *, invented):
+    """Independent parent metadata reread/recomputation; no dependency execution."""
+    from pathlib import Path
+    core._need(type(invented) is bool,'collection_mode')
+    folder=Path(folder)
+    names=('started.json','collection.json','transition.json','verification.json','completion.json')
+    core._need(set(p.name for p in folder.iterdir())==set(names)|{'producer'},'composition_roster')
+    raw={name:producer.read_verified(str(folder/name),limit=4*1024**2)[0] for name in names}
+    rows={name:core._json_text(buf.decode('utf-8')) for name,buf in raw.items()}
+    expected_start=dict(schema='dependency_collection_producer_started_v1',
+        expectation_sha256=core._hash(inputs['expectation']),package_sha256=core._hash(inputs['package']),
+        test_injection_used=invented,automatic_retry=False,execution_authorized=False,camera_commands=[])
+    core._need(core._canonical(rows['started.json'])==core._canonical(expected_start),'saved_start')
+    mode='invented' if invented else 'saved_records'
+    observed,transition=bind_collection(collection=rows['collection.json'],inputs=inputs,
+        evidence_mode=mode,test_injection_used=invented)
+    core._need(core._canonical(rows['transition.json'])==core._canonical(transition),'saved_transition')
+    core._need(set(p.name for p in (folder/'producer').iterdir())==set(ARTIFACTS),'artifact_roster')
+    producer_raw={name:producer.read_verified(str(folder/'producer'/name),limit=4*1024**2)[0] for name in ARTIFACTS}
+    verification=verify_records(artifacts=producer_raw,inputs=observed,evidence_mode=mode,test_injection_used=invented)
+    core._need(core._canonical(rows['verification.json'])==core._canonical(verification),'saved_verification')
+    expected_completion=completion_record(rows['collection.json'],transition,verification,invented=invented)
+    core._need(core._canonical(rows['completion.json'])==core._canonical(expected_completion),'saved_completion')
+    return dict({name:producer.sha(buf) for name,buf in raw.items()},
+                **{'producer/'+name:producer.sha(buf) for name,buf in producer_raw.items()})
 
 
 def verify_records(*, artifacts, inputs, evidence_mode, test_injection_used):

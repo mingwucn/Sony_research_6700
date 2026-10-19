@@ -1,7 +1,7 @@
-"""Bound-buffer disposable-child preflight, stopping before installed dependencies.
+"""Bound-buffer disposable child with separately gated dependency collection.
 
-Only authored entry/contract/producer source is loaded. The refusing ordinary
-CLI does not activate this API. Caller pins/review declarations are not consent.
+Authored helpers execute only from checked buffers. The refusing ordinary CLI
+does not activate this API. Caller pins/review declarations are not consent.
 """
 import hashlib
 import json
@@ -16,6 +16,7 @@ import types
 FILES = {'entry': 'dependency_child_entry.py', 'core': 'dependency_evidence.py',
          'producer': 'dependency_producer.py'}
 COMPOSITION_FILES = dict(FILES, invented='dependency_invented.py')
+COLLECTION_FILES = dict(FILES, collector='dependency_package_preflight.py', execution='dependency_execution.py')
 
 
 def require(condition, code):
@@ -126,15 +127,21 @@ try:
  request=json.loads(raw,object_pairs_hook=pairs)
  need(type(request) is dict,'request_shape')
  composed=request.get('schema')=='dependency_child_invented_request_v1'
+ collected=request.get('schema')=='dependency_child_collection_request_v1'
  keys={'schema','sources','source_root','source_root_identity','expected_runtime','bootstrap_sha256','review_sha256'}
- need(set(request)==(keys|{'composition'} if composed else keys),'request_shape')
- need(composed or request['schema']=='dependency_child_preflight_request_v1','request_schema')
- need(type(request['sources']) is dict and set(request['sources'])==({'entry','core','producer','invented'} if composed else {'entry','core','producer'}),'source_roster')
+ need(set(request)==(keys|{'collection'} if collected else keys|{'composition'} if composed else keys),'request_shape')
+ need(collected or composed or request['schema']=='dependency_child_preflight_request_v1','request_schema')
  def canonical(v):return json.dumps(v,sort_keys=True,separators=(',',':'),ensure_ascii=True,allow_nan=False).encode('ascii')
  need(canonical(request['source_root_identity'])==canonical(roots(request['source_root'])),'root_identity')
  buffers={};receipts={};total=0
  names={'entry':'dependency_child_entry.py','core':'dependency_evidence.py','producer':'dependency_producer.py'}
  if composed:names['invented']='dependency_invented.py'
+ if collected:
+  c=request['collection'];need(type(c) is dict and set(c)=={'mode','packet','fixed'},'collection_shape')
+  need(c['mode'] in ('invented','runtime'),'collection_mode')
+  names.update(collector='dependency_package_preflight.py',execution='dependency_execution.py')
+  if c['mode']=='invented':names['invented']='dependency_invented.py'
+ need(type(request['sources']) is dict and set(request['sources'])==set(names),'source_roster')
  for role,row in request['sources'].items():
   need(type(row) is dict and set(row)=={'path','size','sha256','lstat','fstat'},'source_shape')
   need(row['path']==str(Path(request['source_root'])/names[role]),'source_path')
@@ -142,8 +149,9 @@ try:
   total+=len(buf);need(total<=4*1024**2,'source_bound');buffers[role]=buf;receipts[role]=receipt
  need(canonical(request['source_root_identity'])==canonical(roots(request['source_root'])),'root_changed')
  packet=None
- if composed:
-  c=request['composition'];need(type(c) is dict and set(c)=={'packet','fixed'},'composition_shape')
+ if composed or collected:
+  c=request['collection'] if collected else request['composition']
+  if composed:need(type(c) is dict and set(c)=={'packet','fixed'},'composition_shape')
   packet_raw,packet_receipt=read(c['packet']['path'],4*1024**2)
   need(canonical(packet_receipt)==canonical(c['packet']),'packet_binding')
   packet=json.loads(packet_raw,object_pairs_hook=pairs)
@@ -193,6 +201,21 @@ def freeze_composition(*, source_root, expected_runtime, review_sha256, packet_p
     return json.loads(canonical(request))
 
 
+def freeze_collection(*, source_root, expected_runtime, review_sha256, packet_path, packet_sha256, fixed, mode):
+    """Freeze exact authored/input identities. This does not authorize a launch."""
+    require(mode in ('invented','runtime'),'collection_mode')
+    request=freeze_request(source_root=source_root,expected_runtime=expected_runtime,review_sha256=review_sha256)
+    names=dict(COLLECTION_FILES)
+    if mode=='invented':names['invented']='dependency_invented.py'
+    request['sources']={k:read_source(str(Path(request['source_root'])/v))[1] for k,v in names.items()}
+    require(request['source_root_identity']==roots(request['source_root']),'root_changed')
+    raw,receipt=read_source(str(Path(packet_path).absolute()),limit=4*1024**2)
+    require(sha(raw)==packet_sha256,'packet_hash')
+    request.update(schema='dependency_child_collection_request_v1',collection=dict(mode=mode,packet=receipt,fixed=fixed))
+    require(len(canonical(request))<=65536,'request_bound')
+    return json.loads(canonical(request))
+
+
 def child_preflight(request, buffers, receipts, *, packet=None, folder=None):
     """Bound child body, called only after every source/input buffer is checked."""
     observed = runtime_profile()
@@ -208,12 +231,31 @@ def child_preflight(request, buffers, receipts, *, packet=None, folder=None):
     package = types.ModuleType('tools'); package.__path__ = []; sys.modules['tools'] = package
     roles = [('core', 'dependency_evidence'), ('producer', 'dependency_producer')]
     composed = request['schema'] == 'dependency_child_invented_request_v1'
+    collected = request['schema'] == 'dependency_child_collection_request_v1'
+    if collected:
+        # Ordinary trusted origins must not be preloaded before their fresh
+        # collection/bootstrap interval. Interpreter/stdlib remain trusted.
+        require(not any(n.split('.')[0] in ('ctypes','_ctypes','platform','cffi','_cffi_backend','pycparser')
+                        for n in sys.modules),'preloaded_runtime_origin')
+        roles.extend([('collector','dependency_package_preflight'),('execution','dependency_execution')])
+        if request['collection']['mode']=='invented':roles.append(('invented','dependency_invented'))
     if composed: roles.append(('invented', 'dependency_invented'))
     for role, alias in roles:
         module = types.ModuleType('tools.'+alias); module.__file__ = receipts[role]['path']
         module.__package__ = 'tools'; sys.modules[module.__name__] = module; setattr(package, alias, module)
         exec(compile(buffers[role], module.__file__, 'exec', dont_inherit=True, optimize=0), module.__dict__)
     producer = package.dependency_producer
+    if collected:
+        require(not any(n.split('.')[0] in ('ctypes','_ctypes','platform','cffi','_cffi_backend','pycparser')
+                        for n in sys.modules),'preloaded_runtime_origin')
+        c=request['collection'];target=str(Path(folder)/'collected')
+        if c['mode']=='invented':
+            artifacts=package.dependency_invented.execute(packet,c['fixed'],buffers,request['review_sha256'],target,collected=True)
+        else:
+            data=package.dependency_execution.bind_runtime_packet(packet,c['fixed'],buffers,request['review_sha256'])
+            package.dependency_execution.produce_collected_runtime(inputs=data,folder=target)
+            artifacts=package.dependency_execution.validate_saved_composition(target,data,invented=False)
+        return collection_result(request,artifacts)
     if composed:
         artifacts = package.dependency_invented.execute(packet, request['composition']['fixed'],
             buffers, request['review_sha256'], str(Path(folder)/'producer'))
@@ -247,8 +289,22 @@ def composition_result(request, artifacts):
         recovery_proven=False, device_write_gate_passed=False, camera_commands=[])
 
 
+def collection_result(request, artifacts):
+    invented=request['collection']['mode']=='invented'
+    return dict(schema='dependency_child_collection_result_v1',
+        status='invented_collected_child_complete' if invented else 'runtime_collected_child_complete',
+        request_sha256=sha(canonical(request)),source_sha256={k:r['sha256'] for k,r in request['sources'].items()},
+        runtime_profile=request['expected_runtime'],packet_sha256=request['collection']['packet']['sha256'],
+        fixed=request['collection']['fixed'],artifact_sha256=artifacts,test_injection_used=invented,
+        audit_hook_acknowledged=True,audit_hook_retained_inert=True,exact_child_source_buffers_executed=True,
+        parent_execution_authenticated=False,prior_review_proven=False,
+        actual_dependency_observation_performed=not invented,installed_dependency_bootstrap_performed=not invented,
+        operational_acceptance=False,execution_authorized=False,feature_supported=False,recovery_proven=False,
+        device_write_gate_passed=False,camera_commands=[])
+
+
 def run_preflight(*, request, folder, timeout=15):
-    """Once-only authored-source child. No installed-dependency activation path."""
+    """Once-only bound child; actual activation requires its own reviewed packet."""
     require(type(timeout) in (int, float) and 0 < timeout <= 30, 'timeout_bound')
     raw = canonical(request); require(len(raw) <= 65536, 'request_bound')
     folder = Path(folder); folder.mkdir(exist_ok=False)
@@ -283,7 +339,10 @@ def run_preflight(*, request, folder, timeout=15):
             stderr_raw, _ = read_source(str(folder/'stderr.log'), limit=65536)
             result = strict_json(stdout_raw)
             composed = request.get('schema') == 'dependency_child_invented_request_v1'
-            accepted = 'invented_child_producer_complete' if composed else 'authored_source_child_preflight_complete'
+            collected = request.get('schema') == 'dependency_child_collection_request_v1'
+            accepted = (('invented_collected_child_complete' if request['collection']['mode']=='invented'
+                         else 'runtime_collected_child_complete') if collected else
+                        'invented_child_producer_complete' if composed else 'authored_source_child_preflight_complete')
             require(not stderr_raw and result['status'] == accepted and
                     result['request_sha256'] == sha(raw) and result['source_sha256'] ==
                     {role: row['sha256'] for role, row in request['sources'].items()}, 'child_result_binding')
@@ -310,9 +369,27 @@ def run_preflight(*, request, folder, timeout=15):
                 artifacts = invented.validate_saved(folder/'producer', strict_json(packet_raw),
                     request['composition']['fixed'], source_buffers, request['review_sha256'])
                 expected_result = composition_result(request, artifacts)
+            if collected:
+                from tools import dependency_execution as execution
+                c=request['collection'];packet_raw,current=read_source(c['packet']['path'],limit=4*1024**2)
+                require(canonical(current)==canonical(c['packet']),'packet_binding')
+                source_buffers={}
+                for role,row in request['sources'].items():
+                    source_buffers[role],current=read_source(row['path'])
+                    require(canonical(current)==canonical(row),'source_binding')
+                value=strict_json(packet_raw);invented_mode=c['mode']=='invented'
+                if invented_mode:
+                    from tools import dependency_invented as invented
+                    data,_=invented.unpack(value,c['fixed'],source_buffers,request['review_sha256'],complete=True)
+                else:data=execution.bind_runtime_packet(value,c['fixed'],source_buffers,request['review_sha256'])
+                artifacts=execution.validate_saved_composition(folder/'collected',data,invented=invented_mode)
+                expected_result=collection_result(request,artifacts)
             require(canonical(result) == canonical(expected_result), 'child_result_binding')
             status = accepted
-        except (OSError, ValueError, KeyError, TypeError, RecursionError): result = None
+        except BaseException:
+            # Child completion is already known. Preserve its PID/exit record
+            # even if parent reconciliation is interrupted; never replay it.
+            result = None
     receipt = dict(schema='dependency_child_preflight_completion_v1', status=status,
         request_sha256=sha(raw), exit_code=exit_code, termination=termination,
         child_pid=process.pid if process is not None else None, result=result,
