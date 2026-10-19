@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "dependency_descriptor_data_observed_dynamic_provenance_pending",
+  "phase": "dependency_only_runtime_observed_GDT_integration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -68,13 +68,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_dependency_descriptor_data_observed_runtime_and_execution_pending",
+      "status": "partial_dependency_runtime_observed_GDT_integration_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 ordinary dependency data audit; no GDT replay or camera contact",
+      "scope": "R0 dependency-only public-vector runtime observation; no GDT replay or camera contact",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-dependency-provenance.md",
+      "session_report": "research/sessions/20261019-RA-003-dependency-runtime.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -99,7 +99,8 @@
       "primary_gdt_runner_design": "research/GDT_RUNNER_DESIGN.md",
       "primary_gdt_io_adapter_design": "research/GDT_IO_ADAPTER_DESIGN.md",
       "primary_gdt_activation_preparation": "research/GDT_ACTIVATION_PREPARATION.md",
-      "dependency_descriptor_provenance": "research/DEPENDENCY_DESCRIPTOR_PROVENANCE.md"
+      "dependency_descriptor_provenance": "research/DEPENDENCY_DESCRIPTOR_PROVENANCE.md",
+      "dependency_runtime_provenance": "research/DEPENDENCY_RUNTIME_PROVENANCE.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -175,7 +176,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement, independently review and qualify a dependency-only public-vector runtime provenance probe and the required source fixes for observed origins/startup and durable native receipts; no GDT replay or camera contact",
+  "next_work_package": "RA-003: integrate the observed dependency origins/startup and durable native receipts into a separately qualified GDT entry and review its exact operational basis; no GDT replay or camera contact",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -273,7 +274,8 @@
         "research/GDT_ACTIVATION_PREPARATION.md",
         "research/sessions/20261019-RA-003-gdt-activation-review.md",
         "research/DEPENDENCY_DESCRIPTOR_PROVENANCE.md",
-        "research/sessions/20261019-RA-003-dependency-provenance.md"
+        "research/sessions/20261019-RA-003-dependency-provenance.md",
+        "research/DEPENDENCY_RUNTIME_PROVENANCE.md"
       ]
     },
     "native_wifi_ftp": {
@@ -343,7 +345,8 @@
         "research/GDT_ACTIVATION_PREPARATION.md",
         "research/sessions/20261019-RA-003-gdt-activation-review.md",
         "research/DEPENDENCY_DESCRIPTOR_PROVENANCE.md",
-        "research/sessions/20261019-RA-003-dependency-provenance.md"
+        "research/sessions/20261019-RA-003-dependency-provenance.md",
+        "research/DEPENDENCY_RUNTIME_PROVENANCE.md"
       ]
     },
     "fl2_fl3_still_looks": {
@@ -361,7 +364,8 @@
         "research/REFERENCE_AUDIT.md",
         "docs/CREATIVE_LOOKS.md",
         "docs/OFFLINE_GUARDS.md",
-        "docs/DURABLE_SYNTHETIC_JOURNAL.md"
+        "docs/DURABLE_SYNTHETIC_JOURNAL.md",
+        "research/DEPENDENCY_RUNTIME_PROVENANCE.md"
       ]
     },
     "calibrated_custom_still_looks": {
@@ -378,7 +382,8 @@
       "next_package": "Deferred CL-107 after stable FL2/FL3 baseline and calibration gates",
       "evidence": [
         "docs/CREATIVE_LOOKS.md",
-        "docs/BACKLOG.md"
+        "docs/BACKLOG.md",
+        "research/DEPENDENCY_RUNTIME_PROVENANCE.md"
       ]
     },
     "optional_host_assisted_bridge": {
@@ -396,7 +401,8 @@
       "evidence": [
         "docs/FTP.md",
         "docs/FTP_HOST_PROTOCOL.md",
-        "research/OFFICIAL_SOURCE_REFRESH.md"
+        "research/OFFICIAL_SOURCE_REFRESH.md",
+        "research/DEPENDENCY_RUNTIME_PROVENANCE.md"
       ]
     }
   },
@@ -746,7 +752,7 @@
     "mainland_distribution_offer_identified": true,
     "mainland_distribution_report": "research/MAINLAND_FIRMWARE_SOURCE.md"
   },
-  "current_menu_language": "\u7b80\u4f53\u4e2d\u6587",
+  "current_menu_language": "简体中文",
   "available_languages": null,
   "english_available": false,
   "owner_intake_observation": {
@@ -755,7 +761,7 @@
     "source": "Owner chat report: English is unavailable; this is the Chinese mainland version",
     "model_label": "a6700",
     "firmware_version_text": "2.00",
-    "current_menu_language": "\u7b80\u4f53\u4e2d\u6587",
+    "current_menu_language": "简体中文",
     "complete_language_list_checked": false,
     "available_languages": null,
     "english_available": false,
@@ -933,7 +939,7 @@
       "source": "Owner chat report and explicit current-language clarification",
       "model_label": "a6700",
       "firmware_version_text": "2.00",
-      "current_menu_language": "\u7b80\u4f53\u4e2d\u6587",
+      "current_menu_language": "简体中文",
       "complete_language_list_checked": false,
       "available_languages": null,
       "english_available": null,
@@ -3494,6 +3500,73 @@
     "audited_native_backend_loaded": false,
     "backend_selected": false,
     "native_proof_observed": false,
+    "gdt_execution_authorized": false,
+    "actual_entry_ready": false,
+    "actual_entry_activated": false,
+    "operational_basis_assembled": false,
+    "actual_firmware_read": false,
+    "operational_constants_read": false,
+    "saved_raw_prefix_read": false,
+    "actual_gdt_bytes_observed": 0,
+    "actual_trial_replayed": false,
+    "private_input_upload": false,
+    "new_agreement_accepted": false,
+    "download_or_install_performed": false,
+    "body_correspondence_verified": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "feature_or_device_write_gate_passed": false,
+    "camera_commands": []
+  },
+  "dependency_runtime_provenance": {
+    "report": "research/DEPENDENCY_RUNTIME_PROVENANCE.md",
+    "session_report": "research/sessions/20261019-RA-003-dependency-runtime.md",
+    "evidence_class": [
+      "source-report",
+      "static-inference",
+      "offline-tested",
+      "runtime-observed"
+    ],
+    "status": "dependency_only_runtime_observed_GDT_integration_pending",
+    "probe_synthetic_total": 34,
+    "probe_synthetic_passed": 34,
+    "probe_synthetic_skipped": 0,
+    "probe_synthetic_exit_code": 0,
+    "probe_synthetic_unittest_seconds": 0.193,
+    "probe_synthetic_wrapper_seconds": 0.5540626000147313,
+    "supervisor_synthetic_total": 13,
+    "supervisor_synthetic_passed": 13,
+    "supervisor_synthetic_skipped": 0,
+    "supervisor_synthetic_exit_code": 0,
+    "supervisor_synthetic_unittest_seconds": 0.573,
+    "supervisor_synthetic_wrapper_seconds": 0.8752264999784529,
+    "actual_probe_launches": 1,
+    "actual_probe_exit_code": 0,
+    "actual_probe_supervision_seconds": 0.34355829999549314,
+    "source_origins_observed": 11,
+    "native_load_intents": 5,
+    "native_audit_events": 5,
+    "native_normal_return_completions": 5,
+    "backend_observed": "ctypes",
+    "aesni_library_loaded": true,
+    "selected_AES_start_function_observed": false,
+    "actual_vector_cases": 12,
+    "actual_vector_comparisons": 24,
+    "journal_rows": 54,
+    "raw_receipt_bytes": 56684,
+    "raw_receipt_sha256": "11f3fc3c5eee7a02dee108cdff51896dbc592528380d06b07351348be5782143",
+    "independent_saved_result_assessment": true,
+    "startup_profile": "-I -S -B -X utf8; CPython3.13 base prefixes",
+    "trusted_ctypes_initialization_guarded": false,
+    "effective_winmode_observed": false,
+    "OS_mapped_bytes_attested": false,
+    "transitive_native_closure_attested": false,
+    "starting_paths_unchanged_before_publication": 131,
+    "prior_qualified_sources_unchanged": 95,
+    "prior_prepared_chain_unchanged": true,
+    "historical_full_suites_rerun": false,
+    "GDT_integration_qualified": false,
     "gdt_execution_authorized": false,
     "actual_entry_ready": false,
     "actual_entry_activated": false,
