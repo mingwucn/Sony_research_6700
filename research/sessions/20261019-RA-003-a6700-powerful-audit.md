@@ -50,3 +50,7 @@ Camera commands: **none**. No firmware/private input upload, dependency install,
 RA-003: independently review the frozen 38-source GDT gate packet and 124-case qualification under the owner-authorized local source-only review boundary; resolve findings before any activation.
 
 The new FTP source lead is recorded for FT-101 follow-up when public implementation and test evidence are available. Existing local-review authorization remains valid; this source audit did not perform or complete that independent review.
+
+## Public-document refresh and current local work
+
+2026-10-19: README, development plan, manual and NOTICE were read again through public web text. Their FTP claim, unfinished complete restore/write workflow and inherited licensing limitation remain consistent with this pinned audit. This refresh did not pin a new code tree or reproduce a camera result. English remains unresolved. Current local next package and exact host-only results are in the [factory source gate continuation](20261019-RA-003-factory-source-gate.md); the older next package above is historical.
