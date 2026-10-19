@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "bootstrap_invented_qualified_successor_parent_evidence_contract_pending",
+  "phase": "v5_parent_evidence_qualified_noninjected_dependency_composition_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -181,7 +181,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement and qualify the closed successor parent-evidence contract, bind gate/entry references, then qualify final source and parent/child composition with independent source review; no actual metadata act or camera contact.",
+  "next_work_package": "RA-003: qualify noninjected dependency-only composition for the frozen v5 revision using public AES vectors and live startup/native receipts, excluding firmware/constants; independently review scope before any actual metadata act or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4460,5 +4460,52 @@
     "recovery_proven": false,
     "device_write_gate_passed": false,
     "next_single_work_package": "RA-003: implement and qualify the closed successor parent-evidence contract, bind gate/entry references, then qualify final source and parent/child composition with independent source review; no actual metadata act or camera contact."
+  },
+  "parent_evidence_v5": {
+    "tests": 253,
+    "unit_cases": 232,
+    "bootstrap_cases": 14,
+    "composition_cases": 7,
+    "passed": 253,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 120.937,
+    "wrapper_seconds": 121.50171929999487,
+    "current_snapshot_before_after_equal": true,
+    "parent_evidence_sha256": "8b9dc7a70894802799a66cc747cd171ddaf9f0e565c04cb2cc0a3e9ad7975b24",
+    "current_entry_sha256": "d09ecb6eb76a7fbfb9303590fb1a9131b00b68835467be74f86a2ecfa681b8c3",
+    "historical_tested_entry_sha256": "d6100e5fbd3374e5da07c44881bda41288f0bbff170be6ca30f576fbcb4b5a83",
+    "status": "v5_parent_evidence_contract_source_reviewed_253_qualified_noninjected_dependency_composition_pending",
+    "report": "research/sessions/20261019-RA-003-parent-evidence-v5.md",
+    "evidence": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "previous_goal_turn": "progress",
+    "current_goal_turn": "progress",
+    "qualification_source_pins": 90,
+    "predecessor_inputs_preserved": 86,
+    "gate_fixed_source_pins": 19,
+    "gate_bootstrap_selfbindings": 3,
+    "parent_evidence_consumed_by_gate": true,
+    "BOOT_GR_001_resolved_in_source": true,
+    "source_reviewers": 2,
+    "review_artifact_sha256": {
+      "gate-v5-review.json": "04613ab0008fff9bfc25ae164f296289be67ab59ddf5e5158383bc09a825cf97",
+      "runtime-v5-review.json": "1525e841fbb6a07e701d6279e028e299d807e2ad09aaa8cf2cdef2d01d48888b"
+    },
+    "qualification_summary_sha256": "456d942cabdeb56de557ee17a1561a4cb754520236f2da29d868bd3de7eeeb8b",
+    "qualification_review_sha256": "a2b08aeedbf4ee935bb23523d0f90e7f69755428d34f8372b01be3fd02cdb6b1",
+    "fixed_production_policy_acceptance": false,
+    "noninjected_dependency_qualified": false,
+    "actual_saved_bundle_validated": false,
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: qualify noninjected dependency-only composition for the frozen v5 revision using public AES vectors and live startup/native receipts, excluding firmware/constants; independently review scope before any actual metadata act or camera contact."
   }
 }
