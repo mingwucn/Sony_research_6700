@@ -55,7 +55,8 @@ no new actual read in that design package. The later [expanded-prefix trial](res
 stopped at acceptance; static review identifies a prior-summary schema mismatch.
 No expanded result accepted. The later [metadata preflight](research/METADATA_PREFLIGHT.md)
 qualified production-summary handling with 320 synthetic passes and no actual replay.
-A separately frozen runner and English/FTP mapping remain pending. China
+The later [preflight comparison](research/PREFLIGHT_COMPARISON.md) records one separately
+frozen same-five outcome; full formats and English/FTP mapping remain pending. China
 Copyright Law Article 50(5) expressly addresses reverse-engineering research;
 its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains

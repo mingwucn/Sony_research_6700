@@ -43,7 +43,19 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [metadata preflight](../research/METADATA_PREFLIGHT.md),
+Latest RA-003: [preflight comparison](../research/PREFLIGHT_COMPARISON.md),
+[commands/results](../research/sessions/20261019-RA-003-preflight-comparison.md).
+Qualification **346/346 passed**, zero skipped, exit **0**, **12.080s**; **26 new + 320 retained** cases; all **35** predecessor files and **32** historical failed-trial pins preserved.
+Actual terminal **complete_private_preflight_expanded_member_comparison**, script **0** / host **0**, **37.595937s**; pipeline attempts **1**, expanded callback attempts **5**.
+Source observation **source_read_confirmed**; protected callback attempts are separate and missing preliminary verification does not establish no I/O.
+One separately frozen same-five comparison passed its complete lineage and original-outcome checks; limited expanded header leads were recorded after pre-I/O metadata preflight.
+No retry, fallback, child/decoded/raw-prefix files, decompression/disassembly, upstream/firmware execution, camera or feature/write gate.
+Earlier five unknown outcomes and prior refusal remain unchanged; no retroactive runtime-stage claim.
+Sanitized header-lead counts: ext_family_header_candidate/header_only: 2; fat_legacy_header_candidate/malformed_header: 2; unknown/unsupported_opaque: 1.
+Selected raw retention remains bounded separately from metadata copies. Six retained prior trees and seven gate snapshots may coexist, each with a 2MiB serialized-role limit, plus caller objects/overhead/other buffers. Historical20MiB pipeline allowance is not an aggregate managed/process memory cap.
+Next single package: **RA-003: design and synthetically qualify a bounded ext-family superblock capability and geometry gate using pinned authoritative format sources; no actual replay or directory traversal**.
+
+Earlier RA-003: [metadata preflight](../research/METADATA_PREFLIGHT.md),
 [commands/results](../research/sessions/20261019-RA-003-metadata-preflight.md).
 Metadata-only qualification **320/320 passed**, zero skipped, exit **0**, **7.649s**; **42 new + 278 retained** cases.
 **30** retained source/test files and all **32** historical failed-trial source/runner pins remain unchanged.
@@ -52,7 +64,7 @@ Production metadata shapes, signed zero, bounded trees, fixed role/stage diagnos
 No firmware/key/raw-prefix input, actual replay, new download, upstream execution, camera or feature/write gate.
 The earlier expanded trial remains **needs_review**, script **2** / host **1**; its precise runtime refusal stage stays unrecorded.
 Earlier five unknown classifications and all other actual results remain unchanged. A future pre-I/O runner is still to be frozen and reviewed.
-Next single work package: **RA-003: freeze and review a runner with pre-I/O metadata preflight and bounded stage diagnostics, then run one separately scoped same-five expanded-header comparison with complete prior lineage**.
+Historical next single work package: **RA-003: freeze and review a runner with pre-I/O metadata preflight and bounded stage diagnostics, then run one separately scoped same-five expanded-header comparison with complete prior lineage**.
 
 Earlier RA-003: [refused expanded-prefix trial](../research/EXPANDED_PREFIX_AUDIT.md),
 [commands/results](../research/sessions/20261018-RA-003-expanded-prefix.md).
