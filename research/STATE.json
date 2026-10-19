@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "legacy_dependency_envelope_qualified_source_bound_saved_application_pending",
+  "phase": "retrospective_saved_diagnostic_refused_binding_localization_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -5765,5 +5765,102 @@
     "recovery_proven": false,
     "device_write_gate_passed": false,
     "next_single_work_package": "RA-003: bind the reviewed legacy adapter, shared validator and exact producer identities into a retrospective saved-metadata diagnostic; qualify source substitutions and cross-bindings and review the exact source before a once-only ordinary saved-record application. No native dependency loading, protected-input inspection or camera contact."
+  },
+  "ra003_retrospective_binding": {
+    "report": "research/sessions/20261019-RA-003-retrospective-binding.md",
+    "design": "research/RETROSPECTIVE_DEPENDENCY_BINDING.md",
+    "status": "saved_diagnostic_refused_legacy_binding_needs_review",
+    "previous_goal_turn": "progress",
+    "previous_goal_turn_scope": "Completed owner-requested public-reference recheck; no source revision change",
+    "current_goal_turn": "progress",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "focused_tests": {
+      "total": 18,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "wrapper_seconds": 8.970952700008638,
+      "source_sha256": {
+        "tools/dependency_retrospective.py": "8041f0b640f8aad98ca261c319b45dfd18a6f73cae689310bd7c784988cb4162",
+        "tests/test_dependency_retrospective.py": "5fd5ddbe54238cdb751a837b097b1abb82b043573ae2d3f88cce36e88c2042c6"
+      }
+    },
+    "wrapper_tests": {
+      "total": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "wrapper_seconds": 2.571494599978905,
+      "sha256": {
+        "saved_diagnostic.py": "95001132c8b4cdc3d26c6d9ceb42e750078c79548d6d819137785b0561895369",
+        "test_saved_diagnostic.py": "2e04aa883bf37eef310c1264d8784dacca209cbd114ab9040fee68533a553ec9"
+      }
+    },
+    "full_host_tests": {
+      "total": 395,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "exit_code": 0,
+      "wrapper_seconds": 58.292091299954336,
+      "log_sha256": "ee54ff2900f8536b2e70f366373d87ef270e0dd847d2420376c33f8baaf59b19"
+    },
+    "actual_application_attempts": 1,
+    "actual_application_exit_code": 1,
+    "actual_application_tool_wall_seconds": 0.9133515,
+    "ordinary_reads": 10,
+    "ordinary_bytes": 2437413,
+    "ordinary_source_reads": 5,
+    "ordinary_metadata_reads": 5,
+    "all_input_pins_matched": true,
+    "comparison_accepted": false,
+    "refusal_code": "legacy_binding",
+    "exact_failed_predicate_localized": false,
+    "source_reviewers": 2,
+    "source_review_findings_resolved": [
+      "unchecked_external_reader_bootstrap",
+      "unaccounted_bootstrap_read"
+    ],
+    "automatic_retry": false,
+    "source_cache_read": false,
+    "producer_sources_executed": false,
+    "installed_dependency_executed": false,
+    "firmware_opened": false,
+    "native_payload_opened": false,
+    "private_upload": false,
+    "historical_events_authenticated": false,
+    "prior_policy_approval_proven": false,
+    "execution_authorized": false,
+    "operational_acceptance": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "retained_historical_binding_blockers": [
+      "dependency_manifest_unobserved",
+      "native_policy_unobserved"
+    ],
+    "next_single_work_package": "RA-003: localize the frozen legacy_binding refusal with named source predicates and invented mismatch tests, then independently review a narrowly scoped saved-digest diagnostic before any new actual-record application. Preserve the failed attempt; no protected-input, dependency/native or camera access.",
+    "receipt_sha256": {
+      "application-freeze.json": "019368a03489a783bcedb44f22147186c6dff04350f0e75bddc2b66e1120838d",
+      "saved-attempt/started.json": "32ace63fb92ba390c20c004c88f49f6aa74c20f9d3821fa8fde0fa6f843127f6",
+      "saved-attempt/refusal.json": "40d63a3447253eef9ef5e5a8639813892a6a7dd983d70d93966ee1a322cc1591",
+      "host-invocation.json": "ffad76411b539bfeb120d9446c3357a892cc36ed1cc6c7cfc2d1b5e71f21d114",
+      "gate-source-review.json": "90989283136548e4f7e700606076742f07a8310635fb92cbe98db54da10eebfb",
+      "runtime-source-review.json": "7606b2086b5e905383914161f03cfd34a696b2625ed97bd63fbb25fe76f434ea",
+      "gate-diagnostic-source-review-r2.json": "6834157879abf0484163d8a97698113e6e2dd2302a06f16d94a148fa600378fe",
+      "runtime-diagnostic-source-review-r2.json": "beecc8f61ce3b81083e4d5be5400e259cb9c2c5429a69af06deeb04dc036bdae"
+    },
+    "independent_outcome_reviewers": 2,
+    "outcome_review_sha256": {
+      "gate-outcome-review.json": "735f873fcf356fe475f35a3b4178d5222d960fa0ce9ad91853c4033423c0358b",
+      "runtime-outcome-review.json": "5726d71c39d21e07bfd4550b8eac318781e26d70711e9fad5f972d4e1dbb33b2"
+    }
   }
 }
