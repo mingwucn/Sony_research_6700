@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "fourteen_invented_metadata_contracts_composed_legacy_bridge_and_runtime_authority_pending",
+  "phase": "legacy_successor_shared_metadata_compared_missing_context_and_runtime_authority_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_fourteen_invented_contracts_composed_runtime_authority_pending",
+      "status": "partial_legacy_successor_shared_metadata_compared_context_authority_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-activity-metadata.md",
+      "session_report": "research/sessions/20261020-RA-003-legacy-dependency-bridge.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -284,7 +284,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: derive, implement and independently qualify a source-only compatibility contract between the retained legacy dependency plan and successor dependency packet/fixed expectations. Explicitly reject unsupported version, source mapping, cache/native policy and operation correspondences; preserve independent authority, exact bootstrap closure, freshness and startup as separate unmet prerequisites. Invented records and authored source texts only; runtime disabled, no protected inputs or camera.",
+  "next_work_package": "RA-003: implement and independently qualify a versioned invented candidate envelope that binds an explicit operation ID and current dependency/source/activity/bridge context anchors across candidate, review, decision and seal. Keep the legacy envelope comparison-only; do not infer authority from a matching digest. Exact bootstrap/source ownership, freshness, rights and actual runtime remain separate prerequisites. Authored texts/invented records only; runtime disabled, no protected inputs or camera.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8481,12 +8481,12 @@
     }
   },
   "latest_host_focused_suite": {
-    "total": 156,
-    "passed": 156,
+    "total": 181,
+    "passed": 181,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "seconds": 21.50462169997627,
+    "seconds": 39.99450319999596,
     "source_stable": true,
     "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
     "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
@@ -8494,13 +8494,13 @@
     "execution_authorized": false,
     "camera_commands": [],
     "installed_dependency_aliases": [],
-    "log_sha256": "dee544cd227d033d9daa5378b2a07adc19ee41313cee0c506b8cce148ed88d65",
+    "log_sha256": "831e8571bd708d472dcc82d1e8d954890f278c942c3f69b00600f2d76aa230ca",
     "exit_code": 0,
-    "report": "research/sessions/20261020-RA-003-activity-metadata.md",
-    "source_pin_count": 99,
+    "report": "research/sessions/20261020-RA-003-legacy-dependency-bridge.md",
+    "source_pin_count": 102,
     "hardware_coverage": false,
     "evidence_class": "offline-tested",
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-activity-metadata/qualify.py"
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-legacy-dependency-bridge/qualify.py"
   },
   "owner_project_check_20261019_i": {
     "date": "2026-10-19",
@@ -8574,7 +8574,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261020-RA-003-activity-metadata.md",
+  "latest_report": "research/sessions/20261020-RA-003-legacy-dependency-bridge.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -8828,5 +8828,50 @@
     "previous_goal_turn": "progress_ten_role_composition_finalized",
     "current_goal_turn": "progress_remaining_four_contracts_implemented_and_fourteen_composed",
     "next_work_package": "RA-003: derive, implement and independently qualify a source-only compatibility contract between the retained legacy dependency plan and successor dependency packet/fixed expectations. Explicitly reject unsupported version, source mapping, cache/native policy and operation correspondences; preserve independent authority, exact bootstrap closure, freshness and startup as separate unmet prerequisites. Invented records and authored source texts only; runtime disabled, no protected inputs or camera."
+  },
+  "legacy_dependency_comparison": {
+    "report": "research/sessions/20261020-RA-003-legacy-dependency-bridge.md",
+    "qualification": {
+      "total": 181,
+      "passed": 181,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 39.99450319999596,
+      "source_stable": true,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "actual_inputs_accessed": false,
+      "execution_authorized": false,
+      "camera_commands": [],
+      "installed_dependency_aliases": [],
+      "log_sha256": "831e8571bd708d472dcc82d1e8d954890f278c942c3f69b00600f2d76aa230ca",
+      "exit_code": 0
+    },
+    "source_pin_count": 102,
+    "original_invented_fourteen_role_fixture": "refused_bridge_wheel",
+    "aligned_partial_invented_plan": "missing_record_files_and_native_policy_reported",
+    "aligned_complete_invented_plan": "shared_fields_match_retained_and_successor_contracts",
+    "legacy_absent_context": [
+      "operation_id",
+      "source_mapping",
+      "cache_bytes",
+      "root_identity",
+      "loader_kwargs",
+      "bootstrap_boundary"
+    ],
+    "actual_inputs_accessed": false,
+    "legacy_context_binding_present": false,
+    "original_legacy_token_provenance_verified": false,
+    "dependency_bridge_verified": false,
+    "actual_startup_verified": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_fourteen_invented_contracts_composed",
+    "current_goal_turn": "progress_legacy_successor_cross_comparison_and_fixture_conflict_qualified",
+    "next_work_package": "RA-003: implement and independently qualify a versioned invented candidate envelope that binds an explicit operation ID and current dependency/source/activity/bridge context anchors across candidate, review, decision and seal. Keep the legacy envelope comparison-only; do not infer authority from a matching digest. Exact bootstrap/source ownership, freshness, rights and actual runtime remain separate prerequisites. Authored texts/invented records only; runtime disabled, no protected inputs or camera."
   }
 }
