@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "saved_semantic_diagnostic_refused_stream_contract_successor_design_reviewed_binding_pending",
+  "phase": "saved_plan_and_nine_role_predicates_reconciled_dependency_native_policy_gaps_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -68,13 +68,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_saved_semantic_refusal_reconciled_corrected_contract_design_reviewed",
+      "status": "partial_saved_plan_and_nine_role_predicates_reconciled_operational_gaps_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 one ordinary saved-metadata diagnostic; source/synthetic correction only, no protected inputs or camera",
+      "scope": "R0 one reviewed ordinary saved-metadata act; no protected inputs or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-semantic-binding-diagnostic.md",
+      "session_report": "research/sessions/20261019-RA-003-stream-contract-binding.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -107,85 +107,84 @@
       ],
       "gdt_outer_source_preparation": "research/GDT_OUTER_BINDING_PREPARATION.md",
       "latest_host_continuation": {
-        "report": "research/sessions/20261019-RA-003-semantic-binding-diagnostic.md",
-        "design": "research/SEMANTIC_BINDING_DIAGNOSTIC.md",
-        "status": "saved_semantic_diagnostic_refused_stream_contract_successor_72_qualified_reviewed_binding_pending",
+        "report": "research/sessions/20261019-RA-003-stream-contract-binding.md",
+        "design": "research/STREAM_CONTRACT_BINDING.md",
+        "status": "saved_binding_plan_and_nine_role_predicates_reconciled_dependency_native_policy_gaps_pending",
         "evidence_classes": [
           "offline-tested",
           "static-inference"
         ],
         "previous_goal_turn": "progress",
-        "previous_goal_turn_scope": "Public reference identity refresh; shared feature and operational gates unchanged",
+        "previous_goal_turn_scope": "Reconciled predecessor refusal and qualified/reviewed the historical stream contract correction",
         "current_goal_turn": "progress",
-        "preparation_tests": {
-          "semantic_binding": 110,
+        "tests": {
+          "composition": 132,
           "supervisor": 17,
+          "passed": 149,
           "skipped": 0,
           "exit_codes": [
             0,
             0
           ],
           "suite_seconds": [
-            11.166,
-            0.87
+            15.346,
+            1.079
           ],
-          "run_during_prior_preparation": true
+          "retained_composition": 110,
+          "new_binding_evidence_cases": 14,
+          "retained_contract_cases": 8
         },
-        "pre_act_pins_verified": 90,
-        "preserved_r1_identities": 85,
-        "actual_saved_metadata_attempts": 1,
-        "child_exit_code": 1,
-        "host_exit_code": 1,
-        "child_completion_known": true,
-        "automatic_retry": false,
-        "child_wall_seconds": 0.8385605000075884,
-        "refusal_stage": "stream",
-        "exception_type": "SemanticError",
-        "passed_stages": 17,
-        "ordinary_reads": 62,
-        "ordinary_bytes": 2473268,
-        "pure_cached_helpers_executed": 11,
-        "semantic_loader_executed": true,
-        "semantic_helpers_executed": true,
-        "actual_namespace_preservation_assertion_reached": false,
-        "saved_semantic_acceptance": false,
-        "diagnostic_sha256": "c7a42d6ad73e308e73c44a0d23d82260923c53669e852845cdf9724bf7436677",
-        "supervisor_sha256": "7afd6cf84efa149a3e0a7db546b0787ede5b0198bafd5282650395d072662f11",
-        "result_sha256": "7ef1bb2a152f6318ff6eba003792d5a192f720c3b83ac7d62683e049c6576940",
-        "ledger_sha256": "1fb786abe1898bd1fb0be22bc9227285a7cce42e2ca8cc3ac4163c5e0d65250a",
-        "host_completion_sha256": "f239996015a3c48b76ce618d3d44e7a5aa8f701613e107fef7dd241d780a604b",
-        "saved_verification_sha256": "62842ece585309ba58c749834fb8a350d97fcce9ae45f81ad290817fc8a65376",
+        "source_pins_verified": 114,
         "independent_source_reviewers": 2,
         "independent_saved_outcome_reviewers": 2,
+        "child_exit_code": 0,
+        "host_exit_code": 0,
+        "child_wall_seconds": 0.8250808999873698,
+        "actual_attempts": 1,
+        "automatic_retry": false,
+        "passed_stages": 19,
+        "ordinary_reads": 70,
+        "ordinary_bytes": 2559882,
+        "fixed_reads": 34,
+        "supplemental_reads": 9,
+        "mapped_reads": 27,
+        "source_buffers": 47,
+        "source_bytes": 814219,
+        "effective_sources": 29,
+        "roles": 26,
+        "basis_roles": 9,
+        "pure_cached_helpers_executed": 11,
+        "namespace_aliases": 97,
+        "namespace_unchanged": true,
+        "complete_binding_plan_recomputed": true,
+        "nine_role_preflight_crossbindings_validated": true,
+        "saved_role_schema_and_derivation_checks_passed": true,
+        "semantic_sources_bound_to_qualified_helper_graph": true,
+        "historical_stream_producer_hash_bound": true,
+        "predecessor_plan_and_basis_digest_equal": true,
+        "source_sha256": "affdc69d2ba9bcceb55242e180b434c53dcc5d0933997e83b7edf442d661d0ce",
+        "supervisor_sha256": "fb7e463be647bc7795a2e8fd75c9677c7efb9df5b42183113d8b86fc27829d29",
+        "freeze_sha256": "d0c03af5dcb02102835dd2c7ff80a82b229a6ce82061426d66668c550eead899",
+        "result_sha256": "97e8e6e6f2737dc0c2ef77d81aa75c9bb37938c4c345e2179f260c2597326da9",
+        "ledger_sha256": "870906716602b2cfabafe7d93f493e26da6aba338c03af612bdb02b13fc51329",
+        "completion_sha256": "b9db48bb7ae1888ddefd3d28ecd441d332c23fd168ada341137bad7f2e6b9e8f",
+        "verification_sha256": "d082582cd387f8382212c2b1163386a1ce63601c8543e940fdaf5d31653ae332",
+        "source_review_sha256": {
+          "gate-contract-binding-source-review.json": "33b794fb79ddef8c916300a990a9bf84cc954986832c9b4c3c6f6f4cfef114bc",
+          "runtime-contract-binding-source-review.json": "b2114d4a8a0c05004767f22cd8571efc189d3021727ffdd8b2b2a9d5118152ba"
+        },
         "outcome_review_sha256": {
-          "gate-diagnostic-outcome-review.json": "5ca74a5ad42233e76207cc71c4a50d10a963647f8a4168f9fd9a37ea067c2465",
-          "runtime-diagnostic-outcome-review.json": "96d55e40733c6893bac56adf33abf60791e7b1648cb08777295f5cd27596818e"
+          "gate-contract-binding-outcome-review.json": "1c79996e53e9fceb6490c1352d45ebf8e1eb8b05d0b212144263fd8a211631e2",
+          "runtime-contract-binding-outcome-review.json": "820be0ab208e65654e02c88d38f1e68e380350564215629f723fbf4788f9dacb"
         },
-        "successor_contract_design": {
-          "tests": 72,
-          "passed": 72,
-          "skipped": 0,
-          "exit_code": 0,
-          "suite_seconds": 8.125,
-          "retained_cases": 64,
-          "new_cases": 8,
-          "frozen_pins": 54,
-          "source_sha256": "72653627fd0f9a11fba08f816a169d3dc6afba1722a1773203f0e5fa8cc365fa",
-          "freeze_sha256": "c3c0a96d3795d04313246b3c611d6738ee5cef4f679911c1659710717f72fcaf",
-          "review_sha256": {
-            "gate-stream-contract-review.json": "73e46d071f6a8728fe912aef966c67f7892fafa13d7131176039df15ff586a6e",
-            "runtime-stream-contract-review.json": "a0255b3f7930c341f21381a243038ff1d5a518036cd4575899d28f84118752f9"
-          },
-          "actual_saved_basis_validated": false,
-          "change": "Historical stream summary requires 4 MiB; later measured/prefix roles retain 5 MiB"
-        },
-        "source_authority_binding_complete": false,
-        "complete_saved_basis_semantic_revalidation": false,
-        "retained_operational_blockers": [
+        "retained_binding_blockers": [
           "dependency_manifest_unobserved",
           "native_policy_unobserved"
         ],
+        "complete_saved_basis_semantic_revalidation": false,
+        "raw_observations_verified": false,
         "historical_events_authenticated": false,
+        "source_authority_binding_complete": false,
         "operational_acceptance": false,
         "execution_authorized": false,
         "firmware_opened": false,
@@ -194,13 +193,13 @@
         "installed_dependency_executed": false,
         "protected_cached_sources_executed": false,
         "private_upload": false,
+        "independently_reproduced": false,
         "english_supported": false,
         "native_ftp_supported": false,
         "recovery_proven": false,
         "device_write_gate_passed": false,
         "camera_commands": [],
-        "independently_reproduced": false,
-        "next_single_work_package": "RA-003: bind the reviewed historical-stream contract correction and producer identity into a successor saved-metadata diagnostic, qualify complete composition and source substitutions, and obtain exact-source review before a new once-only application; no protected-input or camera access."
+        "next_single_work_package": "RA-003: audit each production dependency-manifest/native-policy predicate against existing saved dependency-only receipts and pinned source schemas, then qualify a closed proposal on invented inputs; no blocker clearing, dependency loading or protected-input execution."
       },
       "status_history": [
         {
@@ -209,7 +208,8 @@
           "scope": "R0 ordinary Python source preparation and invented v4 gate/loader tests; parent/child integration pending"
         }
       ],
-      "semantic_binding_diagnostic": "research/SEMANTIC_BINDING_DIAGNOSTIC.md"
+      "semantic_binding_diagnostic": "research/SEMANTIC_BINDING_DIAGNOSTIC.md",
+      "stream_contract_binding": "research/STREAM_CONTRACT_BINDING.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -285,7 +285,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: bind the reviewed historical-stream contract correction and producer identity into a successor saved-metadata diagnostic, qualify complete composition and source substitutions, and obtain exact-source review before a new once-only application; no protected-input or camera access.",
+  "next_work_package": "RA-003: audit each production dependency-manifest/native-policy predicate against existing saved dependency-only receipts and pinned source schemas, then qualify a closed proposal on invented inputs; no blocker clearing, dependency loading or protected-input execution.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -5369,5 +5369,100 @@
     "camera_commands": [],
     "independently_reproduced": false,
     "next_single_work_package": "RA-003: bind the reviewed historical-stream contract correction and producer identity into a successor saved-metadata diagnostic, qualify complete composition and source substitutions, and obtain exact-source review before a new once-only application; no protected-input or camera access."
+  },
+  "ra003_stream_contract_binding": {
+    "report": "research/sessions/20261019-RA-003-stream-contract-binding.md",
+    "design": "research/STREAM_CONTRACT_BINDING.md",
+    "status": "saved_binding_plan_and_nine_role_predicates_reconciled_dependency_native_policy_gaps_pending",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "previous_goal_turn": "progress",
+    "previous_goal_turn_scope": "Reconciled predecessor refusal and qualified/reviewed the historical stream contract correction",
+    "current_goal_turn": "progress",
+    "tests": {
+      "composition": 132,
+      "supervisor": 17,
+      "passed": 149,
+      "skipped": 0,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "suite_seconds": [
+        15.346,
+        1.079
+      ],
+      "retained_composition": 110,
+      "new_binding_evidence_cases": 14,
+      "retained_contract_cases": 8
+    },
+    "source_pins_verified": 114,
+    "independent_source_reviewers": 2,
+    "independent_saved_outcome_reviewers": 2,
+    "child_exit_code": 0,
+    "host_exit_code": 0,
+    "child_wall_seconds": 0.8250808999873698,
+    "actual_attempts": 1,
+    "automatic_retry": false,
+    "passed_stages": 19,
+    "ordinary_reads": 70,
+    "ordinary_bytes": 2559882,
+    "fixed_reads": 34,
+    "supplemental_reads": 9,
+    "mapped_reads": 27,
+    "source_buffers": 47,
+    "source_bytes": 814219,
+    "effective_sources": 29,
+    "roles": 26,
+    "basis_roles": 9,
+    "pure_cached_helpers_executed": 11,
+    "namespace_aliases": 97,
+    "namespace_unchanged": true,
+    "complete_binding_plan_recomputed": true,
+    "nine_role_preflight_crossbindings_validated": true,
+    "saved_role_schema_and_derivation_checks_passed": true,
+    "semantic_sources_bound_to_qualified_helper_graph": true,
+    "historical_stream_producer_hash_bound": true,
+    "predecessor_plan_and_basis_digest_equal": true,
+    "source_sha256": "affdc69d2ba9bcceb55242e180b434c53dcc5d0933997e83b7edf442d661d0ce",
+    "supervisor_sha256": "fb7e463be647bc7795a2e8fd75c9677c7efb9df5b42183113d8b86fc27829d29",
+    "freeze_sha256": "d0c03af5dcb02102835dd2c7ff80a82b229a6ce82061426d66668c550eead899",
+    "result_sha256": "97e8e6e6f2737dc0c2ef77d81aa75c9bb37938c4c345e2179f260c2597326da9",
+    "ledger_sha256": "870906716602b2cfabafe7d93f493e26da6aba338c03af612bdb02b13fc51329",
+    "completion_sha256": "b9db48bb7ae1888ddefd3d28ecd441d332c23fd168ada341137bad7f2e6b9e8f",
+    "verification_sha256": "d082582cd387f8382212c2b1163386a1ce63601c8543e940fdaf5d31653ae332",
+    "source_review_sha256": {
+      "gate-contract-binding-source-review.json": "33b794fb79ddef8c916300a990a9bf84cc954986832c9b4c3c6f6f4cfef114bc",
+      "runtime-contract-binding-source-review.json": "b2114d4a8a0c05004767f22cd8571efc189d3021727ffdd8b2b2a9d5118152ba"
+    },
+    "outcome_review_sha256": {
+      "gate-contract-binding-outcome-review.json": "1c79996e53e9fceb6490c1352d45ebf8e1eb8b05d0b212144263fd8a211631e2",
+      "runtime-contract-binding-outcome-review.json": "820be0ab208e65654e02c88d38f1e68e380350564215629f723fbf4788f9dacb"
+    },
+    "retained_binding_blockers": [
+      "dependency_manifest_unobserved",
+      "native_policy_unobserved"
+    ],
+    "complete_saved_basis_semantic_revalidation": false,
+    "raw_observations_verified": false,
+    "historical_events_authenticated": false,
+    "source_authority_binding_complete": false,
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "saved_raw_prefix_opened": false,
+    "installed_dependency_executed": false,
+    "protected_cached_sources_executed": false,
+    "private_upload": false,
+    "independently_reproduced": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: audit each production dependency-manifest/native-policy predicate against existing saved dependency-only receipts and pinned source schemas, then qualify a closed proposal on invented inputs; no blocker clearing, dependency loading or protected-input execution."
   }
 }
