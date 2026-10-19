@@ -9158,5 +9158,24 @@
     "previous_goal_turn": "progress_isolated_metadata_entry_committed_635caae",
     "current_goal_turn": "progress_operational_source_scope_gap_assessment_completed",
     "next_work_package": "RA-003: implement the exact act/source/request mapping for the six replacement adapter roles and connect the existing runtime continuation and saved-parent verification seams. Keep the public runtime disabled and qualify the connected path only with invented inputs under the frozen GDT limits. Account explicitly for the source closure and decision placeholders; no generic gate layer, actual activation records, installed dependency activation, firmware/constants/native payload reads or camera contact."
+  },
+  "a6700_reference_review_20261020_e": {
+    "report": "research/sessions/20261020-a6700-reference-review-e.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "checked_at_utc": "2026-10-19T23:17:11.894961+00:00",
+    "unchanged_from_prior_audit": true,
+    "documents_verified": 4,
+    "tree_entries": 51,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "native_english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit public FTP implementation and direct camera-to-server Wi-Fi evidence when published."
   }
 }
