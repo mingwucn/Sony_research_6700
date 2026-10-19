@@ -21,6 +21,32 @@ The [feature progress note](../docs/FEATURE_PROGRESS.md) and ignored internal
 feature note summarize the requested functions independently of package status.
 No prepared or passed host package is promoted into a working camera function.
 
+## Current host continuation (2026-10-20)
+
+Historical observations and next-package statements below retain their original
+scope. Current shared preparation is the
+[RA-003 candidate/context composition](sessions/20261020-RA-003-candidate-context.md):
+203/203 invented-data cases passed; all 105 source pins revalidated. Fourteen
+ordinary metadata contracts and the legacy/successor comparison are composed
+under a versioned operation-consistency envelope. This does not authenticate
+permission, source freshness, full executing-code ownership or actual startup.
+Runtime remains disabled; this package read no protected inputs or camera.
+
+The next single host package is complete authored validator/helper import-closure
+and bootstrap-ownership derivation and qualification, using source texts and
+invented fixtures only. Ordinary ambient imports, detached source compilation
+and interpreter/stdlib trust must be distinguished. A passing synthetic envelope
+is not an operational activation request or permission to inspect more firmware.
+
+English restriction/resource mapping, a native FTP backend with direct Wi-Fi
+evidence, exact-body correspondence, backup coverage and usable rollback/recovery
+remain incomplete. The [current external reference check](sessions/20261020-a6700-reference-review-c.md)
+confirms unchanged author-reported FTP RAW+JPEG success, unpublished implementation,
+no identified English unlock and unverified complete restoration. Inspection-rights
+answer remains **No / unknown**; no new legal conclusion. These gaps cannot be
+closed by repeating generic host tests. Overall pre-camera preparation remains
+in progress; no feature or device-write gate passed.
+
 ## Every work package and its evidence boundary
 
 | Package | Current pre-camera work | Requirement still needing evidence |
