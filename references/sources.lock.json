@@ -57,6 +57,18 @@
       },
       "execution_performed": false,
       "alpha6700_compatibility_established": false
+    },
+    {
+      "repository": "xyzhangxin/sony-a6700-powerful",
+      "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+      "role": "a6700 2.00 FTP and temporary-RAM backup source lead",
+      "audit_report": "research/sessions/20261019-RA-003-a6700-powerful-audit.md",
+      "text_files_blob_verified": 33,
+      "python_files_ast_parsed": 12,
+      "execution_performed": false,
+      "binary_payload_downloaded": false,
+      "reuse_decision": "reference only; GPL-3.0-only authored material, inherited unlicensed portions unresolved",
+      "alpha6700_compatibility_established": false
     }
   ],
   "fdat_extractor_candidate": {

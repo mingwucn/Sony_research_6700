@@ -3904,5 +3904,36 @@
     "recovery_proven": false,
     "device_write_gate_passed": false,
     "camera_commands": []
+  },
+  "a6700_powerful_reference_audit": {
+    "repository": "xyzhangxin/sony-a6700-powerful",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "role": "a6700 2.00 FTP and temporary-RAM backup source lead",
+    "audit_report": "research/sessions/20261019-RA-003-a6700-powerful-audit.md",
+    "text_files_blob_verified": 33,
+    "python_files_ast_parsed": 12,
+    "execution_performed": false,
+    "binary_payload_downloaded": false,
+    "reuse_decision": "reference only; GPL-3.0-only authored material, inherited unlicensed portions unresolved",
+    "alpha6700_compatibility_established": false,
+    "evidence": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "upstream_ftp_status": "author_reports_device_verified_implementation_not_public_in_inspected_tree",
+    "english_unlock_found": false,
+    "local_tests": {
+      "total": 228,
+      "passed": 225,
+      "skipped": 3,
+      "exit_code": 0
+    },
+    "native_ftp_supported": false,
+    "english_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: independently review the frozen 38-source GDT gate packet and 124-case qualification under the owner-authorized local source-only review boundary; resolve findings before any activation."
   }
 }
