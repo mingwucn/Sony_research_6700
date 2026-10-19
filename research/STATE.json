@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "factory_contracts_qualified_real_composition_and_pin_migration_pending",
+  "phase": "authored_child_composition_qualified_outer_pin_and_parent_integration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -4200,5 +4200,81 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: compose the repaired callback factory with the real authored adapter and controller on invented byte streams, qualify that composition, and migrate/review its new source pin in the outer gate before preparing any real metadata act."
+  },
+  "factory_child_composition": {
+    "status": "actual_authored_child_composition_8_qualified_source_reviewed_outer_pin_and_parent_integration_pending",
+    "report": "research/sessions/20261019-RA-003-factory-composition.md",
+    "evidence": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "previous_goal_turn": "progress",
+    "current_goal_turn": "progress",
+    "synthetic_tests": 8,
+    "passed": 8,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 23.846,
+    "wrapper_seconds": 24.21003139996901,
+    "qualification_scope": "actual_authored_factory_26_roles_adapter_child_controller_wiring_runtime_with_invented_AES_native_backend_and_readers",
+    "invented_stream_bytes": 95554,
+    "metadata_basis_roles": 9,
+    "qualification_source_and_fixture_pins": 47,
+    "authored_python_source_pins": 35,
+    "invented_binary_pins": 2,
+    "reviewers": 2,
+    "review_sha256": {
+      "runtime-rereview-8.json": "9f551de5047e63c6d6859a7350bf60727fff93ecf57ee1c1f181d63cbd2776db",
+      "io-review-8.json": "9adceda5b4fd0eb1b71c5cfdb174c21261ca89287fd3f422aee73a608d716793"
+    },
+    "development_runs": {
+      "development-001": {
+        "tests": 6,
+        "suite_seconds": 4.885,
+        "exit_code": 1,
+        "wrapper_seconds": 5.283843900018837,
+        "result_sha256": "a146356ab7b49a7c7f8ac8e05d3fd8aca3685db60afd68787dedfb63ac19dd38"
+      },
+      "development-002": {
+        "tests": 6,
+        "suite_seconds": 21.983,
+        "exit_code": 0,
+        "wrapper_seconds": 22.342351700004656,
+        "result_sha256": "dfb93f5682b4e2a527143e7703f74220c27062efceed203732e3854573ef459d"
+      },
+      "development-003": {
+        "tests": 8,
+        "suite_seconds": 23.846,
+        "exit_code": 0,
+        "wrapper_seconds": 24.21003139996901,
+        "result_sha256": "4d52ff7116e94bdf321b942b8b97ebaf8e36e96c1079d5252e9dbc5cedc9b883"
+      }
+    },
+    "production_code_changed": false,
+    "initial_opaque_classifier_fixture_incompatibility_resolved": true,
+    "initial_fixture_inventory_defect_resolved": true,
+    "historical_overlay_pins_preserved": 42,
+    "historical_factory_contract_pins_preserved": 4,
+    "full_outer_gate_parent_child_composition_qualified": false,
+    "outer_gate_migrated_to_repaired_factory": false,
+    "noninjected_dependency_runtime_qualified": false,
+    "independent_operational_review_complete": false,
+    "execution_authorized": false,
+    "actual_activation": false,
+    "actual_gdt_replay": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "saved_raw_prefix_opened": false,
+    "native_payload_opened": false,
+    "installed_dependency_executed": false,
+    "private_upload": false,
+    "download_or_install": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: migrate the repaired factory source pin and its reviewed qualification into one successor outer gate/loader chain, then qualify parent-process and child composition on invented inputs before any real metadata act.",
+    "json_fixture_and_preparation_pins": 10
   }
 }
