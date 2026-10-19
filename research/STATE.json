@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "gdt_dependency_continuation_qualified_operational_activation_pending",
+  "phase": "gdt_fresh_sources_observed_outer_gate_migration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -68,13 +68,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_gdt_dependency_integration_qualified_operational_activation_pending",
+      "status": "partial_fresh_source_cache_outer_gate_incomplete",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 invented dependency/controller composition and saved-metadata basis preflight; no GDT replay or camera contact",
+      "scope": "R0 fresh ordinary Python-source snapshots and source-derived outer-gate migration; protected inputs and GDT replay remain unopened",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-gdt-runtime-integration.md",
+      "session_report": "research/sessions/20261019-RA-003-gdt-source-cache.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -101,7 +101,11 @@
       "primary_gdt_activation_preparation": "research/GDT_ACTIVATION_PREPARATION.md",
       "dependency_descriptor_provenance": "research/DEPENDENCY_DESCRIPTOR_PROVENANCE.md",
       "dependency_runtime_provenance": "research/DEPENDENCY_RUNTIME_PROVENANCE.md",
-      "gdt_runtime_integration": "research/GDT_RUNTIME_INTEGRATION.md"
+      "gdt_runtime_integration": "research/GDT_RUNTIME_INTEGRATION.md",
+      "scope_history": [
+        "R0 invented dependency/controller composition and saved-metadata basis preflight; no GDT replay or camera contact"
+      ],
+      "gdt_outer_source_preparation": "research/GDT_OUTER_BINDING_PREPARATION.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -177,7 +181,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: complete and independently review the exact outer activation/binding chain for the no-site GDT entry and assembled basis, including fresh ordinary source-cache receipts; no GDT replay until that review passes",
+  "next_work_package": "RA-003: implement and synthetically qualify the versioned outer host/child activation gate against the six source-derived migration requirements and 47-source cache; independent operational review and GDT replay remain separate",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -278,7 +282,9 @@
         "research/sessions/20261019-RA-003-dependency-provenance.md",
         "research/DEPENDENCY_RUNTIME_PROVENANCE.md",
         "research/GDT_RUNTIME_INTEGRATION.md",
-        "research/sessions/20261019-RA-003-gdt-runtime-integration.md"
+        "research/sessions/20261019-RA-003-gdt-runtime-integration.md",
+        "research/GDT_OUTER_BINDING_PREPARATION.md",
+        "research/sessions/20261019-RA-003-gdt-source-cache.md"
       ],
       "progress_history": [
         {
@@ -357,7 +363,9 @@
         "research/sessions/20261019-RA-003-dependency-provenance.md",
         "research/DEPENDENCY_RUNTIME_PROVENANCE.md",
         "research/GDT_RUNTIME_INTEGRATION.md",
-        "research/sessions/20261019-RA-003-gdt-runtime-integration.md"
+        "research/sessions/20261019-RA-003-gdt-runtime-integration.md",
+        "research/GDT_OUTER_BINDING_PREPARATION.md",
+        "research/sessions/20261019-RA-003-gdt-source-cache.md"
       ],
       "progress_history": [
         {
@@ -3655,5 +3663,56 @@
     "old_prepared_files_preserved": 13,
     "starting_paths_preserved_before_publication": 133,
     "next_single_work_package": "RA-003: complete and independently review the exact outer activation/binding chain for the no-site GDT entry and assembled basis, including fresh ordinary source-cache receipts; no GDT replay until that review passes"
+  },
+  "gdt_outer_source_preparation": {
+    "schema": "gdt_outer_source_preparation_v1",
+    "status": "fresh_sources_collected_migration_specified_operational_gate_incomplete",
+    "evidence": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "report": "research/GDT_OUTER_BINDING_PREPARATION.md",
+    "session_report": "research/sessions/20261019-RA-003-gdt-source-cache.md",
+    "source_count": 47,
+    "source_bytes": 813391,
+    "authored_roles": 26,
+    "bootstrap_sources": 3,
+    "integration_sources": 3,
+    "dependency_python_sources": 11,
+    "trusted_python_sources": 4,
+    "fresh_descriptors": 47,
+    "close_attempts": 47,
+    "eof_probes": 47,
+    "collection_exit_code": 0,
+    "collection_seconds": 0.4869940999778919,
+    "cache_sha256": "58762a2f7a3ea563ca32348ec79cf3c173c0c51a1a2b006b7a17d4535ef8d473",
+    "source_receipts_sha256": "4e18c1c3e9c3f95cedab4386196daab986e5329f546188e65ab0d5abd2cf5eb8",
+    "binding_graph_load_roles": 23,
+    "binding_graph_protected_roles": 3,
+    "migration_requirements": 6,
+    "synthetic_tests_passed": 20,
+    "skipped": 0,
+    "test_exit_code": 0,
+    "test_unittest_seconds": 0.089,
+    "test_wrapper_seconds": 0.36434260004898533,
+    "review": "same_agent_separate_pass_not_independent",
+    "independent_operational_review_complete": false,
+    "complete_actual_outer_bootstrap_assembled": false,
+    "fresh_in_act_native_proof_observed": false,
+    "actual_entry_ready": false,
+    "execution_authorized": false,
+    "actual_gdt_replay": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "saved_raw_prefix_opened": false,
+    "native_payload_opened": false,
+    "installed_dependency_executed": false,
+    "device_access_performed": false,
+    "device_writes_performed": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: implement and synthetically qualify the versioned outer host/child activation gate against the six source-derived migration requirements and 47-source cache; independent operational review and GDT replay remain separate"
   }
 }
