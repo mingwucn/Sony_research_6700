@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "gdt_source_overlay_v3_qualified_callback_factory_composition_pending",
+  "phase": "factory_contracts_qualified_real_composition_and_pin_migration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -4115,5 +4115,90 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: qualify the authored callback factory and full host/child wiring using invented byte streams and source/dependency adapters, then independently review that composition before preparing a real metadata act."
+  },
+  "factory_contract_qualification": {
+    "status": "factory_contracts_29_qualified_cleanup_repair_source_reviewed_full_composition_pending",
+    "report": "research/sessions/20261019-RA-003-factory-contracts.md",
+    "evidence": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "previous_goal_turn": "no_progress_external_claim_refresh_only",
+    "current_goal_turn": "progress",
+    "tests": 29,
+    "passed": 29,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 0.095,
+    "wrapper_seconds": 0.38725369999883696,
+    "development_runs": {
+      "development-001": {
+        "tests": 27,
+        "suite_seconds": 0.058,
+        "exit_code": 0,
+        "wrapper_seconds": 0.26682880002772436,
+        "result_sha256": "87c6bb324c8818fc6ed6b315625cc8dca40e23164c9e91edb3a95e57fb5ea44a"
+      },
+      "development-002": {
+        "tests": 29,
+        "suite_seconds": 0.068,
+        "exit_code": 1,
+        "wrapper_seconds": 0.3147560000070371,
+        "result_sha256": "21485f12afc77f1d9f727e6961b71388228d33dee5c7981a3403a690dcb240fe"
+      },
+      "development-003": {
+        "tests": 29,
+        "suite_seconds": 0.095,
+        "exit_code": 0,
+        "wrapper_seconds": 0.38725369999883696,
+        "result_sha256": "31f3a759273b5a99875b406ca7ba235c3d794c9d1fcc030b86f0db147a6cee12"
+      }
+    },
+    "source_pins": {
+      "prospective_child.py": {
+        "sha256": "3cd438eb42db7d64c18752fab3580b47915de8ccd2d95efc431fd67fe3b0e08c",
+        "bytes": 8861
+      },
+      "gdt_wiring.py": {
+        "sha256": "c1117307de2c6a0230b0bf848472dce30eaa766535cf498d4b945becbdb07d85",
+        "bytes": 4049
+      },
+      "test_factory.py": {
+        "sha256": "b1c40cf95c768bb76ed9a025ddd106a1d5b9c889a909901ae1eec709d6a77c43",
+        "bytes": 14676
+      },
+      "qualify.py": {
+        "sha256": "387e8691006a2bc6ba30af8b0fe515b2422affdd5594cd049cf0ef6a6ef3152b",
+        "bytes": 2545
+      }
+    },
+    "independent_source_reviewers": 2,
+    "review_sha256": {
+      "runtime-rereview-29.json": "f30d0fc46b5f884d4ce773ff39ac568fadb0e292d8ecbd458458b74ea86506af",
+      "io-rereview-29.json": "fda1c290a2d5b7e94ccadc4af76400639d3db2f6aba8230a0a429651e283e059"
+    },
+    "cleanup_ownership_finding_resolved": true,
+    "original_overlay_source_pins_unchanged": 42,
+    "actual_factory_exercised_with_invented_role_sources": true,
+    "actual_wiring_exercised_with_invented_controller_and_dependency_adapters": true,
+    "full_real_adapter_controller_runtime_composition_qualified": false,
+    "outer_gate_migrated_to_repaired_factory": false,
+    "independent_operational_review_complete": false,
+    "execution_authorized": false,
+    "actual_activation": false,
+    "actual_gdt_replay": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "saved_raw_prefix_opened": false,
+    "native_payload_opened": false,
+    "installed_dependency_executed": false,
+    "private_upload": false,
+    "download_or_install": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: compose the repaired callback factory with the real authored adapter and controller on invented byte streams, qualify that composition, and migrate/review its new source pin in the outer gate before preparing any real metadata act."
   }
 }
