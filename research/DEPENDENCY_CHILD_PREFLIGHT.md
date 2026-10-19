@@ -92,3 +92,6 @@ before any installed-dependency observation.**
 No native English/FTP, recovery or device-write gate is passed. The full pre-camera
 objective remains active; this package qualifies its authored-source bootstrap
 portion only.
+
+
+Continuation: the [invented child/producer composition](DEPENDENCY_CHILD_COMPOSITION.md) now qualifies the complete invented sequence. The preflight results above remain historical and do not become installed-dependency evidence.

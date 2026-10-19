@@ -15,6 +15,7 @@ import types
 
 FILES = {'entry': 'dependency_child_entry.py', 'core': 'dependency_evidence.py',
          'producer': 'dependency_producer.py'}
+COMPOSITION_FILES = dict(FILES, invented='dependency_invented.py')
 
 
 def require(condition, code):
@@ -123,19 +124,29 @@ try:
  need(len(sys.argv)==3,'arguments')
  raw,_=read(sys.argv[1],65536);need(digest(raw)==sys.argv[2],'request_hash')
  request=json.loads(raw,object_pairs_hook=pairs)
- need(type(request) is dict and set(request)=={'schema','sources','source_root','source_root_identity','expected_runtime','bootstrap_sha256','review_sha256'},'request_shape')
- need(request['schema']=='dependency_child_preflight_request_v1','request_schema')
- need(type(request['sources']) is dict and set(request['sources'])=={'entry','core','producer'},'source_roster')
+ need(type(request) is dict,'request_shape')
+ composed=request.get('schema')=='dependency_child_invented_request_v1'
+ keys={'schema','sources','source_root','source_root_identity','expected_runtime','bootstrap_sha256','review_sha256'}
+ need(set(request)==(keys|{'composition'} if composed else keys),'request_shape')
+ need(composed or request['schema']=='dependency_child_preflight_request_v1','request_schema')
+ need(type(request['sources']) is dict and set(request['sources'])==({'entry','core','producer','invented'} if composed else {'entry','core','producer'}),'source_roster')
  def canonical(v):return json.dumps(v,sort_keys=True,separators=(',',':'),ensure_ascii=True,allow_nan=False).encode('ascii')
  need(canonical(request['source_root_identity'])==canonical(roots(request['source_root'])),'root_identity')
  buffers={};receipts={};total=0
  names={'entry':'dependency_child_entry.py','core':'dependency_evidence.py','producer':'dependency_producer.py'}
+ if composed:names['invented']='dependency_invented.py'
  for role,row in request['sources'].items():
   need(type(row) is dict and set(row)=={'path','size','sha256','lstat','fstat'},'source_shape')
   need(row['path']==str(Path(request['source_root'])/names[role]),'source_path')
   buf,receipt=read(row['path'],2*1024**2);need(canonical(receipt)==canonical(row),'source_binding')
   total+=len(buf);need(total<=4*1024**2,'source_bound');buffers[role]=buf;receipts[role]=receipt
  need(canonical(request['source_root_identity'])==canonical(roots(request['source_root'])),'root_changed')
+ packet=None
+ if composed:
+  c=request['composition'];need(type(c) is dict and set(c)=={'packet','fixed'},'composition_shape')
+  packet_raw,packet_receipt=read(c['packet']['path'],4*1024**2)
+  need(canonical(packet_receipt)==canonical(c['packet']),'packet_binding')
+  packet=json.loads(packet_raw,object_pairs_hook=pairs)
  observed=dict(implementation=sys.implementation.name,version=list(sys.version_info[:3]),version_text=sys.version,
   cache_tag=sys.implementation.cache_tag,executable=sys.executable,base_executable=getattr(sys,'_base_executable',sys.executable),
   prefix=sys.prefix,base_prefix=sys.base_prefix,platform=sys.platform,maxsize=sys.maxsize,path=list(sys.path),
@@ -146,7 +157,7 @@ try:
   observed['no_user_site']==1 and observed['no_bytecode'] is True and observed['optimize']==0,'runtime_flags')
  entry=types.ModuleType('__dependency_child_bound__');entry.__file__=receipts['entry']['path']
  exec(compile(buffers['entry'],entry.__file__,'exec',dont_inherit=True,optimize=0),entry.__dict__)
- result=entry.child_preflight(request,buffers,receipts)
+ result=entry.child_preflight(request,buffers,receipts,packet=packet,folder=str(Path(sys.argv[1]).parent))
  print(json.dumps(result,sort_keys=True,separators=(',',':')))
 except BaseException:
  print(json.dumps(dict(status='needs_review',code='child_preflight_refused',camera_commands=[])))
@@ -169,8 +180,21 @@ def freeze_request(*, source_root, expected_runtime, review_sha256):
     return json.loads(canonical(request))
 
 
-def child_preflight(request, buffers, receipts):
-    """Bound child body, called only after all three source buffers are checked."""
+def freeze_composition(*, source_root, expected_runtime, review_sha256, packet_path, packet_sha256, fixed):
+    """Invented-only successor. Caller fixes package/root expectations beforehand."""
+    request = freeze_request(source_root=source_root, expected_runtime=expected_runtime, review_sha256=review_sha256)
+    source_root = request['source_root']
+    request['sources']['invented'] = read_source(str(Path(source_root)/COMPOSITION_FILES['invented']))[1]
+    require(request['source_root_identity'] == roots(source_root), 'root_changed')
+    raw, receipt = read_source(str(Path(packet_path).absolute()), limit=4*1024**2)
+    require(sha(raw) == packet_sha256, 'packet_hash')
+    request.update(schema='dependency_child_invented_request_v1', composition=dict(packet=receipt, fixed=fixed))
+    require(len(canonical(request)) <= 65536, 'request_bound')
+    return json.loads(canonical(request))
+
+
+def child_preflight(request, buffers, receipts, *, packet=None, folder=None):
+    """Bound child body, called only after every source/input buffer is checked."""
     observed = runtime_profile()
     require(canonical(observed) == canonical(request['expected_runtime']), 'runtime_binding')
     require(observed['implementation'] == 'cpython' and observed['isolated'] == 1 and
@@ -182,11 +206,18 @@ def child_preflight(request, buffers, receipts):
     require(not any(name == 'tools' or name.startswith('tools.') or name == 'Cryptodome' or
                     name.startswith('Cryptodome.') for name in sys.modules), 'preloaded_alias')
     package = types.ModuleType('tools'); package.__path__ = []; sys.modules['tools'] = package
-    for role, alias in (('core', 'dependency_evidence'), ('producer', 'dependency_producer')):
+    roles = [('core', 'dependency_evidence'), ('producer', 'dependency_producer')]
+    composed = request['schema'] == 'dependency_child_invented_request_v1'
+    if composed: roles.append(('invented', 'dependency_invented'))
+    for role, alias in roles:
         module = types.ModuleType('tools.'+alias); module.__file__ = receipts[role]['path']
         module.__package__ = 'tools'; sys.modules[module.__name__] = module; setattr(package, alias, module)
         exec(compile(buffers[role], module.__file__, 'exec', dont_inherit=True, optimize=0), module.__dict__)
     producer = package.dependency_producer
+    if composed:
+        artifacts = package.dependency_invented.execute(packet, request['composition']['fixed'],
+            buffers, request['review_sha256'], str(Path(folder)/'producer'))
+        return composition_result(request, artifacts)
     guard = producer.Guard({'native_libraries': {}}, None, lambda *args: None)
     try:
         operations = producer.RuntimeOps(); operations.audit_install(guard.audit); operations.audit_probe(guard.probe_token)
@@ -201,6 +232,19 @@ def child_preflight(request, buffers, receipts):
         actual_dependency_observation_performed=False, operational_acceptance=False,
         execution_authorized=False, feature_supported=False, recovery_proven=False,
         device_write_gate_passed=False, camera_commands=[])
+
+
+def composition_result(request, artifacts):
+    return dict(schema='dependency_child_invented_result_v1', status='invented_child_producer_complete',
+        request_sha256=sha(canonical(request)), source_sha256={k: v['sha256'] for k, v in request['sources'].items()},
+        runtime_profile=request['expected_runtime'], packet_sha256=request['composition']['packet']['sha256'],
+        fixed=request['composition']['fixed'], artifact_sha256=artifacts,
+        simulated_native_loads=5, callback_calls=1, simulated_cipher_calls=48,
+        test_injection_used=True, audit_hook_acknowledged=True, audit_hook_retained_inert=True,
+        exact_child_source_buffers_executed=True, parent_execution_authenticated=False, prior_review_proven=False,
+        installed_dependency_bootstrap_performed=False, actual_dependency_observation_performed=False,
+        operational_acceptance=False, execution_authorized=False, feature_supported=False,
+        recovery_proven=False, device_write_gate_passed=False, camera_commands=[])
 
 
 def run_preflight(*, request, folder, timeout=15):
@@ -238,7 +282,9 @@ def run_preflight(*, request, folder, timeout=15):
             stdout_raw, _ = read_source(str(folder/'stdout.json'), limit=65536)
             stderr_raw, _ = read_source(str(folder/'stderr.log'), limit=65536)
             result = strict_json(stdout_raw)
-            require(not stderr_raw and result['status'] == 'authored_source_child_preflight_complete' and
+            composed = request.get('schema') == 'dependency_child_invented_request_v1'
+            accepted = 'invented_child_producer_complete' if composed else 'authored_source_child_preflight_complete'
+            require(not stderr_raw and result['status'] == accepted and
                     result['request_sha256'] == sha(raw) and result['source_sha256'] ==
                     {role: row['sha256'] for role, row in request['sources'].items()}, 'child_result_binding')
             expected_result = dict(schema='dependency_child_preflight_result_v1',
@@ -250,8 +296,22 @@ def run_preflight(*, request, folder, timeout=15):
                 installed_dependency_bootstrap_performed=False, actual_dependency_observation_performed=False,
                 operational_acceptance=False, execution_authorized=False, feature_supported=False,
                 recovery_proven=False, device_write_gate_passed=False, camera_commands=[])
+            if composed:
+                # Independent parent read/contract recomputation of newly created
+                # invented records. This parent import does not authenticate its
+                # own executing source; no authority flag is promoted.
+                from tools import dependency_invented as invented
+                packet_raw, packet_receipt = read_source(request['composition']['packet']['path'], limit=4*1024**2)
+                require(canonical(packet_receipt) == canonical(request['composition']['packet']), 'packet_binding')
+                source_buffers = {}
+                for role, row in request['sources'].items():
+                    source_buffers[role], current = read_source(row['path'])
+                    require(canonical(current) == canonical(row), 'source_binding')
+                artifacts = invented.validate_saved(folder/'producer', strict_json(packet_raw),
+                    request['composition']['fixed'], source_buffers, request['review_sha256'])
+                expected_result = composition_result(request, artifacts)
             require(canonical(result) == canonical(expected_result), 'child_result_binding')
-            status = 'authored_source_child_preflight_complete'
+            status = accepted
         except (OSError, ValueError, KeyError, TypeError, RecursionError): result = None
     receipt = dict(schema='dependency_child_preflight_completion_v1', status=status,
         request_sha256=sha(raw), exit_code=exit_code, termination=termination,

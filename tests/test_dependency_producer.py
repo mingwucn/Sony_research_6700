@@ -80,55 +80,7 @@ def fixture(source_changes=None):
     return data, FakeOps(policy, contents, observed, roots, config['vectors'])
 
 
-class FakeOps:
-    def __init__(self, policy, contents, observed, roots, vectors):
-        self.policy = policy; self.contents = contents; self.observed = observed; self.roots = roots; self.vectors = vectors
-        self.hook = None; self.callback_calls = 0; self.loader_calls = 0; self.cipher_calls = 0
-        self.reads = []; self.root_calls = 0; self.load_action = None; self.callback_action = None
-        self.root_action = None; self.read_action = None
-        self.modules = {}
-        for name, row in policy['trusted_origins'].items():
-            module = types.ModuleType(name); module.__file__ = subject.target(policy, row); self.modules[name] = module
-        self.original = self.load; self.modules['ctypes'].CDLL = self.original
-    def reader(self, path, row):
-        self.reads.append(path)
-        if self.read_action: self.read_action(self, path)
-        raw, receipt = self.contents[path], copy.deepcopy(self.observed[path])
-        core._receipt(receipt, path, row['sha256'], row['size'], row['identity'])
-        return raw, receipt
-    def root(self, path):
-        self.root_calls += 1
-        result = copy.deepcopy(next(v for v in self.roots.values() if v['path'] == path))
-        return self.root_action(self, result) if self.root_action else result
-    def startup(self):
-        return dict(isolated=True, no_site=True, no_user_site=True, no_bytecode=True,
-            preloaded_package_aliases=[], bootstrap_boundary=self.policy['bootstrap_boundary'])
-    def audit_install(self, hook): self.hook = hook
-    def audit_probe(self, token): self.hook(subject.PROBE_EVENT, (token,))
-    def bootstrap(self): return self.modules
-    def load(self, path, **kwargs):
-        self.loader_calls += 1
-        if self.load_action: return self.load_action(self, path)
-        self.hook('ctypes.dlopen', (path,)); return object()
-    def new(self, key, mode, **kwargs):
-        self.cipher_calls += 1
-        vector = next(v for v in self.vectors if bytes.fromhex(v['key_hex']) == key and
-                      (1 if v['mode'] == 'ECB' else 2) == mode)
-        if mode == 2: assert kwargs['iv'] == bytes.fromhex(vector['iv_hex'])
-        assert set(kwargs) <= {'iv', 'use_aesni'}
-        plain, cipher = bytes.fromhex(vector['plaintext_hex']), bytes.fromhex(vector['ciphertext_hex'])
-        class Cipher:
-            def encrypt(self, value):
-                assert value == plain
-                return cipher
-            def decrypt(self, value):
-                assert value == cipher
-                return plain
-        return Cipher()
-    def callback(self, AES, vectors):
-        self.callback_calls += 1
-        if self.callback_action: self.callback_action(self, AES)
-        subject.run_vectors(AES, vectors)
+from tools.dependency_invented import FakeOps
 
 
 class ProducerTests(unittest.TestCase):
