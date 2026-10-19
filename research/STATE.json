@@ -9036,5 +9036,36 @@
     "previous_goal_turn": "progress_static_import_closure_derived_and_committed",
     "current_goal_turn": "progress_checked_public_buffer_loader_composed_and_qualified",
     "next_work_package": "RA-003: implement, independently review and qualify a no-site disposable host entry that captures the metadata loader and source-audit helper bytes against an external review anchor before executing them, then invokes the checked fourteen-public/eleven-retained validator composition on invented metadata only. Bind exact startup argv, source origins and import policy; observe startup/cleanup and refusal behavior without claiming complete interpreter/stdlib trust. No actual activation records, installed dependency activation, firmware/constants/native payload reads or camera; operational runtime remains disabled."
+  },
+  "a6700_reference_review_20261020_d": {
+    "report": "research/sessions/20261020-a6700-reference-review-d.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "checked_at_utc": "2026-10-19T23:00:13.176454+00:00",
+    "unchanged_from_prior_audit": true,
+    "documents_verified": 4,
+    "tree_entries": 51,
+    "tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.5992487999610603,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "exit_code": 0,
+      "camera_commands": [],
+      "log_sha256": "59be4eb6af9d1950bd68fc1a90b6380055b0ac1be2ea38cb0d470f54d5bfe62b"
+    },
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "native_english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit public FTP implementation and direct camera-to-server Wi-Fi evidence when published."
   }
 }
