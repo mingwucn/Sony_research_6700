@@ -3959,6 +3959,27 @@
       "device_write_gate_passed": false,
       "camera_commands": [],
       "next_single_work_package": "FT-101: prepare a source-only FTP evidence checklist against the pinned revision; no camera contact."
+    },
+    "latest_owner_requested_recheck": {
+      "date": "2026-10-19",
+      "report": "research/sessions/20261019-a6700-powerful-recheck.md",
+      "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+      "main_revision_unchanged": true,
+      "refreshed_text_files": 4,
+      "tree_metadata_checked": true,
+      "local_tests": {
+        "total": 228,
+        "passed": 225,
+        "skipped": 3,
+        "exit_code": 0,
+        "suite_seconds": 20.149
+      },
+      "english_supported": false,
+      "native_ftp_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "camera_commands": [],
+      "next_single_work_package": "FT-101: assess published FTP implementation and transfer evidence against the source-only checklist; implementation/evidence currently missing."
     }
   },
   "gdt_independent_review_round": {
