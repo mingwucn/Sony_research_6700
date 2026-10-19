@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "gdt_fresh_sources_observed_outer_gate_migration_pending",
+  "phase": "gdt_independent_review_findings_require_repair",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -3935,5 +3935,32 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: independently review the frozen 38-source GDT gate packet and 124-case qualification under the owner-authorized local source-only review boundary; resolve findings before any activation."
+  },
+  "gdt_independent_review_round": {
+    "status": "review_round_returned_findings_unresolved",
+    "report": "research/sessions/20261019-RA-003-gdt-independent-review.md",
+    "reviewer_count": 3,
+    "reviewed_distinct_source_paths": 17,
+    "frozen_source_pins_verified": 38,
+    "unique_findings": 5,
+    "synthetic_tests": 124,
+    "synthetic_passed": 124,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 2.868,
+    "wrapper_seconds": 3.2797606000094675,
+    "owner_review_subagent_authorization_received": true,
+    "review_accepted": false,
+    "independent_operational_review_complete": false,
+    "findings_resolved": false,
+    "execution_authorized": false,
+    "actual_activation": false,
+    "actual_gdt_replay": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: preserve frozen sources, repair the five review findings in a new revision, add cross-module invented-data regressions and requalify; then obtain source re-review before any activation."
   }
 }

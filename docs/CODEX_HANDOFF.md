@@ -425,6 +425,9 @@ A private review packet now freezes **38 authored Python sources / 767,313 bytes
 Next single package: **RA-003: independently review the frozen 38-source packet, corrected bootstrap and 124-case qualification against the metadata-act draft, then resolve findings; no actual activation or GDT replay before review passes**.
 
 
-Current blocking prerequisite: [independent-review audit](../research/sessions/20261019-RA-003-independent-review-blocker.md).
+Historical authorization blocker (superseded by the authorized review round below): [independent-review audit](../research/sessions/20261019-RA-003-independent-review-blocker.md).
 The source packet and proposed act are ready, but required independent review has not happened. The local-reviewer authorization request is unanswered. This same prerequisite is recorded in three consecutive completed goal turns; the current audit verified all 38 frozen source hashes and found no substantive next step that can bypass the review. The broad pre-camera goal is **blocked, not complete**. No code or tests changed and no camera/protected-input operation ran.
 Next single package remains the independent review of the frozen source packet and act draft.
+
+
+2026-10-19: [Independent source review findings](../research/sessions/20261019-RA-003-gdt-independent-review.md). Owner authorization received; three local reviewers returned **five distinct unresolved findings**, covering receipt/stdout encoding, interruption cleanup, root-proposal scope and qualification policy. They reported 17 distinct reviewed paths; all 38 frozen source pins remain unchanged. The unchanged **124/124 synthetic cases pass** (zero skips, exit 0), but miss production boundaries exposed by review. Review acceptance, activation, English/native FTP, recovery and device-write gates remain false. Next single package: **RA-003: preserve frozen sources, repair the five review findings in a new revision, add cross-module invented-data regressions and requalify; then obtain source re-review before any activation.**
