@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "v5_parent_evidence_qualified_noninjected_dependency_composition_pending",
+  "phase": "dependency_only_continuation_observed_operational_basis_review_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -105,7 +105,11 @@
       "scope_history": [
         "R0 invented dependency/controller composition and saved-metadata basis preflight; no GDT replay or camera contact"
       ],
-      "gdt_outer_source_preparation": "research/GDT_OUTER_BINDING_PREPARATION.md"
+      "gdt_outer_source_preparation": "research/GDT_OUTER_BINDING_PREPARATION.md",
+      "latest_host_continuation": {
+        "report": "research/sessions/20261019-RA-003-dependency-continuation.md",
+        "status": "dependency_only_continuation_observed_operational_basis_review_pending"
+      }
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -181,7 +185,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: qualify noninjected dependency-only composition for the frozen v5 revision using public AES vectors and live startup/native receipts, excluding firmware/constants; independently review scope before any actual metadata act or camera contact.",
+  "next_work_package": "RA-003: reconcile and independently review the saved operational source/basis packet against the frozen v5 entry and dependency-continuation evidence, resolving remaining chain bindings before any actual metadata observation.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4528,5 +4532,76 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: qualify noninjected dependency-only composition for the frozen v5 revision using public AES vectors and live startup/native receipts, excluding firmware/constants; independently review scope before any actual metadata act or camera contact."
+  },
+  "dependency_continuation": {
+    "schema": "public_continuation_completion_v1",
+    "status": "dependency_only_continuation_observed_operational_basis_review_pending",
+    "child_exit_code": 0,
+    "child_seconds": 0.46648719999939203,
+    "test_injection_used": false,
+    "source_origins": 11,
+    "native_loads": 5,
+    "native_names": [
+      "cpuid",
+      "aes",
+      "aesni",
+      "ecb",
+      "cbc"
+    ],
+    "native_audit_required": true,
+    "checks_before_callback": 24,
+    "checks_during_callback": 24,
+    "journal_rows": 57,
+    "provenance_bytes": 56665,
+    "provenance_sha256": "0add5346e7191290a871c508b598a186d6f23f0980f6d2e7e6547f29b5ea8968",
+    "result_sha256": "52b09df2e36815c03c94a3dad85cda32f3cd39e54ed24c81bf1c296a1e20b75d",
+    "journal_sha256": "9e2248a5da2fc3687dfc8fde2ae7071b2fd15a680d7e9c23bc9d7e7d77c9d86a",
+    "source_pins_unchanged": true,
+    "gdt_execution_authorized": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "report": "research/sessions/20261019-RA-003-dependency-continuation.md",
+    "evidence": [
+      "offline-tested",
+      "static-inference",
+      "runtime-observed"
+    ],
+    "previous_goal_turn": "progress",
+    "current_goal_turn": "progress",
+    "synthetic_tests": 81,
+    "synthetic_passed": 81,
+    "synthetic_skipped": 0,
+    "synthetic_exit_code": 0,
+    "synthetic_suite_seconds": 2.375,
+    "synthetic_wrapper_seconds": 2.7324797999463044,
+    "runtime_source_sha256": "4a64bd6c63ff6e43b56ab7298e5fb84a6304e3576990eaa4aa020c551aeba8f1",
+    "qualified_authored_source_pins": 9,
+    "reviewed_plan_pins": 11,
+    "independent_source_reviewers": 2,
+    "source_review_sha256": {
+      "runtime-source-review-r2.json": "09b72f3f4ec83fce00672e9fcdf0fb2b8f793c293563adf5612ab5f42f4832ba",
+      "io-source-review-r2.json": "4257dc6bd6d38f859169fc464306a50129780e743071650916021e469ff0c101"
+    },
+    "completion_review_sha256": {
+      "runtime-completion-review.json": "e5a5b9b06569924412c50c6b8dece8f298e00d3fcdb2e9e64fd457f1220998a1",
+      "io-completion-review.json": "977a1fcfb82e9896ea4946290b2045c8e669afb5bd71d1d1db6e6d3a415e3441"
+    },
+    "actual_child_launches": 1,
+    "actual_dependency_executed": true,
+    "initial_verifier_failed_raw_vs_canonical_path": true,
+    "same_saved_outputs_verified_after_correction": true,
+    "full_v5_outer_composition_qualified": false,
+    "actual_saved_operational_bundle_validated": false,
+    "operational_acceptance": false,
+    "actual_gdt_replay": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "saved_raw_prefix_opened": false,
+    "download_or_install": false,
+    "private_upload": false,
+    "next_single_work_package": "RA-003: reconcile and independently review the saved operational source/basis packet against the frozen v5 entry and dependency-continuation evidence, resolving remaining chain bindings before any actual metadata observation."
   }
 }
