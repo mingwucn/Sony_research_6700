@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "collected_child_invented_qualified_runtime_packet_pending",
+  "phase": "runtime_packet_prepared_reviewed_dependency_observation_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -282,7 +282,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: prepare and independently review one dependency-only runtime activation packet with fresh ordinary input/runtime/root/source expectations and explicit once-only stop/reconciliation rules; no activation, protected firmware/constants/native-body reads or camera contact in that preparation.",
+  "next_work_package": "RA-003: review one exact once-only dependency-runtime driver against this frozen request, then perform and reconcile a single dependency-only observation if its fresh bindings pass; public vectors only, no protected continuation or camera.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -7224,5 +7224,74 @@
     "feature_or_write_gate_passed": false,
     "report": "research/sessions/20261019-owner-project-check-b.md",
     "next_reference_package": "FT-101: source-only assessment of published FTP implementation, direct Wi-Fi evidence and reversal/recovery coverage when available"
+  },
+  "dependency_runtime_packet_20261019": {
+    "status": "runtime_packet_prepared_metadata_reviewed_not_launched",
+    "report": "research/sessions/20261019-RA-003-runtime-packet.md",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "source_reviews": {
+      "status": "accepted_preparation_only",
+      "reviewers": [
+        "gate_review",
+        "runtime_review"
+      ],
+      "sha256": "13a647411f4930487c7af58de7f91942b8d4edd43eb3630e9963407da13e4602",
+      "predecessor_sha256": "ea5ddfeac995dc186c81c9016c155a8ad79f93ed6901868f12aee7c013850dfd",
+      "head_migration_only": true,
+      "scope": "source only; bounded ordinary reads and metadata preparation; stdlib profile child only",
+      "dependency_activation_approved": false,
+      "camera_commands": []
+    },
+    "saved_metadata_reviews": {
+      "reviewers": [
+        "gate_review",
+        "runtime_review"
+      ],
+      "status": "accepted_saved_metadata_consistency_only",
+      "actual_input_paths_followed": false,
+      "runtime_packet_contents_inspected_by_reviewers": false,
+      "dependency_activation_approved": false,
+      "findings": []
+    },
+    "preparation_exit_code": 0,
+    "preparation_attempts": 1,
+    "python_source_files_read": 11,
+    "python_source_bytes": 58080,
+    "package_metadata_observations": 351,
+    "trusted_metadata_observations": 5,
+    "ordinary_read_ledger_entries": 22,
+    "packet_sha256": "6a052c5421ac1dc00b6d78a0168511ab039a113d6eb5db91050ecd30eb02def1",
+    "request_sha256": "6050ce4e33e6d73d119501b9cde0c6430deef38e3b4552d58cda3ad75ab4f944",
+    "review_basis_sha256": "3f2c1733875d67b985562f5cfe7e26d118d47f785c2bc741c8ab62deec41727d",
+    "focused_tests": {
+      "total": 23,
+      "passed": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 8.087048000015784,
+      "source_stable": true,
+      "log_sha256": "d4082862a6befeb9cd2a143993c3e4576cee9993f92527e396ffc13462bbf0ad",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "exit_code": 0
+    },
+    "source_pins_unchanged": 45,
+    "dependency_child_launched": false,
+    "full_package_bytes_fresh": false,
+    "firmware_or_constants_read": false,
+    "native_bodies_read": false,
+    "executing_parent_authenticated": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_external_source_refresh_only",
+    "current_goal_turn": "progress_fresh_packet_prepared_and_reviewed",
+    "next_work_package": "RA-003: review one exact once-only dependency-runtime driver against this frozen request, then perform and reconcile a single dependency-only observation if its fresh bindings pass; public vectors only, no protected continuation or camera."
   }
 }

@@ -85,3 +85,6 @@ candidate receipt identities. The next single package is to implement and
 synthetically qualify the complete noninjected child/producer route with this
 collector, exact input conversion/runtime rules and a strict actual-record parent
 verifier; independently review it before any installed-dependency observation.
+
+
+2026-10-19 successor: [runtime packet preparation](DEPENDENCY_RUNTIME_PACKET.md) now records the complete collected-child request preparation. The preceding implementation gaps describe that historical package. Actual dependency observation remains pending; no feature/recovery/write gate.
