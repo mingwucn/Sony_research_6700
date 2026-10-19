@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "saved_dependency_manifest_reconciled_successor_native_contract_required",
+  "phase": "invented_dependency_contract_qualified_existing_producer_adapter_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -285,7 +285,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement the closed successor dependency/native-evidence contract on invented inputs, preserving root domains, bootstrap boundaries and event/durability ordering; independently review it before applying it to saved actual receipts or authorizing any runtime/protected-input act.",
+  "next_work_package": "RA-003: audit the existing authored dependency producer and saved-record schemas, then implement and qualify a lossless adapter on invented old-format receipts, preserving original transcript bytes, unknown fields and unsupported claims as explicit refusals/blockers; obtain independent source review before applying it to saved actual records. No dependency execution, protected-input inspection or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -5568,5 +5568,64 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_reference_work_package": "FT-101: assess published FTP implementation and direct Wi-Fi evidence against existing checklist when available."
+  },
+  "ra003_successor_dependency_contract": {
+    "report": "research/sessions/20261019-RA-003-successor-dependency-contract.md",
+    "design": "research/SUCCESSOR_DEPENDENCY_CONTRACT.md",
+    "status": "invented_successor_contract_qualified_reviewed_adapter_pending",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "previous_goal_turn": "progress",
+    "previous_goal_turn_scope": "Verified unchanged public reference and recorded evidence limits",
+    "current_goal_turn": "progress",
+    "focused_tests": {
+      "total": 89,
+      "passed": 89,
+      "skipped": 0,
+      "exit_code": 0,
+      "suite_seconds": 16.728,
+      "wrapper_seconds": 17.05953560001217
+    },
+    "full_host_tests": {
+      "total": 317,
+      "passed": 314,
+      "skipped": 3,
+      "exit_code": 0,
+      "suite_seconds": 35.615,
+      "wrapper_seconds": 36.31449729995802,
+      "inherited_cases": 228,
+      "new_cases": 89
+    },
+    "source_sha256": {
+      "tools/dependency_evidence.py": "63eb311df4c818458edd28dd9853c3c20234460f3cf145eb16886ef0abbb12f3",
+      "tests/test_dependency_evidence.py": "021750089ea2777f4952f6aadc189db8faf6ad2b0a749ea4cd1c2dd7386df36a"
+    },
+    "test_log_sha256": "4d580d29720bf456e8bcf532ff228daf5cbac8db0a0d7fccca8421b0ebd0166d",
+    "independent_source_reviewers": 2,
+    "independently_reproduced": false,
+    "supplied_transcript_consistency_qualified": true,
+    "existing_raw_format_adapter_qualified": false,
+    "actual_saved_records_applied": false,
+    "producer_qualified": false,
+    "historical_events_authenticated": false,
+    "pre_execution_policy_approval_proven": false,
+    "retained_historical_binding_blockers": [
+      "dependency_manifest_unobserved",
+      "native_policy_unobserved"
+    ],
+    "execution_authorized": false,
+    "operational_acceptance": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "installed_dependency_executed": false,
+    "private_upload": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: audit the existing authored dependency producer and saved-record schemas, then implement and qualify a lossless adapter on invented old-format receipts, preserving original transcript bytes, unknown fields and unsupported claims as explicit refusals/blockers; obtain independent source review before applying it to saved actual records. No dependency execution, protected-input inspection or camera contact."
   }
 }
