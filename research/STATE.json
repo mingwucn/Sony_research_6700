@@ -6060,5 +6060,60 @@
       "native_policy_unobserved"
     ],
     "next_single_work_package": "RA-003: design and qualify a prospective dependency-only producer for the successor contract, with expectations fixed before execution and explicit guard, durability, callback and cleanup events; independently review its source before any installed-dependency or protected-input act."
+  },
+  "a6700_owner_reference_check_175907": {
+    "checked_at_utc": "2026-10-19T17:59:08.985985+00:00",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "tree_entries": 51,
+    "tree_blobs": 39,
+    "documents": [
+      {
+        "path": "README.md",
+        "bytes": 1830,
+        "git_blob": "ebb0bc382555c93d7c1ae0de45a2f18209a62d8f",
+        "sha256": "d98be2070528eec837f40757b889268178ebfa6589538e3049d4948d3124da90",
+        "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/README.md"
+      },
+      {
+        "path": "\u5f00\u53d1\u8ba1\u5212\u4e0e\u8fdb\u5c55.md",
+        "bytes": 3495,
+        "git_blob": "a343c73d97e724e36e6e7615e2383caf23987adf",
+        "sha256": "731cb52984c5001222e8f54c088a6e7edc3932cecfb006f08cff77f640753371",
+        "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E4%B8%8E%E8%BF%9B%E5%B1%95.md"
+      },
+      {
+        "path": "\u64cd\u4f5c\u624b\u518c.md",
+        "bytes": 7345,
+        "git_blob": "a41951a9e95c84288e8da027431b91fa029868b0",
+        "sha256": "2a6abb808a08233ca2855149464cc7825e18ac2bb83cf2956aea530e1d06ca7d",
+        "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C.md"
+      },
+      {
+        "path": "NOTICE",
+        "bytes": 804,
+        "git_blob": "6eac5cabd05e71b7824df368fed0837dd31c3166",
+        "sha256": "7599f6b0fa2a8388f84a8315e11ef504b10076e8f8a1747792a828b3c49f4b6b",
+        "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/NOTICE"
+      }
+    ],
+    "camera_commands": [],
+    "report": "research/sessions/20261019-owner-reference-175907.md",
+    "head_unchanged": true,
+    "host_policy_tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "wall_seconds": 1.9704638000112027,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]"
+    },
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "next_single_reference_work_package": "FT-101: assess the published FTP implementation, direct camera-to-server Wi-Fi transfer evidence and reversal/recovery coverage when available; source-only, no camera contact.",
+    "shared_ra003_phase_unchanged": true
   }
 }
