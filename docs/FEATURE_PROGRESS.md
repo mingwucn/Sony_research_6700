@@ -32,18 +32,12 @@ storage copies, an exact inverse and recovery access for the relevant failure
 states remain required; synthetic guards are preparation only. See
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist).
 
-Latest shared RA-003: [ext-superblock metadata observation](../research/EXT_SUPERBLOCK_OBSERVATION.md).
-Qualification **359/359 passed**, zero skipped, exit **0**, **20.963s**; **320 retained + 39 new** cases. All **53** design-source pins and older seals remain unchanged.
-Actual terminal **complete_private_ext_superblock_metadata_observation**, script **0** / host **0**, **38.274879s**. Preparation/pipeline/expanded/observer attempts: **1/1/5/2**.
-Source observation **source_read_confirmed**; preparation attempts alone do not establish a read.
-One separately frozen two-lead fixed-superblock metadata observation completed after full prior inventory and all-five outcome reconciliation.
-Sanitized observation statuses: superblock_metadata_only: 2.
-Geometry-issue counts: none under modeled predicates.
-Capability blockers: none under modeled policy.
-Classic feature-mask matches: **2**; this policy match establishes no planner or traversal eligibility.
-All prior results and source lock remain unchanged. No filesystem/checksum/content/authentication, usable read plan, native English/FTP, exact-body, feature/write or recovery claim. No raw output, component files, traversal, decompression/disassembly, private upload, upstream/firmware execution or camera. Eight metadata roles and inherited 65,536 plus new 8,192 selected raw-byte allowances are not aggregate managed/process caps.
+Latest shared RA-003: [ext metadata planner design](../research/EXT_METADATA_PLANNER_DESIGN.md).
+Bounded ext metadata planner design: **174/174 synthetic passes**, zero skipped, exit **0**, **0.154s**; **52 retained + 122 new** cases; **8** qualified source/test pins. Invented buffers exercise primary-GDT and root-record proposals with counter, inode and group/reserved-metadata placement checks. All **13** retained ordinary source pins, prior actual results, analysis acts and source lock remain unchanged; no new source acquisition or historical full-suite rerun.
 
-Next shared package: **RA-003: design and synthetically qualify a bounded ext metadata read planner for the observed classic feature masks, adding counter, inode and table-placement eligibility checks; no actual replay or traversal**.
+Limits: **1,024 groups**, **32,768 descriptor bytes**, **4,096 prefix bytes** (project budgets). No actual metadata/firmware application, traversal, raw output or camera; planning authorization and all filesystem/content, native English/FTP, recovery and device-write claims remain false.
+
+Next shared package: **RA-003: review and freeze the rights, lineage and byte limits for a bounded primary-GDT descriptor-metadata observation using the qualified planner; no inode/content traversal**.
 
 ## Verified preparation supporting these functions
 
