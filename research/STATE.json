@@ -8620,5 +8620,37 @@
     "previous_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "current_goal_turn": "progress_two_ordinary_dependency_roles_bound_to_retained_pure_contract",
     "next_work_package": "RA-003: implement and independently review basis, source-manifest and prerequisite cross-validation against the existing ordinary role-planning and pure GDT preflight contracts, using invented records and authored checked-buffer sources. Bind the nine-role basis, protected source/constants identity labels and current role/import plan; preserve the two-role dependency checks and explicitly track the other pending ordinary roles. Qualify stale/rebound/mismatched metadata refusal. Keep runtime disabled; no actual activation records, dependency activation, firmware/constants/native payload reads or camera."
+  },
+  "a6700_powerful_check_20261020": {
+    "report": "research/sessions/20261020-a6700-powerful-check.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "checked_at_utc": "2026-10-19T22:05:26.749658+00:00",
+    "unchanged_from_prior_audit": true,
+    "documents_verified": 4,
+    "tree_entries": 51,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "ftp": "author_report_only_implementation_unpublished",
+    "english_unlock_found": false,
+    "recovery_proven": false,
+    "feature_supported": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "tests": {
+      "tests": 36,
+      "failures": 0,
+      "errors": 0,
+      "skips": 1,
+      "seconds": 0.1542345000198111,
+      "exit_code": 0,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "log_sha256": "b7dc36db28d7d5b5907197ad4a9d21a5702b35fe72cd19b1961a7e2836b3c3c5",
+      "camera_commands": []
+    },
+    "next_reference_package": "FT-101: assess public FTP implementation and direct camera-to-server Wi-Fi evidence when published"
   }
 }
