@@ -126,3 +126,14 @@ This qualification includes the unchanged **52** pure-observer cases and relevan
 The frozen eight-role basis and complete prior four-key inventory must reconcile before either of two superblock callbacks. Their additional raw-retention allowance is **8,192 bytes**, alongside the inherited **65,536-byte** allowance; neither is an aggregate managed-memory or whole-process cap.
 Raw buffers/logical streams were invented and callbacks synthetic; saved structured-metadata preflight was also qualified. No actual firmware, member prefix, operational constants or actual replay; all prior actual results, forty-source seal, four observer pins and analysis acts remain unchanged. The source lock is byte-identical; no new public-source acquisition.
 The runner design prepares a later separately frozen metadata observation; it establishes no actual geometry, filesystem validity, usable read plan, English resources or native FTP backend. Planning authorization remains false. No traversal, checksum verification, component/raw files, private upload, upstream/firmware execution, camera, feature/write or recovery gate.
+
+Latest RA-003: [ext-superblock metadata observation](research/EXT_SUPERBLOCK_OBSERVATION.md).
+Qualification **359/359 passed**, zero skipped, exit **0**, **20.963s**; **320 retained + 39 new** cases. All **53** design-source pins and older seals remain unchanged.
+Actual terminal **complete_private_ext_superblock_metadata_observation**, script **0** / host **0**, **38.274879s**. Preparation/pipeline/expanded/observer attempts: **1/1/5/2**.
+Source observation **source_read_confirmed**; preparation attempts alone do not establish a read.
+One separately frozen two-lead fixed-superblock metadata observation completed after full prior inventory and all-five outcome reconciliation.
+Sanitized observation statuses: superblock_metadata_only: 2.
+Geometry-issue counts: none under modeled predicates.
+Capability blockers: none under modeled policy.
+Classic feature-mask matches: **2**; this policy match establishes no planner or traversal eligibility.
+All prior results and source lock remain unchanged. No filesystem/checksum/content/authentication, usable read plan, native English/FTP, exact-body, feature/write or recovery claim. No raw output, component files, traversal, decompression/disassembly, private upload, upstream/firmware execution or camera. Eight metadata roles and inherited 65,536 plus new 8,192 selected raw-byte allowances are not aggregate managed/process caps.

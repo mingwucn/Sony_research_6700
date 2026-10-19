@@ -27,7 +27,21 @@ source downloads under its notice; their licences, supplied FTP-enabled configs
 and client source were reviewed privately as data. No downloaded source was
 executed. Neither route establishes exact-body correspondence or recovery.
 
-Latest continuation: [ext-superblock runner design](../research/EXT_SUPERBLOCK_RUNNER_DESIGN.md),
+Latest continuation: [ext-superblock metadata observation](../research/EXT_SUPERBLOCK_OBSERVATION.md),
+[commands/results](../research/sessions/20261019-RA-003-ext-observation.md).
+Qualification **359/359 passed**, zero skipped, exit **0**, **20.963s**; **320 retained + 39 new** cases. All **53** design-source pins and older seals remain unchanged.
+Actual terminal **complete_private_ext_superblock_metadata_observation**, script **0** / host **0**, **38.274879s**. Preparation/pipeline/expanded/observer attempts: **1/1/5/2**.
+Source observation **source_read_confirmed**; preparation attempts alone do not establish a read.
+One separately frozen two-lead fixed-superblock metadata observation completed after full prior inventory and all-five outcome reconciliation.
+Sanitized observation statuses: superblock_metadata_only: 2.
+Geometry-issue counts: none under modeled predicates.
+Capability blockers: none under modeled policy.
+Classic feature-mask matches: **2**; this policy match establishes no planner or traversal eligibility.
+All prior results and source lock remain unchanged. No filesystem/checksum/content/authentication, usable read plan, native English/FTP, exact-body, feature/write or recovery claim. No raw output, component files, traversal, decompression/disassembly, private upload, upstream/firmware execution or camera. Eight metadata roles and inherited 65,536 plus new 8,192 selected raw-byte allowances are not aggregate managed/process caps.
+
+Next single package: **RA-003: design and synthetically qualify a bounded ext metadata read planner for the observed classic feature masks, adding counter, inode and table-placement eligibility checks; no actual replay or traversal**.
+
+Earlier continuation: [ext-superblock runner design](../research/EXT_SUPERBLOCK_RUNNER_DESIGN.md),
 [commands/results](../research/sessions/20261019-RA-003-ext-runner-design.md).
 Bounded ext-superblock runner design: **320/320 synthetic passes**, zero skipped, exit **0**, **17.064s**; **53** qualified source/test pins.
 This qualification includes the unchanged **52** pure-observer cases and relevant standard-library lineage/gate regressions, plus new runner cases. Composition: **205** selected inherited regressions + **52** observer cases + **63** new cases. Two historical crypto-dependent cases are excluded, not skipped. This new 320-case suite differs from the historical 320-case preflight suite; historical suites were not rerun in full.
@@ -35,7 +49,7 @@ The frozen eight-role basis and complete prior four-key inventory must reconcile
 Raw buffers/logical streams were invented and callbacks synthetic; saved structured-metadata preflight was also qualified. No actual firmware, member prefix, operational constants or actual replay; all prior actual results, forty-source seal, four observer pins and analysis acts remain unchanged. The source lock is byte-identical; no new public-source acquisition.
 The runner design prepares a later separately frozen metadata observation; it establishes no actual geometry, filesystem validity, usable read plan, English resources or native FTP backend. Planning authorization remains false. No traversal, checksum verification, component/raw files, private upload, upstream/firmware execution, camera, feature/write or recovery gate.
 
-Next single package: **RA-003: separately freeze and review one actual two-lead ext-superblock metadata observation, then execute once with full fresh lineage and no traversal or raw output**.
+Historical next single package: **RA-003: separately freeze and review one actual two-lead ext-superblock metadata observation, then execute once with full fresh lineage and no traversal or raw output**.
 
 Earlier continuation: [ext-superblock design](../research/EXT_SUPERBLOCK_DESIGN.md),
 [commands/results](../research/sessions/20261019-RA-003-ext-superblock-design.md).

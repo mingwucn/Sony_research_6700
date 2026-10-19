@@ -244,6 +244,19 @@ The runner design prepares a later separately frozen metadata observation; it es
 
 Next single package: **RA-003: separately freeze and review one actual two-lead ext-superblock metadata observation, then execute once with full fresh lineage and no traversal or raw output**.
 
+Ext-superblock metadata observation (2026-10-19): [audit](../research/EXT_SUPERBLOCK_OBSERVATION.md) and [commands/results](../research/sessions/20261019-RA-003-ext-observation.md).
+Qualification **359/359 passed**, zero skipped, exit **0**, **20.963s**; **320 retained + 39 new** cases. All **53** design-source pins and older seals remain unchanged.
+Actual terminal **complete_private_ext_superblock_metadata_observation**, script **0** / host **0**, **38.274879s**. Preparation/pipeline/expanded/observer attempts: **1/1/5/2**.
+Source observation **source_read_confirmed**; preparation attempts alone do not establish a read.
+One separately frozen two-lead fixed-superblock metadata observation completed after full prior inventory and all-five outcome reconciliation.
+Sanitized observation statuses: superblock_metadata_only: 2.
+Geometry-issue counts: none under modeled predicates.
+Capability blockers: none under modeled policy.
+Classic feature-mask matches: **2**; this policy match establishes no planner or traversal eligibility.
+All prior results and source lock remain unchanged. No filesystem/checksum/content/authentication, usable read plan, native English/FTP, exact-body, feature/write or recovery claim. No raw output, component files, traversal, decompression/disassembly, private upload, upstream/firmware execution or camera. Eight metadata roles and inherited 65,536 plus new 8,192 selected raw-byte allowances are not aggregate managed/process caps.
+
+Next single package: **RA-003: design and synthetically qualify a bounded ext metadata read planner for the observed classic feature masks, adding counter, inode and table-placement eligibility checks; no actual replay or traversal**.
+
 ### RA-004 — Establish identity and review an access route
 
 Depends on RA-001/002. Risk: R0 proposal, then separately approved R1; R2 remains a distinct decision. Obtain normal UI facts and, after approval, ordinary host USB descriptors. Identify a candidate service path from reviewed exact-target evidence. Describe every command's effects, re-enumeration, helper ABI, expected result, timeout and reconciliation procedure. Write transport mocks for known readiness/error cases.
