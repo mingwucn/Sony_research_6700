@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "saved_complete_binding_plan_and_nine_role_preflight_reconciled_semantics_pending",
+  "phase": "saved_semantic_predicates_qualified_reviewed_authority_binding_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -68,13 +68,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_saved_binding_plan_and_preflight_reconciled_semantics_pending",
+      "status": "partial_saved_semantic_design_reviewed_authority_binding_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 ordinary saved metadata and reviewed pure helper composition; full semantics and operational acceptance pending",
+      "scope": "R0 authored source and invented qualification only; no actual basis or protected-input act",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-binding-basis-diagnostic.md",
+      "session_report": "research/sessions/20261019-RA-003-saved-semantics-design.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -107,8 +107,60 @@
       ],
       "gdt_outer_source_preparation": "research/GDT_OUTER_BINDING_PREPARATION.md",
       "latest_host_continuation": {
-        "report": "research/sessions/20261019-RA-003-binding-basis-diagnostic.md",
-        "status": "saved_complete_binding_plan_and_nine_role_preflight_reconciled_semantics_pending"
+        "report": "research/sessions/20261019-RA-003-saved-semantics-design.md",
+        "design": "research/SAVED_BASIS_SEMANTICS_DESIGN.md",
+        "status": "saved_semantic_predicates_64_qualified_source_reviewed_authority_binding_pending",
+        "evidence_classes": [
+          "offline-tested",
+          "static-inference"
+        ],
+        "previous_goal_turn": "progress",
+        "previous_goal_turn_scope": "Public reference identity refresh; no shared feature or pre-camera execution gate advanced",
+        "current_goal_turn": "progress",
+        "tests": 64,
+        "passed": 64,
+        "skipped": 0,
+        "exit_code": 0,
+        "suite_seconds": 7.391,
+        "copied_source_origins": 40,
+        "current_snapshot_pins": 57,
+        "preserved_r1_snapshot_pins": 52,
+        "independent_source_reviewers": 2,
+        "independently_reproduced": false,
+        "review_sha256": {
+          "gate-semantic-design-review-r2.json": "9470840d58f46bed79b338b54cbf1610949434d68ee925819d84e6f1694dd498",
+          "runtime-semantic-design-review-r2.json": "eadf832f097c2eb0723e84b0feb0ceaa2e86ff995178750416b48b486c85ba57"
+        },
+        "authored_source_sha256": {
+          "saved_semantics.py": "fb6a049b6d4647f347d479dfee4244fd96c27c4bf025da9819cd0c7e701ec3c0",
+          "ext_saved_scalars.py": "516fc94fd04701edd4ded1c3cc60586f32e525acc99dfc8b91fcd2d9f9d4c70f",
+          "test_saved_semantics.py": "c2a7e591811d3c60d1826d9f2a947dc77964eb318163de1ad702c5ce4af176c6",
+          "verify_qualification.py": "eafff5669e974ce690e621983eebad7b8e85ea01be597677278c6e537e666379"
+        },
+        "freeze_sha256": "196a04c8c269ebb66b8b294b4779813011104a0bc3325d44471600008b83007d",
+        "test_log_sha256": "697e374bcca7ff38d81750d1b7ab72848ed52a7b5bf2fb1dac64ffc9345241c7",
+        "qualification_check_sha256": "b0893be65e4c5e2db665254b9c8a00101b93c239ea3051a9382f785aab513378",
+        "source_review_findings_resolved": [
+          "SEM-GR-001",
+          "RUNTIME-SEM-001"
+        ],
+        "actual_saved_basis_checked": false,
+        "complete_saved_basis_semantic_revalidation": false,
+        "source_authority_binding_complete": false,
+        "historical_events_authenticated": false,
+        "operational_acceptance": false,
+        "execution_authorized": false,
+        "firmware_opened": false,
+        "operational_constants_opened": false,
+        "saved_raw_prefix_opened": false,
+        "installed_dependency_executed": false,
+        "private_upload": false,
+        "english_supported": false,
+        "native_ftp_supported": false,
+        "recovery_proven": false,
+        "device_write_gate_passed": false,
+        "camera_commands": [],
+        "next_single_work_package": "RA-003: bind the reviewed saved-semantic validator and its scalar/helper hashes to the frozen ordinary source authority graph, qualify substituted-source and mismatch refusals, and independently review a once-only saved-record diagnostic before running it; no protected-input observation or runtime activation."
       },
       "status_history": [
         {
@@ -192,7 +244,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement and qualify comprehensive saved-only semantic predicates for the nine-role basis, explicitly retaining claims requiring fresh observation as blockers; obtain independent source review before any new actual metadata or protected-input act.",
+  "next_work_package": "RA-003: bind the reviewed saved-semantic validator and its scalar/helper hashes to the frozen ordinary source authority graph, qualify substituted-source and mismatch refusals, and independently review a once-only saved-record diagnostic before running it; no protected-input observation or runtime activation.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -5124,5 +5176,61 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "FT-101: assess published FTP implementation and direct camera-to-server Wi-Fi evidence against the saved checklist when available."
+  },
+  "ra003_saved_semantics_design": {
+    "report": "research/sessions/20261019-RA-003-saved-semantics-design.md",
+    "design": "research/SAVED_BASIS_SEMANTICS_DESIGN.md",
+    "status": "saved_semantic_predicates_64_qualified_source_reviewed_authority_binding_pending",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "previous_goal_turn": "progress",
+    "previous_goal_turn_scope": "Public reference identity refresh; no shared feature or pre-camera execution gate advanced",
+    "current_goal_turn": "progress",
+    "tests": 64,
+    "passed": 64,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 7.391,
+    "copied_source_origins": 40,
+    "current_snapshot_pins": 57,
+    "preserved_r1_snapshot_pins": 52,
+    "independent_source_reviewers": 2,
+    "independently_reproduced": false,
+    "review_sha256": {
+      "gate-semantic-design-review-r2.json": "9470840d58f46bed79b338b54cbf1610949434d68ee925819d84e6f1694dd498",
+      "runtime-semantic-design-review-r2.json": "eadf832f097c2eb0723e84b0feb0ceaa2e86ff995178750416b48b486c85ba57"
+    },
+    "authored_source_sha256": {
+      "saved_semantics.py": "fb6a049b6d4647f347d479dfee4244fd96c27c4bf025da9819cd0c7e701ec3c0",
+      "ext_saved_scalars.py": "516fc94fd04701edd4ded1c3cc60586f32e525acc99dfc8b91fcd2d9f9d4c70f",
+      "test_saved_semantics.py": "c2a7e591811d3c60d1826d9f2a947dc77964eb318163de1ad702c5ce4af176c6",
+      "verify_qualification.py": "eafff5669e974ce690e621983eebad7b8e85ea01be597677278c6e537e666379"
+    },
+    "freeze_sha256": "196a04c8c269ebb66b8b294b4779813011104a0bc3325d44471600008b83007d",
+    "test_log_sha256": "697e374bcca7ff38d81750d1b7ab72848ed52a7b5bf2fb1dac64ffc9345241c7",
+    "qualification_check_sha256": "b0893be65e4c5e2db665254b9c8a00101b93c239ea3051a9382f785aab513378",
+    "source_review_findings_resolved": [
+      "SEM-GR-001",
+      "RUNTIME-SEM-001"
+    ],
+    "actual_saved_basis_checked": false,
+    "complete_saved_basis_semantic_revalidation": false,
+    "source_authority_binding_complete": false,
+    "historical_events_authenticated": false,
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "saved_raw_prefix_opened": false,
+    "installed_dependency_executed": false,
+    "private_upload": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: bind the reviewed saved-semantic validator and its scalar/helper hashes to the frozen ordinary source authority graph, qualify substituted-source and mismatch refusals, and independently review a once-only saved-record diagnostic before running it; no protected-input observation or runtime activation."
   }
 }
