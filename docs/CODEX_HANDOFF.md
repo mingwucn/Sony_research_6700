@@ -43,7 +43,18 @@ write. No such target system is established. Follow the
 [recovery/write gate](ACCESS_AND_RECOVERY.md#8-write-gate-checklist); this is a
 prerequisite, not permission to test a restore or write.
 
-Latest RA-003: [refused expanded-prefix trial](../research/EXPANDED_PREFIX_AUDIT.md),
+Latest RA-003: [metadata preflight](../research/METADATA_PREFLIGHT.md),
+[commands/results](../research/sessions/20261019-RA-003-metadata-preflight.md).
+Metadata-only qualification **320/320 passed**, zero skipped, exit **0**, **7.649s**; **42 new + 278 retained** cases.
+**30** retained source/test files and all **32** historical failed-trial source/runner pins remain unchanged.
+Only the new session gate copy is revised; its preflight preserves every field and exact type, with a narrow allowance for finite nonnegative built-in timing floats at two root keys in two prior-summary roles.
+Production metadata shapes, signed zero, bounded trees, fixed role/stage diagnostics, mutation isolation and cleanup flags are qualified offline.
+No firmware/key/raw-prefix input, actual replay, new download, upstream execution, camera or feature/write gate.
+The earlier expanded trial remains **needs_review**, script **2** / host **1**; its precise runtime refusal stage stays unrecorded.
+Earlier five unknown classifications and all other actual results remain unchanged. A future pre-I/O runner is still to be frozen and reviewed.
+Next single work package: **RA-003: freeze and review a runner with pre-I/O metadata preflight and bounded stage diagnostics, then run one separately scoped same-five expanded-header comparison with complete prior lineage**.
+
+Earlier RA-003: [refused expanded-prefix trial](../research/EXPANDED_PREFIX_AUDIT.md),
 [commands/results](../research/sessions/20261018-RA-003-expanded-prefix.md).
 One frozen same-five expanded-header trial stopped **needs_review**, script exit **2**, host exit **1**, **38.945781s**.
 Qualification **278/278 passed**, zero skipped, exit **0**, **2.001s**; 27 new cases plus 251 retained, all 27 foundation files unchanged.
@@ -51,7 +62,7 @@ Failure code **expanded_prefix_acceptance_failed**; no accepted expanded candida
 Static source/metadata review finds float timing fields in prior summaries rejected by the new freezer; this is a sufficient blocker, not a logged precise runtime stage.
 Observer cleanup reported no failures. No retry, fallback, changed threshold, child files or raw-prefix output.
 Earlier five unknown classifications and all prior evidence remain unchanged. No decompression/disassembly, upstream/firmware execution, camera or feature/write gate.
-Next single work package: **RA-003: design and synthetically qualify exact prior-metadata preflight using preserved production summaries, resolving the timing-field schema mismatch before any new actual prefix read**.
+Historical next single work package: **RA-003: design and synthetically qualify exact prior-metadata preflight using preserved production summaries, resolving the timing-field schema mismatch before any new actual prefix read**.
 
 Earlier RA-003: [image-parser/header design](../research/IMAGE_HEADER_DESIGN.md),
 [commands/results](../research/sessions/20261018-RA-003-image-header-design.md).

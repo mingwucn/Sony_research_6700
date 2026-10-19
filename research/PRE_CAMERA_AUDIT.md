@@ -346,3 +346,18 @@ Observer cleanup reported no failures. No retry, fallback, changed threshold, ch
 Earlier five unknown classifications and all prior evidence remain unchanged. No decompression/disassembly, upstream/firmware execution, camera or feature/write gate.
 
 Next single package: **RA-003: design and synthetically qualify exact prior-metadata preflight using preserved production summaries, resolving the timing-field schema mismatch before any new actual prefix read**.
+
+
+## Later metadata-only preflight qualification (2026-10-19)
+
+Earlier next-package recommendations are historical. See [preflight](METADATA_PREFLIGHT.md)
+and [commands/results](sessions/20261019-RA-003-metadata-preflight.md).
+Metadata-only qualification **320/320 passed**, zero skipped, exit **0**, **7.649s**; **42 new + 278 retained** cases.
+**30** retained source/test files and all **32** historical failed-trial source/runner pins remain unchanged.
+Only the new session gate copy is revised; its preflight preserves every field and exact type, with a narrow allowance for finite nonnegative built-in timing floats at two root keys in two prior-summary roles.
+Production metadata shapes, signed zero, bounded trees, fixed role/stage diagnostics, mutation isolation and cleanup flags are qualified offline.
+No firmware/key/raw-prefix input, actual replay, new download, upstream execution, camera or feature/write gate.
+The earlier expanded trial remains **needs_review**, script **2** / host **1**; its precise runtime refusal stage stays unrecorded.
+Earlier five unknown classifications and all other actual results remain unchanged. A future pre-I/O runner is still to be frozen and reviewed.
+
+Next single package: **RA-003: freeze and review a runner with pre-I/O metadata preflight and bounded stage diagnostics, then run one separately scoped same-five expanded-header comparison with complete prior lineage**.

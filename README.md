@@ -53,7 +53,9 @@ classifier. The latest [image-header design](research/IMAGE_HEADER_DESIGN.md)
 audits four pinned public parsers and qualifies separate synthetic predicates;
 no new actual read in that design package. The later [expanded-prefix trial](research/EXPANDED_PREFIX_AUDIT.md)
 stopped at acceptance; static review identifies a prior-summary schema mismatch.
-No expanded result accepted; metadata preflight and English/FTP mapping remain pending. China
+No expanded result accepted. The later [metadata preflight](research/METADATA_PREFLIGHT.md)
+qualified production-summary handling with 320 synthetic passes and no actual replay.
+A separately frozen runner and English/FTP mapping remain pending. China
 Copyright Law Article 50(5) expressly addresses reverse-engineering research;
 its limits and the accepted terms remain part of the scoped analysis review.
 The activity-specific basis for proprietary unpacking/static disassembly remains
