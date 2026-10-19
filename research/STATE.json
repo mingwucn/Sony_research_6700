@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "retrospective_saved_diagnostic_refused_binding_localization_pending",
+  "phase": "saved_consistency_with_blockers_prospective_producer_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -27,32 +27,27 @@
   "remote_ci_executed": true,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
-    "total": 228,
-    "passed": 225,
+    "total": 411,
+    "passed": 408,
     "failed": 0,
     "errors": 0,
     "skipped": 3,
     "exit_code": 0,
-    "runner_seconds": 17.867,
-    "wrapper_elapsed_seconds": 18.35132,
+    "runner_seconds": 65.888,
+    "wrapper_elapsed_seconds": 66.2369148999569,
     "interpreter": "CPython 3.13.12",
-    "host": "Windows AMD64, kernel build 26300.9711",
-    "command": "python -B -X utf8 -m unittest discover -s tests -v",
+    "host": "Windows AMD64",
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-cache-domain-comparison/full_host.py",
     "evidence_class": "offline-tested",
     "camera_or_real_server_coverage": false,
-    "report": "research/sessions/20261018-RA-003-decoding-design.md",
-    "source_scope": "Current authored tree on same owner Windows host; decoded-header validator added, no new export/hosted CI or real decoding claimed",
-    "evidence_basis_commit": "40e0218766246f6a3292fa7c89912d8bdae01a69",
-    "code_sha256": {
-      "tools/fdat_header.py": "6d78dc186355919d5457d8cb01b765422d24aca354519f1a76a1554368cdf117",
-      "tests/test_fdat_header.py": "cff3cc15225f084815e2880cb1e462ad72d11dc9ec9fb77f5fa6c54a9c335e4b"
-    },
+    "report": "research/sessions/20261019-RA-003-binding-localization.md",
+    "source_scope": "All current authored public test modules; no private wrapper tests, protected inputs, native dependencies or camera",
+    "log_sha256": "d7c1f4711f2dbbb57e95d054b8514fd511b2a4864af069a1f5c1e11a1c12eb13",
     "skips": [
       "POSIX fork inheritance on Windows",
       "Real symlink creation: existing inventory",
       "Real symlink creation: UFU reader"
-    ],
-    "summary_reconciliation": "Initial private-wrapper CRLF counting defect corrected from the same preserved terminal log; suite not rerun"
+    ]
   },
   "work_packages": {
     "RA-001": {
@@ -285,7 +280,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: bind the adapter, shared validator and exact producer identities into one saved-metadata diagnostic with explicitly retrospective expectations; qualify source substitutions and complete input cross-bindings, then obtain independent source review before a once-only ordinary saved-record application. No native dependency loading, protected-input inspection or camera contact.",
+  "next_work_package": "RA-003: design and qualify a prospective dependency-only producer for the successor contract, with expectations fixed before execution and explicit guard, durability, callback and cleanup events; independently review its source before any installed-dependency or protected-input act.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -5919,5 +5914,151 @@
     "camera_commands": [],
     "next_single_reference_work_package": "FT-101: assess the FTP implementation and direct Wi-Fi transfer evidence against the existing checklist when they are published; no camera operation or author contact.",
     "shared_ra003_phase_unchanged": true
+  },
+  "ra003_digest_domains_and_saved_comparison": {
+    "report": "research/sessions/20261019-RA-003-binding-localization.md",
+    "design": "research/DEPENDENCY_DIGEST_DOMAINS.md",
+    "status": "saved_consistency_with_blockers_prospective_producer_pending",
+    "previous_goal_turn": "progress",
+    "previous_goal_turn_scope": "Fresh public-reference identity review and saved findings",
+    "current_goal_turn": "progress",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "localization": {
+      "exit_code": 0,
+      "tool_wall_seconds": 0.5347248,
+      "ordinary_reads": 5,
+      "ordinary_bytes": 93748,
+      "first_failing_digest_predicate": "raw_cache_equals_declared_cache_file_digest",
+      "comparison_equalities": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "source_reviewers": 2,
+      "outcome_reviewers": 2,
+      "attempts": 1,
+      "legacy_adapter_replayed": false,
+      "cache_content_change_proven": false
+    },
+    "corrected_comparison": {
+      "exit_code": 0,
+      "tool_wall_seconds": 0.9998656,
+      "ordinary_reads": 13,
+      "ordinary_bytes": 2448945,
+      "attempts": 1,
+      "python_origins": 11,
+      "trusted_origins": 5,
+      "native_loads": 5,
+      "blockers": [
+        "legacy_raw_is_not_successor_guard_transcript",
+        "legacy_events_are_not_successor_event_grammar",
+        "individual_durability_steps_not_journaled",
+        "guard_install_and_finish_not_explicit_events",
+        "cleanup_claim_not_journaled",
+        "read_only_open_mode_not_explicit_in_legacy_receipts",
+        "pre_execution_expectation_approval_unestablished",
+        "producer_source_authority_not_bound",
+        "source_cache_content_not_revalidated",
+        "fresh_runtime_observation_not_performed",
+        "expectations_derived_after_historical_observation",
+        "root_tokens_are_path_labels_not_directory_observations",
+        "executing_source_buffers_not_authenticated",
+        "cache_digest_declaration_not_content_revalidation",
+        "cache_expectation_is_same_saved_raw_record_self_report",
+        "cache_file_and_canonical_content_relationship_unproved",
+        "cache_contents_not_independently_revalidated"
+      ],
+      "source_reviewers": 2,
+      "narrow_outcome_reviewers": 2,
+      "full_result_bodies_independently_reviewed": false,
+      "original_refusal_unchanged": true,
+      "raw_journal_hashes_preserved": true,
+      "cache_expectation_basis": "same_saved_raw_record_self_report_not_independent",
+      "cache_file_digest_separately_retained": true,
+      "whole_descriptor_audit_revalidated": false,
+      "successor_contract_applied": false
+    },
+    "qualification": {
+      "total": 21,
+      "passed": 21,
+      "skipped": 0,
+      "exit_code": 0,
+      "suite_seconds": 4.662,
+      "wrapper_seconds": 4.663042399974074,
+      "pure_cases": 8,
+      "private_wrapper_cases": 13
+    },
+    "full_host_tests": {
+      "total": 411,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "exit_code": 0,
+      "wrapper_seconds": 66.2369148999569,
+      "log_sha256": "d7c1f4711f2dbbb57e95d054b8514fd511b2a4864af069a1f5c1e11a1c12eb13",
+      "passed": 408,
+      "suite_seconds": 65.888,
+      "retained_cases": 403,
+      "new_public_cases": 8
+    },
+    "freeze_preparation_failure": {
+      "exit_code": 1,
+      "actual_application_started": false,
+      "cause": "restricted AST preparation initially did not resolve authored BASE concatenation",
+      "corrected_preparation_exit_code": 0
+    },
+    "source_sha256": {
+      "tools/dependency_digest_diagnostic.py": "a56ec357ceda8c770225dee1c21d8c1e9a96111d015b759889faf7f5375b33c7",
+      "tests/test_dependency_digest_diagnostic.py": "bb0215f063f05b5f37241deef3f12b0ff413f956516add3353ea291b8d4ec681",
+      "tools/dependency_cache_basis.py": "6ff1c8af45681cf8858dbd05a6454dcfd7ac7cab12ef803effb35ed7a0768d92",
+      "tests/test_dependency_cache_basis.py": "ca1b13b930c6bbb507c713f0f20a668186651925e499f47147a0c8d37a534a3a"
+    },
+    "receipt_sha256": {
+      "localization": {
+        "application-freeze.json": "4fbfcc9bad7d5148df00e291455bb9a58193df242a94dc7fa77850af89007dcf",
+        "digest-attempt/result.json": "453120fee105cc2d512a2ad193f47d034c9f14eec111d77e0f7307987abf77b8",
+        "digest-attempt/completion.json": "21ecf00da31306bd345c9e29c78963678014f2952fa087140a2f5eb7ac2f22aa",
+        "gate-source-review.json": "222302373568015bd56f4bdd8bcc69d65303c1076adca2a40d2c9e8496ab720f",
+        "runtime-source-review.json": "cea23ce530e482b2938f3eef70a1ad5ba91c5a4e72b08b1e3e303f478be28cdb",
+        "gate-outcome-review.json": "871abc870b2ffa3069b0eef48d66a3d353f2dec96580291797389e0464d17106",
+        "runtime-outcome-review.json": "5e05005682ae4d047ce12a0e736f32f029f7a14d1776c36066ea7d48f668da9b"
+      },
+      "corrected_comparison": {
+        "application-freeze.json": "962506e188247e584a54b1aa795c8e3bdbdbd3d8d6c6c9151c2140bb25e2b6f9",
+        "corrected-attempt/result.json": "2f5410154e1d894293dee7a2a81790d87bb8e9ce3f2787f804bb160eaf3ec9b1",
+        "corrected-attempt/completion.json": "8418d64b323198e51d89d341d81317a4be6d5c1e5dd490e6d16ef9943ef4cecd",
+        "outcome-summary.json": "61f7976c05d45be72713e3257029219d36dcc7c81c9504b31e6f89c74a089e83",
+        "gate-source-review.json": "611354313a6d529acc77fa9b89c3399ffb8aad312b52ff45a6922f32cfbd6723",
+        "runtime-source-review.json": "b942295eea9c7c85413b4f833294e141ec9124f576377779e497cb2fe327dcc1",
+        "gate-outcome-review.json": "4224aea129adf34a450be743dcc2c78a5bf02bda2e3cc402ab4ab61c7991ac4f",
+        "runtime-outcome-review.json": "5384c303df6cff41b8994f6235353835fc24544c08476a228cf4a6521a65cc2a"
+      }
+    },
+    "historical_events_authenticated": false,
+    "prior_expectation_approval_proven": false,
+    "independent_cache_expectation": false,
+    "source_cache_read": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "native_payload_opened": false,
+    "installed_dependency_executed": false,
+    "private_upload": false,
+    "automatic_retry": false,
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "retained_historical_binding_blockers": [
+      "dependency_manifest_unobserved",
+      "native_policy_unobserved"
+    ],
+    "next_single_work_package": "RA-003: design and qualify a prospective dependency-only producer for the successor contract, with expectations fixed before execution and explicit guard, durability, callback and cleanup events; independently review its source before any installed-dependency or protected-input act."
   }
 }
