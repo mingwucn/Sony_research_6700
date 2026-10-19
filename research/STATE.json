@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "saved_metadata_diagnostic_refused_historical_source_namespace_mismatch",
+  "phase": "source_ancestry_35_qualified_reviewed_full_chain_migration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -185,7 +185,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement and independently review an explicit historical source-namespace migration in a successor gate, qualify all 29 archived identities and negative collision/substitution cases, and bind the successor source/qualification chain before a fresh saved-metadata diagnostic.",
+  "next_work_package": "RA-003: bind the reviewed ancestry successor and its qualification into a versioned gate/entry source chain, then qualify complete invented parent/child composition before a fresh saved-metadata diagnostic.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4648,5 +4648,59 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: implement and independently review an explicit historical source-namespace migration in a successor gate, qualify all 29 archived identities and negative collision/substitution cases, and bind the successor source/qualification chain before a fresh saved-metadata diagnostic."
+  },
+  "source_ancestry": {
+    "status": "source_ancestry_35_qualified_reviewed_full_chain_migration_pending",
+    "report": "research/sessions/20261019-RA-003-source-ancestry.md",
+    "evidence": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "previous_goal_turn": "progress",
+    "current_goal_turn": "progress",
+    "ancestry_rows": 29,
+    "unchanged_sources": 26,
+    "reviewed_replacements": 3,
+    "tests": 35,
+    "passed": 35,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 0.638,
+    "wrapper_seconds": 0.9820639999816194,
+    "qualification_source_pins": 5,
+    "source_pins_stable": true,
+    "source_reviewers": 2,
+    "review_sha256": {
+      "ancestry-gate-rereview.json": "822c0e2ab1c6d1f3e11f6afe5b740368dcd8c32ff15687859b8721f3c76a131c",
+      "ancestry-runtime-qualification-addendum.json": "20c13b67c43b78ae1add62779c9036b0112d50402ded0df62617342d162974cc"
+    },
+    "gate_sha256": "c938fefe599860764e908feae8ad9718e6acca65b155999f807e96cfc6a3ae64",
+    "ancestry_sha256": "8c424160ee6567f436e8259d986092b414be8569eff927f4d6d109ddf7c58f5c",
+    "qualification_sha256": "349fb4766eaa14adc9dc1cf17d43c86fe76d1851d3c18646232ce729cdafb796",
+    "initial_development": {
+      "tests": 35,
+      "passed": 34,
+      "errors": 1,
+      "exit_code": 1,
+      "suite_seconds": 0.628
+    },
+    "bootstrap_cache_path_finding_resolved_in_source": true,
+    "initial_preparation_metadata_preserved": true,
+    "full_successor_chain_qualified": false,
+    "actual_saved_bundle_validated": false,
+    "execution_authorized": false,
+    "actual_gdt_replay": false,
+    "firmware_opened": false,
+    "operational_constants_opened": false,
+    "saved_prefix_opened": false,
+    "installed_dependency_executed": false,
+    "native_payload_opened": false,
+    "private_upload": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: bind the reviewed ancestry successor and its qualification into a versioned gate/entry source chain, then qualify complete invented parent/child composition before a fresh saved-metadata diagnostic."
   }
 }
