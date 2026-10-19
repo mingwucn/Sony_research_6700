@@ -113,21 +113,21 @@ Source documentation, static inference, host tests, camera readback, runtime obs
 
 The reference repositories are independent experimental research, not Sony-signed firmware updates. The plan adapts their methodology; it does not transplant their device-specific offsets or promise their results on the alpha6700.
 
-Latest RA-003 source/synthetic continuation: [ext-superblock design](research/EXT_SUPERBLOCK_DESIGN.md).
+Earlier RA-003 source/synthetic continuation: [ext-superblock design](research/EXT_SUPERBLOCK_DESIGN.md).
 Independent ext-superblock design: **52/52 synthetic passes**, zero skipped, exit **0**, **0.029s**; **4** qualified authored source/test pins.
 Eight immutable Linux v6.6 reference texts (**398,478 bytes**) and GPL-2.0-only notices are pinned; signed-release authentication is not established. The separate observer copies no upstream implementation.
 Only invented buffers were tested. No actual firmware, member prefix, operational constants or actual replay; all prior actual results, forty-source seal and analysis acts remain unchanged. Historical suites were not rerun.
 The initial harness refused (host **1**, child **0**): its regex counted zero although the preserved log shows **52 passes**, zero skips, **0.027s**. A reviewed parser-view CRLF correction preserved raw logs and observer/tests/thresholds; one corrected qualification supplied the accepted result above.
 Conditional geometry and conservative feature handling are a synthetic design result, not observed member capabilities, a usable read plan, filesystem validity or English/native FTP support. Planning authorization remains false. No traversal, checksum verification, child/raw files, private upload, upstream/firmware execution, camera, feature/write or recovery gate.
 
-Latest RA-003 synthetic continuation: [ext-superblock runner design](research/EXT_SUPERBLOCK_RUNNER_DESIGN.md).
+Earlier RA-003 synthetic continuation: [ext-superblock runner design](research/EXT_SUPERBLOCK_RUNNER_DESIGN.md).
 Bounded ext-superblock runner design: **320/320 synthetic passes**, zero skipped, exit **0**, **17.064s**; **53** qualified source/test pins.
 This qualification includes the unchanged **52** pure-observer cases and relevant standard-library lineage/gate regressions, plus new runner cases. Composition: **205** selected inherited regressions + **52** observer cases + **63** new cases. Two historical crypto-dependent cases are excluded, not skipped. This new 320-case suite differs from the historical 320-case preflight suite; historical suites were not rerun in full.
 The frozen eight-role basis and complete prior four-key inventory must reconcile before either of two superblock callbacks. Their additional raw-retention allowance is **8,192 bytes**, alongside the inherited **65,536-byte** allowance; neither is an aggregate managed-memory or whole-process cap.
 Raw buffers/logical streams were invented and callbacks synthetic; saved structured-metadata preflight was also qualified. No actual firmware, member prefix, operational constants or actual replay; all prior actual results, forty-source seal, four observer pins and analysis acts remain unchanged. The source lock is byte-identical; no new public-source acquisition.
 The runner design prepares a later separately frozen metadata observation; it establishes no actual geometry, filesystem validity, usable read plan, English resources or native FTP backend. Planning authorization remains false. No traversal, checksum verification, component/raw files, private upload, upstream/firmware execution, camera, feature/write or recovery gate.
 
-Latest RA-003: [ext-superblock metadata observation](research/EXT_SUPERBLOCK_OBSERVATION.md).
+Earlier RA-003: [ext-superblock metadata observation](research/EXT_SUPERBLOCK_OBSERVATION.md).
 Qualification **359/359 passed**, zero skipped, exit **0**, **20.963s**; **320 retained + 39 new** cases. All **53** design-source pins and older seals remain unchanged.
 Actual terminal **complete_private_ext_superblock_metadata_observation**, script **0** / host **0**, **38.274879s**. Preparation/pipeline/expanded/observer attempts: **1/1/5/2**.
 Source observation **source_read_confirmed**; preparation attempts alone do not establish a read.
@@ -138,21 +138,28 @@ Capability blockers: none under modeled policy.
 Classic feature-mask matches: **2**; this policy match establishes no planner or traversal eligibility.
 All prior results and source lock remain unchanged. No filesystem/checksum/content/authentication, usable read plan, native English/FTP, exact-body, feature/write or recovery claim. No raw output, component files, traversal, decompression/disassembly, private upload, upstream/firmware execution or camera. Eight metadata roles and inherited 65,536 plus new 8,192 selected raw-byte allowances are not aggregate managed/process caps.
 
-Latest RA-003 synthetic continuation: [ext metadata planner design](research/EXT_METADATA_PLANNER_DESIGN.md).
+Earlier RA-003 synthetic continuation: [ext metadata planner design](research/EXT_METADATA_PLANNER_DESIGN.md).
 Bounded ext metadata planner design: **174/174 synthetic passes**, zero skipped, exit **0**, **0.154s**; **52 retained + 122 new** cases; **8** qualified source/test pins. Invented buffers exercise primary-GDT and root-record proposals with counter, inode and group/reserved-metadata placement checks. All **13** retained ordinary source pins, prior actual results, analysis acts and source lock remain unchanged; no new source acquisition or historical full-suite rerun.
 
 Limits: **1,024 groups**, **32,768 descriptor bytes**, **4,096 prefix bytes** (project budgets). No actual metadata/firmware application, traversal, raw output or camera; planning authorization and all filesystem/content, native English/FTP, recovery and device-write claims remain false.
 
-Latest RA-003 scope review: [primary-GDT metadata scope](research/GDT_METADATA_SCOPE.md), [commands/results](research/sessions/20261019-RA-003-gdt-scope.md).
+Earlier RA-003 scope review: [primary-GDT metadata scope](research/GDT_METADATA_SCOPE.md), [commands/results](research/sessions/20261019-RA-003-gdt-scope.md).
 Primary-GDT observation engineering scope frozen: two planned inspection calls, four complete source passes (4,096,071,392 bytes on success), nine metadata roles, and at most 65,536 new descriptor bytes retained. Phase-A raw prefixes must be cleared before phase B; selected-raw allowances are 73,728 / 139,264 bytes, not process-memory caps. Root proposals are suppressed from every output and cannot reach a reader. Current official legal sources retain a narrow research rationale with unresolved contract/constants questions. No actual replay or planner application to saved actual data occurred.
 
 Unchanged planner/observer baseline: **174/174 passed**, zero skipped, exit **0**, **0.163s**; all eight qualified source and 34 original pins unchanged. The new two-phase runner is not implemented or qualified.
 
-Next single package: **RA-003: implement and synthetically qualify the frozen two-phase primary-GDT metadata runner and reconciliation gate; no actual replay or inode/content traversal**.
+Historical next single package: **RA-003: implement and synthetically qualify the frozen two-phase primary-GDT metadata runner and reconciliation gate; no actual replay or inode/content traversal**.
 
-Latest RA-003 runner: [primary-GDT runner design](research/GDT_RUNNER_DESIGN.md), [commands/results](research/sessions/20261019-RA-003-gdt-runner-design.md).
+Earlier RA-003 runner: [primary-GDT runner design](research/GDT_RUNNER_DESIGN.md), [commands/results](research/sessions/20261019-RA-003-gdt-runner-design.md).
 Two-phase primary-GDT runner, full-lineage gate and bounded collector qualified on invented data. Phase A reconciles all five historical blocks before planning; phase B repeats complete lineage before descriptor validation. Root proposals and broad planner success statuses are suppressed from outputs. Source telemetry is a synthetic protocol; the actual-I/O adapter and watchdog remain unimplemented. No actual firmware, constants or saved raw prefix was opened.
 
 **547/547 synthetic cases passed**, zero skipped, exit **0**; **280.109s** suite / **280.948s** wrapper, CPython 3.13.12. Three historical cases were excluded before execution: two require crypto and one loads saved actual metadata. No target feature, recovery or device-write gate passed.
 
-Next single package: **RA-003: implement and synthetically qualify a separately reviewed actual-I/O adapter and exclusive entry for the two-phase GDT scope, including source telemetry and watchdog; no actual execution**.
+Historical next single package: **RA-003: implement and synthetically qualify a separately reviewed actual-I/O adapter and exclusive entry for the two-phase GDT scope, including source telemetry and watchdog; no actual execution**.
+
+Latest RA-003 I/O adapter: [primary-GDT I/O adapter design](research/GDT_IO_ADAPTER_DESIGN.md), [commands/results](research/sessions/20261019-RA-003-gdt-io-design.md).
+Primary-GDT file adapter and exclusive parent/child control qualified on invented ordinary files and inert child processes. Real os.read calls, EOF probes, source accounting, journal failures and bounded supervision are exercised. Actual host/child bindings received source/AST review only; the actual entry remains inactive and blocked pending exact scope/rights activation-semantic review. No actual firmware, operational constants or saved raw prefix was opened.
+
+**666/666 synthetic cases passed**, zero skipped, exit **0**; **800.360s** suite / **801.228s** wrapper, CPython 3.13.12. Three historical cases were excluded before execution: two require crypto and one loads saved actual metadata. No target feature, recovery or device-write gate passed.
+
+Next single package: **RA-003: prepare and independently review the one-shot activation seal for the frozen two-phase primary-GDT observation; no execution**.
