@@ -58,7 +58,16 @@ argv/flags/path, typed wire, source labels and cleanup/refusals were observed.
 These labels are synthetic; digests do not authenticate review, permission,
 freshness, the interpreter distribution or stdlib origins. Runtime stays disabled.
 
-Next single host package: RA-003: reconcile the isolated invented-only entry and checked source closure with the frozen primary-GDT scope; produce one executable-path gap assessment that identifies the exact activity-specific rights/consent and source-origin prerequisites for any actual metadata observation. Do not add a generic gate layer or activate anything; no firmware/constants/native payload reads, installed dependency activation or camera contact.
+The [operational-path assessment](OPERATIONAL_PATH_ASSESSMENT.md) now distinguishes
+that checker from the protected GDT reader. All 44 frozen comparison roles
+match their source identities; 74 authored texts received AST inventory and
+119 ordinary pins held. Fourteen existing synthetic scope-policy tests pass.
+Existing runtime seams require six explicitly migrated adapter bindings; the
+checker supervisor differs from the frozen GDT deadline/cleanup/output limits.
+Neither a new generic envelope nor perfect host attestation is prescribed.
+Activity-specific permission/basis and source-origin questions remain.
+
+Next single host package: RA-003: implement the exact act/source/request mapping for the six replacement adapter roles and connect the existing runtime continuation and saved-parent verification seams. Keep the public runtime disabled and qualify the connected path only with invented inputs under the frozen GDT limits. Account explicitly for the source closure and decision placeholders; no generic gate layer, actual activation records, installed dependency activation, firmware/constants/native payload reads or camera contact.
 
 English restriction/resource mapping, a native FTP backend with direct Wi-Fi
 evidence, exact-body correspondence, backup coverage and usable rollback/recovery
