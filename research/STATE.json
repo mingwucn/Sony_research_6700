@@ -6287,5 +6287,64 @@
       "runtime-source-review.json": "68e16f177a9997303b72cea2bfeeb265792a8de6242e492170e8c4143ef8ceb1",
       "cli-refusals.json": "7cb2a86d8484f33d02b22243481c16dd9049246361b24a5958f0f0f4f4dcce68"
     }
+  },
+  "owner_project_assessment_20261019": {
+    "report": "research/sessions/20261019-owner-project-assessment.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "tree_entries": 51,
+    "blobs": 39,
+    "texts": [
+      {
+        "path": "README.md",
+        "size": 1830,
+        "blob_sha1": "ebb0bc382555c93d7c1ae0de45a2f18209a62d8f",
+        "sha256": "d98be2070528eec837f40757b889268178ebfa6589538e3049d4948d3124da90",
+        "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/README.md"
+      },
+      {
+        "path": "\u5f00\u53d1\u8ba1\u5212\u4e0e\u8fdb\u5c55.md",
+        "size": 3495,
+        "blob_sha1": "a343c73d97e724e36e6e7615e2383caf23987adf",
+        "sha256": "731cb52984c5001222e8f54c088a6e7edc3932cecfb006f08cff77f640753371",
+        "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E4%B8%8E%E8%BF%9B%E5%B1%95.md"
+      },
+      {
+        "path": "\u64cd\u4f5c\u624b\u518c.md",
+        "size": 7345,
+        "blob_sha1": "a41951a9e95c84288e8da027431b91fa029868b0",
+        "sha256": "2a6abb808a08233ca2855149464cc7825e18ac2bb83cf2956aea530e1d06ca7d",
+        "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C.md"
+      },
+      {
+        "path": "NOTICE",
+        "size": 804,
+        "blob_sha1": "6eac5cabd05e71b7824df368fed0837dd31c3166",
+        "sha256": "7599f6b0fa2a8388f84a8315e11ef504b10076e8f8a1747792a828b3c49f4b6b",
+        "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/NOTICE"
+      }
+    ],
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "english_unlock_found": false,
+    "ftp_status": "author-reported RAW+JPEG success; implementation unpublished in unchanged inspected tree",
+    "full_recovery_proven": false,
+    "host_policy_tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.6632565999752842,
+      "exit_code": 0,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "log_sha256": "7d0883a7430ffd18ff7c3646b17a14141822cfadeddc74445a24390ddf136672"
+    },
+    "camera_commands": [],
+    "feature_supported": false,
+    "device_write_gate_passed": false,
+    "next_single_reference_work_package": "FT-101: assess the published FTP implementation, direct camera-to-server Wi-Fi transfer evidence and reversal/recovery coverage against the existing checklist when available; source-only, no camera contact."
   }
 }
