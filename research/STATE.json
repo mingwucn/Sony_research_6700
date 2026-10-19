@@ -4825,5 +4825,26 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: prepare and independently review one v6 saved-metadata reconciliation diagnostic against the frozen qualification and explicit ancestry, then run only that ordinary-metadata diagnostic; no protected-input inspection or runtime activation."
+  },
+  "a6700_powerful_owner_review": {
+    "checked_at_utc": "2026-10-19T15:13:29.979096+00:00",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "report": "research/sessions/20261019-a6700-powerful-owner-review.md",
+    "status": "unchanged_reference_FTP_author_report_implementation_unpublished",
+    "tree_entries": 51,
+    "verified_text_documents": 4,
+    "host_tests": {
+      "total": 228,
+      "passed": 225,
+      "skipped": 3,
+      "exit_code": 0,
+      "suite_seconds": 18.695
+    },
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "FT-101: review published FTP implementation and direct camera-to-server Wi-Fi evidence against the saved evidence checklist when available."
   }
 }
