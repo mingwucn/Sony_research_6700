@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "ancestry_v6_chain_305_qualified_reviewed_saved_reconciliation_pending",
+  "phase": "v6_saved_component_bindings_reconciled_full_binding_basis_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -185,7 +185,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: prepare and independently review one v6 saved-metadata reconciliation diagnostic against the frozen qualification and explicit ancestry, then run only that ordinary-metadata diagnostic; no protected-input inspection or runtime activation.",
+  "next_work_package": "RA-003: prepare source-only complete binding-plan recomputation and complete saved-basis semantic validation against the frozen ordinary authority graph; qualify invented mismatch tests and obtain independent review before any new saved-metadata diagnostic.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4846,5 +4846,81 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "FT-101: review published FTP implementation and direct camera-to-server Wi-Fi evidence against the saved evidence checklist when available."
+  },
+  "ra003_v6_saved_reconciliation": {
+    "report": "research/sessions/20261019-RA-003-v6-saved-reconciliation.md",
+    "status": "v6_saved_component_bindings_reconciled_full_binding_basis_pending",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "previous_goal_turn": "progress",
+    "current_goal_turn": "progress",
+    "publication_reverified_at_utc": "2026-10-19T15:15:29.589415+00:00",
+    "tests": 40,
+    "passed": 40,
+    "skipped": 0,
+    "test_groups": [
+      11,
+      13,
+      16
+    ],
+    "test_exit_codes": [
+      0,
+      0,
+      0
+    ],
+    "test_suite_seconds": [
+      0.067,
+      0.027,
+      0.147
+    ],
+    "diagnostic_attempts": 1,
+    "diagnostic_exit_code": 0,
+    "separate_OS_exit_receipt_retained": false,
+    "diagnostic_rerun_during_publication": false,
+    "passed_stages": [
+      "reviewed_v6_qualification_evidence",
+      "historical_parent_evidence",
+      "old_integration_snapshot_current_qualifications",
+      "reviewed_source_repairs",
+      "reviewed_factory_sources",
+      "complete_ordinary_source_cache",
+      "reviewed_dependency_completion_and_cache",
+      "observed_no_site_startup_profile",
+      "saved_native_anchor",
+      "observed_runtime_source_identity",
+      "observed_dependency_profile_and_sources",
+      "basis_identity_and_roster",
+      "basis_role_digests",
+      "basis_source_package_identity",
+      "prerequisite_roles",
+      "binding_orders"
+    ],
+    "read_receipts": 47,
+    "ordinary_read_bytes": 2357805,
+    "fixed_references": 24,
+    "ordinary_documents": 27,
+    "decoded_source_buffers": 47,
+    "decoded_source_bytes": 814219,
+    "basis_roles": 9,
+    "effective_qualified_sources": 29,
+    "review_sha256": {
+      "gate-v6-reconciliation-outcome-review.json": "3dd40bfea5967fe922e10a61d7fbb064c6d0809ee58966d5560c4cfeadf78cde",
+      "runtime-v6-reconciliation-outcome-review.json": "5b3f26d749b7acd3b37cbc5605abdf70b10eca280054795c5c420fb3d73c2bc7"
+    },
+    "diagnostic_source_sha256": "da7959993f253a682c1c68d9b3179d4b334b70154199d11d86915ced397694fa",
+    "result_sha256": "69bdbe72b4055c8ce9c899ced5a54f5041f7b27493f2728a0f9e75f0d75620c7",
+    "ledger_sha256": "de0b5354a8cf6c3296a740aa51636339d30607e063c20b7a125fb5db1cc800ba",
+    "complete_binding_plan_validated": false,
+    "complete_basis_semantics_validated": false,
+    "operational_acceptance": false,
+    "execution_authorized": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: prepare source-only complete binding-plan recomputation and complete saved-basis semantic validation against the frozen ordinary authority graph; qualify invented mismatch tests and obtain independent review before any new saved-metadata diagnostic."
   }
 }
