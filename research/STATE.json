@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "non_executable_operational_scope_reviewed_authority_grammar_pending",
+  "phase": "invented_authority_envelope_qualified_ordinary_semantics_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,7 +63,7 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_operational_scope_reviewed_authority_implementation_pending",
+      "status": "partial_authority_envelope_qualified_ordinary_semantics_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
@@ -284,7 +284,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement and independently review the new pure authority/input grammar against the non-executable migration packet using invented documents only. Qualify prepared-versus-operational schemas, original-byte digests, acyclic external anchoring, protected/ordinary separation, historical indexing and changed-source/scope refusal. Keep runtime disabled; no actual activation records, protected-input/native payload reads or camera contact.",
+  "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8481,27 +8481,22 @@
     }
   },
   "latest_host_focused_suite": {
-    "total": 54,
-    "passed": 54,
+    "total": 45,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "seconds": 5.500321400002576,
+    "seconds": 0.21113419998437166,
     "source_stable": true,
-    "packet_file_sha256": "928027b9f240aa114c9ae03fd5e0d852435c8911299c5ce9c671f8632d60c44d",
-    "log_sha256": "707a6b667ceebb50f08a071f2e3e4e5f18f3a99dfc99bc02dfe58bac6bfac4be",
     "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
-    "engine_source_execution_in_ast_stage": false,
-    "regression_stage_shared_helpers_imported": true,
+    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+    "log_sha256": "a7375abb3f7920c0617c15218c0a36de5039576d90b51d60805de5add9506a17",
     "actual_inputs_accessed": false,
-    "dependency_activation_performed": false,
     "execution_authorized": false,
     "camera_commands": [],
     "exit_code": 0,
-    "report": "research/sessions/20261019-RA-003-operational-scope.md",
-    "evidence_class": "offline-tested",
-    "hardware_coverage": false,
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-operational-scope/qualify_final.py"
+    "report": "research/sessions/20261019-RA-003-authority-grammar.md",
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-authority-grammar/final/qualify.py",
+    "hardware_coverage": false
   },
   "owner_project_check_20261019_i": {
     "date": "2026-10-19",
@@ -8532,5 +8527,48 @@
     "feature_or_write_gate_passed": false,
     "report": "research/sessions/20261019-owner-project-check-i.md",
     "next_reference_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published, including exact build identity, transfer equality, failure handling and reversal/recovery coverage."
-  }
+  },
+  "dependency_authority_grammar": {
+    "status": "partial_invented_authority_envelope_qualified_role_semantics_pending",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "report": "research/sessions/20261019-RA-003-authority-grammar.md",
+    "focused_tests": {
+      "total": 45,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.21113419998437166,
+      "source_stable": true,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "log_sha256": "a7375abb3f7920c0617c15218c0a36de5039576d90b51d60805de5add9506a17",
+      "actual_inputs_accessed": false,
+      "execution_authorized": false,
+      "camera_commands": [],
+      "exit_code": 0
+    },
+    "source_test_packet_pins": 7,
+    "new_tests": 22,
+    "retained_tests": 23,
+    "ordinary_roles": 14,
+    "protected_labels": 2,
+    "historical_roles": 16,
+    "opaque_ordinary_role_semantics_validated": false,
+    "independent_reviewer_identity_authenticated": false,
+    "actual_interpreter_identity_verified": false,
+    "operational_activation_grammar_complete": false,
+    "actual_inputs_accessed": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_unchanged_reference_refresh_only",
+    "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
+    "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
+  },
+  "latest_report": "research/sessions/20261019-RA-003-authority-grammar.md"
 }
