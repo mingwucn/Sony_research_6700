@@ -8004,5 +8004,29 @@
     "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_reference_refresh_only",
     "current_goal_turn": "progress_shared_internal_continuation_implemented_reviewed_and_invented_qualified",
     "next_work_package": "RA-003: migrate the frozen operational parent/wiring to the current collected-controller contract using invented inputs only; derive the exact successor source closure, verify all eleven dependency artifacts and both bridge envelopes, retain ordinary-only parent loading and single-owner cleanup, and qualify refusal/unknown-completion reconciliation. Keep runtime entry disabled; no dependency activation, firmware/constants reads or camera."
+  },
+  "owner_project_check_20261019_f": {
+    "date": "2026-10-19",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "unchanged_from_locked_revision": true,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "immutable_documents_verified": 4,
+    "tree_entries": 51,
+    "tree_blobs": 39,
+    "english": "No unlock located in unchanged previously audited sources or refreshed documents",
+    "ftp": "Author reports RAW+JPEG success; implementation unpublished; direct Wi-Fi/no-relay reproduction pending",
+    "recovery": "Complete storage coverage and restoration unverified",
+    "test_total": 17,
+    "test_passed": 17,
+    "test_exit_code": 0,
+    "test_seconds": 1.7774068000144325,
+    "camera_commands": [],
+    "feature_or_write_gate_passed": false,
+    "report": "research/sessions/20261019-owner-project-check-f.md",
+    "next_reference_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published, including exact build identity, transfer equality, failure handling and reversal/recovery coverage."
   }
 }
