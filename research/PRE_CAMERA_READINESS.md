@@ -39,13 +39,21 @@ were AST parsed only, never imported or executed by this audit. All syntactic
 calls are inventoried; dynamic alias/dataflow, embedded code and transitive
 external execution remain unresolved. This is not an operational allowlist.
 
-The next single host package is an exact-buffer detached loader for the fourteen
-metadata-validator modules, composing the existing eleven retained preflight
-sources using invented inputs. It must check the whole expected roster before
-execution, own authored import semantics, preserve foreign process modules and
-detect live-code mutation. Interpreter/stdlib trust remains separate; operational
-runtime stays disabled. A passing synthetic envelope is not permission to inspect
-more firmware.
+The [detached checked-buffer loader](sessions/20261020-RA-003-detached-metadata-loader.md)
+now executes the fourteen public validators and composes the eleven retained
+sources on invented inputs: 48/48 tests passed, 113 pins stable. The entire
+expected roster and compiled policy are checked before execution, owned
+from-tools imports bypass ambient validators, live-code mutation refuses, results
+are detached and bounded, and failures clear owned references without deleting
+foreign process modules. Independent source review findings were repaired and
+the final bytes requalified; earlier logs remain preserved.
+
+The next single host package is a reviewed no-site disposable entry that captures
+the loader/audit helper bytes against an external review anchor before executing
+the invented-only composition. Startup argv, source origins, import policy and
+cleanup/refusals must be bound and observed. Loader/audit bootstrap and complete
+interpreter/stdlib trust are not yet established; operational runtime stays
+disabled. Checked host execution is not permission to inspect more firmware.
 
 English restriction/resource mapping, a native FTP backend with direct Wi-Fi
 evidence, exact-body correspondence, backup coverage and usable rollback/recovery
