@@ -9254,5 +9254,29 @@
     "previous_goal_turn": "progress_reference_refresh_committed_957f701",
     "current_goal_turn": "progress_prepared_adapter_binding_and_invented_controller_parent_qualified",
     "next_work_package": "RA-003: migrate the isolated outer bootstrap and neutral source loading to the prepared adapter, reuse the existing supervisor with frozen GDT limits (300/5/1 seconds, 2 MiB per pipe), and qualify the complete two-phase invented-stream/controller/saved-parent path including source substitutions and refused/unknown cleanup outcomes. Keep actual observation and public runtime disabled; no actual activation record, installed dependency activation, protected-input read or camera contact."
+  },
+  "a6700_reference_review_20261020_f": {
+    "report": "research/sessions/20261020-a6700-reference-review-f.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "unchanged": true,
+    "documents_blob_verified": 4,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "tests": {
+      "total": 17,
+      "passed": 17,
+      "skipped": 0,
+      "exit_code": 0,
+      "seconds": 1.636
+    },
+    "english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit public FTP implementation and direct Wi-Fi evidence when published."
   }
 }
