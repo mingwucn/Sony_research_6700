@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "ten_ordinary_metadata_contracts_composed_four_remaining_runtime_disabled",
+  "phase": "fourteen_invented_metadata_contracts_composed_legacy_bridge_and_runtime_authority_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_ten_ordinary_contracts_composed_four_remaining",
+      "status": "partial_fourteen_invented_contracts_composed_runtime_authority_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-source-receipt-compose.md",
+      "session_report": "research/sessions/20261020-RA-003-activity-metadata.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -284,7 +284,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement, review and qualify the remaining four ordinary metadata contracts (activity scope/rights, historical-evidence index and qualification index), binding exact current authored sources and qualification evidence. Preserve unresolved rights, authority, freshness, startup and legacy dependency bridge gaps. Invented records only; runtime disabled; no actual firmware/constants/native payload reads or camera.",
+  "next_work_package": "RA-003: derive, implement and independently qualify a source-only compatibility contract between the retained legacy dependency plan and successor dependency packet/fixed expectations. Explicitly reject unsupported version, source mapping, cache/native policy and operation correspondences; preserve independent authority, exact bootstrap closure, freshness and startup as separate unmet prerequisites. Invented records and authored source texts only; runtime disabled, no protected inputs or camera.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8481,35 +8481,26 @@
     }
   },
   "latest_host_focused_suite": {
-    "total": 130,
-    "passed": 130,
+    "total": 156,
+    "passed": 156,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "seconds": 16.237161699973512,
+    "seconds": 21.50462169997627,
     "source_stable": true,
     "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
     "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
-    "invented_file_io": [
-      {
-        "status": "complete_44_invented_source_reads",
-        "opens": 44,
-        "reads": 88,
-        "eof": 44,
-        "closes": 44
-      }
-    ],
     "actual_inputs_accessed": false,
     "execution_authorized": false,
     "camera_commands": [],
     "installed_dependency_aliases": [],
-    "log_sha256": "a2778849ad8b7d86ba6df02527d8b8cbdd37593796eda05936e3f305b5042e8b",
+    "log_sha256": "dee544cd227d033d9daa5378b2a07adc19ee41313cee0c506b8cce148ed88d65",
     "exit_code": 0,
-    "report": "research/sessions/20261020-RA-003-source-receipt-compose.md",
-    "source_pin_count": 96,
+    "report": "research/sessions/20261020-RA-003-activity-metadata.md",
+    "source_pin_count": 99,
     "hardware_coverage": false,
     "evidence_class": "offline-tested",
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-source-receipt-compose/buffer-owned/qualify.py"
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-activity-metadata/qualify.py"
   },
   "owner_project_check_20261019_i": {
     "date": "2026-10-19",
@@ -8583,7 +8574,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261020-RA-003-source-receipt-compose.md",
+  "latest_report": "research/sessions/20261020-RA-003-activity-metadata.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -8796,5 +8787,46 @@
     "previous_goal_turn": "reference_refresh_completed_no_new_shared_implementation_evidence",
     "current_goal_turn": "progress_source_receipt_composition_reconciled_reviewed_qualified_and_recorded",
     "next_work_package": "RA-003: implement, review and qualify the remaining four ordinary metadata contracts (activity scope/rights, historical-evidence index and qualification index), binding exact current authored sources and qualification evidence. Preserve unresolved rights, authority, freshness, startup and legacy dependency bridge gaps. Invented records only; runtime disabled; no actual firmware/constants/native payload reads or camera."
+  },
+  "activity_metadata_contracts": {
+    "report": "research/sessions/20261020-RA-003-activity-metadata.md",
+    "checked_ordinary_role_contracts": 14,
+    "pending_ordinary_role_contracts": [],
+    "qualification": {
+      "total": 156,
+      "passed": 156,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 21.50462169997627,
+      "source_stable": true,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "actual_inputs_accessed": false,
+      "execution_authorized": false,
+      "camera_commands": [],
+      "installed_dependency_aliases": [],
+      "log_sha256": "dee544cd227d033d9daa5378b2a07adc19ee41313cee0c506b8cce148ed88d65",
+      "exit_code": 0
+    },
+    "source_pin_count": 99,
+    "source_reads_observed": false,
+    "qualification_execution_authenticated": false,
+    "validator_execution_owned": false,
+    "rights_established": false,
+    "history_freshness_verified": false,
+    "complete_basis_semantics_verified": false,
+    "current_candidate_operation_bound": false,
+    "dependency_bridge_verified": false,
+    "actual_startup_verified": false,
+    "actual_inputs_accessed": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_ten_role_composition_finalized",
+    "current_goal_turn": "progress_remaining_four_contracts_implemented_and_fourteen_composed",
+    "next_work_package": "RA-003: derive, implement and independently qualify a source-only compatibility contract between the retained legacy dependency plan and successor dependency packet/fixed expectations. Explicitly reject unsupported version, source mapping, cache/native policy and operation correspondences; preserve independent authority, exact bootstrap closure, freshness and startup as separate unmet prerequisites. Invented records and authored source texts only; runtime disabled, no protected inputs or camera."
   }
 }
