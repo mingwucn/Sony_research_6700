@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "v6_saved_component_bindings_reconciled_full_binding_basis_pending",
+  "phase": "binding_basis_composition_30_qualified_reviewed_saved_diagnostic_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -185,7 +185,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: prepare source-only complete binding-plan recomputation and complete saved-basis semantic validation against the frozen ordinary authority graph; qualify invented mismatch tests and obtain independent review before any new saved-metadata diagnostic.",
+  "next_work_package": "RA-003: prepare and independently review a once-only ordinary-metadata diagnostic binding the eleven pure helper hashes to the frozen v6 source graph; recompute the entire binding plan with the real interpreter namespace and rerun the existing nine-role preflight, retaining full semantics and execution gates as unresolved.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -4922,5 +4922,46 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_single_work_package": "RA-003: prepare source-only complete binding-plan recomputation and complete saved-basis semantic validation against the frozen ordinary authority graph; qualify invented mismatch tests and obtain independent review before any new saved-metadata diagnostic."
+  },
+  "ra003_binding_basis_design": {
+    "report": "research/sessions/20261019-RA-003-binding-basis-design.md",
+    "status": "binding_basis_composition_30_qualified_reviewed_saved_diagnostic_pending",
+    "evidence_classes": [
+      "offline-tested",
+      "static-inference"
+    ],
+    "previous_goal_turn": "progress",
+    "current_goal_turn": "progress",
+    "tests": 30,
+    "passed": 30,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 1.727,
+    "final_snapshot_pins": 38,
+    "unchanged_copied_source_origins": 33,
+    "pure_helper_roster": 11,
+    "role_buffers_AST_checked_not_executed": 26,
+    "review_sha256": {
+      "gate-design-review-final.json": "a4200c6da7e5afbe63ee426330733e69db4e274d6f6bd5a131051d7cae9654de",
+      "runtime-design-review-final.json": "d5ed8df4211c9cbd9b4e5510cf27d3b6bdce25fcb7f75d9993a14318b2ae3157"
+    },
+    "source_sha256": "3e0cb2146667b5228818fc293a2e7f496dbf24c2793121b2fe87e34ff01a9ac5",
+    "test_sha256": "fd025efbdb869b27f77e3cd41219504ceaa19bb526470acce17c2921e70f0815",
+    "source_policy_sha256": "090c85f06699832378319787ddd53c8d1865ff0748f47a31ae7bbd2b0d8c5d87",
+    "test_log_sha256": "8dba58ccbffb2c10d0ae3e8bbce0155eb728ced83bb3159db0742fe474f6e18c",
+    "boundedness_findings_resolved": true,
+    "invented_full_plan_comparison_qualified": true,
+    "actual_binding_plan_recomputed": false,
+    "actual_nine_role_preflight_recomputed": false,
+    "complete_saved_basis_semantic_revalidation": false,
+    "actual_saved_metadata_act": false,
+    "execution_authorized": false,
+    "operational_acceptance": false,
+    "english_supported": false,
+    "native_ftp_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: prepare and independently review a once-only ordinary-metadata diagnostic binding the eleven pure helper hashes to the frozen v6 source graph; recompute the entire binding plan with the real interpreter namespace and rerun the existing nine-role preflight, retaining full semantics and execution gates as unresolved."
   }
 }
