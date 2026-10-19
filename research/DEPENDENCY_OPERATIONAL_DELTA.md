@@ -1,5 +1,14 @@
 # Collected controller: operational delta and remaining evidence
 
+Subsequent implementation: the [internal continuation](DEPENDENCY_INTERNAL_CONTINUATION.md)
+adds the engine-owned continuation without enabling public runtime entry. The
+[parent/wiring successor](DEPENDENCY_PARENT_MIGRATION.md) replaces the obsolete
+saved-receipt reconciliation in an invented adapter and binds its ordinary parent
+helpers to checked source buffers. The comparison below preserves the original
+delta findings; it is not the current implementation status of those repaired
+invented paths. Operational packet binding and actual runtime composition remain
+pending. See each session report for qualified evidence and limits.
+
 2026-10-19. Evidence: **static-inference**, with separately recorded invented-data
 regressions. This is a source comparison, not an executable activation packet.
 English menus and native camera-to-server Wi-Fi FTP remain first and unverified.

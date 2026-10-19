@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-19",
-  "phase": "internal_continuation_invented_qualified_parent_migration_pending",
+  "phase": "invented_parent_wiring_adapter_qualified_operational_binding_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -27,31 +27,27 @@
   "remote_ci_executed": true,
   "remote_ci_prepared": true,
   "latest_host_synthetic_suite": {
-    "total": 657,
-    "passed": 654,
+    "mode": "full",
+    "total": 713,
+    "passed": 710,
+    "failures": 0,
     "errors": 0,
     "skipped": 3,
-    "seconds": 233.32084850000683,
+    "seconds": 377.00351419998333,
     "source_stable": true,
-    "log_sha256": "6898a6f0357498ca7469b9b3f1b393e1858656163373827c64126a583f7cac02",
-    "exit_code": 0,
-    "interpreter": "CPython 3.13.12",
-    "host": "Windows AMD64",
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-clean-outer-child/qualify.py full full-a",
-    "evidence_class": "offline-tested",
-    "camera_or_real_server_coverage": false,
-    "hardware_coverage": false,
-    "report": "research/sessions/20261019-RA-003-clean-outer-child.md",
+    "log_sha256": "c016f40c3e37d69c8e23ad5f27d93cc12cb23fb554daf7c3e501e918bde39851",
+    "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+    "actual_inputs_accessed": false,
     "camera_commands": [],
-    "source_scope": "Full public host suite; final public sources unchanged. Private-only parent cleanup/PID repairs subsequently covered by focused and final targeted qualification.",
-    "skips": [
-      "POSIX fork inheritance on Windows",
-      "Real symlink creation: existing inventory",
-      "Real symlink creation: UFU reader"
-    ],
-    "failed": 0,
-    "runner_seconds": 232.866,
-    "wrapper_elapsed_seconds": 233.32084850000683
+    "exit_code": 0,
+    "public_test_total": 708,
+    "private_helper_test_total": 5,
+    "evidence_class": "offline-tested",
+    "hardware_coverage": false,
+    "camera_or_real_server_coverage": false,
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-parent-migration/qualify.py full",
+    "report": "research/sessions/20261019-RA-003-parent-migration.md",
+    "source_scope": "708 public host cases plus five private checked-buffer parent-helper cases"
   },
   "work_packages": {
     "RA-001": {
@@ -67,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_saved_plan_and_nine_role_predicates_reconciled_operational_gaps_pending",
+      "status": "partial_invented_parent_wiring_qualified_operational_binding_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 one reviewed ordinary saved-metadata act; no protected inputs or camera",
+      "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261019-RA-003-internal-continuation.md",
+      "session_report": "research/sessions/20261019-RA-003-parent-migration.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -208,7 +204,8 @@
         }
       ],
       "semantic_binding_diagnostic": "research/SEMANTIC_BINDING_DIAGNOSTIC.md",
-      "stream_contract_binding": "research/STREAM_CONTRACT_BINDING.md"
+      "stream_contract_binding": "research/STREAM_CONTRACT_BINDING.md",
+      "parent_migration": "research/DEPENDENCY_PARENT_MIGRATION.md"
     },
     "RA-004": {
       "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
@@ -5876,13 +5873,13 @@
         "sha256": "d98be2070528eec837f40757b889268178ebfa6589538e3049d4948d3124da90"
       },
       {
-        "path": "\u5f00\u53d1\u8ba1\u5212\u4e0e\u8fdb\u5c55.md",
+        "path": "开发计划与进展.md",
         "bytes": 3495,
         "git_blob": "a343c73d97e724e36e6e7615e2383caf23987adf",
         "sha256": "731cb52984c5001222e8f54c088a6e7edc3932cecfb006f08cff77f640753371"
       },
       {
-        "path": "\u64cd\u4f5c\u624b\u518c.md",
+        "path": "操作手册.md",
         "bytes": 7345,
         "git_blob": "a41951a9e95c84288e8da027431b91fa029868b0",
         "sha256": "2a6abb808a08233ca2855149464cc7825e18ac2bb83cf2956aea530e1d06ca7d"
@@ -6079,14 +6076,14 @@
         "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/README.md"
       },
       {
-        "path": "\u5f00\u53d1\u8ba1\u5212\u4e0e\u8fdb\u5c55.md",
+        "path": "开发计划与进展.md",
         "bytes": 3495,
         "git_blob": "a343c73d97e724e36e6e7615e2383caf23987adf",
         "sha256": "731cb52984c5001222e8f54c088a6e7edc3932cecfb006f08cff77f640753371",
         "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E4%B8%8E%E8%BF%9B%E5%B1%95.md"
       },
       {
-        "path": "\u64cd\u4f5c\u624b\u518c.md",
+        "path": "操作手册.md",
         "bytes": 7345,
         "git_blob": "a41951a9e95c84288e8da027431b91fa029868b0",
         "sha256": "2a6abb808a08233ca2855149464cc7825e18ac2bb83cf2956aea530e1d06ca7d",
@@ -6304,14 +6301,14 @@
         "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/README.md"
       },
       {
-        "path": "\u5f00\u53d1\u8ba1\u5212\u4e0e\u8fdb\u5c55.md",
+        "path": "开发计划与进展.md",
         "size": 3495,
         "blob_sha1": "a343c73d97e724e36e6e7615e2383caf23987adf",
         "sha256": "731cb52984c5001222e8f54c088a6e7edc3932cecfb006f08cff77f640753371",
         "url": "https://raw.githubusercontent.com/xyzhangxin/sony-a6700-powerful/0c6294a83988f196adfc980de59f9a1d0b92e8e2/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E4%B8%8E%E8%BF%9B%E5%B1%95.md"
       },
       {
-        "path": "\u64cd\u4f5c\u624b\u518c.md",
+        "path": "操作手册.md",
         "size": 7345,
         "blob_sha1": "a41951a9e95c84288e8da027431b91fa029868b0",
         "sha256": "2a6abb808a08233ca2855149464cc7825e18ac2bb83cf2956aea530e1d06ca7d",
@@ -8028,5 +8025,82 @@
     "feature_or_write_gate_passed": false,
     "report": "research/sessions/20261019-owner-project-check-f.md",
     "next_reference_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published, including exact build identity, transfer equality, failure handling and reversal/recovery coverage."
+  },
+  "dependency_parent_migration": {
+    "date": "2026-10-19",
+    "status": "invented_parent_wiring_adapter_qualified_operational_binding_pending",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "report": "research/sessions/20261019-RA-003-parent-migration.md",
+    "design": "research/DEPENDENCY_PARENT_MIGRATION.md",
+    "combined_host": {
+      "mode": "full",
+      "total": 713,
+      "passed": 710,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "seconds": 377.00351419998333,
+      "source_stable": true,
+      "log_sha256": "c016f40c3e37d69c8e23ad5f27d93cc12cb23fb554daf7c3e501e918bde39851",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "actual_inputs_accessed": false,
+      "camera_commands": [],
+      "exit_code": 0
+    },
+    "public_test_total": 708,
+    "private_helper_test_total": 5,
+    "real_invented_outer": {
+      "mode": "outer",
+      "total": 23,
+      "passed": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 356.90492000000086,
+      "source_stable": true,
+      "log_sha256": "e960fc02042c1e64528546a920d66e4eef31759e99f54ad733cb2edb28167ff6",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "actual_inputs_accessed": false,
+      "camera_commands": [],
+      "exit_code": 0
+    },
+    "terminal_fallback": {
+      "total": 3,
+      "passed": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 24.2212123000063,
+      "source_stable": true,
+      "log_sha256": "223c3225ed7c9bbc79866598a59c6a3846db714c8d9fe5ccc9e5c3aa9167f105",
+      "exit_code": 0,
+      "actual_inputs_accessed": false,
+      "camera_commands": []
+    },
+    "source_pin_count": 116,
+    "invented_source_closure_roles": 62,
+    "ordinary_parent_validation_roles": 23,
+    "protected_parent_validation_roles_loaded": 0,
+    "exact_buffer_parent_helper_roles": 7,
+    "dependency_artifacts_verified": 11,
+    "bridge_envelopes_verified": 2,
+    "old_frozen_entry_preserved": true,
+    "operational_entry_migration_qualified": false,
+    "public_runtime_enabled": false,
+    "operational_packet_assembled": false,
+    "actual_dependency_observation_performed": false,
+    "protected_continuation_performed": false,
+    "historical_seventeen_blockers_retained": true,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "no_progress_toward_shared_pre_camera_path_reference_refresh_only",
+    "current_goal_turn": "progress_parent_verifier_and_invented_successor_wiring_implemented_reviewed_qualified",
+    "next_work_package": "RA-003: prepare and independently review a source-only operational successor specification and binding delta against the qualified parent/wiring adapter; derive actual source roles, startup and exact-buffer parent helper semantics, internally constructed observer call and current success/refusal reconciliation. Enumerate activity scope and unresolved rights/trust prerequisites. Keep runtime entry disabled; no dependency activation, firmware/constants reads, executable activation request or camera."
   }
 }
