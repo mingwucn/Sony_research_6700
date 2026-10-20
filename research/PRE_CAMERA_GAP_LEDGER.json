@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_preparation_consistency_qualified_activity_and_runtime_pending",
+      "status": "partial_v2_consistency_transport_qualified_execution_and_activity_pending",
       "available_evidence": "Official mainland package acquired and measured; bounded tar inventory, fixed superblock study, pending review and saved historical comparison recorded.",
-      "remaining_acceptance": "Explicit preparation handoff qualified on invented sources; actual source/46-role rosters and runtime bootstrap not migrated or qualified. Five activity decisions, current act records and three dependency fields unresolved; English/FTP mapping and complete exact-body evidence absent.",
-      "next_dependency": "closed_v2_transport_handoff_without_execution_context_bypass",
+      "remaining_acceptance": "Closed v2 consistency transport qualified on invented sources. Separate execution context, current source manifest/bootstrap and actual act records remain unqualified. Five decisions and three dependency nulls unresolved; English/FTP mapping and exact-body evidence absent.",
+      "next_dependency": "separate_current_operation_execution_context_qualification_and_pending_activity_dispositions",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -43,7 +43,8 @@
         "research/HISTORICAL_CONTEXT_PREFLIGHT.md",
         "research/PREPARATION_CONTEXT_HANDOFF.md",
         "research/NEXT_ANALYSIS_EVIDENCE.md",
-        "research/V6_SOURCE_COMMAND_SPEC.md"
+        "research/V6_SOURCE_COMMAND_SPEC.md",
+        "research/V2_MIGRATION_HANDOFF.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1070,9 +1071,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_finite_evidence_packet_committed_d37bd81",
-  "current_goal_turn": "progress_exact_source_projection_and_missing_v6_calling_seams_derived",
-  "next_single_work_package": "RA-003: implement and qualify a closed v2 migration handoff through the existing projection/packet and parent/child preflight seams, including saved arguments. Preserve v1 behavior and explicit v6 execution-context refusal. Qualify invented complete/missing/altered/downgraded/cross-operation cases; v6 must stop before bootstrap materialization, protected preparation, result writes or process launch. No actual allow records, source-manifest migration, dependency activation, protected reads or camera contact.",
+  "previous_goal_turn": "progress_reference_recheck_committed_26793af",
+  "current_goal_turn": "progress_closed_v2_transport_qualified_with_explicit_execution_refusal",
+  "next_single_work_package": "RA-003: qualify a distinct current-operation execution-context constructor using the original retained baseline and current request on invented inputs. Establish exact source, document, ordinary-input and command bindings independently of the v6 consistency receipt. Keep the v2 launcher refusal and all five pending activity decisions until that separate work is reviewed; no actual allow records, dependency activation, protected reads or camera contact.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1222,6 +1223,57 @@
       "previous_goal_turn": "progress_finite_evidence_packet_committed_d37bd81",
       "current_goal_turn": "progress_exact_source_projection_and_missing_v6_calling_seams_derived",
       "next_single_work_package": "RA-003: implement and qualify a closed v2 migration handoff through the existing projection/packet and parent/child preflight seams, including saved arguments. Preserve v1 behavior and explicit v6 execution-context refusal. Qualify invented complete/missing/altered/downgraded/cross-operation cases; v6 must stop before bootstrap materialization, protected preparation, result writes or process launch. No actual allow records, source-manifest migration, dependency activation, protected reads or camera contact."
+    },
+    {
+      "report": "research/sessions/20261020-RA-003-v2-migration-handoff.md",
+      "note": "research/V2_MIGRATION_HANDOFF.md",
+      "status": "closed_v2_consistency_transport_qualified_execution_context_and_activity_pending",
+      "tests": 214,
+      "new_cases": 12,
+      "exit_code": 0,
+      "seconds": 110.41352830000687,
+      "source_pins": {
+        "tools/dependency_historical_gate.py": "25663aadb151d0cf9fe4b287accda99a52153bd7b12895f5b233bdee4db44459",
+        "tools/dependency_observation_outer.py": "6841937f053b86749b3d9c70a20333069acf5e3300afed879f47332ada230396",
+        "tools/dependency_operational_metadata.py": "c539ab4a5592627b4c8bef069a9ff9567910f5842cf2fdfd07a9e387afefce14",
+        "tools/dependency_operational_preparation.py": "25e8f3ebd2a2d050e6a3e9a3b311b98709aaf08a12225167dd0431e384e895ba",
+        "tools/dependency_host_entry.py": "77cec12df0544a7e10ac00e29d15f3fc62e2376b5378fc32c7b38fb8d37ffaa3",
+        "tests/dependency_historical_fixture.py": "9c5e0f2e2202822f97050069dc02478270ca5d4923d8cb18a3773769a4a0de23",
+        "tools/dependency_operational_child.py": "6c401e3a1a122d3aac6c3dd788a70b603f8eab947f214cb601c0ca86f93e4d5e",
+        "tools/dependency_operational_launcher.py": "d9bbda9741a8cff379d65b527495574584ee57ea0600bf38193e859d05928fba",
+        "tools/dependency_observation_launcher.py": "367586c003f28d18962e23bde4d0655cc9c35ca22f19b28306bc05e18eef8c20",
+        "tests/test_dependency_historical_gate.py": "d65c742b9d55e03c1daf700cfb21f4127ad23fc8ad8192f6dd53ec73ba2219ff",
+        "tests/test_dependency_historical_outer.py": "a80958a1839f79a96eee122e4633d1964297d8a61a822079917358784332c5b9",
+        "tests/test_dependency_observation_outer.py": "a3f712a509a166520fe6000f9672b822fc39c458af04d82f5b1ab2d172db62c7",
+        "tests/test_dependency_observation_contract.py": "c3e21ed289ec9c3166be6a8259e55bd715689288f2848cbff638f2dff45d6cf1",
+        "tests/test_dependency_pending_review.py": "10bf708d1fdab5c51ee12f4c4fc4b4d2d36299c0c7ed7900182b50088d8f81fc",
+        "tests/test_dependency_legacy_comparison.py": "810873fc9febd8b5593fcd8e331007e52f30912a7dae11c89c611dc7d375c293",
+        "tests/test_dependency_operational_preparation.py": "bc1fd99cff04b77b74181b251ac2bdf05bc6ab9a6e183cf1c6d23c5c7bdb8535",
+        "tests/test_dependency_preparation_migration.py": "6c60898c2083be8500cb6cb5a17c211593deec80ba783f69978aa5eca42b56db",
+        "tests/test_dependency_host_entry.py": "a23490bb8c8d75978bae8f961f6f259f75857cec221c3bc877eab66e126d15b5",
+        "tests/test_dependency_migration_transport.py": "8cef0d07eade0d8feced5b118e54abbf297c7a207292a678cea1f97b93364243",
+        "tests/test_dependency_operational_launcher.py": "5b8009684ef81f46f0e6d25567beba0cfba74276e3c76fcafb1c8ab9dff06f65",
+        "tests/test_dependency_observation_launcher.py": "681f365d7dcced989e5183d3664d6cae8337f54a3a7d35e08392cd9b90d79eb2"
+      },
+      "independent_review_tests": 12,
+      "current_source_deltas": 5,
+      "prepared_role_byte_deltas": 0,
+      "all_five_decisions_pending": true,
+      "dependency_null_fields": 3,
+      "migration_transport_integrated": true,
+      "execution_bootstrap_qualified": false,
+      "actual_bundle_created": false,
+      "source_manifest_migrated": false,
+      "execution_authorized": false,
+      "protected_inputs_accessed": false,
+      "installed_dependency_activated": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "camera_commands": [],
+      "previous_goal_turn": "progress_reference_recheck_committed_26793af",
+      "current_goal_turn": "progress_closed_v2_transport_qualified_with_explicit_execution_refusal",
+      "next_single_work_package": "RA-003: qualify a distinct current-operation execution-context constructor using the original retained baseline and current request on invented inputs. Establish exact source, document, ordinary-input and command bindings independently of the v6 consistency receipt. Keep the v2 launcher refusal and all five pending activity decisions until that separate work is reviewed; no actual allow records, dependency activation, protected reads or camera contact."
     }
   ]
 }

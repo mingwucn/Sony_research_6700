@@ -205,11 +205,12 @@ def _prepare_pending(*,folder,packet,buffers,rows,expected_hashes):
         docs,raw,prepared,checked,ordinary=decoded
         need(Path(prepared['folder'])==folder/'composition','operational_launch_composition')
         gate=outer.modules['retained_gate'];io=outer.modules['ordinary_io'];host=outer.modules['dependency_host_entry']
-        validated=gate.validate_bundle(docs,expected_seal_sha256=packet['seal_sha256'],reference_pins=packet['reference_pins'])
+        validated=process.validate_gate(packet,decoded,outer)
         need(validated['candidate']['operation_id']==prepared['operation_id'],'operational_launch_operation')
         check_retained(validated,buffers,rows)
         arguments=process.preflight_arguments(packet,decoded,outer,adapter,validated)
         outer.modules['dependency_operational_metadata'].validate_pending(**arguments)
+        process.refuse_v6_execution(packet)
         packet_raw=encoded(packet);need(len(packet_raw)<=8*1024**2,'operational_launch_packet_bound')
         write(folder/'packet.json',packet_raw)
         _,packet_row=entry.read_source(str(folder/'packet.json'),8*1024**2)

@@ -190,7 +190,8 @@ class LauncherTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             outer=SimpleNamespace(closed=False,close=Mock(),modules={'retained_gate':SimpleNamespace(validate_bundle=Mock(return_value={'candidate':{'operation_id':'1'*32}})),'ordinary_io':object(),'dependency_host_entry':object()})
             adapter=SimpleNamespace(closed=False,close=Mock())
-            packet=dict(seal_sha256='0'*64,reference_pins={})
+            packet=dict.fromkeys(s.process.PACKET_FIELDS)
+            packet.update(schema='pending_operational_outer_packet_v1',seal_sha256='0'*64,reference_pins={})
             decoded=({},b'{}',dict(operation_id='1'*32,folder=str(Path(tmp)/'composition')),{}, {})
             with patch.object(s,'validate_capture'),patch.object(s.process,'owners',return_value=(outer,adapter)),patch.object(s.process,'check_packet',return_value=decoded),patch.object(s,'check_retained',side_effect=ValueError('operational_launch_retained')),patch.object(s,'BootstrapOwner') as boot,patch.object(s,'write') as write,patch.object(s.subprocess,'run') as profile:
                 with self.assertRaisesRegex(ValueError,'operational_launch_retained'):

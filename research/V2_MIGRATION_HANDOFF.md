@@ -1,0 +1,17 @@
+# Closed v2 migration transport
+
+2026-10-20. Evidence: **static-inference**, **offline-tested** on invented inputs only. Native English and native Wi-Fi FTP remain first; FL2/FL3 and calibrated custom looks remain deferred. No feature, recovery or device-write gate passed.
+
+The existing observation projection now emits a closed `pending_operational_outer_packet_v2` when explicit historical migration is supplied. It adds exactly one four-field record: immutable historical context/proof bytes and their externally selected SHA-256 pins. Context is capped at 16 KiB and proof at 64 KiB; wire decoding checks strict base64, exact fields, types and hashes. The v1 projection remains unchanged when migration is absent.
+
+Parent and child explicitly dispatch v2 to the existing v6 gate using the current request operation. Historical context never replaces current candidate identity. The same decoded handoff reaches saved-preflight arguments and the existing metadata validator. Missing, altered, oversized, unknown-field, downgraded and cross-operation fixtures refuse. A wholly removed migration follows the original v1 gate and retains its original cross-operation refusal.
+
+Both paths deliberately stop with `operational_process_v6_execution_pending` after gate/metadata consistency validation, before output writes, bootstrap materialization, helpers, protected preparation or process launch. The existing `host_context_requires_separate_execution_qualification` refusal also remains. Constructor plumbing is present but is unreachable through v2 while that refusal remains. No test claims a complete v2 operational execution.
+
+The tests exercise real captured authored gate/metadata code with invented records. Parent/child boundary tests substitute capture, owner construction and packet checking; those tests do not independently qualify actual capture or transport authentication. Existing launcher regressions cover those separate boundaries using inert synthetic children. Saved metadata recomputation is consistency checking, not authentication of a supplied validated result.
+
+Ordinary metadata comparison preserves the original 51-source/46-role manifests. Five current source roles differ from the frozen 51-source record; all 46 prepared role byte identities remain unchanged. The observation launcher is a sixth changed tool outside that 51-source roster. Gate substitution is still a proposal. No actual source manifest, candidate/review/decision/seal, bootstrap or dependency binding has been migrated. All five activity dispositions remain pending; all three dependency null fields remain.
+
+Qualification counts, source pins, reviewer results and the corrected test-fixture failure are recorded in the [session report](sessions/20261020-RA-003-v2-migration-handoff.md). Camera commands: **none**. No firmware, operational constants, native payload or installed dependency access, private upload, new network acquisition or upstream execution in this package.
+
+Next single work package: **RA-003: qualify a distinct current-operation execution-context constructor using the original retained baseline and current request on invented inputs.** Establish exact source, document, ordinary-input and command bindings independently of the v6 consistency receipt. Keep the v2 launcher refusal and all five pending activity decisions until that separate work is reviewed; do not create actual allow records, activate dependencies, read protected inputs or contact the camera.

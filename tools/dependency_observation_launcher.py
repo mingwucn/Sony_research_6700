@@ -185,12 +185,17 @@ def pending_projection(arguments,folder,pending,repository_root):
     result['qualification_index']=row('pending_operational_consistency_index_v1',ordinary=receipts(result),
         checked_roles=sorted(ordinary),execution_authenticated=False,freshness_verified=False)
     b64=lambda b:base64.b64encode(b).decode('ascii')
-    return dict(schema='pending_operational_outer_packet_v1',documents={n:b64(docs[n]) for n in ('candidate','review','decision','seal')}|
+    packet=dict(schema='pending_operational_outer_packet_v1',documents={n:b64(docs[n]) for n in ('candidate','review','decision','seal')}|
         {'inputs':{n:b64(b) for n,b in docs['inputs'].items()}},reference_pins=arguments['legacy_reference_pins'],
         seal_sha256=arguments['legacy_expected_seal_sha256'],request_bytes=b64(encoded(request)),request_sha256=sha(encoded(request)),
         checked={n:b64(b) for n,b in checked.items()},original_receipts=original_rows,
         ordinary={n:b64(b) for n,b in result.items()},ordinary_receipts=receipts(result),
         repository_root=str(repository_root))
+    if arguments.get('historical_migration') is not None:
+        migration=pending.process.migration_record(arguments['historical_migration'])
+        packet.update(schema='pending_operational_outer_packet_v2',historical_migration={
+            n:b64(v) if type(v) is bytes else v for n,v in migration.items()})
+    return packet
 
 
 def check(arguments,buffers,expected,rows,folder,repository_root,profile):

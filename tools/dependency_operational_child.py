@@ -91,9 +91,34 @@ def owners(buffers):
 def project(adapter,buffers,rows,repository_root):
     return adapter.project(process_sources=rows,process_buffers=buffers,repository_root=repository_root)
 
+def migration_record(value, *, wire=False):
+    fields={'context_bytes','expected_context_sha256','ancestry_proof_bytes',
+            'expected_ancestry_proof_sha256'}
+    need(type(value) is dict and set(value)==fields,'operational_process_migration_shape')
+    result={}
+    for name,limit in (('context',16384),('ancestry_proof',65536)):
+        raw=unbytes(value[name+'_bytes']) if wire else value[name+'_bytes']
+        pin=value['expected_'+name+'_sha256']
+        need(type(raw) is bytes and 0<len(raw)<=limit and type(pin) is str and
+            len(pin)==64 and all(c in '0123456789abcdef' for c in pin) and sha(raw)==pin,
+            'operational_process_migration_anchor')
+        result[name+'_bytes']=raw
+        result['expected_'+name+'_sha256']=pin
+    return result
+
+
+def packet_migration(packet):
+    need(type(packet) is dict,'operational_process_packet')
+    v2=packet.get('schema')=='pending_operational_outer_packet_v2'
+    need(packet.get('schema') in ('pending_operational_outer_packet_v1',
+         'pending_operational_outer_packet_v2') and
+         set(packet)==(PACKET_FIELDS|{'historical_migration'} if v2 else PACKET_FIELDS),
+         'operational_process_packet')
+    return migration_record(packet['historical_migration'],wire=True) if v2 else None
+
+
 def decode_packet(packet):
-    need(type(packet) is dict and set(packet)==PACKET_FIELDS and
-        packet['schema']=='pending_operational_outer_packet_v1','operational_process_packet')
+    packet_migration(packet)
     docs=packet['documents']
     need(type(docs) is dict and set(docs)=={'candidate','review','decision','seal','inputs'},'operational_process_documents')
     documents={n:unbytes(docs[n]) for n in ('candidate','review','decision','seal')}
@@ -123,10 +148,29 @@ def helper_owner(outer,buffers,rows,mode):
 
 def preflight_arguments(packet,decoded,outer,adapter,validated):
     docs,raw,request,checked,ordinary=decoded
-    return dict(documents=docs,original_receipts=packet['original_receipts'],validated=validated,
+    arguments=dict(documents=docs,original_receipts=packet['original_receipts'],validated=validated,
         request_bytes=raw,request_sha256=packet['request_sha256'],checked_sources=checked,
         adapter_owner=adapter,ordinary=ordinary,ordinary_receipts=packet['ordinary_receipts'],
         outer_source_receipts=outer.receipts(),prepared_repository_root=packet['repository_root'])
+    migration=packet_migration(packet)
+    if migration is not None:arguments['historical_migration']=migration
+    return arguments
+
+
+def validate_gate(packet,decoded,outer):
+    docs,raw,request,checked,ordinary=decoded
+    gate=outer.modules['retained_gate'];migration=packet_migration(packet)
+    if migration is None:
+        return gate.validate_bundle(docs,expected_seal_sha256=packet['seal_sha256'],
+            reference_pins=packet['reference_pins'])
+    need(sha(raw)==packet['request_sha256'],'operational_process_request')
+    return gate.validate_bundle_v6(docs,expected_seal_sha256=packet['seal_sha256'],
+        reference_pins=packet['reference_pins'],expected_operation_id=request['operation_id'],
+        **migration)
+
+
+def refuse_v6_execution(packet):
+    need(packet_migration(packet) is None,'operational_process_v6_execution_pending')
 
 def runtime_wiring(outer):
     return outer.modules['dependency_successor_wiring']
@@ -156,10 +200,13 @@ def child(request,packet,buffers,rows):
         need(Path(prepared['folder'])==Path(request['folder'])/'composition',
             'operational_process_folder')
         gate=outer.modules['retained_gate'];io=outer.modules['ordinary_io']
-        validated=gate.validate_bundle(docs,expected_seal_sha256=packet['seal_sha256'],
-            reference_pins=packet['reference_pins'])
+        validated=validate_gate(packet,decoded,outer)
         need(validated['candidate']['operation_id']==request['operation_id']==prepared['operation_id'],
             'operational_process_operation')
+        if packet_migration(packet) is not None:
+            outer.modules['dependency_operational_metadata'].validate_pending(
+                **preflight_arguments(packet,decoded,outer,adapter,validated))
+            refuse_v6_execution(packet)
         helpers=helper_owner(outer,buffers,rows,'child')
         source_buffers={n:buffers['dependency.'+n] for n in helpers.order}
         source_buffers['closure_manifest']=encoded(prepared['sources'])
@@ -168,7 +215,8 @@ def child(request,packet,buffers,rows):
             request_sha256=packet['request_sha256'],checked_sources=checked,documents=docs,
             original_receipts=packet['original_receipts'],ordinary=ordinary,
             ordinary_receipts=packet['ordinary_receipts'],legacy_seal_sha256=packet['seal_sha256'],
-            reference_pins=packet['reference_pins'],prepared_repository_root=packet['repository_root'])
+            reference_pins=packet['reference_pins'],prepared_repository_root=packet['repository_root'],
+            **({'historical_migration':packet_migration(packet)} if packet_migration(packet) is not None else {}))
         context=outer.modules['dependency_host_entry'].make_context(validated)
         context['child_argv']=request['argv_prefix']+sys.argv[1:]
         result=outer.modules['dependency_operational_entry']._continue_child(
