@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "public_invented_launcher_qualified_operational_readiness_pending",
+  "phase": "readiness_audited_operational_source_migration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -288,7 +288,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: audit the complete migrated host launcher against the frozen operational scope and existing five activity-specific decisions, identifying concrete remaining runtime/source-trust/ordinary-record bindings and preparing one non-executable transition plan toward the next bounded offline metadata observation. Use authored source and ordinary metadata only; keep actual activation disabled and preserve prior evidence. No actual activation record, installed dependency activation, firmware/constants/native payload read, download/upload or camera contact.",
+  "next_work_package": "RA-003: implement and independently review the separate, disabled operational child/parent source path and record/result boundaries, reusing the owned launcher and existing runtime/saved-verifier seams. Qualify dispatch, original-record binding and cleanup with invented inputs and intercepted runtime calls only. Keep the five decisions pending; no actual activation records, installed dependency activation, firmware/constants/native payload reads, downloads, uploads or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -9712,5 +9712,45 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_reference_work_package": "FT-101: audit public FTP implementation and direct camera-to-server Wi-Fi evidence when published."
+  },
+  "operational_readiness_audit": {
+    "schema": "non_executable_readiness_audit_v1",
+    "frozen_scope_sha256": "928027b9f240aa114c9ae03fd5e0d852435c8911299c5ce9c671f8632d60c44d",
+    "frozen_roles_verified": 44,
+    "authored_ast_sources": 70,
+    "source_pins_stable": true,
+    "tests": {
+      "modules": [
+        "test_dependency_operational_scope",
+        "test_dependency_adapter_binding",
+        "test_dependency_successor_wiring",
+        "test_dependency_host_launcher"
+      ],
+      "total": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 38.15259170002537,
+      "log_sha256": "fb08c34929b7123fb7e5e94cc3e572fba4dbbc8485526b40fa6b99c6ba175c5e",
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "exit_code": 0
+    },
+    "runtime_constructor_blocked": true,
+    "actual_inputs_accessed": false,
+    "execution_authorized": false,
+    "camera_commands": [],
+    "independent_source_review": "review_digest_wording_repaired",
+    "reviewed_plan_sha256": "e326c2c0aaf3ae676f5fe975980602fe5e76a9d2be18bee3c4301635629fae3d",
+    "report": "research/sessions/20261020-RA-003-operational-readiness.md",
+    "plan": "research/OPERATIONAL_READINESS_TRANSITION.md",
+    "status": "readiness_audited_operational_source_migration_pending",
+    "rights_established": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "previous_goal_turn": "progress_reference_review_committed_8f3566f",
+    "current_goal_turn": "progress_operational_readiness_audited_transition_plan_prepared",
+    "next_work_package": "RA-003: implement and independently review the separate, disabled operational child/parent source path and record/result boundaries, reusing the owned launcher and existing runtime/saved-verifier seams. Qualify dispatch, original-record binding and cleanup with invented inputs and intercepted runtime calls only. Keep the five decisions pending; no actual activation records, installed dependency activation, firmware/constants/native payload reads, downloads, uploads or camera contact."
   }
 }
