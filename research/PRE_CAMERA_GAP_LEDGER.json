@@ -32,7 +32,7 @@
       "status": "partial_preparation_consistency_qualified_activity_and_runtime_pending",
       "available_evidence": "Official mainland package acquired and measured; bounded tar inventory, fixed superblock study, pending review and saved historical comparison recorded.",
       "remaining_acceptance": "Explicit preparation handoff qualified on invented sources; actual source/46-role rosters and runtime bootstrap not migrated or qualified. Five activity decisions, current act records and three dependency fields unresolved; English/FTP mapping and complete exact-body evidence absent.",
-      "next_dependency": "finite_five_activity_evidence_and_hypothesis_disposition",
+      "next_dependency": "current_pending_source_and_command_specification_and_independent_act_dispositions",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -41,7 +41,8 @@
         "research/PENDING_REVIEW_PREFLIGHT.md",
         "research/LEGACY_SUCCESSOR_COMPARISON.md",
         "research/HISTORICAL_CONTEXT_PREFLIGHT.md",
-        "research/PREPARATION_CONTEXT_HANDOFF.md"
+        "research/PREPARATION_CONTEXT_HANDOFF.md",
+        "research/NEXT_ANALYSIS_EVIDENCE.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1068,9 +1069,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_reference_recheck_28a7136",
-  "current_goal_turn": "progress_preparation_handoff_qualified_and_actual_pending_refusal_rechecked",
-  "next_single_work_package": "RA-003: produce a finite evidence/disposition packet for the next necessary English/FTP analysis act. Reconcile all five pending decisions against already recorded terms, provenance and the concrete hypothesis; assess whether the proposed structural GDT observation advances it. Identify the exact missing prerequisite without creating approvals, clearing dependency nulls, assembling an executable bundle or performing protected processing.",
+  "previous_goal_turn": "progress_preparation_handoff_committed_d0ed500",
+  "current_goal_turn": "progress_finite_analysis_hypothesis_and_five_evidence_gaps_reconciled",
+  "next_single_work_package": "RA-003: derive one current pending-only source and command specification for the v6 handoff. Reconcile the three reviewed source deltas and explicit gate replacement against frozen 51-source/46-role projections, identify bootstrap changes and exact unresolved arguments. Preserve originals and all five pending dispositions; no invented actual values, allow records, executable actual bundle, dependency activation, protected reads or camera contact.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1158,6 +1159,35 @@
         "current_goal_turn": "progress_preparation_handoff_qualified_and_actual_pending_refusal_rechecked",
         "next_single_work_package": "RA-003: produce a finite evidence/disposition packet for the next necessary English/FTP analysis act. Reconcile all five pending decisions against already recorded terms, provenance and the concrete hypothesis; assess whether the proposed structural GDT observation advances it. Identify the exact missing prerequisite without creating approvals, clearing dependency nulls, assembling an executable bundle or performing protected processing."
       }
+    },
+    {
+      "report": "research/sessions/20261020-RA-003-next-analysis-evidence.md",
+      "packet": "research/NEXT_ANALYSIS_EVIDENCE.md",
+      "status": "finite_hypothesis_and_decision_evidence_reconciled_current_command_pending",
+      "qualification_source_pins_rechecked": 15,
+      "ordinary_selected_records": 3,
+      "pending_decisions": [
+        "accepted_contract_interaction",
+        "accompanying_component_terms",
+        "constants_provenance",
+        "distinct_operational_act_decision",
+        "narrow_research_hypothesis_scope"
+      ],
+      "dependency_null_fields": 3,
+      "gdt_relevance": "indirect_prerequisite_for_one_filesystem_navigation_route_not_feature_evidence",
+      "new_legal_assessment": false,
+      "new_approval": false,
+      "actual_execution_specification_complete": false,
+      "protected_inputs_accessed": false,
+      "installed_dependency_activated": false,
+      "execution_authorized": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "camera_commands": [],
+      "previous_goal_turn": "progress_preparation_handoff_committed_d0ed500",
+      "current_goal_turn": "progress_finite_analysis_hypothesis_and_five_evidence_gaps_reconciled",
+      "next_single_work_package": "RA-003: derive one current pending-only source and command specification for the v6 handoff. Reconcile the three reviewed source deltas and explicit gate replacement against frozen 51-source/46-role projections, identify bootstrap changes and exact unresolved arguments. Preserve originals and all five pending dispositions; no invented actual values, allow records, executable actual bundle, dependency activation, protected reads or camera contact."
     }
   ]
 }
