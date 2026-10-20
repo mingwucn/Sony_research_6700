@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "disabled_observation_preflight_and_saved_comparison_qualified_legacy_positive_pending",
+  "phase": "complete_legacy_preflight_invented_qualified_disabled_integration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_outer_preflight_qualified_complete_legacy_fixture_pending",
+      "status": "partial_unchanged_legacy_preflight_qualified_launcher_integration_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-observation-outer.md",
+      "session_report": "research/sessions/20261020-RA-003-legacy-positive.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -288,7 +288,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: qualify successful end-to-end captured observation preflight and saved-parent comparison through the unchanged retained gate using a complete wholly invented legacy bundle, without intercepting that gate. Cover changed original records, source/anchor/runtime bindings and cleanup/refusal. Independently review before any actual record assembly. Keep activation disabled and actual activity decisions pending; no firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact.",
+  "next_work_package": "RA-003: integrate the qualified observation preflight and saved comparison into a separate disabled launcher path with explicit observation review/decision/anchor inputs. Derive the executing source-roster delta and exact fourteen-role record projection, retain the existing pending path, and qualify the full invented bundle through owned supervision with explicit runtime substitutions. Independently review before actual record assembly. Keep actual activation disabled and all five activity decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -10514,7 +10514,8 @@
     "camera_commands": [],
     "previous_goal_turn": "progress_reference_check_committed_f07f6ab",
     "current_goal_turn": "progress_contract_committed_0f56f0e_and_disabled_outer_preflight_implemented_qualified",
-    "next_work_package": "RA-003: qualify successful end-to-end captured observation preflight and saved-parent comparison through the unchanged retained gate using a complete wholly invented legacy bundle, without intercepting that gate. Cover changed original records, source/anchor/runtime bindings and cleanup/refusal. Independently review before any actual record assembly. Keep activation disabled and actual activity decisions pending; no firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact."
+    "next_work_package": "RA-003: qualify successful end-to-end captured observation preflight and saved-parent comparison through the unchanged retained gate using a complete wholly invented legacy bundle, without intercepting that gate. Cover changed original records, source/anchor/runtime bindings and cleanup/refusal. Independently review before any actual record assembly. Keep activation disabled and actual activity decisions pending; no firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact.",
+    "followup_complete_legacy_qualification": "research/sessions/20261020-RA-003-legacy-positive.md"
   },
   "a6700_reference_review_20261020_q": {
     "report": "research/sessions/20261020-a6700-reference-review-q.md",
@@ -10538,5 +10539,54 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_reference_work_package": "FT-101: audit the published FTP implementation and direct camera-to-server Wi-Fi evidence when available; require exact target/region identity, file equality, security, persistence, failure handling and reversal."
+  },
+  "unchanged_legacy_gate_qualification": {
+    "status": "unchanged_legacy_gate_positive_invented_qualification",
+    "tests": 127,
+    "new_tests": 15,
+    "retained_tests": 112,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 47.694,
+    "wrapper_seconds": 48.35887579998234,
+    "pin_count": 146,
+    "stable": true,
+    "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+    "stdout_sha256": "0515d594b3d5848f045c860e593fe4a7887a85aeeea50a1bcf670f2fd3547f8a",
+    "stderr_sha256": "d1fbbcbf4d977cdda847be8eae27d2a800a5e23c2479a3c84265930e09c1185d",
+    "new_positive_legacy_gate_intercepted": false,
+    "unchanged_legacy_gate_positive_qualification": true,
+    "historical_retained_tests_use_intercepted_legacy_gate": true,
+    "actual_legacy_records_qualified": false,
+    "source_owner_cleanup_qualified": true,
+    "operational_execution_roster_derived": false,
+    "execution_integration_performed": false,
+    "actual_inputs_accessed": false,
+    "installed_dependency_activated": false,
+    "actual_records_assembled": false,
+    "rights_established": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "report": "research/sessions/20261020-RA-003-legacy-positive.md",
+    "assessment": "research/OBSERVATION_LEGACY_QUALIFICATION.md",
+    "source": "tests/test_dependency_observation_legacy.py",
+    "reviewed_test_sha256": "eb3c2b52e79f5eb88b98bb42ddfa13e80b3d57cbb54b951bc1b7be41b4b6ac8f",
+    "independent_review": "accepted_no_remaining_required_fixes_source_only",
+    "pending_activity_decisions": [
+      "accepted_contract_interaction",
+      "accompanying_component_terms",
+      "constants_provenance",
+      "narrow_research_hypothesis_scope",
+      "distinct_operational_act_decision"
+    ],
+    "previous_goal_turn": "progress_reference_review_committed_bdf5e95",
+    "current_goal_turn": "progress_complete_invented_legacy_preflight_and_saved_comparison_qualified",
+    "next_work_package": "RA-003: integrate the qualified observation preflight and saved comparison into a separate disabled launcher path with explicit observation review/decision/anchor inputs. Derive the executing source-roster delta and exact fourteen-role record projection, retain the existing pending path, and qualify the full invented bundle through owned supervision with explicit runtime substitutions. Independently review before actual record assembly. Keep actual activation disabled and all five activity decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact."
   }
 }

@@ -10,10 +10,11 @@ saved-parent comparison from original buffers; no runtime observer, process,
 supervisor, engine or activation path is connected. Existing pending launcher,
 49-role child graph and prior contract remain byte-unchanged.
 
-**The successful tests intercept the legacy gate with an invented source stub.**
+**The original 112-case qualification below intercepts the successful legacy gate path.**
 The actual retained gate is compiled from its pinned authored source for a refusal
-case only. Successful unchanged-gate acceptance of a complete invented legacy
-bundle remains unqualified. These results do not close the entire prior package
+case only. The later [complete legacy qualification](OBSERVATION_LEGACY_QUALIFICATION.md)
+now qualifies unchanged-gate acceptance of a complete invented bundle without
+interception; the historical results below retain their original limitations. These results do not close the entire prior package
 or establish operational readiness, current legal authority or target support.
 
 ## Binding and ownership
