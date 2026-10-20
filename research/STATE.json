@@ -10344,5 +10344,28 @@
     "synthetic_provenance": true,
     "actual_runtime_verified": false,
     "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-fixed-runtime-collection/qualify.py v1"
+  },
+  "a6700_reference_review_20261020_o": {
+    "report": "research/sessions/20261020-a6700-reference-review-o.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "checked_at_utc": "2026-10-20T02:19:43.584769+00:00",
+    "unchanged": true,
+    "tree_entries": 51,
+    "documents_blob_verified": 4,
+    "tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.501,
+      "exit_code": 0,
+      "interpreter": "C:/ProgramData/miniconda3/python.exe"
+    },
+    "english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published."
   }
 }
