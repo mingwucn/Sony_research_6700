@@ -118,6 +118,23 @@ class SuccessorSourceTests(unittest.TestCase):
                    "try:o.load()\nexcept KeyboardInterrupt:pass\nelse:raise AssertionError()\n"
                    "assert o.closed;assert not any(n.startswith(s.NAMESPACE) for n in sys.modules)\n")
 
+    def test_replaced_compiled_code_refuses_before_any_execution(self):
+        self.child("o=make();o.compiled['dependency_evidence']=compile('raise AssertionError(\"must not execute\")',SOURCE,'exec')\n"
+                   "refuse(o.load,'helper_policy_changed');assert o.closed;assert not o.modules\n")
+
+    def test_rebound_buffer_hash_policy_refuses_before_load(self):
+        self.child("o=make();o.buffers['dependency_controller']=b'raise AssertionError()'\n"
+                   "o.source_hashes=tuple((n,hashlib.sha256(o.buffers[n]).hexdigest()) for n in o.order)\n"
+                   "refuse(o.load,'helper_policy_changed');assert o.closed;assert not o.modules\n")
+
+    def test_changed_mode_order_and_origin_refuse_before_load(self):
+        self.child("for field,value in (('mode','parent'),('order',tuple(reversed(s.CHILD_ORDER))),('origins',{})):\n"
+                   " o=make();setattr(o,field,value);refuse(o.load,'helper_policy_changed');assert o.closed;assert not o.modules\n")
+
+    def test_post_load_buffer_and_compiled_mutations_refuse(self):
+        self.child("o=make();o.load();o.buffers['dependency_controller']=b'changed';refuse(o.intact,'helper_buffer_changed');o.close()\n"
+                   "o=make();o.load();o.compiled['dependency_controller']=compile('pass',SOURCE,'exec');refuse(o.intact,'helper_policy_changed');o.close()\n")
+
     def test_parent_verification_failure_preserves_primary(self):
         self.child("b,k=owner('parent');changed(k,'dependency_parent',b'def validate_saved_controller(**kw):\\n raise KeyboardInterrupt(\"primary\")');o=s.HelperSources(**k);o.load()\n"
                    "try:o.verify()\nexcept KeyboardInterrupt as e:assert str(e)=='primary'\nelse:raise AssertionError()\n"

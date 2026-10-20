@@ -32,6 +32,8 @@ class HelperSources:
         need(all(type(x) is dict for x in (buffers, origins, hashes)) and
              set(buffers) == set(origins) == set(hashes) == set(self.order), 'helper_roster')
         self.compiled = {}; self.origins = dict(origins)
+        self.buffers = dict(buffers)
+        self.source_hashes = tuple((name, hashes[name]) for name in self.order)
         self.modules = {}; self.owned = {}; self.frozen = {}
         self.started = False; self.closed = False; self.failed = False
         self.package = types.SimpleNamespace()
@@ -56,9 +58,23 @@ class HelperSources:
                     need(node.level == 0 and node.module == 'tools' and
                          all(a.name in self.order for a in node.names), 'helper_import')
             self.compiled[name] = compile(tree, origin, 'exec', dont_inherit=True, optimize=0)
+        self.construction = (self.mode, self.order, tuple(self.origins.items()),
+                             self.source_hashes, tuple(self.compiled.items()))
+
+    def _policy_intact(self):
+        mode, order, origins, hashes, compiled = self.construction
+        need(self.mode == mode and self.order == order and
+             tuple(self.origins.items()) == origins and self.source_hashes == hashes and
+             set(self.compiled) == {name for name, _ in compiled} and
+             all(self.compiled[name] is code for name, code in compiled), 'helper_policy_changed')
+        need(set(self.buffers) == set(order) and all(
+            type(self.buffers[name]) is bytes and
+            hashlib.sha256(self.buffers[name]).hexdigest() == digest
+            for name, digest in hashes), 'helper_buffer_changed')
 
     def intact(self):
         need(self.started and not self.closed and not self.failed, 'helper_inactive')
+        self._policy_intact()
         need(all(sys.modules.get(alias) is module for alias, module in self.owned.items()),
              'helper_alias_ownership')
         need(all(getattr(self.package, name, None) is module for name, module in self.modules.items()),
@@ -85,6 +101,7 @@ class HelperSources:
         need(not self.started and not self.closed, 'helper_reentry')
         self.started = True
         try:
+            self._policy_intact()
             if self.mode == 'child':
                 need(not any(n == NAMESPACE or n.startswith(NAMESPACE+'.') or
                              n == 'tools' or n.startswith('tools.') for n in sys.modules), 'helper_preloaded')
