@@ -10515,5 +10515,28 @@
     "previous_goal_turn": "progress_reference_check_committed_f07f6ab",
     "current_goal_turn": "progress_contract_committed_0f56f0e_and_disabled_outer_preflight_implemented_qualified",
     "next_work_package": "RA-003: qualify successful end-to-end captured observation preflight and saved-parent comparison through the unchanged retained gate using a complete wholly invented legacy bundle, without intercepting that gate. Cover changed original records, source/anchor/runtime bindings and cleanup/refusal. Independently review before any actual record assembly. Keep activation disabled and actual activity decisions pending; no firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact."
+  },
+  "a6700_reference_review_20261020_q": {
+    "report": "research/sessions/20261020-a6700-reference-review-q.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "checked_at_utc": "2026-10-20T02:53:48.359788+00:00",
+    "unchanged": true,
+    "tree_entries": 51,
+    "documents_blob_verified": 4,
+    "tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.469,
+      "exit_code": 0,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe"
+    },
+    "english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit the published FTP implementation and direct camera-to-server Wi-Fi evidence when available; require exact target/region identity, file equality, security, persistence, failure handling and reversal."
   }
 }
