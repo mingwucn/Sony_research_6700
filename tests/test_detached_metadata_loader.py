@@ -49,6 +49,42 @@ def make(**kwargs):
 
 
 class DetachedLoaderTests(unittest.TestCase):
+    def current(self):
+        names=('dependency_launch_context','dependency_current_metadata','dependency_outer_metadata')
+        buffers={}
+        for index,name in enumerate(names):
+            source=('from tools import '+names[index-1]+' as prior\n') if index else ''
+            source+='TOKEN='+repr(name)+'\n'
+            if index==2:source+='def validate_invented_outer(**kwargs):return {"invented":True}\n'
+            buffers[name]=source.encode()
+        return subject.DetachedMetadata(buffers=buffers,expected_hashes={n:hashlib.sha256(v).hexdigest() for n,v in buffers.items()},purpose='current')
+
+    def test_current_closed_graph_dispatches_three_members(self):
+        owner=self.current().load()
+        try:
+            result=owner.call()
+            self.assertEqual(result['metadata_result'],{'invented':True})
+            self.assertEqual(result['public_source_count'],3)
+            self.assertIs(result['execution_authorized'],False)
+        finally:owner.close()
+
+    def test_unknown_graph_purpose_is_refused(self):
+        for purpose in ('runtime','',None):
+            with self.subTest(purpose=purpose),self.assertRaisesRegex(ValueError,'metadata_purpose'):
+                subject.DetachedMetadata(buffers={},expected_hashes={},purpose=purpose)
+
+    def test_mutated_graph_dispatch_is_refused_and_closed(self):
+        for field,value in (('purpose','comparison'),('purpose','other'),('entry','dependency_launch_context'),('method','run_runtime')):
+            owner=self.current().load();setattr(owner,field,value)
+            with self.subTest(field=field,value=value),self.assertRaisesRegex(ValueError,'metadata_graph_changed'):owner.call()
+            self.assertTrue(owner.closed)
+
+    def test_loaded_buffer_mutation_is_refused_and_closed(self):
+        for maker in (make,self.current):
+            owner=maker().load();name=next(iter(owner.buffers));owner.buffers[name]+=b'\n'
+            with self.assertRaisesRegex(ValueError,'metadata_source_buffer_changed'):owner.call()
+            self.assertTrue(owner.closed)
+
     def test_complete_graph_executes_and_authority_stays_false(self):
         loader=make().load();result=loader.call()
         self.assertEqual(result['metadata_result'],{'rows':[1]})

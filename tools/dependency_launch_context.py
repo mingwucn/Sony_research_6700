@@ -5,6 +5,7 @@ checked-buffer owners are trusted. Original comparison records remain intact.
 """
 import hashlib
 import json
+from pathlib import PureWindowsPath
 
 if __name__ == '__main__':
     raise SystemExit(2)
@@ -56,7 +57,7 @@ def checked_metadata_sources(owner):
 
 
 def validate_invented_launch(*, request_bytes, expected_request_bytes_sha256,
-        checked_sources, context_arguments, metadata_owner, adapter_owner):
+        checked_sources, context_arguments, metadata_owner, adapter_owner, source_frames=None):
     """Validate the same operation and explicit old-to-new source projection.
 
     Owner creation/cleanup remains the caller's responsibility, including failed
@@ -85,9 +86,22 @@ def validate_invented_launch(*, request_bytes, expected_request_bytes_sha256,
         need(old_sources[role] == checked_sources[role], 'launch_retained_source')
     # These are labels for old supplied source/receipt records, not fresh opens.
     source_manifest = strict(context_arguments['ordinary_buffers']['authored_source_manifest'])
+    frames = None
+    if source_frames is not None:
+        need(type(source_frames) is dict and set(source_frames)=={'comparison_root','prepared_root'},'launch_source_frames')
+        evidence=metadata_owner.modules['dependency_evidence']
+        frames={n:evidence._absolute(v) for n,v in source_frames.items()}
+        need(frames['comparison_root']==source_manifest['root_path'],'launch_comparison_root')
+        need(PureWindowsPath(frames['comparison_root']).is_relative_to(PureWindowsPath(frames['prepared_root'])),
+             'launch_frame_containment')
     for role in retained:
-        need(request['sources'][role]['path'] == source_manifest['sources'][role]['path'],
-             'launch_retained_origin')
+        old=source_manifest['sources'][role]['path'];new=request['sources'][role]['path']
+        if frames is None:need(new==old,'launch_retained_origin')
+        else:
+            metadata_owner.modules['dependency_evidence']._relative(old)
+            metadata_owner.modules['dependency_evidence']._relative(new)
+            need((PureWindowsPath(frames['comparison_root'])/old).as_posix()==
+                 (PureWindowsPath(frames['prepared_root'])/new).as_posix(),'launch_retained_origin_frame')
     for role, name in VALIDATORS.items():
         need(context_arguments['validator_buffers'][role] == metadata_owner.buffers[name],
              'launch_validator_source')
@@ -145,6 +159,7 @@ def validate_invented_launch(*, request_bytes, expected_request_bytes_sha256,
         comparison_roles=len(comparison), retained_roles=sorted(retained),
         replacement_roles=sorted(replaced), additional_roles=sorted(adapter.EXTRA_SOURCES),
         checked_ordinary_roles=sorted(checked), checked_metadata_source_hashes=dict(metadata_owner.hashes),
+        source_frames=frames,
         metadata_result=result, source_freshness_verified=False, actual_startup_verified=False,
         rights_established=False, actual_inputs_accessed=False, execution_authorized=False,
         feature_supported=False, recovery_proven=False, device_write_gate_passed=False, camera_commands=[])

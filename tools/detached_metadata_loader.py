@@ -8,6 +8,7 @@ if __name__ == '__main__':
     raise SystemExit(2)
 
 import builtins
+import hashlib
 import json
 import math
 import sys
@@ -20,6 +21,9 @@ ROSTER = frozenset(('dependency_outer_contract','dependency_operational_scope',
     'dependency_evidence','dependency_producer','dependency_package_preflight',
     'dependency_execution','dependency_input_semantics','dependency_source_receipts',
     'dependency_activity_metadata','dependency_legacy_bridge','dependency_candidate_context'))
+CURRENT_ROSTER = frozenset(('dependency_launch_context','dependency_current_metadata','dependency_outer_metadata'))
+GRAPHS = {'comparison': (ROSTER,'dependency_candidate_context','validate_invented_context_composition'),
+          'current': (CURRENT_ROSTER,'dependency_outer_metadata','validate_invented_outer')}
 
 
 def need(condition, code):
@@ -75,18 +79,21 @@ def detached_result(value):
 
 
 class DetachedMetadata:
-    """One-owner lifecycle; sole qualified call is invented context composition."""
-    def __init__(self,*,buffers,expected_hashes):
+    """One-owner lifecycle with closed comparison/current invented entry points."""
+    def __init__(self,*,buffers,expected_hashes,purpose='comparison'):
+        need(type(purpose) is str and purpose in GRAPHS,'metadata_purpose')
+        self.purpose=purpose
+        self.roster,self.entry,self.method=GRAPHS[purpose]
         need(type(buffers) is dict and type(expected_hashes) is dict and
-            set(buffers)==set(expected_hashes)==ROSTER,'metadata_source_roster')
+            set(buffers)==set(expected_hashes)==self.roster,'metadata_source_roster')
         self.buffers=dict(buffers);self.hashes=dict(expected_hashes)
         self.modules={};self.frozen={};self.started=False;self.closed=False;self.failed=False;self.loaded=False
         self.policy_hashes=tuple(sorted(self.hashes.items()))
         self.package=types.SimpleNamespace()
         self.foreign={n:m for n,m in sys.modules.items() if n=='tools' or n.startswith('tools.')}
-        self.names={'_a6700_metadata.'+n for n in ROSTER}
+        self.names={'_a6700_metadata.'+n for n in self.roster}
         graph=audit.audit_imports({'tools.'+n:v for n,v in self.buffers.items()},
-            roots=('tools.dependency_candidate_context',),
+            roots=('tools.'+self.entry,),
             expected_hashes={'tools.'+n:h for n,h in self.hashes.items()},
             namespace_packages=('tools',),stdlib_roots=frozenset(sys.stdlib_module_names))
         self.order=tuple(n.split('.')[1] for n in graph['dependency_order'])
@@ -95,10 +102,14 @@ class DetachedMetadata:
         # all bytecode is prepared before any supplied authored member executes.
         self.compiled={n:compile(self.buffers[n],'<checked-public:'+n+'>','exec',
             dont_inherit=True,optimize=0) for n in self.order}
-        self.construction=(self.order,self.external,tuple(self.compiled.items()))
+        self.construction=(self.order,self.external,tuple(self.compiled.items()),
+            (self.purpose,self.roster,self.entry,self.method))
 
     def _check_construction(self):
-        order,external,compiled=self.construction
+        order,external,compiled,graph=self.construction
+        need(type(self.purpose) is str and self.purpose in GRAPHS and
+            (self.purpose,self.roster,self.entry,self.method)==graph and
+            GRAPHS[self.purpose]==(self.roster,self.entry,self.method),'metadata_graph_changed')
         need(type(self.order) is tuple and self.order==order and type(self.external) is frozenset and
             self.external==external and set(self.compiled)==set(order) and
             all(self.compiled[n] is code for n,code in compiled),'metadata_compiled_policy_changed')
@@ -140,6 +151,9 @@ class DetachedMetadata:
         need(self.started and not self.closed and not self.failed,'metadata_inactive')
         self._check_construction()
         need(tuple(sorted(self.hashes.items()))==self.policy_hashes,'metadata_policy_changed')
+        need(set(self.buffers)==self.roster and all(type(v) is bytes and
+            hashlib.sha256(v).hexdigest()==self.hashes[n] for n,v in self.buffers.items()),
+            'metadata_source_buffer_changed')
         need(all(sys.modules.get(n) is m for n,m in self.foreign.items()),'metadata_foreign_alias_changed')
         need(set(vars(self.package))==set(self.modules) and
             all(vars(self.package)[n] is m for n,m in self.modules.items()),'metadata_namespace_changed')
@@ -147,7 +161,7 @@ class DetachedMetadata:
             need(set(self.frozen)<=set(self.modules),'metadata_module_roster')
             for name,stamp in self.frozen.items():
                 need(self._stamp(vars(self.modules[name]))==stamp,'metadata_live_code_changed')
-        if self.loaded:need(set(self.modules)==set(self.frozen)==ROSTER,'metadata_module_roster')
+        if self.loaded:need(set(self.modules)==set(self.frozen)==self.roster,'metadata_module_roster')
 
     def intact(self):
         try:self._check()
@@ -194,7 +208,7 @@ class DetachedMetadata:
         try:
             self.intact()
             need(self.loaded,'metadata_not_loaded')
-            result=self.modules['dependency_candidate_context'].validate_invented_context_composition(**kwargs)
+            result=getattr(self.modules[self.entry],self.method)(**kwargs)
             self.intact();copied=detached_result(result);self.intact()
             return dict(schema='invented_checked_public_metadata_result_v1',metadata_result=copied,
                 checked_public_buffer_execution=True,public_source_count=len(self.modules),
