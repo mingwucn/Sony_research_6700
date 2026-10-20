@@ -55,10 +55,13 @@ dependency-native payload read, source downloaded or private data uploaded.
 English, native FTP, exact-body mapping, recovery and device-write gates remain
 unproved. A working host harness cannot establish any of them.
 
-Next single package: **RA-003: qualify the fixed runtime-shaped completion
+Historical next package: **RA-003: qualify the fixed runtime-shaped completion
 collector and saved-parent verification through this launcher using invented
 records and the narrowest explicit observer substitution. Remove the broader
 dispatch/collector/parent-verifier test replacements where possible; separately
 record every remaining bootstrap/observer substitution and synthetic provenance.
 Do not reinterpret runtime-shaped fixture fields as actual observations. Keep
 public runtime disabled, all five decisions pending and actual inputs unopened.**
+
+
+That injected-observer qualification is now recorded in [Fixed runtime collection](FIXED_RUNTIME_COLLECTION.md). The three broader replacements are removed; actual runtime observation and authority remain unproved. Follow that assessment for the current next single package.

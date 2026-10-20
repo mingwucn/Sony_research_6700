@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "disabled_outer_launcher_invented_qualified_fixed_runtime_collection_pending",
+  "phase": "fixed_runtime_collection_qualified_with_injected_observer_activity_review_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_disabled_outer_invented_qualified_fixed_runtime_collection_pending",
+      "status": "partial_fixed_runtime_collection_injected_observer_qualified_activity_review_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-disabled-outer-launcher.md",
+      "session_report": "research/sessions/20261020-RA-003-fixed-runtime-collection.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -288,7 +288,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: qualify the fixed runtime-shaped completion collector and saved-parent verification through the disabled operational outer launcher using invented records and the narrowest explicit observer substitution. Remove broader dispatch/collector/parent-verifier replacements where possible; record every remaining bootstrap/observer substitution and synthetic provenance. Do not reinterpret runtime-shaped fixture fields as actual observations. Keep public runtime disabled, all five activity decisions pending and actual inputs unopened; no installed dependency activation or camera contact.",
+  "next_work_package": "RA-003: reconcile the fourteen ordinary-role contracts, current source/dependency expectations and five activity-specific decisions against the concrete disabled launcher command. Prepare a private non-executing review packet from existing ordinary metadata and current authored source pins; identify unresolved permission/provenance facts, independent decision anchor, exact proposed full-pass behavior and stop criteria. Do not assemble actual activation records, activate dependencies, read firmware/constants/native payloads or contact the camera; preserve all prior valid consents.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8595,7 +8595,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261020-RA-003-disabled-outer-launcher.md",
+  "latest_report": "research/sessions/20261020-RA-003-fixed-runtime-collection.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -10158,5 +10158,191 @@
     "previous_goal_turn": "progress_reference_review_committed_d781ef8_separate_worktree",
     "current_goal_turn": "progress_disabled_outer_launcher_integration_and_qualification_recorded",
     "next_work_package": "RA-003: qualify the fixed runtime-shaped completion collector and saved-parent verification through the disabled operational outer launcher using invented records and the narrowest explicit observer substitution. Remove broader dispatch/collector/parent-verifier replacements where possible; record every remaining bootstrap/observer substitution and synthetic provenance. Do not reinterpret runtime-shaped fixture fields as actual observations. Keep public runtime disabled, all five activity decisions pending and actual inputs unopened; no installed dependency activation or camera contact."
+  },
+  "fixed_runtime_collection_qualification": {
+    "status": "fixed_runtime_collection_qualified_with_injected_observer_activity_review_pending",
+    "report": "research/sessions/20261020-RA-003-fixed-runtime-collection.md",
+    "assessment": "research/FIXED_RUNTIME_COLLECTION.md",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "cases": {
+      "complete": {
+        "status": "consistent_pending_composition",
+        "failure_code": null,
+        "supervised_seconds": 67.50440850004088,
+        "all_parent_owners_closed": true,
+        "result_sha256": "0d8ef67db06707fc754212cb2836fc40ec1c5708961cb1827e87420bca7acbcc",
+        "qualification_sha256": "d59eba3223b0f020dd0bb127426bc5e19f60f79118ecf66d715456b3cdc3fa1b",
+        "observer_receipt_sha256": "8cc0a0b34d1dc3e5089c553ec6e7c7ce2a57ab4d575de5c7ad05fbe5e74741a4",
+        "source_roles": 49,
+        "parent_fixed_function_calls": {
+          "saved_wiring": 1,
+          "saved_controller": 1
+        },
+        "child_fixed_function_calls": {
+          "dispatch": 1,
+          "collector": 1,
+          "runtime_engine": 1
+        },
+        "wrapper_exit_code": 0,
+        "process": {
+          "launch_attempts": 1,
+          "child_exit_code": 0,
+          "deadline_seconds": 300,
+          "timed_out": false,
+          "launch_failed": false,
+          "log_cap_exceeded": false,
+          "log_reader_failed": false,
+          "kill_attempts": 0,
+          "kill_succeeded": false,
+          "wait_attempts": 0,
+          "exit_observed": true,
+          "reader_threads_joined": true,
+          "collector_stop_requested": true,
+          "pipe_close_complete": true,
+          "elapsed_seconds": 67.50440850004088
+        }
+      },
+      "result_tamper": {
+        "status": "needs_review",
+        "failure_code": "result_flags",
+        "supervised_seconds": 66.01693709997926,
+        "all_parent_owners_closed": true,
+        "result_sha256": "bc2c0fbcd98a3cdf8979b50d59dacad1bce16d865763e745bc9580a4d46aa82c",
+        "qualification_sha256": "f3892edd9573616f11329a878e7fd8ec073ffa4113851672086c5ff2b0924b5d",
+        "observer_receipt_sha256": "8cc0a0b34d1dc3e5089c553ec6e7c7ce2a57ab4d575de5c7ad05fbe5e74741a4",
+        "source_roles": 49,
+        "parent_fixed_function_calls": {
+          "saved_wiring": 1,
+          "saved_controller": 1
+        },
+        "child_fixed_function_calls": {
+          "dispatch": 1,
+          "collector": 1,
+          "runtime_engine": 1
+        },
+        "wrapper_exit_code": 0,
+        "process": {
+          "launch_attempts": 1,
+          "child_exit_code": 0,
+          "deadline_seconds": 300,
+          "timed_out": false,
+          "launch_failed": false,
+          "log_cap_exceeded": false,
+          "log_reader_failed": false,
+          "kill_attempts": 0,
+          "kill_succeeded": false,
+          "wait_attempts": 0,
+          "exit_observed": true,
+          "reader_threads_joined": true,
+          "collector_stop_requested": true,
+          "pipe_close_complete": true,
+          "elapsed_seconds": 66.01693709997926
+        }
+      },
+      "bridge_tamper": {
+        "status": "needs_review",
+        "failure_code": "parent_result",
+        "supervised_seconds": 68.54054200003156,
+        "all_parent_owners_closed": true,
+        "result_sha256": "decca6b4ff383af75d2324a3c721431c883e4a718f7480bc3c706ce17124f6e9",
+        "qualification_sha256": "800c4db546f89af20977fd51893217e609fdb256f66f7e2c1951e5aff6b035d4",
+        "observer_receipt_sha256": "8cc0a0b34d1dc3e5089c553ec6e7c7ce2a57ab4d575de5c7ad05fbe5e74741a4",
+        "source_roles": 49,
+        "parent_fixed_function_calls": {
+          "saved_wiring": 1,
+          "saved_controller": 1
+        },
+        "child_fixed_function_calls": {
+          "dispatch": 1,
+          "collector": 1,
+          "runtime_engine": 1
+        },
+        "wrapper_exit_code": 0,
+        "process": {
+          "launch_attempts": 1,
+          "child_exit_code": 0,
+          "deadline_seconds": 300,
+          "timed_out": false,
+          "launch_failed": false,
+          "log_cap_exceeded": false,
+          "log_reader_failed": false,
+          "kill_attempts": 0,
+          "kill_succeeded": false,
+          "wait_attempts": 0,
+          "exit_observed": true,
+          "reader_threads_joined": true,
+          "collector_stop_requested": true,
+          "pipe_close_complete": true,
+          "elapsed_seconds": 68.54054200003156
+        }
+      }
+    },
+    "pin_count": 168,
+    "stable": true,
+    "qualification_wrapper_seconds": 226.58618139999453,
+    "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+    "exit_code": 0,
+    "reviewed_private_source_sha256": {
+      "driver.py": "3dd91c13e1ff31356de639a4050e571126785591ff774a6524d567397828ef79",
+      "substitute.py": "8ba4045452f340c124bf4330bffc6bf3c0d9203849509a03b5f0c646a867df9c",
+      "qualify.py": "8cc220cca355723cbde8de9e434fe45f7cb8021cc76f950eb6f8fc42d00c2e54"
+    },
+    "independent_source_review": "accepted_no_residual_material_finding",
+    "production_child_source_roles": 49,
+    "fixed_runtime_functions": [
+      "dispatch",
+      "runtime_engine",
+      "collector",
+      "saved_wiring",
+      "saved_controller"
+    ],
+    "fixed_collection_and_parent_qualified_with_injected_observer": true,
+    "substitutions": [
+      "modified bootstrap and hash-bound additional private setup source",
+      "child helper acquisition and cleanup wrappers",
+      "producer.RuntimeOps constructor",
+      "fake helper/ctypes aliases and public-vector/identity cipher",
+      "profiling call counters"
+    ],
+    "synthetic_provenance": true,
+    "runtime_record_claims_synthetic": true,
+    "prior_150_tests_not_rerun": true,
+    "prior_test_pins_revalidated": 106,
+    "actual_inputs_accessed": false,
+    "actual_activation_record_assembled": false,
+    "installed_dependency_activated": false,
+    "actual_runtime_verified": false,
+    "production_runtime_qualified": false,
+    "public_runtime_disabled": true,
+    "rights_established": false,
+    "pending_activity_decisions": [
+      "accepted_contract_interaction",
+      "accompanying_component_terms",
+      "constants_provenance",
+      "narrow_research_hypothesis_scope",
+      "distinct_operational_act_decision"
+    ],
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_disabled_outer_launcher_committed_8993e4c",
+    "current_goal_turn": "progress_fixed_runtime_collection_and_saved_parent_qualified_with_injected_observer",
+    "next_work_package": "RA-003: reconcile the fourteen ordinary-role contracts, current source/dependency expectations and five activity-specific decisions against the concrete disabled launcher command. Prepare a private non-executing review packet from existing ordinary metadata and current authored source pins; identify unresolved permission/provenance facts, independent decision anchor, exact proposed full-pass behavior and stop criteria. Do not assemble actual activation records, activate dependencies, read firmware/constants/native payloads or contact the camera; preserve all prior valid consents."
+  },
+  "latest_process_qualification": {
+    "report": "research/sessions/20261020-RA-003-fixed-runtime-collection.md",
+    "pin_count": 168,
+    "cases": 3,
+    "source_stable": true,
+    "exit_code": 0,
+    "synthetic_provenance": true,
+    "actual_runtime_verified": false,
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-fixed-runtime-collection/qualify.py v1"
   }
 }
