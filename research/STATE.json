@@ -11163,5 +11163,28 @@
         "next_single_work_package": "RA-003: audit each production dependency-manifest/native-policy predicate against existing saved dependency-only receipts and pinned source schemas, then qualify a closed proposal on invented inputs; no blocker clearing, dependency loading or protected-input execution."
       }
     }
+  },
+  "a6700_reference_review_u_20261020": {
+    "report": "research/sessions/20261020-a6700-reference-review-u.md",
+    "checked_at_utc": "2026-10-20T09:46:46.779922+00:00",
+    "commit": "c8e2aa100cfb02523d06cc6fc767d25a63cf943d",
+    "prior_pin": "2de85f1cca89b0e20ee25a70f93e04c3d34e10e5",
+    "tree_entries": 51,
+    "blob_entries": 39,
+    "changed_paths": [],
+    "current_commit_has_no_parents": true,
+    "evidence_classes": [
+      "source-report",
+      "static-inference"
+    ],
+    "ftp": "author-reported RAW+JPEG physical success; implementation unpublished",
+    "english": "no unlock located in reviewed material",
+    "recovery_proven": false,
+    "feature_supported": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "upstream_executed": false,
+    "next_reference_work_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published, including exact target identity, file equality, security, persistence, failures and reversal.",
+    "existing_ra003_continuation_preserved": true
   }
 }

@@ -60,7 +60,7 @@
     },
     {
       "repository": "xyzhangxin/sony-a6700-powerful",
-      "commit": "2de85f1cca89b0e20ee25a70f93e04c3d34e10e5",
+      "commit": "c8e2aa100cfb02523d06cc6fc767d25a63cf943d",
       "role": "a6700 2.00 FTP and temporary-RAM backup source lead",
       "audit_report": "research/sessions/20261019-RA-003-a6700-powerful-audit.md",
       "text_files_blob_verified": 33,
@@ -71,13 +71,26 @@
       "alpha6700_compatibility_established": false,
       "source_audit_baseline_commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
       "latest_delta_review": {
-        "report": "research/sessions/20261020-a6700-reference-review-r.md",
-        "changed_paths": [
-          "AGENTS.md"
-        ],
-        "unchanged_blob_entries": 38,
+        "report": "research/sessions/20261020-a6700-reference-review-u.md",
+        "previous_commit": "2de85f1cca89b0e20ee25a70f93e04c3d34e10e5",
+        "changed_paths": [],
+        "unchanged_blob_entries": 39,
+        "history_replacement_observed": true,
         "new_instructions_adopted": false
-      }
+      },
+      "pin_history": [
+        {
+          "commit": "2de85f1cca89b0e20ee25a70f93e04c3d34e10e5",
+          "latest_delta_review": {
+            "report": "research/sessions/20261020-a6700-reference-review-r.md",
+            "changed_paths": [
+              "AGENTS.md"
+            ],
+            "unchanged_blob_entries": 38,
+            "new_instructions_adopted": false
+          }
+        }
+      ]
     }
   ],
   "fdat_extractor_candidate": {
