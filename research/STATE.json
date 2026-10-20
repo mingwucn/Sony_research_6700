@@ -9446,5 +9446,35 @@
     "previous_goal_turn": "progress_requested_reference_refresh_committed_38f5a66",
     "current_goal_turn": "progress_current_ordinary_semantics_reviewed_and_qualified",
     "next_work_package": "RA-003: connect current fourteen-record metadata validation to the existing isolated outer preparation path before observer construction. Capture and verify the added current-metadata/launch helper import closure, bind the same original records into the prepared launch, and qualify complete and refused cleanup paths with invented inputs. Keep actual observation/public runtime disabled and activity decisions pending; no actual activation records, installed dependencies, firmware/constants/native payload reads or camera contact."
+  },
+  "a6700_reference_review_20261020_h": {
+    "report": "research/sessions/20261020-a6700-reference-review-h.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "checked_at_utc": "2026-10-20T00:04:48.721308+00:00",
+    "unchanged": true,
+    "documents_blob_verified": 4,
+    "tree_entries": 51,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.5472104999935254,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "exit_code": 0,
+      "camera_commands": []
+    },
+    "english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit public FTP implementation and direct camera-to-server Wi-Fi evidence when published."
   }
 }
