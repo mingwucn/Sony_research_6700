@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "fixed_runtime_collection_qualified_with_injected_observer_activity_review_pending",
+  "phase": "activity_review_packet_complete_distinct_operational_contract_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_fixed_runtime_collection_injected_observer_qualified_activity_review_pending",
+      "status": "partial_activity_packet_reviewed_operational_contract_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-fixed-runtime-collection.md",
+      "session_report": "research/sessions/20261020-RA-003-activity-review-packet.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -288,7 +288,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: reconcile the fourteen ordinary-role contracts, current source/dependency expectations and five activity-specific decisions against the concrete disabled launcher command. Prepare a private non-executing review packet from existing ordinary metadata and current authored source pins; identify unresolved permission/provenance facts, independent decision anchor, exact proposed full-pass behavior and stop criteria. Do not assemble actual activation records, activate dependencies, read firmware/constants/native payloads or contact the camera; preserve all prior valid consents.",
+  "next_work_package": "RA-003: implement and independently review a separate pure actual-observation proposal/decision/ordinary-record contract with externally supplied decision-anchor binding. Bind the exact fourteen roles, source/dependency expectations, full-pass scope, request/bootstrap/argv identity and historical-versus-fresh evidence. Qualify agreement and refusal cases using invented records only. Preserve pending contracts and public CLI/runtime refusal; do not assemble actual activation records or connect the new contract to execution. No installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8595,7 +8595,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261020-RA-003-fixed-runtime-collection.md",
+  "latest_report": "research/sessions/20261020-RA-003-activity-review-packet.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -10367,5 +10367,58 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_reference_work_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published."
+  },
+  "activity_review_packet_20261020": {
+    "status": "activity_review_packet_complete_distinct_operational_contract_pending",
+    "report": "research/sessions/20261020-RA-003-activity-review-packet.md",
+    "assessment": "research/ACTIVITY_REVIEW_PACKET.md",
+    "base_commit": "739374cea7f60b25924de508e820da8211626052",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "packet_sha256": "8701e5dc0be14f12c751721ca726d324a98920b82bc4a99ab62f336a7333d4c2",
+    "child_source_roles": 49,
+    "host_sources": 2,
+    "test_sources": 2,
+    "ordinary_metadata_files": 8,
+    "retained_original_sources": 29,
+    "ordinary_roles_reconciled": 14,
+    "pending_activity_decisions": [
+      "accepted_contract_interaction",
+      "accompanying_component_terms",
+      "constants_provenance",
+      "distinct_operational_act_decision",
+      "narrow_research_hypothesis_scope"
+    ],
+    "review_time_pins": 61,
+    "review_time_stable": true,
+    "source_roster_completeness_attested": false,
+    "tests": {
+      "total": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "unittest_seconds": 3.066,
+      "wrapper_seconds": 3.9243970999959856,
+      "exit_code": 0
+    },
+    "public_cli_refusals": 3,
+    "public_cli_expected_exit_code": 2,
+    "independent_review": "accepted_no_required_fixes",
+    "operational_command_available": false,
+    "actual_activation_record_assembled": false,
+    "independent_decision_anchor_assembled": false,
+    "actual_inputs_accessed": false,
+    "installed_dependency_activated": false,
+    "rights_established": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_owner_reference_review_committed_739374c",
+    "current_goal_turn": "progress_fourteen_role_activity_review_packet_and_engineering_gap_reconciled",
+    "next_work_package": "RA-003: implement and independently review a separate pure actual-observation proposal/decision/ordinary-record contract with externally supplied decision-anchor binding. Bind the exact fourteen roles, source/dependency expectations, full-pass scope, request/bootstrap/argv identity and historical-versus-fresh evidence. Qualify agreement and refusal cases using invented records only. Preserve pending contracts and public CLI/runtime refusal; do not assemble actual activation records or connect the new contract to execution. No installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact."
   }
 }
