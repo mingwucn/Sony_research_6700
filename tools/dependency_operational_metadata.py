@@ -70,9 +70,26 @@ def record(raw, schema, fields, operation):
     return value
 
 
+def migration_receipts(migration):
+    """Closed captured-byte handoff; pins establish consistency only."""
+    need(type(migration) is dict and set(migration) == {'context_bytes',
+         'expected_context_sha256', 'ancestry_proof_bytes',
+         'expected_ancestry_proof_sha256'}, 'operational_migration_shape')
+    selected = {}
+    for name, limit in (('context', 16384), ('ancestry_proof', 65536)):
+        raw = migration[name+'_bytes']
+        pin = migration['expected_'+name+'_sha256']
+        need(type(raw) is bytes and 0 < len(raw) <= limit and type(pin) is str and
+             len(pin) == 64 and all(c in '0123456789abcdef' for c in pin) and
+             sha(raw) == pin, 'operational_migration_anchor')
+        selected[name] = dict(bytes=len(raw), sha256=pin)
+    return selected
+
+
 def validate_pending(*, documents, original_receipts, validated, request_bytes,
                      request_sha256, checked_sources, adapter_owner, ordinary,
-                     ordinary_receipts, outer_source_receipts, prepared_repository_root):
+                     ordinary_receipts, outer_source_receipts, prepared_repository_root,
+                     historical_migration=None):
     """Check fourteen pending records after the separately owned legacy gate.
 
     Gate qualification and retained preflight remain separate responsibilities.
@@ -161,13 +178,38 @@ def validate_pending(*, documents, original_receipts, validated, request_bytes,
          'operational_index_authority')
     same(index['checked_roles'], sorted(policy.ORDINARY_INPUTS), 'operational_index_roles')
     adapter_owner.intact()
-    return dict(schema='pending_operational_preflight_v1', operation_id=operation,
+    result = dict(schema='pending_operational_preflight_v1', operation_id=operation,
         request_bytes_sha256=request_sha256, original_receipts=original_receipts,
         ordinary_receipts=ordinary_receipts, outer_source_receipts=outer_source_receipts,
         prepared_source_map_sha256=sha(encoded(request['sources'])),
         source_frames=dict(comparison_root=comparison_root.as_posix(), prepared_root=root.as_posix()),
         checked_roles=sorted(policy.ORDINARY_INPUTS), derived_closure_is_file=False,
         **dict.fromkeys(FLAGS, False), camera_commands=[])
+    need(historical_migration is not None or validated.get('schema') != 'gdt_outer_consistency_v6',
+         'operational_migration_required')
+    if historical_migration is not None:
+        selected = migration_receipts(historical_migration)
+        context = strict(historical_migration['context_bytes'])
+        same(context, dict(schema='gdt_historical_context_v1',
+             repository_root=candidate['repository_root'],legacy_session=candidate['legacy_session'],
+             operation_id=validated['inputs']['dependency_config']['operation_id'],
+             dependency_config_sha256=sha(documents['inputs']['dependency_config']),
+             historical_seal_sha256=sha(documents['inputs']['q_old_seal']),
+             ancestry_proof_sha256=selected['ancestry_proof']['sha256'],
+             execution_authorized=False,camera_commands=[]), 'operational_migration_context')
+        need(validated['schema'] == 'gdt_outer_consistency_v6' and
+             validated['consistency_only'] is True and
+             all(validated[n] is False for n in ('execution_authorized','actual_entry_ready',
+                 'feature_supported','recovery_proven','device_write_gate_passed','actual_inputs_accessed')) and
+             'child_argv' not in validated and validated['current_operation_id'] == operation and
+             validated['historical_operation_id'] == context['operation_id'] != operation and
+             validated['historical_context_sha256'] == selected['context']['sha256'] and
+             validated['ancestry_proof_sha256'] == selected['ancestry_proof']['sha256'],
+             'operational_migration_result')
+        result.update(schema='pending_operational_preflight_v2',
+            historical_operation_id=context['operation_id'], historical_migration=selected,
+            execution_bootstrap_qualified=False)
+    return result
 
 
 def verify_saved(*, raw, expected_sha256, **arguments):

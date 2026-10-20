@@ -37,7 +37,7 @@ class Preparation:
     def __init__(self, *, source_owner, adapter_owner, request_bytes,
                  request_sha256, checked_sources, documents, original_receipts,
                  ordinary, ordinary_receipts, legacy_seal_sha256, reference_pins,
-                 prepared_repository_root):
+                 prepared_repository_root, historical_migration=None):
         self.source_owner = source_owner
         self.adapter_owner = adapter_owner
         # Copy mutable containers; buffers themselves are immutable.
@@ -52,23 +52,39 @@ class Preparation:
         self.reference_pins = metadata.strict(metadata.encoded(reference_pins))
         self.legacy_seal_sha256 = legacy_seal_sha256
         self.prepared_repository_root = prepared_repository_root
+        # Buffers/pins are immutable; no caller-owned nested container survives.
+        if historical_migration is not None:
+            metadata.migration_receipts(historical_migration)
+        self.historical_migration = None if historical_migration is None else dict(historical_migration)
         self.bootstrap_modules = {}
         self.callback_lease = CallbackLease()
         self.started = self.closed = self.failed = False
         self.preflight = self.validated = None
 
     def arguments(self, validated):
-        return dict(documents=self.documents, original_receipts=self.original_receipts,
+        arguments = dict(documents=self.documents, original_receipts=self.original_receipts,
             validated=validated, request_bytes=self.request_bytes,
             request_sha256=self.request_sha256, checked_sources=self.checked_sources,
             adapter_owner=self.adapter_owner, ordinary=self.ordinary,
             ordinary_receipts=self.ordinary_receipts,
             outer_source_receipts=self.source_owner.receipts(),
             prepared_repository_root=self.prepared_repository_root)
+        if self.historical_migration is not None:
+            arguments['historical_migration'] = dict(self.historical_migration)
+        return arguments
 
     def _validate_gate(self):
-        return self.source_owner.modules['retained_gate'].validate_bundle(self.documents,
-            expected_seal_sha256=self.legacy_seal_sha256, reference_pins=self.reference_pins)
+        gate = self.source_owner.modules['retained_gate']
+        if self.historical_migration is None:
+            return gate.validate_bundle(self.documents,
+                expected_seal_sha256=self.legacy_seal_sha256, reference_pins=self.reference_pins)
+        metadata.need(metadata.sha(self.request_bytes) == self.request_sha256,
+                      'operational_original_request')
+        metadata.migration_receipts(self.historical_migration)
+        return gate.validate_bundle_v6(self.documents,
+            expected_seal_sha256=self.legacy_seal_sha256, reference_pins=self.reference_pins,
+            expected_operation_id=metadata.strict(self.request_bytes)['operation_id'],
+            **self.historical_migration)
 
     def _refresh(self, validated):
         return host.refresh_sources(validated, self.source_owner.modules['ordinary_io'])

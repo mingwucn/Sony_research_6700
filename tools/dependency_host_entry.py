@@ -97,6 +97,8 @@ def freeze_owned(loader,basis):
 
 
 def make_context(validated):
+    need(validated.get('schema') != 'gdt_outer_consistency_v6',
+         'host_context_requires_separate_execution_qualification')
     c=validated['candidate'];p=validated['inputs'];root=Path(c['repository_root']);here=root/c['session']
     ordinary={row['path']:row['sha256'] for row in c['inputs'].values()}
     for row in p['source_cache']['sources'].values():
