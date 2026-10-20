@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "complete_legacy_preflight_invented_qualified_disabled_integration_pending",
+  "phase": "disabled_observation_launcher_transport_qualified_full_owned_composition_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_unchanged_legacy_preflight_qualified_launcher_integration_pending",
+      "status": "partial_observation_launcher_transport_qualified_full_composition_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
+      "scope": "R0 invented source/transport/unit ownership qualification; actual activation and protected reads disabled",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-legacy-positive.md",
+      "session_report": "research/sessions/20261020-RA-003-observation-launcher.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -10621,5 +10621,51 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_reference_work_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published, including exact target/region identity, file equality, security, persistence, failure handling and reversal."
+  },
+  "observation_launcher_20261020": {
+    "status": "partial_disabled_launcher_transport_and_unit_ownership_qualified",
+    "tests": 145,
+    "new_tests": 18,
+    "retained_tests": 127,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 66.884,
+    "wrapper_seconds": 67.40489549998892,
+    "pin_count": 149,
+    "stable": true,
+    "reviewed_prior_source_changes": [
+      "tools/dependency_operational_launcher.py"
+    ],
+    "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+    "stdout_sha256": "a528035b279b6f98f369503ec8f6df24c7ae656a2fe2d0837099b7869898c938",
+    "stderr_sha256": "bc37f6f270b5b608befe813152c6d30daf46bf6a620604df42dc5872d210d036",
+    "child_transport_preflight_exercised": true,
+    "child_engine_explicitly_substituted": true,
+    "ownership_tests_use_supervisor_and_engine_seams": true,
+    "full_owned_engine_composition_qualified": false,
+    "actual_inputs_accessed": false,
+    "actual_records_assembled": false,
+    "installed_dependency_activated": false,
+    "all_actual_activity_decisions_pending": true,
+    "rights_established": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "report": "research/sessions/20261020-RA-003-observation-launcher.md",
+    "assessment": "research/OBSERVATION_LAUNCHER.md",
+    "reviewed_source_sha256": {
+      "tools/dependency_observation_launcher.py": "193ef9c6b3dbe6b81f0deac288ac9b689213d2470b6e9db0227d4ecfbf437f07",
+      "tools/dependency_operational_launcher.py": "25e854807853cc2ea180cffd498c8395b769a53927a713917c0bb817c64d15ba",
+      "tests/test_dependency_observation_launcher.py": "6b3c6585851308b3b0d86f1929eaa47cc29f9b5405463f1f6444ed874ad8b81a"
+    },
+    "independent_review": "source_only_accepted_no_runtime_reproduction",
+    "next_work_package": "RA-003: qualify the new disabled observation launcher through real preparation and one owned supervised engine composition using complete invented legacy/source/metadata records and explicit runtime substitutions. Preserve the fixed protected-size contract, source freshness and original pending route; do not weaken guards to fit the small historical fixture. Cover saved-result tamper, drift-before-spawn and unknown completion, and independently review before actual records. Keep actual activity decisions pending and public activation disabled; no actual firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact.",
+    "previous_goal_turn": "progress_reference_delta_review_committed_a64916e",
+    "current_goal_turn": "progress_partial_disabled_launcher_and_cross_process_bootstrap_fix"
   }
 }

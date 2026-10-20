@@ -105,7 +105,10 @@ except BaseException:
  print(json.dumps(dict(status='needs_review',camera_commands=[])))
  raise SystemExit(2)
 '''
-    return prefix+body.replace('REQUEST_FIELDS',repr(set(REQUEST_FIELDS))).replace('SOURCE_ROLES',repr(set(process.ROSTER)))
+    # The exact command is transported across isolated processes. Set repr
+    # order follows a process-randomized hash seed and cannot define its bytes.
+    literal=lambda names:'{'+','.join(repr(name) for name in sorted(names))+'}'
+    return prefix+body.replace('REQUEST_FIELDS',literal(REQUEST_FIELDS)).replace('SOURCE_ROLES',literal(process.ROSTER))
 
 def validate_request(request):
     need(type(request) is dict and set(request)==REQUEST_FIELDS and
