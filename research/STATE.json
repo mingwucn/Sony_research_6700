@@ -11496,5 +11496,26 @@
     "previous_goal_turn": "progress_finite_evidence_packet_committed_d37bd81",
     "current_goal_turn": "progress_exact_source_projection_and_missing_v6_calling_seams_derived",
     "next_single_work_package": "RA-003: implement and qualify a closed v2 migration handoff through the existing projection/packet and parent/child preflight seams, including saved arguments. Preserve v1 behavior and explicit v6 execution-context refusal. Qualify invented complete/missing/altered/downgraded/cross-operation cases; v6 must stop before bootstrap materialization, protected preparation, result writes or process launch. No actual allow records, source-manifest migration, dependency activation, protected reads or camera contact."
+  },
+  "a6700_reference_review_w_20261020": {
+    "report": "research/sessions/20261020-a6700-reference-review-w.md",
+    "checked_at_utc": "2026-10-20T10:32:13.250858+00:00",
+    "commit": "c8e2aa100cfb02523d06cc6fc767d25a63cf943d",
+    "unchanged_from_review_v": true,
+    "tree_entries": 51,
+    "blob_entries": 39,
+    "changed_paths": [],
+    "evidence_classes": [
+      "source-report",
+      "static-inference"
+    ],
+    "english": "No unlock located in the reviewed material",
+    "ftp": "Author reports RAW+JPEG success; implementation not yet published",
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "upstream_executed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit published FTP implementation and direct camera-to-server evidence when available; exact target, file equality, security, persistence, failure and reversal checks remain required."
   }
 }

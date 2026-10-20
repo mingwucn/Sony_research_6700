@@ -718,3 +718,6 @@ Next single package remains the independent review of the frozen source packet a
 
 
 Reference recheck (2026-10-20): [review v](../research/sessions/20261020-a6700-reference-review-v.md). Current pin c8e2aa100cfb02523d06cc6fc767d25a63cf943d is unchanged: 51 tree entries / 39 blobs; four document identities verified. English unlock absent from reviewed material; FTP RAW+JPEG success remains author-reported with implementation unpublished; complete recovery unproved. No feature or device gate passed. Next reference package: FT-101, audit published FTP implementation and direct Wi-Fi evidence when available. Existing RA-003 continuation and in-progress authored edits preserved.
+
+
+Reference recheck (2026-10-20): [review w](../research/sessions/20261020-a6700-reference-review-w.md). Current pin c8e2aa100cfb02523d06cc6fc767d25a63cf943d is unchanged: 51 tree entries / 39 blobs; four document identities verified. English unlock absent from reviewed material; FTP RAW+JPEG success remains author-reported with implementation unpublished; complete recovery unproved. No feature or device gate passed. Next reference package: FT-101, audit published FTP implementation and direct Wi-Fi evidence when available. Existing RA-003 continuation and in-progress authored edits preserved.
