@@ -84,9 +84,16 @@ operational source roster. No installed native backend is activated. Successful
 invented reads/cleanup do not prove actual startup, authority, feature support,
 rollback or recoverability. All five activity-specific decisions stay pending.
 
-Next single package: **RA-003: move the qualified outer source capture,
+Historical next package: **RA-003: move the qualified outer source capture,
 bootstrap/supervisor and pending-preflight/result reconciliation into a separate
 authored disabled operational launcher. Derive its actual executing source roster
 from that composition; retain fixed supervision and separate fixture generation.
 Qualify with invented inputs and explicit runtime substitutions, independently
 review, and keep actual activation and all five decisions pending.**
+
+That migration is now implemented and qualified within the limits described in
+[Disabled operational outer launcher](DISABLED_OPERATIONAL_LAUNCHER.md). The new
+49-role child capture replaces the private 74-role rehearsal closure. Runtime
+dispatch/collector/saved-verifier substitution remains explicit; no actual
+activation follows. The next single package is the fixed runtime-shaped collector
+and saved-parent qualification identified in that assessment.

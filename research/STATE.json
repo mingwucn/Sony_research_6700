@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "invented_supervised_preparation_qualified_production_outer_pending",
+  "phase": "disabled_outer_launcher_invented_qualified_fixed_runtime_collection_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_current_ordinary_semantics_qualified_isolated_preflight_pending",
+      "status": "partial_disabled_outer_invented_qualified_fixed_runtime_collection_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-current-metadata.md",
+      "session_report": "research/sessions/20261020-RA-003-disabled-outer-launcher.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -288,7 +288,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: implement and independently review the separate authored disabled operational outer launcher, moving the qualified source capture/bootstrap/supervisor/pending-preflight/result flow out of the private fixture harness. Derive the exact executing source roster, retain fixed limits and separate fixture generation; qualify invented complete/refusal/cleanup cases with explicit runtime substitutions. Keep actual activation disabled and all five activity-specific decisions pending; no actual activation records, installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
+  "next_work_package": "RA-003: qualify the fixed runtime-shaped completion collector and saved-parent verification through the disabled operational outer launcher using invented records and the narrowest explicit observer substitution. Remove broader dispatch/collector/parent-verifier replacements where possible; record every remaining bootstrap/observer substitution and synthetic provenance. Do not reinterpret runtime-shaped fixture fields as actual observations. Keep public runtime disabled, all five activity decisions pending and actual inputs unopened; no installed dependency activation or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8488,8 +8488,8 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "seconds": 59.80421360000037,
-    "source_pin_count": 103,
+    "seconds": 64.67677750001894,
+    "source_pin_count": 106,
     "modules": [
       "test_dependency_operational_preparation",
       "test_dependency_operational_entry",
@@ -8497,11 +8497,12 @@
       "test_dependency_adapter_binding",
       "test_dependency_successor_wiring",
       "test_dependency_host_launcher",
-      "test_dependency_host_entry"
+      "test_dependency_host_entry",
+      "test_dependency_operational_launcher"
     ],
     "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
     "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
-    "log_sha256": "308eed0a03e6c51bf5f4f0e885c1716a71b6ffaa297330c8466b2abe8ad470d6",
+    "log_sha256": "fbbb1608bb6d0358bf2d5e8d476891b83e0e0db3a457c31fe8a466ca036a2275",
     "runtime_constructor_blocked": true,
     "actual_inputs_accessed": false,
     "camera_commands": [],
@@ -8512,15 +8513,15 @@
       "runtime and saved-runtime dispatch"
     ],
     "exit_code": 0,
-    "total": 132,
-    "passed": 132,
+    "total": 150,
+    "passed": 150,
     "source_stable": true,
-    "report": "research/sessions/20261020-RA-003-preparation-rehearsal.md",
-    "assessment": "research/OPERATIONAL_PREPARATION.md",
+    "report": "research/sessions/20261020-RA-003-disabled-outer-launcher.md",
+    "assessment": "research/DISABLED_OPERATIONAL_LAUNCHER.md",
     "hardware_coverage": false,
     "evidence_class": "offline-tested",
     "mode": "focused_synthetic_with_runtime_constructor_blocked",
-    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-preparation-rehearsal/qualify.py public-v1"
+    "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261020-RA-003-disabled-outer-launcher/qualify.py public-v1"
   },
   "owner_project_check_20261019_i": {
     "date": "2026-10-19",
@@ -8594,7 +8595,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261020-RA-003-preparation-rehearsal.md",
+  "latest_report": "research/sessions/20261020-RA-003-disabled-outer-launcher.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -10017,5 +10018,145 @@
     "previous_goal_turn": "progress_reference_review_committed_cf28a11_separate_worktree",
     "current_goal_turn": "progress_invented_supervised_preparation_and_import_boundary_repair",
     "next_work_package": "RA-003: implement and independently review the separate authored disabled operational outer launcher, moving the qualified source capture/bootstrap/supervisor/pending-preflight/result flow out of the private fixture harness. Derive the exact executing source roster, retain fixed limits and separate fixture generation; qualify invented complete/refusal/cleanup cases with explicit runtime substitutions. Keep actual activation disabled and all five activity-specific decisions pending; no actual activation records, installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact."
+  },
+  "disabled_operational_outer_launcher": {
+    "report": "research/sessions/20261020-RA-003-disabled-outer-launcher.md",
+    "assessment": "research/DISABLED_OPERATIONAL_LAUNCHER.md",
+    "status": "disabled_outer_launcher_invented_qualified_fixed_runtime_collection_pending",
+    "evidence_classes": [
+      "static-inference",
+      "offline-tested"
+    ],
+    "qualification": {
+      "tests": 150,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 64.67677750001894,
+      "source_pin_count": 106,
+      "stable": true,
+      "modules": [
+        "test_dependency_operational_preparation",
+        "test_dependency_operational_entry",
+        "test_dependency_successor_sources",
+        "test_dependency_adapter_binding",
+        "test_dependency_successor_wiring",
+        "test_dependency_host_launcher",
+        "test_dependency_host_entry",
+        "test_dependency_operational_launcher"
+      ],
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "log_sha256": "fbbb1608bb6d0358bf2d5e8d476891b83e0e0db3a457c31fe8a466ca036a2275",
+      "runtime_constructor_blocked": true,
+      "actual_inputs_accessed": false,
+      "camera_commands": [],
+      "qualification_interceptions": [
+        "legacy gate invocation on compact invented fixture",
+        "fresh authored source acquisition",
+        "retained callback materialization",
+        "runtime and saved-runtime dispatch"
+      ],
+      "exit_code": 0
+    },
+    "reviewed_source_sha256": {
+      "tools/dependency_operational_child.py": "157319007f1c435aef2bdee6cdbb21e5da5b9b60c7e165096de7a29c862c02e6",
+      "tools/dependency_operational_launcher.py": "e6091960b8457f59b63fe945c7aba9a1c9fa3a5a7dba823fe3406e70798e1fd6",
+      "tests/test_dependency_operational_launcher.py": "b3fea25e0d636bfc28c87d677b828f7bbe1b038e7420913a348056543788fd5d"
+    },
+    "independent_source_review": "four_findings_repaired_accepted_no_residual_material_finding",
+    "production_child_source_roles": 49,
+    "retained_original_source_roles": 29,
+    "prepared_semantic_roles": 46,
+    "process_cases": {
+      "complete": {
+        "wrapper_exit_code": 0,
+        "status": "consistent_pending_composition",
+        "failure_code": null,
+        "process": {
+          "launch_attempts": 1,
+          "child_exit_code": 0,
+          "deadline_seconds": 300,
+          "timed_out": false,
+          "launch_failed": false,
+          "log_cap_exceeded": false,
+          "log_reader_failed": false,
+          "kill_attempts": 0,
+          "kill_succeeded": false,
+          "wait_attempts": 0,
+          "exit_observed": true,
+          "reader_threads_joined": true,
+          "collector_stop_requested": true,
+          "pipe_close_complete": true,
+          "elapsed_seconds": 21.463017200003378
+        },
+        "all_parent_owners_closed": true
+      },
+      "preflight_tamper": {
+        "wrapper_exit_code": 0,
+        "status": "needs_review",
+        "failure_code": "operational_saved_hash",
+        "process": {
+          "launch_attempts": 1,
+          "child_exit_code": 0,
+          "deadline_seconds": 300,
+          "timed_out": false,
+          "launch_failed": false,
+          "log_cap_exceeded": false,
+          "log_reader_failed": false,
+          "kill_attempts": 0,
+          "kill_succeeded": false,
+          "wait_attempts": 0,
+          "exit_observed": true,
+          "reader_threads_joined": true,
+          "collector_stop_requested": true,
+          "pipe_close_complete": true,
+          "elapsed_seconds": 20.695106700004544
+        },
+        "all_parent_owners_closed": true
+      },
+      "capture_tamper": {
+        "wrapper_exit_code": 0,
+        "status": "needs_review",
+        "failure_code": "operational_launch_saved_source",
+        "process": null,
+        "all_parent_owners_closed": true
+      }
+    },
+    "process_source_pin_count": 109,
+    "process_source_stable": true,
+    "process_wrapper_seconds": 54.749705200025346,
+    "additional_qualification_bootstrap_source": true,
+    "process_interceptions": [
+      "bootstrap-injected test setup",
+      "invented dispatch",
+      "invented collector",
+      "invented saved-runtime verification"
+    ],
+    "production_outer_integrated": true,
+    "public_runtime_disabled": true,
+    "real_retained_gate_materialization_qualified_on_invented_inputs": true,
+    "child_completion_collected_before_teardown": true,
+    "runtime_collector_end_to_end_qualified": false,
+    "actual_runtime_verified": false,
+    "actual_activation_record_assembled": false,
+    "actual_inputs_accessed": false,
+    "installed_dependency_activated": false,
+    "rights_established": false,
+    "pending_activity_decisions": [
+      "accepted_contract_interaction",
+      "accompanying_component_terms",
+      "constants_provenance",
+      "narrow_research_hypothesis_scope",
+      "distinct_operational_act_decision"
+    ],
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_reference_review_committed_d781ef8_separate_worktree",
+    "current_goal_turn": "progress_disabled_outer_launcher_integration_and_qualification_recorded",
+    "next_work_package": "RA-003: qualify the fixed runtime-shaped completion collector and saved-parent verification through the disabled operational outer launcher using invented records and the narrowest explicit observer substitution. Remove broader dispatch/collector/parent-verifier replacements where possible; record every remaining bootstrap/observer substitution and synthetic provenance. Do not reinterpret runtime-shaped fixture fields as actual observations. Keep public runtime disabled, all five activity decisions pending and actual inputs unopened; no installed dependency activation or camera contact."
   }
 }
