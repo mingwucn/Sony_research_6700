@@ -32,7 +32,7 @@
       "status": "partial_v2_consistency_transport_qualified_execution_and_activity_pending",
       "available_evidence": "Official mainland package acquired and measured; bounded tar inventory, fixed superblock study, pending review and saved historical comparison recorded.",
       "remaining_acceptance": "Closed v2 consistency transport qualified on invented sources. Separate execution context, current source manifest/bootstrap and actual act records remain unqualified. Five decisions and three dependency nulls unresolved; English/FTP mapping and exact-body evidence absent.",
-      "next_dependency": "separate_current_operation_execution_context_qualification_and_pending_activity_dispositions",
+      "next_dependency": "evidence_backed_activity_dispositions_before_further_context_infrastructure",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -44,7 +44,8 @@
         "research/PREPARATION_CONTEXT_HANDOFF.md",
         "research/NEXT_ANALYSIS_EVIDENCE.md",
         "research/V6_SOURCE_COMMAND_SPEC.md",
-        "research/V2_MIGRATION_HANDOFF.md"
+        "research/V2_MIGRATION_HANDOFF.md",
+        "research/sessions/20261020-RA-003-context-boundary-audit.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1071,9 +1072,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_reference_recheck_committed_26793af",
-  "current_goal_turn": "progress_closed_v2_transport_qualified_with_explicit_execution_refusal",
-  "next_single_work_package": "RA-003: qualify a distinct current-operation execution-context constructor using the original retained baseline and current request on invented inputs. Establish exact source, document, ordinary-input and command bindings independently of the v6 consistency receipt. Keep the v2 launcher refusal and all five pending activity decisions until that separate work is reviewed; no actual allow records, dependency activation, protected reads or camera contact.",
+  "previous_goal_turn": "progress_v2_transport_committed_90dd789",
+  "current_goal_turn": "progress_context_boundary_audited_and_non_advancing_constructor_work_deferred",
+  "next_single_work_package": "RA-003: supply an evidence-backed disposition of the five existing activity issues for the exact two-lead GDT analysis scope, using research/NEXT_ANALYSIS_EVIDENCE.md. Additional authoritative evidence or a qualified scope-specific assessment is needed; no fabricated approvals, repeated generic intake, protected processing or substitute synthetic context infrastructure.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1274,6 +1275,31 @@
       "previous_goal_turn": "progress_reference_recheck_committed_26793af",
       "current_goal_turn": "progress_closed_v2_transport_qualified_with_explicit_execution_refusal",
       "next_single_work_package": "RA-003: qualify a distinct current-operation execution-context constructor using the original retained baseline and current request on invented inputs. Establish exact source, document, ordinary-input and command bindings independently of the v6 consistency receipt. Keep the v2 launcher refusal and all five pending activity decisions until that separate work is reviewed; no actual allow records, dependency activation, protected reads or camera contact."
+    },
+    {
+      "report": "research/sessions/20261020-RA-003-context-boundary-audit.md",
+      "status": "execution_context_design_deferred_pending_activity_evidence",
+      "tests": 1,
+      "exit_code": 0,
+      "seconds": 1.2919043999863788,
+      "prior_qualification_pins_rechecked": 21,
+      "retained_context_fields": 12,
+      "current_request_checks_exist_separately": true,
+      "constructor_implemented": false,
+      "all_five_decisions_pending": true,
+      "actual_bundle_created": false,
+      "source_manifest_migrated": false,
+      "execution_authorized": false,
+      "protected_inputs_accessed": false,
+      "installed_dependency_activated": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "camera_commands": [],
+      "previous_goal_turn": "progress_v2_transport_committed_90dd789",
+      "current_goal_turn": "progress_context_boundary_audited_and_non_advancing_constructor_work_deferred",
+      "stopping_point_audit_count": 1,
+      "next_single_work_package": "RA-003: supply an evidence-backed disposition of the five existing activity issues for the exact two-lead GDT analysis scope, using research/NEXT_ANALYSIS_EVIDENCE.md. Additional authoritative evidence or a qualified scope-specific assessment is needed; no fabricated approvals, repeated generic intake, protected processing or substitute synthetic context infrastructure."
     }
   ]
 }
