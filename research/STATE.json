@@ -288,7 +288,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: bind the disabled operational engine composition into a separately source-owned outer parent/child preparation and saved-result path. Derive its exact source map and operational ordinary/preflight/result contracts, preserving frozen supervision and observation limits. Qualify with invented records and intercepted runtime calls only; independently review before actual record assembly or activation. Keep five decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
+  "next_work_package": "RA-003: bind the disabled operational engine composition into a separately source-owned outer parent/child preparation and saved-result path. Derive its exact source map and operational ordinary/preflight/result contracts, preserving frozen supervision and observation limits. Reserve child journals through the prepared control only once; collect child completion evidence before engine-owned teardown and derive parent process facts through the owned supervisor. Qualify with invented records and intercepted runtime calls only; independently review before actual record assembly or activation. Keep five decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -9794,5 +9794,53 @@
       "tests/test_dependency_operational_entry.py": "aac4f59adf9af5f02cd7da0e82b0a9087376194467eef7142294f164e42d1764",
       "tests/test_dependency_successor_sources.py": "ab38d272dd5b7d66d80b7bbc6ef5610c551f72680710f87b284bbbef7b77b8a1"
     }
+  },
+  "late_child_record_reservation": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 48.21504570002435,
+    "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+    "source_pins": {
+      "tools/dependency_operational_entry.py": "a20cbe47aee54f211c7979ab8ce4a7904bd4c67d8af2ae5166a3e2c9a9f6a675",
+      "tools/dependency_successor_sources.py": "a9062ab53ac06f5cda0f6b013e1b5494f6727c7557df58c3fc484fe77ee54e65",
+      "tests/test_dependency_operational_entry.py": "ed03ab06d50fba75fa167abfea1889617a15445e56687e16574ea51e975f7b0f",
+      "tests/test_dependency_successor_sources.py": "ab38d272dd5b7d66d80b7bbc6ef5610c551f72680710f87b284bbbef7b77b8a1",
+      "tools/dependency_adapter_binding.py": "10cdb88564766bc17c3a69c5571a11a0036691c608fe64489342b07688903c60",
+      "tools/dependency_host_launcher.py": "b97a527c22d069bc2924e8a5188a0432c4d7f228c527810bf9f97a89e7568ef3"
+    },
+    "stable": true,
+    "modules": [
+      "test_dependency_operational_entry",
+      "test_dependency_successor_sources",
+      "test_dependency_adapter_binding",
+      "test_dependency_successor_wiring",
+      "test_dependency_host_launcher"
+    ],
+    "runtime_constructor_blocked": true,
+    "actual_inputs_accessed": false,
+    "camera_commands": [],
+    "exit_code": 0,
+    "report": "research/sessions/20261020-RA-003-late-record-reservation.md",
+    "status": "late_child_reservation_qualified_outer_integration_pending",
+    "independent_source_review": "allocation_before_acquisition_repair_accepted",
+    "reviewed_source_sha256": {
+      "tools/dependency_operational_entry.py": "a20cbe47aee54f211c7979ab8ce4a7904bd4c67d8af2ae5166a3e2c9a9f6a675",
+      "tests/test_dependency_operational_entry.py": "ed03ab06d50fba75fa167abfea1889617a15445e56687e16574ea51e975f7b0f"
+    },
+    "public_runtime_disabled": true,
+    "operational_outer_integrated": false,
+    "operational_metadata_contracts_implemented": false,
+    "actual_activation_record_assembled": false,
+    "rights_established": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "previous_goal_turn": "progress_reference_check_committed_a75cf6e_separate_worktree",
+    "current_goal_turn": "progress_engine_commit_654f79b_and_late_reservation_mismatch_repaired",
+    "next_work_package": "RA-003: bind the disabled operational engine composition into a separately source-owned outer parent/child preparation and saved-result path. Derive its exact source map and operational ordinary/preflight/result contracts, preserving frozen supervision and observation limits. Reserve child journals through the prepared control only once; collect child completion evidence before engine-owned teardown and derive parent process facts through the owned supervisor. Qualify with invented records and intercepted runtime calls only; independently review before actual record assembly or activation. Keep five decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
+    "log_sha256": "a5c4ee0c74aa8ccd881e30a85445cf688969e45006653483cca32f56d94a539c"
   }
 }

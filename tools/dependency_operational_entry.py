@@ -112,17 +112,19 @@ def _result(side, value):
 
 def _continue_child(*, request, request_sha256, checked_sources, adapter_owner,
                     helpers, dependency_source_buffers, runtime_wiring,
-                    preparation, context, identity, records):
+                    preparation, context, identity):
     """Trusted future child engine, qualified with intercepted calls only.
 
     The outer owner must bind preparation/wiring/entry source bytes before this
     call. There is no packet-supplied observer, cipher, mode or callback factory.
-    Ownership transfers on entry, including validation/preparation failures.
+    Preparation/helper/adapter ownership transfers on entry. Child records are
+    reserved only after preparation exposes the checked control and the complete
+    prepared packet/context binding passes; reservation failures are not retried.
     """
     prep = OnceClose(preparation)
     helper = OnceClose(helpers)
     owner = OnceClose(adapter_owner)
-    record = OnceClose(records, strict=True)
+    record = None
     callbacks = None
     primary = None
     result = None
@@ -159,6 +161,19 @@ def _continue_child(*, request, request_sha256, checked_sources, adapter_owner,
         helpers.intact()
         need(hashlib.sha256(encoded(request)).hexdigest() == request_sha256,
              'operational_request_changed')
+        # Control is created by metadata preparation. Requiring pre-reserved
+        # records would force the outer caller to prepare twice or reserve via
+        # an unrelated control. Validate all pure call bindings before creating
+        # any child journal; runtime dispatch still rechecks them independently.
+        adapter.bind_child(request=request, expected_request_sha256=request_sha256,
+            checked_sources=checked_sources, helpers=helpers,
+            dependency_source_buffers=dependency_source_buffers,
+            context=context, identity=identity)
+        # Allocate the proxy before acquiring a handle. An interrupted wrapper
+        # constructor must not orphan a successful exclusive reservation.
+        record = OnceClose(None, strict=True)
+        record.value = modules['control'].reserve_child(context=context)
+        need(record.value is not None, 'operational_reservation_empty')
         result = adapter._continue_runtime(request=request,
             expected_request_sha256=request_sha256, checked_sources=checked_sources,
             helpers=helpers, dependency_source_buffers=dependency_source_buffers,
@@ -177,7 +192,8 @@ def _continue_child(*, request, request_sha256, checked_sources, adapter_owner,
         primary = error
     # Callback cleanup precedes helper/adapter/metadata cleanup. A failed close
     # attempt is never retried, and one failing owner cannot suppress the rest.
-    _finish(primary, (callbacks, record, helper, owner, prep))
+    acquired_record = record if record is not None and record.value is not None else None
+    _finish(primary, (callbacks, acquired_record, helper, owner, prep))
     return _result('child', result)
 
 

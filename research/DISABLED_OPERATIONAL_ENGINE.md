@@ -66,3 +66,6 @@ only with invented records and intercepted runtime calls; independently review
 before any actual record assembly or activation. No installed dependency
 activation, firmware/constants/native payload reads, downloads/uploads or camera
 contact; keep the five decisions pending.**
+
+
+Current reservation integration (2026-10-20): the child no longer accepts pre-reserved records. It prepares once, validates the complete packet/context binding, allocates an empty strict close proxy, then reserves child journals using the prepared control. Failed preparation/binding or proxy construction performs no reservation; an acquisition error is not retried. An acquired handle closes once on later failure. See [qualification](sessions/20261020-RA-003-late-record-reservation.md). The outer and operational ordinary-record migration remains pending.

@@ -40,8 +40,8 @@ class EntryTests(unittest.TestCase):
         self.callbacks.close = Mock(return_value=None)
         self.preparation = SimpleNamespace(prepare=Mock(side_effect=self.prepare),
                                           close=Mock(return_value=True))
-        self.control = object()
         self.records = SimpleNamespace(close=Mock(return_value=True))
+        self.control = SimpleNamespace(reserve_child=Mock(side_effect=self.reserve))
         self.wiring = SimpleNamespace(_dispatch_runtime=Mock(side_effect=self.dispatch),
                                      _verify_saved_runtime=Mock(return_value={'saved':'intercepted'}))
         self.context = dict(operation_id=self.request['operation_id'],deadline_seconds=300,
@@ -54,6 +54,11 @@ class EntryTests(unittest.TestCase):
     def prepare(self):
         self.events.append('metadata')
         return {'control':self.control},None,self.callbacks
+
+    def reserve(self, *, context):
+        self.events.append('reserve')
+        self.assertIs(context,self.context)
+        return self.records
 
     def dispatch(self, **kw):
         self.events.append('dispatch')
@@ -69,19 +74,21 @@ class EntryTests(unittest.TestCase):
         return dict(request=self.request,request_sha256=self.digest,
             checked_sources=self.buffers,adapter_owner=self.owner,helpers=self.helper,
             dependency_source_buffers=self.data['source_buffers'],runtime_wiring=self.wiring,
-            preparation=self.preparation,context=self.context,identity=self.identity,
-            records=self.records)
+            preparation=self.preparation,context=self.context,identity=self.identity)
 
-    def assert_closed(self, callbacks=True):
+    def assert_closed(self, callbacks=True, reserved=True):
         self.helper.close.assert_called_once_with()
-        self.records.close.assert_called_once_with()
+        if reserved:self.records.close.assert_called_once_with()
+        else:self.records.close.assert_not_called()
         self.preparation.close.assert_called_once_with()
         self.assertTrue(self.owner.closed)
         if callbacks:self.callbacks.close.assert_called_once_with()
 
     def test_child_metadata_before_dispatch_and_once_owned_lifetime(self):
         result=subject._continue_child(**self.args())
-        self.assertEqual(self.events,['metadata','dispatch'])
+        self.assertEqual(self.events,['metadata','reserve','dispatch'])
+        self.preparation.prepare.assert_called_once_with()
+        self.control.reserve_child.assert_called_once_with(context=self.context)
         self.assertEqual(result['side'],'child')
         self.assertEqual(result['engine_result'],{'engine':'intercepted'})
         for key in ('execution_authorized','feature_supported','recovery_proven',
@@ -96,7 +103,8 @@ class EntryTests(unittest.TestCase):
             subject._continue_child(**self.args())
         self.assertIs(got.exception,primary)
         self.wiring._dispatch_runtime.assert_not_called()
-        self.assert_closed(False)
+        self.control.reserve_child.assert_not_called()
+        self.assert_closed(False,False)
 
     def test_primary_preserved_with_cleanup_failures_and_no_reclose(self):
         primary=KeyboardInterrupt('factory interrupted')
@@ -172,14 +180,76 @@ class EntryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'operational_request_changed'):
             subject._continue_child(**self.args())
         self.wiring._dispatch_runtime.assert_not_called()
-        self.assert_closed()
+        self.control.reserve_child.assert_not_called()
+        self.assert_closed(reserved=False)
 
     def test_helper_substitution_refuses_before_metadata(self):
         self.helper.buffers['dependency_producer']=b'changed\n'
         with self.assertRaisesRegex(ValueError,'operational_helper_roster'):
             subject._continue_child(**self.args())
         self.preparation.prepare.assert_not_called()
-        self.assert_closed(False)
+        self.control.reserve_child.assert_not_called()
+        self.assert_closed(False,False)
+
+    def test_reservation_failure_preserves_error_and_releases_prepared_callbacks(self):
+        primary=OSError('exclusive reservation failed')
+        self.control.reserve_child.side_effect=primary
+        with self.assertRaises(OSError) as got:
+            subject._continue_child(**self.args())
+        self.assertIs(got.exception,primary)
+        self.preparation.prepare.assert_called_once_with()
+        self.control.reserve_child.assert_called_once_with(context=self.context)
+        self.wiring._dispatch_runtime.assert_not_called()
+        self.assert_closed(reserved=False)
+
+    def test_bad_context_refuses_before_reservation(self):
+        self.context['operation_id']='0'*32
+        with self.assertRaisesRegex(ValueError,'adapter_operation'):
+            subject._continue_child(**self.args())
+        self.control.reserve_child.assert_not_called()
+        self.wiring._dispatch_runtime.assert_not_called()
+        self.assert_closed(reserved=False)
+
+    def test_record_proxy_construction_interrupt_never_acquires_records(self):
+        original=subject.OnceClose
+        primary=KeyboardInterrupt('record owner allocation interrupted')
+        def wrapper(value, *, strict=False):
+            if strict:raise primary
+            return original(value,strict=strict)
+        with patch.object(subject,'OnceClose',side_effect=wrapper):
+            with self.assertRaises(KeyboardInterrupt) as got:
+                subject._continue_child(**self.args())
+        self.assertIs(got.exception,primary)
+        self.control.reserve_child.assert_not_called()
+        self.wiring._dispatch_runtime.assert_not_called()
+        self.assert_closed(reserved=False)
+
+    def test_post_reservation_dispatch_interrupt_closes_acquired_records_once(self):
+        primary=KeyboardInterrupt('dispatch interrupted')
+        self.wiring._dispatch_runtime.side_effect=primary
+        with self.assertRaises(KeyboardInterrupt) as got:
+            subject._continue_child(**self.args())
+        self.assertIs(got.exception,primary)
+        self.control.reserve_child.assert_called_once_with(context=self.context)
+        self.assert_closed()
+
+    def test_empty_reservation_refuses_without_dispatch_or_fake_close(self):
+        self.control.reserve_child.side_effect=None
+        self.control.reserve_child.return_value=None
+        with self.assertRaisesRegex(ValueError,'operational_reservation_empty'):
+            subject._continue_child(**self.args())
+        self.control.reserve_child.assert_called_once_with(context=self.context)
+        self.wiring._dispatch_runtime.assert_not_called()
+        self.assert_closed(reserved=False)
+
+    def test_bad_dependency_packet_refuses_before_reservation(self):
+        self.request['dependency_fixed']['expectation_sha256']='0'*64
+        self.digest=hashlib.sha256(subject.encoded(self.request)).hexdigest()
+        with self.assertRaises(ValueError):
+            subject._continue_child(**self.args())
+        self.control.reserve_child.assert_not_called()
+        self.wiring._dispatch_runtime.assert_not_called()
+        self.assert_closed(reserved=False)
 
     def parent_args(self):
         names=self.helper.order[:-1]+('dependency_parent',)
