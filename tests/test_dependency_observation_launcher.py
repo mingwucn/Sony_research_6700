@@ -370,5 +370,27 @@ class ObservationLauncherTests(unittest.TestCase):
         self.assertFalse(lib.modules)
         with self.assertRaisesRegex(ValueError,'library_reclose'):lib.close()
 
+    def test_library_executes_nested_captured_owner_graph_with_stdlib_imports(self):
+        buffers=dict(self.a['buffers'])
+        aliases=dict(namespace='dependency_successor_sources',successor_wiring='dependency_successor_wiring',
+            host_entry='dependency_host_entry',operational_metadata='dependency_operational_metadata',
+            operational_entry='dependency_operational_entry',operational_preparation='dependency_operational_preparation',
+            adapter_loader='dependency_adapter_sources',outer_loader='dependency_operational_sources')
+        for role,name in aliases.items():buffers[role]=Path('tools',name+'.py').read_bytes()
+        buffers['ordinary_io']=Path('private/sessions/20261019-RA-003-parent-evidence-v5/outer/ordinary_io.py').read_bytes()
+        for name in pending.process.DEPENDENCIES:
+            buffers['dependency.'+name]=Path('tools',name+'.py').read_bytes()
+        lib=s.Library(buffers).load();outer=adapter=helper=None
+        before=dict(sys.modules)
+        try:
+            outer,adapter=lib.pending.process.owners(buffers)
+            helper=lib.pending.process.helper_owner(outer,buffers,self.a['rows'],'parent')
+            self.assertEqual(helper.mode,'parent')
+            self.assertTrue(all(sys.modules.get(n) is m for n,m in before.items()))
+            self.assertFalse(any(n.startswith('_a6700_successor') for n in sys.modules))
+        finally:
+            lib.pending.process.close_owned((helper,adapter,outer))
+            lib.close()
+
 
 if __name__=='__main__':unittest.main()

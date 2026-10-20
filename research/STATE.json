@@ -10697,5 +10697,91 @@
     "device_write_gate_passed": false,
     "camera_commands": [],
     "next_reference_work_package": "FT-101: audit the published FTP implementation and direct camera-to-server Wi-Fi evidence when available, including exact target/region identity, file equality, security, persistence, failure handling and reversal."
+  },
+  "observation_composition_20261020": {
+    "tests": 146,
+    "new_tests": 1,
+    "retained_tests": 145,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 79.185,
+    "wrapper_seconds": 79.8588485000073,
+    "pin_count": 266,
+    "stable": true,
+    "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+    "stdout_sha256": "b1fd71e05be3325cf954a36e6724481e94a983da5d66764c0a425bc6417e3d20",
+    "stderr_sha256": "345ceb0468f9600a0ca6cd70338c7e3867a2aa266454c94fa6f0654c960b49e0",
+    "status": "invented_owned_observation_composition_qualified",
+    "report": "research/sessions/20261020-RA-003-observation-composition.md",
+    "assessment": "research/OBSERVATION_COMPOSITION.md",
+    "cases": [
+      {
+        "mode": "prepare",
+        "status": "production_prepare_consistent",
+        "failure_code": null,
+        "launch_attempts": null,
+        "production_bootstrap_unmodified": true,
+        "closure_evidence": "wrapper_reported_after_close_calls"
+      },
+      {
+        "mode": "complete",
+        "status": "consistent_disabled_observation",
+        "failure_code": null,
+        "launch_attempts": 1,
+        "production_bootstrap_unmodified": false,
+        "closure_evidence": null
+      },
+      {
+        "mode": "result_tamper",
+        "status": "needs_review",
+        "failure_code": "result_flags",
+        "launch_attempts": 1,
+        "production_bootstrap_unmodified": false,
+        "closure_evidence": null
+      },
+      {
+        "mode": "drift",
+        "status": "needs_review",
+        "failure_code": "operational_launch_saved_source",
+        "launch_attempts": 0,
+        "production_bootstrap_unmodified": false,
+        "closure_evidence": null
+      }
+    ],
+    "full_owned_engine_composition_qualified_with_invented_observer": true,
+    "production_runtime_qualified": false,
+    "source_length": 1024017848,
+    "logical_fixture_bytes": 93672,
+    "outer_padding_bytes": 1023922294,
+    "unknown_completion_coverage": "retained unit seam with synthetic supervisor exception; not a real timeout",
+    "original_bootstrap_preparation_only": true,
+    "modified_bound_bootstrap_for_supervised_cases": true,
+    "independent_review": "authored_source_only_no_required_issues_no_runtime_reproduction",
+    "reviewed_source_sha256": {
+      "tools/dependency_observation_launcher.py": "bb830f626164abd5d72a3a9ec6254edc9109b2214551ef1408a87391c87dd688",
+      "tests/test_dependency_observation_launcher.py": "681f365d7dcced989e5183d3664d6cae8337f54a3a7d35e08392cd9b90d79eb2"
+    },
+    "actual_inputs_accessed": false,
+    "actual_records_assembled": false,
+    "installed_dependency_activated": false,
+    "pending_activity_decisions": [
+      "accepted_contract_interaction",
+      "accompanying_component_terms",
+      "constants_provenance",
+      "narrow_research_hypothesis_scope",
+      "distinct_operational_act_decision"
+    ],
+    "rights_established": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_reference_recheck_committed_310986b",
+    "current_goal_turn": "progress_real_owned_invented_observation_composition_and_semantic_tamper_qualified",
+    "next_work_package": "RA-003: prepare a concrete private go/no-go review packet for one proposed host-side observation using the qualified disabled path and existing ordinary rights/provenance evidence. Separate completed engineering from the five unresolved activity decisions; bind the exact command, source pins, external decision evidence, full-pass I/O and stop criteria. Do not assemble actual activation records or perform the act; no protected-input reads, installed dependency activation or camera contact."
   }
 }

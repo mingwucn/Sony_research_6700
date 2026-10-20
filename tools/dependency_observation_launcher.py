@@ -99,7 +99,7 @@ class Library:
             if name=='tools':
                 need(fromlist and all(n in self.modules for n in fromlist),'observation_launch_import')
                 return self.package
-            need(name.split('.')[0] in {'base64','hashlib','json','os','pathlib','stat','subprocess','sys','time','types'},
+            need(name.split('.')[0] in {'ast','base64','builtins','hashlib','importlib','json','math','os','pathlib','stat','subprocess','sys','time','types'},
                  'observation_launch_import')
             return builtins.__import__(name,globals,locals,fromlist,level)
         try:
