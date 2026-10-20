@@ -69,3 +69,6 @@ contact; keep the five decisions pending.**
 
 
 Current reservation integration (2026-10-20): the child no longer accepts pre-reserved records. It prepares once, validates the complete packet/context binding, allocates an empty strict close proxy, then reserves child journals using the prepared control. Failed preparation/binding or proxy construction performs no reservation; an acquisition error is not retried. An acquired handle closes once on later failure. See [qualification](sessions/20261020-RA-003-late-record-reservation.md). The outer and operational ordinary-record migration remains pending.
+
+
+Preparation update (2026-10-20): [Separate checked preparation and pending records](OPERATIONAL_PREPARATION.md) now bind the child preparation and saved-parent engine to original metadata/source bytes. Complete outer source capture, real retained metadata/materialization integration, completion evidence and OS-derived supervision remain pending. Earlier boundary descriptions above are historical; no operational activation is qualified.

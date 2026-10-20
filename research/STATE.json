@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "disabled_engine_composition_qualified_outer_integration_pending",
+  "phase": "pending_operational_preparation_qualified_outer_process_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -288,7 +288,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: bind the disabled operational engine composition into a separately source-owned outer parent/child preparation and saved-result path. Derive its exact source map and operational ordinary/preflight/result contracts, preserving frozen supervision and observation limits. Reserve child journals through the prepared control only once; collect child completion evidence before engine-owned teardown and derive parent process facts through the owned supervisor. Qualify with invented records and intercepted runtime calls only; independently review before actual record assembly or activation. Keep five decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
+  "next_work_package": "RA-003: bind the checked preparation into a complete source-captured outer child and supervised saved-parent path. Exercise the real retained metadata gate/materialization on invented inputs, collect completion evidence before teardown, and derive parent facts from the owned process under the frozen limits. Independently review the full composition before actual record assembly or activation; retain all five pending decisions and public refusal. No installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -9842,5 +9842,61 @@
     "current_goal_turn": "progress_engine_commit_654f79b_and_late_reservation_mismatch_repaired",
     "next_work_package": "RA-003: bind the disabled operational engine composition into a separately source-owned outer parent/child preparation and saved-result path. Derive its exact source map and operational ordinary/preflight/result contracts, preserving frozen supervision and observation limits. Reserve child journals through the prepared control only once; collect child completion evidence before engine-owned teardown and derive parent process facts through the owned supervisor. Qualify with invented records and intercepted runtime calls only; independently review before actual record assembly or activation. Keep five decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
     "log_sha256": "a5c4ee0c74aa8ccd881e30a85445cf688969e45006653483cca32f56d94a539c"
+  },
+  "pending_operational_preparation": {
+    "tests": 109,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 58.93799299997045,
+    "source_pin_count": 103,
+    "stable": true,
+    "modules": [
+      "test_dependency_operational_preparation",
+      "test_dependency_operational_entry",
+      "test_dependency_successor_sources",
+      "test_dependency_adapter_binding",
+      "test_dependency_successor_wiring",
+      "test_dependency_host_launcher"
+    ],
+    "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+    "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+    "log_sha256": "8352e14e3e9c3be4b469ba20a164f8090a5846a1ef7ad39b99c211b0ad31268e",
+    "runtime_constructor_blocked": true,
+    "actual_inputs_accessed": false,
+    "camera_commands": [],
+    "qualification_interceptions": [
+      "legacy gate invocation on compact invented fixture",
+      "fresh authored source acquisition",
+      "retained callback materialization",
+      "runtime and saved-runtime dispatch"
+    ],
+    "exit_code": 0,
+    "report": "research/sessions/20261020-RA-003-operational-preparation.md",
+    "reviewed_source_sha256": {
+      "tools/dependency_operational_metadata.py": "6a61ea01bdfa9ce341890134709b8672727cac96b0b49108046823d02a312b60",
+      "tools/dependency_operational_preparation.py": "394cf49d012d76b7d04ed4fd88cf4800462c440ad6b109d32b66fd5e0b03e44d",
+      "tools/dependency_operational_sources.py": "681561e6cb43ac4c159a9b50d5e3c7bdf4c363ab583879a1e4787ec3320eeb19",
+      "tests/test_dependency_operational_preparation.py": "8660c6b431c5a52f3e21747e0e0ad90794e82f2b47838d07ae28e699b991e317"
+    },
+    "status": "pending_preparation_and_saved_parent_binding_qualified_process_integration_pending",
+    "independent_source_review": "three_ownership_repairs_accepted_no_residual_material_finding",
+    "source_owner_executable_modules": 9,
+    "source_owner_data_only_modules": 1,
+    "ordinary_pending_roles": 14,
+    "retained_byte_identical_roles": 6,
+    "pending_metadata_contracts_implemented": true,
+    "operational_outer_integrated": false,
+    "real_retained_gate_materialization_qualified": false,
+    "os_process_facts_authenticated": false,
+    "actual_activation_record_assembled": false,
+    "public_runtime_disabled": true,
+    "rights_established": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "previous_goal_turn": "progress_reference_review_committed_37433a1_separate_worktree",
+    "current_goal_turn": "progress_pending_preparation_saved_parent_binding_and_reviewed_cleanup_repairs",
+    "next_work_package": "RA-003: bind the checked preparation into a complete source-captured outer child and supervised saved-parent path. Exercise the real retained metadata gate/materialization on invented inputs, collect completion evidence before teardown, and derive parent facts from the owned process under the frozen limits. Independently review the full composition before actual record assembly or activation; retain all five pending decisions and public refusal. No installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact."
   }
 }
