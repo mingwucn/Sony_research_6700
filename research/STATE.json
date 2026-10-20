@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "pre_camera_gaps_audited_english_ftp_and_recovery_incomplete",
+  "phase": "historical_context_preflight_qualified_production_integration_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_pending_review_qualified_operational_defects_and_activity_decisions_pending",
+      "status": "partial_v6_preflight_qualified_production_integration_and_activity_decisions_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 ordinary saved metadata and authored-source review; no new protected observation or camera access",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-pending-review-preflight.md",
+      "session_report": "research/sessions/20261020-RA-003-historical-context-v6.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -102,10 +102,10 @@
       ],
       "gdt_outer_source_preparation": "research/GDT_OUTER_BINDING_PREPARATION.md",
       "latest_host_continuation": {
-        "report": "research/sessions/20261020-RA-003-pending-review-preflight.md",
-        "audit": "research/PRE_CAMERA_GAP_AUDIT.md",
-        "status": "pending_review_consistency_only_no_protected_execution",
-        "tests": 61,
+        "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
+        "audit": "research/HISTORICAL_CONTEXT_PREFLIGHT.md",
+        "status": "qualified_versioned_consistency_preflight_production_integration_pending",
+        "tests": 137,
         "actual_saved_historical_checks": 6,
         "operational_qualification": false,
         "camera_commands": []
@@ -202,7 +202,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera.",
+  "next_work_package": "RA-003: integrate the explicit v6 historical-context handoff into the existing production-preparation path, reviewing its source roster and bootstrap qualification. Qualify the complete invented preparation sequence and actual pending refusal without changing frozen originals, creating actual allow records, clearing dependency nulls, activating installed dependencies, reading protected inputs or contacting the camera.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -11186,5 +11186,62 @@
     "upstream_executed": false,
     "next_reference_work_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published, including exact target identity, file equality, security, persistence, failures and reversal.",
     "existing_ra003_continuation_preserved": true
+  },
+  "historical_context_preflight_v6_20261020": {
+    "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
+    "note": "research/HISTORICAL_CONTEXT_PREFLIGHT.md",
+    "status": "qualified_versioned_consistency_preflight_production_integration_pending",
+    "tests": 137,
+    "new_context_and_composition_cases": 20,
+    "ported_ancestry_cases": 33,
+    "retained_public_cases": 84,
+    "exit_code": 0,
+    "seconds": 51.2060939000221,
+    "source_pins": {
+      "tools/dependency_historical_gate.py": "25663aadb151d0cf9fe4b287accda99a52153bd7b12895f5b233bdee4db44459",
+      "tools/dependency_observation_outer.py": "6841937f053b86749b3d9c70a20333069acf5e3300afed879f47332ada230396",
+      "tests/dependency_historical_fixture.py": "9c5e0f2e2202822f97050069dc02478270ca5d4923d8cb18a3773769a4a0de23",
+      "tests/test_dependency_historical_gate.py": "d65c742b9d55e03c1daf700cfb21f4127ad23fc8ad8192f6dd53ec73ba2219ff",
+      "tests/test_dependency_historical_outer.py": "a80958a1839f79a96eee122e4633d1964297d8a61a822079917358784332c5b9",
+      "tests/test_dependency_observation_outer.py": "a3f712a509a166520fe6000f9672b822fc39c458af04d82f5b1ab2d172db62c7",
+      "tests/test_dependency_observation_contract.py": "c3e21ed289ec9c3166be6a8259e55bd715689288f2848cbff638f2dff45d6cf1",
+      "tests/test_dependency_pending_review.py": "10bf708d1fdab5c51ee12f4c4fc4b4d2d36299c0c7ed7900182b50088d8f81fc",
+      "tests/test_dependency_legacy_comparison.py": "810873fc9febd8b5593fcd8e331007e52f30912a7dae11c89c611dc7d375c293",
+      "tests/test_dependency_operational_preparation.py": "bc1fd99cff04b77b74181b251ac2bdf05bc6ab9a6e183cf1c6d23c5c7bdb8535"
+    },
+    "historical_inputs": 25,
+    "cached_text_receipts": 47,
+    "retained_sources": 29,
+    "original_defects_reproduced": true,
+    "current_candidate_operation_guard_preserved": true,
+    "all_five_decisions_pending": true,
+    "original_dependency_null_fields_preserved": true,
+    "full_actual_current_bundle_created": false,
+    "production_preparation_migrated": false,
+    "operational_source_roster_changed": false,
+    "protected_inputs_accessed": false,
+    "installed_dependency_activated": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_reference_pin_review_no_shared_implementation_evidence",
+    "current_goal_turn": "progress_qualified_explicit_historical_context_migration_and_original_metadata_refusal_comparison",
+    "next_single_work_package": "RA-003: integrate the explicit v6 historical-context handoff into the existing production-preparation path, reviewing its source roster and bootstrap qualification. Qualify the complete invented preparation sequence and actual pending refusal without changing frozen originals, creating actual allow records, clearing dependency nulls, activating installed dependencies, reading protected inputs or contacting the camera."
+  },
+  "historical_context_preflight_v6_20261020_prior_current_fields": {
+    "phase": "pre_camera_gaps_audited_english_ftp_and_recovery_incomplete",
+    "next_work_package": "RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera.",
+    "RA003_status": "partial_pending_review_qualified_operational_defects_and_activity_decisions_pending",
+    "RA003_latest_host_continuation": {
+      "report": "research/sessions/20261020-RA-003-pending-review-preflight.md",
+      "audit": "research/PRE_CAMERA_GAP_AUDIT.md",
+      "status": "pending_review_consistency_only_no_protected_execution",
+      "tests": 61,
+      "actual_saved_historical_checks": 6,
+      "operational_qualification": false,
+      "camera_commands": []
+    },
+    "RA003_session_report": "research/sessions/20261020-RA-003-pending-review-preflight.md"
   }
 }

@@ -201,7 +201,8 @@ class Validators:
 
 def _preflight(*, owner, proposal_arguments, review_bytes, decision_bytes,
         external_anchor_bytes, expected_external_anchor_sha256, runtime_expectation,
-        legacy_documents, legacy_expected_seal_sha256, legacy_reference_pins):
+        legacy_documents, legacy_expected_seal_sha256, legacy_reference_pins,
+        historical_migration=None):
     owner.intact()
     c = owner.modules['dependency_observation_contract']
     need(set(owner.buffers) == c.SOURCE_ROLES | ADDED, 'observation_outer_capture_roster')
@@ -221,8 +222,22 @@ def _preflight(*, owner, proposal_arguments, review_bytes, decision_bytes,
     for role in c.RETAINED:
         need(legacy_documents['inputs'].get(role) == proposal_arguments['retained_comparison_buffers'][role],
              'observation_outer_original_comparison')
-    validated = owner.modules['retained_gate'].validate_bundle(legacy_documents,
-        expected_seal_sha256=legacy_expected_seal_sha256, reference_pins=legacy_reference_pins)
+    gate = owner.modules['retained_gate']
+    if historical_migration is None:
+        validated = gate.validate_bundle(legacy_documents,
+            expected_seal_sha256=legacy_expected_seal_sha256, reference_pins=legacy_reference_pins)
+    else:
+        need(type(historical_migration) is dict and set(historical_migration) ==
+             {'context_bytes', 'expected_context_sha256', 'ancestry_proof_bytes',
+              'expected_ancestry_proof_sha256'}, 'observation_outer_migration_shape')
+        validated = gate.validate_bundle_v6(legacy_documents,
+            expected_seal_sha256=legacy_expected_seal_sha256, reference_pins=legacy_reference_pins,
+            expected_operation_id=result['operation_id'], **historical_migration)
+        need(validated['schema'] == 'gdt_outer_consistency_v6' and
+             validated['consistency_only'] is True and validated['execution_authorized'] is False and
+             validated['historical_operation_id'] != result['operation_id'] and
+             validated['current_operation_id'] == result['operation_id'],
+             'observation_outer_migration_result')
     need(validated['candidate']['operation_id'] == result['operation_id'], 'observation_outer_operation')
     selected = {n for n in owner.buffers if n.startswith('bound.')}
     need(len(selected) == 29 and all(owner.buffers[n] ==
@@ -234,7 +249,7 @@ def _preflight(*, owner, proposal_arguments, review_bytes, decision_bytes,
          identity['operational_constants']['sha256'] == validated['inputs']['prerequisites']['constants_sha256'],
          'observation_outer_protected_identity')
     owner.intact()
-    return dict(schema='disabled_observation_outer_preflight_v1',
+    output = dict(schema='disabled_observation_outer_preflight_v1',
         status='decided_scope_preflight_consistency_only', operation_id=result['operation_id'],
         contract=result, capture_receipts={n:c.receipt(b) for n,b in owner.buffers.items()},
         source_roster_delta=dict(retained_comparison_roles=51, added_validator_roles=sorted(ADDED),
@@ -248,6 +263,12 @@ def _preflight(*, owner, proposal_arguments, review_bytes, decision_bytes,
         retained_comparison_semantics_revalidated=True, legacy_authority_promoted=False,
         source_owner_closed=True, execution_integration_performed=False,
         **dict.fromkeys(FALSE, False), camera_commands=[])
+    if historical_migration is not None:
+        output.update(schema='disabled_observation_outer_preflight_v2',
+            historical_operation_id=validated['historical_operation_id'],
+            historical_context_sha256=validated['historical_context_sha256'],
+            ancestry_proof_sha256=validated['ancestry_proof_sha256'])
+    return output
 
 
 def preflight(*, capture_buffers, expected_capture_hashes, **arguments):

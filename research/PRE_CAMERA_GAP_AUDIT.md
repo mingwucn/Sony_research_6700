@@ -1,3 +1,5 @@
+Current continuation: [qualified versioned preflight](HISTORICAL_CONTEXT_PREFLIGHT.md). The dated audit below is historical; production preparation integration and all actual activity/feature/recovery gates remain incomplete. The ledger preserves the prior RA-003 row and next step.
+
 # Current pre-camera gaps: English and native FTP first
 
 2026-10-20; baseline `239b34e`. Evidence: **source-report**, **static-inference**,

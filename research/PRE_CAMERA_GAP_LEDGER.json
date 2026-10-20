@@ -29,17 +29,18 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_actionable_offline_defects",
+      "status": "partial_v6_preflight_qualified_production_integration_pending",
       "available_evidence": "Official mainland package acquired and measured; bounded tar inventory, fixed superblock study, pending review and saved historical comparison recorded.",
-      "remaining_acceptance": "Operational namespace/cross-operation incompatibility; five current activity decisions; no GDT observation, content inventory or complete component formats/body match.",
-      "next_dependency": "bounded_existing_gate_migration",
+      "remaining_acceptance": "Versioned pure preflight fixes qualified; actual production preparation still uses old gate. Five current activity decisions, complete current act records and three dependency fields remain unresolved; no GDT observation/content inventory/complete body match.",
+      "next_dependency": "existing_production_preparation_v6_context_handoff",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
         "research/TAR_LINK_INVENTORY.md",
         "research/EXT_SUPERBLOCK_OBSERVATION.md",
         "research/PENDING_REVIEW_PREFLIGHT.md",
-        "research/LEGACY_SUCCESSOR_COMPARISON.md"
+        "research/LEGACY_SUCCESSOR_COMPARISON.md",
+        "research/HISTORICAL_CONTEXT_PREFLIGHT.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1007,7 +1008,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "Repair existing demonstrated namespace and cross-operation incompatibilities, not another generic envelope.",
+    "Integrate qualified explicit historical-context handoff into existing production preparation; preserve guards and qualify without protected execution.",
     "Assess five act-specific evidence decisions from existing legitimate records before any real host observation; do not promote consent from digests.",
     "After applicable act basis and corrected operational path, separately scope necessary format/content analysis for EN-101 and FT-101. Current GDT metadata is an intermediate format question, not feature feasibility."
   ],
@@ -1067,6 +1068,30 @@
   "device_write_gate_passed": false,
   "camera_commands": [],
   "previous_goal_turn": "progress_pending_review_committed_239b34e",
-  "current_goal_turn": "progress_finite_gap_audit_and_stale_current_summaries_corrected",
-  "next_single_work_package": "RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera."
+  "current_goal_turn": "progress_qualified_explicit_historical_context_migration_and_original_metadata_refusal_comparison",
+  "next_single_work_package": "RA-003: integrate the explicit v6 historical-context handoff into the existing production-preparation path, reviewing its source roster and bootstrap qualification. Qualify the complete invented preparation sequence and actual pending refusal without changing frozen originals, creating actual allow records, clearing dependency nulls, activating installed dependencies, reading protected inputs or contacting the camera.",
+  "continuations": [
+    {
+      "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
+      "prior_RA003": {
+        "status": "partial_actionable_offline_defects",
+        "available_evidence": "Official mainland package acquired and measured; bounded tar inventory, fixed superblock study, pending review and saved historical comparison recorded.",
+        "remaining_acceptance": "Operational namespace/cross-operation incompatibility; five current activity decisions; no GDT observation, content inventory or complete component formats/body match.",
+        "next_dependency": "bounded_existing_gate_migration",
+        "evidence": [
+          "research/MAINLAND_FIRMWARE_SOURCE.md",
+          "research/FDAT_STREAM_VALIDATION.md",
+          "research/TAR_LINK_INVENTORY.md",
+          "research/EXT_SUPERBLOCK_OBSERVATION.md",
+          "research/PENDING_REVIEW_PREFLIGHT.md",
+          "research/LEGACY_SUCCESSOR_COMPARISON.md"
+        ],
+        "feature_or_device_gate_passed": false,
+        "title": "Build the official-package and local-artifact inventory"
+      },
+      "prior_next_single_work_package": "RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera.",
+      "prior_current_goal_turn": "progress_finite_gap_audit_and_stale_current_summaries_corrected",
+      "scope": "qualified_versioned_consistency_preflight_production_integration_pending"
+    }
+  ]
 }
