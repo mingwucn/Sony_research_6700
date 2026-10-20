@@ -10667,5 +10667,35 @@
     "next_work_package": "RA-003: qualify the new disabled observation launcher through real preparation and one owned supervised engine composition using complete invented legacy/source/metadata records and explicit runtime substitutions. Preserve the fixed protected-size contract, source freshness and original pending route; do not weaken guards to fit the small historical fixture. Cover saved-result tamper, drift-before-spawn and unknown completion, and independently review before actual records. Keep actual activity decisions pending and public activation disabled; no actual firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact.",
     "previous_goal_turn": "progress_reference_delta_review_committed_a64916e",
     "current_goal_turn": "progress_partial_disabled_launcher_and_cross_process_bootstrap_fix"
+  },
+  "a6700_reference_review_20261020_s": {
+    "report": "research/sessions/20261020-a6700-reference-review-s.md",
+    "commit": "2de85f1cca89b0e20ee25a70f93e04c3d34e10e5",
+    "checked_at_utc": "2026-10-20T03:34:43.909048+00:00",
+    "unchanged": true,
+    "tree_entries": 51,
+    "unchanged_blob_entries": 39,
+    "documents_blob_verified": 4,
+    "tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.9764964999631047,
+      "exit_code": 0,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]"
+    },
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit the published FTP implementation and direct camera-to-server Wi-Fi evidence when available, including exact target/region identity, file equality, security, persistence, failure handling and reversal."
   }
 }
