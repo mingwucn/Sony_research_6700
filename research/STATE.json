@@ -10783,5 +10783,40 @@
     "previous_goal_turn": "progress_reference_recheck_committed_310986b",
     "current_goal_turn": "progress_real_owned_invented_observation_composition_and_semantic_tamper_qualified",
     "next_work_package": "RA-003: prepare a concrete private go/no-go review packet for one proposed host-side observation using the qualified disabled path and existing ordinary rights/provenance evidence. Separate completed engineering from the five unresolved activity decisions; bind the exact command, source pins, external decision evidence, full-pass I/O and stop criteria. Do not assemble actual activation records or perform the act; no protected-input reads, installed dependency activation or camera contact."
+  },
+  "a6700_reference_review_t_20261020": {
+    "checked_at_utc": "2026-10-20T08:39:28.057602+00:00",
+    "report": "research/sessions/20261020-a6700-reference-review-t.md",
+    "commit": "2de85f1cca89b0e20ee25a70f93e04c3d34e10e5",
+    "tree_entries": 51,
+    "blob_entries": 39,
+    "changed_paths_from_review_s": [],
+    "documents_blob_verified": 4,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "ftp_status": "author_reported_a6700_2_00_RAW_JPEG_implementation_unpublished",
+    "english_unlock_located": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "feature_supported": false,
+    "upstream_execution_performed": false,
+    "camera_commands": [],
+    "tests": {
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "wrapper_seconds": 2.0501374000450596,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "host": "Windows-11-10.0.26300-SP0",
+      "camera_coverage": false
+    },
+    "next_reference_work_package": "FT-101: audit the published FTP implementation and direct camera-to-server Wi-Fi evidence when available, including exact target/region identity, file equality, security, persistence, failure handling and reversal.",
+    "existing_ra003_continuation_preserved": true
   }
 }
