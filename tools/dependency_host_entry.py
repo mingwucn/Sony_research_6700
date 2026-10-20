@@ -20,6 +20,10 @@ def need(condition, code="outer_entry_v2_refused"):
 def cached_module(alias, raw, path):
     need(alias not in sys.modules)
     module=ModuleType(alias);module.__file__=str(path);module.__package__=''
+    # Retained bootstrap modules use their checked AuthoredSources importer.
+    # Do not accidentally inherit a detached caller's tools-only importer when
+    # exec inserts builtins into a fresh namespace.
+    module.__builtins__=dict(vars(builtins))
     module.__spec__=importlib.machinery.ModuleSpec(alias,loader=None,origin=str(path))
     sys.modules[alias]=module
     try:exec(compile(raw,str(path),'exec'),module.__dict__)

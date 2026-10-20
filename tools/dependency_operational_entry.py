@@ -128,6 +128,7 @@ def _continue_child(*, request, request_sha256, checked_sources, adapter_owner,
     callbacks = None
     primary = None
     result = None
+    completion = None
     claimed = False
     completed = failed = False
     try:
@@ -165,7 +166,7 @@ def _continue_child(*, request, request_sha256, checked_sources, adapter_owner,
         # records would force the outer caller to prepare twice or reserve via
         # an unrelated control. Validate all pure call bindings before creating
         # any child journal; runtime dispatch still rechecks them independently.
-        adapter.bind_child(request=request, expected_request_sha256=request_sha256,
+        inputs = adapter.bind_child(request=request, expected_request_sha256=request_sha256,
             checked_sources=checked_sources, helpers=helpers,
             dependency_source_buffers=dependency_source_buffers,
             context=context, identity=identity)
@@ -188,13 +189,21 @@ def _continue_child(*, request, request_sha256, checked_sources, adapter_owner,
         need(claimed and completed and not failed and callbacks.attempted and callbacks.closed and
              not callbacks.failed and record.attempted and record.closed and not record.failed,
              'operational_child_incomplete')
+        completion = runtime_wiring._collect_completion(helpers=helpers,
+            folder=request['folder'], inputs=inputs, answer=result, control=modules['control'])
+        adapter_owner.intact()
+        helpers.intact()
+        need(hashlib.sha256(encoded(request)).hexdigest() == request_sha256,
+             'operational_request_changed')
     except BaseException as error:
         primary = error
     # Callback cleanup precedes helper/adapter/metadata cleanup. A failed close
     # attempt is never retried, and one failing owner cannot suppress the rest.
     acquired_record = record if record is not None and record.value is not None else None
     _finish(primary, (callbacks, acquired_record, helper, owner, prep))
-    return _result('child', result)
+    answer = _result('child', result)
+    answer['completion_evidence'] = completion
+    return answer
 
 
 def _reconcile_parent(*, request, request_sha256, checked_sources, adapter_owner,

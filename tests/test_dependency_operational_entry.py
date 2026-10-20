@@ -43,6 +43,7 @@ class EntryTests(unittest.TestCase):
         self.records = SimpleNamespace(close=Mock(return_value=True))
         self.control = SimpleNamespace(reserve_child=Mock(side_effect=self.reserve))
         self.wiring = SimpleNamespace(_dispatch_runtime=Mock(side_effect=self.dispatch),
+                                     _collect_completion=Mock(return_value={'invented':'completion'}),
                                      _verify_saved_runtime=Mock(return_value={'saved':'intercepted'}))
         self.context = dict(operation_id=self.request['operation_id'],deadline_seconds=300,
                             limits={'poll_seconds':0.05})
@@ -91,9 +92,31 @@ class EntryTests(unittest.TestCase):
         self.control.reserve_child.assert_called_once_with(context=self.context)
         self.assertEqual(result['side'],'child')
         self.assertEqual(result['engine_result'],{'engine':'intercepted'})
+        self.assertEqual(result['completion_evidence'],{'invented':'completion'})
         for key in ('execution_authorized','feature_supported','recovery_proven',
                     'device_write_gate_passed','production_runtime_qualified'):
             self.assertIs(result[key],False)
+        self.assert_closed()
+
+    def test_completion_collected_before_helper_and_adapter_teardown(self):
+        def collect(**kw):
+            self.helper.close.assert_not_called()
+            self.assertFalse(self.owner.closed)
+            self.callbacks.close.assert_called_once_with()
+            self.records.close.assert_called_once_with()
+            self.assertIs(kw['helpers'],self.helper)
+            self.assertEqual(kw['inputs'],self.data)
+            return {'saved':'collected_before_teardown'}
+        self.wiring._collect_completion.side_effect=collect
+        result=subject._continue_child(**self.args())
+        self.assertEqual(result['completion_evidence'],{'saved':'collected_before_teardown'})
+        self.assert_closed()
+
+    def test_completion_collection_failure_refuses_success_and_cleans_once(self):
+        self.wiring._collect_completion.side_effect=KeyboardInterrupt('completion collection interrupted')
+        with self.assertRaisesRegex(KeyboardInterrupt,'completion collection interrupted'):
+            subject._continue_child(**self.args())
+        self.wiring._collect_completion.assert_called_once()
         self.assert_closed()
 
     def test_metadata_interrupt_never_reaches_dispatch_and_closes_all(self):

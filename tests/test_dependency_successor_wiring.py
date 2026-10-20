@@ -51,6 +51,27 @@ class SuccessorWiringTests(unittest.TestCase):
         self.assertEqual(args['inputs'],self.data)
         self.closes.assert_not_called()
 
+    def test_completion_uses_fixed_saved_runtime_grammar_without_activating(self):
+        producer=types.SimpleNamespace(read_verified=Mock(return_value=(b'invented bridge',{})))
+        saved=Mock(return_value={'invented':'dependency hashes'})
+        helpers=types.SimpleNamespace(mode='child',intact=Mock(),package=types.SimpleNamespace(
+            dependency_execution=types.SimpleNamespace(validate_saved_composition=saved),
+            dependency_producer=producer))
+        control=types.SimpleNamespace(encoded=Mock(return_value=b'{"script_exit_code":0}\n'))
+        result=subject._collect_completion(helpers=helpers,folder=Path('invented'),inputs=self.data,
+            answer={'callback_result':(0,{'script_exit_code':0})},control=control)
+        saved.assert_called_once_with(Path('invented/collected'),self.data,invented=False)
+        self.assertEqual(producer.read_verified.call_count,2)
+        self.assertEqual(set(result['bridge_sha256']),{'completion.json','controller-result.json'})
+        self.assertEqual(result['stdout'],b'{"script_exit_code":0}\n')
+        self.assertEqual(helpers.intact.call_count,2)
+
+    def test_completion_rejects_parent_before_saved_reads(self):
+        helpers=types.SimpleNamespace(mode='parent',package=Mock())
+        with self.assertRaisesRegex(ValueError,'successor_helper_mode'):
+            subject._collect_completion(helpers=helpers,folder=None,inputs=None,answer=None,control=None)
+        self.assertEqual(helpers.package.mock_calls,[])
+
     def test_primary_or_unknown_controller_failure_not_retried_or_closed_by_wiring(self):
         error = KeyboardInterrupt('unknown completion')
         self.call.side_effect = error

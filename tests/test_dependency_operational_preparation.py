@@ -1,5 +1,6 @@
 """Invented pending records; protected/materialization/runtime seams intercepted."""
 import copy
+import builtins
 from pathlib import Path
 import subprocess
 import sys
@@ -275,6 +276,19 @@ class PreparationTests(unittest.TestCase):
 
 
 class SourceTests(unittest.TestCase):
+    def test_retained_bootstrap_does_not_inherit_outer_graph_importer(self):
+        buffers=texts()
+        owner=s.OuterSources(buffers=buffers,hashes={n:m.sha(b) for n,b in buffers.items()}).load()
+        alias='_checked_retained_bootstrap_test'
+        try:
+            module=owner.modules['dependency_host_entry'].cached_module(alias,b'import json\n',alias+'.py')
+            self.assertIs(module.__builtins__['__import__'],builtins.__import__)
+            self.assertIsNot(module.__builtins__,vars(builtins))
+            owner.intact()
+        finally:
+            sys.modules.pop(alias,None)
+            owner.close()
+
     def test_complete_graph_checked_before_any_execution(self):
         buffers=texts();buffers[s.ORDER[-1]]+=b'\nfrom tools import unexpected\n'
         with patch('builtins.exec',side_effect=AssertionError('must not execute')):

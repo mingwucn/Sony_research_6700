@@ -36,7 +36,7 @@ The initial loader/interpreter/stdlib are trusted assumptions. Private methods
 remain capable APIs; Python privacy and matching hashes confer no permission.
 The public runtimes refuse and direct CLIs exit 2 without activation.
 
-## Qualification and outstanding integration
+## Initial qualification
 
 The [session report](sessions/20261020-RA-003-operational-preparation.md) records
 the exact reviewed sources, test results, failed attempts and commands.
@@ -45,17 +45,48 @@ fresh-source acquisition, callback materialization and runtime/saved dispatch.
 It tests actual pending-metadata/source-owner/engine binding and ownership logic;
 it does not qualify the complete retained gate/materialization path.
 
-Actual source capture, initial bootstrap, complete ordinary metadata integration,
-child completion evidence before teardown, OS-derived parent facts and fixed
-supervision still need integration. The old invented launcher and metadata
-grammar retain their restrictions. No actual activation record was assembled.
+Those integration gaps describe the initial qualification. The continuation below
+qualifies a private invented composition; it does not activate a production path.
+The old invented launcher and metadata grammar retain their restrictions. No
+actual activation record was assembled.
 All five activity-specific decisions remain pending. Existing frozen limits,
 source lock and actual evidence are unchanged. No installed dependency/native
 activation, firmware/constants/payload access or new camera procedure occurred.
 
-Next single package: **RA-003: bind the checked preparation into a complete
-source-captured outer child and supervised saved-parent path. Exercise the real
-retained metadata gate/materialization on invented inputs, collect completion
-evidence before teardown, and derive parent facts from the owned process under
-the frozen limits. Independently review the full composition before actual
-record assembly or activation; retain pending decisions and public refusal.**
+## Source-captured invented process continuation
+
+The [rehearsal report](sessions/20261020-RA-003-preparation-rehearsal.md) records
+132 passing focused cases and three observed supervised process cases. The full
+invented case now executes the real retained gate, authored source refresh,
+callback materialization, child engine and saved-preflight parent reconciliation.
+The fixed child bootstrap checks 74 captured source roles before executing the
+child. Parent facts come from the owned OS subprocess under the frozen limits.
+An altered captured source refuses before child entry; altered saved preflight
+refuses before saved-runtime verification. Parent cleanup completed in all three.
+
+The child engine now collects completion evidence before helper teardown and
+returns it to its caller. The fixed runtime-shaped collector validates saved
+composition and hashes two bridge records; it does not activate an observer.
+Its qualification uses intercepted saved reads. The full invented rehearsal
+substitutes an invented collector, runtime dispatch and parent runtime verifier;
+it does not qualify the runtime-shaped collector end to end.
+
+Full composition exposed a real import-boundary bug: a retained bootstrap
+executed inside the outer detached loader inherited that loader's restricted
+importer. It now receives an explicit copied standard builtins dictionary and
+uses the retained checked-source importer for its own graph. Interpreter/stdlib
+and the initial bootstrap remain trusted assumptions. A regression exercises
+the outer-loaded host entry at this boundary.
+
+This process composition still resides in private qualification helpers with
+invented fixtures. It is not a reviewed production outer launcher or complete
+operational source roster. No installed native backend is activated. Successful
+invented reads/cleanup do not prove actual startup, authority, feature support,
+rollback or recoverability. All five activity-specific decisions stay pending.
+
+Next single package: **RA-003: move the qualified outer source capture,
+bootstrap/supervisor and pending-preflight/result reconciliation into a separate
+authored disabled operational launcher. Derive its actual executing source roster
+from that composition; retain fixed supervision and separate fixture generation.
+Qualify with invented inputs and explicit runtime substitutions, independently
+review, and keep actual activation and all five decisions pending.**
