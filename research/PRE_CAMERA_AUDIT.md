@@ -1,5 +1,8 @@
 # Pre-camera completion audit
 
+Current audit (2026-10-20): [finite English/FTP gap ledger](../research/PRE_CAMERA_GAP_AUDIT.md). Covers all 27 packages, 14 requirements and 44 named cases; current incomplete statuses supersede older next-step summaries without changing historical observations. No camera, protected read, feature/recovery/write pass. Next single package: RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera.
+
+
 Audit date: 2026-10-18. Code baseline:
 `fb32370052a0ffe5d8a529edba971f962ce57654`. This note audits available
 preparation against the 27 packages in [BACKLOG](../docs/BACKLOG.md), the

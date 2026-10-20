@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "pending_review_preflight_qualified_current_decisions_and_operational_migration_pending",
+  "phase": "pre_camera_gaps_audited_english_ftp_and_recovery_incomplete",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_observation_launcher_transport_qualified_full_composition_pending",
+      "status": "partial_pending_review_qualified_operational_defects_and_activity_decisions_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
-      "scope": "R0 invented source/transport/unit ownership qualification; actual activation and protected reads disabled",
+      "scope": "R0 ordinary saved metadata and authored-source review; no new protected observation or camera access",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-observation-launcher.md",
+      "session_report": "research/sessions/20261020-RA-003-pending-review-preflight.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -102,99 +102,13 @@
       ],
       "gdt_outer_source_preparation": "research/GDT_OUTER_BINDING_PREPARATION.md",
       "latest_host_continuation": {
-        "report": "research/sessions/20261019-RA-003-stream-contract-binding.md",
-        "design": "research/STREAM_CONTRACT_BINDING.md",
-        "status": "saved_binding_plan_and_nine_role_predicates_reconciled_dependency_native_policy_gaps_pending",
-        "evidence_classes": [
-          "offline-tested",
-          "static-inference"
-        ],
-        "previous_goal_turn": "progress",
-        "previous_goal_turn_scope": "Reconciled predecessor refusal and qualified/reviewed the historical stream contract correction",
-        "current_goal_turn": "progress",
-        "tests": {
-          "composition": 132,
-          "supervisor": 17,
-          "passed": 149,
-          "skipped": 0,
-          "exit_codes": [
-            0,
-            0
-          ],
-          "suite_seconds": [
-            15.346,
-            1.079
-          ],
-          "retained_composition": 110,
-          "new_binding_evidence_cases": 14,
-          "retained_contract_cases": 8
-        },
-        "source_pins_verified": 114,
-        "independent_source_reviewers": 2,
-        "independent_saved_outcome_reviewers": 2,
-        "child_exit_code": 0,
-        "host_exit_code": 0,
-        "child_wall_seconds": 0.8250808999873698,
-        "actual_attempts": 1,
-        "automatic_retry": false,
-        "passed_stages": 19,
-        "ordinary_reads": 70,
-        "ordinary_bytes": 2559882,
-        "fixed_reads": 34,
-        "supplemental_reads": 9,
-        "mapped_reads": 27,
-        "source_buffers": 47,
-        "source_bytes": 814219,
-        "effective_sources": 29,
-        "roles": 26,
-        "basis_roles": 9,
-        "pure_cached_helpers_executed": 11,
-        "namespace_aliases": 97,
-        "namespace_unchanged": true,
-        "complete_binding_plan_recomputed": true,
-        "nine_role_preflight_crossbindings_validated": true,
-        "saved_role_schema_and_derivation_checks_passed": true,
-        "semantic_sources_bound_to_qualified_helper_graph": true,
-        "historical_stream_producer_hash_bound": true,
-        "predecessor_plan_and_basis_digest_equal": true,
-        "source_sha256": "affdc69d2ba9bcceb55242e180b434c53dcc5d0933997e83b7edf442d661d0ce",
-        "supervisor_sha256": "fb7e463be647bc7795a2e8fd75c9677c7efb9df5b42183113d8b86fc27829d29",
-        "freeze_sha256": "d0c03af5dcb02102835dd2c7ff80a82b229a6ce82061426d66668c550eead899",
-        "result_sha256": "97e8e6e6f2737dc0c2ef77d81aa75c9bb37938c4c345e2179f260c2597326da9",
-        "ledger_sha256": "870906716602b2cfabafe7d93f493e26da6aba338c03af612bdb02b13fc51329",
-        "completion_sha256": "b9db48bb7ae1888ddefd3d28ecd441d332c23fd168ada341137bad7f2e6b9e8f",
-        "verification_sha256": "d082582cd387f8382212c2b1163386a1ce63601c8543e940fdaf5d31653ae332",
-        "source_review_sha256": {
-          "gate-contract-binding-source-review.json": "33b794fb79ddef8c916300a990a9bf84cc954986832c9b4c3c6f6f4cfef114bc",
-          "runtime-contract-binding-source-review.json": "b2114d4a8a0c05004767f22cd8571efc189d3021727ffdd8b2b2a9d5118152ba"
-        },
-        "outcome_review_sha256": {
-          "gate-contract-binding-outcome-review.json": "1c79996e53e9fceb6490c1352d45ebf8e1eb8b05d0b212144263fd8a211631e2",
-          "runtime-contract-binding-outcome-review.json": "820be0ab208e65654e02c88d38f1e68e380350564215629f723fbf4788f9dacb"
-        },
-        "retained_binding_blockers": [
-          "dependency_manifest_unobserved",
-          "native_policy_unobserved"
-        ],
-        "complete_saved_basis_semantic_revalidation": false,
-        "raw_observations_verified": false,
-        "historical_events_authenticated": false,
-        "source_authority_binding_complete": false,
-        "operational_acceptance": false,
-        "execution_authorized": false,
-        "firmware_opened": false,
-        "operational_constants_opened": false,
-        "saved_raw_prefix_opened": false,
-        "installed_dependency_executed": false,
-        "protected_cached_sources_executed": false,
-        "private_upload": false,
-        "independently_reproduced": false,
-        "english_supported": false,
-        "native_ftp_supported": false,
-        "recovery_proven": false,
-        "device_write_gate_passed": false,
-        "camera_commands": [],
-        "next_single_work_package": "RA-003: audit each production dependency-manifest/native-policy predicate against existing saved dependency-only receipts and pinned source schemas, then qualify a closed proposal on invented inputs; no blocker clearing, dependency loading or protected-input execution."
+        "report": "research/sessions/20261020-RA-003-pending-review-preflight.md",
+        "audit": "research/PRE_CAMERA_GAP_AUDIT.md",
+        "status": "pending_review_consistency_only_no_protected_execution",
+        "tests": 61,
+        "actual_saved_historical_checks": 6,
+        "operational_qualification": false,
+        "camera_commands": []
       },
       "status_history": [
         {
@@ -208,7 +122,7 @@
       "parent_migration": "research/DEPENDENCY_PARENT_MIGRATION.md",
       "operational_binding_specification": "research/OPERATIONAL_BINDING_SPEC.md",
       "successor_helpers": "research/SUCCESSOR_HELPER_LOADERS.md",
-      "latest_report": "research/sessions/20261020-RA-003-current-metadata.md",
+      "latest_report": "research/sessions/20261020-pre-camera-gap-audit.md",
       "prepared_adapter_binding": "research/SUCCESSOR_ADAPTER_BINDING.md",
       "isolated_adapter_integration": "research/ISOLATED_ADAPTER_INTEGRATION.md",
       "launch_context_binding": "research/LAUNCH_CONTEXT_BINDING.md",
@@ -288,7 +202,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: integrate the qualified observation preflight and saved comparison into a separate disabled launcher path with explicit observation review/decision/anchor inputs. Derive the executing source-roster delta and exact fourteen-role record projection, retain the existing pending path, and qualify the full invented bundle through owned supervision with explicit runtime substitutions. Independently review before actual record assembly. Keep actual activation disabled and all five activity decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
+  "next_work_package": "RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -324,7 +238,7 @@
       "priority": "primary",
       "status": "owner_reports_english_absent_mainland_version_feasibility_unverified",
       "camera_validated": false,
-      "progress": "Owner reports mainland alpha6700 2.00 with English unavailable; native English resources/restriction mechanism remains unmapped. Shared RA-003 now qualifies the guarded dependency/controller continuation on 51 invented cases and reconciles a complete nine-role saved metadata basis. Prospective factory source/AST review only; no actual GDT replay, new feature mapping, body correspondence, recovery or write gate.",
+      "progress": "Owner reports English unavailable; exact resources/restriction not mapped. Latest shared review checks ordinary saved metadata (61 focused tests); no protected operational qualification or feature/recovery/write acceptance.",
       "blockers": [
         "Lawfully inspectable matching exact-build artifacts and regional applicability; exact SKU/internal product identity and binary hashes unverified",
         "Distinguish present-but-restricted English resources from missing/incomplete resources; prove narrow language policy and all consumers before any candidate"
@@ -391,12 +305,19 @@
         "research/GDT_RUNTIME_INTEGRATION.md",
         "research/sessions/20261019-RA-003-gdt-runtime-integration.md",
         "research/GDT_OUTER_BINDING_PREPARATION.md",
-        "research/sessions/20261019-RA-003-gdt-source-cache.md"
+        "research/sessions/20261019-RA-003-gdt-source-cache.md",
+        "research/PRE_CAMERA_GAP_AUDIT.md"
       ],
       "progress_history": [
         {
           "before_package": "research/sessions/20261019-RA-003-gdt-runtime-integration.md",
           "progress": "Owner reports alpha6700 version 2.00, current Simplified Chinese, Chinese mainland version and English unavailable (source-report). Language hypotheses, preservation rules and critical-resource plan prepared; no exact-build resource or restriction mechanism established. No target change. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established. A later metadata-only tar trial stopped at the fixed unsafe_path guard; no directory was accepted. That earlier trial did not identify the first refused field/category; the later diagnostic below supplies it. No feature conclusion follows. A later full-lineage diagnostic identifies the first refused field as link_target, origin header, predicate empty_or_parent_component. That diagnostic stopped semantic parsing and accepted no directory or feature. A separately qualified opaque-link metadata policy now permits a private directory inventory of 137 members after complete source/stream/header/span/prefix and tar framing checks. Links are not followed or materialized; no child formats, English resources or native FTP implementation are established. A later full-lineage selected-member prefix experiment checked five regular image-category candidates, 4,096 bytes each, against an exactly matching fresh directory. All five were unknown/unsupported_opaque under the fixed classifier; this does not prove format, English-resource or FTP-backend absence. Raw prefixes were discarded; no child files or feature result. Four pinned public image-parser sources and their published MIT notice were audited; separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates passed synthetic qualification. They remain unintegrated and were not applied to firmware; the five earlier unknown outcomes and all feature/device gates are unchanged. One same-five expanded-header trial was refused at acceptance (needs_review); no expanded result or fresh lineage accepted. Static metadata review identifies float timing fields rejected by the new freezer. Earlier five unknown results remain unchanged; production-summary preflight is next, with no actual replay. Production-summary metadata preflight is qualified offline (320/320 cases, 42 new plus 278 retained). Only four documented root timing positions admit finite nonnegative built-in floats; all fields and exact types remain preserved. The previous expanded trial stays needs_review with no accepted expanded result. A separately frozen runner and comparison remain next; no firmware reread or camera action in this package. One separately frozen same-five comparison passed its complete lineage and original-outcome checks; limited expanded header leads were recorded after pre-I/O metadata preflight. Earlier unknown outcomes and the historical failed trial remain unchanged. These header checks do not establish English resources, native FTP backend, exact-body correspondence or working features. Pinned primary ext-family format sources and their GPL notices were reviewed; an independently authored fixed-superblock metadata observer passed synthetic cases. No actual member geometry, contents, English resources or native FTP backend was observed; every prior result and analysis act remains unchanged. A bounded ext-superblock metadata-observation runner was qualified with invented inputs and synthetic lineage/callback checks. Its actual use remains separately scoped; no new member geometry, English resources or native FTP backend was observed. Prior actual results and analysis acts remain unchanged. One separately frozen two-lead fixed-superblock metadata observation completed after full prior inventory and all-five outcome reconciliation. Only fixed scalar metadata and conservative blockers are in scope; no English resource, native FTP backend, filesystem, usable read plan, exact-body or recovery/write result follows. All prior results remain unchanged. An independently authored classic ext metadata planner now passes synthetic qualification, including count/inode/group placement rules and primary-GDT/root-record range proposals on invented buffers. No saved actual metadata or firmware was applied to the planner; all earlier actual results and analysis acts remain unchanged. No English resource, native FTP backend, filesystem, authorized actual read, exact-body correspondence or recovery/write result follows. Shared RA-003 now freezes a two-phase primary-GDT metadata scope with full lineage and byte accounting. No actual observation or English/native FTP mapping follows; a new runner remains unimplemented. Shared RA-003 now synthetically qualifies a two-phase primary-GDT runner/gate with descriptor-only projections and independently reported source telemetry. Actual-I/O instrumentation remains a separate package; no actual fields or feature mappings were observed. Shared RA-003 now qualifies the primary-GDT file adapter and exclusive supervision on invented files/inert children. Actual bindings remain source/AST-reviewed and inactive; no actual feature mapping was observed. Shared RA-003 now qualifies closed activation and binding policies on invented inputs; the current seal prohibits execution and the operational basis, actual dependency proofs and act assessment remain pending. No feature mapping was observed. Shared RA-003 now records actual wheel/installed/runtime descriptor-data provenance; native loading remains unobserved, old origin/startup/receipt source gaps block operational use, and no firmware replay or feature mapping occurred."
+        },
+        {
+          "updated_on": "2026-10-20",
+          "progress": "Owner reports mainland alpha6700 2.00 with English unavailable; native English resources/restriction mechanism remains unmapped. Shared RA-003 now qualifies the guarded dependency/controller continuation on 51 invented cases and reconciles a complete nine-role saved metadata basis. Prospective factory source/AST review only; no actual GDT replay, new feature mapping, body correspondence, recovery or write gate.",
+          "scope": "pre-gap-audit current summary preserved verbatim",
+          "superseded_by": "research/PRE_CAMERA_GAP_AUDIT.md"
         }
       ]
     },
@@ -405,7 +326,7 @@
       "priority": "primary",
       "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified",
       "camera_validated": false,
-      "progress": "Host protocol foundation and static BusyBox FTP source leads remain distinct from an unproved native camera backend/media/network/lifecycle. Shared RA-003 now qualifies the guarded dependency/controller continuation on 51 invented cases and reconciles a complete nine-role saved metadata basis. Prospective factory source/AST review only; no actual GDT replay, new feature mapping, body correspondence, recovery or write gate.",
+      "progress": "Static source leads and external author report remain unverified on this body; no accepted native transfer. Latest shared review checks ordinary saved metadata (61 focused tests); no protected operational qualification or feature/recovery/write acceptance.",
       "blockers": [
         "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
@@ -472,12 +393,19 @@
         "research/GDT_RUNTIME_INTEGRATION.md",
         "research/sessions/20261019-RA-003-gdt-runtime-integration.md",
         "research/GDT_OUTER_BINDING_PREPARATION.md",
-        "research/sessions/20261019-RA-003-gdt-source-cache.md"
+        "research/sessions/20261019-RA-003-gdt-source-cache.md",
+        "research/PRE_CAMERA_GAP_AUDIT.md"
       ],
       "progress_history": [
         {
           "before_package": "research/sessions/20261019-RA-003-gdt-runtime-integration.md",
           "progress": "Durable mock queue and 19 constrained loopback FTPS cases passed. Both owner-approved Sony version 2.00 BusyBox source configs enable FTPGET/FTPPUT and specs list their install paths; reviewed FTP client flow is plain FTP. Final configuration, binary/body correspondence and camera-resident invocation/media/lifecycle remain unverified. No native transfer performed. Shared RA-003 now records bounded SquashFS v4 and ustar prefix candidates after complete source/stream/header/span lineage revalidation. No component contents, English resources/restrictions, native FTP binary/invocation or body correspondence is established. A later metadata-only tar trial stopped at the fixed unsafe_path guard; no directory was accepted. That earlier trial did not identify the first refused field/category; the later diagnostic below supplies it. No feature conclusion follows. A later full-lineage diagnostic identifies the first refused field as link_target, origin header, predicate empty_or_parent_component. That diagnostic stopped semantic parsing and accepted no directory or feature. A separately qualified opaque-link metadata policy now permits a private directory inventory of 137 members after complete source/stream/header/span/prefix and tar framing checks. Links are not followed or materialized; no child formats, English resources or native FTP implementation are established. A later full-lineage selected-member prefix experiment checked five regular image-category candidates, 4,096 bytes each, against an exactly matching fresh directory. All five were unknown/unsupported_opaque under the fixed classifier; this does not prove format, English-resource or FTP-backend absence. Raw prefixes were discarded; no child files or feature result. Four pinned public image-parser sources and their published MIT notice were audited; separate bounded AXFS/ext-family/legacy-FAT/LZPT header predicates passed synthetic qualification. They remain unintegrated and were not applied to firmware; the five earlier unknown outcomes and all feature/device gates are unchanged. One same-five expanded-header trial was refused at acceptance (needs_review); no expanded result or fresh lineage accepted. Static metadata review identifies float timing fields rejected by the new freezer. Earlier five unknown results remain unchanged; production-summary preflight is next, with no actual replay. Production-summary metadata preflight is qualified offline (320/320 cases, 42 new plus 278 retained). Only four documented root timing positions admit finite nonnegative built-in floats; all fields and exact types remain preserved. The previous expanded trial stays needs_review with no accepted expanded result. A separately frozen runner and comparison remain next; no firmware reread or camera action in this package. One separately frozen same-five comparison passed its complete lineage and original-outcome checks; limited expanded header leads were recorded after pre-I/O metadata preflight. Earlier unknown outcomes and the historical failed trial remain unchanged. These header checks do not establish English resources, native FTP backend, exact-body correspondence or working features. Pinned primary ext-family format sources and their GPL notices were reviewed; an independently authored fixed-superblock metadata observer passed synthetic cases. No actual member geometry, contents, English resources or native FTP backend was observed; every prior result and analysis act remains unchanged. A bounded ext-superblock metadata-observation runner was qualified with invented inputs and synthetic lineage/callback checks. Its actual use remains separately scoped; no new member geometry, English resources or native FTP backend was observed. Prior actual results and analysis acts remain unchanged. One separately frozen two-lead fixed-superblock metadata observation completed after full prior inventory and all-five outcome reconciliation. Only fixed scalar metadata and conservative blockers are in scope; no English resource, native FTP backend, filesystem, usable read plan, exact-body or recovery/write result follows. All prior results remain unchanged. An independently authored classic ext metadata planner now passes synthetic qualification, including count/inode/group placement rules and primary-GDT/root-record range proposals on invented buffers. No saved actual metadata or firmware was applied to the planner; all earlier actual results and analysis acts remain unchanged. No English resource, native FTP backend, filesystem, authorized actual read, exact-body correspondence or recovery/write result follows. Shared RA-003 now freezes a two-phase primary-GDT metadata scope with full lineage and byte accounting. No actual observation or English/native FTP mapping follows; a new runner remains unimplemented. Shared RA-003 now synthetically qualifies a two-phase primary-GDT runner/gate with descriptor-only projections and independently reported source telemetry. Actual-I/O instrumentation remains a separate package; no actual fields or feature mappings were observed. Shared RA-003 now qualifies the primary-GDT file adapter and exclusive supervision on invented files/inert children. Actual bindings remain source/AST-reviewed and inactive; no actual feature mapping was observed. Shared RA-003 now qualifies closed activation and binding policies on invented inputs; the current seal prohibits execution and the operational basis, actual dependency proofs and act assessment remain pending. No feature mapping was observed. Shared RA-003 now records actual wheel/installed/runtime descriptor-data provenance; native loading remains unobserved, old origin/startup/receipt source gaps block operational use, and no firmware replay or feature mapping occurred."
+        },
+        {
+          "updated_on": "2026-10-20",
+          "progress": "Host protocol foundation and static BusyBox FTP source leads remain distinct from an unproved native camera backend/media/network/lifecycle. Shared RA-003 now qualifies the guarded dependency/controller continuation on 51 invented cases and reconciles a complete nine-role saved metadata basis. Prospective factory source/AST review only; no actual GDT replay, new feature mapping, body correspondence, recovery or write gate.",
+          "scope": "pre-gap-audit current summary preserved verbatim",
+          "superseded_by": "research/PRE_CAMERA_GAP_AUDIT.md"
         }
       ]
     },
@@ -865,7 +793,7 @@
     "pr_merge_checkout": "ad726f40a0bfc20aa565da704425140846c4dc19",
     "pr_merge_tree_matches_code": true
   },
-  "pre_camera_completion_audit": "research/PRE_CAMERA_AUDIT.md",
+  "pre_camera_completion_audit": "research/PRE_CAMERA_GAP_AUDIT.md",
   "public_source_availability": {
     "checked_on": "2026-10-18",
     "evidence_class": "source-report",
@@ -11108,5 +11036,132 @@
     "final_collector_sha256": "b5ca3cafef3863ef40032e73a0756b5712ac42e59921c46bb242803b792c05e1",
     "final_source_only_review_accepted": true,
     "final_eof_correction_ast_unchanged": true
+  },
+  "pre_camera_gap_audit_20261020": {
+    "status": "finite_gap_audit_incomplete_goal",
+    "assessment": "research/PRE_CAMERA_GAP_AUDIT.md",
+    "ledger": "research/PRE_CAMERA_GAP_LEDGER.json",
+    "report": "research/sessions/20261020-pre-camera-gap-audit.md",
+    "baseline_commit": "239b34e376433a14c7b618c02e487b14d8ab4063",
+    "packages": 27,
+    "requirements": 14,
+    "validation_cases": 44,
+    "gates": 7,
+    "risk_tiers": 6,
+    "previous_goal_turn": "progress_pending_review_committed_239b34e",
+    "current_goal_turn": "progress_finite_gap_audit_and_stale_current_summaries_corrected",
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_work_package": "RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera."
+  },
+  "pre_camera_gap_ledger": "research/PRE_CAMERA_GAP_LEDGER.json",
+  "current_summary_before_gap_audit_20261020": {
+    "phase": "pending_review_preflight_qualified_current_decisions_and_operational_migration_pending",
+    "next_work_package": "RA-003: integrate the qualified observation preflight and saved comparison into a separate disabled launcher path with explicit observation review/decision/anchor inputs. Derive the executing source-roster delta and exact fourteen-role record projection, retain the existing pending path, and qualify the full invented bundle through owned supervision with explicit runtime substitutions. Independently review before actual record assembly. Keep actual activation disabled and all five activity decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact.",
+    "pre_camera_completion_audit": "research/PRE_CAMERA_AUDIT.md",
+    "ra003_current": {
+      "status": "partial_observation_launcher_transport_qualified_full_composition_pending",
+      "scope": "R0 invented source/transport/unit ownership qualification; actual activation and protected reads disabled",
+      "session_report": "research/sessions/20261020-RA-003-observation-launcher.md",
+      "latest_report": "research/sessions/20261020-RA-003-current-metadata.md",
+      "latest_host_continuation": {
+        "report": "research/sessions/20261019-RA-003-stream-contract-binding.md",
+        "design": "research/STREAM_CONTRACT_BINDING.md",
+        "status": "saved_binding_plan_and_nine_role_predicates_reconciled_dependency_native_policy_gaps_pending",
+        "evidence_classes": [
+          "offline-tested",
+          "static-inference"
+        ],
+        "previous_goal_turn": "progress",
+        "previous_goal_turn_scope": "Reconciled predecessor refusal and qualified/reviewed the historical stream contract correction",
+        "current_goal_turn": "progress",
+        "tests": {
+          "composition": 132,
+          "supervisor": 17,
+          "passed": 149,
+          "skipped": 0,
+          "exit_codes": [
+            0,
+            0
+          ],
+          "suite_seconds": [
+            15.346,
+            1.079
+          ],
+          "retained_composition": 110,
+          "new_binding_evidence_cases": 14,
+          "retained_contract_cases": 8
+        },
+        "source_pins_verified": 114,
+        "independent_source_reviewers": 2,
+        "independent_saved_outcome_reviewers": 2,
+        "child_exit_code": 0,
+        "host_exit_code": 0,
+        "child_wall_seconds": 0.8250808999873698,
+        "actual_attempts": 1,
+        "automatic_retry": false,
+        "passed_stages": 19,
+        "ordinary_reads": 70,
+        "ordinary_bytes": 2559882,
+        "fixed_reads": 34,
+        "supplemental_reads": 9,
+        "mapped_reads": 27,
+        "source_buffers": 47,
+        "source_bytes": 814219,
+        "effective_sources": 29,
+        "roles": 26,
+        "basis_roles": 9,
+        "pure_cached_helpers_executed": 11,
+        "namespace_aliases": 97,
+        "namespace_unchanged": true,
+        "complete_binding_plan_recomputed": true,
+        "nine_role_preflight_crossbindings_validated": true,
+        "saved_role_schema_and_derivation_checks_passed": true,
+        "semantic_sources_bound_to_qualified_helper_graph": true,
+        "historical_stream_producer_hash_bound": true,
+        "predecessor_plan_and_basis_digest_equal": true,
+        "source_sha256": "affdc69d2ba9bcceb55242e180b434c53dcc5d0933997e83b7edf442d661d0ce",
+        "supervisor_sha256": "fb7e463be647bc7795a2e8fd75c9677c7efb9df5b42183113d8b86fc27829d29",
+        "freeze_sha256": "d0c03af5dcb02102835dd2c7ff80a82b229a6ce82061426d66668c550eead899",
+        "result_sha256": "97e8e6e6f2737dc0c2ef77d81aa75c9bb37938c4c345e2179f260c2597326da9",
+        "ledger_sha256": "870906716602b2cfabafe7d93f493e26da6aba338c03af612bdb02b13fc51329",
+        "completion_sha256": "b9db48bb7ae1888ddefd3d28ecd441d332c23fd168ada341137bad7f2e6b9e8f",
+        "verification_sha256": "d082582cd387f8382212c2b1163386a1ce63601c8543e940fdaf5d31653ae332",
+        "source_review_sha256": {
+          "gate-contract-binding-source-review.json": "33b794fb79ddef8c916300a990a9bf84cc954986832c9b4c3c6f6f4cfef114bc",
+          "runtime-contract-binding-source-review.json": "b2114d4a8a0c05004767f22cd8571efc189d3021727ffdd8b2b2a9d5118152ba"
+        },
+        "outcome_review_sha256": {
+          "gate-contract-binding-outcome-review.json": "1c79996e53e9fceb6490c1352d45ebf8e1eb8b05d0b212144263fd8a211631e2",
+          "runtime-contract-binding-outcome-review.json": "820be0ab208e65654e02c88d38f1e68e380350564215629f723fbf4788f9dacb"
+        },
+        "retained_binding_blockers": [
+          "dependency_manifest_unobserved",
+          "native_policy_unobserved"
+        ],
+        "complete_saved_basis_semantic_revalidation": false,
+        "raw_observations_verified": false,
+        "historical_events_authenticated": false,
+        "source_authority_binding_complete": false,
+        "operational_acceptance": false,
+        "execution_authorized": false,
+        "firmware_opened": false,
+        "operational_constants_opened": false,
+        "saved_raw_prefix_opened": false,
+        "installed_dependency_executed": false,
+        "protected_cached_sources_executed": false,
+        "private_upload": false,
+        "independently_reproduced": false,
+        "english_supported": false,
+        "native_ftp_supported": false,
+        "recovery_proven": false,
+        "device_write_gate_passed": false,
+        "camera_commands": [],
+        "next_single_work_package": "RA-003: audit each production dependency-manifest/native-policy predicate against existing saved dependency-only receipts and pinned source schemas, then qualify a closed proposal on invented inputs; no blocker clearing, dependency loading or protected-input execution."
+      }
+    }
   }
 }

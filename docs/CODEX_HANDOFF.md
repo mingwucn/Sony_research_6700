@@ -1,5 +1,8 @@
 # Webchat to local Codex hand-off
 
+Current audit (2026-10-20): [finite English/FTP gap ledger](../research/PRE_CAMERA_GAP_AUDIT.md). Covers all 27 packages, 14 requirements and 44 named cases; current incomplete statuses supersede older next-step summaries without changing historical observations. No camera, protected read, feature/recovery/write pass. Next single package: RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera.
+
+
 ## 1. Read this before the first command
 
 This is an initial research hand-off, not an alpha6700 installer. The owner's repository was empty when the project was initialized. No camera was available to webchat. No alpha6700 firmware/build, regional SKU, service route, target offset, recovery mechanism or requested feature was validated.

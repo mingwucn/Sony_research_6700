@@ -1,0 +1,1072 @@
+{
+  "schema": "pre_camera_gap_audit_v1",
+  "date": "2026-10-20",
+  "baseline_commit": "239b34e376433a14c7b618c02e487b14d8ab4063",
+  "scope": "ordinary_local_evidence_audit_not_feature_or_gate_acceptance",
+  "packages": {
+    "RA-001": {
+      "status": "offline_scope_recorded_intake_partial",
+      "available_evidence": "Host baseline/intake and historical test diagnosis; owner reports mainland a6700 2.00 and English absent.",
+      "remaining_acceptance": "Remaining modification/repair, health, cable/apps, power/media, repair tolerance and separate-storage facts unknown. No repeat generic intake request.",
+      "next_dependency": "owner_existing_records_when_available",
+      "evidence": [
+        "docs/OWNER_INTAKE.md",
+        "research/TARGET_EVIDENCE_GAPS.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Reproduce the workspace and complete the owner intake"
+    },
+    "RA-002": {
+      "status": "static_scope_recorded_reuse_partial",
+      "available_evidence": "Reference revisions and entry-point/component-rights audit.",
+      "remaining_acceptance": "Exact-target applicability, inherited code rights and native source/binary correspondence.",
+      "next_dependency": "selected_component_evidence",
+      "evidence": [
+        "research/REFERENCE_AUDIT.md",
+        "research/sessions/20261020-a6700-reference-review-t.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Pin and audit reference code and reuse rights"
+    },
+    "RA-003": {
+      "status": "partial_actionable_offline_defects",
+      "available_evidence": "Official mainland package acquired and measured; bounded tar inventory, fixed superblock study, pending review and saved historical comparison recorded.",
+      "remaining_acceptance": "Operational namespace/cross-operation incompatibility; five current activity decisions; no GDT observation, content inventory or complete component formats/body match.",
+      "next_dependency": "bounded_existing_gate_migration",
+      "evidence": [
+        "research/MAINLAND_FIRMWARE_SOURCE.md",
+        "research/FDAT_STREAM_VALIDATION.md",
+        "research/TAR_LINK_INVENTORY.md",
+        "research/EXT_SUPERBLOCK_OBSERVATION.md",
+        "research/PENDING_REVIEW_PREFLIGHT.md",
+        "research/LEGACY_SUCCESSOR_COMPARISON.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Build the official-package and local-artifact inventory"
+    },
+    "RA-004": {
+      "status": "partial_owner_report_no_access",
+      "available_evidence": "Normal-UI observation dossier; owner version/market/English-absence reports.",
+      "remaining_acceptance": "Exact SKU/build consistency and command-level access proposal. Published Pico route executes RAM code; macOS reference is not Windows/body qualification.",
+      "next_dependency": "owner_observation_and_separate_device_approval",
+      "evidence": [
+        "research/TARGET_EVIDENCE_GAPS.md",
+        "research/sessions/20261020-a6700-reference-review-t.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Establish identity and review an access route"
+    },
+    "RA-005": {
+      "status": "awaiting_body_acquisition",
+      "available_evidence": "Coverage/catalogue requirements.",
+      "remaining_acceptance": "Exact-body changed/protected objects; independent reads where appropriate; two verified storage copies and complete coverage.",
+      "next_dependency": "approved_exact_target_acquisition",
+      "evidence": [
+        "research/TARGET_EVIDENCE_GAPS.md",
+        "docs/ACCESS_AND_RECOVERY.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Acquire and verify original-state coverage"
+    },
+    "RA-006": {
+      "status": "partial_architecture_recovery_unknown",
+      "available_evidence": "Mapping and failure-state questions documented.",
+      "remaining_acceptance": "Exact AP/CP/resource/settings/loading ABI and reachable recovery for each relevant failure state; no complete restore demonstrated.",
+      "next_dependency": "legitimate_target_artifacts_and_recovery_evidence",
+      "evidence": [
+        "research/TARGET_EVIDENCE_GAPS.md",
+        "docs/ACCESS_AND_RECOVERY.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Map architecture, storage, persistence and recovery"
+    },
+    "RA-007": {
+      "status": "generic_host_scope_recorded_target_pending",
+      "available_evidence": "Generic candidate/inverse models, durable synthetic journal and host refusal tests.",
+      "remaining_acceptance": "Exact target bytes, fields, control flow, preservation, inverse and any executor qualification.",
+      "next_dependency": "accepted_target_candidate",
+      "evidence": [
+        "docs/DURABLE_SYNTHETIC_JOURNAL.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Implement offline candidate guards and transaction models"
+    },
+    "EN-101": {
+      "status": "partial_no_target_feasibility",
+      "available_evidence": "English absence owner-reported; policy/resource alternatives and critical-screen plan.",
+      "remaining_acceptance": "Legitimate matching resources; locale enumeration, every restriction-field consumer, critical resources/fonts/layouts. Package version is not body identity.",
+      "next_dependency": "legitimate_content_analysis_after_applicable_act_basis",
+      "evidence": [
+        "docs/ENGLISH_LANGUAGE.md",
+        "research/TARGET_EVIDENCE_GAPS.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Resolve language/resources and the no-change option"
+    },
+    "EN-102": {
+      "status": "awaiting_feasibility_and_recovery",
+      "available_evidence": "Narrow settings-first/program alternative and inverse specification.",
+      "remaining_acceptance": "Accepted EN-101 route and target-specific source/settings, inverse and G4 prerequisites.",
+      "next_dependency": "EN-101_RA-005_006_007",
+      "evidence": [
+        "docs/ENGLISH_LANGUAGE.md",
+        "docs/ACCESS_AND_RECOVERY.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Build a narrow candidate and inverse"
+    },
+    "EN-103": {
+      "status": "hardware_not_run",
+      "available_evidence": "ENT-01 through ENT-06 and shared regression procedure.",
+      "remaining_acceptance": "Approved candidate, native screens, persistence, complete protected-state comparison and safe controlled inverse.",
+      "next_dependency": "approved_exact_body_trial",
+      "evidence": [
+        "docs/ENGLISH_LANGUAGE.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Validate English on the body and reverse deliberately"
+    },
+    "EN-104": {
+      "status": "awaiting_relevant_features",
+      "available_evidence": "Resource/uninstall dependency requirements.",
+      "remaining_acceptance": "ENT-07 only for actually combined features; English need not wait for deferred looks.",
+      "next_dependency": "accepted_features_being_combined",
+      "evidence": [
+        "docs/ENGLISH_LANGUAGE.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Integrate English resource and uninstall dependencies"
+    },
+    "CL-101": {
+      "status": "deferred",
+      "available_evidence": "Planning and generic host controls retained.",
+      "remaining_acceptance": "Private stock/photo repeatability and recipe baseline.",
+      "next_dependency": "deferred_not_prerequisite_to_english_or_ftp",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Establish stock photographic and slot baselines"
+    },
+    "CL-102": {
+      "status": "deferred",
+      "available_evidence": "Planning and generic host controls retained.",
+      "remaining_acceptance": "Exact AP-to-CP still/preview/selection/metadata/control-flow chain.",
+      "next_dependency": "deferred_not_prerequisite_to_english_or_ftp",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Map the full target AP-to-CP chain"
+    },
+    "CL-103": {
+      "status": "deferred",
+      "available_evidence": "Planning and generic host controls retained.",
+      "remaining_acceptance": "Legitimate donor inputs/format, target capacity and owned placement.",
+      "next_dependency": "deferred_not_prerequisite_to_english_or_ftp",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Specify and adapt donor look data"
+    },
+    "CL-104": {
+      "status": "deferred",
+      "available_evidence": "Planning and generic host controls retained.",
+      "remaining_acceptance": "Exact coherent bounded candidate/inverse and protected control-flow review.",
+      "next_dependency": "deferred_not_prerequisite_to_english_or_ftp",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Generate the coherent FL23 candidate and inverse"
+    },
+    "CL-105": {
+      "status": "deferred",
+      "available_evidence": "Planning and generic host controls retained.",
+      "remaining_acceptance": "Approved physical still/preservation/default/metadata results.",
+      "next_dependency": "deferred_not_prerequisite_to_english_or_ftp",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Validate stills, metadata, defaults and preservation"
+    },
+    "CL-106": {
+      "status": "deferred",
+      "available_evidence": "Planning and generic host controls retained.",
+      "remaining_acceptance": "Physical preview switching, state transitions, persistence and performance.",
+      "next_dependency": "deferred_not_prerequisite_to_english_or_ftp",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Qualify preview and load-state behaviour"
+    },
+    "CL-107": {
+      "status": "deferred_separately_gated",
+      "available_evidence": "Planning and generic host controls retained.",
+      "remaining_acceptance": "Stable FL2/FL3 baseline plus calibrated colour domain, holdout inputs and target slot ownership.",
+      "next_dependency": "deferred_not_prerequisite_to_english_or_ftp",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Add calibrated selected-slot custom looks"
+    },
+    "FT-101": {
+      "status": "partial_static_leads_no_native_route",
+      "available_evidence": "BusyBox source config/app text leads and author-reported a6700 2.00 RAW+JPEG FTP success; implementation unpublished in pinned audit.",
+      "remaining_acceptance": "Target UI/config/task/media/network/credentials/lifecycle and ABI chain; direct Wi-Fi/file equality/security evidence. No new public recheck this session.",
+      "next_dependency": "legitimate_target_analysis_or_published_implementation",
+      "evidence": [
+        "docs/FTP.md",
+        "research/sessions/20261020-a6700-reference-review-t.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Survey native backend and dependency evidence"
+    },
+    "FT-102": {
+      "status": "host_scope_recorded_native_constraints_pending",
+      "available_evidence": "Mock queue and 19-case constrained loopback FTPS with hash readback; specific peer only.",
+      "remaining_acceptance": "Chosen deployment peer/protocol, target constraints and physical lifecycle; no reason to add speculative servers now.",
+      "next_dependency": "selected_native_route_and_peer",
+      "evidence": [
+        "docs/FTP_HOST_PROTOCOL.md",
+        "docs/FTPS_LOOPBACK_LAB.md",
+        "docs/FTP.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Implement host-side protocol and queue tests"
+    },
+    "FT-103": {
+      "status": "hardware_not_run",
+      "available_evidence": "One-file native-origin/server-equality criteria.",
+      "remaining_acceptance": "Approved camera-resident outbound Wi-Fi upload and server hash equality; host upload is insufficient.",
+      "next_dependency": "reviewed_native_route_and_approved_trial",
+      "evidence": [
+        "docs/FTP.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Prove one native camera-to-server upload"
+    },
+    "FT-104": {
+      "status": "awaiting_native_manual_proof",
+      "available_evidence": "Grouping, capture completion, ambiguous-result and durable queue requirements.",
+      "remaining_acceptance": "Target media/shutter events, RAW/JPEG pairing, reconnect/card/power/cancel evidence.",
+      "next_dependency": "FT-103_and_native_integration",
+      "evidence": [
+        "docs/FTP.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Integrate reliable native queue and automatic capture"
+    },
+    "FT-105": {
+      "status": "awaiting_native_route",
+      "available_evidence": "Security/coexistence and stock-resource comparison procedure.",
+      "remaining_acceptance": "Native authentication/TLS/path behavior and owner-approved shooting/startup/thermal/battery limits, measured on body.",
+      "next_dependency": "accepted_native_candidate",
+      "evidence": [
+        "docs/FTP.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Qualify native security and resource impact"
+    },
+    "FT-106": {
+      "status": "optional_separate_result",
+      "available_evidence": "HOST-ASSISTED design and synthetic host leg.",
+      "remaining_acceptance": "Selected model/SDK/transport, actual completion/events/formats/card retention and separately approved camera leg; not native FTP.",
+      "next_dependency": "optional_owner_selected_bridge",
+      "evidence": [
+        "docs/FTP.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Optional host-assisted bridge, independently labelled"
+    },
+    "IN-101": {
+      "status": "awaiting_individual_features",
+      "available_evidence": "Composition/overlap/uninstall specification.",
+      "remaining_acceptance": "Only independently accepted features can be combined; source identities/inverse and combination matrix missing.",
+      "next_dependency": "accepted_features_being_combined",
+      "evidence": [
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Compose independently accepted features"
+    },
+    "IN-102": {
+      "status": "historical_host_scopes_recorded_release_pending",
+      "available_evidence": "Recorded clean export and historical Windows/Linux Python matrix; latest focused 61-case review qualification.",
+      "remaining_acceptance": "Old CI is not current whole-repository CI; pristine OS, other filesystems, publication rights and independent eligible-body reproduction unproved.",
+      "next_dependency": "future_stable_code_or_release_scope",
+      "evidence": [
+        "docs/HOST_VALIDATION.md",
+        "research/PENDING_REVIEW_PREFLIGHT.md",
+        "docs/VALIDATION.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Reproducibility, host portability and publication checks"
+    },
+    "IN-103": {
+      "status": "hardware_release_not_run",
+      "available_evidence": "Soak/reversal/support/release criteria.",
+      "remaining_acceptance": "Accepted hardware features, safe inverse/recovery, actual soak and independent same-build reproduction.",
+      "next_dependency": "accepted_features_and_release_review",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "docs/ACCESS_AND_RECOVERY.md"
+      ],
+      "feature_or_device_gate_passed": false,
+      "title": "Soak, inverse and release qualification"
+    }
+  },
+  "requirements": {
+    "CL-01": {
+      "requirement": "FL2/FL3 selectable as distinct looks",
+      "acceptance": "Exact-target menu and selection logic, persisted bindings, new photos and playback; no ST-only fallback disguised by names",
+      "completion_proven": false,
+      "status": "deferred",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md"
+      ]
+    },
+    "CL-02": {
+      "requirement": "Correct image-processing route",
+      "acceptance": "Gamma, colour parameters and relevant matrices traced and validated; physical differences exceed baseline repeatability",
+      "completion_proven": false,
+      "status": "deferred",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md"
+      ]
+    },
+    "CL-03": {
+      "requirement": "Preview follows the active look",
+      "acceptance": "Repeated switching without shutter presses, with no stale previous look; physical display evidence recorded separately",
+      "completion_proven": false,
+      "status": "deferred",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md"
+      ]
+    },
+    "CL-04": {
+      "requirement": "Preserve native behaviour",
+      "acceptance": "Existing looks, recipes, settings, image formats and supported movie/log paths pass regression cases",
+      "completion_proven": false,
+      "status": "deferred",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md"
+      ]
+    },
+    "CL-05": {
+      "requirement": "Custom look extension",
+      "acceptance": "One calibrated custom slot first, then selected-slot import and up to six only after capacity/resource evidence",
+      "completion_proven": false,
+      "status": "deferred",
+      "evidence": [
+        "docs/CREATIVE_LOOKS.md"
+      ]
+    },
+    "EN-01": {
+      "requirement": "Native English",
+      "acceptance": "English is selectable or deliberately selected and all tested critical menus/warnings render correctly",
+      "completion_proven": false,
+      "status": "not_demonstrated_on_exact_body",
+      "evidence": [
+        "docs/ENGLISH_LANGUAGE.md"
+      ]
+    },
+    "EN-02": {
+      "requirement": "Persistence and reversal",
+      "acceptance": "Normal shutdown and complete power removal retain English; original selection/configuration can be restored",
+      "completion_proven": false,
+      "status": "not_demonstrated_on_exact_body",
+      "evidence": [
+        "docs/ENGLISH_LANGUAGE.md"
+      ]
+    },
+    "EN-03": {
+      "requirement": "Narrow side effects",
+      "acceptance": "No unintended change to regional/radio configuration, unrelated settings or protected calibration",
+      "completion_proven": false,
+      "status": "not_demonstrated_on_exact_body",
+      "evidence": [
+        "docs/ENGLISH_LANGUAGE.md"
+      ]
+    },
+    "FT-01": {
+      "requirement": "Native Wi-Fi manual upload",
+      "acceptance": "An onboard client sends a selected new file to the server; no relay process is involved",
+      "completion_proven": false,
+      "status": "not_demonstrated_on_exact_body",
+      "evidence": [
+        "docs/FTP.md"
+      ]
+    },
+    "FT-02": {
+      "requirement": "Reliable queue",
+      "acceptance": "RAW/JPEG pairing, reconnect, duplicates, partial transfer and power-state behaviour are defined and tested",
+      "completion_proven": false,
+      "status": "not_demonstrated_on_exact_body",
+      "evidence": [
+        "docs/FTP.md"
+      ]
+    },
+    "FT-03": {
+      "requirement": "Automatic delivery",
+      "acceptance": "Physical-shutter captures are queued when supported, with observable completion and bounded shooting impact",
+      "completion_proven": false,
+      "status": "not_demonstrated_on_exact_body",
+      "evidence": [
+        "docs/FTP.md"
+      ]
+    },
+    "FT-04": {
+      "requirement": "Security and privacy",
+      "acceptance": "Credentials remain private, remote paths are constrained and the chosen protocol's security is honestly identified",
+      "completion_proven": false,
+      "status": "not_demonstrated_on_exact_body",
+      "evidence": [
+        "docs/FTP.md"
+      ]
+    },
+    "SAFE-01": {
+      "requirement": "Reversible exact-target changes",
+      "acceptance": "Fresh backups, checked forward/inverse transitions, bounded writes and a documented recovery envelope",
+      "completion_proven": false,
+      "status": "not_demonstrated_on_exact_body",
+      "evidence": [
+        "docs/ACCESS_AND_RECOVERY.md"
+      ]
+    },
+    "REPRO-01": {
+      "requirement": "Reproducibility",
+      "acceptance": "Pinned sources, exact firmware hashes, test logs, tool versions and explicit supported combinations",
+      "completion_proven": false,
+      "status": "partial_host_evidence_only",
+      "evidence": [
+        "docs/HOST_VALIDATION.md",
+        "docs/VALIDATION.md"
+      ]
+    }
+  },
+  "validation_cases": {
+    "OFF-01": {
+      "trigger": "Same inputs and pinned tool revision twice",
+      "expected": "Identical candidate bytes/manifests except separately recorded run metadata",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-02": {
+      "trigger": "One source byte changed",
+      "expected": "Refuse before candidate eligibility/device activity",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-03": {
+      "trigger": "Wrong model/version/region or unknown profile",
+      "expected": "Refuse with exact missing/mismatching precondition",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-04": {
+      "trigger": "Partial/truncated source or mismatched component pair",
+      "expected": "Refuse; do not mix AP/CP from different baselines",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-05": {
+      "trigger": "Negative/out-of-bounds/overlapping edit",
+      "expected": "Refuse before any write",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-06": {
+      "trigger": "Reapply a candidate",
+      "expected": "Explicit already-applied classification or refusal, never a second implicit migration",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-07": {
+      "trigger": "Forward then inverse on synthetic/eligible local copies",
+      "expected": "Exact original bytes and protected-state equality",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-08": {
+      "trigger": "Invalid/special enum and all original look values",
+      "expected": "Preserved bounds/fallback behaviour; no table overrun",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Exact enum, instruction/control-flow and resource/checksum/encoding semantics needed.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-09": {
+      "trigger": "Unselected recipe/resource records",
+      "expected": "Byte/semantic equality except independently justified dynamic fields",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-10": {
+      "trigger": "Branch into replaced instruction region",
+      "expected": "All legal incoming targets remain valid; ABI and stack preserved",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Exact enum, instruction/control-flow and resource/checksum/encoding semantics needed.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-11": {
+      "trigger": "Missing resources, bad checksum, invalid UTF encoding",
+      "expected": "Clean refusal/fallback specified before hardware",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Exact enum, instruction/control-flow and resource/checksum/encoding semantics needed.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-12": {
+      "trigger": "Partial native result, timeout, disconnect, duplicate session",
+      "expected": "needs_review or bounded read-only handling; never blind write retry",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-13": {
+      "trigger": "Interrupted multi-object transaction in mocks",
+      "expected": "Every boundary has a classified state and safe next analysis action",
+      "observed_scope": "generic_host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Generic guard/model tests do not establish exact-target or camera-executor semantics.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "OFF-14": {
+      "trigger": "Private-file/credential material in proposed commit",
+      "expected": "Block publication and sanitize; do not merely add an ignore rule afterward",
+      "observed_scope": "reviewed_publication_scope_only",
+      "target_acceptance_proven": false,
+      "gap": "Each new commit still needs path/content/reuse review; no universal secret detector.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-01": {
+      "trigger": "Select ST, FL, FL2, FL3; capture and play back new files",
+      "expected": "Distinct expected routing, readable outputs, correct selected/playback identities",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-02": {
+      "trigger": "Repeated static-scene ST captures",
+      "expected": "Establish baseline pixel/colour variability before setting difference thresholds",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-03": {
+      "trigger": "Unpressed-shutter preview switching",
+      "expected": "100 switches across native/new looks with a recorded sequence and no stale prior look",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-04": {
+      "trigger": "Half-press, playback return, sleep/wake, mode-dial transition",
+      "expected": "No hidden refresh dependency or invalid selection state",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-05": {
+      "trigger": "All ten native looks and six owner recipes",
+      "expected": "Basic capture/playback and preservation checks; no unowned-slot title changes",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-06": {
+      "trigger": "Adjustment changes and per-look reset",
+      "expected": "Correct default markers and scoped reset, including persistence",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-07": {
+      "trigger": "RAW+JPEG capture",
+      "expected": "RAW readability and JPEG/metadata behaviour separately checked",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-08": {
+      "trigger": "HEIF, HLG, colour-space, high-ISO and exposure variants",
+      "expected": "Separate results; unsupported combinations remain declared",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-09": {
+      "trigger": "Native movie, PP/log and still-to-movie transitions",
+      "expected": "Original behaviour preserved; new-look movie behaviour explicitly bounded",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-10": {
+      "trigger": "Continuous shooting and selected long-exposure cases",
+      "expected": "No invalid buffer/file behaviour or unintended slowdown",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "CLT-11": {
+      "trigger": "Return to prior known-good/stock using exact inverse",
+      "expected": "Complete storage/settings verification plus new capture/playback",
+      "observed_scope": "not_run_deferred",
+      "target_acceptance_proven": false,
+      "gap": "Physical look/preview/preservation evidence absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "ENT-01": {
+      "trigger": "Full native language selector and English selection",
+      "expected": "English available/selected as intended; original language still recoverable",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native selector/resources/persistence/protected state/inverse absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "ENT-02": {
+      "trigger": "Main menus and non-destructive warning/modal dialogs",
+      "expected": "No blank labels, missing glyphs, truncated critical instructions or invalid resources",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native selector/resources/persistence/protected state/inverse absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "ENT-03": {
+      "trigger": "Shooting/playback/network/date/version screens",
+      "expected": "Critical operation remains understandable and functional",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native selector/resources/persistence/protected state/inverse absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "ENT-04": {
+      "trigger": "Normal/complete restart and sleep/wake",
+      "expected": "Selected language persists without unrelated initialization",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native selector/resources/persistence/protected state/inverse absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "ENT-05": {
+      "trigger": "Protected region/configuration comparison",
+      "expected": "No unexplained change beyond the scoped language permission/selection",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native selector/resources/persistence/protected state/inverse absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "ENT-06": {
+      "trigger": "Controlled reversal",
+      "expected": "Original language restored; newer unrelated settings preserved",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native selector/resources/persistence/protected state/inverse absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "ENT-07": {
+      "trigger": "English plus FL23/custom names/FTP dialogs",
+      "expected": "Shared resource IDs and layouts remain valid",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native selector/resources/persistence/protected state/inverse absent.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-01": {
+      "trigger": "Single JPEG manual native upload",
+      "expected": "Camera-resident origin proved; server-side length and SHA-256 match",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-02": {
+      "trigger": "RAW/JPEG pair and supported large files",
+      "expected": "Both objects complete and their capture relationship is preserved",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-03": {
+      "trigger": "100-file synthetic queue and then a bounded real capture set",
+      "expected": "No silent loss, corruption or uncontrolled duplicates",
+      "observed_scope": "host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-04": {
+      "trigger": "Wi-Fi loss during/between transfers",
+      "expected": "Bounded retry and state reconciliation; original remains intact",
+      "observed_scope": "host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-05": {
+      "trigger": "Control-channel loss after data upload",
+      "expected": "Resolve remote completion before duplicate transmission/finalization",
+      "observed_scope": "host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-06": {
+      "trigger": "Bad credentials, permissions, quota/server full",
+      "expected": "Correct classified error; no credential leak or infinite retry",
+      "observed_scope": "host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-07": {
+      "trigger": "TLS certificate/hostname failure where FTPS is supported",
+      "expected": "Refusal; no automatic plaintext downgrade",
+      "observed_scope": "host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-08": {
+      "trigger": "File collision, filename wrap, card change, non-ASCII names",
+      "expected": "Correct identity/path handling and no unintended overwrite",
+      "observed_scope": "host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-09": {
+      "trigger": "Sleep/wake/restart with queued files",
+      "expected": "Durable queue state and defined resume behaviour",
+      "observed_scope": "host_subcases_only",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-10": {
+      "trigger": "Physical-shutter automatic capture and bursts",
+      "expected": "Transfer trigger proved; shooting impact measured against baseline",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-11": {
+      "trigger": "Cancel/shutdown/card removal",
+      "expected": "Defined safe stop; no corruption or destructive cleanup",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    },
+    "FTT-12": {
+      "trigger": "Capture+network load",
+      "expected": "UI, startup, battery and thermal impact recorded; owner-approved limits met",
+      "observed_scope": "target_not_run",
+      "target_acceptance_proven": false,
+      "gap": "Native camera origin/media/Wi-Fi/lifecycle not demonstrated; loopback scope does not transfer.",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "research/PRE_CAMERA_AUDIT.md"
+      ]
+    }
+  },
+  "gates": {
+    "G0": {
+      "completion_proven": false,
+      "evidence_boundary": "Recorded host/provenance scopes available; remaining owner facts and current whole-tree qualification not complete. No device permission."
+    },
+    "G1": {
+      "completion_proven": false,
+      "evidence_boundary": "Owner report is partial identity evidence; exact-body/build and reviewed applicable acquisition route absent."
+    },
+    "G2": {
+      "completion_proven": false,
+      "evidence_boundary": "No exact-body complete coverage, independent storage copies or demonstrated recovery envelope."
+    },
+    "G3": {
+      "completion_proven": false,
+      "evidence_boundary": "No accepted exact-target English/native FTP feasibility dossier. Deferred looks not prerequisite."
+    },
+    "G4": {
+      "completion_proven": false,
+      "evidence_boundary": "No eligible target candidate/profile/inverse/fresh backups/conditional restore and applicable device approval."
+    },
+    "G5": {
+      "completion_proven": false,
+      "evidence_boundary": "No feature device readback, runtime/physical observation, shared regression or approved reversal."
+    },
+    "G6": {
+      "completion_proven": false,
+      "evidence_boundary": "No accepted camera feature composition, soak, independent same-build reproduction or release review."
+    }
+  },
+  "pending_activity_decisions": {
+    "accepted_contract_interaction": "pending",
+    "accompanying_component_terms": "pending",
+    "constants_provenance": "pending",
+    "narrow_research_hypothesis_scope": "pending",
+    "distinct_operational_act_decision": "pending"
+  },
+  "risk_boundaries": {
+    "R0": "Ordinary host work and authored synthetic tests only within recorded scope.",
+    "R1": "Ordinary UI/USB observations separately approved; no service transition.",
+    "R2": "Temporary native execution/service mode separately approved, including public Pico route.",
+    "R3": "Persistent settings separately approved with exact state/preservation/inverse.",
+    "R4": "Program writes separately approved only after complete write gate and owner recovery prerequisite.",
+    "R5": "Bootloader/NOR/raw-partition/calibration replacement outside scope."
+  },
+  "write_prerequisites": [
+    "Exact body/build/source identity and scoped changed/protected objects",
+    "Fresh original and latest known-good inventories; independent reads distinguished from copies",
+    "Two independently verified copies on separate physical storage; the owner pre-write requirement remains mandatory",
+    "Exact bounded candidate/inverse and read-modify-write semantics over fresh state",
+    "Instruction boundaries/control flow/ABI, file/VA/runtime distinction and protected-region review",
+    "Full changed-unit readback, protected-state equality and applicable reload semantics",
+    "Reachable recovery for ordinary regression, unknown completion, failed normal boot and unavailable service access; unsupported cases stay blockers",
+    "Single camera owner, power/cable/media readiness, durable pre-operation journal and stop criteria",
+    "Separate explicit owner approval of the exact device command and recovery limitations",
+    "No blind retries, automatic rollback/reboot, cross-flash, driver changes or protected calibration/radio alterations",
+    "Supported-build allowlist and machine-enforced eligibility before any public installer"
+  ],
+  "actionable_offline": [
+    "Repair existing demonstrated namespace and cross-operation incompatibilities, not another generic envelope.",
+    "Assess five act-specific evidence decisions from existing legitimate records before any real host observation; do not promote consent from digests.",
+    "After applicable act basis and corrected operational path, separately scope necessary format/content analysis for EN-101 and FT-101. Current GDT metadata is an intermediate format question, not feature feasibility."
+  ],
+  "needs_owner_or_external": [
+    "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
+    "Any actual camera observation/acquisition/restore/write requires separately scoped owner authorization.",
+    "Exact-body identity, current settings and reachability cannot be proved offline.",
+    "Published FTP implementation/source rights and direct transfer evidence absent at pinned audit; unpublished code cannot be invented.",
+    "Recovery claims require exact-target evidence; an official update package or known-range backup is insufficient."
+  ],
+  "not_required_before_first_ui_observation": [
+    "Deferred FL2/FL3/custom looks",
+    "Optional bridge",
+    "A complete backup or a program-write gate",
+    "More generic host frameworks/tests or full firmware extraction"
+  ],
+  "evidence_source_sha256": {
+    "AGENTS.md": "7ec54381c25226d8d6b92fbe88433e69e331315f76db0f781a07ffd6050cbc12",
+    "README.md": "db0bee96dcc73dd32aac25ae98ee5694aaa24316399d3f582c5d43268cb3b9ba",
+    "docs/MASTER_PLAN.md": "037756c776b24ca5064ee655a627cd10c64b65768db0e8ca0802108d80cbb713",
+    "docs/VALIDATION.md": "75be8479e5d72e6215bc1730d9a4569ea734eca32e2e1701169ff837a74211c9",
+    "docs/OWNER_INTAKE.md": "e503d5c1b8572b994b6013cd8b281bba93ea97bfdd7bbe17f510c25e1e78a4e3",
+    "docs/ACCESS_AND_RECOVERY.md": "63007399fcd1632aaa36b5bd0541dd8e455264832c0198a82577113c77fd9591",
+    "docs/ENGLISH_LANGUAGE.md": "e65010966ffcdcff9ca12a6af790ba2af5f3dea061d0d9e84bc1a67de86d8180",
+    "docs/FTP.md": "ae630b8646cf2b7e07a1f2c6cfeb1addd625a6c25994f3d254e392f67b6204e7",
+    "docs/CREATIVE_LOOKS.md": "7f1afc4ab5202ff2c31b47a3255791558027ee84b27e869d34e8c764e93269e2",
+    "docs/HOST_VALIDATION.md": "2302e926d08a0cb0939522bad8b2d92c8e13fbd3cc3690a9349b5cb0367150a5",
+    "docs/FTP_HOST_PROTOCOL.md": "e864971bfa09be8a198108cb003602e3bce6584aedbdb32620200f96ddc7fb7c",
+    "docs/FTPS_LOOPBACK_LAB.md": "57d01b44b26666ac91c852f585a3c7612a229f3e0de37a94d25f72102c56abfc",
+    "docs/DURABLE_SYNTHETIC_JOURNAL.md": "ada7fb2798a3a642ca922aa5c83af25798ff5b7b52ad1a345cca4ed4f3f5f0de",
+    "research/REFERENCE_AUDIT.md": "0d2e90c2e8e18bdfcdbf5e65d21aff84cbbb6333013b07cf5daf6bb3853b6a95",
+    "research/MAINLAND_FIRMWARE_SOURCE.md": "29d7ae81b99eb61a3cd5c76a0db0c25c6c089233ef3a3a221be744750b067a89",
+    "research/FDAT_STREAM_VALIDATION.md": "32e3025c4e70061f46c17a9a4ec674b4816d8aeb318ea8bc085956ecb718fdb3",
+    "research/TAR_LINK_INVENTORY.md": "976f66c52ce3951eefe6315a67372f4f0ec71491e49218fafa9038a0448aa77a",
+    "research/PREFLIGHT_COMPARISON.md": "55c9e9da76b0d3922b5e2556f6a1930eb4be02c7c15406f95847c059d5602857",
+    "research/EXT_SUPERBLOCK_OBSERVATION.md": "3d8ae748e6d6fca75cf6ae2b8d37e749c2db119137851734bca1c4f3ca56f5b7",
+    "research/TARGET_EVIDENCE_GAPS.md": "24653aa85ffe4be73a920a4f7021b68afd4209c74642e72209c7cb1cb608f548",
+    "research/OBSERVATION_GO_NO_GO.md": "78d7490004ad2d09459aedf3ca3d6ac5e2a93aacc7a0af1a6242262961b4ccb0",
+    "research/PENDING_REVIEW_PREFLIGHT.md": "442335c94d189ee43943aa9b118cad9a1c439b12cbaebace0fa3049d04c9af9d",
+    "research/LEGACY_SUCCESSOR_COMPARISON.md": "b29391a19dda40f252d0b2967a5201e82d8d8f4795ef3992c4e5e6b10fb81831",
+    "research/sessions/20261020-a6700-reference-review-t.md": "b2de09a9042dcb0d2730870a472d62ea93d58f7ab895057591315a67a1b2d2f2",
+    "research/sessions/20261020-RA-003-pending-review-preflight.md": "f9cf8922f88c622ae19f0bd7e6a4a706ab1b3ea89d774e467027cc1fe0ceda8a",
+    "tools/dependency_observation_outer.py": "0f26c9059cf78b3bf244724511f1a5085681b19bd04b93ed855627f9bd94b446",
+    "tools/dependency_operational_metadata.py": "6a61ea01bdfa9ce341890134709b8672727cac96b0b49108046823d02a312b60",
+    "tools/dependency_operational_preparation.py": "394cf49d012d76b7d04ed4fd88cf4800462c440ad6b109d32b66fd5e0b03e44d"
+  },
+  "selected_current_evidence": {
+    "pending_review_commit": "239b34e",
+    "focused_tests": 61,
+    "protected_observation_performed": false,
+    "historical_checks": 6,
+    "current_pending_decisions": 5
+  },
+  "overall_pre_camera_goal_complete": false,
+  "feature_supported": false,
+  "recovery_proven": false,
+  "device_write_gate_passed": false,
+  "camera_commands": [],
+  "previous_goal_turn": "progress_pending_review_committed_239b34e",
+  "current_goal_turn": "progress_finite_gap_audit_and_stale_current_summaries_corrected",
+  "next_single_work_package": "RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera."
+}

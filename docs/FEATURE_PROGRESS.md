@@ -1,6 +1,9 @@
 # Requested functions: progress and next evidence
 
-Updated: **2026-10-19**. This is the feature-level progress note; the
+Current audit (2026-10-20): [finite English/FTP gap ledger](../research/PRE_CAMERA_GAP_AUDIT.md). Covers all 27 packages, 14 requirements and 44 named cases; current incomplete statuses supersede older next-step summaries without changing historical observations. No camera, protected read, feature/recovery/write pass. Next single package: RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera.
+
+
+Updated: **2026-10-20**. This is the feature-level progress note; the
 [backlog](BACKLOG.md) tracks work packages and [STATE](../research/STATE.json)
 records machine-readable evidence. An internal copy is kept in ignored
 `private/feature-progress.json` and `private/feature-progress.md`.

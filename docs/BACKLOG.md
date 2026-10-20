@@ -1,5 +1,8 @@
 # Ordered local-Codex work packages
 
+Current audit (2026-10-20): [finite English/FTP gap ledger](../research/PRE_CAMERA_GAP_AUDIT.md). Covers all 27 packages, 14 requirements and 44 named cases; current incomplete statuses supersede older next-step summaries without changing historical observations. No camera, protected read, feature/recovery/write pass. Next single package: RA-003: repair the demonstrated operational preflight namespace and historical/current operation-context incompatibilities in the existing path, using an explicitly versioned replacement and the reviewed ancestry mapping. Preserve frozen originals and all five pending decisions. Qualify original rejected metadata and invented wrong-context/source cases without inventing allow records, weakening device guards, adding a new framework, activating dependencies, reading firmware/constants/native payloads or contacting the camera.
+
+
 All packages start OPEN unless marked otherwise in a later reviewed commit. Their identifiers are stable; GitHub issue numbers are a separate tracking layer. Each package should produce a small reviewable commit or pull request, a test/evidence report and a next-action statement. A dependency is an evidence gate, not merely an earlier issue being closed.
 
 Read MASTER_PLAN.md for requirements and milestones, ACCESS_AND_RECOVERY.md for risk tiers, and VALIDATION.md for test IDs. R0 means host-side artifact work without camera contact; ordinary source-repository retrieval is allowed but is not a camera/network experiment. Device approvals remain separate from repository permission.
