@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-20",
-  "phase": "pure_observation_contract_reviewed_invented_qualified_execution_unconnected",
+  "phase": "disabled_observation_preflight_and_saved_comparison_qualified_legacy_positive_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_pure_observation_contract_qualified_outer_integration_pending",
+      "status": "partial_outer_preflight_qualified_complete_legacy_fixture_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 invented source/controller qualification; no actual dependency activation, protected-input read or camera",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-observation-contract.md",
+      "session_report": "research/sessions/20261020-RA-003-observation-outer.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -288,7 +288,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: integrate the reviewed pure observation contract into a separate disabled source-captured outer preflight and saved-parent validation path. Derive the explicit source-roster delta, immutable request-core and separately supplied authority-record bindings; preserve original comparison inputs, exact dependency projection, fixed I/O/supervision limits and the pending route. Qualify complete, changed-anchor/source/argv, undecided and cleanup/refusal cases with invented records and intercepted runtime only; independently review before actual record assembly. Keep public activation disabled and all actual activity decisions pending; no firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact.",
+  "next_work_package": "RA-003: qualify successful end-to-end captured observation preflight and saved-parent comparison through the unchanged retained gate using a complete wholly invented legacy bundle, without intercepting that gate. Cover changed original records, source/anchor/runtime bindings and cleanup/refusal. Independently review before any actual record assembly. Keep activation disabled and actual activity decisions pending; no firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -8595,7 +8595,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261020-RA-003-observation-contract.md",
+  "latest_report": "research/sessions/20261020-RA-003-observation-outer.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -10470,5 +10470,50 @@
     "previous_goal_turn": "progress_activity_review_packet_committed_00df33d",
     "current_goal_turn": "progress_distinct_pure_observation_contract_and_external_binding_implemented_qualified",
     "next_work_package": "RA-003: integrate the reviewed pure observation contract into a separate disabled source-captured outer preflight and saved-parent validation path. Derive the explicit source-roster delta, immutable request-core and separately supplied authority-record bindings; preserve original comparison inputs, exact dependency projection, fixed I/O/supervision limits and the pending route. Qualify complete, changed-anchor/source/argv, undecided and cleanup/refusal cases with invented records and intercepted runtime only; independently review before actual record assembly. Keep public activation disabled and all actual activity decisions pending; no firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact."
+  },
+  "disabled_observation_outer": {
+    "status": "disabled_observation_preflight_and_saved_comparison_qualified_legacy_positive_pending",
+    "report": "research/sessions/20261020-RA-003-observation-outer.md",
+    "assessment": "research/OBSERVATION_OUTER.md",
+    "reviewed_source_hashes": {
+      "tools/dependency_observation_outer.py": "0f26c9059cf78b3bf244724511f1a5085681b19bd04b93ed855627f9bd94b446",
+      "tests/test_dependency_observation_outer.py": "a3f712a509a166520fe6000f9672b822fc39c458af04d82f5b1ab2d172db62c7"
+    },
+    "independent_review": "accepted_after_exact_roster_before_execution_fix",
+    "tests": 112,
+    "new_tests": 14,
+    "retained_tests": 98,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "suite_seconds": 29.152,
+    "wrapper_seconds": 29.640268499962986,
+    "source_pins": 141,
+    "stable": true,
+    "comparison_source_roles": 51,
+    "added_validator_roles": 2,
+    "captured_validator_modules": 9,
+    "public_cli_refusals": 5,
+    "public_cli_expected_exit_code": 2,
+    "positive_legacy_gate_intercepted": true,
+    "actual_legacy_gate_positive_qualification": false,
+    "initial_outer_loader_authenticated": false,
+    "dynamic_import_closure_attested": false,
+    "actual_activity_decisions": "all_five_pending",
+    "operational_execution_roster_derived": false,
+    "execution_integration_performed": false,
+    "actual_inputs_accessed": false,
+    "actual_records_assembled": false,
+    "installed_dependency_activated": false,
+    "rights_established": false,
+    "execution_authorized": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "previous_goal_turn": "progress_reference_check_committed_f07f6ab",
+    "current_goal_turn": "progress_contract_committed_0f56f0e_and_disabled_outer_preflight_implemented_qualified",
+    "next_work_package": "RA-003: qualify successful end-to-end captured observation preflight and saved-parent comparison through the unchanged retained gate using a complete wholly invented legacy bundle, without intercepting that gate. Cover changed original records, source/anchor/runtime bindings and cleanup/refusal. Independently review before any actual record assembly. Keep activation disabled and actual activity decisions pending; no firmware/constants/native payload reads, installed dependency activation, downloads/uploads or camera contact."
   }
 }
