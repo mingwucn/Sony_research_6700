@@ -10588,5 +10588,38 @@
     "previous_goal_turn": "progress_reference_review_committed_bdf5e95",
     "current_goal_turn": "progress_complete_invented_legacy_preflight_and_saved_comparison_qualified",
     "next_work_package": "RA-003: integrate the qualified observation preflight and saved comparison into a separate disabled launcher path with explicit observation review/decision/anchor inputs. Derive the executing source-roster delta and exact fourteen-role record projection, retain the existing pending path, and qualify the full invented bundle through owned supervision with explicit runtime substitutions. Independently review before actual record assembly. Keep actual activation disabled and all five activity decisions pending; no installed dependency activation, firmware/constants/native payload reads, downloads/uploads or camera contact."
+  },
+  "a6700_reference_review_20261020_r": {
+    "report": "research/sessions/20261020-a6700-reference-review-r.md",
+    "commit": "2de85f1cca89b0e20ee25a70f93e04c3d34e10e5",
+    "previous_commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "checked_at_utc": "2026-10-20T03:14:06.606481+00:00",
+    "changed_paths": [
+      "AGENTS.md"
+    ],
+    "tree_entries": 51,
+    "unchanged_blob_entries": 38,
+    "documents_blob_verified": 4,
+    "tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.6068146000034176,
+      "exit_code": 0,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]"
+    },
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit the FTP implementation and direct camera-to-server Wi-Fi evidence when published, including exact target/region identity, file equality, security, persistence, failure handling and reversal."
   }
 }
