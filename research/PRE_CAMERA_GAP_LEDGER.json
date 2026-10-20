@@ -32,7 +32,7 @@
       "status": "partial_preparation_consistency_qualified_activity_and_runtime_pending",
       "available_evidence": "Official mainland package acquired and measured; bounded tar inventory, fixed superblock study, pending review and saved historical comparison recorded.",
       "remaining_acceptance": "Explicit preparation handoff qualified on invented sources; actual source/46-role rosters and runtime bootstrap not migrated or qualified. Five activity decisions, current act records and three dependency fields unresolved; English/FTP mapping and complete exact-body evidence absent.",
-      "next_dependency": "current_pending_source_and_command_specification_and_independent_act_dispositions",
+      "next_dependency": "closed_v2_transport_handoff_without_execution_context_bypass",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -42,7 +42,8 @@
         "research/LEGACY_SUCCESSOR_COMPARISON.md",
         "research/HISTORICAL_CONTEXT_PREFLIGHT.md",
         "research/PREPARATION_CONTEXT_HANDOFF.md",
-        "research/NEXT_ANALYSIS_EVIDENCE.md"
+        "research/NEXT_ANALYSIS_EVIDENCE.md",
+        "research/V6_SOURCE_COMMAND_SPEC.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1069,9 +1070,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_preparation_handoff_committed_d0ed500",
-  "current_goal_turn": "progress_finite_analysis_hypothesis_and_five_evidence_gaps_reconciled",
-  "next_single_work_package": "RA-003: derive one current pending-only source and command specification for the v6 handoff. Reconcile the three reviewed source deltas and explicit gate replacement against frozen 51-source/46-role projections, identify bootstrap changes and exact unresolved arguments. Preserve originals and all five pending dispositions; no invented actual values, allow records, executable actual bundle, dependency activation, protected reads or camera contact.",
+  "previous_goal_turn": "progress_finite_evidence_packet_committed_d37bd81",
+  "current_goal_turn": "progress_exact_source_projection_and_missing_v6_calling_seams_derived",
+  "next_single_work_package": "RA-003: implement and qualify a closed v2 migration handoff through the existing projection/packet and parent/child preflight seams, including saved arguments. Preserve v1 behavior and explicit v6 execution-context refusal. Qualify invented complete/missing/altered/downgraded/cross-operation cases; v6 must stop before bootstrap materialization, protected preparation, result writes or process launch. No actual allow records, source-manifest migration, dependency activation, protected reads or camera contact.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1188,6 +1189,39 @@
       "previous_goal_turn": "progress_preparation_handoff_committed_d0ed500",
       "current_goal_turn": "progress_finite_analysis_hypothesis_and_five_evidence_gaps_reconciled",
       "next_single_work_package": "RA-003: derive one current pending-only source and command specification for the v6 handoff. Reconcile the three reviewed source deltas and explicit gate replacement against frozen 51-source/46-role projections, identify bootstrap changes and exact unresolved arguments. Preserve originals and all five pending dispositions; no invented actual values, allow records, executable actual bundle, dependency activation, protected reads or camera contact."
+    },
+    {
+      "report": "research/sessions/20261020-RA-003-v6-source-command-spec.md",
+      "specification": "research/V6_SOURCE_COMMAND_SPEC.md",
+      "status": "current_source_projection_and_six_transport_gaps_demonstrated",
+      "source_counts": {
+        "process_child": 49,
+        "host": 2,
+        "operational": 51,
+        "outer_preflight": 53,
+        "observation_transport": 54,
+        "prepared": 46
+      },
+      "current_outer_deltas": 3,
+      "proposed_gate_substitutions": 1,
+      "prepared_role_byte_deltas": 0,
+      "source_witnesses": 6,
+      "observation_bootstrap_sha256": "63c051081d49cd871a4b1d8c55b8a569ff2c62e91436f13fdb1e510d438d489f",
+      "pending_bootstrap_sha256": "9fc839f17e6c2ff316b88421af3d0d0719838d83a6113b65fdfcdc2743c99c86",
+      "bootstrap_executed": false,
+      "all_five_decisions_pending": true,
+      "actual_bundle_created": false,
+      "source_roster_migrated": false,
+      "execution_authorized": false,
+      "protected_inputs_accessed": false,
+      "installed_dependency_activated": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "camera_commands": [],
+      "previous_goal_turn": "progress_finite_evidence_packet_committed_d37bd81",
+      "current_goal_turn": "progress_exact_source_projection_and_missing_v6_calling_seams_derived",
+      "next_single_work_package": "RA-003: implement and qualify a closed v2 migration handoff through the existing projection/packet and parent/child preflight seams, including saved arguments. Preserve v1 behavior and explicit v6 execution-context refusal. Qualify invented complete/missing/altered/downgraded/cross-operation cases; v6 must stop before bootstrap materialization, protected preparation, result writes or process launch. No actual allow records, source-manifest migration, dependency activation, protected reads or camera contact."
     }
   ]
 }
