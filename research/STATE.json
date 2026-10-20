@@ -9532,5 +9532,35 @@
     "previous_goal_turn": "progress_requested_reference_check_committed_368b39e",
     "current_goal_turn": "progress_isolated_current_preflight_reviewed_and_qualified",
     "next_work_package": "RA-003: migrate the existing disabled host entry to the qualified current-preflight path, carrying the same original ordinary records through isolated startup, dependency lifetime, two-phase reader and saved-parent reconciliation. Independently review and qualify that executable path with invented inputs. Keep actual observation/public runtime disabled until the existing five activity-specific decisions are reconciled; no actual activation records, installed dependency activation, firmware/constants/native payload reads or camera contact."
+  },
+  "a6700_reference_review_20261020_i": {
+    "report": "research/sessions/20261020-a6700-reference-review-i.md",
+    "commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+    "checked_at_utc": "2026-10-20T00:24:53.052919+00:00",
+    "unchanged": true,
+    "documents_blob_verified": 4,
+    "tree_entries": 51,
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "tests": {
+      "total": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.605008499987889,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "exit_code": 0,
+      "camera_commands": []
+    },
+    "english_verified": false,
+    "native_ftp_verified": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_reference_work_package": "FT-101: audit public FTP implementation and direct camera-to-server Wi-Fi evidence when published."
   }
 }
