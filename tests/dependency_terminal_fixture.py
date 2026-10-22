@@ -96,7 +96,8 @@ class FreshTerminal:
     callback use belong inside this scope. The snapshot is generated from the
     invented Harness events; it does not instrument actual file handles.
     """
-    def __init__(self):
+    def __init__(self, *, genuine_classifier=False):
+        self.genuine_classifier = genuine_classifier
         self.active = self.claimed = False
         self.loader = self.boot = self.temporary = self.spec_patch = None
         self.harness = self.runner = None
@@ -156,7 +157,17 @@ class FreshTerminal:
             self.spec_patch = patch.object(importlib.util, 'spec_from_file_location', source_spec)
             self.spec_patch.start()
             sys.meta_path.insert(0, self.loader)
-            self.harness = importlib.import_module('test_gdt_runner').Harness()
+            builder = importlib.import_module('test_gdt_runner')
+            original_classifier = builder.old.fixtures.classifier
+            classifier = importlib.import_module('classifier').classify if self.genuine_classifier else original_classifier
+            try:
+                # Regenerate the invented lineage consistently; acceptance
+                # predicates and the captured classifier source stay intact.
+                builder.old.fixtures.classifier = classifier
+                self.harness = builder.Harness()
+            finally:
+                _require(builder.old.fixtures.classifier is classifier)
+                builder.old.fixtures.classifier = original_classifier
             self.runner = importlib.import_module('gdt_runner')
             self.basis = copy.deepcopy(self.harness.fixture.basis)
             measured = self.harness.fixture.measured['stream_measurement']
@@ -220,7 +231,7 @@ class FreshTerminal:
         old = sys.modules['test_expanded_gate']
         return dict(runner=self.runner, basis=copy.deepcopy(self.basis), prepare=prepare,
                     inspect=inspect, discard=self.harness.discard,
-                    original_classifier=old.fixtures.classifier,
+                    original_classifier=(sys.modules['classifier'].classify if self.genuine_classifier else old.fixtures.classifier),
                     expanded_classifier=sys.modules['header_candidates'].classify)
 
     def close(self):

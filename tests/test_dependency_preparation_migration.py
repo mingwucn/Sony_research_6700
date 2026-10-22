@@ -117,6 +117,7 @@ class MigrationPreparation(unittest.TestCase):
  return raw,{'invented':True}
 def read_ordinary(*a,**kw):raise AssertionError('invented ordinary callback forbidden')
 ''').encode())
+        if hasattr(self,'fixture_wiring'):texts['dependency_successor_wiring']=self.fixture_wiring
         self.owner=sources.OuterSources(buffers=texts,hashes={n:m.sha(b) for n,b in texts.items()}).load()
         self.addCleanup(lambda:None if self.owner.closed else self.owner.close())
         case=seed.case

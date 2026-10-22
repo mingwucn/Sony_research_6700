@@ -61,7 +61,7 @@ class JoinedHandoffTests(unittest.TestCase):
         fixture.fixture_root=self.root;fixture.fixture_control=control
         fixture.fixture_factory=getattr(self,'fixture_factory',FACTORY)
         if hasattr(self,'fixture_ordinary_io'):fixture.fixture_ordinary_io=self.fixture_ordinary_io
-        for name in ('fixture_basis','fixture_source_manifest','fixture_role_aliases','fixture_role_sources'):
+        for name in ('fixture_basis','fixture_source_manifest','fixture_role_aliases','fixture_role_sources','fixture_wiring'):
             if hasattr(self,name):setattr(fixture,name,getattr(self,name))
         fixture.setUp();self.addCleanup(fixture.doCleanups)
         self.fixture=fixture;self.original=fixture.prep

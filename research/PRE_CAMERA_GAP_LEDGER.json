@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_synthetic_terminal_validation_join_qualified",
-      "available_evidence": "15/15 new terminal/loader cases and 98/98 affected regressions pass. Genuine bootstrap/finder/supervisor/saved verifier join on invented terminal replay; canonical/semantic/bridge refusals remain distinct. ",
-      "remaining_acceptance": "Child Preparation.prepare/callback factory and collected-result path have not run together without terminal replay. Actual bindings remain unapplied; actual dependency/runtime/GDT/content, English/native FTP, body correspondence and recovery remain unqualified.",
-      "next_dependency": "invented_genuine_child_preparation_callback_and_collected_result_without_terminal_replay",
+      "status": "partial_genuine_child_callback_and_invented_collection_join_qualified",
+      "available_evidence": "Seven corrected child cases and 113 unaffected regressions qualified. Six child launches; genuine child preparation/factory/controller/collection and parent join without terminal replay; invented=True I/O/dependencies, real classifier. Initial fixture-lineage, collision and interruption test issues retained.",
+      "remaining_acceptance": "Retained I/O/protected preparation remains replaced by a synthetic adapter. Actual bindings, installed dependencies/runtime/GDT/content, English/native FTP, body correspondence and recovery remain unqualified.",
+      "next_dependency": "retained_io_and_protected_preparation_boundary_over_invented_envelopes_and_role_doubles",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -53,7 +53,8 @@
         "research/sessions/20261022-isolated-current-handoff.md",
         "research/sessions/20261022-pending-binding-draft.md",
         "research/sessions/20261022-parent-supervision.md",
-        "research/sessions/20261022-terminal-validation.md"
+        "research/sessions/20261022-terminal-validation.md",
+        "research/sessions/20261022-child-callback.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1036,7 +1037,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: qualify the genuine child preparation/callback and collected-result path in an invented-runtime run without precomputed terminal replay, then reconcile it through the existing parent. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first."
+    "RA-003: qualify the retained I/O adapter and protected-preparation callback boundary using exclusively invented physical source envelopes, constants and protected-role test doubles through the current child/parent path. Keep genuine classifier and acceptance predicates. Preserve actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected inputs, installed-dependency activation or camera contact. English/native FTP stay first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1086,9 +1087,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_genuine_parent_supervision_and_saved_reconciliation_de79397",
-  "current_goal_turn": "progress_genuine_validation_loader_and_terminal_join",
-  "next_single_work_package": "RA-003: qualify the genuine child preparation/callback and collected-result path in an invented-runtime run without precomputed terminal replay, then reconcile it through the existing parent. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first.",
+  "previous_goal_turn": "progress_synthetic_terminal_validation_join_7552148",
+  "current_goal_turn": "progress_genuine_child_preparation_callback_and_invented_collection",
+  "next_single_work_package": "RA-003: qualify the retained I/O adapter and protected-preparation callback boundary using exclusively invented physical source envelopes, constants and protected-role test doubles through the current child/parent path. Keep genuine classifier and acceptance predicates. Preserve actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected inputs, installed-dependency activation or camera contact. English/native FTP stay first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1980,6 +1981,83 @@
       "current_goal_status": "active",
       "camera_commands": [],
       "next_single_work_package": "RA-003: qualify the genuine child preparation/callback and collected-result path in an invented-runtime run without precomputed terminal replay, then reconcile it through the existing parent. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first."
+    },
+    {
+      "report": "research/sessions/20261022-child-callback.md",
+      "companion": "research/CHILD_CALLBACK_INTEGRATION.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "scope": "genuine_child_preparation_callback_controller_collection_and_parent_join_with_invented_io_and_dependencies",
+      "new_child_cases": 7,
+      "child_launches": 6,
+      "affected_regression_cases": 113,
+      "distinct_qualified_cases": 120,
+      "passed": 120,
+      "final_effective_failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "initial_smoke_failure": "opaque_fixture_classifier_lineage_disagreed_with_genuine_classifier",
+      "initial_focused_issues": [
+        "collision_test_expected_a_spawn_after_parent_prelaunch_refusal",
+        "interrupt_test_expected_controller_result_before_keyboardinterrupt_unwind"
+      ],
+      "initial_focused_cases": 6,
+      "initial_focused_passed": 4,
+      "initial_focused_failures": 1,
+      "initial_focused_errors": 1,
+      "initial_smoke_log_sha256": "e6560adb00c559993bb714c9ffbd497444a99355f877eba2d82d147d732cb19f",
+      "initial_focused_log_sha256": "155cce984324ee9b560a729fca75996b43d18e6acce1199cb0daba31ac211a31",
+      "focused_log_sha256": "108ff4238b935ee3453e58c580571c510b167c1ba7b05a97b54fbae49c8337db",
+      "regression_log_sha256": "ca6ed76b9165ab84948d5766cb3391593e5a879741fec6174f3d5a7b0c68152b",
+      "qualification_method": "unchanged_113_regression_cases_plus_complete_corrected_seven_case_child_module",
+      "regression_contains_earlier_terminal_replay_cases": true,
+      "correction_scope": [
+        "tests/test_dependency_child_callbacks.py"
+      ],
+      "qualified_source_pins": 91,
+      "terminal_builder_source_pins": 31,
+      "dependency_fixture_source_pins": 9,
+      "ordinary_draft_pins": 72,
+      "ordinary_frozen_records": 16,
+      "historical_pending_dispositions": 5,
+      "dependency_null_fields": 3,
+      "genuine_child_preparation_qualified": true,
+      "genuine_scoped_callbacks_qualified": true,
+      "genuine_controller_and_collected_producer_qualified": true,
+      "genuine_parent_process_and_validation_qualified": true,
+      "child_generated_terminal_dependency_bridge_and_outer_records": true,
+      "terminal_replay": false,
+      "records_grammar": "invented_true",
+      "synthetic_io_adapter": true,
+      "synthetic_dependency_ops": true,
+      "synthetic_wiring": true,
+      "genuine_classifier_used": true,
+      "acceptance_predicates_changed": false,
+      "source_events_and_snapshot_invented": true,
+      "protected_io_zero_counts": "source_traced_declarations_not_instrumented_closure_counters",
+      "actual_io_adapter_executed": false,
+      "actual_protected_preparation_executed": false,
+      "producer_execution_authenticated": false,
+      "actual_runtime_verified": false,
+      "operational_acceptance": false,
+      "exhaustive_cleanup_fault_coverage": false,
+      "actual_runtime_ready": false,
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "production_source_files_changed": false,
+      "unchanged_frozen_records": true,
+      "protected_inputs_accessed": false,
+      "installed_dependency_activated": false,
+      "execution_authorized": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "new_owner_input_required": false,
+      "current_goal_status": "active",
+      "camera_commands": [],
+      "next_single_work_package": "RA-003: qualify the retained I/O adapter and protected-preparation callback boundary using exclusively invented physical source envelopes, constants and protected-role test doubles through the current child/parent path. Keep genuine classifier and acceptance predicates. Preserve actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected inputs, installed-dependency activation or camera contact. English/native FTP stay first."
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -2041,13 +2119,15 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
-    "report": "research/sessions/20261022-terminal-validation.md",
-    "distinct_cases": 113,
-    "passed": 113,
-    "failures": 0,
-    "errors": 0,
-    "skipped": 0,
-    "terminal_replay": true,
+    "report": "research/sessions/20261022-child-callback.md",
+    "distinct_cases": 120,
+    "effective_passed": 120,
+    "corrected_child_cases": 7,
+    "child_launches": 6,
+    "unchanged_regression_cases": 113,
+    "new_child_terminal_replay": false,
+    "regression_contains_earlier_terminal_replay_cases": true,
+    "records_grammar": "invented_true",
     "actual_runtime_qualified": false
   },
   "evidence_source_sha256_scope": "Original audit snapshot; historical hashes are not an exact-current source closure or execution allowlist."
