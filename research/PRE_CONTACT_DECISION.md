@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Finite source/metadata audit complete; external trusted-origin projection repaired and synthetically qualified. | Isolated current-context handoff and actual source/gate/record migration remain; v6/public execution refused. No actual GDT/content observation or camera contact. |
+| GDT analysis preparation | Fresh isolated synthetic context/preparation/control/helper handoff qualified with 29 successful invented disk reads. | Successful child uses a separate inert test adapter; production child still v6-refuses. Actual bindings, parent supervision and runtime/GDT/content remain unqualified; no camera contact. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: integrate and qualify the current-command context at the existing host/child preparation seams using invented inputs in a fresh isolated process. Reuse the exact bootstrap, source owners and genuine retained control/helpers; keep final dispatch inert and actual v6/public execution refused. Close the combined startup/handoff gap without new generic approval/context infrastructure, protected reads, dependency activation or camera contact. English/native FTP stay first.
+RA-003: prepare and independently review a nonexecuting, pending-only migration draft for the existing GDT route's exact-current ordinary source/gate/request bindings. Reuse the qualified host/child context and retained contracts; preserve frozen records, five historical pending dispositions and dependency nulls. Do not construct an executable actual bundle, activate dependencies, read protected inputs or contact the camera. English/native FTP stay first.
 
-[Finite source audit and repair](sessions/20261022-current-binding-audit.md).
+[Isolated qualification and remaining boundaries](sessions/20261022-isolated-current-handoff.md).

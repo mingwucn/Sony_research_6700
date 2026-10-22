@@ -187,6 +187,75 @@ def close_owned(items,primary=None):
         raise primary
     if cleanup is not None:raise cleanup
 
+
+def prepare_synthetic_owned(*,request,packet,buffers,rows,request_bytes,
+                            expected_request_sha256,request_path):
+    """Prepare the current child handoff using invented qualification inputs.
+
+    The caller must authenticate the exact authored bootstrap, complete captured
+    source roster/receipts, saved request/packet bytes and actual isolated argv.
+    In particular request_path and expected_request_sha256 must be the arguments
+    checked by that bootstrap, not values selected from the decoded request.
+    This API checks their context bindings; it does not repeat saved-file reads
+    or authenticate a replacement bootstrap. No process or runtime is dispatched.
+
+    Success transfers preparation, helpers and adapter to the caller for the
+    existing _continue_child ownership handoff; outer remains caller-owned.
+    Before that handoff the caller must close all four owners if it stops.
+    Preparation is unstarted: its fresh ordinary reads and callback creation
+    still occur only when the engine calls prepare(). Failure here closes every
+    acquired owner once. The production child and public runtime refusals are
+    independent of this separate synthetic API.
+    """
+    need(set(buffers)==set(rows)==ROSTER,'operational_process_roster')
+    need(not any(n=='tools' or n.startswith('tools.') or n.split('.')[0] in
+        ('ctypes','_ctypes','Crypto','Cryptodome','cffi','_cffi_backend') for n in sys.modules),
+        'operational_process_startup')
+    need(type(request_bytes) is bytes and encoded(request)==request_bytes,
+        'operational_process_current_request')
+    request=strict(request_bytes);packet=strict(encoded(packet))
+    rows=strict(encoded(rows));buffers=dict(buffers)
+    outer=adapter=helpers=prep=None
+    try:
+        outer,adapter=owners(buffers)
+        decoded=check_packet(packet,buffers,rows,adapter)
+        docs,raw,prepared,checked,ordinary=decoded
+        need(Path(prepared['folder'])==Path(request['folder'])/'composition',
+            'operational_process_folder')
+        validated=validate_gate(packet,decoded,outer)
+        need(validated.get('schema')=='gdt_outer_consistency_v6',
+            'operational_process_synthetic_v6')
+        need(validated['candidate']['operation_id']==request['operation_id']==prepared['operation_id'],
+            'operational_process_operation')
+        retained={name for name in ROSTER if name.startswith('bound.')}
+        need(len(retained)==29,'operational_process_retained_roster')
+        for role in retained:
+            key=role.removeprefix('bound.');row=validated['inputs']['source_cache']['sources'][key]
+            need(buffers[role]==validated['source_buffers'][key] and sha(buffers[role])==row['sha256']
+                and len(buffers[role])==row['bytes'] and rows[role]['path']==row['path'],
+                'operational_process_retained')
+        preflight=outer.modules['dependency_operational_metadata'].validate_pending(
+            **preflight_arguments(packet,decoded,outer,adapter,validated))
+        context=outer.modules['dependency_host_entry'].make_current_context(validated,
+            request_bytes=request_bytes,expected_request_sha256=expected_request_sha256,
+            request_path=request_path,checked_source_rows=rows)
+        helpers=helper_owner(outer,buffers,rows,'child')
+        source_buffers={name:buffers['dependency.'+name] for name in helpers.order}
+        source_buffers['closure_manifest']=encoded(prepared['sources'])
+        prep=outer.modules['dependency_operational_preparation'].Preparation(
+            source_owner=outer,adapter_owner=adapter,request_bytes=raw,
+            request_sha256=packet['request_sha256'],checked_sources=checked,documents=docs,
+            original_receipts=packet['original_receipts'],ordinary=ordinary,
+            ordinary_receipts=packet['ordinary_receipts'],legacy_seal_sha256=packet['seal_sha256'],
+            reference_pins=packet['reference_pins'],prepared_repository_root=packet['repository_root'],
+            historical_migration=packet_migration(packet))
+        return dict(outer=outer,adapter=adapter,helpers=helpers,preparation=prep,context=context,
+            prepared=prepared,checked=checked,preflight=preflight,validated=validated,
+            dependency_source_buffers=source_buffers)
+    except BaseException as primary:
+        close_owned((prep,helpers,adapter,outer),primary)
+
+
 def child(request,packet,buffers,rows):
     need(set(buffers)==set(rows)==ROSTER,'operational_process_roster')
     need(not any(n=='tools' or n.startswith('tools.') or n.split('.')[0] in

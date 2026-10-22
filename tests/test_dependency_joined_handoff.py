@@ -59,6 +59,7 @@ class JoinedHandoffTests(unittest.TestCase):
         self.root=Path(temp.name)
         fixture=migration_fixture.MigrationPreparation()
         fixture.fixture_root=self.root;fixture.fixture_control=control;fixture.fixture_factory=FACTORY
+        if hasattr(self,'fixture_ordinary_io'):fixture.fixture_ordinary_io=self.fixture_ordinary_io
         fixture.setUp();self.addCleanup(fixture.doCleanups)
         self.fixture=fixture;self.original=fixture.prep
         self.validated=self.original._validate_gate()
@@ -70,7 +71,7 @@ class JoinedHandoffTests(unittest.TestCase):
         self.buffers.update({role:raw for role,raw in self.original.checked_sources.items()
                              if role.startswith(('bound.','dependency.'))})
         self.buffers['outer_loader']=Path('tools/dependency_operational_sources.py').read_bytes()
-        self.buffers['process_child']=Path('tools/dependency_operational_child.py').read_bytes()
+        self.buffers['process_child']=Path('tools/dependency_operational_child.py').read_bytes()+getattr(self,'fixture_child_suffix',b'')
         self.assertEqual(set(self.buffers),process.ROSTER)
         paths={}
         binding=self.original.adapter_owner.modules['dependency_adapter_binding']

@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_current_binding_audit_complete_external_origin_repaired_isolated_handoff_pending",
-      "available_evidence": "Finite 51-source/46-prepared-role comparison and 55-authored-source AST audit; all 16 selected ordinary records preserve pins. Four external trusted cache origins confirmed from metadata; narrow current-context projection repair synthetically qualified.",
-      "remaining_acceptance": "Fresh isolated current-context/control/helper handoff remains unqualified; actual parent/child still use legacy constructor after deliberate v6 refusals. Actual source/gate/record migration, dependency freshness and GDT/content observation remain incomplete. English/FTP mapping, body correspondence and recovery remain unverified.",
-      "next_dependency": "isolated_current_command_context_preparation_handoff",
+      "status": "partial_isolated_current_handoff_qualified_pending_source_binding_migration",
+      "available_evidence": "Exact unchanged bootstrap plus explicitly captured synthetic child adapter joins full v6 preflight/current context, 29 invented disk refreshes, unchanged retained control and genuine helper/reservation ownership in a fresh isolated process. Separate unchanged child diagnostic confirms v6 refusal.",
+      "remaining_acceptance": "Actual source/gate/record migration remains pending. The successful subprocess uses a separate test adapter, inert callbacks/dispatch/collection and subprocess.run, not a qualified production child/controller or genuine parent-supervisor reconciliation. Actual dependencies/GDT/content, English/FTP, body correspondence and recovery remain unverified.",
+      "next_dependency": "pending_only_exact_current_source_gate_request_migration_draft",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -49,7 +49,8 @@
         "research/ANALYSIS_PREREQUISITES.md",
         "research/sessions/20261022-runtime-preparation.md",
         "research/sessions/20261022-joined-handoff.md",
-        "research/sessions/20261022-current-binding-audit.md"
+        "research/sessions/20261022-current-binding-audit.md",
+        "research/sessions/20261022-isolated-current-handoff.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1032,7 +1033,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: integrate and qualify the current-command context at the existing host/child preparation seams using invented inputs in a fresh isolated process. Reuse the exact bootstrap, source owners and genuine retained control/helpers; keep final dispatch inert and actual v6/public execution refused. Close the combined startup/handoff gap without new generic approval/context infrastructure, protected reads, dependency activation or camera contact. English/native FTP stay first."
+    "RA-003: prepare and independently review a nonexecuting, pending-only migration draft for the existing GDT route's exact-current ordinary source/gate/request bindings. Reuse the qualified host/child context and retained contracts; preserve frozen records, five historical pending dispositions and dependency nulls. Do not construct an executable actual bundle, activate dependencies, read protected inputs or contact the camera. English/native FTP stay first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1082,9 +1083,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_joined_synthetic_preparation_control_handoff_032b368",
-  "current_goal_turn": "progress_finite_current_binding_audit_and_external_origin_repair",
-  "next_single_work_package": "RA-003: integrate and qualify the current-command context at the existing host/child preparation seams using invented inputs in a fresh isolated process. Reuse the exact bootstrap, source owners and genuine retained control/helpers; keep final dispatch inert and actual v6/public execution refused. Close the combined startup/handoff gap without new generic approval/context infrastructure, protected reads, dependency activation or camera contact. English/native FTP stay first.",
+  "previous_goal_turn": "progress_finite_current_binding_audit_and_external_origin_repair_19d4c88",
+  "current_goal_turn": "progress_isolated_current_context_preparation_and_retained_handoff",
+  "next_single_work_package": "RA-003: prepare and independently review a nonexecuting, pending-only migration draft for the existing GDT route's exact-current ordinary source/gate/request bindings. Reuse the qualified host/child context and retained contracts; preserve frozen records, five historical pending dispositions and dependency nulls. Do not construct an executable actual bundle, activate dependencies, read protected inputs or contact the camera. English/native FTP stay first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1714,6 +1715,80 @@
       "device_write_gate_passed": false,
       "camera_commands": [],
       "next_single_work_package": "RA-003: integrate and qualify the current-command context at the existing host/child preparation seams using invented inputs in a fresh isolated process. Reuse the exact bootstrap, source owners and genuine retained control/helpers; keep final dispatch inert and actual v6/public execution refused. Close the combined startup/handoff gap without new generic approval/context infrastructure, protected reads, dependency activation or camera contact. English/native FTP stay first."
+    },
+    {
+      "report": "research/sessions/20261022-isolated-current-handoff.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "scope": "invented_files_metadata_and_explicit_inert_adapter_in_fresh_isolated_process",
+      "child_api": "dependency_operational_child.prepare_synthetic_owned",
+      "qualification": {
+        "cases": 205,
+        "passed": 204,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "skip_reasons": [
+          "host cannot create an invented symlink; winerror=1314; errno=22"
+        ],
+        "runner_seconds": 224.41896729997825,
+        "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+        "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+        "source_stable": true,
+        "log_sha256": "8a820811c00affb1e023ecdca58445c6e53d777acee6609d8220e914b81305b3",
+        "child_observations": 15
+      },
+      "qualified_source_pins": 38,
+      "changed_source_sha256": {
+        "tools/dependency_operational_child.py": "58b6d62fc66cdb68ce45d8c67e05de8ea50c75b4c43fa489aac2ab5a88a047b6",
+        "tests/test_dependency_isolated_handoff.py": "7fb7402a3a63208569f51d4459f1e9b2c2440507d4e99652c20ca6770d55fe77",
+        "tests/test_dependency_joined_handoff.py": "1495660b6e2d83a11e84e6bcc60aff09b68cf89960e94dfe8a8b49078dff4906",
+        "tests/test_dependency_preparation_migration.py": "e23c107053a159d7df45b4d1df2f34c2dd5793ce8f07c38996b66ce94fe58e12"
+      },
+      "synthetic_capture_roles": 49,
+      "fresh_retained_disk_reads": 29,
+      "exact_parent_child_context_match": true,
+      "child_handle_cleanup_observed_before_exit": true,
+      "production_child_v6_refusal_observed": true,
+      "production_child_success_qualified": false,
+      "production_runtime_qualified": false,
+      "production_guard_functions_unchanged": true,
+      "production_bootstrap_unchanged": true,
+      "success_adapter_source_pins": {
+        "authored_child_sha256": "58b6d62fc66cdb68ce45d8c67e05de8ea50c75b4c43fa489aac2ab5a88a047b6",
+        "test_adapter_sha256": "8eed0ae2c82334256dee93b76197528d28c40452ea8899be5970fa684c9b98f8",
+        "transported_child_sha256": "3958017961ecccb79cb2ac338103d7c4762635eeeca812046515ca8b3ad444af",
+        "bootstrap_sha256": "9fc839f17e6c2ff316b88421af3d0d0719838d83a6113b65fdfcdc2743c99c86"
+      },
+      "fixture_correction": {
+        "initial_smoke_failures": 3,
+        "initial_focused_cases": 9,
+        "initial_focused_failure_entries": 6,
+        "windows_ctime_probe_files": 100,
+        "windows_ctime_only_differences": 5,
+        "predicate": "same_api_full_identity_stability_cross_api_dev_inode_size_mtime_and_exact_hash_size",
+        "production_guards_changed": false
+      },
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "actual_runtime_ready": false,
+      "frozen_pending_records_modified": false,
+      "installed_dependency_activated": false,
+      "protected_inputs_accessed": false,
+      "execution_authorized": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "parent_supervisor_join_qualified": false,
+      "callback_dispatch_collection": "explicitly_inert",
+      "previous_goal_turn": "progress_finite_current_binding_audit_and_external_origin_repair_19d4c88",
+      "current_goal_turn": "progress_isolated_current_context_preparation_and_retained_handoff",
+      "current_goal_status": "active",
+      "new_owner_input_required": false,
+      "camera_commands": [],
+      "next_single_work_package": "RA-003: prepare and independently review a nonexecuting, pending-only migration draft for the existing GDT route's exact-current ordinary source/gate/request bindings. Reuse the qualified host/child context and retained contracts; preserve frozen records, five historical pending dispositions and dependency nulls. Do not construct an executable actual bundle, activate dependencies, read protected inputs or contact the camera. English/native FTP stay first."
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -1761,7 +1836,7 @@
       "owner_input_required": false
     },
     "distinct_operational_act_decision": {
-      "status": "offline_preparation_authorized_current_binding_repaired_isolated_handoff_pending",
+      "status": "offline_preparation_authorized_isolated_synthetic_handoff_qualified_actual_bindings_pending",
       "owner_input_required": false
     }
   },
@@ -1775,9 +1850,9 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
-    "report": "research/sessions/20261022-current-binding-audit.md",
-    "cases": 195,
-    "passed": 194,
+    "report": "research/sessions/20261022-isolated-current-handoff.md",
+    "cases": 205,
+    "passed": 204,
     "skipped": 1,
     "actual_runtime_qualified": false
   },

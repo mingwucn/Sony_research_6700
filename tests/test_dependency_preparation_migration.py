@@ -103,12 +103,12 @@ class MigrationPreparation(unittest.TestCase):
         texts=dict(seed.texts,retained_gate=(ast.unparse(tree)+'\n').encode())
         raw_sources={k:base64.b64decode(v['base64']) for k,v in p['source_cache']['sources'].items()}
         registry={v['path']:raw_sources[k] for k,v in p['source_cache']['sources'].items()}
-        texts['ordinary_io']=('DATA='+repr(registry)+'''\ndef read(path,*,expected_sha256,expected_bytes):
+        texts['ordinary_io']=getattr(self,'fixture_ordinary_io',('DATA='+repr(registry)+'''\ndef read(path,*,expected_sha256,expected_bytes):
  raw=DATA[str(path)]
  assert len(raw)==expected_bytes
  return raw,{'invented':True}
 def read_ordinary(*a,**kw):raise AssertionError('invented ordinary callback forbidden')
-''').encode()
+''').encode())
         self.owner=sources.OuterSources(buffers=texts,hashes={n:m.sha(b) for n,b in texts.items()}).load()
         self.addCleanup(lambda:None if self.owner.closed else self.owner.close())
         case=seed.case
