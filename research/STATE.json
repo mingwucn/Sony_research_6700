@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-22",
-  "phase": "offline_runtime_checker_and_command_preparation_qualified_camera_hold",
+  "phase": "offline_joined_synthetic_handoff_qualified_current_binding_audit_next_camera_hold",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_runtime_checker_command_preparation_qualified_full_handoff_pending",
+      "status": "partial_joined_synthetic_handoff_qualified_exact_current_binding_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 ordinary saved metadata and authored-source review; no new protected observation or camera access",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261022-runtime-preparation.md",
+      "session_report": "research/sessions/20261022-joined-handoff.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -102,6 +102,141 @@
       ],
       "gdt_outer_source_preparation": "research/GDT_OUTER_BINDING_PREPARATION.md",
       "latest_host_continuation": {
+        "report": "research/sessions/20261022-joined-handoff.md",
+        "evidence_class": "offline-tested",
+        "qualification": {
+          "status": "pass",
+          "cases": 150,
+          "passed": 149,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "skip_reasons": [
+            "host cannot create an invented symlink; winerror=1314; errno=22"
+          ],
+          "runner_seconds": 95.83845989999827,
+          "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+          "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+          "modules": [
+            "test_dependency_joined_handoff",
+            "test_dependency_current_context",
+            "test_dependency_retained_context",
+            "test_dependency_preparation_context",
+            "test_dependency_host_entry",
+            "test_dependency_migration_transport",
+            "test_dependency_operational_launcher",
+            "test_dependency_preparation_migration",
+            "test_dependency_operational_preparation",
+            "test_dependency_operational_entry"
+          ],
+          "source_sha256": {
+            "tests/test_dependency_joined_handoff.py": "e112ccb66b86787eeab02d1bf776744fdb920819477c5d9f60d81759ccfaff8c",
+            "tests/test_dependency_preparation_migration.py": "e3561568cd201c66fdd63f3e4b973bac301d3c9a995c04f80f5ae1861b65716c",
+            "tools/dependency_host_entry.py": "6ffbb73c72d9b6a7de887bd9607095f10ed348129f2be7c566f92077711bd2b1",
+            "tools/dependency_operational_child.py": "6c401e3a1a122d3aac6c3dd788a70b603f8eab947f214cb601c0ca86f93e4d5e",
+            "tools/dependency_operational_entry.py": "8a7c0fc56345222340a1e27a62c720c64197adeb78374b1c2d2e2f6eb030781b",
+            "tools/dependency_operational_launcher.py": "8ff194d6a954904c0e0345edf4f0ae3f375213372d98421e90a7620e64bb09a1",
+            "tools/dependency_operational_preparation.py": "25e8f3ebd2a2d050e6a3e9a3b311b98709aaf08a12225167dd0431e384e895ba"
+          },
+          "source_stable": true,
+          "log_sha256": "6dd9e620b1f1f8ad7def8276ab30f9b4a7761c6327983c398c402be1252c57a7",
+          "actual_firmware_processed": false,
+          "camera_commands": [],
+          "feature_supported": false,
+          "recovery_proven": false,
+          "device_write_gate_passed": false
+        },
+        "previous_goal_turn": "progress_shared_runtime_checker_and_command_preparation",
+        "current_goal_turn": "progress_joined_source_owned_synthetic_handoff",
+        "current_goal_status": "active",
+        "scope": "invented_inputs_and_inert_final_runtime_wiring",
+        "actual_runtime_qualified": false,
+        "historical_frozen_records_modified": false,
+        "actual_firmware_processed": false,
+        "camera_commands": [],
+        "feature_supported": false,
+        "recovery_proven": false,
+        "device_write_gate_passed": false,
+        "new_owner_input_required": false,
+        "next_single_work_package": "RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first."
+      },
+      "status_history": [
+        {
+          "status": "partial_v4_factory_source_gate_qualified_parent_composition_pending",
+          "session_report": "research/sessions/20261019-RA-003-factory-source-gate.md",
+          "scope": "R0 ordinary Python source preparation and invented v4 gate/loader tests; parent/child integration pending"
+        }
+      ],
+      "semantic_binding_diagnostic": "research/SEMANTIC_BINDING_DIAGNOSTIC.md",
+      "stream_contract_binding": "research/STREAM_CONTRACT_BINDING.md",
+      "parent_migration": "research/DEPENDENCY_PARENT_MIGRATION.md",
+      "operational_binding_specification": "research/OPERATIONAL_BINDING_SPEC.md",
+      "successor_helpers": "research/SUCCESSOR_HELPER_LOADERS.md",
+      "latest_report": "research/sessions/20261022-joined-handoff.md",
+      "prepared_adapter_binding": "research/SUCCESSOR_ADAPTER_BINDING.md",
+      "isolated_adapter_integration": "research/ISOLATED_ADAPTER_INTEGRATION.md",
+      "launch_context_binding": "research/LAUNCH_CONTEXT_BINDING.md",
+      "current_metadata_semantics": "research/CURRENT_METADATA_SEMANTICS.md",
+      "latest_technical_continuation": {
+        "report": "research/sessions/20261022-joined-handoff.md",
+        "evidence_class": "offline-tested",
+        "qualification": {
+          "status": "pass",
+          "cases": 150,
+          "passed": 149,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1,
+          "skip_reasons": [
+            "host cannot create an invented symlink; winerror=1314; errno=22"
+          ],
+          "runner_seconds": 95.83845989999827,
+          "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+          "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+          "modules": [
+            "test_dependency_joined_handoff",
+            "test_dependency_current_context",
+            "test_dependency_retained_context",
+            "test_dependency_preparation_context",
+            "test_dependency_host_entry",
+            "test_dependency_migration_transport",
+            "test_dependency_operational_launcher",
+            "test_dependency_preparation_migration",
+            "test_dependency_operational_preparation",
+            "test_dependency_operational_entry"
+          ],
+          "source_sha256": {
+            "tests/test_dependency_joined_handoff.py": "e112ccb66b86787eeab02d1bf776744fdb920819477c5d9f60d81759ccfaff8c",
+            "tests/test_dependency_preparation_migration.py": "e3561568cd201c66fdd63f3e4b973bac301d3c9a995c04f80f5ae1861b65716c",
+            "tools/dependency_host_entry.py": "6ffbb73c72d9b6a7de887bd9607095f10ed348129f2be7c566f92077711bd2b1",
+            "tools/dependency_operational_child.py": "6c401e3a1a122d3aac6c3dd788a70b603f8eab947f214cb601c0ca86f93e4d5e",
+            "tools/dependency_operational_entry.py": "8a7c0fc56345222340a1e27a62c720c64197adeb78374b1c2d2e2f6eb030781b",
+            "tools/dependency_operational_launcher.py": "8ff194d6a954904c0e0345edf4f0ae3f375213372d98421e90a7620e64bb09a1",
+            "tools/dependency_operational_preparation.py": "25e8f3ebd2a2d050e6a3e9a3b311b98709aaf08a12225167dd0431e384e895ba"
+          },
+          "source_stable": true,
+          "log_sha256": "6dd9e620b1f1f8ad7def8276ab30f9b4a7761c6327983c398c402be1252c57a7",
+          "actual_firmware_processed": false,
+          "camera_commands": [],
+          "feature_supported": false,
+          "recovery_proven": false,
+          "device_write_gate_passed": false
+        },
+        "previous_goal_turn": "progress_shared_runtime_checker_and_command_preparation",
+        "current_goal_turn": "progress_joined_source_owned_synthetic_handoff",
+        "current_goal_status": "active",
+        "scope": "invented_inputs_and_inert_final_runtime_wiring",
+        "actual_runtime_qualified": false,
+        "historical_frozen_records_modified": false,
+        "actual_firmware_processed": false,
+        "camera_commands": [],
+        "feature_supported": false,
+        "recovery_proven": false,
+        "device_write_gate_passed": false,
+        "new_owner_input_required": false,
+        "next_single_work_package": "RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first."
+      },
+      "historical_host_continuation_before_joined_handoff": {
         "report": "research/sessions/20261020-RA-003-context-boundary-audit.md",
         "status": "execution_context_design_deferred_pending_activity_evidence",
         "tests": 1,
@@ -125,96 +260,6 @@
         "current_goal_turn": "progress_context_boundary_audited_and_non_advancing_constructor_work_deferred",
         "stopping_point_audit_count": 1,
         "next_single_work_package": "RA-003: supply an evidence-backed disposition of the five existing activity issues for the exact two-lead GDT analysis scope, using research/NEXT_ANALYSIS_EVIDENCE.md. Additional authoritative evidence or a qualified scope-specific assessment is needed; no fabricated approvals, repeated generic intake, protected processing or substitute synthetic context infrastructure."
-      },
-      "status_history": [
-        {
-          "status": "partial_v4_factory_source_gate_qualified_parent_composition_pending",
-          "session_report": "research/sessions/20261019-RA-003-factory-source-gate.md",
-          "scope": "R0 ordinary Python source preparation and invented v4 gate/loader tests; parent/child integration pending"
-        }
-      ],
-      "semantic_binding_diagnostic": "research/SEMANTIC_BINDING_DIAGNOSTIC.md",
-      "stream_contract_binding": "research/STREAM_CONTRACT_BINDING.md",
-      "parent_migration": "research/DEPENDENCY_PARENT_MIGRATION.md",
-      "operational_binding_specification": "research/OPERATIONAL_BINDING_SPEC.md",
-      "successor_helpers": "research/SUCCESSOR_HELPER_LOADERS.md",
-      "latest_report": "research/sessions/20261020-pre-camera-gap-audit.md",
-      "prepared_adapter_binding": "research/SUCCESSOR_ADAPTER_BINDING.md",
-      "isolated_adapter_integration": "research/ISOLATED_ADAPTER_INTEGRATION.md",
-      "launch_context_binding": "research/LAUNCH_CONTEXT_BINDING.md",
-      "current_metadata_semantics": "research/CURRENT_METADATA_SEMANTICS.md",
-      "latest_technical_continuation": {
-        "report": "research/sessions/20261022-runtime-preparation.md",
-        "evidence_class": "offline-tested",
-        "qualification": {
-          "status": "pass",
-          "tests": 139,
-          "failures": 0,
-          "errors": 0,
-          "skipped": 1,
-          "skip_reasons": [
-            "host cannot create an invented symlink; winerror=1314; errno=22"
-          ],
-          "seconds": 78.21219220000785,
-          "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
-          "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
-          "modules": [
-            "test_dependency_current_context",
-            "test_dependency_retained_context",
-            "test_dependency_preparation_context",
-            "test_dependency_host_entry",
-            "test_dependency_migration_transport",
-            "test_dependency_operational_launcher",
-            "test_dependency_preparation_migration",
-            "test_dependency_operational_preparation",
-            "test_dependency_operational_entry"
-          ],
-          "source_sha256": {
-            "tools/dependency_operational_launcher.py": "dbe5a83e65ae97eafe43e0b16f18770cffa963b8fb04fab77fd7e8c716903dc3",
-            "tools/dependency_operational_child.py": "6c401e3a1a122d3aac6c3dd788a70b603f8eab947f214cb601c0ca86f93e4d5e",
-            "tools/dependency_host_entry.py": "6ffbb73c72d9b6a7de887bd9607095f10ed348129f2be7c566f92077711bd2b1",
-            "tests/test_dependency_current_context.py": "2ab767d7ff50046a7533ef39589c3e7c91a38ddd66b382db3c8bf6d8041f1531",
-            "tests/test_dependency_retained_context.py": "3536cf32470c10e5e2a285c8e741c2e27c6993f70cbd14b10f5fcebd3e1dfc0f",
-            "tests/test_dependency_preparation_context.py": "b0c36cc9e03e36dbfa5e03d90f6482b8389d6ab5cbdf791186dddcf00e2b05c8"
-          },
-          "source_stable": true,
-          "log_sha256": "b75e45793f3ace33551bac0ae755f73f3c96776d622d0cbdd805bda4a1af5da6",
-          "evidence_class": "offline-tested",
-          "fixture_scope": "invented_inputs_only",
-          "camera_commands": [],
-          "feature_supported": false,
-          "recovery_proven": false,
-          "device_write_gate_passed": false
-        },
-        "completed": [
-          "retained_verify_context_on_invented_files",
-          "shared_exclusive_packet_request_preparation",
-          "current_context_capture_retained_request_saved_checks",
-          "existing_bootstrap_transport_to_inert_child"
-        ],
-        "retained_checker": {
-          "sha256": "70a2ed3a0265894adace48e5285c0eb8962c666975f7df1a8e4f6141b918bb43",
-          "bytes": 58942,
-          "modified": false
-        },
-        "limitations": [
-          "checker_proves_ordinary_file_consistency_not_argv_basis_semantics_or_authority",
-          "full_source_owned_preflight_control_helper_handoff_remains",
-          "actual_parent_child_v6_execution_refusals_preserved",
-          "partial_preparation_files_preserved_no_retry",
-          "private_authored_checker_required_for_retained_tests",
-          "windows_symlink_creation_privilege_unavailable"
-        ],
-        "source_location_search": "Initial private Python content search was broader than intended; filenames only emitted. Binary firmware/native payloads were not searched; differently named constants text cannot be ruled out. Subsequent reads restricted to exact authored checker and repository source/tests.",
-        "historical_frozen_records_modified": false,
-        "actual_firmware_processed": false,
-        "new_owner_input_required": false,
-        "legal_inquiry_stopped_by_owner": true,
-        "camera_commands": [],
-        "feature_supported": false,
-        "recovery_proven": false,
-        "device_write_gate_passed": false,
-        "next_single_work_package": "RA-003: qualify the source-owned full preflight to current-context and retained control/helper ownership handoff using invented callbacks, including failure cleanup and partial-result reconciliation. Reuse the qualified command transport and checker; keep actual v6 execution refused and camera contact on hold. English/native FTP stay first."
       }
     },
     "RA-004": {
@@ -290,19 +335,19 @@
     "Native source-to-binary correspondence and target runtime behaviour remain unverified; asset hashes establish identity only.",
     "Owner reports alpha6700 firmware 2.00, current Simplified Chinese, Chinese mainland version and English unavailable; exact regional SKU, full offered-language transcription and exact build/resources remain unverified. Full-list transcription is not required to record the reported English absence.",
     "Owner reports remaining body/setup intake facts unknown; history, health, connection, power/media, recovery tolerance and independent backup storage remain pending.",
-    "No alpha6700 service-access route has been reviewed and tested.",
+    "Selected ordinary-USB/native service-reader source routes have been reviewed statically; Windows transport and exact-body access remain unqualified. No camera route was exercised.",
     "No exact-body program/settings/resource acquisition exists.",
     "No target recovery envelope or feature mappings are established.",
     "Constrained synthetic loopback FTPS passed only on this host; arbitrary/deployment servers, independent hosts, physical faults, camera media/lifecycle and native constraints remain unqualified.",
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
     "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
     "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
-    "Official package/stream and prior private directory/member identities remain recorded. The independent classic ext metadata planner is qualified on invented buffers only; no actual GDT, inode record or contents were read or applied to it. Earlier superblock metadata observations remain unchanged. English resources/restrictions, native FTP backend, exact-body correspondence, current execution integration and verified recovery/write gates remain unresolved.",
+    "Official package and prior private directory/member/superblock observations remain recorded. Joined source-owned preparation/current-context/control ownership is qualified on invented inputs only. Exact-current source/runtime binding and actual GDT/content evidence remain incomplete; English resources/locale consumers, native FTP backend, installed-body correspondence and recovery remain unverified.",
     "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them.",
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: qualify the source-owned full preflight to current-context and retained control/helper ownership handoff using invented callbacks, including failure cleanup and partial-result reconciliation. Reuse the qualified command transport and checker; keep actual v6 execution refused and camera contact on hold. English/native FTP stay first.",
+  "next_work_package": "RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first.",
   "next_device_action": "None: camera contact is on explicit owner hold. Keep the prepared R1 packet unexecuted and do not repeat its approval request while the hold stands.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -433,7 +478,7 @@
         "Camera-origin manual upload and full server equality",
         "Separate automatic post-capture lifecycle qualification"
       ],
-      "next_package": "RA-003: qualify the source-owned full preflight to current-context and retained control/helper ownership handoff using invented callbacks, including failure cleanup and partial-result reconciliation. Reuse the qualified command transport and checker; keep actual v6 execution refused and camera contact on hold. English/native FTP stay first.",
+      "next_package": "RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first.",
       "evidence": [
         "docs/FTP.md",
         "research/sessions/20261018-FT-102-loopback.md",
@@ -8642,7 +8687,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261022-runtime-preparation.md",
+  "latest_report": "research/sessions/20261022-joined-handoff.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -11994,7 +12039,7 @@
     "device_write_gate_passed": false,
     "next_single_work_package": "RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold."
   },
-  "goal_status": "blocked",
+  "goal_status": "active",
   "prerequisite_disposition_20261022_prior_current": {
     "phase": "blocked_pending_external_analysis_or_target_evidence_camera_contact_on_hold",
     "latest_report": "research/sessions/20261022-precontact-blocked.md",
@@ -12079,12 +12124,12 @@
       "owner_input_required": false
     },
     "distinct_operational_act_decision": {
-      "status": "offline_preparation_authorized_checker_command_qualified_full_handoff_pending",
+      "status": "offline_preparation_authorized_joined_synthetic_handoff_qualified_exact_current_binding_pending",
       "owner_input_required": false
     }
   },
-  "current_owner_request_status": "synthetic_runtime_checker_and_command_preparation_complete_full_handoff_next",
-  "goal_status_note": "The last automatic-goal tool status was blocked. Subsequent owner-requested technical work has progressed; earlier five-owner-prerequisite framing is superseded.",
+  "current_owner_request_status": "joined_synthetic_handoff_qualified_finite_current_binding_audit_next",
+  "goal_status_note": "Authoritative goal tool reports active on this resumed continuation; the previous turn and this joined-handoff turn made technical progress. Historical blocked audits do not define current offline readiness.",
   "runtime_preparation_20261022_prior_current": {
     "phase": "offline_current_context_qualified_integration_pending_camera_hold",
     "latest_report": "research/sessions/20261022-prerequisite-disposition.md",
@@ -12162,5 +12207,71 @@
     "recovery_proven": false,
     "device_write_gate_passed": false,
     "next_single_work_package": "RA-003: qualify the source-owned full preflight to current-context and retained control/helper ownership handoff using invented callbacks, including failure cleanup and partial-result reconciliation. Reuse the qualified command transport and checker; keep actual v6 execution refused and camera contact on hold. English/native FTP stay first."
+  },
+  "joined_handoff_20261022_prior_current": {
+    "phase": "offline_runtime_checker_and_command_preparation_qualified_camera_hold",
+    "latest_report": "research/sessions/20261022-runtime-preparation.md",
+    "next_work_package": "RA-003: qualify the source-owned full preflight to current-context and retained control/helper ownership handoff using invented callbacks, including failure cleanup and partial-result reconciliation. Reuse the qualified command transport and checker; keep actual v6 execution refused and camera contact on hold. English/native FTP stay first.",
+    "goal_status": "blocked",
+    "goal_status_note": "The last automatic-goal tool status was blocked. Subsequent owner-requested technical work has progressed; earlier five-owner-prerequisite framing is superseded."
+  },
+  "joined_handoff_20261022": {
+    "report": "research/sessions/20261022-joined-handoff.md",
+    "evidence_class": "offline-tested",
+    "qualification": {
+      "status": "pass",
+      "cases": 150,
+      "passed": 149,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "skip_reasons": [
+        "host cannot create an invented symlink; winerror=1314; errno=22"
+      ],
+      "runner_seconds": 95.83845989999827,
+      "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+      "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+      "modules": [
+        "test_dependency_joined_handoff",
+        "test_dependency_current_context",
+        "test_dependency_retained_context",
+        "test_dependency_preparation_context",
+        "test_dependency_host_entry",
+        "test_dependency_migration_transport",
+        "test_dependency_operational_launcher",
+        "test_dependency_preparation_migration",
+        "test_dependency_operational_preparation",
+        "test_dependency_operational_entry"
+      ],
+      "source_sha256": {
+        "tests/test_dependency_joined_handoff.py": "e112ccb66b86787eeab02d1bf776744fdb920819477c5d9f60d81759ccfaff8c",
+        "tests/test_dependency_preparation_migration.py": "e3561568cd201c66fdd63f3e4b973bac301d3c9a995c04f80f5ae1861b65716c",
+        "tools/dependency_host_entry.py": "6ffbb73c72d9b6a7de887bd9607095f10ed348129f2be7c566f92077711bd2b1",
+        "tools/dependency_operational_child.py": "6c401e3a1a122d3aac6c3dd788a70b603f8eab947f214cb601c0ca86f93e4d5e",
+        "tools/dependency_operational_entry.py": "8a7c0fc56345222340a1e27a62c720c64197adeb78374b1c2d2e2f6eb030781b",
+        "tools/dependency_operational_launcher.py": "8ff194d6a954904c0e0345edf4f0ae3f375213372d98421e90a7620e64bb09a1",
+        "tools/dependency_operational_preparation.py": "25e8f3ebd2a2d050e6a3e9a3b311b98709aaf08a12225167dd0431e384e895ba"
+      },
+      "source_stable": true,
+      "log_sha256": "6dd9e620b1f1f8ad7def8276ab30f9b4a7761c6327983c398c402be1252c57a7",
+      "actual_firmware_processed": false,
+      "camera_commands": [],
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false
+    },
+    "previous_goal_turn": "progress_shared_runtime_checker_and_command_preparation",
+    "current_goal_turn": "progress_joined_source_owned_synthetic_handoff",
+    "current_goal_status": "active",
+    "scope": "invented_inputs_and_inert_final_runtime_wiring",
+    "actual_runtime_qualified": false,
+    "historical_frozen_records_modified": false,
+    "actual_firmware_processed": false,
+    "camera_commands": [],
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "new_owner_input_required": false,
+    "next_single_work_package": "RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first."
   }
 }

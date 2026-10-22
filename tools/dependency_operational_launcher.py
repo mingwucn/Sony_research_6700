@@ -218,6 +218,14 @@ def _save_command(*,folder,packet,operation_id,rows,runtime_profile):
         request=request,request_bytes=request_raw,request_path=path)
 
 
+def _finish_current_context(plan,validated,rows,host):
+    plan['context']=host.make_current_context(validated,request_bytes=plan['request_bytes'],
+        expected_request_sha256=sha(plan['request_bytes']),request_path=plan['request_path'],
+        checked_source_rows=rows)
+    check_saved(plan)
+    return plan
+
+
 def prepare_synthetic_context(*,folder,packet,validated,buffers,rows,expected_hashes,runtime_profile):
     """Qualify command/context preparation with invented inputs only.
 
@@ -247,11 +255,50 @@ def prepare_synthetic_context(*,folder,packet,validated,buffers,rows,expected_ha
     plan=_save_command(folder=folder,packet=packet,operation_id=prepared['operation_id'],
         rows=rows,runtime_profile=runtime_profile)
     plan['prepared']=process.strict(encoded(prepared))
-    plan['context']=host.make_current_context(validated,request_bytes=plan['request_bytes'],
-        expected_request_sha256=sha(plan['request_bytes']),request_path=plan['request_path'],
-        checked_source_rows=rows)
-    check_saved(plan)
-    return plan
+    return _finish_current_context(plan,validated,rows,host)
+
+
+def _checked_metadata(*,folder,packet,buffers,rows,outer,adapter):
+    """The existing source-owned projection, gate and complete preflight path."""
+    decoded=process.check_packet(packet,buffers,rows,adapter)
+    prepared=decoded[2]
+    need(Path(prepared['folder'])==folder/'composition','operational_launch_composition')
+    validated=process.validate_gate(packet,decoded,outer)
+    need(validated['candidate']['operation_id']==prepared['operation_id'],'operational_launch_operation')
+    check_retained(validated,buffers,rows)
+    arguments=process.preflight_arguments(packet,decoded,outer,adapter,validated)
+    preflight=outer.modules['dependency_operational_metadata'].validate_pending(**arguments)
+    return decoded,validated,arguments,preflight
+
+
+def prepare_synthetic_owned(*,folder,packet,buffers,rows,expected_hashes,runtime_profile):
+    """Joined preparation for invented inputs; never launch or dispatch runtime.
+
+    Source owners perform the same adapter projection and complete metadata
+    preflight as _prepare_pending. A successful caller owns outer/adapter cleanup;
+    failures close them once and preserve any exclusive partial output files.
+    Runtime profile is caller-supplied fixture data, not authentication. This
+    separate API cannot relax the operational parent/child v6 refusal.
+    """
+    folder=Path(folder)
+    need(folder.is_absolute() and folder.is_dir(),'operational_launch_folder')
+    validate_capture(buffers,rows,expected_hashes)
+    # The retained preflight arguments include nested receipt maps. Own those
+    # maps before passing them through the source-owned validation graph.
+    packet=process.strict(encoded(packet))
+    outer=adapter=None
+    try:
+        outer,adapter=process.owners(buffers)
+        decoded,validated,arguments,preflight=_checked_metadata(folder=folder,packet=packet,
+            buffers=buffers,rows=rows,outer=outer,adapter=adapter)
+        need(validated.get('schema')=='gdt_outer_consistency_v6','operational_launch_synthetic_v6')
+        plan=_save_command(folder=folder,packet=packet,operation_id=decoded[2]['operation_id'],
+            rows=rows,runtime_profile=runtime_profile)
+        plan.update(prepared=decoded[2],checked=decoded[3],outer=outer,adapter=adapter,
+            preflight_arguments=arguments,preflight=preflight,validated=validated)
+        return _finish_current_context(plan,validated,rows,outer.modules['dependency_host_entry'])
+    except BaseException as primary:
+        process.close_owned((adapter,outer),primary)
 
 
 def _prepare_pending(*,folder,packet,buffers,rows,expected_hashes):
@@ -262,15 +309,10 @@ def _prepare_pending(*,folder,packet,buffers,rows,expected_hashes):
     outer=adapter=helpers=boot=validation=None
     try:
         outer,adapter=process.owners(buffers)
-        decoded=process.check_packet(packet,buffers,rows,adapter)
+        decoded,validated,arguments,_=_checked_metadata(folder=folder,packet=packet,
+            buffers=buffers,rows=rows,outer=outer,adapter=adapter)
         docs,raw,prepared,checked,ordinary=decoded
-        need(Path(prepared['folder'])==folder/'composition','operational_launch_composition')
         gate=outer.modules['retained_gate'];io=outer.modules['ordinary_io'];host=outer.modules['dependency_host_entry']
-        validated=process.validate_gate(packet,decoded,outer)
-        need(validated['candidate']['operation_id']==prepared['operation_id'],'operational_launch_operation')
-        check_retained(validated,buffers,rows)
-        arguments=process.preflight_arguments(packet,decoded,outer,adapter,validated)
-        outer.modules['dependency_operational_metadata'].validate_pending(**arguments)
         process.refuse_v6_execution(packet)
         profile=subprocess.run([sys.executable,'-I','-S','-B','-X','utf8','-c',PROFILE],capture_output=True,timeout=15)
         need(profile.returncode==0 and not profile.stderr,'operational_launch_profile')

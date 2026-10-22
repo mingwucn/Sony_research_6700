@@ -42,9 +42,10 @@ class MigrationPreparation(unittest.TestCase):
         seed=preparation_tests.PreparationTests('test_owned_graph_and_pending_preflight_recompute_from_originals')
         seed.setUp();self.addCleanup(seed.doCleanups)
         seed.prep.close();seed.owner.close()
-        a=fixture(Path.cwd())
+        root=getattr(self,'fixture_root',Path.cwd())
+        a=fixture(root)
         f=fixtures.Fixture.__new__(fixtures.Fixture)
-        f.root=Path.cwd()
+        f.root=root
         f.p={n:(raw if n=='q_snapshot_log' else json.loads(raw)) for n,raw in a['legacy_documents']['inputs'].items()}
         for attr,role in (('c','candidate'),('d','decision'),('r','review'),('s','seal')):
             setattr(f,attr,json.loads(a['legacy_documents'][role]))
@@ -57,8 +58,8 @@ class MigrationPreparation(unittest.TestCase):
         replacements={
             'role:gdt_preflight':b'def freeze_basis(**kw):return None\n',
             'bootstrap:activation_binding':('def prepare_bindings(**kw):return '+repr(p['binding_plan'])+'\n').encode(),
-            'bootstrap:io_entry':b'# invented control; no device or observer\n',
-            'integration:prospective_child':FACTORY,
+            'bootstrap:io_entry':getattr(self,'fixture_control',b'# invented control; no device or observer\n'),
+            'integration:prospective_child':getattr(self,'fixture_factory',FACTORY),
         }
         for key,raw in replacements.items():
             row=p['source_cache']['sources'][key]
@@ -86,9 +87,9 @@ class MigrationPreparation(unittest.TestCase):
         p['q_repair_review']['source_sha256']=repair
         p['prerequisites']['qualified_roles']=p['role_authority']['roles']
         p['prerequisites']['binding_input']['roles']=p['role_authority']['roles']
-        factory=p['factory_evidence'];factory['new_factory_sha256']=m.sha(FACTORY)
+        factory=p['factory_evidence'];factory['new_factory_sha256']=m.sha(replacements['integration:prospective_child'])
         for group in ('contract','composition'):
-            factory[group]['source_sha256']['prospective_child.py']=m.sha(FACTORY)
+            factory[group]['source_sha256']['prospective_child.py']=m.sha(replacements['integration:prospective_child'])
         factory['composition']['source_sha256']['roles/gdt_preflight.py']=m.sha(replacements['role:gdt_preflight'])
         factory['composition']['source_sha256']['io_entry.py']=m.sha(replacements['bootstrap:io_entry'])
         docs,seal=f.pack()
@@ -111,9 +112,11 @@ def read_ordinary(*a,**kw):raise AssertionError('invented ordinary callback forb
         self.owner=sources.OuterSources(buffers=texts,hashes={n:m.sha(b) for n,b in texts.items()}).load()
         self.addCleanup(lambda:None if self.owner.closed else self.owner.close())
         case=seed.case
+        if hasattr(self,'fixture_root'):
+            case.request['folder']=str(root/'command'/'composition')
         for role,row in case.request['sources'].items():
             if role.startswith('bound.'):
-                key=role[6:];raw=raw_sources[key];row.update(path=Path(p['source_cache']['sources'][key]['path']).relative_to(Path.cwd()).as_posix())
+                key=role[6:];raw=raw_sources[key];row.update(path=Path(p['source_cache']['sources'][key]['path']).relative_to(root).as_posix())
                 case.buffers[role]=raw;row.update(bytes=len(raw),sha256=m.sha(raw))
         for name,role in (('dependency_successor_wiring','successor_wiring'),
                           ('dependency_successor_sources','namespace'),('ordinary_io','ordinary_io'),
@@ -137,7 +140,7 @@ def read_ordinary(*a,**kw):raise AssertionError('invented ordinary callback forb
             request_bytes=m.encoded(case.request),request_sha256=m.sha(m.encoded(case.request)),
             checked_sources=case.buffers,documents=docs,original_receipts=originals,
             ordinary=ordinary,ordinary_receipts=m.receipts(ordinary),legacy_seal_sha256=seal,
-            reference_pins=f.reference_pins(docs),prepared_repository_root=str(Path.cwd()),
+            reference_pins=f.reference_pins(docs),prepared_repository_root=str(root),
             historical_migration=self.migration)
         self.addCleanup(lambda:None if self.prep.closed else self.prep.close())
 

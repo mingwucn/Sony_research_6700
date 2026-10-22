@@ -54,11 +54,11 @@ request bytes, path/hash and checked source rows. It must preserve historical
 basis/source/document identities while checking the current operation and argv.
 No new approval schema or generic framework is needed.
 
-The initial constructor qualification passed 61 tests. The current follow-up ran 139 cases: 138 passed, 1 Windows symlink privilege skip, no failures/errors. The genuine unchanged retained `verify_context` now accepts the context over invented ordinary files, and shared preparation writes exclusive packet/request files, checks saved sources and constructs the context. The exact existing bootstrap transports that request to an inert child.
+The joined follow-up ran 150 cases: 149 passed, 1 skipped, no failures/errors. It joins source-owned adapter projection and complete pending metadata preflight with current-context construction, genuine retained verification/reservation and engine/helper cleanup. All files and metadata inputs are invented; final runtime wiring is inert. The ordinary refresh fixture uses its in-memory registry. This is no actual dependency/observer run or target-content evidence.
 
-The checker validates ordinary-file hashes; it does not independently validate argv/basis semantics or grant execution authority. Complete capture, retained binding and exact-bootstrap checks remain separate caller checks exercised by the synthetic preparation API. Actual parent/child v6 and public runtime refusals remain unchanged. Partial files after failure are preserved for inspection, without automatic retry or a returned usable plan.
+The retained checker validates ordinary-file hashes, not argv/basis semantics or execution authority. Actual parent/child v6 and public runtime refusals remain. The goal is active and its next acceptance target is a finite exact-current binding/readiness decision on the existing route. No further generic owner intake or legal inquiry is needed.
 
-Next: RA-003: qualify the source-owned full preflight to current-context and retained control/helper ownership handoff using invented callbacks, including failure cleanup and partial-result reconciliation. Reuse the qualified command transport and checker; keep actual v6 execution refused and camera contact on hold. English/native FTP stay first. [Commands, limitations and results](sessions/20261022-runtime-preparation.md).
+Next: RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first. [Commands and qualification limits](sessions/20261022-joined-handoff.md).
 
 ## Preserved boundaries
 
