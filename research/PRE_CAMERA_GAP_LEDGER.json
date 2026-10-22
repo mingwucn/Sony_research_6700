@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_isolated_current_handoff_qualified_pending_source_binding_migration",
-      "available_evidence": "Exact unchanged bootstrap plus explicitly captured synthetic child adapter joins full v6 preflight/current context, 29 invented disk refreshes, unchanged retained control and genuine helper/reservation ownership in a fresh isolated process. Separate unchanged child diagnostic confirms v6 refusal.",
-      "remaining_acceptance": "Actual source/gate/record migration remains pending. The successful subprocess uses a separate test adapter, inert callbacks/dispatch/collection and subprocess.run, not a qualified production child/controller or genuine parent-supervisor reconciliation. Actual dependencies/GDT/content, English/FTP, body correspondence and recovery remain unverified.",
-      "next_dependency": "pending_only_exact_current_source_gate_request_migration_draft",
+      "status": "partial_pending_binding_draft_and_synthetic_consumer_qualified",
+      "available_evidence": "Nonexecuting exact-current ordinary binding draft: six proposed replacements, unchanged 46-role projection, 16 frozen record receipts. Synthetic pending consumer qualifies six exact public source replacements with invented remaining records; 55 regression and 10 new cases pass.",
+      "remaining_acceptance": "Actual metadata migration remains unapplied. Pure proposal consistency cannot qualify chosen gate semantics or opaque comparison buffers. Genuine retained parent supervision/saved reconciliation and actual runtime, dependency/GDT/content, English/FTP, body correspondence and recovery remain unqualified.",
+      "next_dependency": "invented_genuine_parent_supervision_and_saved_reconciliation",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -50,7 +50,8 @@
         "research/sessions/20261022-runtime-preparation.md",
         "research/sessions/20261022-joined-handoff.md",
         "research/sessions/20261022-current-binding-audit.md",
-        "research/sessions/20261022-isolated-current-handoff.md"
+        "research/sessions/20261022-isolated-current-handoff.md",
+        "research/sessions/20261022-pending-binding-draft.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1033,7 +1034,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: prepare and independently review a nonexecuting, pending-only migration draft for the existing GDT route's exact-current ordinary source/gate/request bindings. Reuse the qualified host/child context and retained contracts; preserve frozen records, five historical pending dispositions and dependency nulls. Do not construct an executable actual bundle, activate dependencies, read protected inputs or contact the camera. English/native FTP stay first."
+    "RA-003: qualify genuine retained parent supervision and saved-result reconciliation with the current synthetic preparation handoff and a separately pinned inert child adapter. Use invented records/files only; preserve actual parent/child v6 refusals, frozen records, five historical pending dispositions and dependency nulls. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1083,9 +1084,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_finite_current_binding_audit_and_external_origin_repair_19d4c88",
-  "current_goal_turn": "progress_isolated_current_context_preparation_and_retained_handoff",
-  "next_single_work_package": "RA-003: prepare and independently review a nonexecuting, pending-only migration draft for the existing GDT route's exact-current ordinary source/gate/request bindings. Reuse the qualified host/child context and retained contracts; preserve frozen records, five historical pending dispositions and dependency nulls. Do not construct an executable actual bundle, activate dependencies, read protected inputs or contact the camera. English/native FTP stay first.",
+  "previous_goal_turn": "progress_isolated_current_context_handoff_da4aeb5",
+  "current_goal_turn": "progress_pending_only_binding_draft_and_synthetic_consumer",
+  "next_single_work_package": "RA-003: qualify genuine retained parent supervision and saved-result reconciliation with the current synthetic preparation handoff and a separately pinned inert child adapter. Use invented records/files only; preserve actual parent/child v6 refusals, frozen records, five historical pending dispositions and dependency nulls. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1789,6 +1790,73 @@
       "new_owner_input_required": false,
       "camera_commands": [],
       "next_single_work_package": "RA-003: prepare and independently review a nonexecuting, pending-only migration draft for the existing GDT route's exact-current ordinary source/gate/request bindings. Reuse the qualified host/child context and retained contracts; preserve frozen records, five historical pending dispositions and dependency nulls. Do not construct an executable actual bundle, activate dependencies, read protected inputs or contact the camera. English/native FTP stay first."
+    },
+    {
+      "report": "research/sessions/20261022-pending-binding-draft.md",
+      "companion": "research/PENDING_BINDING_MIGRATION.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "scope": "nonexecuting_ordinary_binding_draft_and_invented_pending_consumer_qualification",
+      "private_draft_revision": 2,
+      "private_draft_sha256": "6a15f91c3c9803bda40690e1f42e1ae9a04f39eb04c4a3562bd54330b0416802",
+      "ordinary_frozen_records": 16,
+      "ordinary_source_pins": 72,
+      "authored_source_files": 55,
+      "comparison_roles": 51,
+      "child_roles": 49,
+      "host_roles": 2,
+      "prepared_roles": 46,
+      "prepared_byte_deltas": 0,
+      "replacement_roles": [
+        "host.launcher",
+        "host_entry",
+        "operational_metadata",
+        "operational_preparation",
+        "process_child",
+        "retained_gate"
+      ],
+      "historical_pending_dispositions": 5,
+      "dependency_null_fields": 3,
+      "regression_cases": 55,
+      "regression_passed": 55,
+      "new_consumer_cases": 10,
+      "new_consumer_passed": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "child_observations": 15,
+      "regression_log_sha256": "60a0fff8000c394f3bfcbb2a3a73721d14dacc63d4517462ba6e5e7ab7fda8e8",
+      "consumer_log_sha256": "ddfe5f26f4bf3881b880f7481d7c29ff9bbda9d21bbb938595dec08c972d1456",
+      "exact_current_source_roles_in_synthetic_fixture": 6,
+      "other_fixture_sources": "invented",
+      "unchanged_frozen_records": true,
+      "production_source_files_changed": false,
+      "synthetic_pending_proposal_consistency_verified": true,
+      "synthetic_decided_scope_refused": true,
+      "proposal_checker_semantically_qualifies_gate": false,
+      "opaque_comparison_null_semantics_verified": false,
+      "private_authored_source_executed": false,
+      "public_pure_definitions_imported": true,
+      "actual_observation_proposal_validated": false,
+      "actual_outer_gate_validated": false,
+      "actual_runtime_ready": false,
+      "parent_supervisor_join_qualified": false,
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "protected_inputs_accessed": false,
+      "installed_dependency_activated": false,
+      "execution_authorized": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "new_owner_input_required": false,
+      "current_goal_status": "active",
+      "camera_commands": [],
+      "next_single_work_package": "RA-003: qualify genuine retained parent supervision and saved-result reconciliation with the current synthetic preparation handoff and a separately pinned inert child adapter. Use invented records/files only; preserve actual parent/child v6 refusals, frozen records, five historical pending dispositions and dependency nulls. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first.",
+      "qualified_source_test_pins": 39,
+      "final_review_docstring_clarification_requalified": true
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -1850,10 +1918,10 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
-    "report": "research/sessions/20261022-isolated-current-handoff.md",
-    "cases": 205,
-    "passed": 204,
-    "skipped": 1,
+    "report": "research/sessions/20261022-pending-binding-draft.md",
+    "cases": 65,
+    "passed": 65,
+    "skipped": 0,
     "actual_runtime_qualified": false
   },
   "evidence_source_sha256_scope": "Original audit snapshot; historical hashes are not an exact-current source closure or execution allowlist."
