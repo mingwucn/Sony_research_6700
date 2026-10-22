@@ -1,7 +1,7 @@
 """Genuine RuntimeOps instances with explicit inert dependency adapters.
 
-All filesystem data, native events, cipher and protected inputs are invented.
-The bootstrap adapter is not evidence of actual dependency initialization.
+All filesystem data, imports, native events, cipher and protected inputs are
+invented. Original bootstrap delegation does not initialize real dependencies.
 """
 import sys
 import unittest
@@ -54,15 +54,31 @@ class InstanceRuntimeTests(unittest.TestCase):
         self.assertEqual(observed['ops_instance_attributes'],names)
         self.assertEqual(observed['expected_instance_attributes'],names)
         self.assertEqual(observed['bootstrap_calls'],1)
-        self.assertFalse(observed['bootstrap_original_method_called'])
+        self.assertTrue(observed['bootstrap_original_method_called'])
+        self.assertIs(observed['bootstrap_original_method_returned'],mode!='bootstrap_error')
+        self.assertTrue(observed['bootstrap_imports_are_simulated'])
+        self.assertEqual(observed['bootstrap_import_adapter_installs'],1)
+        self.assertFalse(observed['bootstrap_import_adapter_active'])
+        self.assertIs(observed['bootstrap_import_adapter_restored'],mode!='foreign_importlib')
+        self.assertIs(observed['bootstrap_import_foreign_preserved'],mode=='foreign_importlib')
+        trusted=('ctypes','_ctypes','ctypes.util','ctypes._endian','platform')
+        self.assertEqual(observed['bootstrap_imports'],list(trusted[:1] if mode=='bootstrap_error' else trusted))
+        # The returned inputs belong to the invented GDT transport. Dependency
+        # expectations were independently captured before child execution here.
+        dependency_policy=self.expected_filesystem['expectation']
+        expected_origins={name:dependency_policy['roots']['runtime']['path'].rstrip('/')+'/'+
+            dependency_policy['trusted_origins'][name]['relative_path'] for name in trusted}
+        if mode=='bootstrap_error':expected_origins={}
+        if mode=='wrong_origin':expected_origins['platform']='Z:/invented-wrong-origin/platform.py'
+        self.assertEqual(observed['bootstrap_import_origins'],expected_origins)
         self.assertFalse(observed['callback_active'])
         for key in ('explicit_inert_adapter','native_events_are_direct_simulation',
                     'vector_cipher_is_lookup','constructor_binding_remains_synthetic','class_source_unchanged'):
             self.assertIs(observed[key],True,key)
         delegates=observed['original_delegations']
         self.assertTrue(all(row['bound_original_instance'] for row in delegates))
-        self.assertNotIn('bootstrap',[row['method'] for row in delegates])
         counts={name:sum(row['method']==name for row in delegates) for name in names}
+        self.assertEqual(counts['bootstrap'],1)
         self.assertEqual(counts['reader'],observed['reads'])
         self.assertEqual(counts['root'],observed['root_calls'])
         self.assertEqual(counts['reader'],len(diag['filesystem_runtime']['reads']))
@@ -86,6 +102,7 @@ class InstanceRuntimeTests(unittest.TestCase):
         self.assertEqual(answer['status'],'consistent_pending_composition',answer)
         observed=diag['instance_runtime']
         self.assertEqual(observed['bootstrap_returns'],1)
+        self.assertEqual(observed['package_continuation_importlib_checks'],5)
         self.assertEqual((observed['loader_calls'],observed['cipher_calls'],observed['callback_calls']),(5,72,1))
         self.assertEqual((observed['direct_native_audit_calls'],observed['skipped_native_audit_calls']),(5,0))
         self.assertEqual(observed['corrupted_cipher_lookups'],0)
@@ -120,6 +137,16 @@ class InstanceRuntimeTests(unittest.TestCase):
     def test_wrong_trusted_origin_refuses(self):
         diag=self.assert_instance_refused('wrong_origin','trusted_origin')
         self.assertEqual(diag['instance_runtime']['loader_calls'],0)
+        self.assertEqual(diag['audit_runtime']['callback_calls'],0)
+
+    def test_foreign_importlib_is_preserved_and_prevents_package_continuation(self):
+        diag=self.assert_instance_refused('foreign_importlib','synthetic_instance_importlib_ownership')
+        observed=diag['instance_runtime']
+        self.assertTrue(observed['bootstrap_original_method_returned'])
+        self.assertTrue(observed['bootstrap_import_foreign_preserved'])
+        self.assertFalse(observed['bootstrap_import_adapter_restored'])
+        self.assertEqual(observed['package_continuation_importlib_checks'],0)
+        self.assertEqual(observed['loader_calls'],0)
         self.assertEqual(diag['audit_runtime']['callback_calls'],0)
 
     def test_missing_simulated_native_audit_refuses(self):

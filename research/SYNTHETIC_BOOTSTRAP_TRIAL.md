@@ -62,10 +62,15 @@ OS spawn/call latency, descendant processes and process memory are outside this
 bound. Bounded raw stdout/stderr, journal, result and supervision facts remain
 private; none is uploaded.
 
-Host interruption (`KeyboardInterrupt`/`SystemExit`) is not qualified: it can
-bypass this supervisor's ordinary exception cleanup and final receipt. Reconcile
-the existing attempt externally before any new attempt; do not blindly retry.
-This is an additional reason the route remains restricted to synthetic trials.
+Recoverable `KeyboardInterrupt`/`SystemExit` now return sanitized interruption
+facts through cooperative cleanup; [the current qualification](sessions/20261023-precontact-readiness.md)
+adds thirteen mocked interruption cases. Attempts are recorded before calls,
+the first failure remains sticky, and known PIDs are retained. An exception
+before Popen returns is an unknown spawn outcome requiring process
+reconciliation; it is not evidence that no child exists. No attempt is retried.
+Repeated asynchronous interruption, abrupt process termination and OS call
+latency remain outside the cooperative guarantee. This does not qualify actual
+runtime activation, physical signals or device recovery.
 
 ## Qualification and remaining prerequisites
 
@@ -77,8 +82,10 @@ timeout, nonzero exit, journal overflow and invalid serialization. The audit-eve
 probe calls no native loader. Pure parent counterexamples alter source, request,
 PID, flags, authority, origins, stop and journal records.
 
-All 19 captured existing source pins and frozen **16 ordinary records / five
-pending dispositions / three dependency nulls** remain unchanged. No allow record,
+In the original 204-case qualification, all 19 captured existing source pins
+and frozen **16 ordinary records / five pending dispositions / three dependency
+nulls** were unchanged. Current source changes are listed in the
+[current report](sessions/20261023-precontact-readiness.md). No allow record,
 source-manifest migration or actual executable bundle was created. Five full
 runtime receipts and fresh actual origins/root identities remain missing; actual
 native-event behavior, installed activation and protected processing are unproved.
@@ -89,9 +96,4 @@ bridge remains **host-assisted**. Camera contact stays on hold.
 
 ## Next single work package
 
-RA-003: join the synthetic bootstrap receipt to the existing nonexecuting
-preparation review using supplied invented runtime metadata. Validate the shared
-request/source/runtime/journal bindings and rejection of mismatched or replayed
-receipts. Keep the review packet nonlaunchable, actual activation refused and
-frozen 16/5/3 unchanged. No installed/native/protected reads or camera contact;
-English/native FTP remain first.
+RA-003: collect fresh host interpreter/cold-preload facts, the five trusted-runtime origins, ancestor root identities and five complete read-only runtime-file receipts; reconcile once with the existing mapping. Actual-host metadata observation is outside the current synthetic-only scope and remains pending. No bootstrap, package activation, protected processing or camera contact. English/native FTP remain first.

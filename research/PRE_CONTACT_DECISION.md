@@ -1,3 +1,5 @@
+Current finite preparation result (2026-10-23): [session](sessions/20261023-precontact-readiness.md). 176 current synthetic cases pass; actual runtime evidence remains missing. Original bootstrap is integrated through inert imports in the existing path; cooperative interruption facts require reconciliation on unknown outcomes. English/native FTP stay first. Camera contact remains held; the R1 packet is already prepared and requires no additional synthetic receipt layer or completed R4 recovery gate. No legal question/research resumed. Next single package: RA-003: collect fresh host interpreter/cold-preload facts, the five trusted-runtime origins, ancestor root identities and five complete read-only runtime-file receipts; reconcile once with the existing mapping. Actual-host metadata observation is outside the current synthetic-only scope and remains pending. No bootstrap, package activation, protected processing or camera contact. English/native FTP remain first. Earlier dated status and next-step text below is historical.
+
 # Pre-contact decision: source lifecycle and ordinary observation
 
 2026-10-22. Scope: R0 source review and preparation. Evidence:

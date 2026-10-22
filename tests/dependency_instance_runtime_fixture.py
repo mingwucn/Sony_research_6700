@@ -1,8 +1,8 @@
 """Exact original RuntimeOps instances with an explicit inert adapter.
 
 Generated code retains genuine host-method delegation over the existing invented
-files, audit probes and preparation/parent path. The adapter supplies only inert
-bootstrap modules, simulated native events and public-vector lookup ciphers.
+files, audit probes and preparation/parent path. The original bootstrap method
+uses a scoped inert import adapter; native events and vector ciphers stay doubles.
 The child has no FakeOps observer, source function, inherited observer or byte/
 receipt fallback. No installed dependency or executable native input is used.
 """
@@ -12,7 +12,8 @@ from dependency_audit_runtime_fixture import audit_runtime_source
 
 
 MODES = ('complete', 'bootstrap_error', 'missing_module', 'wrong_origin',
-         'wrong_cipher', 'callback_error', 'missing_native_audit', 'callback_cipher')
+         'wrong_cipher', 'callback_error', 'missing_native_audit', 'callback_cipher',
+         'foreign_importlib')
 
 
 def _drop_captured_fake(source):
@@ -101,8 +102,11 @@ def instance_runtime_source(mode='complete'):
         source = source.replace(before, after)
     suffix = r'''
 
+_INSTANCE_TRUSTED = ('ctypes', '_ctypes', 'ctypes.util', 'ctypes._endian', 'platform')
+
+
 class _InertRuntimeAdapter:
-    """Explicit bootstrap/native/cipher double; never an observer subclass."""
+    """Inert import/native/cipher adapter; never an observer subclass."""
     def __init__(self, owner):
         self.owner = owner
         self.policy = owner.inputs['expectation']
@@ -111,6 +115,15 @@ class _InertRuntimeAdapter:
         self.root_calls = self.callback_calls = 0
         self.loader_calls = self.cipher_calls = 0
         self.bootstrap_calls = self.bootstrap_returns = 0
+        self.bootstrap_imports = []
+        self.bootstrap_import_origins = {}
+        self.bootstrap_import_active = False
+        self.importlib_original = owner.producer.importlib
+        self.importlib_installs = 0
+        self.importlib_restored = False
+        self.importlib_foreign = None
+        self.importlib_foreign_preserved = False
+        self.package_continuation_importlib_checks = 0
         self.direct_native_audit_calls = self.skipped_native_audit_calls = 0
         self.corrupted_cipher_lookups = 0
         self.cipher_fault_stage = None
@@ -131,17 +144,57 @@ class _InertRuntimeAdapter:
 
     def bootstrap(self):
         self.bootstrap_calls += 1
+        if (self.bootstrap_calls != 1 or tuple(self.owner.producer.TRUSTED) != _INSTANCE_TRUSTED or
+                self.owner.producer.importlib is not self.importlib_original):
+            raise ValueError('synthetic_instance_bootstrap_boundary')
+        self.owner.producer.importlib = self
+        self.importlib_installs += 1
+        self.bootstrap_import_active = True
+        try:
+            # Invoke the exact unchanged class method on the observer already
+            # used by the preparation/controller path. Only its module's
+            # importlib binding is scoped; no real import or native event runs.
+            value = _instance_original_call(self.owner, 'bootstrap')
+            if tuple(self.bootstrap_imports) != _INSTANCE_TRUSTED:
+                raise ValueError('synthetic_instance_bootstrap_import_roster')
+            if _INSTANCE_MODE == 'missing_module':
+                del value['platform']
+            self.bootstrap_returns += 1
+            return value
+        finally:
+            self.bootstrap_import_active = False
+            if self.owner.producer.importlib is self:
+                self.owner.producer.importlib = self.importlib_original
+                self.importlib_restored = True
+            else:
+                # A foreign replacement is preserved. Do not clobber it in an
+                # attempt to report successful cleanup or enter the packages.
+                self.importlib_foreign_preserved = (
+                    self.owner.producer.importlib is self.importlib_foreign)
+                raise ValueError('synthetic_instance_importlib_ownership')
+
+    def import_module(self, name):
+        trusted = _INSTANCE_TRUSTED
+        index = len(self.bootstrap_imports)
+        if (not self.bootstrap_import_active or self.owner.producer.importlib is not self or
+                index >= len(trusted) or type(name) is not str or name != trusted[index]):
+            raise ValueError('synthetic_instance_bootstrap_import')
+        self.bootstrap_imports.append(name)
         if _INSTANCE_MODE == 'bootstrap_error':
             raise OSError('synthetic_instance_bootstrap_error')
-        value = dict(self.modules)
-        if _INSTANCE_MODE == 'missing_module':
-            del value['platform']
-        elif _INSTANCE_MODE == 'wrong_origin':
-            value['platform'].__file__ = 'Z:/invented-wrong-origin/platform.py'
-        self.bootstrap_returns += 1
-        return value
+        module = self.modules[name]
+        if _INSTANCE_MODE == 'wrong_origin' and name == 'platform':
+            module.__file__ = 'Z:/invented-wrong-origin/platform.py'
+        self.bootstrap_import_origins[name] = module.__file__
+        if _INSTANCE_MODE == 'foreign_importlib' and name == trusted[-1]:
+            self.importlib_foreign = types.SimpleNamespace(invented_foreign_importlib=True)
+            self.owner.producer.importlib = self.importlib_foreign
+        return module
 
     def load(self, path, **kwargs):
+        if not self.importlib_restored or self.owner.producer.importlib is not self.importlib_original:
+            raise ValueError('synthetic_instance_package_importlib_boundary')
+        self.package_continuation_importlib_checks += 1
         self.loader_calls += 1
         if _INSTANCE_MODE == 'missing_native_audit':
             self.skipped_native_audit_calls += 1
@@ -232,6 +285,14 @@ def _instance_observation(owner):
         original_delegations=delegates,
         bootstrap_calls=0 if adapter is None else adapter.bootstrap_calls,
         bootstrap_returns=0 if adapter is None else adapter.bootstrap_returns,
+        bootstrap_imports=[] if adapter is None else list(adapter.bootstrap_imports),
+        bootstrap_import_origins={} if adapter is None else dict(adapter.bootstrap_import_origins),
+        bootstrap_imports_are_simulated=True,
+        bootstrap_import_adapter_installs=0 if adapter is None else adapter.importlib_installs,
+        bootstrap_import_adapter_restored=adapter is not None and adapter.importlib_restored,
+        bootstrap_import_adapter_active=adapter is not None and adapter.bootstrap_import_active,
+        bootstrap_import_foreign_preserved=adapter is not None and adapter.importlib_foreign_preserved,
+        package_continuation_importlib_checks=0 if adapter is None else adapter.package_continuation_importlib_checks,
         loader_calls=0 if adapter is None else adapter.loader_calls,
         direct_native_audit_calls=0 if adapter is None else adapter.direct_native_audit_calls,
         skipped_native_audit_calls=0 if adapter is None else adapter.skipped_native_audit_calls,
@@ -244,7 +305,9 @@ def _instance_observation(owner):
         callback_state=None if adapter is None else adapter.callback_state,
         reads=0 if adapter is None else len(adapter.reads),
         root_calls=0 if adapter is None else adapter.root_calls,
-        bootstrap_original_method_called=False, explicit_inert_adapter=True,
+        bootstrap_original_method_called=any(row['method']=='bootstrap' for row in delegates),
+        bootstrap_original_method_returned=any(row['method']=='bootstrap' and row['returned'] for row in delegates),
+        explicit_inert_adapter=True,
         native_events_are_direct_simulation=True, vector_cipher_is_lookup=True,
         constructor_binding_remains_synthetic=True, class_source_unchanged=True,
         installed_dependency_observed=False, native_execution_performed=False,

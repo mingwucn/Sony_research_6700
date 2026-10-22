@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_synthetic_bootstrap_qualified_activation_unqualified",
-      "available_evidence": "204 distinct cases pass: original bootstrap through inert adapter, exact parent grammar, bounded journal and concurrent supervision; four private synthetic witnesses retained.",
-      "remaining_acceptance": "Five full runtime receipts and fresh actual origins/root identities remain missing. Real native-event behavior, execution bindings, installed activation, protected processing, exact-body English/native FTP and recovery remain unqualified.",
-      "next_dependency": "synthetic_bootstrap_receipt_join_to_nonexecuting_preparation_review",
+      "status": "synthetic_preparation_qualified_actual_runtime_evidence_pending",
+      "available_evidence": "176 current synthetic cases pass; original bootstrap in existing preparation path; bounded cooperative interruption facts. No actual runtime activation.",
+      "remaining_acceptance": "Five full runtime receipts, fresh actual origins/root identities and qualified native-event behavior remain missing; a precise unsupported-format diagnosis remains a valid original RA-003 endpoint.",
+      "next_dependency": "actual_host_runtime_evidence_outside_current_synthetic_scope",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -64,7 +64,8 @@
         "research/sessions/20261023-bootstrap-readiness.md",
         "research/sessions/20261023-bootstrap-packet.md",
         "research/sessions/20261023-runtime-mapping.md",
-        "research/sessions/20261023-synthetic-bootstrap.md"
+        "research/sessions/20261023-synthetic-bootstrap.md",
+        "research/sessions/20261023-precontact-readiness.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -121,13 +122,15 @@
     },
     "EN-101": {
       "status": "partial_no_target_feasibility",
-      "available_evidence": "English absence owner-reported; policy/resource alternatives and critical-screen plan.",
+      "available_evidence": "Finite feasibility dossier and ten critical-resource surfaces recorded; all resource/rendering evidence unverified. Owner reports English absent. No exact-build language mechanism, selector-consumer map or candidate is established.",
       "remaining_acceptance": "Legitimate matching resources; locale enumeration, every restriction-field consumer, critical resources/fonts/layouts. Package version is not body identity.",
-      "next_dependency": "matching_language_resource_and_locale_consumer_mapping_after_current_runtime_binding",
+      "next_dependency": "matching_language_resource_inventory_and_complete_locale_selector_consumer_map",
       "evidence": [
         "docs/ENGLISH_LANGUAGE.md",
         "research/TARGET_EVIDENCE_GAPS.md",
-        "research/sessions/20261022-a6700-reference-update.md"
+        "research/sessions/20261022-a6700-reference-update.md",
+        "research/ENGLISH_FEASIBILITY.md",
+        "research/sessions/20261023-precontact-readiness.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Resolve language/resources and the no-change option"
@@ -1047,7 +1050,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: join the synthetic bootstrap receipt to the existing nonexecuting preparation review using supplied invented runtime metadata. Validate shared request/source/runtime/journal bindings and rejection of mismatched or replayed receipts. Keep the review packet nonlaunchable, actual activation refused and frozen 16/5/3 unchanged. No installed/native/protected reads or camera contact; English/native FTP remain first."
+    "RA-003: collect fresh host interpreter/cold-preload facts, the five trusted-runtime origins, ancestor root identities and five complete read-only runtime-file receipts; reconcile once with the existing mapping. Actual-host metadata observation is outside the current synthetic-only scope and remains pending. No bootstrap, package activation, protected processing or camera contact. English/native FTP remain first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1097,9 +1100,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_lossless_runtime_path_receipt_mapping_and_retained_join",
-  "current_goal_turn": "progress_synthetic_original_bootstrap_journal_and_supervision",
-  "next_single_work_package": "RA-003: join the synthetic bootstrap receipt to the existing nonexecuting preparation review using supplied invented runtime metadata. Validate shared request/source/runtime/journal bindings and rejection of mismatched or replayed receipts. Keep the review packet nonlaunchable, actual activation refused and frozen 16/5/3 unchanged. No installed/native/protected reads or camera contact; English/native FTP remain first.",
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "next_single_work_package": "RA-003: collect fresh host interpreter/cold-preload facts, the five trusted-runtime origins, ancestor root identities and five complete read-only runtime-file receipts; reconcile once with the existing mapping. Actual-host metadata observation is outside the current synthetic-only scope and remains pending. No bootstrap, package activation, protected processing or camera contact. English/native FTP remain first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -2888,6 +2891,94 @@
       "current_goal_status": "active",
       "camera_commands": [],
       "next_single_work_package": "RA-003: join the synthetic bootstrap receipt to the existing nonexecuting preparation review using supplied invented runtime metadata. Validate shared request/source/runtime/journal bindings and rejection of mismatched or replayed receipts. Keep the review packet nonlaunchable, actual activation refused and frozen 16/5/3 unchanged. No installed/native/protected reads or camera contact; English/native FTP remain first."
+    },
+    {
+      "report": "research/sessions/20261023-precontact-readiness.md",
+      "companion": "research/ENGLISH_FEASIBILITY.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "previous_commit": "6ff0c9638b6b9ef52473671c555941c3779a85d2",
+      "scope": "existing_synthetic_preparation_path_and_interruption_reconciliation",
+      "distinct_qualified_cases": 176,
+      "passed": 176,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "new_cases": 14,
+      "suites": {
+        "integration-02": {
+          "cases": 9,
+          "seconds": 217.1051717000082,
+          "names": [
+            "test_dependency_instance_runtime"
+          ],
+          "source_stable": true,
+          "log_sha256": "1bdfab0fddac923094bcb1c56510ad90eb6970e3cbaa7e60c3da4b4b6f182aea"
+        },
+        "runtime-01": {
+          "cases": 93,
+          "seconds": 7.106442099902779,
+          "names": [
+            "test_dependency_bootstrap_supervisor",
+            "test_dependency_bootstrap_journal",
+            "test_dependency_bootstrap_trial"
+          ],
+          "source_stable": true,
+          "log_sha256": "b1b07a48b2784fe298d54e78fca60e158a79e58b7b69d99d23b2fa1ed23f8430"
+        },
+        "regression-01": {
+          "cases": 74,
+          "seconds": 502.5743941999972,
+          "names": [
+            "test_dependency_audit_runtime",
+            "test_dependency_filesystem_runtime",
+            "test_dependency_runtime_route",
+            "test_dependency_producer"
+          ],
+          "source_stable": true,
+          "log_sha256": "ecef5ef51b74bb336b36ad66ba79e917f70b9a5ba864e97f5f74e4dbcd7dfe15"
+        }
+      },
+      "original_bootstrap_in_existing_preparation_path": true,
+      "import_adapter_inert": true,
+      "cooperative_interruption_reconciliation_tested": true,
+      "unknown_spawn_outcome_requires_reconciliation": true,
+      "source_files_changed": [
+        "tests/dependency_instance_runtime_fixture.py",
+        "tests/test_dependency_bootstrap_supervisor.py",
+        "tests/test_dependency_instance_runtime.py",
+        "tools/dependency_bootstrap_supervisor.py"
+      ],
+      "existing_source_pins_unchanged": 23,
+      "ordinary_frozen_records": 16,
+      "historical_pending_dispositions": 5,
+      "dependency_null_fields": 3,
+      "saved_full_runtime_receipts_missing": 5,
+      "english_critical_surfaces": 10,
+      "english_surfaces_verified": 0,
+      "english_dossier_prepared": true,
+      "english_target_acceptance_passed": false,
+      "extra_synthetic_receipt_join_required_before_r1": false,
+      "synthetic_frontier_reached_for_current_package": true,
+      "actual_runtime_origins_observed": false,
+      "original_native_bootstrap_executed": false,
+      "native_loader_executed": false,
+      "installed_dependency_activated": false,
+      "protected_inputs_accessed": false,
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "actual_runtime_verified": false,
+      "execution_authorized": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "new_owner_input_required": false,
+      "legal_questions_or_research_resumed": false,
+      "camera_commands": [],
+      "current_goal_status": "active",
+      "next_single_work_package": "RA-003: collect fresh host interpreter/cold-preload facts, the five trusted-runtime origins, ancestor root identities and five complete read-only runtime-file receipts; reconcile once with the existing mapping. Actual-host metadata observation is outside the current synthetic-only scope and remains pending. No bootstrap, package activation, protected processing or camera contact. English/native FTP remain first."
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -2949,15 +3040,14 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
-    "report": "research/sessions/20261023-synthetic-bootstrap.md",
-    "distinct_cases": 204,
-    "passed": 204,
+    "report": "research/sessions/20261023-precontact-readiness.md",
+    "distinct_cases": 176,
+    "passed": 176,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "new_behavioral_cases": 80,
-    "affected_regression_cases": 124,
-    "suite": "synthetic_bootstrap_journal_supervisor_trial_and_affected_regressions",
+    "new_behavioral_cases": 14,
+    "suite": "existing_runtime_preparation_bootstrap_and_interruption_regressions",
     "actual_runtime_qualified": false
   },
   "evidence_source_sha256_scope": "Original audit snapshot; historical hashes are not an exact-current source closure or execution allowlist.",
@@ -3013,6 +3103,18 @@
     "new_behavioral_cases": 29,
     "affected_regression_cases": 126,
     "suite": "runtime_path_mapping_legacy_bridge_evidence_context",
+    "actual_runtime_qualified": false
+  },
+  "latest_qualified_evidence_before_precontact_readiness_20261023": {
+    "report": "research/sessions/20261023-synthetic-bootstrap.md",
+    "distinct_cases": 204,
+    "passed": 204,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_behavioral_cases": 80,
+    "affected_regression_cases": 124,
+    "suite": "synthetic_bootstrap_journal_supervisor_trial_and_affected_regressions",
     "actual_runtime_qualified": false
   }
 }

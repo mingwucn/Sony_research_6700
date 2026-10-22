@@ -28,6 +28,8 @@ class _Drain:
         self.overflow = False
         self.error = None
         self.close_error = False
+        self.interrupted = False
+        self.interruption_stages = []
         self.done = threading.Event()
         self.thread = threading.Thread(target=self._run, daemon=True)
 
@@ -53,15 +55,21 @@ class _Drain:
                     if len(chunk) > remaining:
                         self.overflow = True
                         break
-        except Exception:
+        except BaseException as error:
             with self.lock:
                 self.error = 'read_error'
+                if not isinstance(error, Exception):
+                    self.interrupted = True
+                    self.interruption_stages.append('read')
         finally:
             try:
                 self.stream.close()
-            except Exception:
+            except BaseException as error:
                 with self.lock:
                     self.close_error = True
+                    if not isinstance(error, Exception):
+                        self.interrupted = True
+                        self.interruption_stages.append('close')
             self.done.set()
             self.wake.set()
 
@@ -69,7 +77,9 @@ class _Drain:
         with self.lock:
             return dict(data=bytes(self.data), eof=self.eof,
                         overflow=self.overflow, error=self.error,
-                        close_error=self.close_error, done=self.done.is_set())
+                        close_error=self.close_error, done=self.done.is_set(),
+                        interrupted=self.interrupted,
+                        interruption_stages=list(self.interruption_stages))
 
 
 def _arguments(argv, timeout, stdout_limit, stderr_limit):
@@ -93,6 +103,11 @@ def run_once(argv, *, timeout=30, stdout_limit=65536, stderr_limit=65536):
     still-blocked reader is left daemonized, never forcibly closed from another
     thread; its incomplete cleanup is reported.  This is a process/pipe bound,
     not an operating-system memory, descendant-process or native-code sandbox.
+    Recoverable BaseException interruptions are swallowed only to return facts
+    the caller can persist.  They never permit success or automatic retry.  An
+    exception before Popen returns leaves spawn outcome unknown, without a PID.
+    Repeated asynchronous interruption, abrupt termination, and OS call latency
+    cannot be given a hard wall-clock guarantee by this cooperative helper.
     """
     _arguments(argv, timeout, stdout_limit, stderr_limit)
     result = dict(status='needs_review', returncode=None, pid=None,
@@ -101,106 +116,161 @@ def run_once(argv, *, timeout=30, stdout_limit=65536, stderr_limit=65536):
                   read_errors={}, close_errors=[], stdout_eof=False,
                   stderr_eof=False, reader_threads_terminal=False,
                   process_terminal=False, error_code=None,
+                  spawn_attempted=False, spawn_outcome_unknown=False,
+                  interrupted=False, interruption_stages=[],
+                  reader_start_attempted=[],
                   cleanup=dict(attempted=False, kill_attempted=False,
                                kill_error=False, reap_attempted=False,
-                               reap_error=False, bound_seconds=CLEANUP_SECONDS),
+                               reap_error=False, reader_join_attempted=[],
+                               reader_join_errors=[], bound_seconds=CLEANUP_SECONDS),
                   automatic_retry=False)
+    failure = None
+
+    def fail(code, stage=None, error=None):
+        nonlocal failure
+        if failure is None:
+            failure = code
+        if error is not None and not isinstance(error, Exception):
+            result['interrupted'] = True
+            if stage not in result['interruption_stages']:
+                result['interruption_stages'].append(stage)
+
     start = time.monotonic()
+    result['spawn_attempted'] = True
     try:
         process = subprocess.Popen(list(argv), stdin=subprocess.DEVNULL,
                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                    shell=False)
-    except Exception:
-        result['error_code'] = 'spawn_error'
+    except BaseException as error:
+        fail('spawn_outcome_unknown', 'spawn', error)
+        result['status'] = 'needs_process_reconciliation'
+        result['spawn_outcome_unknown'] = True
+        result['error_code'] = failure
         return result
-    result['pid'] = process.pid
-    wake = threading.Event()
     readers = {}
+    last_snapshots = {}
     terminal = None
-    failure = None
+    stage = 'pid'
     try:
-        readers = {'stdout': _Drain(process.stdout, stdout_limit, wake),
-                   'stderr': _Drain(process.stderr, stderr_limit, wake)}
-        for reader in readers.values():
+        result['pid'] = process.pid
+        stage = 'reader_create'
+        wake = threading.Event()
+        for name, cap in (('stdout', stdout_limit), ('stderr', stderr_limit)):
+            readers[name] = _Drain(getattr(process, name), cap, wake)
+        stage = 'reader_start'
+        for name, reader in readers.items():
+            result['reader_start_attempted'].append(name)
             reader.thread.start()
         deadline = start + timeout
         while True:
+            stage = 'poll'
             try:
                 observed = process.poll()
                 if observed is not None:
                     if type(observed) is not int:
-                        failure = 'process_poll_error'
+                        fail('process_poll_error')
                         break
                     terminal = observed
-            except Exception:
-                failure = 'process_poll_error'
+            except BaseException as error:
+                fail('process_poll_error', stage, error)
                 break
+            stage = 'snapshot'
             current = {name: reader.snapshot() for name, reader in readers.items()}
+            last_snapshots.update(current)
             if any(row['overflow'] for row in current.values()):
-                failure = 'stream_overflow'
+                fail('stream_overflow')
                 break
             if any(row['error'] or row['close_error'] for row in current.values()):
-                failure = 'stream_read_error'
+                fail('stream_read_error')
                 break
             if any(row['done'] and not row['eof'] for row in current.values()):
-                failure = 'stream_incomplete'
+                fail('stream_incomplete')
                 break
             if terminal is not None and all(row['eof'] and row['done'] for row in current.values()):
                 if terminal != 0:
-                    failure = 'nonzero_exit'
+                    fail('nonzero_exit')
                 break
+            stage = 'wait'
             remaining = deadline - time.monotonic()
             if remaining <= 0:
                 result['timed_out'] = True
-                failure = 'timeout'
+                fail('timeout')
                 break
             wake.wait(min(0.01, remaining))
             wake.clear()
-    except Exception:
-        failure = 'reader_start_error'
+    except BaseException as error:
+        code = 'reader_start_error' if stage in ('reader_create', 'reader_start') else 'supervision_error'
+        fail(code, stage, error)
 
-    cleanup_deadline = time.monotonic() + CLEANUP_SECONDS
-    joined = False
-    if failure is None:
-        joined = True
+    cleanup = result['cleanup']
+    try:
+        cleanup_deadline = time.monotonic() + CLEANUP_SECONDS
+    except BaseException as error:
+        cleanup_deadline = None
+        fail('cleanup_clock_error', 'cleanup_clock', error)
+
+    def cleanup_remaining():
+        if cleanup_deadline is None:
+            return 0
         try:
-            for reader in readers.values():
+            return max(0, cleanup_deadline - time.monotonic())
+        except BaseException as error:
+            fail('cleanup_clock_error', 'cleanup_clock', error)
+            return 0
+
+    def join_readers():
+        for name, reader in readers.items():
+            if name in cleanup['reader_join_attempted']:
+                continue
+            try:
                 if reader.thread.ident is not None:
-                    reader.thread.join(max(0, cleanup_deadline - time.monotonic()))
+                    # Mark before the call: an interrupted join is not retried.
+                    cleanup['reader_join_attempted'].append(name)
+                    reader.thread.join(cleanup_remaining())
+            except BaseException as error:
+                cleanup['reader_join_errors'].append(name)
+                fail('reader_join_error', 'join', error)
+
+    if failure is None:
+        join_readers()
+        try:
             if any(reader.thread.is_alive() for reader in readers.values()):
-                failure = 'reader_cleanup_incomplete'
-        except Exception:
-            failure = 'reader_join_error'
+                fail('reader_cleanup_incomplete')
+        except BaseException as error:
+            fail('reader_state_error', 'reader_state', error)
     if failure:
-        cleanup = result['cleanup']
         cleanup['attempted'] = True
-        if terminal is None:
+        if terminal is None and not cleanup['kill_attempted']:
             cleanup['kill_attempted'] = True
             try:
                 process.kill()
-            except Exception:
+            except BaseException as error:
                 cleanup['kill_error'] = True
-        cleanup['reap_attempted'] = True
-        try:
-            observed = process.wait(timeout=max(0, cleanup_deadline - time.monotonic()))
-            if type(observed) is int:
-                terminal = observed
-            else:
-                cleanup['reap_error'] = True
-        except Exception:
-            cleanup['reap_error'] = True
-        if not joined:
+                fail('process_kill_error', 'kill', error)
+        if not cleanup['reap_attempted']:
+            cleanup['reap_attempted'] = True
             try:
-                for reader in readers.values():
-                    if reader.thread.ident is not None:
-                        reader.thread.join(max(0, cleanup_deadline - time.monotonic()))
-            except Exception:
-                # The original failure remains sticky; a join failure cannot
-                # establish terminal readers or justify an automatic retry.
-                failure = 'reader_join_error'
+                observed = process.wait(timeout=cleanup_remaining())
+                if type(observed) is int:
+                    terminal = observed
+                else:
+                    cleanup['reap_error'] = True
+                    fail('process_reap_error')
+            except BaseException as error:
+                cleanup['reap_error'] = True
+                fail('process_reap_error', 'reap', error)
+        join_readers()
 
-    snapshots = {name: reader.snapshot() for name, reader in readers.items()}
-    for name, row in snapshots.items():
+    snapshots = {}
+    for name, reader in readers.items():
+        try:
+            row = reader.snapshot()
+        except BaseException as error:
+            fail('reader_snapshot_error', 'reader_snapshot', error)
+            row = dict(last_snapshots.get(name, dict(data=b'', eof=False,
+                overflow=False, close_error=False, done=False)))
+            row['error'] = 'snapshot_error'
+        snapshots[name] = row
         result[name] = row['data']
         result[name + '_eof'] = row['eof']
         result[name + '_overflow'] = row['overflow']
@@ -208,8 +278,17 @@ def run_once(argv, *, timeout=30, stdout_limit=65536, stderr_limit=65536):
             result['read_errors'][name] = row['error']
         if row['close_error']:
             result['close_errors'].append(name)
-    result['reader_threads_terminal'] = len(readers) == 2 and all(
-        reader.done.is_set() and not reader.thread.is_alive() for reader in readers.values())
+        if row.get('interrupted'):
+            result['interrupted'] = True
+            for item in row.get('interruption_stages', []):
+                label = name + '.' + item
+                if label not in result['interruption_stages']:
+                    result['interruption_stages'].append(label)
+    try:
+        result['reader_threads_terminal'] = len(readers) == 2 and all(
+            reader.done.is_set() and not reader.thread.is_alive() for reader in readers.values())
+    except BaseException as error:
+        fail('reader_state_error', 'reader_state', error)
     result['returncode'] = terminal
     result['process_terminal'] = terminal is not None
     result['error_code'] = failure

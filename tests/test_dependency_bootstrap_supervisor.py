@@ -36,7 +36,7 @@ class _Process:
 
     def wait(self, timeout):
         self.waits += 1
-        if isinstance(self.reaped, Exception):
+        if isinstance(self.reaped, BaseException):
             raise self.reaped
         return self.reaped
 
@@ -301,12 +301,232 @@ class BootstrapSupervisorTests(unittest.TestCase):
     def test_spawn_failure_returns_fixed_sanitized_code_without_retry(self):
         with patch.object(subject.subprocess, 'Popen', side_effect=OSError('invented secret path')) as popen:
             result = subject.run_once(['invented'])
-        self.assertEqual(result['status'], 'needs_review')
-        self.assertEqual(result['error_code'], 'spawn_error')
+        self.assertEqual(result['status'], 'needs_process_reconciliation')
+        self.assertEqual(result['error_code'], 'spawn_outcome_unknown')
+        self.assertTrue(result['spawn_attempted'] and result['spawn_outcome_unknown'])
+        self.assertFalse(result['interrupted'])
         self.assertIsNone(result['pid'])
         self.assertIsNone(result['returncode'])
         self.assertNotIn('secret', repr(result))
         popen.assert_called_once()
+
+    def test_keyboardinterrupt_during_spawn_keeps_unknown_outcome_without_pid(self):
+        with patch.object(subject.subprocess, 'Popen', side_effect=KeyboardInterrupt('invented private detail')) as popen:
+            result = subject.run_once(['invented'])
+        self.assertEqual(result['status'], 'needs_process_reconciliation')
+        self.assertEqual(result['error_code'], 'spawn_outcome_unknown')
+        self.assertTrue(result['spawn_attempted'] and result['spawn_outcome_unknown'])
+        self.assertTrue(result['interrupted'])
+        self.assertEqual(result['interruption_stages'], ['spawn'])
+        self.assertIsNone(result['pid'])
+        self.assertIsNone(result['returncode'])
+        self.assertFalse(result['process_terminal'] or result['cleanup']['attempted'])
+        self.assertNotIn('private', repr(result))
+        self.assert_bounded(result)
+        popen.assert_called_once()
+
+    def test_systemexit_during_spawn_is_not_evidence_that_no_child_exists(self):
+        with patch.object(subject.subprocess, 'Popen', side_effect=SystemExit('invented private exit')) as popen:
+            result = subject.run_once(['invented'])
+        self.assertEqual(result['status'], 'needs_process_reconciliation')
+        self.assertTrue(result['spawn_outcome_unknown'])
+        self.assertTrue(result['interrupted'])
+        self.assertEqual(result['interruption_stages'], ['spawn'])
+        self.assertIsNone(result['pid'])
+        self.assertFalse(result['process_terminal'])
+        self.assertNotIn('private', repr(result))
+        self.assert_bounded(result)
+        popen.assert_called_once()
+
+    def test_poll_keyboardinterrupt_retains_pid_and_cleans_once_before_returning_facts(self):
+        process = _Process(wait=0)
+        with patch.object(subject.subprocess, 'Popen', return_value=process) as popen, \
+                patch.object(process, 'poll', side_effect=KeyboardInterrupt('invented private poll')):
+            result = subject.run_once(['invented'])
+        self.assertEqual((result['status'], result['returncode']), ('needs_review', 0))
+        self.assertEqual(result['error_code'], 'process_poll_error')
+        self.assertEqual(result['pid'], 654321)
+        self.assertTrue(result['process_terminal'] and result['interrupted'])
+        self.assertFalse(result['spawn_outcome_unknown'])
+        self.assertEqual(result['interruption_stages'], ['poll'])
+        self.assertEqual((process.kills, process.waits), (1, 1))
+        self.assertTrue(result['cleanup']['kill_attempted'] and result['cleanup']['reap_attempted'])
+        self.assertNotIn('private', repr(result))
+        self.assert_bounded(result)
+        popen.assert_called_once()
+
+    def test_poll_systemexit_and_interrupted_reap_keep_known_pid_and_unknown_terminal(self):
+        process = _Process(wait=KeyboardInterrupt('invented unknown reap'))
+        with patch.object(subject.subprocess, 'Popen', return_value=process) as popen, \
+                patch.object(process, 'poll', side_effect=SystemExit('invented private exit')):
+            result = subject.run_once(['invented'])
+        self.assertEqual(result['status'], 'needs_process_reconciliation')
+        self.assertEqual(result['error_code'], 'process_poll_error')
+        self.assertEqual(result['pid'], 654321)
+        self.assertIsNone(result['returncode'])
+        self.assertFalse(result['process_terminal'])
+        self.assertTrue(result['interrupted'] and result['cleanup']['reap_error'])
+        self.assertEqual(result['interruption_stages'], ['poll', 'reap'])
+        self.assertEqual((process.kills, process.waits), (1, 1))
+        self.assert_bounded(result)
+        popen.assert_called_once()
+
+    def test_reader_creation_systemexit_cleans_known_process_once(self):
+        process = _Process(wait=0)
+        with patch.object(subject.subprocess, 'Popen', return_value=process) as popen, \
+                patch.object(subject, '_Drain', side_effect=SystemExit('invented reader creation')):
+            result = subject.run_once(['invented'])
+        self.assertEqual((result['status'], result['returncode']), ('needs_review', 0))
+        self.assertEqual(result['error_code'], 'reader_start_error')
+        self.assertEqual(result['pid'], 654321)
+        self.assertEqual(result['interruption_stages'], ['reader_create'])
+        self.assertEqual(result['reader_start_attempted'], [])
+        self.assertFalse(result['reader_threads_terminal'])
+        self.assertEqual((process.kills, process.waits), (1, 1))
+        self.assert_bounded(result)
+        popen.assert_called_once()
+
+    def test_reader_start_keyboardinterrupt_is_marked_before_call_and_never_restarted(self):
+        process = _Process(wait=0)
+        with patch.object(subject.subprocess, 'Popen', return_value=process), \
+                patch.object(subject, '_Drain', _DoneDrain), \
+                patch.object(_DoneDrain, 'instances', []), \
+                patch.object(_DoneDrain, 'end_on_join', True), \
+                patch.object(_JoinThread, 'start', side_effect=KeyboardInterrupt('invented start')) as start:
+            result = subject.run_once(['invented'])
+        self.assertEqual((result['status'], result['returncode']), ('needs_review', 0))
+        self.assertEqual(result['error_code'], 'reader_start_error')
+        self.assertEqual(result['interruption_stages'], ['reader_start'])
+        self.assertEqual(result['reader_start_attempted'], ['stdout'])
+        self.assertEqual((process.kills, process.waits), (1, 1))
+        start.assert_called_once()
+        self.assert_bounded(result)
+
+    def test_reader_read_keyboardinterrupt_is_retained_without_thread_traceback(self):
+        class InterruptStream(io.BytesIO):
+            def read1(self, amount):
+                raise KeyboardInterrupt('invented private read')
+        process = _Process(stdout=InterruptStream(), poll=0)
+        with patch.object(subject.subprocess, 'Popen', return_value=process):
+            result = subject.run_once(['invented'])
+        self.assertEqual((result['status'], result['returncode']), ('needs_review', 0))
+        self.assertEqual(result['error_code'], 'stream_read_error')
+        self.assertEqual(result['read_errors'], {'stdout': 'read_error'})
+        self.assertTrue(result['interrupted'])
+        self.assertEqual(result['interruption_stages'], ['stdout.read'])
+        self.assertTrue(result['reader_threads_terminal'])
+        self.assertEqual((process.kills, process.waits), (0, 1))
+        self.assertNotIn('private', repr(result))
+
+    def test_reader_close_systemexit_stays_sticky_after_eof(self):
+        class InterruptClose(io.BytesIO):
+            def close(self):
+                if not self.closed:
+                    super().close()
+                    raise SystemExit('invented private close')
+        process = _Process(stdout=InterruptClose(), poll=0)
+        with patch.object(subject.subprocess, 'Popen', return_value=process):
+            result = subject.run_once(['invented'])
+        self.assertEqual((result['status'], result['returncode']), ('needs_review', 0))
+        self.assertEqual(result['error_code'], 'stream_read_error')
+        self.assertEqual(result['close_errors'], ['stdout'])
+        self.assertTrue(result['interrupted'])
+        self.assertEqual(result['interruption_stages'], ['stdout.close'])
+        self.assertTrue(result['stdout_eof'] and result['reader_threads_terminal'])
+        self.assertEqual((process.kills, process.waits), (0, 1))
+
+    def test_normal_join_keyboardinterrupt_attempts_each_reader_once(self):
+        process = _Process(poll=0)
+        with patch.object(subject.subprocess, 'Popen', return_value=process), \
+                patch.object(subject, '_Drain', _DoneDrain), \
+                patch.object(_DoneDrain, 'instances', []), \
+                patch.object(_JoinThread, 'join', side_effect=[KeyboardInterrupt('invented join'), None]) as join:
+            result = subject.run_once(['invented'])
+        self.assertEqual((result['status'], result['returncode']), ('needs_review', 0))
+        self.assertEqual(result['error_code'], 'reader_join_error')
+        self.assertEqual(result['interruption_stages'], ['join'])
+        self.assertEqual(result['cleanup']['reader_join_attempted'], ['stdout', 'stderr'])
+        self.assertEqual(result['cleanup']['reader_join_errors'], ['stdout'])
+        self.assertEqual(join.call_count, 2)
+        self.assertEqual((process.kills, process.waits), (0, 1))
+        self.assertFalse(result['reader_threads_terminal'])
+
+    def test_kill_systemexit_preserves_primary_overflow_and_still_reaps_once(self):
+        process = _Process(stdout=io.BytesIO(b'ab'), wait=0)
+        process.kill_error = SystemExit('invented private kill')
+        with patch.object(subject.subprocess, 'Popen', return_value=process) as popen:
+            result = subject.run_once(['invented'], stdout_limit=1)
+        self.assertEqual((result['status'], result['returncode']), ('needs_review', 0))
+        self.assertEqual(result['error_code'], 'stream_overflow')
+        self.assertEqual(result['pid'], 654321)
+        self.assertEqual(result['interruption_stages'], ['kill'])
+        self.assertTrue(result['cleanup']['kill_error'])
+        self.assertEqual((process.kills, process.waits), (1, 1))
+        self.assertNotIn('private', repr(result))
+        popen.assert_called_once()
+
+    def test_reap_keyboardinterrupt_never_retries_or_invents_terminal(self):
+        process = _Process(stdout=io.BytesIO(b'ab'), wait=KeyboardInterrupt('invented private reap'))
+        with patch.object(subject.subprocess, 'Popen', return_value=process) as popen:
+            result = subject.run_once(['invented'], stdout_limit=1)
+        self.assertEqual(result['status'], 'needs_process_reconciliation')
+        self.assertEqual(result['error_code'], 'stream_overflow')
+        self.assertEqual(result['pid'], 654321)
+        self.assertIsNone(result['returncode'])
+        self.assertFalse(result['process_terminal'])
+        self.assertEqual(result['interruption_stages'], ['reap'])
+        self.assertTrue(result['cleanup']['reap_error'])
+        self.assertEqual((process.kills, process.waits), (1, 1))
+        self.assertEqual(result['stdout'], b'a')
+        self.assert_bounded(result, stdout_limit=1)
+        popen.assert_called_once()
+
+    def test_secondary_cleanup_interruptions_cannot_replace_first_failure_or_retry(self):
+        process = _Process(wait=KeyboardInterrupt('invented private reap'))
+        process.kill_error = SystemExit('invented private kill')
+        with patch.object(subject.subprocess, 'Popen', return_value=process) as popen, \
+                patch.object(process, 'poll', side_effect=KeyboardInterrupt('invented private poll')), \
+                patch.object(subject, '_Drain', _DoneDrain), \
+                patch.object(_DoneDrain, 'instances', []), \
+                patch.object(_JoinThread, 'join', side_effect=SystemExit('invented private join')) as join:
+            result = subject.run_once(['invented'])
+        self.assertEqual(result['status'], 'needs_process_reconciliation')
+        self.assertEqual(result['error_code'], 'process_poll_error')
+        self.assertEqual(result['pid'], 654321)
+        self.assertIsNone(result['returncode'])
+        self.assertEqual(result['interruption_stages'], ['poll', 'kill', 'reap', 'join'])
+        self.assertEqual((process.kills, process.waits), (1, 1))
+        self.assertEqual(join.call_count, 2)
+        self.assertEqual(result['cleanup']['reader_join_attempted'], ['stdout', 'stderr'])
+        self.assertEqual(result['cleanup']['reader_join_errors'], ['stdout', 'stderr'])
+        self.assertTrue(result['cleanup']['kill_error'] and result['cleanup']['reap_error'])
+        self.assertFalse(result['reader_threads_terminal'])
+        self.assertNotIn('private', repr(result))
+        self.assert_bounded(result)
+        popen.assert_called_once()
+
+    def test_final_snapshot_keyboardinterrupt_retains_bounded_previous_observation(self):
+        process = _Process(poll=0)
+        original_snapshot = _DoneDrain.snapshot
+        calls = {}
+        def snapshot(reader):
+            calls[id(reader)] = calls.get(id(reader), 0) + 1
+            if reader is _DoneDrain.instances[0] and calls[id(reader)] == 2:
+                raise KeyboardInterrupt('invented private snapshot')
+            return original_snapshot(reader)
+        with patch.object(subject.subprocess, 'Popen', return_value=process), \
+                patch.object(subject, '_Drain', _DoneDrain), \
+                patch.object(_DoneDrain, 'instances', []), \
+                patch.object(_DoneDrain, 'end_on_join', True), \
+                patch.object(_DoneDrain, 'snapshot', snapshot):
+            result = subject.run_once(['invented'])
+        self.assertEqual((result['status'], result['returncode']), ('needs_review', 0))
+        self.assertEqual(result['error_code'], 'reader_snapshot_error')
+        self.assertEqual(result['interruption_stages'], ['reader_snapshot'])
+        self.assertEqual(result['read_errors'], {'stdout': 'snapshot_error'})
+        self.assertEqual(sorted(calls.values()), [2, 2])
+        self.assertEqual((process.kills, process.waits), (0, 0))
+        self.assert_bounded(result)
 
     def test_invalid_argv_refuses_before_spawn(self):
         for argv in (None, 'invented', (), [], [''], [True], ['a\x00b'], ['a', 1]):

@@ -1,3 +1,5 @@
+Current EN-101 evidence (2026-10-23): [finite feasibility dossier](../research/ENGLISH_FEASIBILITY.md). Ten critical native surfaces are tabulated; every resource/rendering result remains unverified. No unlock mechanism or EN acceptance gate passed.
+
 # English-language enablement: target-specific design
 
 Goal: native English menus, warnings and messages on the owner's ILCE-6700, without transplanting another region's complete identity or settings. Owner reports α6700 version 2.00, current 简体中文, Chinese mainland version and English unavailable (source-report, 2026-10-18). The exact SKU, complete offered-language list and binary/resource identity are unverified. See [latest intake](../research/sessions/20261018-owner-mainland-english.md). Sony's normal Language page is source S2 in REFERENCE_ANALYSIS.md. Work packages EN-101 through EN-104 apply.
