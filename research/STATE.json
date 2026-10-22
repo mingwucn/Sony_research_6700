@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-22",
-  "phase": "new_public_ftp_source_partial_review_exact_target_and_recovery_unverified",
+  "phase": "public_ftp_chain_partially_audited_target_and_recovery_unverified",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -184,6 +184,12 @@
       "clean_os_or_independent_host": false,
       "remote_host_matrix_observed": true,
       "note": "Fresh export uses same owner OS/base stdlib; hosted CI is a separate recorded matrix, not a pristine-OS or camera qualification"
+    },
+    "FT-101": {
+      "status": "partial_published_source_chain_audit",
+      "report": "research/FTP_SOURCE_CHAIN_AUDIT.md",
+      "session_report": "research/sessions/20261022-FT-101-source-chain.md",
+      "scope": "R0 static reference review only; native backend/runtime acceptance incomplete"
     }
   },
   "pre_camera_coverage": "research/PRE_CAMERA_READINESS.md",
@@ -218,7 +224,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions.",
+  "next_work_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -343,13 +349,13 @@
       "priority": "primary",
       "status": "published_ftp_source_partially_reviewed_exact_target_native_transfer_unverified",
       "camera_validated": false,
-      "progress": "New pinned application and FTP-only recipes published; author reports RAW+JPEG transfers. Partial static review and 26-blob integrity checks only. No accepted owner-body native transfer, recovery or write-gate evidence.",
+      "progress": "Pinned source chain traced; 44 blobs / 19 ASTs and 355 mappings verified statically. Cancellation/uncertain cleanup, sparse post-execution compatibility and recovery gaps prevent adoption. Native transfer on this body remains unverified.",
       "blockers": [
         "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
         "Separate automatic post-capture lifecycle qualification"
       ],
-      "next_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions.",
+      "next_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact.",
       "evidence": [
         "docs/FTP.md",
         "research/sessions/20261018-FT-102-loopback.md",
@@ -412,7 +418,8 @@
         "research/GDT_OUTER_BINDING_PREPARATION.md",
         "research/sessions/20261019-RA-003-gdt-source-cache.md",
         "research/PRE_CAMERA_GAP_AUDIT.md",
-        "research/sessions/20261022-a6700-reference-update.md"
+        "research/sessions/20261022-a6700-reference-update.md",
+        "research/FTP_SOURCE_CHAIN_AUDIT.md"
       ],
       "progress_history": [
         {
@@ -429,6 +436,10 @@
           "before_report": "research/sessions/20261022-a6700-reference-update.md",
           "progress": "Static source leads and external author report remain unverified on this body; no accepted native transfer. Latest shared review checks ordinary saved metadata (61 focused tests); no protected operational qualification or feature/recovery/write acceptance.",
           "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified"
+        },
+        {
+          "before_report": "research/sessions/20261022-FT-101-source-chain.md",
+          "progress": "New pinned application and FTP-only recipes published; author reports RAW+JPEG transfers. Partial static review and 26-blob integrity checks only. No accepted owner-body native transfer, recovery or write-gate evidence."
         }
       ]
     },
@@ -8548,7 +8559,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261022-a6700-reference-update.md",
+  "latest_report": "research/sessions/20261022-FT-101-source-chain.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -11755,5 +11766,43 @@
     "device_write_gate_passed": false,
     "old_gdt_activity_decisions_changed": false,
     "next_single_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions."
+  },
+  "ft101_source_chain_20261022_prior_current": {
+    "phase": "new_public_ftp_source_partial_review_exact_target_and_recovery_unverified",
+    "latest_report": "research/sessions/20261022-a6700-reference-update.md",
+    "next_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions."
+  },
+  "ft101_source_chain_20261022": {
+    "date": "2026-10-22",
+    "report": "research/sessions/20261022-FT-101-source-chain.md",
+    "audit": "research/FTP_SOURCE_CHAIN_AUDIT.md",
+    "pin": "ac1cd0db5d0210292be1cee292d15034a222ae64",
+    "status": "partial_source_chain_audited_device_route_not_adopted",
+    "new_text_blobs": 18,
+    "total_text_blobs_verified": 44,
+    "ast_parsed_only": 19,
+    "canonical_bindings_verified": 3,
+    "catalog_fields_mapped_once": 355,
+    "ftp_changed_sectors": 82,
+    "independent_review_scopes": [
+      "FTP requirements",
+      "host failure handling",
+      "native transaction source"
+    ],
+    "findings": [
+      "cancellation can suppress readback and uncertainty triggers service exit",
+      "sparse compatibility follows native execution",
+      "no prior-unresolved-intent interlock in inspected paths",
+      "in-process sparse rollback does not establish recovery"
+    ],
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "upstream_executed": false,
+    "protected_firmware_processed": false,
+    "previous_goal_turn": "progress_new_public_ftp_source",
+    "current_goal_turn": "progress_source_bindings_and_concrete_failure_paths_audited",
+    "next_single_work_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact."
   }
 }

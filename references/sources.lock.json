@@ -133,7 +133,40 @@
           }
         }
       ],
-      "baseline_audit_counts_scope": "33 text blobs / 12 ASTs belong to the 20261019 source-audit baseline, not the expanded current tree"
+      "baseline_audit_counts_scope": "33 text blobs / 12 ASTs belong to the 20261019 source-audit baseline, not the expanded current tree",
+      "ft101_source_chain_audit": {
+        "date": "2026-10-22",
+        "report": "research/sessions/20261022-FT-101-source-chain.md",
+        "audit": "research/FTP_SOURCE_CHAIN_AUDIT.md",
+        "pin": "ac1cd0db5d0210292be1cee292d15034a222ae64",
+        "status": "partial_source_chain_audited_device_route_not_adopted",
+        "new_text_blobs": 18,
+        "total_text_blobs_verified": 44,
+        "ast_parsed_only": 19,
+        "canonical_bindings_verified": 3,
+        "catalog_fields_mapped_once": 355,
+        "ftp_changed_sectors": 82,
+        "independent_review_scopes": [
+          "FTP requirements",
+          "host failure handling",
+          "native transaction source"
+        ],
+        "findings": [
+          "cancellation can suppress readback and uncertainty triggers service exit",
+          "sparse compatibility follows native execution",
+          "no prior-unresolved-intent interlock in inspected paths",
+          "in-process sparse rollback does not establish recovery"
+        ],
+        "feature_supported": false,
+        "recovery_proven": false,
+        "device_write_gate_passed": false,
+        "camera_commands": [],
+        "upstream_executed": false,
+        "protected_firmware_processed": false,
+        "previous_goal_turn": "progress_new_public_ftp_source",
+        "current_goal_turn": "progress_source_bindings_and_concrete_failure_paths_audited",
+        "next_single_work_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact."
+      }
     }
   ],
   "fdat_extractor_candidate": {

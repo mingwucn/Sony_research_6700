@@ -232,14 +232,16 @@
       "title": "Add calibrated selected-slot custom looks"
     },
     "FT-101": {
-      "status": "partial_published_implementation_static_review_exact_target_unverified",
-      "available_evidence": "New pinned source, FTP-only selection and App/WBI recipes; author RAW+JPEG reports. Sparse backup is not full recovery; underlying catalog physical evidence indexes absent from public tree.",
+      "status": "partial_source_chain_audit_device_route_not_adopted",
+      "available_evidence": "Pinned catalog/profile/native source bindings and 355 field mappings verified; source-level cancellation/cleanup and cross-session reconciliation gaps identified. Author native FTP reports remain unverified.",
       "remaining_acceptance": "Complete native/protocol/profile chain audit; exact mainland build/ABI and UI/config/media/network/credential/lifecycle evidence; direct camera Wi-Fi/file equality/security and recovery prerequisites.",
-      "next_dependency": "bounded_static_audit_of_new_public_ftp_chain",
+      "next_dependency": "finish_usb_takeover_and_desktop_lifetime_audit_then_precontact_decision",
       "evidence": [
         "docs/FTP.md",
         "research/sessions/20261020-a6700-reference-review-t.md",
-        "research/sessions/20261022-a6700-reference-update.md"
+        "research/sessions/20261022-a6700-reference-update.md",
+        "research/FTP_SOURCE_CHAIN_AUDIT.md",
+        "research/sessions/20261022-FT-101-source-chain.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Survey native backend and dependency evidence",
@@ -1030,6 +1032,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
+    "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact.",
     "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions.",
     "Integrate qualified explicit historical-context handoff into existing production preparation; preserve guards and qualify without protected execution.",
     "Assess five act-specific evidence decisions from existing legitimate records before any real host observation; do not promote consent from digests.",
@@ -1092,7 +1095,7 @@
   "camera_commands": [],
   "previous_goal_turn": "progress_v2_transport_committed_90dd789",
   "current_goal_turn": "progress_context_boundary_audited_and_non_advancing_constructor_work_deferred",
-  "next_single_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions.",
+  "next_single_work_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1346,6 +1349,39 @@
       "device_write_gate_passed": false,
       "old_gdt_activity_decisions_changed": false,
       "next_single_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions."
+    },
+    {
+      "date": "2026-10-22",
+      "report": "research/sessions/20261022-FT-101-source-chain.md",
+      "audit": "research/FTP_SOURCE_CHAIN_AUDIT.md",
+      "pin": "ac1cd0db5d0210292be1cee292d15034a222ae64",
+      "status": "partial_source_chain_audited_device_route_not_adopted",
+      "new_text_blobs": 18,
+      "total_text_blobs_verified": 44,
+      "ast_parsed_only": 19,
+      "canonical_bindings_verified": 3,
+      "catalog_fields_mapped_once": 355,
+      "ftp_changed_sectors": 82,
+      "independent_review_scopes": [
+        "FTP requirements",
+        "host failure handling",
+        "native transaction source"
+      ],
+      "findings": [
+        "cancellation can suppress readback and uncertainty triggers service exit",
+        "sparse compatibility follows native execution",
+        "no prior-unresolved-intent interlock in inspected paths",
+        "in-process sparse rollback does not establish recovery"
+      ],
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "camera_commands": [],
+      "upstream_executed": false,
+      "protected_firmware_processed": false,
+      "previous_goal_turn": "progress_new_public_ftp_source",
+      "current_goal_turn": "progress_source_bindings_and_concrete_failure_paths_audited",
+      "next_single_work_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact."
     }
   ]
 }
