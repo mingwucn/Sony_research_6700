@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Original filesystem/startup/audit/callback methods and genuine Python probe delivery join unchanged runtime/preparation/parent code on invented inputs. | Constructor/bootstrap/native-event delivery/loader/cipher/protected processing remain simulated; actual runtime, English/native FTP and recovery stay unqualified. Camera contact stays on hold. |
+| GDT analysis preparation | An exact original RuntimeOps instance with separate inert dependency state and genuine probes joins unchanged runtime/preparation/parent code on invented inputs. | Bootstrap/native-event delivery/loader/cipher/protected processing remain simulated; actual runtime, English/native FTP and recovery stay unqualified. Camera contact stays on hold. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: qualify an original RuntimeOps instance with an explicit inert bootstrap/cipher adapter through the existing invented-files preparation and parent path. Retain original reader/root/startup/audit/callback methods and inactive retained-hook cleanup. No installed/native/protected inputs or camera contact. English/native FTP stay first.
+RA-003: perform a nonexecuting bootstrap/native-activation readiness review from authored code and saved ordinary descriptors. Trace original imports, audit events, preloaded-module constraints and safety-hook conflicts; identify missing actual roster/native-policy bindings without inventing them. No activation, installed/native/protected input reads or camera contact. English/native FTP stay first.
 
-[Commands, qualification and remaining boundaries](sessions/20261022-audit-probe.md).
+[Commands, qualification and remaining boundaries](sessions/20261022-runtime-instance.md).
