@@ -8,8 +8,10 @@ passed. The full goal is incomplete; these findings do not authorize contact.
 The pinned source audit is complete for the selected host takeover and desktop
 session paths. **FT-101 remains partial** because native backend/ABI, exact-body,
 security and physical acceptance evidence are still missing. A separately
-prepared R1 inventory packet is now ready for an owner decision; it does not
-require completion of the R4 firmware-write recovery gate.
+prepared R1 inventory packet remains unexecuted: the owner explicitly chose
+**Keep camera contact on hold**. Do not request approval again while that hold
+stands. Offline work may continue within existing permissions; the full goal
+was not paused. R1 does not require completion of the R4 firmware-write recovery gate.
 
 ## Lifecycle findings at the fixed reference pin
 
@@ -86,7 +88,7 @@ this project still has no adopted camera executor.
 | Activity | Preparation status | Current decision / missing prerequisite |
 |---|---|---|
 | Normal Version/Language UI | Existing bounded packet; owner already reported a6700, 2.00, mainland and English absent. | No repeat generic intake needed. Further label/SKU observation is a separate future owner action; firmware recovery is not a prerequisite to reading normal screens. |
-| R1 Windows inventory | [Exact one-query packet](../docs/WINDOWS_USB_OBSERVATION_PACKET.md), command metadata checked, syntax parsed, independently reviewed. | Prepared, not run or authorized. Owner decision plus narrow existing cable/port/mode/application context is needed before this observation. It cannot establish full descriptors, topology or firmware identity. |
+| R1 Windows inventory | [Exact one-query packet](../docs/WINDOWS_USB_OBSERVATION_PACKET.md), command metadata checked, syntax parsed, independently reviewed. | Prepared, not run or authorized; camera contact is on explicit owner hold. Only a later owner change to that hold and separate scoped approval/context can permit this observation. It cannot establish full descriptors, topology or firmware identity. |
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
@@ -100,13 +102,9 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-**RA-004: obtain the owner's decision on the already prepared R1 Windows
-inventory observation.** If explicitly approved with the required existing
-connection context, execute that exact query once and inspect the coherent
-private records before deriving a sanitized identity summary. Until then,
-leave the query unexecuted. Do not repeat the model/version/language question,
-infer a driver problem from absence, or escalate to service mode.
+RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold.
 
-Source-level lifecycle limitations and target/recovery gaps remain separate
-blockers after R1. All feature acceptance statuses stay unvalidated.
-[Exact commands and checks](sessions/20261022-FT-101-session-lifecycle.md).
+The five dispositions concern the existing protected GDT route; they are not a
+universal prerequisite to reviewing legitimate new ordinary source evidence.
+Source lifecycle, exact-target and recovery limitations remain unresolved.
+[Owner decision and commands](sessions/20261022-precontact-hold.md).

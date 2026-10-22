@@ -1,5 +1,9 @@
 # RA-004: proposed Windows USB inventory observation
 
+**Owner decision (2026-10-22): keep camera contact on hold.** This packet is
+retained for reference and remains unexecuted. Do not request its approval again
+while the hold stands. [Decision record](../research/sessions/20261022-precontact-hold.md).
+
 Prepared 2026-10-22. **Not executed or authorized for device contact.** This is
 a reviewable R1 packet for a later owner-approved observation. It does not
 establish camera compatibility or authorize service mode, temporary native

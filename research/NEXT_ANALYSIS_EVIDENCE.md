@@ -1,5 +1,10 @@
 # Next English/FTP analysis: evidence and decision packet
 
+Current note (2026-10-22): camera contact is on owner hold. The FTP source publication
+and [subsequent audit](FTP_SOURCE_CHAIN_AUDIT.md) supersede the earlier unpublished
+status. The five activity dispositions below remain pending; further generic
+source/command infrastructure does not settle them. Current next package: RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold.
+
 2026-10-20. Evidence: **static-inference**, **offline-tested** for metadata checks
 only. This is an ordinary planning record, without an operation ID, command,
 decision anchor, executable input bundle or permission grant. English and native
@@ -21,7 +26,7 @@ it would not authorize that study or prove a complete filesystem.
 | Two candidate filesystems | Two fixed-superblock metadata observations | Complete primary GDT rows and matching spans not observed |
 | Filesystem navigation | Synthetic planning only | Separately scoped inode/directory parser and actual metadata evidence |
 | Native English | Owner reports mainland 2.00, English unavailable | Resource coverage, locale enumeration, permission policy, storage and all consumers |
-| Native FTP | Reference author reports RAW+JPEG success; implementation unpublished | Resident UI/settings/task/media/network/credential/lifecycle chain |
+| Native FTP | FTP unlock/tooling source published and reviewed at `ac1cd0d`; author reports native RAW+JPEG transfer | Underlying Sony client source, exact-body/backend correspondence and runtime/physical acceptance evidence |
 
 The GDT study is an **indirect layout prerequisite for one package-navigation
 route**. It does not search strings or read filenames, files, resource tables or
@@ -75,7 +80,7 @@ No inode/bitmap/directory/content read requests, decompression, disassembly,
 component output, network or camera actions are in that scope. Existing time,
 log, cleanup and no-retry limits remain unchanged.
 
-## Next single work package
+## Historical next package (superseded by later specification/transport work)
 
 **RA-003: derive one current, pending-only source and command specification** for
 the already implemented v6 preparation handoff. Reconcile the three reviewed

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-22",
-  "phase": "r1_observation_packet_prepared_owner_decision_pending_r2_r4_unqualified",
+  "phase": "camera_contact_on_owner_hold_offline_evidence_prerequisites_pending",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -145,12 +145,13 @@
       "current_metadata_semantics": "research/CURRENT_METADATA_SEMANTICS.md"
     },
     "RA-004": {
-      "status": "partial_ui_facts_recorded_windows_r1_packet_prepared_not_executed",
+      "status": "partial_ui_facts_recorded_r1_packet_prepared_owner_contact_hold",
       "report": "docs/WINDOWS_USB_OBSERVATION_PACKET.md",
       "session_report": "research/sessions/20261022-FT-101-session-lifecycle.md",
-      "scope": "R0 preparation only; no device contact approval",
+      "scope": "R0 preparation retained; all camera contact on explicit owner hold",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
-      "initial_identity_dossier": "research/TARGET_EVIDENCE_GAPS.md"
+      "initial_identity_dossier": "research/TARGET_EVIDENCE_GAPS.md",
+      "owner_decision_report": "research/sessions/20261022-precontact-hold.md"
     },
     "RA-005": {
       "status": "coverage_template_only_acquisition_blocked",
@@ -228,8 +229,8 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-004: owner decision on the prepared one-query Windows R1 inventory packet and existing connection context. Execute only after explicit scoped approval, then inspect coherent private records before a sanitized identity summary. No service mode, driver changes, temporary native execution or firmware write follows from this packet.",
-  "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
+  "next_work_package": "RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold.",
+  "next_device_action": "None: camera contact is on explicit owner hold. Keep the prepared R1 packet unexecuted and do not repeat its approval request while the hold stands.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
   "host_loopback_ftps_lab": {
@@ -359,7 +360,7 @@
         "Camera-origin manual upload and full server equality",
         "Separate automatic post-capture lifecycle qualification"
       ],
-      "next_package": "RA-004: owner decision on the prepared one-query Windows R1 inventory packet and existing connection context. Execute only after explicit scoped approval, then inspect coherent private records before a sanitized identity summary. No service mode, driver changes, temporary native execution or firmware write follows from this packet.",
+      "next_package": "RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold.",
       "evidence": [
         "docs/FTP.md",
         "research/sessions/20261018-FT-102-loopback.md",
@@ -8568,7 +8569,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261022-FT-101-session-lifecycle.md",
+  "latest_report": "research/sessions/20261022-precontact-hold.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -11846,5 +11847,44 @@
     "previous_goal_turn": "progress_source_chain_and_failure_paths",
     "current_goal_turn": "progress_lifecycle_scope_resolved_and_missing_r1_packet_prepared",
     "next_single_work_package": "RA-004: owner decision on the prepared one-query Windows R1 inventory packet and existing connection context. Execute only after explicit scoped approval, then inspect coherent private records before a sanitized identity summary. No service mode, driver changes, temporary native execution or firmware write follows from this packet."
+  },
+  "camera_hold_20261022_prior_current": {
+    "phase": "r1_observation_packet_prepared_owner_decision_pending_r2_r4_unqualified",
+    "next_work_package": "RA-004: owner decision on the prepared one-query Windows R1 inventory packet and existing connection context. Execute only after explicit scoped approval, then inspect coherent private records before a sanitized identity summary. No service mode, driver changes, temporary native execution or firmware write follows from this packet.",
+    "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
+    "latest_report": "research/sessions/20261022-FT-101-session-lifecycle.md"
+  },
+  "camera_contact_hold": {
+    "active": true,
+    "recorded_on": "2026-10-22",
+    "evidence": "owner explicit instruction",
+    "owner_answer": "Keep camera contact on hold",
+    "scope": "all camera contact including the prepared R1 inventory query",
+    "r1_approval_granted": false,
+    "query_executed": false,
+    "whole_goal_pause_requested": false,
+    "repeat_r1_approval_question_while_hold_stands": false
+  },
+  "camera_hold_20261022": {
+    "report": "research/sessions/20261022-precontact-hold.md",
+    "camera_contact_hold": {
+      "active": true,
+      "recorded_on": "2026-10-22",
+      "evidence": "owner explicit instruction",
+      "owner_answer": "Keep camera contact on hold",
+      "scope": "all camera contact including the prepared R1 inventory query",
+      "r1_approval_granted": false,
+      "query_executed": false,
+      "whole_goal_pause_requested": false,
+      "repeat_r1_approval_question_while_hold_stands": false
+    },
+    "camera_commands": [],
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "previous_goal_turn": "progress_lifecycle_audit_and_r1_packet_committed_33b3d71",
+    "current_goal_turn": "no_technical_progress_owner_contact_hold_recorded",
+    "consecutive_blocker_audits_since_last_progress": 1,
+    "next_single_work_package": "RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold."
   }
 }
