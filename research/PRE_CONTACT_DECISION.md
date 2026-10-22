@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Genuine binding validator, preparation and retained I/O join child/parent on an independently captured invented-role contract and invented physical files/constants/protected doubles. | Runtime routing/dependency operations and actual protected decoder/crypto/runtime/GDT/content remain unqualified; camera contact stays on hold. |
+| GDT analysis preparation | Original runtime dispatch/collection/parent verification join genuine binding/preparation/I/O on invented dependency receipts, constants and protected doubles. | Actual filesystem/native dependency, protected decoder/crypto/runtime/GDT/content, English/native FTP and recovery remain unqualified; camera contact stays on hold. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: qualify unchanged runtime dispatch, collection and parent verification through the current synthetic child/parent path, replacing only the child RuntimeOps constructor with a labelled dependency double after genuine startup and preloaded-origin checks. Preserve constructor/alias ownership cleanup, all parent helpers and original runtime predicates. Identify required legacy runtime-shaped observation claims as invented metadata. Test complete join, constructor/reader/native-intent refusal and saved-record drift. No actual protected inputs, installed/native dependency activation or camera contact. English/native FTP stay first.
+RA-003: qualify original RuntimeOps.reader/root over newly materialized invented package and trusted files with independently captured real filesystem receipts, through the current original-runtime child/parent path. Keep bootstrap, native loader and vector cipher inert; preserve startup checks, parent helpers, ownership cleanup and false authority flags. No installed/native/protected inputs or camera contact. English/native FTP stay first.
 
-[Commands, qualification and remaining boundaries](sessions/20261022-binding-integration.md).
+[Commands, qualification and remaining boundaries](sessions/20261022-runtime-route.md).
