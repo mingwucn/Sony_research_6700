@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Joined source-owned projection/preflight, current context and retained record/helper lifecycle qualified on invented inputs with inert final wiring. | Finite exact-current source/runtime binding audit remains; no actual GDT/content observation. Actual v6 execution stays refused and camera contact stays on hold. |
+| GDT analysis preparation | Finite source/metadata audit complete; external trusted-origin projection repaired and synthetically qualified. | Isolated current-context handoff and actual source/gate/record migration remain; v6/public execution refused. No actual GDT/content observation or camera contact. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first.
+RA-003: integrate and qualify the current-command context at the existing host/child preparation seams using invented inputs in a fresh isolated process. Reuse the exact bootstrap, source owners and genuine retained control/helpers; keep final dispatch inert and actual v6/public execution refused. Close the combined startup/handoff gap without new generic approval/context infrastructure, protected reads, dependency activation or camera contact. English/native FTP stay first.
 
-[Joined qualification and finite remaining work](sessions/20261022-joined-handoff.md).
+[Finite source audit and repair](sessions/20261022-current-binding-audit.md).

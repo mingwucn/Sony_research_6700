@@ -177,8 +177,20 @@ def make_current_context(validated, *, request_bytes, expected_request_sha256,
 
     session=relative(candidate['session'])
     for row in candidate['inputs'].values():bind(row['path'],row['sha256'])
-    for row in inputs['source_cache']['sources'].values():
-        bind(row['path'],row['sha256'],absolute=True)
+    for name,row in inputs['source_cache']['sources'].items():
+        value=row['path']
+        need(type(value) is str and value and '..' not in Path(value).parts,
+             'current_context_path')
+        path=Path(value)
+        need(path.is_absolute() and path!=root,'current_context_path')
+        digest(row['sha256'])
+        if path.is_relative_to(root):
+            bind(value,row['sha256'],absolute=True)
+        else:
+            # Historical dependency/stdlib origins can be outside this root.
+            # Their unchanged cache/config records stay bound above; current
+            # dependency checks own their fresh reads. Do not widen ordinary I/O.
+            need(name.startswith(('dependency:','trusted:')),'current_context_path')
     documents=validated['document_sha256']
     need(digest(documents['seal'])==digest(validated['seal_sha256']),
          'current_context_seal')

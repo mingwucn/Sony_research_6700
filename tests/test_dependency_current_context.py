@@ -154,6 +154,48 @@ class CurrentContextTests(unittest.TestCase):
         self.request['argv_prefix'][0]='changed'
         self.assertEqual(context,before)
 
+    def test_external_historical_dependency_origins_keep_metadata_without_ordinary_reads(self):
+        cache=self.validated['inputs']['source_cache']['sources']
+        selected=[next(name for name in cache if name.startswith(prefix))
+                  for prefix in ('dependency:','trusted:')]
+        before_context=self.construct()
+        old_names=[Path(cache[name]['path']).relative_to(self.root).as_posix() for name in selected]
+        # Constructor-boundary fixtures: these locations are invented, never
+        # opened, and do not assert observed provenance or a new gate result.
+        for index,name in enumerate(selected):
+            cache[name]['path']=str(self.root.parent/'invented-external-runtime'/('source'+str(index)+'.py'))
+        before=copy.deepcopy(self.validated)
+        with (patch('builtins.open',side_effect=AssertionError('no external read')),
+              patch.object(Path,'open',side_effect=AssertionError('no external read'))):
+            context=self.construct()
+        self.assertEqual(self.validated,before)
+        expected=dict(before_context['ordinary_sha256'])
+        for name in old_names:expected.pop(name)
+        self.assertEqual(context['ordinary_sha256'],expected)
+        cache_document=self.validated['candidate']['inputs']['source_cache']
+        self.assertEqual(context['ordinary_sha256'][cache_document['path']],cache_document['sha256'])
+        self.assertEqual(context['basis'],self.validated['inputs']['basis'])
+        self.assertEqual(context['source_manifest'],self.validated['inputs']['source_manifest'])
+
+    def test_external_cache_still_requires_absolute_no_traversal_and_valid_digest(self):
+        cache=self.validated['inputs']['source_cache']['sources']
+        name=next(name for name in cache if name.startswith('trusted:'))
+        original=copy.deepcopy(cache[name])
+        cases=(('path','invented-relative/source.py'),
+               ('path',str(self.root/'..'/'invented-external.py')),
+               ('path',str(self.root)),
+               ('sha256','invalid'))
+        for field,value in cases:
+            cache[name]=dict(original,path=str(self.root.parent/'invented-external-runtime'/'source.py'))
+            cache[name][field]=value
+            with self.subTest(field=field,value=value),self.assertRaises(ValueError):self.construct()
+
+    def test_external_retained_analysis_source_cannot_be_omitted(self):
+        cache=self.validated['inputs']['source_cache']['sources']
+        name=next(name for name in cache if name.startswith('role:'))
+        cache[name]['path']=str(self.root.parent/'invented-external-runtime'/'analysis.py')
+        with self.assertRaisesRegex(ValueError,'current_context_path'):self.construct()
+
     def test_existing_constructor_and_runtime_refusals_remain(self):
         with self.assertRaisesRegex(ValueError,'separate_execution_qualification'):
             host.make_context(self.validated)

@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_joined_synthetic_handoff_qualified_exact_current_binding_pending",
-      "available_evidence": "Official package, tar inventory and superblock observations recorded; joined source-owned projection/preflight, current context, real retained reservation and cleanup now qualified using invented files and inert final runtime wiring.",
-      "remaining_acceptance": "Exact-current source/runtime closure and readiness decision remain; actual GDT and target-content discovery are not established. Historical pending fields are not new owner intake. English/FTP mappings, installed-body correspondence and recovery remain unverified.",
-      "next_dependency": "finite_exact_current_source_runtime_binding_audit",
+      "status": "partial_current_binding_audit_complete_external_origin_repaired_isolated_handoff_pending",
+      "available_evidence": "Finite 51-source/46-prepared-role comparison and 55-authored-source AST audit; all 16 selected ordinary records preserve pins. Four external trusted cache origins confirmed from metadata; narrow current-context projection repair synthetically qualified.",
+      "remaining_acceptance": "Fresh isolated current-context/control/helper handoff remains unqualified; actual parent/child still use legacy constructor after deliberate v6 refusals. Actual source/gate/record migration, dependency freshness and GDT/content observation remain incomplete. English/FTP mapping, body correspondence and recovery remain unverified.",
+      "next_dependency": "isolated_current_command_context_preparation_handoff",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -48,7 +48,8 @@
         "research/sessions/20261020-RA-003-context-boundary-audit.md",
         "research/ANALYSIS_PREREQUISITES.md",
         "research/sessions/20261022-runtime-preparation.md",
-        "research/sessions/20261022-joined-handoff.md"
+        "research/sessions/20261022-joined-handoff.md",
+        "research/sessions/20261022-current-binding-audit.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1031,7 +1032,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first."
+    "RA-003: integrate and qualify the current-command context at the existing host/child preparation seams using invented inputs in a fresh isolated process. Reuse the exact bootstrap, source owners and genuine retained control/helpers; keep final dispatch inert and actual v6/public execution refused. Close the combined startup/handoff gap without new generic approval/context infrastructure, protected reads, dependency activation or camera contact. English/native FTP stay first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1081,9 +1082,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_shared_runtime_checker_and_command_preparation",
-  "current_goal_turn": "progress_joined_source_owned_synthetic_handoff",
-  "next_single_work_package": "RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first.",
+  "previous_goal_turn": "progress_joined_synthetic_preparation_control_handoff_032b368",
+  "current_goal_turn": "progress_finite_current_binding_audit_and_external_origin_repair",
+  "next_single_work_package": "RA-003: integrate and qualify the current-command context at the existing host/child preparation seams using invented inputs in a fresh isolated process. Reuse the exact bootstrap, source owners and genuine retained control/helpers; keep final dispatch inert and actual v6/public execution refused. Close the combined startup/handoff gap without new generic approval/context infrastructure, protected reads, dependency activation or camera contact. English/native FTP stay first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1647,6 +1648,72 @@
       "device_write_gate_passed": false,
       "new_owner_input_required": false,
       "next_single_work_package": "RA-003: audit the finite exact-current source/runtime bindings for the existing two-lead GDT route. Compare current authored sources, bootstrap and historical/current metadata against the frozen projections; identify and repair concrete mismatches, then give an explicit readiness decision. No new generic context layer, protected observation, dependency activation or camera contact. English/native FTP stay first."
+    },
+    {
+      "report": "research/sessions/20261022-current-binding-audit.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "source_roles": 51,
+      "child_roles": 49,
+      "host_roles": 2,
+      "validator_roles": 53,
+      "transport_roles": 54,
+      "prepared_roles": 46,
+      "prepared_byte_deltas": 0,
+      "authored_source_files": 55,
+      "ordinary_records": 16,
+      "current_delta_roles": [
+        "host.launcher",
+        "host_entry",
+        "operational_metadata",
+        "operational_preparation",
+        "process_child"
+      ],
+      "historical_cache": {
+        "repository_rows": 43,
+        "external_trusted_rows": 4,
+        "external_files_opened": false,
+        "embedded_source_decoded": false
+      },
+      "concrete_repair": "current_context_repository_projection_excludes_only_external_dependency_trusted_origins",
+      "qualification": {
+        "cases": 195,
+        "passed": 194,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "skip_reasons": [
+          "host cannot create an invented symlink; winerror=1314; errno=22"
+        ],
+        "runner_seconds": 121.83729499997571,
+        "interpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+        "version": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+        "source_stable": true,
+        "log_sha256": "62763ecfb55e7ab60b87579dc108cd1ac2de16c690d79747e0c1ea184386b930"
+      },
+      "changed_source_sha256": {
+        "tools/dependency_host_entry.py": "78be04ce3bc3532a44162feb801b5e95525431f3986256ddd26fe39525d774ae",
+        "tests/test_dependency_current_context.py": "e8869e191895b13eaaddeca8fd0cde738059ea72c392b4a8bd9b631441f0c86f"
+      },
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "actual_runtime_ready": false,
+      "current_isolated_join_qualified": false,
+      "frozen_pending_records_modified": false,
+      "installed_dependency_activated": false,
+      "protected_inputs_accessed": false,
+      "execution_authorized": false,
+      "previous_goal_turn": "progress_joined_synthetic_preparation_control_handoff_032b368",
+      "current_goal_turn": "progress_finite_current_binding_audit_and_external_origin_repair",
+      "current_goal_status": "active",
+      "new_owner_input_required": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "camera_commands": [],
+      "next_single_work_package": "RA-003: integrate and qualify the current-command context at the existing host/child preparation seams using invented inputs in a fresh isolated process. Reuse the exact bootstrap, source owners and genuine retained control/helpers; keep final dispatch inert and actual v6/public execution refused. Close the combined startup/handoff gap without new generic approval/context infrastructure, protected reads, dependency activation or camera contact. English/native FTP stay first."
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -1694,7 +1761,7 @@
       "owner_input_required": false
     },
     "distinct_operational_act_decision": {
-      "status": "offline_preparation_authorized_joined_synthetic_handoff_qualified_exact_current_binding_pending",
+      "status": "offline_preparation_authorized_current_binding_repaired_isolated_handoff_pending",
       "owner_input_required": false
     }
   },
@@ -1708,9 +1775,9 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
-    "report": "research/sessions/20261022-joined-handoff.md",
-    "cases": 150,
-    "passed": 149,
+    "report": "research/sessions/20261022-current-binding-audit.md",
+    "cases": 195,
+    "passed": 194,
     "skipped": 1,
     "actual_runtime_qualified": false
   },
