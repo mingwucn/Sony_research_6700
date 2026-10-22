@@ -2999,7 +2999,7 @@
     "whole_goal_pause_requested": false,
     "repeat_r1_approval_question_while_hold_stands": false
   },
-  "goal_status": "active",
+  "goal_status": "blocked",
   "historical_pending_activity_decisions": {
     "accepted_contract_interaction": "pending",
     "accompanying_component_terms": "pending",
@@ -3116,5 +3116,50 @@
     "affected_regression_cases": 124,
     "suite": "synthetic_bootstrap_journal_supervisor_trial_and_affected_regressions",
     "actual_runtime_qualified": false
+  },
+  "precontact_scope_blocked_20261023": {
+    "sequence": 3,
+    "baseline_commit": "86ec4c49d8fd55306e7d3fee35b61723b40ca6ca",
+    "report": "research/sessions/20261023-precontact-scope-audit-3.md",
+    "previous_goal_turn": "no_progress",
+    "current_goal_turn": "no_progress",
+    "scope": "ordinary_authored_files_and_existing_private_sanitized_receipts_only",
+    "blocker": "fresh_actual_host_runtime_metadata_and_full_receipts_outside_current_synthetic_only_scope",
+    "consecutive_blocked_goal_turns": 3,
+    "goal_status": "blocked",
+    "goal_completion_proven": false,
+    "independent_static_review": "third_review_confirms_threshold_and_same_scope_blocker",
+    "retained_qualification": {
+      "integration-02": {
+        "cases": 9,
+        "log_sha256": "1bdfab0fddac923094bcb1c56510ad90eb6970e3cbaa7e60c3da4b4b6f182aea",
+        "tests_rerun": false
+      },
+      "runtime-01": {
+        "cases": 93,
+        "log_sha256": "b1b07a48b2784fe298d54e78fca60e158a79e58b7b69d99d23b2fa1ed23f8430",
+        "tests_rerun": false
+      },
+      "regression-01": {
+        "cases": 74,
+        "log_sha256": "ecef5ef51b74bb336b36ad66ba79e917f70b9a5ba864e97f5f74e4dbcd7dfe15",
+        "tests_rerun": false
+      }
+    },
+    "new_tests_run": 0,
+    "code_changed": false,
+    "ordinary_frozen_records": 16,
+    "pending_dispositions": 5,
+    "dependency_null_fields": 3,
+    "camera_contact_hold": true,
+    "actual_host_runtime_metadata_collected": false,
+    "installed_dependency_activated": false,
+    "protected_inputs_accessed": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "camera_commands": [],
+    "next_single_work_package": "RA-003: collect fresh host interpreter/cold-preload facts, the five trusted-runtime origins, ancestor root identities and five complete read-only runtime-file receipts; reconcile once with the existing mapping. Actual-host metadata observation is outside the current synthetic-only scope and remains pending. No bootstrap, package activation, protected processing or camera contact. English/native FTP remain first.",
+    "goal_tool_returned_status": "blocked"
   }
 }
