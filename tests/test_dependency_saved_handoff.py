@@ -28,13 +28,14 @@ OBSERVATIONS=[]
 
 class SavedHandoffTests(unittest.TestCase):
     def setUp(self):
-        self.case=joined.JoinedHandoffTests('test_joined_real_preflight_context_control_and_helper_handoff')
+        self.case=getattr(self,'fixture_case',None) or joined.JoinedHandoffTests(
+            'test_joined_real_preflight_context_control_and_helper_handoff')
         self.case.fixture_ordinary_io=DISK_IO
         self.case.setUp();self.addCleanup(self.case.doCleanups)
         case=self.case
         self.plan=parent.prepare_synthetic_owned(folder=case.folder,packet=case.packet,
             buffers=case.buffers,rows=case.rows,expected_hashes=case.expected,
-            runtime_profile={'executable':sys.executable})
+            runtime_profile=getattr(self,'fixture_runtime_profile',{'executable':sys.executable}))
         plan=self.plan
         helpers=parent.process.helper_owner(plan['outer'],case.buffers,case.rows,'parent')
         plan.update(helpers=helpers,control=case.checker)

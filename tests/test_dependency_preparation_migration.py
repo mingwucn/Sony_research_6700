@@ -50,6 +50,11 @@ class MigrationPreparation(unittest.TestCase):
         for attr,role in (('c','candidate'),('d','decision'),('r','review'),('s','seal')):
             setattr(f,attr,json.loads(a['legacy_documents'][role]))
         p=f.p
+        # Optional fresh synthetic terminal grammar; defaults preserve the
+        # original empty historical fixture. These are invented fixture inputs.
+        if hasattr(self,'fixture_basis'):p['basis']=copy.deepcopy(self.fixture_basis)
+        if hasattr(self,'fixture_source_manifest'):p['source_manifest'].update(copy.deepcopy(self.fixture_source_manifest))
+        if hasattr(self,'fixture_role_aliases'):p['binding_schema']['aliases'].update(self.fixture_role_aliases)
         for value in (f.c,f.d,f.r,f.s,p['activity_scope']):
             value['operation_id']=seed.case.request['operation_id']
         p['binding_plan']=dict(load_order=p['binding_schema']['load_order'],
@@ -61,6 +66,7 @@ class MigrationPreparation(unittest.TestCase):
             'bootstrap:io_entry':getattr(self,'fixture_control',b'# invented control; no device or observer\n'),
             'integration:prospective_child':getattr(self,'fixture_factory',FACTORY),
         }
+        replacements.update({'role:'+name:raw for name,raw in getattr(self,'fixture_role_sources',{}).items()})
         for key,raw in replacements.items():
             row=p['source_cache']['sources'][key]
             row.update(bytes=len(raw),sha256=m.sha(raw),base64=base64.b64encode(raw).decode())
@@ -91,6 +97,8 @@ class MigrationPreparation(unittest.TestCase):
         for group in ('contract','composition'):
             factory[group]['source_sha256']['prospective_child.py']=m.sha(replacements['integration:prospective_child'])
         factory['composition']['source_sha256']['roles/gdt_preflight.py']=m.sha(replacements['role:gdt_preflight'])
+        for name,raw in getattr(self,'fixture_role_sources',{}).items():
+            factory['composition']['source_sha256']['roles/'+name+'.py']=m.sha(raw)
         factory['composition']['source_sha256']['io_entry.py']=m.sha(replacements['bootstrap:io_entry'])
         docs,seal=f.pack()
         policy['historical_seal_sha256']=m.sha(docs['inputs']['q_old_seal'])

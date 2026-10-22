@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_genuine_inert_parent_supervision_and_separate_saved_checks_qualified",
-      "available_evidence": "Genuine retained inert-child parent supervision (10 new cases) and separate invented saved reconciliation (7 new cases). 144 distinct cases qualified by unaffected broad results plus corrected complete saved module; one initial test-guard failure preserved. Real process/pipes/records observed, zero emergency cleanup.",
-      "remaining_acceptance": "Genuine successful terminal validation and saved reconciliation have not been joined. Validation finder is inert; bootstrap owner is not loaded in the joined refusal fixture. Actual bindings remain unapplied; actual runtime/dependency/GDT/content, English/FTP, body correspondence and recovery remain unqualified.",
-      "next_dependency": "invented_authored_validation_loader_and_successful_terminal_saved_join",
+      "status": "partial_synthetic_terminal_validation_join_qualified",
+      "available_evidence": "15/15 new terminal/loader cases and 98/98 affected regressions pass. Genuine bootstrap/finder/supervisor/saved verifier join on invented terminal replay; canonical/semantic/bridge refusals remain distinct. ",
+      "remaining_acceptance": "Child Preparation.prepare/callback factory and collected-result path have not run together without terminal replay. Actual bindings remain unapplied; actual dependency/runtime/GDT/content, English/native FTP, body correspondence and recovery remain unqualified.",
+      "next_dependency": "invented_genuine_child_preparation_callback_and_collected_result_without_terminal_replay",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -52,7 +52,8 @@
         "research/sessions/20261022-current-binding-audit.md",
         "research/sessions/20261022-isolated-current-handoff.md",
         "research/sessions/20261022-pending-binding-draft.md",
-        "research/sessions/20261022-parent-supervision.md"
+        "research/sessions/20261022-parent-supervision.md",
+        "research/sessions/20261022-terminal-validation.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1035,7 +1036,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: qualify the genuine authored parent validation-loader handoff and successful retained terminal validation joined with saved reconciliation in one invented-input run. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first."
+    "RA-003: qualify the genuine child preparation/callback and collected-result path in an invented-runtime run without precomputed terminal replay, then reconcile it through the existing parent. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1085,9 +1086,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_pending_binding_draft_and_synthetic_consumer_29f81b3",
-  "current_goal_turn": "progress_genuine_parent_supervision_and_saved_reconciliation",
-  "next_single_work_package": "RA-003: qualify the genuine authored parent validation-loader handoff and successful retained terminal validation joined with saved reconciliation in one invented-input run. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first.",
+  "previous_goal_turn": "progress_genuine_parent_supervision_and_saved_reconciliation_de79397",
+  "current_goal_turn": "progress_genuine_validation_loader_and_terminal_join",
+  "next_single_work_package": "RA-003: qualify the genuine child preparation/callback and collected-result path in an invented-runtime run without precomputed terminal replay, then reconcile it through the existing parent. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1920,6 +1921,65 @@
       "current_goal_status": "active",
       "camera_commands": [],
       "next_single_work_package": "RA-003: qualify the genuine authored parent validation-loader handoff and successful retained terminal validation joined with saved reconciliation in one invented-input run. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first."
+    },
+    {
+      "report": "research/sessions/20261022-terminal-validation.md",
+      "companion": "research/TERMINAL_VALIDATION_JOIN.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "scope": "synthetic_terminal_replay_through_genuine_validation_loader_supervisor_and_saved_reconciliation",
+      "new_terminal_cases": 5,
+      "new_parent_loader_cases": 10,
+      "new_cases": 15,
+      "affected_regression_cases": 98,
+      "distinct_qualified_cases": 113,
+      "passed": 113,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "focused_log_sha256": "6e693d2c4a99fb7a7b38bf7be8f5323bf6bf8864e3f4f92b0b9a0716da25292b",
+      "regression_log_sha256": "bdefa8021af5a3ec271eab774176fa35af106968a47c0d1ae8398b9ee2fdbdf9",
+      "qualified_source_pins": 88,
+      "terminal_builder_source_pins": 31,
+      "ordinary_draft_pins": 72,
+      "ordinary_frozen_records": 16,
+      "historical_pending_dispositions": 5,
+      "dependency_null_fields": 3,
+      "genuine_parent_validation_loader_qualified": true,
+      "bootstrap_owner_loaded": true,
+      "parent_roles_registered": 23,
+      "parent_role_execution": "needed_validator_import_subset_only",
+      "protected_roles_excluded": 3,
+      "invented_terminal_replay_join_qualified": true,
+      "genuine_successful_terminal_join_scope": "invented_terminal_replay_only",
+      "saved_reconciliation_invented_records_qualified": true,
+      "real_parent_process_observed": true,
+      "terminal_replay": true,
+      "source_events_and_snapshot_invented": true,
+      "child_preparation_prepare_executed": false,
+      "child_callback_factory_executed": false,
+      "outer_child_and_dependency_records": "precomputed_fixture_data",
+      "producer_execution_authenticated": false,
+      "actual_runtime_verified": false,
+      "operational_acceptance": false,
+      "exhaustive_cleanup_fault_coverage": false,
+      "actual_runtime_ready": false,
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "production_source_files_changed": false,
+      "unchanged_frozen_records": true,
+      "protected_inputs_accessed": false,
+      "installed_dependency_activated": false,
+      "execution_authorized": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "new_owner_input_required": false,
+      "current_goal_status": "active",
+      "camera_commands": [],
+      "next_single_work_package": "RA-003: qualify the genuine child preparation/callback and collected-result path in an invented-runtime run without precomputed terminal replay, then reconcile it through the existing parent. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first."
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -1981,13 +2041,13 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
-    "report": "research/sessions/20261022-parent-supervision.md",
-    "distinct_cases": 144,
-    "effective_passed": 144,
-    "initial_broad_failures": 1,
-    "corrected_saved_passed": 7,
+    "report": "research/sessions/20261022-terminal-validation.md",
+    "distinct_cases": 113,
+    "passed": 113,
+    "failures": 0,
+    "errors": 0,
     "skipped": 0,
-    "method": "stable_unaffected_broad_cases_plus_corrected_complete_saved_module",
+    "terminal_replay": true,
     "actual_runtime_qualified": false
   },
   "evidence_source_sha256_scope": "Original audit snapshot; historical hashes are not an exact-current source closure or execution allowlist."

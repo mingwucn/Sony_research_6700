@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Genuine retained inert-child parent supervision and separate invented saved checks qualified; needs_review preserved. | Genuine authored validation-loader/accepted terminal join and actual bindings/runtime/GDT/content remain unqualified; no camera contact. |
+| GDT analysis preparation | Genuine loaded parent validator, retained supervisor and saved reconciliation join on invented terminal replay. | Genuine child preparation/callback and collected-result path without replay, actual bindings/runtime/GDT/content remain unqualified; camera contact on hold. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: qualify the genuine authored parent validation-loader handoff and successful retained terminal validation joined with saved reconciliation in one invented-input run. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first.
+RA-003: qualify the genuine child preparation/callback and collected-result path in an invented-runtime run without precomputed terminal replay, then reconcile it through the existing parent. Keep actual parent/child v6 and public runtime refusals, frozen records, five historical pending dispositions and dependency nulls unchanged. No actual executable bundle, installed-dependency activation, protected input or camera contact. English/native FTP stay first.
 
-[Commands, qualification and remaining boundaries](sessions/20261022-parent-supervision.md).
+[Commands, qualification and remaining boundaries](sessions/20261022-terminal-validation.md).

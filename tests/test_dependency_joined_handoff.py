@@ -58,8 +58,11 @@ class JoinedHandoffTests(unittest.TestCase):
         temp=tempfile.TemporaryDirectory();self.addCleanup(temp.cleanup)
         self.root=Path(temp.name)
         fixture=migration_fixture.MigrationPreparation()
-        fixture.fixture_root=self.root;fixture.fixture_control=control;fixture.fixture_factory=FACTORY
+        fixture.fixture_root=self.root;fixture.fixture_control=control
+        fixture.fixture_factory=getattr(self,'fixture_factory',FACTORY)
         if hasattr(self,'fixture_ordinary_io'):fixture.fixture_ordinary_io=self.fixture_ordinary_io
+        for name in ('fixture_basis','fixture_source_manifest','fixture_role_aliases','fixture_role_sources'):
+            if hasattr(self,name):setattr(fixture,name,getattr(self,name))
         fixture.setUp();self.addCleanup(fixture.doCleanups)
         self.fixture=fixture;self.original=fixture.prep
         self.validated=self.original._validate_gate()
