@@ -39,7 +39,7 @@ def project_native_policy(policy, manifest, trusted_receipts):
 
 
 def compare_invented_metadata(*, legacy, prerequisites_dependency, packet, fixed,
-        source_buffers, dependency_anchor, trusted_receipts, successor_context):
+        source_buffers, dependency_anchor, trusted_receipts, successor_context, runtime_mapping=None):
     """Compare already supplied records, validating successor with retained binder.
 
     This lower-level helper does not validate the full four-document envelope,
@@ -77,6 +77,12 @@ def compare_invented_metadata(*, legacy, prerequisites_dependency, packet, fixed
     activity.same(successor_context,expected_context,'bridge_successor_context')
     e.need(dependency_anchor['operation_id']==policy['operation_id'],'bridge_operation')
     native=project_native_policy(policy,manifest,trusted_receipts)
+    if runtime_mapping is not None:
+        # The retained binder above supplies the original comparison inputs;
+        # the sidecar cannot replace them or supply its own executable context.
+        validate_runtime_mapping(mapping=runtime_mapping,expectation=policy,
+            package=bound['package'],trusted_receipts=trusted_receipts)
+        activity.same(runtime_mapping['relative_native_policy'],native,'bridge_runtime_mapping_policy')
     missing=[]
     for key,expected in (('record_sha256',manifest['record_sha256']),('expected_files',manifest['files']),
                          ('native_policy',native)):
@@ -126,6 +132,87 @@ def validate_invented_bridge(documents, *, bridge_anchor_bytes, external_bridge_
         successor_context=anchor['successor_context'])
     compared.update(metadata_contract_result=result,bridge_anchor_file_sha256=external_bridge_anchor_sha256)
     return compared
+
+
+def prepare_runtime_mapping(*, expectation, package, trusted_receipts=None):
+    """Preserve path domains and full receipt projections as supplied metadata.
+
+    Missing trusted receipts cannot be derived from origin identity subsets.
+    No filesystem read, runtime observation, executable packet or authority is
+    produced. A complete result is still only caller-record consistency.
+    """
+    policy = core._bounded_copy(expectation)
+    package = core._bounded_copy(package)
+    manifest, receipts = core._package(package)
+    core._policy(policy, package, manifest, receipts)
+    trusted = {} if trusted_receipts is None else core._bounded_copy(trusted_receipts)
+    e.need(type(trusted) is dict and set(trusted) <= set(policy['trusted_origins']),
+           'mapping_trusted_roster')
+    # Keep the retained relative-path contract injective even across disjoint
+    # absolute roots. No prefix stripping silently merges the two namespaces.
+    core._unique([row['relative_path'] for group in
+        ('python_origins','native_libraries','trusted_origins') for row in policy[group].values()])
+    package_rows = {}; trusted_rows = {}; seen = {}
+
+    def pair(relative, absolute, original, domain):
+        e.need(core._canonical(dict(absolute,path=relative['path'])) == core._canonical(relative),
+               'mapping_path_only_projection')
+        # Reject distinct labels for one declared file identity. This checks
+        # caller metadata, not actual hard links or a hostile filesystem.
+        identity = tuple(absolute['lstat_before'][k] for k in ('device','inode'))
+        e.need(identity not in seen or seen[identity] == absolute['path'], 'mapping_identity_alias')
+        seen[identity] = absolute['path']
+        return dict(root=domain,relative_receipt=relative,absolute_receipt=absolute,
+            source_receipt_domain=original,relative_receipt_sha256=core._hash(relative),
+            absolute_receipt_sha256=core._hash(absolute))
+
+    for path, row in receipts.items():
+        absolute_path = policy['roots']['package']['path'].rstrip('/')+'/'+path
+        absolute = dict(row,path=absolute_path)
+        core._receipt(absolute,absolute_path,row['sha256'],row['size'])
+        package_rows[path] = pair(row,absolute,'package_relative','package')
+        e.need(package_rows[path]['relative_receipt_sha256'] ==
+            package['installed_proof']['files'][path]['open_identity_sha256'], 'mapping_package_token')
+    for alias, row in trusted.items():
+        expected = policy['trusted_origins'][alias]
+        path = policy['roots']['runtime']['path'].rstrip('/')+'/'+expected['relative_path']
+        core._receipt(row,path,expected['sha256'],expected['size'],expected['identity'])
+        trusted_rows[alias] = pair(dict(row,path=expected['relative_path']),row,'runtime_absolute','runtime')
+    origins = {}
+    for group in ('python_origins','native_libraries','trusted_origins'):
+        origins[group] = {}
+        for alias, row in policy[group].items():
+            domain = row['root']; root = policy['roots'][domain]
+            link = trusted_rows.get(alias) if domain == 'runtime' else package_rows[row['relative_path']]
+            origins[group][alias] = dict(root=domain,root_path=root['path'],
+                root_identity_sha256=root['identity_sha256'],relative_path=row['relative_path'],
+                absolute_path=root['path'].rstrip('/')+'/'+row['relative_path'],
+                sha256=row['sha256'],size=row['size'],identity=row['identity'],
+                receipt_status='missing_full_receipt' if link is None else 'consistent_caller_receipt',
+                relative_receipt_sha256=None if link is None else link['relative_receipt_sha256'],
+                absolute_receipt_sha256=None if link is None else link['absolute_receipt_sha256'])
+    missing = sorted(set(policy['trusted_origins'])-set(trusted))
+    native = None if missing else project_native_policy(policy,manifest,trusted)
+    # Preserve all successor context instead of treating a relative-only
+    # native-policy view as an equivalent execution binding.
+    result = dict(schema='dependency_runtime_path_mapping_v1',status='consistent_metadata_not_launchable',
+        expectation_sha256=core._hash(policy),package_sha256=core._hash(package),
+        successor_expectation=policy,package_receipts=package_rows,trusted_receipts=trusted_rows,
+        origins=origins,missing_full_trusted_receipts=missing,receipt_mapping_complete=not missing,
+        relative_native_policy=native,legacy_projection_requires_domain_sidecar=True,
+        original_legacy_token_provenance_verified=False,current_filesystem_observed=False,
+        root_identities_are_caller_declarations=True,actual_runtime_verified=False,
+        execution_authorized=False,feature_supported=False,recovery_proven=False,
+        device_write_gate_passed=False,camera_commands=[])
+    return core._bounded_copy(result)
+
+
+def validate_runtime_mapping(*, mapping, expectation, package, trusted_receipts=None):
+    """Recompute every mapping and token from original caller-owned records."""
+    mapping = core._bounded_copy(mapping)
+    expected = prepare_runtime_mapping(expectation=expectation,package=package,trusted_receipts=trusted_receipts)
+    e.need(core._canonical(mapping) == core._canonical(expected), 'runtime_mapping_changed')
+    return 'consistent_metadata_not_launchable'
 
 
 def run_runtime(**kwargs):

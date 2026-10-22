@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Nonexecuting bootstrap packet preparation and early supervisor refusal qualified: 166 distinct synthetic cases. | Eight current runtime bindings remain unresolved. Journal bounds/stop entry are specifications only. Preserve frozen records/nulls and camera hold; next is explicit lossless runtime-origin/path/full-receipt mapping. |
+| GDT analysis preparation | Lossless path/full-receipt mapping and optional retained join qualified: 155 distinct synthetic cases. | Five full runtime receipts and fresh origins/root identities remain missing; no saved native policy, activation or camera contact. Next is synthetic bootstrap-only entry/bounded journaling. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: implement and qualify an explicit lossless runtime-origin/path/receipt mapping for the retained dependency preparation contract, using saved ordinary successor descriptors and authored mapping predicates. Cover invented cross-root, alias, incomplete-receipt and drift counterexamples. Preserve frozen originals and unresolved fresh origins/root identities; emit no activation command or allow record. No installed/native/protected reads, activation or camera contact. English/native FTP remain first.
+RA-003: implement and qualify a bootstrap-only disposable-child entry and bounded private event journal using supplied invented imports and events. Exercise the original bootstrap method through an inert import adapter and parent verification; stop before package imports, controller and protected processing. Preserve the review packet refusal, native-denying synthetic hook and frozen 16/5/3. No installed/native/protected input reads, actual activation or camera contact. English/native FTP remain first.
 
-[Commands, review and remaining boundaries](sessions/20261023-bootstrap-packet.md).
+[Commands, review and remaining boundaries](sessions/20261023-runtime-mapping.md).

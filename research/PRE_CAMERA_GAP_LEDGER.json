@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_bootstrap_review_packet_qualified_activation_unqualified",
-      "available_evidence": "Nonexecuting review preparation and early supervisor refusal qualified: 23 new + 143 affected regression cases = 166. Prior 82-case integration historical, not rerun in full or added. Three authored source captures and two historical metadata references prepared privately.",
-      "remaining_acceptance": "Eight current bindings unresolved: fresh runtime, interpreter trust, five trusted origins/root/full receipts, path/receipt mapping, cold preload, complete native events, bounded journal/stop entry and request/result binding. Protected processing, English/native FTP and recovery remain unqualified.",
-      "next_dependency": "lossless_runtime_origin_path_receipt_mapping",
+      "status": "partial_runtime_path_mapping_qualified_activation_unqualified",
+      "available_evidence": "155 distinct cases pass: 29 new mapping/join + 126 affected metadata regressions. Saved ordinary descriptors preserve 351 full package receipt pairs and 21 origin/root associations; five complete runtime receipts remain missing.",
+      "remaining_acceptance": "Fresh origins/root identities and five complete runtime receipts remain unavailable. Actual bootstrap/native event behavior, bounded journal/stop entry, execution bindings, protected processing, exact-body English/native FTP and recovery remain unqualified.",
+      "next_dependency": "synthetic_bootstrap_only_entry_and_bounded_event_journal",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -62,7 +62,8 @@
         "research/sessions/20261022-audit-probe.md",
         "research/sessions/20261022-runtime-instance.md",
         "research/sessions/20261023-bootstrap-readiness.md",
-        "research/sessions/20261023-bootstrap-packet.md"
+        "research/sessions/20261023-bootstrap-packet.md",
+        "research/sessions/20261023-runtime-mapping.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1045,7 +1046,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: implement and qualify an explicit lossless runtime-origin/path/receipt mapping for the retained dependency preparation contract, using saved ordinary successor descriptors and authored mapping predicates. Cover invented cross-root, alias, incomplete-receipt and drift counterexamples. Preserve frozen originals and unresolved fresh origins/root identities; emit no activation command or allow record. No installed/native/protected reads, activation or camera contact. English/native FTP remain first."
+    "RA-003: implement and qualify a bootstrap-only disposable-child entry and bounded private event journal using supplied invented imports and events. Exercise the original bootstrap method through an inert import adapter and parent verification; stop before package imports, controller and protected processing. Preserve the review packet refusal, native-denying synthetic hook and frozen 16/5/3. No installed/native/protected input reads, actual activation or camera contact. English/native FTP remain first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1095,9 +1096,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_nonexecuting_bootstrap_readiness_review",
-  "current_goal_turn": "progress_nonexecuting_bootstrap_review_packet_and_supervisor_refusal",
-  "next_single_work_package": "RA-003: implement and qualify an explicit lossless runtime-origin/path/receipt mapping for the retained dependency preparation contract, using saved ordinary successor descriptors and authored mapping predicates. Cover invented cross-root, alias, incomplete-receipt and drift counterexamples. Preserve frozen originals and unresolved fresh origins/root identities; emit no activation command or allow record. No installed/native/protected reads, activation or camera contact. English/native FTP remain first.",
+  "previous_goal_turn": "progress_nonexecuting_bootstrap_review_packet",
+  "current_goal_turn": "progress_lossless_runtime_path_receipt_mapping_and_retained_join",
+  "next_single_work_package": "RA-003: implement and qualify a bootstrap-only disposable-child entry and bounded private event journal using supplied invented imports and events. Exercise the original bootstrap method through an inert import adapter and parent verification; stop before package imports, controller and protected processing. Preserve the review packet refusal, native-denying synthetic hook and frozen 16/5/3. No installed/native/protected input reads, actual activation or camera contact. English/native FTP remain first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -2757,6 +2758,77 @@
       "current_goal_status": "active",
       "camera_commands": [],
       "next_single_work_package": "RA-003: implement and qualify an explicit lossless runtime-origin/path/receipt mapping for the retained dependency preparation contract, using saved ordinary successor descriptors and authored mapping predicates. Cover invented cross-root, alias, incomplete-receipt and drift counterexamples. Preserve frozen originals and unresolved fresh origins/root identities; emit no activation command or allow record. No installed/native/protected reads, activation or camera contact. English/native FTP remain first."
+    },
+    {
+      "report": "research/sessions/20261023-runtime-mapping.md",
+      "companion": "research/RUNTIME_PATH_MAPPING.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "scope": "lossless_domain_and_full_receipt_mapping_and_optional_retained_comparison_join",
+      "previous_commit": "35003ec40d72bab8bef03350ce1bc72037f096b5",
+      "previous_goal_turn_classification": "progress",
+      "new_mapping_cases": 29,
+      "affected_regression_cases": 126,
+      "distinct_qualified_cases": 155,
+      "passed": 155,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "qualified_source_pins": 27,
+      "focused_log_sha256": "a8252e5a018f8a5eebf4143e7393b21b99e55f3f93c81b8df16d9546952ee5f5",
+      "regression_log_sha256": "e785387c2e1534adb4f10096a804bd7eae025d867ba83af0a063fb7535e15ee9",
+      "focused_seconds": 43.827278800075874,
+      "regression_seconds": 41.12227960000746,
+      "initial_integration_errors": 3,
+      "initial_fixture_reused_identity_ids": true,
+      "fixture_corrected_with_distinct_invented_ids_and_rebound_metadata": true,
+      "production_predicates_relaxed": false,
+      "retained_binder_consumes_optional_mapping": true,
+      "default_legacy_result_unchanged": true,
+      "package_receipt_pairs": 351,
+      "python_origins": 11,
+      "native_origins": 5,
+      "trusted_origins": 5,
+      "saved_full_runtime_receipts_missing": 5,
+      "historical_mapping_bytes": 817248,
+      "historical_mapping_sha256": "417975057a8302668377492c120564bdaa536d9c78b27a4bfb1087b015386646",
+      "saved_mapping_complete": false,
+      "saved_native_policy_created": false,
+      "relative_absolute_receipt_hashes_distinct": true,
+      "roots_preserved": true,
+      "receipt_roundtrip_synthetic_qualified": true,
+      "source_and_receipt_claims_are_caller_declarations": true,
+      "other_snapshot_source_pins_unchanged": 16,
+      "production_source_files_changed": true,
+      "changed_existing_sources": [
+        "tools/dependency_legacy_bridge.py"
+      ],
+      "original_bootstrap_executed": false,
+      "native_loader_executed": false,
+      "current_filesystem_observed": false,
+      "fresh_origins_or_roots_observed": false,
+      "installed_dependency_activated": false,
+      "protected_inputs_accessed": false,
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "actual_runtime_ready": false,
+      "actual_runtime_verified": false,
+      "producer_execution_authenticated": false,
+      "execution_authorized": false,
+      "operational_acceptance": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "ordinary_frozen_records": 16,
+      "historical_pending_dispositions": 5,
+      "dependency_null_fields": 3,
+      "new_owner_input_required": false,
+      "legal_questions_or_research_resumed": false,
+      "current_goal_status": "active",
+      "camera_commands": [],
+      "next_single_work_package": "RA-003: implement and qualify a bootstrap-only disposable-child entry and bounded private event journal using supplied invented imports and events. Exercise the original bootstrap method through an inert import adapter and parent verification; stop before package imports, controller and protected processing. Preserve the review packet refusal, native-denying synthetic hook and frozen 16/5/3. No installed/native/protected input reads, actual activation or camera contact. English/native FTP remain first."
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -2818,17 +2890,15 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
-    "report": "research/sessions/20261023-bootstrap-packet.md",
-    "distinct_cases": 166,
-    "passed": 166,
+    "report": "research/sessions/20261023-runtime-mapping.md",
+    "distinct_cases": 155,
+    "passed": 155,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "new_behavioral_cases": 23,
-    "affected_regression_cases": 143,
-    "suite": "bootstrap_review_and_affected_child_producer_regressions",
-    "prior_integration_cases": 82,
-    "prior_full_integration_suite_rerun": false,
+    "new_behavioral_cases": 29,
+    "affected_regression_cases": 126,
+    "suite": "runtime_path_mapping_legacy_bridge_evidence_context",
     "actual_runtime_qualified": false
   },
   "evidence_source_sha256_scope": "Original audit snapshot; historical hashes are not an exact-current source closure or execution allowlist.",
@@ -2858,6 +2928,20 @@
     "inherited_integration_cases": 82,
     "inherited_integration_suite_rerun": false,
     "current_suite_subset_of_inherited": true,
+    "actual_runtime_qualified": false
+  },
+  "latest_qualified_evidence_before_runtime_mapping_20261023": {
+    "report": "research/sessions/20261023-bootstrap-packet.md",
+    "distinct_cases": 166,
+    "passed": 166,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_behavioral_cases": 23,
+    "affected_regression_cases": 143,
+    "suite": "bootstrap_review_and_affected_child_producer_regressions",
+    "prior_integration_cases": 82,
+    "prior_full_integration_suite_rerun": false,
     "actual_runtime_qualified": false
   }
 }
