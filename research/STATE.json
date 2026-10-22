@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-22",
-  "phase": "public_ftp_chain_partially_audited_target_and_recovery_unverified",
+  "phase": "r1_observation_packet_prepared_owner_decision_pending_r2_r4_unqualified",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -145,9 +145,12 @@
       "current_metadata_semantics": "research/CURRENT_METADATA_SEMANTICS.md"
     },
     "RA-004": {
-      "status": "owner_reports_mainland_version_and_english_absent_exact_sku_build_and_access_route_pending",
-      "report": "research/TARGET_EVIDENCE_GAPS.md",
-      "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md"
+      "status": "partial_ui_facts_recorded_windows_r1_packet_prepared_not_executed",
+      "report": "docs/WINDOWS_USB_OBSERVATION_PACKET.md",
+      "session_report": "research/sessions/20261022-FT-101-session-lifecycle.md",
+      "scope": "R0 preparation only; no device contact approval",
+      "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
+      "initial_identity_dossier": "research/TARGET_EVIDENCE_GAPS.md"
     },
     "RA-005": {
       "status": "coverage_template_only_acquisition_blocked",
@@ -189,7 +192,8 @@
       "status": "partial_published_source_chain_audit",
       "report": "research/FTP_SOURCE_CHAIN_AUDIT.md",
       "session_report": "research/sessions/20261022-FT-101-source-chain.md",
-      "scope": "R0 static reference review only; native backend/runtime acceptance incomplete"
+      "scope": "R0 static reference review only; native backend/runtime acceptance incomplete",
+      "latest_lifecycle_review": "research/PRE_CONTACT_DECISION.md"
     }
   },
   "pre_camera_coverage": "research/PRE_CAMERA_READINESS.md",
@@ -224,7 +228,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact.",
+  "next_work_package": "RA-004: owner decision on the prepared one-query Windows R1 inventory packet and existing connection context. Execute only after explicit scoped approval, then inspect coherent private records before a sanitized identity summary. No service mode, driver changes, temporary native execution or firmware write follows from this packet.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -349,13 +353,13 @@
       "priority": "primary",
       "status": "published_ftp_source_partially_reviewed_exact_target_native_transfer_unverified",
       "camera_validated": false,
-      "progress": "Pinned source chain traced; 44 blobs / 19 ASTs and 355 mappings verified statically. Cancellation/uncertain cleanup, sparse post-execution compatibility and recovery gaps prevent adoption. Native transfer on this body remains unverified.",
+      "progress": "Selected takeover/lifecycle audit complete. Packaged bridge recovers setup errors, but cancellation/uncertain cleanup and worker-loss gaps remain. R1 inventory packet prepared only; native FTP and exact mainland target/recovery remain unverified.",
       "blockers": [
         "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
         "Separate automatic post-capture lifecycle qualification"
       ],
-      "next_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact.",
+      "next_package": "RA-004: owner decision on the prepared one-query Windows R1 inventory packet and existing connection context. Execute only after explicit scoped approval, then inspect coherent private records before a sanitized identity summary. No service mode, driver changes, temporary native execution or firmware write follows from this packet.",
       "evidence": [
         "docs/FTP.md",
         "research/sessions/20261018-FT-102-loopback.md",
@@ -419,7 +423,8 @@
         "research/sessions/20261019-RA-003-gdt-source-cache.md",
         "research/PRE_CAMERA_GAP_AUDIT.md",
         "research/sessions/20261022-a6700-reference-update.md",
-        "research/FTP_SOURCE_CHAIN_AUDIT.md"
+        "research/FTP_SOURCE_CHAIN_AUDIT.md",
+        "research/PRE_CONTACT_DECISION.md"
       ],
       "progress_history": [
         {
@@ -440,6 +445,10 @@
         {
           "before_report": "research/sessions/20261022-FT-101-source-chain.md",
           "progress": "New pinned application and FTP-only recipes published; author reports RAW+JPEG transfers. Partial static review and 26-blob integrity checks only. No accepted owner-body native transfer, recovery or write-gate evidence."
+        },
+        {
+          "before_report": "research/sessions/20261022-FT-101-session-lifecycle.md",
+          "progress": "Pinned source chain traced; 44 blobs / 19 ASTs and 355 mappings verified statically. Cancellation/uncertain cleanup, sparse post-execution compatibility and recovery gaps prevent adoption. Native transfer on this body remains unverified."
         }
       ]
     },
@@ -8559,7 +8568,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261022-FT-101-source-chain.md",
+  "latest_report": "research/sessions/20261022-FT-101-session-lifecycle.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -11804,5 +11813,38 @@
     "previous_goal_turn": "progress_new_public_ftp_source",
     "current_goal_turn": "progress_source_bindings_and_concrete_failure_paths_audited",
     "next_single_work_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact."
+  },
+  "ft101_lifecycle_20261022_prior_current": {
+    "phase": "public_ftp_chain_partially_audited_target_and_recovery_unverified",
+    "latest_report": "research/sessions/20261022-FT-101-source-chain.md",
+    "next_work_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact."
+  },
+  "ft101_lifecycle_20261022": {
+    "report": "research/sessions/20261022-FT-101-session-lifecycle.md",
+    "note": "research/PRE_CONTACT_DECISION.md",
+    "packet": "docs/WINDOWS_USB_OBSERVATION_PACKET.md",
+    "pin": "ac1cd0db5d0210292be1cee292d15034a222ae64",
+    "status": "selected_takeover_lifecycle_audit_complete_r1_packet_prepared_not_executed",
+    "new_text_blobs": 9,
+    "total_text_blobs_verified": 53,
+    "python_ast_only": 24,
+    "packet_syntax_errors": 0,
+    "packet_block_sha256": "61905e3222141faf4eb267b5204a4d308174c322ff691c84a99b7495b5af46d7",
+    "packaged_controller_setup_exception_gap_resolved": true,
+    "uncertain_cleanup_gap_resolved": false,
+    "independent_reviews": [
+      "desktop caller/lifetime",
+      "pre-contact requirements and R1 packet"
+    ],
+    "camera_commands": [],
+    "upstream_executed": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "r1_query_executed": false,
+    "r1_device_approval_granted": false,
+    "previous_goal_turn": "progress_source_chain_and_failure_paths",
+    "current_goal_turn": "progress_lifecycle_scope_resolved_and_missing_r1_packet_prepared",
+    "next_single_work_package": "RA-004: owner decision on the prepared one-query Windows R1 inventory packet and existing connection context. Execute only after explicit scoped approval, then inspect coherent private records before a sanitized identity summary. No service mode, driver changes, temporary native execution or firmware write follows from this packet."
   }
 }

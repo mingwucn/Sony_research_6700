@@ -1,3 +1,5 @@
+Current follow-up (2026-10-22): [completed selected takeover/session review and pre-contact decisions](PRE_CONTACT_DECISION.md). The packaged real desktop bridge resolves the isolated controller setup-exception busy-state concern. Cancellation/uncertain cleanup and persistent reconciliation gaps remain; unexpected worker loss is a separate finding. FT-101 stays partial for exact-body/native-backend evidence. The R1 Windows inventory packet is prepared but unexecuted.
+
 # FT-101: published FTP source-chain audit
 
 2026-10-22. Reference: `xyzhangxin/sony-a6700-powerful` at

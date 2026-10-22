@@ -166,6 +166,34 @@
         "previous_goal_turn": "progress_new_public_ftp_source",
         "current_goal_turn": "progress_source_bindings_and_concrete_failure_paths_audited",
         "next_single_work_package": "FT-101: complete the pinned host USB takeover/session-lifetime source audit, including macOS capture helper and desktop bridge/worker exception paths; resolve uncertain-completion cleanup and persistent reconciliation findings into an explicit pre-contact go/no-go matrix. Ordinary source only; no installation, compilation, upstream execution or camera contact."
+      },
+      "ft101_lifecycle_review": {
+        "report": "research/sessions/20261022-FT-101-session-lifecycle.md",
+        "note": "research/PRE_CONTACT_DECISION.md",
+        "packet": "docs/WINDOWS_USB_OBSERVATION_PACKET.md",
+        "pin": "ac1cd0db5d0210292be1cee292d15034a222ae64",
+        "status": "selected_takeover_lifecycle_audit_complete_r1_packet_prepared_not_executed",
+        "new_text_blobs": 9,
+        "total_text_blobs_verified": 53,
+        "python_ast_only": 24,
+        "packet_syntax_errors": 0,
+        "packet_block_sha256": "61905e3222141faf4eb267b5204a4d308174c322ff691c84a99b7495b5af46d7",
+        "packaged_controller_setup_exception_gap_resolved": true,
+        "uncertain_cleanup_gap_resolved": false,
+        "independent_reviews": [
+          "desktop caller/lifetime",
+          "pre-contact requirements and R1 packet"
+        ],
+        "camera_commands": [],
+        "upstream_executed": false,
+        "feature_supported": false,
+        "recovery_proven": false,
+        "device_write_gate_passed": false,
+        "r1_query_executed": false,
+        "r1_device_approval_granted": false,
+        "previous_goal_turn": "progress_source_chain_and_failure_paths",
+        "current_goal_turn": "progress_lifecycle_scope_resolved_and_missing_r1_packet_prepared",
+        "next_single_work_package": "RA-004: owner decision on the prepared one-query Windows R1 inventory packet and existing connection context. Execute only after explicit scoped approval, then inspect coherent private records before a sanitized identity summary. No service mode, driver changes, temporary native execution or firmware write follows from this packet."
       }
     }
   ],
