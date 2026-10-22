@@ -17,6 +17,7 @@ FILES = {'entry': 'dependency_child_entry.py', 'core': 'dependency_evidence.py',
          'producer': 'dependency_producer.py'}
 COMPOSITION_FILES = dict(FILES, invented='dependency_invented.py')
 COLLECTION_FILES = dict(FILES, collector='dependency_package_preflight.py', execution='dependency_execution.py')
+BOOTSTRAP_REVIEW_SCHEMA = 'dependency_bootstrap_review_v1'
 
 
 def require(condition, code):
@@ -84,6 +85,108 @@ def runtime_profile():
         maxsize=sys.maxsize, path=list(sys.path), isolated=sys.flags.isolated,
         no_site=sys.flags.no_site, no_user_site=sys.flags.no_user_site,
         no_bytecode=sys.dont_write_bytecode, optimize=sys.flags.optimize)
+
+
+def prepare_bootstrap_review(*, buffers, receipts, historical_refs=None):
+    """Bind a nonexecuting review packet to supplied authored bytes/receipts.
+
+    No files, process, observer, bootstrap or installed inputs are opened here.
+    Receipt declarations are not independent capture/freshness authentication.
+    Current runtime bindings remain unresolved even with complete source data.
+    """
+    import ast
+    require(type(buffers) is dict and type(receipts) is dict and
+            set(buffers) == set(receipts) == set(FILES), 'bootstrap_review_roster')
+    sources = {}; paths = set()
+    for role, filename in FILES.items():
+        raw = buffers[role]; row = receipts[role]
+        require(type(raw) is bytes and 0 < len(raw) <= 2*1024**2,
+                'bootstrap_review_source_bound')
+        require(type(row) is dict and set(row) == {'path','size','sha256','lstat','fstat'},
+                'bootstrap_review_receipt')
+        require(type(row['path']) is str and 0 < len(row['path']) <= 1024,
+                'bootstrap_review_source_path')
+        path = Path(row['path'])
+        require(path.is_absolute() and '..' not in path.parts
+                and path.name == filename and str(path).casefold() not in paths,
+                'bootstrap_review_source_path')
+        paths.add(str(path).casefold())
+        require(type(row['size']) is int and row['size'] == len(raw) and
+                row['sha256'] == sha(raw), 'bootstrap_review_source_binding')
+        for name in ('lstat','fstat'):
+            stamp_row = row[name]
+            require(type(stamp_row) is list and len(stamp_row) == 8 and
+                    all(type(v) is int for v in stamp_row) and
+                    stat.S_ISREG(stamp_row[2]) and stamp_row[3] == 1 and
+                    stamp_row[4] == len(raw) and not stamp_row[7] & 0x400,
+                    'bootstrap_review_source_identity')
+        require(row['lstat'][:6] == row['fstat'][:6], 'bootstrap_review_source_identity')
+        sources[role] = json.loads(canonical(row))
+    tree = ast.parse(buffers['producer'])
+    trusted = [ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
+        and len(n.targets) == 1 and isinstance(n.targets[0], ast.Name)
+        and n.targets[0].id == 'TRUSTED']
+    names = ('ctypes','_ctypes','ctypes.util','ctypes._endian','platform')
+    require(trusted == [names], 'bootstrap_review_import_roster')
+    classes = [n for n in tree.body if isinstance(n, ast.ClassDef) and n.name == 'RuntimeOps']
+    require(len(classes) == 1, 'bootstrap_review_original_method')
+    methods = [n for n in classes[0].body if isinstance(n, ast.FunctionDef) and n.name == 'bootstrap']
+    expected = ast.parse('def bootstrap(self):\n return {name:importlib.import_module(name) for name in TRUSTED}').body[0]
+    require(len(methods) == 1 and ast.dump(methods[0], include_attributes=False) ==
+            ast.dump(expected, include_attributes=False), 'bootstrap_review_original_method')
+    refs = {} if historical_refs is None else historical_refs
+    require(type(refs) is dict and set(refs) <= {'package','expectation'}, 'bootstrap_review_historical_roster')
+    for role, row in refs.items():
+        require(type(row) is dict and set(row) == {'scope','path','size','sha256'} and
+                row['scope'] == 'historical_metadata', 'bootstrap_review_historical_scope')
+        require(type(row['path']) is str and 0 < len(row['path']) <= 1024 and Path(row['path']).is_absolute() and
+                '..' not in Path(row['path']).parts and Path(row['path']).suffix == '.json' and
+                str(Path(row['path'])).casefold() not in paths, 'bootstrap_review_historical_path')
+        paths.add(str(Path(row['path'])).casefold())
+        require(type(row['size']) is int and 0 < row['size'] <= 2*1024**2 and
+                type(row['sha256']) is str and len(row['sha256']) == 64 and
+                all(c in '0123456789abcdef' for c in row['sha256']), 'bootstrap_review_historical_identity')
+    packet = dict(schema=BOOTSTRAP_REVIEW_SCHEMA, status='prepared_not_launchable',
+        purpose='original_bootstrap_only', source_receipts=sources,
+        source_receipts_are_caller_declarations=True, historical_descriptor_refs=refs,
+        supervisor_reference=dict(source_role='entry', function='run_preflight',
+            source_sha256=sources['entry']['sha256'], called=False,
+            existing_log_bound_is_post_exit_only=True),
+        entry_contract=dict(method='RuntimeOps.bootstrap', direct_imports=list(names),
+            stop='after_bootstrap_and_origin_comparison_before_package_imports',
+            forbidden_continuations=['_produce','CDLL_wrapper','Cryptodome','AES','controller','callbacks','protected_processing']),
+        runtime_requirements=dict(platform='win32', implementation='cpython', isolated=1,
+            no_site=1,no_user_site=1,no_bytecode=True,optimize=0,
+            cold_roots=['ctypes','_ctypes','platform','Crypto','Cryptodome','cffi','_cffi_backend','pycparser']),
+        future_audit_proposal=dict(status='unqualified_review_only', probe_event='a6700.dependency.guard_probe',
+            optional_dlopen_arguments=[None,'kernel32'], maximum_occurrences_each=1,
+            occurrence_required=False,order_attested=False,other_native_events_resolved=False,
+            forbid_network_and_subprocess=True,event_limit=256,event_bytes_limit=4096,
+            journal_bytes_limit=262144,stdout_bytes_limit=65536,stderr_bytes_limit=65536,
+            timeout_seconds=30,maximum_attempts=1,automatic_retry=False,
+            serialization='bounded_typed_values_no_repr_or_arbitrary_objects',
+            failure_state='needs_review_reconcile_existing_results',cleanup='disposable_child_exit'),
+        unresolved_current_bindings=['fresh_isolated_runtime_profile','interpreter_and_stdlib_trust_scope',
+            'five_trusted_origins_roots_and_full_open_receipts','runtime_path_domain_and_receipt_mapping',
+            'cold_preload_observation','complete_native_event_profile',
+            'bounded_journal_and_bootstrap_stop_entry','current_request_and_result_binding'],
+        execution_authorized=False,bootstrap_executed=False,native_loader_executed=False,
+        actual_runtime_verified=False,feature_supported=False,recovery_proven=False,
+        device_write_gate_passed=False,camera_commands=[])
+    encoded = canonical(packet)
+    require(len(encoded) <= 65536, 'bootstrap_review_bound')
+    return strict_json(encoded)
+
+
+def validate_bootstrap_review(*, packet, buffers, receipts):
+    """Recompute review consistency only; never dispatch a request or runner."""
+    require(type(packet) is dict and packet.get('schema') == BOOTSTRAP_REVIEW_SCHEMA,
+            'bootstrap_review_schema')
+    require(len(canonical(packet)) <= 65536, 'bootstrap_review_bound')
+    expected = prepare_bootstrap_review(buffers=buffers, receipts=receipts,
+        historical_refs=packet.get('historical_descriptor_refs'))
+    require(canonical(packet) == canonical(expected), 'bootstrap_review_changed')
+    return 'consistent_review_only'
 
 
 # This standalone bootstrap verifies every source buffer before executing any
@@ -305,6 +408,8 @@ def collection_result(request, artifacts):
 
 def run_preflight(*, request, folder, timeout=15):
     """Once-only bound child; actual activation requires its own reviewed packet."""
+    if type(request) is dict and request.get('schema') == BOOTSTRAP_REVIEW_SCHEMA:
+        raise ValueError('bootstrap_review_not_executable')
     require(type(timeout) in (int, float) and 0 < timeout <= 30, 'timeout_bound')
     raw = canonical(request); require(len(raw) <= 65536, 'request_bound')
     folder = Path(folder); folder.mkdir(exist_ok=False)

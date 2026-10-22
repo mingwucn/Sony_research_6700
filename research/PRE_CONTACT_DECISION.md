@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Original-instance integration remains synthetic; nonexecuting bootstrap/hook and saved dependency descriptor comparison complete. | Current bindings, path-domain/complete-receipt semantics and actual bootstrap remain unqualified. Preserve the native-denying hook, frozen nulls and camera hold; next is bounded bootstrap-only packet preparation. |
+| GDT analysis preparation | Nonexecuting bootstrap packet preparation and early supervisor refusal qualified: 166 distinct synthetic cases. | Eight current runtime bindings remain unresolved. Journal bounds/stop entry are specifications only. Preserve frozen records/nulls and camera hold; next is explicit lossless runtime-origin/path/full-receipt mapping. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: prepare a bounded, nonexecuting bootstrap-only observation packet using the existing observer/supervisor preparation path. Specify an original-bootstrap entry that stops before Cryptodome imports, ordinary source/origin/receipt and path-domain bindings, a separate future audit profile with bounded private event journaling, and synthetic parent preparation/refusal cases. Carry unresolved current bindings explicitly; preserve the current native-denying synthetic hook, frozen records/nulls and production refusals. Emit no activation command or actual allow record. No installed/native/protected input reads, activation or camera contact; English/native FTP stay first.
+RA-003: implement and qualify an explicit lossless runtime-origin/path/receipt mapping for the retained dependency preparation contract, using saved ordinary successor descriptors and authored mapping predicates. Cover invented cross-root, alias, incomplete-receipt and drift counterexamples. Preserve frozen originals and unresolved fresh origins/root identities; emit no activation command or allow record. No installed/native/protected reads, activation or camera contact. English/native FTP remain first.
 
-[Commands, review and remaining boundaries](sessions/20261023-bootstrap-readiness.md).
+[Commands, review and remaining boundaries](sessions/20261023-bootstrap-packet.md).
