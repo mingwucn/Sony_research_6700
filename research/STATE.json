@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-20",
-  "phase": "host_consistency_qualified_actual_analysis_basis_unresolved",
+  "updated_on": "2026-10-22",
+  "phase": "new_public_ftp_source_partial_review_exact_target_and_recovery_unverified",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -218,7 +218,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: supply an evidence-backed disposition of the five existing activity issues for the exact two-lead GDT analysis scope, using research/NEXT_ANALYSIS_EVIDENCE.md. Additional authoritative evidence or a qualified scope-specific assessment is needed; no fabricated approvals, repeated generic intake, protected processing or substitute synthetic context infrastructure.",
+  "next_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions.",
   "next_device_action": "No agent camera command approved; owner reports English absent. No repeat language-list check is required to record that fact. Any later device observation or modification needs its own scoped approval.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -254,7 +254,7 @@
       "priority": "primary",
       "status": "owner_reports_english_absent_mainland_version_feasibility_unverified",
       "camera_validated": false,
-      "progress": "Owner reports English unavailable; exact resources/restriction not mapped. Latest shared review checks ordinary saved metadata (61 focused tests); no protected operational qualification or feature/recovery/write acceptance.",
+      "progress": "Owner reports mainland English unavailable. No English feature in the newly published six-feature catalog/reviewed documents; resources and restriction policy remain unmapped.",
       "blockers": [
         "Lawfully inspectable matching exact-build artifacts and regional applicability; exact SKU/internal product identity and binary hashes unverified",
         "Distinguish present-but-restricted English resources from missing/incomplete resources; prove narrow language policy and all consumers before any candidate"
@@ -322,7 +322,8 @@
         "research/sessions/20261019-RA-003-gdt-runtime-integration.md",
         "research/GDT_OUTER_BINDING_PREPARATION.md",
         "research/sessions/20261019-RA-003-gdt-source-cache.md",
-        "research/PRE_CAMERA_GAP_AUDIT.md"
+        "research/PRE_CAMERA_GAP_AUDIT.md",
+        "research/sessions/20261022-a6700-reference-update.md"
       ],
       "progress_history": [
         {
@@ -340,15 +341,15 @@
     "native_wifi_ftp": {
       "name": "Native camera-to-server Wi-Fi FTP, manual then automatic",
       "priority": "primary",
-      "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified",
+      "status": "published_ftp_source_partially_reviewed_exact_target_native_transfer_unverified",
       "camera_validated": false,
-      "progress": "Static source leads and external author report remain unverified on this body; no accepted native transfer. Latest shared review checks ordinary saved metadata (61 focused tests); no protected operational qualification or feature/recovery/write acceptance.",
+      "progress": "New pinned application and FTP-only recipes published; author reports RAW+JPEG transfers. Partial static review and 26-blob integrity checks only. No accepted owner-body native transfer, recovery or write-gate evidence.",
       "blockers": [
         "Exact target binary/build/ABI and stock applet correspondence; native invocation/media/network/lifecycle route",
         "Camera-origin manual upload and full server equality",
         "Separate automatic post-capture lifecycle qualification"
       ],
-      "next_package": "FT-101; FT-103 manual and FT-104 automatic remain later separate proofs",
+      "next_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions.",
       "evidence": [
         "docs/FTP.md",
         "research/sessions/20261018-FT-102-loopback.md",
@@ -410,7 +411,8 @@
         "research/sessions/20261019-RA-003-gdt-runtime-integration.md",
         "research/GDT_OUTER_BINDING_PREPARATION.md",
         "research/sessions/20261019-RA-003-gdt-source-cache.md",
-        "research/PRE_CAMERA_GAP_AUDIT.md"
+        "research/PRE_CAMERA_GAP_AUDIT.md",
+        "research/sessions/20261022-a6700-reference-update.md"
       ],
       "progress_history": [
         {
@@ -422,6 +424,11 @@
           "progress": "Host protocol foundation and static BusyBox FTP source leads remain distinct from an unproved native camera backend/media/network/lifecycle. Shared RA-003 now qualifies the guarded dependency/controller continuation on 51 invented cases and reconciles a complete nine-role saved metadata basis. Prospective factory source/AST review only; no actual GDT replay, new feature mapping, body correspondence, recovery or write gate.",
           "scope": "pre-gap-audit current summary preserved verbatim",
           "superseded_by": "research/PRE_CAMERA_GAP_AUDIT.md"
+        },
+        {
+          "before_report": "research/sessions/20261022-a6700-reference-update.md",
+          "progress": "Static source leads and external author report remain unverified on this body; no accepted native transfer. Latest shared review checks ordinary saved metadata (61 focused tests); no protected operational qualification or feature/recovery/write acceptance.",
+          "status": "host_protocol_and_official_source_config_reviewed_native_route_unverified"
         }
       ]
     },
@@ -872,7 +879,9 @@
       "RA-005",
       "RA-006",
       "RA-007"
-    ]
+    ],
+    "latest_source_review": "research/sessions/20261022-a6700-reference-update.md",
+    "upstream_sparse_backup_limitation": "260 fixed sectors / 133120 bytes; selected managed fields only; full firmware and failed-boot recovery unverified; owner prerequisite unmet"
   },
   "firmware_inspection_permission": {
     "reported_on": "2026-10-18",
@@ -8539,7 +8548,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261020-RA-003-observation-outer.md",
+  "latest_report": "research/sessions/20261022-a6700-reference-update.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -11713,5 +11722,38 @@
     "feature_supported": false,
     "recovery_proven": false,
     "device_write_gate_passed": false
+  },
+  "a6700_reference_update_20261022_prior_current": {
+    "phase": "host_consistency_qualified_actual_analysis_basis_unresolved",
+    "next_work_package": "RA-003: supply an evidence-backed disposition of the five existing activity issues for the exact two-lead GDT analysis scope, using research/NEXT_ANALYSIS_EVIDENCE.md. Additional authoritative evidence or a qualified scope-specific assessment is needed; no fabricated approvals, repeated generic intake, protected processing or substitute synthetic context infrastructure.",
+    "latest_report": "research/sessions/20261020-RA-003-observation-outer.md"
+  },
+  "a6700_reference_update_20261022": {
+    "report": "research/sessions/20261022-a6700-reference-update.md",
+    "pin": "ac1cd0db5d0210292be1cee292d15034a222ae64",
+    "prior_pin": "c8e2aa100cfb02523d06cc6fc767d25a63cf943d",
+    "evidence_classes": [
+      "source-report",
+      "static-inference",
+      "offline-tested"
+    ],
+    "verified_text_blobs": 26,
+    "python_files_ast_parsed_only": 8,
+    "added_blobs": 122,
+    "changed_blobs": 10,
+    "removed_blobs": 1,
+    "unchanged_blobs": 27,
+    "source_review": "partial; not complete expanded codebase or native payload audit",
+    "ftp_implementation_now_public": true,
+    "english_feature_found": false,
+    "release": "v0.1.0-dev33",
+    "release_assets_downloaded": 0,
+    "upstream_executed": false,
+    "camera_commands": [],
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "old_gdt_activity_decisions_changed": false,
+    "next_single_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions."
   }
 }

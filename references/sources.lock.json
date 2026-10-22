@@ -60,8 +60,8 @@
     },
     {
       "repository": "xyzhangxin/sony-a6700-powerful",
-      "commit": "c8e2aa100cfb02523d06cc6fc767d25a63cf943d",
-      "role": "a6700 2.00 FTP and temporary-RAM backup source lead",
+      "commit": "ac1cd0db5d0210292be1cee292d15034a222ae64",
+      "role": "a6700 2.00 native FTP source and experimental ordinary-USB application lead; partial review only",
       "audit_report": "research/sessions/20261019-RA-003-a6700-powerful-audit.md",
       "text_files_blob_verified": 33,
       "python_files_ast_parsed": 12,
@@ -71,11 +71,32 @@
       "alpha6700_compatibility_established": false,
       "source_audit_baseline_commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
       "latest_delta_review": {
-        "report": "research/sessions/20261020-a6700-reference-review-u.md",
-        "previous_commit": "2de85f1cca89b0e20ee25a70f93e04c3d34e10e5",
-        "changed_paths": [],
-        "unchanged_blob_entries": 39,
-        "history_replacement_observed": true,
+        "report": "research/sessions/20261022-a6700-reference-update.md",
+        "pin": "ac1cd0db5d0210292be1cee292d15034a222ae64",
+        "prior_pin": "c8e2aa100cfb02523d06cc6fc767d25a63cf943d",
+        "evidence_classes": [
+          "source-report",
+          "static-inference",
+          "offline-tested"
+        ],
+        "verified_text_blobs": 26,
+        "python_files_ast_parsed_only": 8,
+        "added_blobs": 122,
+        "changed_blobs": 10,
+        "removed_blobs": 1,
+        "unchanged_blobs": 27,
+        "source_review": "partial; not complete expanded codebase or native payload audit",
+        "ftp_implementation_now_public": true,
+        "english_feature_found": false,
+        "release": "v0.1.0-dev33",
+        "release_assets_downloaded": 0,
+        "upstream_executed": false,
+        "camera_commands": [],
+        "feature_supported": false,
+        "recovery_proven": false,
+        "device_write_gate_passed": false,
+        "old_gdt_activity_decisions_changed": false,
+        "next_single_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions.",
         "new_instructions_adopted": false
       },
       "pin_history": [
@@ -89,8 +110,30 @@
             "unchanged_blob_entries": 38,
             "new_instructions_adopted": false
           }
+        },
+        {
+          "repository": "xyzhangxin/sony-a6700-powerful",
+          "commit": "c8e2aa100cfb02523d06cc6fc767d25a63cf943d",
+          "role": "a6700 2.00 FTP and temporary-RAM backup source lead",
+          "audit_report": "research/sessions/20261019-RA-003-a6700-powerful-audit.md",
+          "text_files_blob_verified": 33,
+          "python_files_ast_parsed": 12,
+          "execution_performed": false,
+          "binary_payload_downloaded": false,
+          "reuse_decision": "reference only; GPL-3.0-only authored material, inherited unlicensed portions unresolved",
+          "alpha6700_compatibility_established": false,
+          "source_audit_baseline_commit": "0c6294a83988f196adfc980de59f9a1d0b92e8e2",
+          "latest_delta_review": {
+            "report": "research/sessions/20261020-a6700-reference-review-u.md",
+            "previous_commit": "2de85f1cca89b0e20ee25a70f93e04c3d34e10e5",
+            "changed_paths": [],
+            "unchanged_blob_entries": 39,
+            "history_replacement_observed": true,
+            "new_instructions_adopted": false
+          }
         }
-      ]
+      ],
+      "baseline_audit_counts_scope": "33 text blobs / 12 ASTs belong to the 20261019 source-audit baseline, not the expanded current tree"
     }
   ],
   "fdat_extractor_candidate": {

@@ -105,7 +105,8 @@
       "next_dependency": "legitimate_content_analysis_after_applicable_act_basis",
       "evidence": [
         "docs/ENGLISH_LANGUAGE.md",
-        "research/TARGET_EVIDENCE_GAPS.md"
+        "research/TARGET_EVIDENCE_GAPS.md",
+        "research/sessions/20261022-a6700-reference-update.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Resolve language/resources and the no-change option"
@@ -231,16 +232,32 @@
       "title": "Add calibrated selected-slot custom looks"
     },
     "FT-101": {
-      "status": "partial_static_leads_no_native_route",
-      "available_evidence": "BusyBox source config/app text leads and author-reported a6700 2.00 RAW+JPEG FTP success; implementation unpublished in pinned audit.",
-      "remaining_acceptance": "Target UI/config/task/media/network/credentials/lifecycle and ABI chain; direct Wi-Fi/file equality/security evidence. No new public recheck this session.",
-      "next_dependency": "legitimate_target_analysis_or_published_implementation",
+      "status": "partial_published_implementation_static_review_exact_target_unverified",
+      "available_evidence": "New pinned source, FTP-only selection and App/WBI recipes; author RAW+JPEG reports. Sparse backup is not full recovery; underlying catalog physical evidence indexes absent from public tree.",
+      "remaining_acceptance": "Complete native/protocol/profile chain audit; exact mainland build/ABI and UI/config/media/network/credential/lifecycle evidence; direct camera Wi-Fi/file equality/security and recovery prerequisites.",
+      "next_dependency": "bounded_static_audit_of_new_public_ftp_chain",
       "evidence": [
         "docs/FTP.md",
-        "research/sessions/20261020-a6700-reference-review-t.md"
+        "research/sessions/20261020-a6700-reference-review-t.md",
+        "research/sessions/20261022-a6700-reference-update.md"
       ],
       "feature_or_device_gate_passed": false,
-      "title": "Survey native backend and dependency evidence"
+      "title": "Survey native backend and dependency evidence",
+      "history": [
+        {
+          "before_report": "research/sessions/20261022-a6700-reference-update.md",
+          "status": "partial_static_leads_no_native_route",
+          "available_evidence": "BusyBox source config/app text leads and author-reported a6700 2.00 RAW+JPEG FTP success; implementation unpublished in pinned audit.",
+          "remaining_acceptance": "Target UI/config/task/media/network/credentials/lifecycle and ABI chain; direct Wi-Fi/file equality/security evidence. No new public recheck this session.",
+          "next_dependency": "legitimate_target_analysis_or_published_implementation",
+          "evidence": [
+            "docs/FTP.md",
+            "research/sessions/20261020-a6700-reference-review-t.md"
+          ],
+          "feature_or_device_gate_passed": false,
+          "title": "Survey native backend and dependency evidence"
+        }
+      ]
     },
     "FT-102": {
       "status": "host_scope_recorded_native_constraints_pending",
@@ -1013,6 +1030,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
+    "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions.",
     "Integrate qualified explicit historical-context handoff into existing production preparation; preserve guards and qualify without protected execution.",
     "Assess five act-specific evidence decisions from existing legitimate records before any real host observation; do not promote consent from digests.",
     "After applicable act basis and corrected operational path, separately scope necessary format/content analysis for EN-101 and FT-101. Current GDT metadata is an intermediate format question, not feature feasibility."
@@ -1074,7 +1092,7 @@
   "camera_commands": [],
   "previous_goal_turn": "progress_v2_transport_committed_90dd789",
   "current_goal_turn": "progress_context_boundary_audited_and_non_advancing_constructor_work_deferred",
-  "next_single_work_package": "RA-003: supply an evidence-backed disposition of the five existing activity issues for the exact two-lead GDT analysis scope, using research/NEXT_ANALYSIS_EVIDENCE.md. Additional authoritative evidence or a qualified scope-specific assessment is needed; no fabricated approvals, repeated generic intake, protected processing or substitute synthetic context infrastructure.",
+  "next_single_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -1300,6 +1318,34 @@
       "current_goal_turn": "progress_context_boundary_audited_and_non_advancing_constructor_work_deferred",
       "stopping_point_audit_count": 1,
       "next_single_work_package": "RA-003: supply an evidence-backed disposition of the five existing activity issues for the exact two-lead GDT analysis scope, using research/NEXT_ANALYSIS_EVIDENCE.md. Additional authoritative evidence or a qualified scope-specific assessment is needed; no fabricated approvals, repeated generic intake, protected processing or substitute synthetic context infrastructure."
+    },
+    {
+      "report": "research/sessions/20261022-a6700-reference-update.md",
+      "pin": "ac1cd0db5d0210292be1cee292d15034a222ae64",
+      "prior_pin": "c8e2aa100cfb02523d06cc6fc767d25a63cf943d",
+      "evidence_classes": [
+        "source-report",
+        "static-inference",
+        "offline-tested"
+      ],
+      "verified_text_blobs": 26,
+      "python_files_ast_parsed_only": 8,
+      "added_blobs": 122,
+      "changed_blobs": 10,
+      "removed_blobs": 1,
+      "unchanged_blobs": 27,
+      "source_review": "partial; not complete expanded codebase or native payload audit",
+      "ftp_implementation_now_public": true,
+      "english_feature_found": false,
+      "release": "v0.1.0-dev33",
+      "release_assets_downloaded": 0,
+      "upstream_executed": false,
+      "camera_commands": [],
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "old_gdt_activity_decisions_changed": false,
+      "next_single_work_package": "FT-101: bounded static audit of the newly public FTP-only device chain at ac1cd0db5d0210292be1cee292d15034a222ae64; trace profile/catalog/native-reader/writer/protocol bindings, exact mainland build applicability, managed/protected coverage and inverse/recovery limits against manual-then-automatic FTP requirements. Ordinary source only; no upstream execution, offset adoption, protected-input processing or camera contact. Preserve the old GDT route's five pending activity decisions."
     }
   ]
 }
