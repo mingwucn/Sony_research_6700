@@ -54,7 +54,7 @@ request bytes, path/hash and checked source rows. It must preserve historical
 basis/source/document identities while checking the current operation and argv.
 No new approval schema or generic framework is needed.
 
-The filesystem follow-up executes original reader/root methods over 356 newly authored invented files, with independent full file/root receipts. Eight filesystem integration cases and 145 regressions pass; 153 distinct cases. The positive unchanged runtime/preparation/parent join performs 398 real invented-file reads and 10 root observations. Seven identity/link/missing/byte/root/reread faults refuse. Bootstrap, Python audit delivery, native loader, cipher and protected processing remain simulated. Actual runtime, decoder/GDT/content, English/native FTP and recovery stay unqualified. Frozen records, pending dispositions, dependency nulls and production refusals stay intact. [Filesystem runtime boundaries](SYNTHETIC_FILESYSTEM_RUNTIME.md).
+The audit follow-up delegates original startup/audit/callback methods alongside original filesystem readers through the unchanged preparation/parent join. Eight new cases and 66 regressions pass; 74 distinct current cases. Genuine Python guard-probe delivery is independently observed; retained hooks stay inactive after cleanup. Prior 153-case qualification remains under 101 unchanged pins and was not rerun in full. Constructor/bootstrap/native-event delivery/loader/cipher and protected processing remain simulated. Actual runtime, decoder/GDT/content, English/native FTP and recovery stay unqualified. Frozen records, pending dispositions, dependency nulls and production refusals stay intact. [Audit runtime boundaries](SYNTHETIC_AUDIT_RUNTIME.md).
 
 ## Preserved boundaries
 
