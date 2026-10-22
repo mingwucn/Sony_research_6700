@@ -136,6 +136,11 @@ def read_ordinary(*a,**kw):raise AssertionError('invented ordinary callback forb
                           ('parent_verifier','dependency.dependency_parent')):
             case.buffers[role]=texts[name]
             case.request['sources'][role].update(bytes=len(texts[name]),sha256=m.sha(texts[name]))
+        if hasattr(self,'fixture_dependency_data'):
+            case.data=self.fixture_dependency_data(root,case.data)
+            case.request['dependency_fixed'].update(
+                package_sha256=m.sha(m.encoded(case.data['package'])),
+                root_sha256={n:row['identity_sha256'] for n,row in case.data['expectation']['roots'].items()})
         case.data['source_buffers']['closure_manifest']=m.encoded(case.request['sources'])
         case.data['expectation']['source_sha256']={n:m.sha(b) for n,b in case.data['source_buffers'].items()}
         refresh(case.data)

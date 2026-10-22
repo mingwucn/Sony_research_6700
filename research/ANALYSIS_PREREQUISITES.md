@@ -54,7 +54,7 @@ request bytes, path/hash and checked source rows. It must preserve historical
 basis/source/document identities while checking the current operation and argv.
 No new approval schema or generic framework is needed.
 
-The original-runtime follow-up executes unchanged dispatch, collection, controller/producer and frozen parent verification after genuine binding/preparation and retained file I/O. Six routing cases and 139 regressions pass; 145 distinct cases. One synthetic child constructor supplies invented package receipts, inert bootstrap/native loader and vector lookup. Original startup and preloaded-origin checks remain; all runtime-shaped observation fields are labelled synthetic. Actual filesystem/native dependency behavior, protected decoder/crypto/runtime/GDT/content and device readiness remain unqualified. All frozen records, historical pending dispositions, dependency nulls and production refusals remain unchanged. [Runtime routing boundaries](SYNTHETIC_RUNTIME_ROUTE.md).
+The filesystem follow-up executes original reader/root methods over 356 newly authored invented files, with independent full file/root receipts. Eight filesystem integration cases and 145 regressions pass; 153 distinct cases. The positive unchanged runtime/preparation/parent join performs 398 real invented-file reads and 10 root observations. Seven identity/link/missing/byte/root/reread faults refuse. Bootstrap, Python audit delivery, native loader, cipher and protected processing remain simulated. Actual runtime, decoder/GDT/content, English/native FTP and recovery stay unqualified. Frozen records, pending dispositions, dependency nulls and production refusals stay intact. [Filesystem runtime boundaries](SYNTHETIC_FILESYSTEM_RUNTIME.md).
 
 ## Preserved boundaries
 
