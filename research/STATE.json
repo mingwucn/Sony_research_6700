@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-22",
-  "phase": "blocked_pending_external_analysis_or_target_evidence_camera_contact_on_hold",
+  "phase": "offline_current_context_qualified_integration_pending_camera_hold",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
@@ -63,13 +63,13 @@
       "scope": "R0 Git retrieval and static source/provenance review; no upstream execution or device-write gate passed"
     },
     "RA-003": {
-      "status": "partial_preparation_handoff_qualified_activity_and_runtime_pending",
+      "status": "partial_current_context_qualified_runtime_integration_pending",
       "report": "docs/ARTIFACT_INTAKE.md",
       "scope": "R0 ordinary saved metadata and authored-source review; no new protected observation or camera access",
       "source_refresh": "research/OFFICIAL_SOURCE_REFRESH.md",
       "owner_intake_report": "research/sessions/20261018-owner-mainland-english.md",
       "package_intake_report": "research/OFFICIAL_PACKAGE_INTAKE.md",
-      "session_report": "research/sessions/20261020-RA-003-context-boundary-audit.md",
+      "session_report": "research/sessions/20261022-prerequisite-disposition.md",
       "mainland_source_report": "research/MAINLAND_FIRMWARE_SOURCE.md",
       "container_audit": "research/UFU_CONTAINER_AUDIT.md",
       "fdat_extractor_audit": "research/FDAT_EXTRACTOR_AUDIT.md",
@@ -142,7 +142,68 @@
       "prepared_adapter_binding": "research/SUCCESSOR_ADAPTER_BINDING.md",
       "isolated_adapter_integration": "research/ISOLATED_ADAPTER_INTEGRATION.md",
       "launch_context_binding": "research/LAUNCH_CONTEXT_BINDING.md",
-      "current_metadata_semantics": "research/CURRENT_METADATA_SEMANTICS.md"
+      "current_metadata_semantics": "research/CURRENT_METADATA_SEMANTICS.md",
+      "latest_technical_continuation": {
+        "report": "research/sessions/20261022-prerequisite-disposition.md",
+        "note": "research/ANALYSIS_PREREQUISITES.md",
+        "dispositions": {
+          "accepted_contract_interaction": {
+            "status": "historical_research_note_owner_stopped_legal_inquiry",
+            "owner_input_required": false
+          },
+          "accompanying_component_terms": {
+            "status": "known_notice_inventory_recorded_product_local_contents_unobserved",
+            "owner_input_required": false
+          },
+          "constants_provenance": {
+            "status": "public_source_identity_recorded_derivation_reproduction_unverified",
+            "owner_input_required": false
+          },
+          "narrow_research_hypothesis_scope": {
+            "status": "technical_scope_resolved_for_selected_two_lead_study",
+            "owner_input_required": false
+          },
+          "distinct_operational_act_decision": {
+            "status": "offline_preparation_authorized_current_context_qualified_integration_pending",
+            "owner_input_required": false
+          }
+        },
+        "qualification": {
+          "status": "pass",
+          "tests": 61,
+          "new_tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "exit_code": 0,
+          "interpreter": "C:/ProgramData/miniconda3/python.exe",
+          "python_version": "3.13.12",
+          "unittest_seconds": 25.907,
+          "runner_seconds": 27.107,
+          "modules": [
+            "test_dependency_current_context",
+            "test_dependency_host_entry",
+            "test_dependency_migration_transport",
+            "test_dependency_operational_launcher"
+          ],
+          "source_sha256": {
+            "tools/dependency_host_entry.py": "6ffbb73c72d9b6a7de887bd9607095f10ed348129f2be7c566f92077711bd2b1",
+            "tests/test_dependency_current_context.py": "2ab767d7ff50046a7533ef39589c3e7c91a38ddd66b382db3c8bf6d8041f1531"
+          },
+          "limits": "Invented records only; retained verify_context and actual runtime not qualified; constructor has no automatic runtime integration.",
+          "camera_commands": []
+        },
+        "current_goal_turn": "progress_owner_blocker_framing_corrected_current_context_qualified",
+        "historical_frozen_records_modified": false,
+        "legal_inquiry_stopped_by_owner": true,
+        "new_owner_input_required": false,
+        "camera_commands": [],
+        "actual_firmware_processed": false,
+        "feature_supported": false,
+        "recovery_proven": false,
+        "device_write_gate_passed": false,
+        "next_single_work_package": "RA-003: qualify the constructed context against retained verify_context, then integrate it into the existing disabled parent/child preparation path, reconciling current source and bootstrap bindings with preserved historical inputs. Qualify the complete handoff using invented data before any actual artifact processing. No camera contact or new owner intake."
+      }
     },
     "RA-004": {
       "status": "partial_ui_facts_recorded_r1_packet_prepared_owner_contact_hold",
@@ -224,12 +285,12 @@
     "Host-lab native source-to-binary identity and complete bundled-component publication rights remain unproved; no third-party runtime artifacts enter Git.",
     "Recorded Windows/Ubuntu Python 3.10/3.13 CI passed; other filesystems/interpreters and pristine-OS setup remain unqualified. Owner-Windows actual symlink creation is still unavailable despite passing hosted tests.",
     "Durable synthetic journal/locks and crash tests cover recorded hosts only, with caller fixture claims; no device executor, exclusive camera ownership or physical power-loss/recovery proof.",
-    "Official package/stream and prior private directory/member identities remain recorded. The independent classic ext metadata planner is qualified on invented buffers only; no actual GDT, inode record or contents were read or applied to it. Earlier superblock metadata observations remain unchanged. English resources/restrictions, native FTP backend, exact-body correspondence, contract/constants/later-act scope and verified recovery/write gates remain unresolved.",
+    "Official package/stream and prior private directory/member identities remain recorded. The independent classic ext metadata planner is qualified on invented buffers only; no actual GDT, inode record or contents were read or applied to it. Earlier superblock metadata observations remain unchanged. English resources/restrictions, native FTP backend, exact-body correspondence, current execution integration and verified recovery/write gates remain unresolved.",
     "Native English feasibility and FTP route remain blocked on exact-target observations/artifacts; public menus/release notes and host protocol tests do not close them.",
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold.",
+  "next_work_package": "RA-003: qualify the constructed context against retained verify_context, then integrate it into the existing disabled parent/child preparation path, reconciling current source and bootstrap bindings with preserved historical inputs. Qualify the complete handoff using invented data before any actual artifact processing. No camera contact or new owner intake.",
   "next_device_action": "None: camera contact is on explicit owner hold. Keep the prepared R1 packet unexecuted and do not repeat its approval request while the hold stands.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",
@@ -270,7 +331,7 @@
         "Lawfully inspectable matching exact-build artifacts and regional applicability; exact SKU/internal product identity and binary hashes unverified",
         "Distinguish present-but-restricted English resources from missing/incomplete resources; prove narrow language policy and all consumers before any candidate"
       ],
-      "next_package": "EN-101: restricted-language/resource feasibility using rights-cleared matching artifacts after RA-003; no unlock mechanism or device action selected",
+      "next_package": "EN-101: inspect matching language resources and policy after the RA-003 technical pipeline is qualified; no camera action or unlock mechanism selected.",
       "evidence": [
         "docs/ENGLISH_LANGUAGE.md",
         "research/TARGET_EVIDENCE_GAPS.md",
@@ -360,7 +421,7 @@
         "Camera-origin manual upload and full server equality",
         "Separate automatic post-capture lifecycle qualification"
       ],
-      "next_package": "RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold.",
+      "next_package": "RA-003: qualify the constructed context against retained verify_context, then integrate it into the existing disabled parent/child preparation path, reconciling current source and bootstrap bindings with preserved historical inputs. Qualify the complete handoff using invented data before any actual artifact processing. No camera contact or new owner intake.",
       "evidence": [
         "docs/FTP.md",
         "research/sessions/20261018-FT-102-loopback.md",
@@ -8569,7 +8630,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261022-precontact-blocked.md",
+  "latest_report": "research/sessions/20261022-prerequisite-disposition.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -11921,5 +11982,95 @@
     "device_write_gate_passed": false,
     "next_single_work_package": "RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold."
   },
-  "goal_status": "blocked"
+  "goal_status": "blocked",
+  "prerequisite_disposition_20261022_prior_current": {
+    "phase": "blocked_pending_external_analysis_or_target_evidence_camera_contact_on_hold",
+    "latest_report": "research/sessions/20261022-precontact-blocked.md",
+    "next_work_package": "RA-003: resolve the five existing activity-specific evidence dispositions for the frozen protected-analysis scope through substantiated documentary assessment. Missing authoritative evidence or a qualified scope-specific assessment is required; preserve pending dispositions until resolved. No protected processing, invented approval, new generic gate infrastructure or camera contact. RA-004 observation remains on owner hold."
+  },
+  "prerequisite_disposition_20261022": {
+    "report": "research/sessions/20261022-prerequisite-disposition.md",
+    "note": "research/ANALYSIS_PREREQUISITES.md",
+    "dispositions": {
+      "accepted_contract_interaction": {
+        "status": "historical_research_note_owner_stopped_legal_inquiry",
+        "owner_input_required": false
+      },
+      "accompanying_component_terms": {
+        "status": "known_notice_inventory_recorded_product_local_contents_unobserved",
+        "owner_input_required": false
+      },
+      "constants_provenance": {
+        "status": "public_source_identity_recorded_derivation_reproduction_unverified",
+        "owner_input_required": false
+      },
+      "narrow_research_hypothesis_scope": {
+        "status": "technical_scope_resolved_for_selected_two_lead_study",
+        "owner_input_required": false
+      },
+      "distinct_operational_act_decision": {
+        "status": "offline_preparation_authorized_current_context_qualified_integration_pending",
+        "owner_input_required": false
+      }
+    },
+    "qualification": {
+      "status": "pass",
+      "tests": 61,
+      "new_tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "interpreter": "C:/ProgramData/miniconda3/python.exe",
+      "python_version": "3.13.12",
+      "unittest_seconds": 25.907,
+      "runner_seconds": 27.107,
+      "modules": [
+        "test_dependency_current_context",
+        "test_dependency_host_entry",
+        "test_dependency_migration_transport",
+        "test_dependency_operational_launcher"
+      ],
+      "source_sha256": {
+        "tools/dependency_host_entry.py": "6ffbb73c72d9b6a7de887bd9607095f10ed348129f2be7c566f92077711bd2b1",
+        "tests/test_dependency_current_context.py": "2ab767d7ff50046a7533ef39589c3e7c91a38ddd66b382db3c8bf6d8041f1531"
+      },
+      "limits": "Invented records only; retained verify_context and actual runtime not qualified; constructor has no automatic runtime integration.",
+      "camera_commands": []
+    },
+    "current_goal_turn": "progress_owner_blocker_framing_corrected_current_context_qualified",
+    "historical_frozen_records_modified": false,
+    "legal_inquiry_stopped_by_owner": true,
+    "new_owner_input_required": false,
+    "camera_commands": [],
+    "actual_firmware_processed": false,
+    "feature_supported": false,
+    "recovery_proven": false,
+    "device_write_gate_passed": false,
+    "next_single_work_package": "RA-003: qualify the constructed context against retained verify_context, then integrate it into the existing disabled parent/child preparation path, reconciling current source and bootstrap bindings with preserved historical inputs. Qualify the complete handoff using invented data before any actual artifact processing. No camera contact or new owner intake."
+  },
+  "current_analysis_dispositions": {
+    "accepted_contract_interaction": {
+      "status": "historical_research_note_owner_stopped_legal_inquiry",
+      "owner_input_required": false
+    },
+    "accompanying_component_terms": {
+      "status": "known_notice_inventory_recorded_product_local_contents_unobserved",
+      "owner_input_required": false
+    },
+    "constants_provenance": {
+      "status": "public_source_identity_recorded_derivation_reproduction_unverified",
+      "owner_input_required": false
+    },
+    "narrow_research_hypothesis_scope": {
+      "status": "technical_scope_resolved_for_selected_two_lead_study",
+      "owner_input_required": false
+    },
+    "distinct_operational_act_decision": {
+      "status": "offline_preparation_authorized_current_context_qualified_integration_pending",
+      "owner_input_required": false
+    }
+  },
+  "current_owner_request_status": "offline_technical_progress_no_additional_owner_input_needed",
+  "goal_status_note": "The last automatic-goal tool status was blocked. Subsequent owner-requested technical work has progressed; earlier five-owner-prerequisite framing is superseded."
 }

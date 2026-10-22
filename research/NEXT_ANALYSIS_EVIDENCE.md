@@ -1,5 +1,7 @@
 # Next English/FTP analysis: evidence and decision packet
 
+**Superseded owner-prerequisite framing (2026-10-22):** see [current dispositions](ANALYSIS_PREREQUISITES.md). The five pending labels below describe historical frozen inputs; they are not five things the owner must supply. Technical scope and ordinary offline authorization are resolved, and current-context qualification advances the implementation. The owner stopped legal inquiry/questions. Camera contact remains on hold.
+
 Current note (2026-10-22): camera contact is on owner hold. The FTP source publication
 and [subsequent audit](FTP_SOURCE_CHAIN_AUDIT.md) supersede the earlier unpublished
 status. The five activity dispositions below remain pending; further generic

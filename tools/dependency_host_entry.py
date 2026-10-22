@@ -118,6 +118,116 @@ def make_context(validated):
             'deadline_seconds':300,'limits':{'poll_seconds':0.05}}
 
 
+def make_current_context(validated, *, request_bytes, expected_request_sha256,
+                         request_path, checked_source_rows):
+    """Build the existing context from a checked v6 result and current command.
+
+    Pure construction: no reads, imports of supplied source, process launch or
+    activation. The caller must first run the existing validate_capture,
+    validate_request and check_retained checks, in addition to gate validation.
+    Those checks own the complete source roster and exact authored bootstrap;
+    supplied receipts are compared, not authenticated here. This constructor
+    does not replace fresh saved-file checks or the public launch refusals.
+    """
+    def digest(value):
+        need(type(value) is str and len(value)==64 and
+             all(c in '0123456789abcdef' for c in value),'current_context_digest')
+        return value
+
+    need(type(validated) is dict and validated.get('schema')=='gdt_outer_consistency_v6'
+         and validated.get('consistency_only') is True
+         and validated.get('execution_authorized') is False,'current_context_result')
+    digest(expected_request_sha256)
+    need(type(request_bytes) is bytes and 0<len(request_bytes)<=65536 and
+         sha(request_bytes)==expected_request_sha256,'current_context_request_hash')
+    request=strict_json(request_bytes)
+    fields={'schema','operation_id','sources','packet','folder','argv_prefix',
+            'expected_runtime','bootstrap_sha256','execution_authorized','camera_commands'}
+    need(type(request) is dict and set(request)==fields and canonical(request)==request_bytes
+         and request['schema']=='disabled_operational_outer_request_v1'
+         and request['execution_authorized'] is False and request['camera_commands']==[],
+         'current_context_request')
+    candidate=validated['candidate'];inputs=validated['inputs']
+    operation=candidate['operation_id']
+    need(type(operation) is str and len(operation)==32 and
+         all(c in '0123456789abcdef' for c in operation) and
+         operation==validated['current_operation_id']==request['operation_id'] and
+         operation!=validated['historical_operation_id'],'current_context_operation')
+    root=Path(candidate['repository_root'])
+    need(root.is_absolute() and '..' not in root.parts,'current_context_root')
+
+    def relative(value, *, absolute=False):
+        need(type(value) is str and value and '..' not in Path(value).parts,
+             'current_context_path')
+        path=Path(value)
+        need(path.is_absolute() is absolute,'current_context_path')
+        need(absolute or not path.drive and not path.root,'current_context_path')
+        path=path if absolute else root/path
+        need(path.is_relative_to(root) and path!=root,'current_context_path')
+        return path.relative_to(root).as_posix()
+
+    ordinary={};bound_paths={}
+    def bind(value, value_hash, *, absolute=False):
+        name=relative(value,absolute=absolute);digest(value_hash)
+        key=Path(name)
+        need(key not in bound_paths or bound_paths[key][1]==value_hash,'current_context_conflict')
+        if key not in bound_paths:
+            bound_paths[key]=(name,value_hash);ordinary[name]=value_hash
+        return name
+
+    session=relative(candidate['session'])
+    for row in candidate['inputs'].values():bind(row['path'],row['sha256'])
+    for row in inputs['source_cache']['sources'].values():
+        bind(row['path'],row['sha256'],absolute=True)
+    documents=validated['document_sha256']
+    need(digest(documents['seal'])==digest(validated['seal_sha256']),
+         'current_context_seal')
+    for role,name in (('candidate','activation-candidate.json'),('review','activation-review.json'),
+                      ('decision','act-decision.json')):
+        bind(session+'/'+name,documents[role])
+    implementation={}
+    for name,row in candidate['bootstrap'].items():
+        need(row['path']==session+'/'+name+'.py','current_context_bootstrap_path')
+        bind(row['path'],row['sha256']);implementation[name+'.py']=digest(row['sha256'])
+
+    need(type(checked_source_rows) is dict and checked_source_rows and
+         request['sources']==checked_source_rows,'current_context_sources')
+    total=0
+    for name,row in checked_source_rows.items():
+        need(type(name) is str and type(row) is dict and
+             set(row)=={'path','size','sha256','lstat','fstat'} and
+             type(row['size']) is int and 0<row['size']<=2*1024**2 and
+             Path(row['path']).suffix=='.py','current_context_source_row')
+        bind(row['path'],row['sha256'],absolute=True);total+=row['size']
+        if name.startswith('bound.'):
+            prior=inputs['source_cache']['sources'].get(name[6:])
+            need(prior is not None and (row['path'],row['size'],row['sha256'])==
+                 (prior['path'],prior['bytes'],prior['sha256']),'current_context_retained_source')
+    need(total<=16*1024**2,'current_context_source_bound')
+    folder=root/relative(request['folder'],absolute=True)
+    need(Path(request_path)==folder/'request.json','current_context_request_path')
+    bind(str(request_path),expected_request_sha256,absolute=True)
+    packet=request['packet']
+    need(type(packet) is dict and set(packet)=={'path','size','sha256','lstat','fstat'} and
+         type(packet['size']) is int and 0<packet['size']<=8*1024**2 and
+         Path(packet['path'])==folder/'packet.json','current_context_packet')
+    bind(packet['path'],packet['sha256'],absolute=True)
+    argv=request['argv_prefix']
+    need(type(argv) is list and len(argv)==8 and all(type(v) is str for v in argv) and
+         argv[1:7]==['-I','-S','-B','-X','utf8','-c'] and Path(argv[0]).is_absolute() and
+         argv[0]==request['expected_runtime']['executable'] and
+         sha(argv[7].encode())==digest(request['bootstrap_sha256']),'current_context_argv')
+    # Own nested metadata as well as lists/maps; caller mutation cannot retarget
+    # a previously constructed context. No historical input is rewritten.
+    return {'schema':'gdt_io_context_v1','session_dir':root/session,'repository_root':root,
+            'operation_id':operation,'execution_seal_sha256':validated['seal_sha256'],
+            'basis':json.loads(canonical(inputs['basis'])),
+            'source_manifest':json.loads(canonical(inputs['source_manifest'])),
+            'implementation_sha256':implementation,'ordinary_sha256':ordinary,
+            'child_argv':list(argv)+[str(request_path),expected_request_sha256],
+            'deadline_seconds':300,'limits':{'poll_seconds':0.05}}
+
+
 def run_invented(*,helpers,runtime_wiring,inputs,ops,folder,control,context,records,
                  adapter_owner,adapter_request,adapter_request_sha256,adapter_buffers,
                  make_callbacks_after_receipt,release_callbacks_after_controller,monotonic,identity):
