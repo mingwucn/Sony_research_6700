@@ -1,6 +1,6 @@
 {
   "schema": "pre_camera_gap_audit_v1",
-  "date": "2026-10-20",
+  "date": "2026-10-23",
   "baseline_commit": "239b34e376433a14c7b618c02e487b14d8ab4063",
   "scope": "ordinary_local_evidence_audit_not_feature_or_gate_acceptance",
   "packages": {
@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_original_runtime_ops_instance_with_inert_adapter_qualified",
-      "available_evidence": "8 original-instance integration cases and 74 affected regressions pass; 82 distinct current cases. Original methods run on the exact original instance, with a separate inert adapter, genuine probes and inactive retained hooks. Seven adapter faults refuse. Prior 74-case qualification rerun in full under 103 unchanged pins.",
-      "remaining_acceptance": "The observer is an exact original instance; bootstrap, native-event delivery/loader, vector cipher and protected capture/core/validator remain simulated. Actual decoder/crypto/runtime/GDT/content, English/native FTP, exact-body correspondence and recovery remain unqualified.",
-      "next_dependency": "original_bootstrap_native_activation_readiness_review",
+      "status": "partial_bootstrap_readiness_reviewed_activation_unqualified",
+      "available_evidence": "Prior 82-case synthetic integration retained; 52 existing producer cases rerun, not added to 82. Source-only bootstrap/hook review and historical 351-row descriptor comparison complete.",
+      "remaining_acceptance": "Actual bootstrap, current source/origin/reference binding and complete-receipt/path-domain semantics remain unqualified. Preserve the native-denying synthetic hook and frozen nulls. Protected processing, English/native FTP and recovery remain unverified.",
+      "next_dependency": "bounded_nonexecuting_bootstrap_only_packet_preparation",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -60,7 +60,8 @@
         "research/sessions/20261022-runtime-route.md",
         "research/sessions/20261022-filesystem-runtime.md",
         "research/sessions/20261022-audit-probe.md",
-        "research/sessions/20261022-runtime-instance.md"
+        "research/sessions/20261022-runtime-instance.md",
+        "research/sessions/20261023-bootstrap-readiness.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1043,7 +1044,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: perform a nonexecuting bootstrap/native-activation readiness review from authored code and saved ordinary descriptors. Trace original imports, audit events, preloaded-module constraints and safety-hook conflicts; identify missing actual roster/native-policy bindings without inventing them. No activation, installed/native/protected input reads or camera contact. English/native FTP stay first."
+    "RA-003: prepare a bounded, nonexecuting bootstrap-only observation packet using the existing observer/supervisor preparation path. Specify an original-bootstrap entry that stops before Cryptodome imports, ordinary source/origin/receipt and path-domain bindings, a separate future audit profile with bounded private event journaling, and synthetic parent preparation/refusal cases. Carry unresolved current bindings explicitly; preserve the current native-denying synthetic hook, frozen records/nulls and production refusals. Emit no activation command or actual allow record. No installed/native/protected input reads, activation or camera contact; English/native FTP stay first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1093,9 +1094,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_original_audit_runtime_ad3a25e",
-  "current_goal_turn": "progress_original_runtime_ops_instance_over_invented_inputs",
-  "next_single_work_package": "RA-003: perform a nonexecuting bootstrap/native-activation readiness review from authored code and saved ordinary descriptors. Trace original imports, audit events, preloaded-module constraints and safety-hook conflicts; identify missing actual roster/native-policy bindings without inventing them. No activation, installed/native/protected input reads or camera contact. English/native FTP stay first.",
+  "previous_goal_turn": "progress_original_runtime_ops_instance",
+  "current_goal_turn": "progress_nonexecuting_bootstrap_and_descriptor_readiness_review",
+  "next_single_work_package": "RA-003: prepare a bounded, nonexecuting bootstrap-only observation packet using the existing observer/supervisor preparation path. Specify an original-bootstrap entry that stops before Cryptodome imports, ordinary source/origin/receipt and path-domain bindings, a separate future audit profile with bounded private event journaling, and synthetic parent preparation/refusal cases. Carry unresolved current bindings explicitly; preserve the current native-denying synthetic hook, frozen records/nulls and production refusals. Emit no activation command or actual allow record. No installed/native/protected input reads, activation or camera contact; English/native FTP stay first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -2603,6 +2604,76 @@
       "current_goal_status": "active",
       "camera_commands": [],
       "next_single_work_package": "RA-003: perform a nonexecuting bootstrap/native-activation readiness review from authored code and saved ordinary descriptors. Trace original imports, audit events, preloaded-module constraints and safety-hook conflicts; identify missing actual roster/native-policy bindings without inventing them. No activation, installed/native/protected input reads or camera contact. English/native FTP stay first."
+    },
+    {
+      "report": "research/sessions/20261023-bootstrap-readiness.md",
+      "companion": "research/BOOTSTRAP_READINESS.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "scope": "nonexecuting_bootstrap_readiness_and_saved_ordinary_descriptor_comparison",
+      "previous_commit": "f8513e6fe192f25f435a0df5211eb4eeca625f26",
+      "previous_goal_turn_classification": "progress",
+      "current_synthetic_cases": 52,
+      "passed": 52,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "new_behavioral_cases": 0,
+      "producer_log_sha256": "03da77f4ae31fbe731bc54f63d419cdd4adb79f1d857ba4dc4131c767927d567",
+      "runner_seconds": 15.375702899997123,
+      "inherited_integration_cases": 82,
+      "inherited_integration_suite_rerun": false,
+      "inherited_integration_log_receipts_rechecked": true,
+      "current_suite_subset_of_inherited": true,
+      "authored_source_asts": 17,
+      "inert_source_literals": 1,
+      "additional_legacy_binding_ast": 1,
+      "selected_safety_hook": "tests/test_dependency_child_callbacks.py:52-61",
+      "safety_hook_changed": false,
+      "direct_trusted_imports": [
+        "ctypes",
+        "_ctypes",
+        "ctypes.util",
+        "ctypes._endian",
+        "platform"
+      ],
+      "bootstrap_allowances_are_observations": false,
+      "historical_expected_files_and_record_observed": true,
+      "historical_manifest_rows": 351,
+      "historical_receipt_rows": 351,
+      "historical_proof_rows": 351,
+      "successor_python_origins": 11,
+      "successor_native_libraries": 5,
+      "successor_trusted_origins": 5,
+      "successor_source_rows": 6,
+      "current_dependency_bindings_selected": false,
+      "legacy_backend_receipt_and_path_domain_conversion_established": false,
+      "ordinary_frozen_records": 16,
+      "historical_pending_dispositions": 5,
+      "dependency_null_fields": 3,
+      "original_bootstrap_executed": false,
+      "actual_bootstrap_event_order_observed": false,
+      "actual_transitive_native_dependencies_attested": false,
+      "installed_dependency_activated": false,
+      "protected_inputs_accessed": false,
+      "production_source_files_changed": false,
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "actual_runtime_ready": false,
+      "actual_runtime_verified": false,
+      "producer_execution_authenticated": false,
+      "execution_authorized": false,
+      "operational_acceptance": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "camera_commands": [],
+      "new_owner_input_required": false,
+      "legal_questions_or_research_resumed": false,
+      "current_goal_status": "active",
+      "next_single_work_package": "RA-003: prepare a bounded, nonexecuting bootstrap-only observation packet using the existing observer/supervisor preparation path. Specify an original-bootstrap entry that stops before Cryptodome imports, ordinary source/origin/receipt and path-domain bindings, a separate future audit profile with bounded private event journaling, and synthetic parent preparation/refusal cases. Carry unresolved current bindings explicitly; preserve the current native-denying synthetic hook, frozen records/nulls and production refusals. Emit no activation command or actual allow record. No installed/native/protected input reads, activation or camera contact; English/native FTP stay first."
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -2664,6 +2735,21 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
+    "report": "research/sessions/20261023-bootstrap-readiness.md",
+    "distinct_cases": 52,
+    "passed": 52,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_behavioral_cases": 0,
+    "suite": "existing_synthetic_producer",
+    "inherited_integration_cases": 82,
+    "inherited_integration_suite_rerun": false,
+    "current_suite_subset_of_inherited": true,
+    "actual_runtime_qualified": false
+  },
+  "evidence_source_sha256_scope": "Original audit snapshot; historical hashes are not an exact-current source closure or execution allowlist.",
+  "latest_qualified_evidence_before_bootstrap_readiness_20261023": {
     "report": "research/sessions/20261022-runtime-instance.md",
     "distinct_cases": 82,
     "passed": 82,
@@ -2676,6 +2762,5 @@
     "prior_full_suite_rerun": true,
     "new_boundary_terminal_replay": false,
     "actual_runtime_qualified": false
-  },
-  "evidence_source_sha256_scope": "Original audit snapshot; historical hashes are not an exact-current source closure or execution allowlist."
+  }
 }
