@@ -54,7 +54,7 @@ request bytes, path/hash and checked source rows. It must preserve historical
 basis/source/document identities while checking the current operation and argv.
 No new approval schema or generic framework is needed.
 
-The retained-I/O follow-up executes the genuine factory/protected-preparation closure and original I/O adapter on invented readonly physical files/constants and protected-role doubles. Nine boundary cases and 120 regressions pass with 93 stable source pins per run. Four real source hash checks and original adapter snapshot are observed. Actual decoder/crypto, installed dependencies/runtime and activation-binding source contract remain unqualified; the binding bootstrap is still a return-plan fixture. Legacy decryption/CRC fields remain invented grammar values, not observations. All frozen records, historical pending dispositions, dependency nulls and production refusals remain unchanged. [Full retained-I/O boundaries](RETAINED_IO_BOUNDARY.md).
+The genuine-binding follow-up executes unchanged validator predicates against an independently captured invented-role contract, then joins original preparation/factory/I/O with controller/collection and parent reconciliation. Ten binding cases and 129 regressions pass; 139 distinct cases. Only three protected doubles import records change; source hash/import/alias refusals and host output-order equality are observed. Actual protected decoder/crypto and installed dependency/runtime remain unqualified. Dependency routing/observation is still invented; no authority or device readiness follows. All frozen records, historical pending dispositions, dependency nulls and production refusals remain unchanged. [Genuine binding boundaries](GENUINE_BINDING_INTEGRATION.md).
 
 ## Preserved boundaries
 

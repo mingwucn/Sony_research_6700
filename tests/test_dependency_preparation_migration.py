@@ -55,6 +55,7 @@ class MigrationPreparation(unittest.TestCase):
         if hasattr(self,'fixture_basis'):p['basis']=copy.deepcopy(self.fixture_basis)
         if hasattr(self,'fixture_source_manifest'):p['source_manifest'].update(copy.deepcopy(self.fixture_source_manifest))
         if hasattr(self,'fixture_prerequisites'):p['prerequisites'].update(copy.deepcopy(self.fixture_prerequisites))
+        if hasattr(self,'fixture_binding_schema'):p['binding_schema']=copy.deepcopy(self.fixture_binding_schema)
         if hasattr(self,'fixture_role_aliases'):p['binding_schema']['aliases'].update(self.fixture_role_aliases)
         for value in (f.c,f.d,f.r,f.s,p['activity_scope']):
             value['operation_id']=seed.case.request['operation_id']
@@ -63,7 +64,7 @@ class MigrationPreparation(unittest.TestCase):
             execution_authorized=False,actual_binding_ready=False)
         replacements={
             'role:gdt_preflight':b'def freeze_basis(**kw):return None\n',
-            'bootstrap:activation_binding':('def prepare_bindings(**kw):return '+repr(p['binding_plan'])+'\n').encode(),
+            'bootstrap:activation_binding':getattr(self,'fixture_binding_source',('def prepare_bindings(**kw):return '+repr(p['binding_plan'])+'\n').encode()),
             'bootstrap:io_entry':getattr(self,'fixture_control',b'# invented control; no device or observer\n'),
             'integration:prospective_child':getattr(self,'fixture_factory',FACTORY),
         }
@@ -94,6 +95,8 @@ class MigrationPreparation(unittest.TestCase):
         p['q_repair_review']['source_sha256']=repair
         p['prerequisites']['qualified_roles']=p['role_authority']['roles']
         p['prerequisites']['binding_input']['roles']=p['role_authority']['roles']
+        if hasattr(self,'fixture_binding_plan'):
+            p['binding_plan']=self.fixture_binding_plan(p['prerequisites'])
         factory=p['factory_evidence'];factory['new_factory_sha256']=m.sha(replacements['integration:prospective_child'])
         for group in ('contract','composition'):
             factory[group]['source_sha256']['prospective_child.py']=m.sha(replacements['integration:prospective_child'])

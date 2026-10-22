@@ -135,6 +135,7 @@ class IoBoundaryTests(unittest.TestCase):
             case.fixture_prerequisites=dict(constants_sha256=parent.sha(constants))
             case.fixture_ordinary_io=CHILD_IO+CONSTANTS_READER
             case.fixture_wiring=wiring_source();case.fixture_child_suffix=child_suffix(mode)
+            if hasattr(self,'configure_case'):self.configure_case(case,inputs,terminal,mode)
             self.addCleanup(case.doCleanups);case.setUp()
         source=case.root/case.validated['inputs']['source_manifest']['relative_path']
         constants_path=case.root/case.validated['inputs']['prerequisites']['constants_relative_path']
