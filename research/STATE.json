@@ -8747,7 +8747,7 @@
     "current_goal_turn": "progress_invented_original_byte_authority_envelope_implemented_qualified",
     "next_work_package": "RA-003: implement the role-specific ordinary metadata validators and cross-role bindings for the invented authority envelope, starting from the fourteen-role migration roster and existing pure preflight contracts. Distinguish historical comparisons from fresh current basis/source/prerequisite and dependency records; derive interpreter/bootstrap/source ownership requirements. Independently review and qualify changed-role/stale-evidence/refusal cases using invented documents only. No actual activation records, dependency activation, firmware/constants/native payload reads or camera; runtime remains disabled."
   },
-  "latest_report": "research/sessions/20261023-precontact-scope-audit-1.md",
+  "latest_report": "research/sessions/20261023-precontact-scope-audit-2.md",
   "dependency_input_semantics": {
     "status": "partial_two_dependency_input_roles_qualified_twelve_roles_pending",
     "report": "research/sessions/20261019-RA-003-dependency-input-semantics.md",
@@ -13732,6 +13732,50 @@
       "goal_status": "active",
       "goal_completion_proven": false,
       "independent_static_review": "no_additional_necessary_synthetic_package_changes_next_action",
+      "retained_qualification": {
+        "integration-02": {
+          "cases": 9,
+          "log_sha256": "1bdfab0fddac923094bcb1c56510ad90eb6970e3cbaa7e60c3da4b4b6f182aea",
+          "tests_rerun": false
+        },
+        "runtime-01": {
+          "cases": 93,
+          "log_sha256": "b1b07a48b2784fe298d54e78fca60e158a79e58b7b69d99d23b2fa1ed23f8430",
+          "tests_rerun": false
+        },
+        "regression-01": {
+          "cases": 74,
+          "log_sha256": "ecef5ef51b74bb336b36ad66ba79e917f70b9a5ba864e97f5f74e4dbcd7dfe15",
+          "tests_rerun": false
+        }
+      },
+      "new_tests_run": 0,
+      "code_changed": false,
+      "ordinary_frozen_records": 16,
+      "pending_dispositions": 5,
+      "dependency_null_fields": 3,
+      "camera_contact_hold": true,
+      "actual_host_runtime_metadata_collected": false,
+      "installed_dependency_activated": false,
+      "protected_inputs_accessed": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "camera_commands": [],
+      "next_single_work_package": "RA-003: collect fresh host interpreter/cold-preload facts, the five trusted-runtime origins, ancestor root identities and five complete read-only runtime-file receipts; reconcile once with the existing mapping. Actual-host metadata observation is outside the current synthetic-only scope and remains pending. No bootstrap, package activation, protected processing or camera contact. English/native FTP remain first."
+    },
+    {
+      "sequence": 2,
+      "baseline_commit": "ece06220e8e936066c187b639494fbb2ea184f9f",
+      "report": "research/sessions/20261023-precontact-scope-audit-2.md",
+      "previous_goal_turn": "no_progress",
+      "current_goal_turn": "no_progress",
+      "scope": "ordinary_authored_files_and_existing_private_sanitized_receipts_only",
+      "blocker": "fresh_actual_host_runtime_metadata_and_full_receipts_outside_current_synthetic_only_scope",
+      "consecutive_blocked_goal_turns": 2,
+      "goal_status": "active",
+      "goal_completion_proven": false,
+      "independent_static_review": "second_reviewer_confirms_same_scope_blocker_no_necessary_synthetic_action",
       "retained_qualification": {
         "integration-02": {
           "cases": 9,
