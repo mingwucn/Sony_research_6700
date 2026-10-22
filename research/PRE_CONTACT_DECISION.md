@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Technical scope resolved; current-context constructor qualified with invented inputs. | Existing frozen decision fields remain historical. Current owner input is not required for technical preparation; retained-context validation and parent/child integration remain unfinished. Camera hold remains in force. |
+| GDT analysis preparation | Retained checker, shared packet/request preparation and inert-child transport qualified on invented inputs. | Full source-owned preflight/current-context/control/helper ownership handoff remains. Actual v6 execution is refused; camera contact stays on hold. No new owner intake is needed. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: qualify the constructed context against retained verify_context, then integrate it into the existing disabled parent/child preparation path, reconciling current source and bootstrap bindings with preserved historical inputs. Qualify the complete handoff using invented data before any actual artifact processing. No camera contact or new owner intake.
+RA-003: qualify the source-owned full preflight to current-context and retained control/helper ownership handoff using invented callbacks, including failure cleanup and partial-result reconciliation. Reuse the qualified command transport and checker; keep actual v6 execution refused and camera contact on hold. English/native FTP stay first.
 
-[Current five-entry dispositions](ANALYSIS_PREREQUISITES.md) supersede the earlier generic owner-evidence request. The source lifecycle, exact-target and recovery limitations above remain.
+[Current synthetic qualification](sessions/20261022-runtime-preparation.md). The source lifecycle, exact-target and recovery limitations above remain.

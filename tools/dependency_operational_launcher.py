@@ -193,6 +193,67 @@ def check_retained(validated,buffers,rows):
             len(buffers[role])==row['bytes'] and rows[role]['path']==row['path'],
             'operational_launch_retained')
 
+def _save_command(*,folder,packet,operation_id,rows,runtime_profile):
+    """Materialize the shared disabled command, using exclusive new files.
+
+    Capture, retained binding and gate/preflight checks belong to the caller.
+    This function neither profiles an interpreter nor executes supplied source.
+    Failure preserves any exclusively created files for inspection; no cleanup
+    deletion or automatic retry is attempted.
+    """
+    folder=Path(folder)
+    need(folder.is_absolute() and folder.is_dir(),'operational_launch_folder')
+    packet_raw=encoded(packet);need(len(packet_raw)<=8*1024**2,'operational_launch_packet_bound')
+    write(folder/'packet.json',packet_raw)
+    _,packet_row=entry.read_source(str(folder/'packet.json'),8*1024**2)
+    argv=[runtime_profile['executable'],'-I','-S','-B','-X','utf8','-c',bootstrap()]
+    request=dict(schema='disabled_operational_outer_request_v1',operation_id=operation_id,
+        sources=process.strict(encoded(rows)),packet=packet_row,folder=str(folder),argv_prefix=argv,
+        expected_runtime=process.strict(encoded(runtime_profile)),bootstrap_sha256=sha(bootstrap().encode()),
+        execution_authorized=False,camera_commands=[])
+    validate_request(request);request_raw=encoded(request)
+    need(len(request_raw)<=65536,'operational_launch_request_bound')
+    path=folder/'request.json';write(path,request_raw)
+    return dict(folder=folder,packet=process.strict(packet_raw),packet_bytes=packet_raw,
+        request=request,request_bytes=request_raw,request_path=path)
+
+
+def prepare_synthetic_context(*,folder,packet,validated,buffers,rows,expected_hashes,runtime_profile):
+    """Qualify command/context preparation with invented inputs only.
+
+    Accept a gate result already checked against this packet. Decode and bind
+    its original documents, but do not instantiate owners or repeat the adapter
+    projection/preflight graph. The supplied runtime profile is fixture input,
+    not an observed interpreter attestation. Returned data has no runtime
+    owners, helper callbacks, control module or route into _run_pending.
+    A failure after materialization retains partial files without returning a plan.
+    """
+    from tools import dependency_host_entry as host
+    folder=Path(folder)
+    need(folder.is_absolute() and folder.is_dir(),'operational_launch_folder')
+    validate_capture(buffers,rows,expected_hashes)
+    need(validated.get('schema')=='gdt_outer_consistency_v6' and
+         process.packet_migration(packet) is not None,'operational_launch_synthetic_v6')
+    documents,_,prepared,_,_=process.decode_packet(packet)
+    need(Path(prepared['folder'])==folder/'composition','operational_launch_composition')
+    need(validated['candidate']['operation_id']==prepared['operation_id'],'operational_launch_operation')
+    need(packet['seal_sha256']==validated['seal_sha256'] and
+         all(sha(documents[n])==validated['document_sha256'][n]
+             for n in ('candidate','review','decision','seal')) and
+         set(documents['inputs'])==set(validated['candidate']['inputs']) and
+         all(sha(raw)==validated['candidate']['inputs'][name]['sha256']
+             for name,raw in documents['inputs'].items()),'operational_launch_gate_documents')
+    check_retained(validated,buffers,rows)
+    plan=_save_command(folder=folder,packet=packet,operation_id=prepared['operation_id'],
+        rows=rows,runtime_profile=runtime_profile)
+    plan['prepared']=process.strict(encoded(prepared))
+    plan['context']=host.make_current_context(validated,request_bytes=plan['request_bytes'],
+        expected_request_sha256=sha(plan['request_bytes']),request_path=plan['request_path'],
+        checked_source_rows=rows)
+    check_saved(plan)
+    return plan
+
+
 def _prepare_pending(*,folder,packet,buffers,rows,expected_hashes):
     """Source-owned private composition only, not an authorization check."""
     folder=Path(folder)
@@ -211,20 +272,12 @@ def _prepare_pending(*,folder,packet,buffers,rows,expected_hashes):
         arguments=process.preflight_arguments(packet,decoded,outer,adapter,validated)
         outer.modules['dependency_operational_metadata'].validate_pending(**arguments)
         process.refuse_v6_execution(packet)
-        packet_raw=encoded(packet);need(len(packet_raw)<=8*1024**2,'operational_launch_packet_bound')
-        write(folder/'packet.json',packet_raw)
-        _,packet_row=entry.read_source(str(folder/'packet.json'),8*1024**2)
         profile=subprocess.run([sys.executable,'-I','-S','-B','-X','utf8','-c',PROFILE],capture_output=True,timeout=15)
         need(profile.returncode==0 and not profile.stderr,'operational_launch_profile')
-        argv=[sys.executable,'-I','-S','-B','-X','utf8','-c',bootstrap()]
-        request=dict(schema='disabled_operational_outer_request_v1',operation_id=prepared['operation_id'],
-            sources=rows,packet=packet_row,folder=str(folder),argv_prefix=argv,
-            expected_runtime=entry.strict_json(profile.stdout),bootstrap_sha256=sha(bootstrap().encode()),
-            execution_authorized=False,camera_commands=[])
-        validate_request(request);request_raw=encoded(request)
-        need(len(request_raw)<=65536,'operational_launch_request_bound')
-        path=folder/'request.json';write(path,request_raw)
-        context=host.make_context(validated);context['child_argv']=argv+[str(path),sha(request_raw)]
+        plan=_save_command(folder=folder,packet=packet,operation_id=prepared['operation_id'],rows=rows,
+            runtime_profile=entry.strict_json(profile.stdout))
+        context=host.make_context(validated)
+        context['child_argv']=plan['request']['argv_prefix']+[str(plan['request_path']),sha(plan['request_bytes'])]
         boot=BootstrapOwner(host)
         control=boot.load('_disabled_parent_control',buffers['bound.bootstrap:io_entry'],rows['bound.bootstrap:io_entry']['path'])
         factory=boot.load('_disabled_parent_factory',buffers['bound.integration:prospective_child'],rows['bound.integration:prospective_child']['path'])
@@ -234,8 +287,7 @@ def _prepare_pending(*,folder,packet,buffers,rows,expected_hashes):
         dep['closure_manifest']=encoded(prepared['sources'])
         inputs=helpers.package.dependency_execution.bind_runtime_packet(prepared['dependency_packet'],
             prepared['dependency_fixed'],dep,prepared['dependency_review_sha256'])
-        plan=dict(folder=folder,packet=packet,packet_bytes=packet_raw,request=request,request_bytes=request_raw,
-            request_path=path,outer=outer,adapter=adapter,helpers=helpers,bootstrap=boot,validation=validation,
+        plan.update(outer=outer,adapter=adapter,helpers=helpers,bootstrap=boot,validation=validation,
             control=control,context=context,prepared=prepared,checked=checked,preflight_arguments=arguments,inputs=inputs)
         check_saved(plan)
         return plan

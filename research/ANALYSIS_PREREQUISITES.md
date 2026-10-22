@@ -54,16 +54,11 @@ request bytes, path/hash and checked source rows. It must preserve historical
 basis/source/document identities while checking the current operation and argv.
 No new approval schema or generic framework is needed.
 
-Qualification passed 61 tests, including 13 new constructor tests, using invented
-ordinary files and an inert supervisor handoff. The constructor requires the
-existing complete-roster/capture and reviewed-bootstrap validators; it does not
-authenticate caller-supplied hashes. The inert handoff does not qualify the
-retained runtime context checker or a complete real operation.
-The existing actual-run and camera refusals stay in place until the current
-technical integration is complete and reviewed. This is implementation work,
-not a request for another owner permission object. Next: qualify the constructed
-context against retained `verify_context`, then integrate it into the existing
-disabled parent/child preparation path. [Commands and results](sessions/20261022-prerequisite-disposition.md).
+The initial constructor qualification passed 61 tests. The current follow-up ran 139 cases: 138 passed, 1 Windows symlink privilege skip, no failures/errors. The genuine unchanged retained `verify_context` now accepts the context over invented ordinary files, and shared preparation writes exclusive packet/request files, checks saved sources and constructs the context. The exact existing bootstrap transports that request to an inert child.
+
+The checker validates ordinary-file hashes; it does not independently validate argv/basis semantics or grant execution authority. Complete capture, retained binding and exact-bootstrap checks remain separate caller checks exercised by the synthetic preparation API. Actual parent/child v6 and public runtime refusals remain unchanged. Partial files after failure are preserved for inspection, without automatic retry or a returned usable plan.
+
+Next: RA-003: qualify the source-owned full preflight to current-context and retained control/helper ownership handoff using invented callbacks, including failure cleanup and partial-result reconciliation. Reuse the qualified command transport and checker; keep actual v6 execution refused and camera contact on hold. English/native FTP stay first. [Commands, limitations and results](sessions/20261022-runtime-preparation.md).
 
 ## Preserved boundaries
 
