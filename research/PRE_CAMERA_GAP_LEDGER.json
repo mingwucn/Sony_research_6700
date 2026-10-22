@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_genuine_child_callback_and_invented_collection_join_qualified",
-      "available_evidence": "Seven corrected child cases and 113 unaffected regressions qualified. Six child launches; genuine child preparation/factory/controller/collection and parent join without terminal replay; invented=True I/O/dependencies, real classifier. Initial fixture-lineage, collision and interruption test issues retained.",
-      "remaining_acceptance": "Retained I/O/protected preparation remains replaced by a synthetic adapter. Actual bindings, installed dependencies/runtime/GDT/content, English/native FTP, body correspondence and recovery remain unqualified.",
-      "next_dependency": "retained_io_and_protected_preparation_boundary_over_invented_envelopes_and_role_doubles",
+      "status": "partial_retained_io_and_protected_preparation_on_invented_inputs_qualified",
+      "available_evidence": "Nine retained-I/O boundary cases and 120 regressions pass. Genuine factory/protected-preparation closure, readonly-file I/O with four hash-verified passes, invented role doubles and parent reconciliation; 129 distinct cases. Two initial smoke setup errors retained.",
+      "remaining_acceptance": "Activation binding remains a return-plan fixture. Actual protected capture/core/validator, crypto/runtime/GDT/content, English/native FTP, exact-body correspondence and recovery remain unqualified.",
+      "next_dependency": "genuine_activation_binding_validator_over_separately_captured_invented_role_contract",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -54,7 +54,8 @@
         "research/sessions/20261022-pending-binding-draft.md",
         "research/sessions/20261022-parent-supervision.md",
         "research/sessions/20261022-terminal-validation.md",
-        "research/sessions/20261022-child-callback.md"
+        "research/sessions/20261022-child-callback.md",
+        "research/sessions/20261022-io-boundary.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1037,7 +1038,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: qualify the retained I/O adapter and protected-preparation callback boundary using exclusively invented physical source envelopes, constants and protected-role test doubles through the current child/parent path. Keep genuine classifier and acceptance predicates. Preserve actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected inputs, installed-dependency activation or camera contact. English/native FTP stay first."
+    "RA-003: qualify the genuine retained activation-binding validator in the current synthetic child/parent preparation path. Derive a separately captured invented-role import contract from the exact ordinary sources and protected doubles; replace only the fixture return-plan stub. Test import/hash/alias/order refusal and complete reconciliation, preserving original validator predicates, actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected sources/inputs, installed-dependency activation or camera contact. English/native FTP stay first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1087,9 +1088,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_synthetic_terminal_validation_join_7552148",
-  "current_goal_turn": "progress_genuine_child_preparation_callback_and_invented_collection",
-  "next_single_work_package": "RA-003: qualify the retained I/O adapter and protected-preparation callback boundary using exclusively invented physical source envelopes, constants and protected-role test doubles through the current child/parent path. Keep genuine classifier and acceptance predicates. Preserve actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected inputs, installed-dependency activation or camera contact. English/native FTP stay first.",
+  "previous_goal_turn": "progress_genuine_child_callback_join_acbf8e6",
+  "current_goal_turn": "progress_retained_io_and_protected_preparation_with_invented_inputs",
+  "next_single_work_package": "RA-003: qualify the genuine retained activation-binding validator in the current synthetic child/parent preparation path. Derive a separately captured invented-role import contract from the exact ordinary sources and protected doubles; replace only the fixture return-plan stub. Test import/hash/alias/order refusal and complete reconciliation, preserving original validator predicates, actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected sources/inputs, installed-dependency activation or camera contact. English/native FTP stay first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -2058,6 +2059,118 @@
       "current_goal_status": "active",
       "camera_commands": [],
       "next_single_work_package": "RA-003: qualify the retained I/O adapter and protected-preparation callback boundary using exclusively invented physical source envelopes, constants and protected-role test doubles through the current child/parent path. Keep genuine classifier and acceptance predicates. Preserve actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected inputs, installed-dependency activation or camera contact. English/native FTP stay first."
+    },
+    {
+      "report": "research/sessions/20261022-io-boundary.md",
+      "companion": "research/RETAINED_IO_BOUNDARY.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "previous_goal_turn_classification": "progress",
+      "scope": "retained_io_and_protected_preparation_closure_on_invented_physical_files_through_child_parent_join",
+      "new_io_boundary_cases": 9,
+      "child_launches": 9,
+      "affected_regression_cases": 120,
+      "distinct_qualified_cases": 129,
+      "passed": 129,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "initial_smoke_issues": [
+        "incorrect_fixture_prerequisite_lookup",
+        "missing_os_import_in_child_trace"
+      ],
+      "qualification_method": "complete_nine_case_rerun_after_windows_class_guard_plus_120_unimported_unchanged_regressions",
+      "correction_scope": [
+        "tests/test_dependency_io_boundary.py:Windows_class_skip_decorator_only"
+      ],
+      "smoke_results": {
+        "smoke-01": {
+          "status": "fail",
+          "cases": 1,
+          "passed": 0,
+          "failures": 0,
+          "errors": 1,
+          "log_sha256": "eeea8ff46ad083dd5623df3d0fbe43a1ad6ea7b137641425e333e1b6e6b3e8bf"
+        },
+        "smoke-02": {
+          "status": "fail",
+          "cases": 1,
+          "passed": 0,
+          "failures": 1,
+          "errors": 0,
+          "log_sha256": "b6456d5a0cd059049c84f1ad607371d63fb5a3227cc189fb9a244d8fd68d9cea"
+        },
+        "smoke-03": {
+          "status": "pass",
+          "cases": 1,
+          "passed": 1,
+          "failures": 0,
+          "errors": 0,
+          "log_sha256": "7c12630b83efbe69d12174234aa52f34006c656a74af8c9d178717a528556131"
+        }
+      },
+      "focused_log_sha256": "7e3884a1c0947b8585d30378510255f161702e7d260c211af4ab4b5ab90abbbf",
+      "regression_log_sha256": "6ea09309bef75d9dc99c7cd779797636c0b6d9469c2b3ecdc30c9cddcb76a987",
+      "qualified_source_pins": 93,
+      "ordinary_draft_pins": 72,
+      "ordinary_frozen_records": 16,
+      "historical_pending_dispositions": 5,
+      "dependency_null_fields": 3,
+      "retained_io_adapter_executed": true,
+      "retained_protected_preparation_closure_executed": true,
+      "retained_factory_source_unchanged": true,
+      "ordinary_io_adapter_source_unchanged": true,
+      "genuine_classifier_used": true,
+      "acceptance_predicates_changed": false,
+      "terminal_replay": false,
+      "invented_physical_bytes": 189720,
+      "invented_logical_bytes": 93672,
+      "invented_blocks": 185,
+      "source_passes_observed": 4,
+      "source_opens_observed": 2,
+      "source_rewinds_observed": 2,
+      "source_closes_observed": 2,
+      "constants_ast_and_hash_checked": true,
+      "constants_inputs_invented": true,
+      "protected_roles_are_doubles": true,
+      "protected_double_call_counts": {
+        "capture": 2,
+        "core": 2,
+        "validator": 2
+      },
+      "real_os_calls_transparently_traced": true,
+      "real_adapter_snapshot_qualified": true,
+      "double_counters": "successful_return_counters_not_failed_attempt_instrumentation",
+      "legacy_decryption_and_crc_flags": "invented_schema_values_not_observed_cryptography_or_real_header_validation",
+      "qualification_platform": "Windows",
+      "readonly_guard_portable": false,
+      "synthetic_dependency_ops": true,
+      "synthetic_wiring": true,
+      "activation_binding_is_return_plan_fixture": true,
+      "next_binding_source_sha256": "22558080636f15300590c22b9987216216f650b4edc58d7df89092643722de74",
+      "actual_protected_capture_core_validator_executed": false,
+      "real_cryptography_performed": false,
+      "producer_execution_authenticated": false,
+      "actual_runtime_verified": false,
+      "operational_acceptance": false,
+      "exhaustive_cleanup_fault_coverage": false,
+      "actual_runtime_ready": false,
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "production_source_files_changed": false,
+      "unchanged_frozen_records": true,
+      "protected_inputs_accessed": false,
+      "installed_dependency_activated": false,
+      "execution_authorized": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "new_owner_input_required": false,
+      "current_goal_status": "active",
+      "camera_commands": [],
+      "next_single_work_package": "RA-003: qualify the genuine retained activation-binding validator in the current synthetic child/parent preparation path. Derive a separately captured invented-role import contract from the exact ordinary sources and protected doubles; replace only the fixture return-plan stub. Test import/hash/alias/order refusal and complete reconciliation, preserving original validator predicates, actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected sources/inputs, installed-dependency activation or camera contact. English/native FTP stay first."
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -2119,15 +2232,16 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
-    "report": "research/sessions/20261022-child-callback.md",
-    "distinct_cases": 120,
-    "effective_passed": 120,
-    "corrected_child_cases": 7,
-    "child_launches": 6,
-    "unchanged_regression_cases": 113,
-    "new_child_terminal_replay": false,
+    "report": "research/sessions/20261022-io-boundary.md",
+    "distinct_cases": 129,
+    "passed": 129,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_boundary_cases": 9,
+    "unchanged_regression_cases": 120,
+    "new_boundary_terminal_replay": false,
     "regression_contains_earlier_terminal_replay_cases": true,
-    "records_grammar": "invented_true",
     "actual_runtime_qualified": false
   },
   "evidence_source_sha256_scope": "Original audit snapshot; historical hashes are not an exact-current source closure or execution allowlist."

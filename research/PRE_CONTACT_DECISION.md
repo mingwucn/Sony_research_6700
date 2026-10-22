@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Genuine child preparation/callback/controller/collection and parent join without replay using synthetic I/O/dependencies and invented=True records. | Retained I/O/protected-preparation boundary and actual bindings/runtime/GDT/content remain unqualified; camera contact stays on hold. |
+| GDT analysis preparation | Retained factory/protected-preparation closure and original I/O adapter join child/parent on invented physical files/constants and protected-role doubles. | Genuine activation binding and actual protected decoder/crypto/runtime/GDT/content remain unqualified; camera contact stays on hold. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: qualify the retained I/O adapter and protected-preparation callback boundary using exclusively invented physical source envelopes, constants and protected-role test doubles through the current child/parent path. Keep genuine classifier and acceptance predicates. Preserve actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected inputs, installed-dependency activation or camera contact. English/native FTP stay first.
+RA-003: qualify the genuine retained activation-binding validator in the current synthetic child/parent preparation path. Derive a separately captured invented-role import contract from the exact ordinary sources and protected doubles; replace only the fixture return-plan stub. Test import/hash/alias/order refusal and complete reconciliation, preserving original validator predicates, actual runtime refusals, frozen records, five historical pending dispositions and dependency nulls. No actual protected sources/inputs, installed-dependency activation or camera contact. English/native FTP stay first.
 
-[Commands, qualification and remaining boundaries](sessions/20261022-child-callback.md).
+[Commands, qualification and remaining boundaries](sessions/20261022-io-boundary.md).

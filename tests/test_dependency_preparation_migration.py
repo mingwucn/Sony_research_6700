@@ -54,6 +54,7 @@ class MigrationPreparation(unittest.TestCase):
         # original empty historical fixture. These are invented fixture inputs.
         if hasattr(self,'fixture_basis'):p['basis']=copy.deepcopy(self.fixture_basis)
         if hasattr(self,'fixture_source_manifest'):p['source_manifest'].update(copy.deepcopy(self.fixture_source_manifest))
+        if hasattr(self,'fixture_prerequisites'):p['prerequisites'].update(copy.deepcopy(self.fixture_prerequisites))
         if hasattr(self,'fixture_role_aliases'):p['binding_schema']['aliases'].update(self.fixture_role_aliases)
         for value in (f.c,f.d,f.r,f.s,p['activity_scope']):
             value['operation_id']=seed.case.request['operation_id']
