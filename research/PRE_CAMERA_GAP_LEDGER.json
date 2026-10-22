@@ -29,10 +29,10 @@
       "title": "Pin and audit reference code and reuse rights"
     },
     "RA-003": {
-      "status": "partial_runtime_path_mapping_qualified_activation_unqualified",
-      "available_evidence": "155 distinct cases pass: 29 new mapping/join + 126 affected metadata regressions. Saved ordinary descriptors preserve 351 full package receipt pairs and 21 origin/root associations; five complete runtime receipts remain missing.",
-      "remaining_acceptance": "Fresh origins/root identities and five complete runtime receipts remain unavailable. Actual bootstrap/native event behavior, bounded journal/stop entry, execution bindings, protected processing, exact-body English/native FTP and recovery remain unqualified.",
-      "next_dependency": "synthetic_bootstrap_only_entry_and_bounded_event_journal",
+      "status": "partial_synthetic_bootstrap_qualified_activation_unqualified",
+      "available_evidence": "204 distinct cases pass: original bootstrap through inert adapter, exact parent grammar, bounded journal and concurrent supervision; four private synthetic witnesses retained.",
+      "remaining_acceptance": "Five full runtime receipts and fresh actual origins/root identities remain missing. Real native-event behavior, execution bindings, installed activation, protected processing, exact-body English/native FTP and recovery remain unqualified.",
+      "next_dependency": "synthetic_bootstrap_receipt_join_to_nonexecuting_preparation_review",
       "evidence": [
         "research/MAINLAND_FIRMWARE_SOURCE.md",
         "research/FDAT_STREAM_VALIDATION.md",
@@ -63,7 +63,8 @@
         "research/sessions/20261022-runtime-instance.md",
         "research/sessions/20261023-bootstrap-readiness.md",
         "research/sessions/20261023-bootstrap-packet.md",
-        "research/sessions/20261023-runtime-mapping.md"
+        "research/sessions/20261023-runtime-mapping.md",
+        "research/sessions/20261023-synthetic-bootstrap.md"
       ],
       "feature_or_device_gate_passed": false,
       "title": "Build the official-package and local-artifact inventory"
@@ -1046,7 +1047,7 @@
     "Supported-build allowlist and machine-enforced eligibility before any public installer"
   ],
   "actionable_offline": [
-    "RA-003: implement and qualify a bootstrap-only disposable-child entry and bounded private event journal using supplied invented imports and events. Exercise the original bootstrap method through an inert import adapter and parent verification; stop before package imports, controller and protected processing. Preserve the review packet refusal, native-denying synthetic hook and frozen 16/5/3. No installed/native/protected input reads, actual activation or camera contact. English/native FTP remain first."
+    "RA-003: join the synthetic bootstrap receipt to the existing nonexecuting preparation review using supplied invented runtime metadata. Validate shared request/source/runtime/journal bindings and rejection of mismatched or replayed receipts. Keep the review packet nonlaunchable, actual activation refused and frozen 16/5/3 unchanged. No installed/native/protected reads or camera contact; English/native FTP remain first."
   ],
   "needs_owner_or_external": [
     "Existing-record setup/history/health/storage facts remain unknown; do not repeat generic intake request.",
@@ -1096,9 +1097,9 @@
   "recovery_proven": false,
   "device_write_gate_passed": false,
   "camera_commands": [],
-  "previous_goal_turn": "progress_nonexecuting_bootstrap_review_packet",
-  "current_goal_turn": "progress_lossless_runtime_path_receipt_mapping_and_retained_join",
-  "next_single_work_package": "RA-003: implement and qualify a bootstrap-only disposable-child entry and bounded private event journal using supplied invented imports and events. Exercise the original bootstrap method through an inert import adapter and parent verification; stop before package imports, controller and protected processing. Preserve the review packet refusal, native-denying synthetic hook and frozen 16/5/3. No installed/native/protected input reads, actual activation or camera contact. English/native FTP remain first.",
+  "previous_goal_turn": "progress_lossless_runtime_path_receipt_mapping_and_retained_join",
+  "current_goal_turn": "progress_synthetic_original_bootstrap_journal_and_supervision",
+  "next_single_work_package": "RA-003: join the synthetic bootstrap receipt to the existing nonexecuting preparation review using supplied invented runtime metadata. Validate shared request/source/runtime/journal bindings and rejection of mismatched or replayed receipts. Keep the review packet nonlaunchable, actual activation refused and frozen 16/5/3 unchanged. No installed/native/protected reads or camera contact; English/native FTP remain first.",
   "continuations": [
     {
       "report": "research/sessions/20261020-RA-003-historical-context-v6.md",
@@ -2829,6 +2830,64 @@
       "current_goal_status": "active",
       "camera_commands": [],
       "next_single_work_package": "RA-003: implement and qualify a bootstrap-only disposable-child entry and bounded private event journal using supplied invented imports and events. Exercise the original bootstrap method through an inert import adapter and parent verification; stop before package imports, controller and protected processing. Preserve the review packet refusal, native-denying synthetic hook and frozen 16/5/3. No installed/native/protected input reads, actual activation or camera contact. English/native FTP remain first."
+    },
+    {
+      "report": "research/sessions/20261023-synthetic-bootstrap.md",
+      "companion": "research/SYNTHETIC_BOOTSTRAP_TRIAL.md",
+      "evidence_class": [
+        "static-inference",
+        "offline-tested"
+      ],
+      "scope": "synthetic_original_bootstrap_only_child_typed_journal_and_bounded_supervision",
+      "previous_commit": "f473eef906dfbc4c7a4cde4352270bb3f80e1fb6",
+      "previous_goal_turn_classification": "progress",
+      "focused_stem": "focused-03",
+      "regression_stem": "regression-02",
+      "new_cases": 80,
+      "affected_regression_cases": 124,
+      "distinct_qualified_cases": 204,
+      "passed": 204,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "qualified_source_pins": 34,
+      "focused_log_sha256": "39b6ee4b5e528d5bd3c1ffb0b914529c48c229dc600ebc984eeb3d3bbfa7770a",
+      "regression_log_sha256": "18f44e14f6a7b66393ce4e7134d87bff5ab4c02ddbba41ac917aaee80ed492c5",
+      "focused_seconds": 7.442747100023553,
+      "regression_seconds": 62.43185660010204,
+      "original_bootstrap_method_exercised_through_inert_adapter": true,
+      "events_are_invented_adapter_declarations": true,
+      "source_receipts_checked_before_and_after": true,
+      "source_root_declarations_rechecked": true,
+      "bounded_raw_outputs_retained": true,
+      "host_interruption_reconciliation_qualified": false,
+      "retained_private_witnesses": 4,
+      "saved_full_runtime_receipts_missing": 5,
+      "original_native_bootstrap_executed": false,
+      "native_loader_executed": false,
+      "actual_runtime_origins_observed": false,
+      "installed_dependency_activated": false,
+      "protected_inputs_accessed": false,
+      "existing_source_files_changed": false,
+      "source_manifest_migrated": false,
+      "current_executable_bundle_created": false,
+      "actual_runtime_ready": false,
+      "actual_runtime_verified": false,
+      "producer_execution_authenticated": false,
+      "execution_authorized": false,
+      "operational_acceptance": false,
+      "feature_supported": false,
+      "recovery_proven": false,
+      "device_write_gate_passed": false,
+      "existing_source_pins_unchanged": 19,
+      "ordinary_frozen_records": 16,
+      "historical_pending_dispositions": 5,
+      "dependency_null_fields": 3,
+      "new_owner_input_required": false,
+      "legal_questions_or_research_resumed": false,
+      "current_goal_status": "active",
+      "camera_commands": [],
+      "next_single_work_package": "RA-003: join the synthetic bootstrap receipt to the existing nonexecuting preparation review using supplied invented runtime metadata. Validate shared request/source/runtime/journal bindings and rejection of mismatched or replayed receipts. Keep the review packet nonlaunchable, actual activation refused and frozen 16/5/3 unchanged. No installed/native/protected reads or camera contact; English/native FTP remain first."
     }
   ],
   "actionable_offline_history_20261022_lifecycle": [
@@ -2890,15 +2949,15 @@
   },
   "historical_selected_evidence_scope": "Historical 239b34e pending preflight only; its five pending fields are unchanged frozen inputs, not current owner-supplied prerequisites.",
   "latest_qualified_evidence": {
-    "report": "research/sessions/20261023-runtime-mapping.md",
-    "distinct_cases": 155,
-    "passed": 155,
+    "report": "research/sessions/20261023-synthetic-bootstrap.md",
+    "distinct_cases": 204,
+    "passed": 204,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "new_behavioral_cases": 29,
-    "affected_regression_cases": 126,
-    "suite": "runtime_path_mapping_legacy_bridge_evidence_context",
+    "new_behavioral_cases": 80,
+    "affected_regression_cases": 124,
+    "suite": "synthetic_bootstrap_journal_supervisor_trial_and_affected_regressions",
     "actual_runtime_qualified": false
   },
   "evidence_source_sha256_scope": "Original audit snapshot; historical hashes are not an exact-current source closure or execution allowlist.",
@@ -2942,6 +3001,18 @@
     "suite": "bootstrap_review_and_affected_child_producer_regressions",
     "prior_integration_cases": 82,
     "prior_full_integration_suite_rerun": false,
+    "actual_runtime_qualified": false
+  },
+  "latest_qualified_evidence_before_synthetic_bootstrap_20261023": {
+    "report": "research/sessions/20261023-runtime-mapping.md",
+    "distinct_cases": 155,
+    "passed": 155,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_behavioral_cases": 29,
+    "affected_regression_cases": 126,
+    "suite": "runtime_path_mapping_legacy_bridge_evidence_context",
     "actual_runtime_qualified": false
   }
 }

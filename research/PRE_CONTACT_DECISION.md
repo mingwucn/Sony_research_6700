@@ -92,7 +92,7 @@ this project still has no adopted camera executor.
 | R2 service/native reader | USB source and effects reviewed; existing risk contract applies. | No-go: pre-execution exact-target/ABI evidence, qualified host route/binaries, temporary effects, durable intent, cleanup/reconciliation and scoped approval missing. Read-only intent does not make native execution R1. |
 | R4 FTP App/WBI change | Catalog/profile correspondence and source transaction reviewed; explicit FTP selection possible. | No-go: qualified R2 route, exact current artifacts/candidate/inverse, full changed/protected coverage, independent copies, resolved uncertainty and owner-required recovery evidence absent. Menu/settings terminology does not make program changes R3. |
 | English enablement | Owner absence report and resource/policy hypotheses recorded. | No mechanism or exact-build resource coverage established; no English action proposed. |
-| GDT analysis preparation | Lossless path/full-receipt mapping and optional retained join qualified: 155 distinct synthetic cases. | Five full runtime receipts and fresh origins/root identities remain missing; no saved native policy, activation or camera contact. Next is synthetic bootstrap-only entry/bounded journaling. |
+| GDT analysis preparation | Synthetic original-method bootstrap, typed journal and bounded supervision qualified: 204 distinct cases. | Five full runtime receipts and fresh actual origins/root identities remain missing; actual activation and protected processing remain refused. Next is synthetic receipt/preparation-review integration. |
 
 No new code framework, guessed target profile, firmware change, extra dependency
 or repeated generic intake can replace the missing external observations.
@@ -102,6 +102,6 @@ failure/recovery envelope; permission for R1 would not supply it.
 
 ## Next single work package
 
-RA-003: implement and qualify a bootstrap-only disposable-child entry and bounded private event journal using supplied invented imports and events. Exercise the original bootstrap method through an inert import adapter and parent verification; stop before package imports, controller and protected processing. Preserve the review packet refusal, native-denying synthetic hook and frozen 16/5/3. No installed/native/protected input reads, actual activation or camera contact. English/native FTP remain first.
+RA-003: join the synthetic bootstrap receipt to the existing nonexecuting preparation review using supplied invented runtime metadata. Validate shared request/source/runtime/journal bindings and rejection of mismatched or replayed receipts. Keep the review packet nonlaunchable, actual activation refused and frozen 16/5/3 unchanged. No installed/native/protected reads or camera contact; English/native FTP remain first.
 
-[Commands, review and remaining boundaries](sessions/20261023-runtime-mapping.md).
+[Commands, review and remaining boundaries](sessions/20261023-synthetic-bootstrap.md).
