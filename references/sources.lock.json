@@ -195,6 +195,25 @@
         "current_goal_turn": "progress_lifecycle_scope_resolved_and_missing_r1_packet_prepared",
         "next_single_work_package": "RA-004: owner decision on the prepared one-query Windows R1 inventory packet and existing connection context. Execute only after explicit scoped approval, then inspect coherent private records before a sanitized identity summary. No service mode, driver changes, temporary native execution or firmware write follows from this packet."
       }
+    },
+    {
+      "repository": "wanghm105/Powerful6700-Windows",
+      "commit": "4a3e30cad2f608580854755654b12e1d4049c5de",
+      "tree": "19935a6233dcedd7dbd5d4838b94d95be1a01047",
+      "inspected_on": "2026-10-26",
+      "role": "Powerful6700 Windows source-only native-English feasibility review; native FTP and UXC research leads",
+      "audit_report": "research/sessions/20261026-powerful6700-english-review.md",
+      "file_manifest": "references/powerful6700-windows-20261026.files.json",
+      "file_manifest_sha256": "0594bfdce6b1ff6add912a0b9abb69b1f2d7b7b9bf66f2bb8bcde5e82d005fd6",
+      "text_files_git_blob_and_size_verified": 58,
+      "python_files_ast_parsed_only": 46,
+      "local_vendored_files_lf_equivalent": 31,
+      "upstream_execution_performed": false,
+      "native_payload_downloaded_or_executed": false,
+      "runtime_dependency_adopted": false,
+      "english_unlock_implemented": false,
+      "alpha6700_owner_compatibility_established": false,
+      "reuse_decision": "Source reference only; upstream-authored GPL-3.0-only and separately licensed vendored components remain distinct; no code or firmware payload integrated."
     }
   ],
   "fdat_extractor_candidate": {
@@ -416,5 +435,44 @@
     "upstream_runtime_dependency_adopted": false,
     "proprietary_firmware_permission_inferred": false,
     "alpha6700_compatibility_established": false
+  },
+  "offline_language_method_review_20261026": {
+    "repository": "ma1co/Sony-PMCA-RE",
+    "commit": "a82f5baaa8e9c3d9f28f94699e860fb2e48cc8e0",
+    "date": "2026-10-26",
+    "report": "research/sessions/20261026-english-program-handoff.md",
+    "local_pinned_objects_only": true,
+    "sources": [
+      {
+        "path": "LICENSE.txt",
+        "git_blob": "77b0378407be242b5537f8dca3ed6402c91ba676",
+        "bytes": 1072,
+        "sha256": "a485f27d0b22eb7fd9b9419795695d0a1750ea32c961d11c1dd8ddade564dedf"
+      },
+      {
+        "path": "pmca/platform/__init__.py",
+        "git_blob": "d5bff59c929f5991ce1f0484cb68aa7ad620d401",
+        "bytes": 5497,
+        "sha256": "475680b361c21b54d7f41c4993657f4976177b1a2175ddcd43cde94793d59b6c"
+      },
+      {
+        "path": "pmca/platform/backup.py",
+        "git_blob": "f12555d3420a823e917492961e63b958b42a7e2e",
+        "bytes": 8053,
+        "sha256": "8614ee80f2fe15cd406bbefc06a56ca72427bebefedbef776a525bbe36d8696f"
+      },
+      {
+        "path": "pmca/platform/tweaks.py",
+        "git_blob": "a97a205c05712d4b7db09fce38db4416eee31de0",
+        "bytes": 4491,
+        "sha256": "12b214a1a713a58ab298bcdf9c992d8e6ee908c53f15a9406f26c485cfc0bba9"
+      }
+    ],
+    "source_blobs": 3,
+    "license_blobs": 1,
+    "AST_only_no_import": true,
+    "network_access": false,
+    "execution_performed": false,
+    "reuse_decision": "Method reference only. Separate language availability/selection; no copied regional defaults, blanket flag count, attribute bypass, backend adoption or payload."
   }
 }

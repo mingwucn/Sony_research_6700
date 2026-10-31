@@ -2,7 +2,9 @@
 
 Initial research and local-Codex hand-off, prepared on 2026-10-18.
 
-**Status: planning and offline tooling only. No alpha6700 firmware patch, English unlock, service-access method, or native FTP implementation has been validated by this project. No camera was connected or modified during initialization.**
+**Status: offline firmware analysis and tooling. No alpha6700 firmware patch, English unlock, service-access method, or native FTP implementation has been validated by this project. No camera access or modification has been performed.**
+
+Latest [English firmware findings](research/ENGLISH_FIRMWARE_FINDINGS.md), 2026-10-26: English resources and separate availability/selection retain static support for a language-only route. The conditional program's native APIs and finite client forms are now mapped; its initial direct callback is a separate non-language item. Dynamic language clients, normal preload and complete regional preservation remain open. [Program-client review](research/sessions/20261026-english-program-clients.md). Work stays offline with no camera contact. Earlier dated summaries retain scope.
 
 ## Objectives
 

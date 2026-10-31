@@ -1,0 +1,33 @@
+{
+  "plan_type": "forward_patch",
+  "description": "Sony ILCE-6700 2.00 Combined English Unmask + Playback FTP Custom Key",
+  "model": "ILCE-6700",
+  "firmware": "2.00",
+  "sector_size": 512,
+  "total_targets": 2,
+  "total_bytes_modified": 5,
+  "entries": [
+    {
+      "target_id": "APP-EN-01",
+      "device": "/dev/nflasha15",
+      "sector": 383128,
+      "offset_in_sector": 248,
+      "length": 4,
+      "expected_preimage_hex": "f4179f1a",
+      "replacement_hex": "34008052",
+      "stock_sector_sha256": "9358ef826d5b75e363bd122aa5cfdd218d644d5f72fd061648f53314c326aa36",
+      "patched_sector_sha256": "4eed8b81e8e4543ddec9befb692c7b236b043cb9d96ae3a9873360cd778b27b3"
+    },
+    {
+      "target_id": "APP-FTP-01",
+      "device": "/dev/nflasha15",
+      "sector": 445966,
+      "offset_in_sector": 228,
+      "length": 1,
+      "expected_preimage_hex": "00",
+      "replacement_hex": "01",
+      "stock_sector_sha256": "7c899be67183d264a73c0357ee4874247359d1a3dc10156279a0d853a618bdb1",
+      "patched_sector_sha256": "5669b7f9919257f3f7890d5b4fc26ef818119c0c239b6f63288218e9ae9bbb50"
+    }
+  ]
+}

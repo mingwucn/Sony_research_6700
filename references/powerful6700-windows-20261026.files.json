@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "inspected_on": "2026-10-26",
+  "repository": "wanghm105/Powerful6700-Windows",
+  "commit": "4a3e30cad2f608580854755654b12e1d4049c5de",
+  "tree": "19935a6233dcedd7dbd5d4838b94d95be1a01047",
+  "evidence_classes": [
+    "source-report",
+    "static-inference"
+  ],
+  "verification": {
+    "git_blob_and_size_matches": 58,
+    "python_ast_parses": 46,
+    "behavioral_tests_run": 0,
+    "upstream_executed": false,
+    "camera_commands": []
+  },
+  "catalog_feature_ids": [
+    "ftp",
+    "shutter",
+    "exposure",
+    "sound",
+    "pixel_shift",
+    "dynamic_active"
+  ],
+  "ftp_edit_records_by_image": {
+    "app": 90,
+    "wbi": 152
+  },
+  "looknames_resource_path": "/usr/share/app/string_simplifiedchinese_f.uxc",
+  "files": [
+    {
+      "path": "docs/AI-HANDOFF.md",
+      "bytes": 44364,
+      "sha256": "835a8692686c862fbc72391553c1817d51cb3d8c88421db12f528279602ce335",
+      "git_blob_sha1": "b60fa65982c532d6a700b277ad26eeb511c7559d"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 9542,
+      "sha256": "5f5b5f28a15685e5cbe62f5f41c7e1b972d948742b22fa52db0e3a5480b2a1b3",
+      "git_blob_sha1": "993c3aeca4b2a8fb8edb4c79251701de82bca05c"
+    },
+    {
+      "path": "docs/BREAKTHROUGHS.md",
+      "bytes": 4576,
+      "sha256": "86386c377eb49ab35f6f707019f3b2617e2ed15e1a32a1fc2e137fc1081c7f3a",
+      "git_blob_sha1": "6791d3922224ff7f8b243aa5fc6868d78630df9c"
+    },
+    {
+      "path": "docs/FEATURES.md",
+      "bytes": 11714,
+      "sha256": "048efc582dacab9c43be6d85d1da1343c42e4b22893a5e5683342eec0107a084",
+      "git_blob_sha1": "e150301aab79e7ef287c38e644403326a765c801"
+    },
+    {
+      "path": "docs/FIRMWARE-MAP.md",
+      "bytes": 4764,
+      "sha256": "93a1e1cae8c48d54902df352edf7232d2bce1a083f1f5d2ce76b3f434fdcbe0f",
+      "git_blob_sha1": "ce82470f31f025c27fececb63a9653b62c67e412"
+    },
+    {
+      "path": "docs/PERSIST-STORE.md",
+      "bytes": 12231,
+      "sha256": "4a3ce4f740d0117dab2d067ac5e6349cd1032a025af9f7830f14d68eac36b361",
+      "git_blob_sha1": "0d0bdc7a041fc091172dc82958e8ec8efb0dc20e"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "bytes": 7805,
+      "sha256": "479783f9205eddc2c44598b9c962fc24e6f4948f16156866fdfe5bc4f8f123d0",
+      "git_blob_sha1": "d6c92c8ddeb36ca6e40c41a41649aedd71ba3672"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 821,
+      "sha256": "6bc350305158aacc0c3668b5f097250abf56f581189254119512b677b912c61b",
+      "git_blob_sha1": "81012ce8d4a691ada52bf53e88bad5f3c3e0ebe5"
+    },
+    {
+      "path": "src/a6700win/__init__.py",
+      "bytes": 150,
+      "sha256": "c89c1d13604c8728ea2e50a294db91481fe0e546b37ecd3255c0e592d31c85cf",
+      "git_blob_sha1": "696ae64e858ff5f3eb77e2c020c502f0fae5f976"
+    },
+    {
+      "path": "src/a6700win/__main__.py",
+      "bytes": 4515,
+      "sha256": "1d44709acd85eb20ca25aa66c36adf14d77a7968afb92ac5063d1db410892fb6",
+      "git_blob_sha1": "a9f665ce551828f5ea3a224f888e9d525bdab4da"
+    },
+    {
+      "path": "src/a6700win/app.py",
+      "bytes": 1375,
+      "sha256": "429ee6d4901468f0399fb75906c9882c1066c0cfa2c34baeddab588661f07251",
+      "git_blob_sha1": "01e69ce29cc4a13ca701d02a88b51a88b498449c"
+    },
+    {
+      "path": "src/a6700win/bundle.py",
+      "bytes": 6105,
+      "sha256": "f2dd7b2c1961d0934db0345fa511d18c9367a1ea44d996525dc3de76cd46cf29",
+      "git_blob_sha1": "bb1e7e8068cbc096d2ebea54400cda518057936c"
+    },
+    {
+      "path": "src/a6700win/camera/__init__.py",
+      "bytes": 84,
+      "sha256": "106f1d43c5a0c47ad7a523dc6221d389e466689ec171f24051c84a7abe2d3ce4",
+      "git_blob_sha1": "225aea7789b77434e788e9603f235b4bd4f5e99e"
+    },
+    {
+      "path": "src/a6700win/cp.py",
+      "bytes": 8072,
+      "sha256": "3405efde0bc399639fde882a219cd3398cfacfe44db72ecd11cd93427622cd8b",
+      "git_blob_sha1": "19656b3dc0b140e6e6efcc46a8b8ef881bf6b737"
+    },
+    {
+      "path": "src/a6700win/dump.py",
+      "bytes": 10416,
+      "sha256": "3b3ecbb33021363655705584027e5e2df7349e3f9d56fcb358d825de2aa90124",
+      "git_blob_sha1": "f620160fab34500e097bac761de2bb66b3a9cd8f"
+    },
+    {
+      "path": "src/a6700win/flash.py",
+      "bytes": 10117,
+      "sha256": "1c934f503a6973bbb43d581fcfe11d6b2cdcc49a2f097be55c825fb2eb7c6177",
+      "git_blob_sha1": "6b3efa128a7c2754a93c6ab2638ec197ed503572"
+    },
+    {
+      "path": "src/a6700win/guards.py",
+      "bytes": 6745,
+      "sha256": "3eb7721e85d7cbb5afd5536370cf25e3e4d3d0228e1bea0dde24331ff1e9af25",
+      "git_blob_sha1": "08fd0ae14d15e7fab84b70e7ed9c89e7924769a8"
+    },
+    {
+      "path": "src/a6700win/inspect_once.py",
+      "bytes": 2758,
+      "sha256": "e11ad4964a69e596c8ef186e7b2543e0063cf85e6c7f0680c1ee7ee1262b9041",
+      "git_blob_sha1": "a116c141ce438224afa2a39ca5a65b3f2bd3d9a1"
+    },
+    {
+      "path": "src/a6700win/looknames.py",
+      "bytes": 21043,
+      "sha256": "efc4c23a878f58178191d1e5cf2fa43dca457d3eecb17cb7826f0556bd34a5ab",
+      "git_blob_sha1": "3f293b27a156745b9c7b22e9b325c70ad7bc17ce"
+    },
+    {
+      "path": "src/a6700win/looks.py",
+      "bytes": 6996,
+      "sha256": "0da231c9aec51cfaad91d3d62b8c82d47664c93b4f1c64a571a4572b28c51cba",
+      "git_blob_sha1": "929c11744a0a66d365a55da2fd392bfe269bdbf8"
+    },
+    {
+      "path": "src/a6700win/patches.py",
+      "bytes": 19064,
+      "sha256": "40a26ece1f5107a4273ffc2ddf86a3ea96609f125595388857577190a83ef3c0",
+      "git_blob_sha1": "14f413677cf386c00e47aa13881d7cdecf3aa9d9"
+    },
+    {
+      "path": "src/a6700win/paths.py",
+      "bytes": 3808,
+      "sha256": "9a4bfe6b7fd32e8743213a05bf60439dc1eb4e2d5c01e8a1fe895ab48f472674",
+      "git_blob_sha1": "2fa4fbb42e143f39ee6cce0eee3391e2cd908362"
+    },
+    {
+      "path": "src/a6700win/research.py",
+      "bytes": 4942,
+      "sha256": "3e6947aa7caed95b0437455448701a5ecb5ffb2b5b7b5ab04f182e6d10d38b33",
+      "git_blob_sha1": "62ab0e45aa22c04fd56ce2b3719147d2933ac54f"
+    },
+    {
+      "path": "src/a6700win/selftest.py",
+      "bytes": 4341,
+      "sha256": "5c75bc93d81997a49239b221d57554f109d29a5f52fab82be8acc6652ca9cfbb",
+      "git_blob_sha1": "86be9b1b87f70209c69334235136a55c8676d5cd"
+    },
+    {
+      "path": "src/a6700win/usb/__init__.py",
+      "bytes": 130,
+      "sha256": "327b1aae9234dce95ea6725d6e69ab299f35c4dd8d588216141e830b295d7330",
+      "git_blob_sha1": "69db7e6bc05a98fe00efbf4caecebe7a9029c662"
+    },
+    {
+      "path": "src/a6700win/usb/driver.py",
+      "bytes": 15405,
+      "sha256": "accb76487d5c8f303379b40977eac9c5851b55fe783f8f466669e193a50ac6c6",
+      "git_blob_sha1": "51ba707f3d6c8633abd4b086c6d72aca60dd12b8"
+    },
+    {
+      "path": "src/a6700win/usb/setupapi.py",
+      "bytes": 7780,
+      "sha256": "12d3597619159ccdd094ce660cb2d3d8668d1383d9109e4b5a2f79347346014b",
+      "git_blob_sha1": "4815f639d56e31df466b98e083b3d2aaab755f36"
+    },
+    {
+      "path": "src/a6700win/usb/windows_auth.py",
+      "bytes": 12557,
+      "sha256": "a19b9bdd7961e0a4a1693a294c4c0d2eedfd1e1be7383f9c8f90e6186530874b",
+      "git_blob_sha1": "5af8e7724210b11f8c819c78db88d3df130f738a"
+    },
+    {
+      "path": "src/a6700win/uxc.py",
+      "bytes": 7058,
+      "sha256": "c1e317e723fa496b980b8225b7797e92796f51a52a98f69e68bf54691bf593ce",
+      "git_blob_sha1": "43f7bbf120fe7d019262fed83cc28347d56db52a"
+    },
+    {
+      "path": "src/a6700win/version.py",
+      "bytes": 274,
+      "sha256": "2839ed682b14473c1815482e9fe86dfa992da063817f1a9bd5bab7aef67f8482",
+      "git_blob_sha1": "d26407011b1f6ceeb98709382352d618d2df5f60"
+    },
+    {
+      "path": "src/a6700win/windows_shim.py",
+      "bytes": 8984,
+      "sha256": "ab84b780623bb5f0a0d4b6206916355edba990ba209b3627d2e500890c9b3ebb",
+      "git_blob_sha1": "0b9ba1c69436370d11aa889062a1026e8587856a"
+    },
+    {
+      "path": "third_party/a6700_unlock/backup.py",
+      "bytes": 20575,
+      "sha256": "4e49ef394b7cdf78912f4ed796daf4caebdb9eaf750cb88e86a5d9a0ace44dcc",
+      "git_blob_sha1": "13fdec1d092640c9793b1b5bc1e62c5d185dd284"
+    },
+    {
+      "path": "third_party/a6700_unlock/catalog.py",
+      "bytes": 7298,
+      "sha256": "b3a34be3edb265e5e3533807674a73f9cc6aabff41310f2bffc51cfdf556d06d",
+      "git_blob_sha1": "2d60911a77ff544cdbf90bf769e777f0a7855f01"
+    },
+    {
+      "path": "third_party/a6700_unlock/cli.py",
+      "bytes": 15362,
+      "sha256": "e1157d0423ed909b981538577d3d31a57cb4682d543daaddc84935582d19c319",
+      "git_blob_sha1": "fc3d9c5008c7023e1cc9574f775b645138c9f238"
+    },
+    {
+      "path": "third_party/a6700_unlock/data/a6700-2.00.json",
+      "bytes": 149937,
+      "sha256": "e96cb83ba7451d9f32396d266d76866c862006614dfca0816e2f33ce12ad0f84",
+      "git_blob_sha1": "5e95cb1e89a2d49427bdb7bf0686119e67f31927"
+    },
+    {
+      "path": "third_party/a6700_unlock/data/device-profile.json",
+      "bytes": 71115,
+      "sha256": "f4d9c86467cfda02046da3bb1fa8b572fcb1338b22d2af948e312cbd735a30f2",
+      "git_blob_sha1": "66ee003536457d655bd91c47ba38fd7d851d96cd"
+    },
+    {
+      "path": "third_party/a6700_unlock/device_profile.py",
+      "bytes": 12549,
+      "sha256": "cb87b8a0bc113619750171d65dff65463fca48305e3df93674e6b7168477042d",
+      "git_blob_sha1": "1059e862a8cf4084a1707fab7aa3aa4ebff1f250"
+    },
+    {
+      "path": "third_party/a6700_unlock/native/transaction.c",
+      "bytes": 6196,
+      "sha256": "53cd3393c07dfdb7a219cf73906862ac389df9d853a90d762deec777c0e37e82",
+      "git_blob_sha1": "884aa50f99f2e019a03681a9bf1899d1285cb87f"
+    },
+    {
+      "path": "third_party/a6700_unlock/operations.py",
+      "bytes": 19334,
+      "sha256": "76ef06edae370b5fe5b1e5ff17799a32db023ca914820c0cb6184dc4c37507a7",
+      "git_blob_sha1": "82b759105900a2e3fbab1a541bdbe6527f6f4e90"
+    },
+    {
+      "path": "third_party/a6700_unlock/usb/backend.py",
+      "bytes": 10764,
+      "sha256": "a3c3453c0c901c8091f5185450866ff4ee57a13626013cd547bbd2299d0c1016",
+      "git_blob_sha1": "500d38bd9dd2deb1aa1427275fc0220da4e7fed4"
+    },
+    {
+      "path": "third_party/a6700_unlock/usb/legacy.py",
+      "bytes": 31347,
+      "sha256": "82f186515478626d13bd5f98ac3305f0700dad609be2462c26b63f5a576f8915",
+      "git_blob_sha1": "7ae75af9fd6d3a5bad0efa009385305272a6f57c"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2461,
+      "sha256": "8f6bf856f205b40b66fdb69bccd052ceb2ae46e3c7b76f63eebe698984789b74",
+      "git_blob_sha1": "6bda055fc0d3fac770ad26fa28ac37dc2fb1413b"
+    },
+    {
+      "path": "tools/backup_marker_check.py",
+      "bytes": 1887,
+      "sha256": "7b9177e9083c81656bdc52bbcfcdef7ac240a9abaa662b800ca77bc099022e34",
+      "git_blob_sha1": "061e58802a0162d07fcc972add57c99532fc123e"
+    },
+    {
+      "path": "tools/build_dump_payload.py",
+      "bytes": 1778,
+      "sha256": "a81a782f70e7a37f618b06b298d347bc5bc82d77eacd910c513fc8a60fcae484",
+      "git_blob_sha1": "12c7abfa5adbd734e5103f00b5af0a8bcbbae9ec"
+    },
+    {
+      "path": "tools/cp_bank_probe.py",
+      "bytes": 4504,
+      "sha256": "c8d80ace4627cc3b8b2c77b144db514123eb2f5d5b4db9349db0e4e3d3133570",
+      "git_blob_sha1": "a82d1e04cb6b959c45dfff79c5e1cee7f433b74f"
+    },
+    {
+      "path": "tools/cp_param_probe.py",
+      "bytes": 3130,
+      "sha256": "c09f1319072f3a9fbacaa1ad2a2927f35ca741ad9f25081ce7bb3a38d066db83",
+      "git_blob_sha1": "364b023e7a82750535d40aac2c979365ab6f2e96"
+    },
+    {
+      "path": "tools/cp_probe_unit.py",
+      "bytes": 4153,
+      "sha256": "148e84126a140db157ae8861643ffcb88944b4e75e6289652b4812aaa5f7e027",
+      "git_blob_sha1": "4a2b2030d767fb536fd4b0d193bed0a0dd14638c"
+    },
+    {
+      "path": "tools/cp_vs_backup.py",
+      "bytes": 1667,
+      "sha256": "4b6c337e6e9722f5e02284bcd034560b3f579a5f8c87e3162504358c8fe9359b",
+      "git_blob_sha1": "8dd3543b38e8daf1539a2c59dccbbd3f147d3caf"
+    },
+    {
+      "path": "tools/dump_camera.py",
+      "bytes": 4573,
+      "sha256": "8fff2fde28f6356888d815e2ab411cdfb6e4d6daaad6e022d5a671c746308f0d",
+      "git_blob_sha1": "5b6c5fa555ef5500f0dcdb705e169a6482c60e72"
+    },
+    {
+      "path": "tools/dump_parts.py",
+      "bytes": 1592,
+      "sha256": "028eba89796c139949da5eb08a37bf8368d836709d3b1af2cfb16e551dbd810d",
+      "git_blob_sha1": "fb05c6f97d7c6039308d7a63b80a30bf50807976"
+    },
+    {
+      "path": "tools/dump_setting.py",
+      "bytes": 1338,
+      "sha256": "5701613b820c79c4faa1263588dd51808ee199027528e20c1a236a90d29695d6",
+      "git_blob_sha1": "161d26f08c5fe9f72f2abea71a0a727c4e85685b"
+    },
+    {
+      "path": "tools/flash_persist.py",
+      "bytes": 3052,
+      "sha256": "714ed016015384f2d5064aa681b10bda5022a126d9f433e483d2d521878b6a40",
+      "git_blob_sha1": "e6321f330087bc52441f141d00ce12c3e62889fb"
+    },
+    {
+      "path": "tools/flash_write.py",
+      "bytes": 5561,
+      "sha256": "1f8222a7d732ce323a78ba2cae5e76c26f1e59bfa6ac006812b394a535ee329e",
+      "git_blob_sha1": "79782331dde8a158662c3d7312ac8a518d60e1c8"
+    },
+    {
+      "path": "tools/nflasha2.py",
+      "bytes": 6482,
+      "sha256": "28e914b98b0ec5913aed29fc6e637df0677256d78651a5df3ffdf35b827b57d2",
+      "git_blob_sha1": "b6f84b55c705279a228fa6847c6fb7eac2a6dd56"
+    },
+    {
+      "path": "tools/probe_camera.py",
+      "bytes": 2905,
+      "sha256": "3a507b15a345f060cdabfc1a98b430e97f961b576a0f24823fe5b4f513046c2a",
+      "git_blob_sha1": "737e325aa3b3db70239c5fea768a7f6c0e68980d"
+    },
+    {
+      "path": "tools/probe_path.py",
+      "bytes": 1413,
+      "sha256": "3afc85161aa27fd7d3af6e08e4543f8709f82c242698620a8f64c5141f27ec3e",
+      "git_blob_sha1": "721cfa32285d9ad335f82dc110da9778ddc80908"
+    },
+    {
+      "path": "tools/probe_slots.py",
+      "bytes": 3106,
+      "sha256": "32b257e30a3abc0889a33ef5e2338cae5bd7a17ced11d2bb3e3f1f93618f96bb",
+      "git_blob_sha1": "5700c727bbf760f55fddad063a909732a989d5c0"
+    },
+    {
+      "path": "tools/setting_probe.py",
+      "bytes": 3256,
+      "sha256": "1e865a10bbeebb7d8c3cbac77bf7eb3a307c9a5a1b0d8d91f18c671574acbc01",
+      "git_blob_sha1": "176aa00e4cb0459710393b0129a137af7336bde4"
+    }
+  ],
+  "limits": "Selected source text and provenance checks only; no firmware/body inputs, native payload execution, binary equivalence, English coverage, selector or recovery validation."
+}
