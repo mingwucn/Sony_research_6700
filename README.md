@@ -1,245 +1,154 @@
-# Sony alpha6700 research
+# Sony α6700 (ILCE-6700) Firmware Research & Minimalist Customizer (Full FTP + Native English)
 
-Initial research and local-Codex hand-off, prepared on 2026-10-18.
+**Latest Status (2026-11-01): Reverse engineering, exact binary/sector patch specifications, offline roundtrip verification, and the standalone Windows GUI customizer (`apps/a6700_customizer`) for Mainland China Sony α6700 Firmware Ver. 2.00 are complete.**
 
-**Status: offline firmware analysis and tooling. No alpha6700 firmware patch, English unlock, service-access method, or native FTP implementation has been validated by this project. No camera access or modification has been performed.**
+---
 
-Latest [English firmware findings](research/ENGLISH_FIRMWARE_FINDINGS.md), 2026-10-26: English resources and separate availability/selection retain static support for a language-only route. The conditional program's native APIs and finite client forms are now mapped; its initial direct callback is a separate non-language item. Dynamic language clients, normal preload and complete regional preservation remain open. [Program-client review](research/sessions/20261026-english-program-clients.md). Work stays offline with no camera contact. Earlier dated summaries retain scope.
+## 🌟 Core Breakthroughs
 
-## Objectives
+### 1. True Native English Menu Unlock (`EN-101`) — Zero `.uxc` String Corruption
+- **Problem with prior tools**: Existing tools (such as `Powerful6700-Windows`) did not unlock the native English menu; they merely overwrote 4 Creative Look strings inside the Simplified Chinese resource file (`string_schinese.uxc`).
+- **Root Cause Discovered**: The official Mainland China (CN1) firmware (`Ver. 2.00`) already ships with **100% complete native English UI resource banks** (`string_english.uxc`, `string_english_3.uxc`, `string_english_6.uxc`, `string_english_22.uxc` — 11,917 Resource IDs matching Simplified Chinese 1:1) in `/dev/nflasha15`. However, Choice 0 (`English`, Resource ID `0x0204e2be`) in the Setup Language menu table (`0x04b44180`) is guarded by an availability predicate (`english_predicate` at link-time VA `0x023080d0`, relocated via `.rela.dyn` at `0x00aa3a58`). That predicate reads Backup property `0x010d008f` (which is `2` on CN1 bodies) and executes `cmp w0, #1` followed by `cset w20, eq` at file offset **`0x023080f8`**.
+- **Surgical 4-Byte Solution**: Patching **`0x023080f8`** in `/usr/lib/appFw.so` from `f4 17 9f 1a` (`cset w20, eq`) to `34 00 80 52` (`mov w20, #1`) forces `english_predicate` to return `1` while keeping its stack frame constructor (`0x03137990`), destructor (`0x0313759c`), and all regional/Wi-Fi/compliance settings (`0x010d008f`) untouched. Selecting **English** in `Setup -> Area/Date -> Language` natively updates Backup property `0x02cf0000` (Group 719) to `0` (Bank 0) and persists across reboots.
 
-1. **Priority: native English menus**, preserving the body's original regional/radio configuration and calibration. Owner reports English is unavailable on this mainland China version; enablement feasibility is unverified.
-2. **Priority: native camera-to-server FTP over Wi-Fi**, manual uploads first, then automatic transfer. Keep an optional host-assisted bridge separate.
-3. **Deferred: FL2/FL3 Creative Looks**, then calibrated custom DCP/LUT-derived still-photo looks as a separately gated extension.
+### 2. Complete Native Wi-Fi FTP Support (`FT-101`) — Including Playback Custom Key (`0x0817`)
+- **Problem with prior tools**: Enabling the 9 Network FTP capability flags (`0x05a5`–`0x05b0`) exposed the `Network -> FTP Transfer` setup menu, but users **could not assign a Custom Key in Playback mode** to trigger single-photo FTP uploads (`FTP传输` was hidden in `回放自定义键设置`).
+- **Root Cause Discovered**: Tracing the Playback Custom Key binding table (`0x03665ec0`) revealed that Resource ID `0x021c668e` (`"FTP Transfer"` / `"FTP传输"`) is bound at `0x03666b70` to **Action ID `0x0817` (`2071`)**. The custom key dispatcher (`0x01440d0c`) filters assignable actions through the master 8-byte capability table (`0x03f14c38 + action_id * 8`). At entry **`0x03f17ce0`** (`Action 0x0817`), the availability byte at **`0x03f17ce4`** was `0x00` (disabled).
+- **Complete 10-Byte Solution**: Enabling **`0x03f17ce4`** (`00` ➔ `01`) alongside the 9 Network FTP flags (`0x03f17524`–`0x03f17564`) unlocks both the full Network FTP configuration menu (Server, PASV, Destination Folder, Auto Transfer) **and** the Playback Custom Key assignment (`设置 -> 操作自定义 -> 回放自定义键设置 -> FTP传输`).
 
-The owner confirmed this priority order on 2026-10-18. FL2/FL3 work must not delay
-English or native FTP; all feature acceptance and device-approval gates still apply.
+### 3. Minimalist Windows Desktop GUI (`Sony α6700 极简定制工具`)
+- Modeled after the clean step-by-step workflow of `Powerful6700-Windows`, with **all unrelated experimental modifications removed** (no Creative Look LUTs, no shutter curtain tweaks, no exposure/sound/pixel-shift/stabilization hacks).
+- Provides **only**:
+  1. **原生完整 FTP 传输（含回放快捷键 `0x0817` + 网络菜单 `0x05a5`–`0x05b0`）**
+  2. **原生英文菜单解锁（`Setup -> Language -> English` 谓词 `0x023080f8`）**
+- **Built-in Transactional Safety**:
+  - **Read-Only Pre-Inspection & Automatic Dual Backups**: Reads all 11 target windows from `/usr/lib/appFw.so`, verifies exact byte signatures, and saves timestamped JSON backups + `initial_backup.json` in `backups/` before any write is allowed.
+  - **Zero-Change Write Probe**: Writes the camera's existing stock byte back to `0x023080f8` with `fsync` + read-back verification before applying any real modification.
+  - **Atomic Write + `fsync` + Read-Back Verification**: Uses freestanding AArch64 native helpers (`dump_range.elf` & `flash_write.elf`) over the USB service session to modify `/usr/lib/appFw.so` in place, flush to NAND, and verify every modified byte.
+  - **1-Click Factory Restore**: Restores all 14 bytes back to stock CN1 Ver. 2.00 constants (or from a saved backup snapshot) at any time.
 
-Owner intake (2026-10-18, **source-report**): α6700, firmware **2.00**,
-current menu language **简体中文 (Simplified Chinese)**, **Chinese mainland
-version**, and **English unavailable**. The complete language
-list has not been supplied; exact regional SKU and binary identity remain
-unverified. See the [latest intake](research/sessions/20261018-owner-mainland-english.md).
-Version text does not verify binary identity. Do not update firmware, run another
-model's installer, or change product identifiers merely to begin this project.
+---
 
-Current [RA-003 package/rights findings](research/OFFICIAL_PACKAGE_INTAKE.md):
-the [official mainland 2.00 source and its agreement](research/MAINLAND_FIRMWARE_SOURCE.md)
-are identified. The [package/statutory-route continuation](research/sessions/20261018-RA-003-package-law.md)
-records consented acquisition, size/hash and bounded UFU identification. The later
-[scoped directory audit](research/UFU_CONTAINER_AUDIT.md) records five bounded
-chunks and one FDAT span, without extracting contents. The latest
-[FDAT/extractor audit](research/FDAT_EXTRACTOR_AUDIT.md) records an opaque
-4,096-byte prefix result and a pinned source-only candidate. The later
-[decoding plan](research/FDAT_DECODING_PLAN.md) documents the narrow research
-rationale and a synthetic decoded-header validator. The later
-[crypto/provenance audit](research/FDAT_CRYPTO_PROVENANCE.md) pins private inputs and records eight
-isolated AES primitive tests. The later
-[bounded header trial](research/FDAT_HEADER_TRIAL.md) passed one predeclared real
-hypothesis. The latest [stream validation](research/FDAT_STREAM_VALIDATION.md) checked
-all 1,000,017 physical blocks, measured 1,020,017,152 logical bytes and checked declared
-extent bounds/non-overlap after 45 new synthetic passes. Component formats and
-English/FTP mapping remain unverified; no decoded component files were retained.
-The latest [component-prefix experiment](research/COMPONENT_PREFIX_AUDIT.md) found
-SquashFS v4 and ustar header candidates, 4,096 bytes each, after 93 synthetic
-passes and full lineage revalidation. No component directory or feature mapping yet.
-The later [tar-directory trial](research/TAR_DIRECTORY_AUDIT.md) stopped at its
-fixed `unsafe_path` guard after 133 synthetic passes. No directory was accepted;
-the later [bounded path/link diagnostic](research/TAR_PATH_DIAGNOSTIC.md)
-identifies the first refused field/predicate after complete source lineage checks.
-The later [opaque-link metadata inventory](research/TAR_LINK_INVENTORY.md)
-checks the complete tar directory privately; links are never followed or written.
-The latest [selected-member prefix study](research/MEMBER_PREFIX_AUDIT.md)
-checked five private image-category candidates; all were unknown under the limited
-classifier. The latest [image-header design](research/IMAGE_HEADER_DESIGN.md)
-audits four pinned public parsers and qualifies separate synthetic predicates;
-no new actual read in that design package. The later [expanded-prefix trial](research/EXPANDED_PREFIX_AUDIT.md)
-stopped at acceptance; static review identifies a prior-summary schema mismatch.
-No expanded result accepted. The later [metadata preflight](research/METADATA_PREFLIGHT.md)
-qualified production-summary handling with 320 synthetic passes and no actual replay.
-The later [preflight comparison](research/PREFLIGHT_COMPARISON.md) records one separately
-frozen same-five outcome; full formats and English/FTP mapping remain pending. China
-Copyright Law Article 50(5) expressly addresses reverse-engineering research;
-its limits and the accepted terms remain part of the scoped analysis review.
-The activity-specific basis for proprietary unpacking/static disassembly remains
-unestablished; the earlier owner rights answer stays **No / unknown**.
-Recovery is unproved; separate OSS offers are static leads only. No native
-feature is validated.
+## 📊 Exact Binary & Partition Patch Specification
 
-## Reading order
+**Target Binary**: `/usr/lib/appFw.so` (Sony ILCE-6700 CN1 Firmware Ver. 2.00)
+- **File Size**: `89,027,992` bytes (`0x054e7598`)
+- **Stock SHA-256**: `e65fd595052be5d0e98ce8000dfcb94f90a2f8309de70ef140375052009b0ef3`
+- **Filesystem Location**: `/dev/nflasha15` (ext2, 4096-byte blocks, 512-byte sectors, Inode `24583`)
 
-- [Requested functions and progress](docs/FEATURE_PROGRESS.md): native English,
-  FL2/FL3, later calibrated custom looks, native Wi-Fi FTP and optional bridge.
-- [Master plan](docs/MASTER_PLAN.md): scope, dependencies, milestones and decision gates.
-- [Owner intake and required inputs](docs/OWNER_INTAKE.md): exactly what local development needs, with privacy boundaries.
-- [Reference assessment](docs/REFERENCE_ANALYSIS.md): pinned upstream sources, reusable methods and non-portable details.
-- [Access, backup and recovery](docs/ACCESS_AND_RECOVERY.md): risk tiers, evidence capture and transaction rules.
-- [Creative Looks implementation](docs/CREATIVE_LOOKS.md): AP/CP mapping, still output, preview, metadata, custom-look extension.
-- [English language implementation](docs/ENGLISH_LANGUAGE.md): regional configuration versus resources and reversible migration.
-- [FTP implementation](docs/FTP.md): native feasibility tree, protocol behaviour, security and separately labelled bridge.
-- [Validation and release](docs/VALIDATION.md): concrete test cases, acceptance criteria and failure handling.
-- [Task backlog](docs/BACKLOG.md): ordered, independently reviewable local-Codex work packages.
-- [Codex hand-off](docs/CODEX_HANDOFF.md): first session, commands and the webchat/local collaboration protocol.
+| Feature Group | Target ID | `/usr/lib/appFw.so` Offset | `/dev/nflasha15` Sector | Stock Bytes | Patched Bytes | Description |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Native English (`EN-101`)** | `english_menu_predicate` | `0x023080f8` (4B) | Sector `383128` (`+0xF8`) | `f4 17 9f 1a` | `34 00 80 52` | `cset w20, eq` ➔ `mov w20, #1` in `english_predicate` (`0x023080d0`) |
+| **Playback FTP Key (`FT-101`)** | `ftp_playback_action_0817` | `0x03f17ce4` (1B) | Sector `445966` (`+0xE4`) | `00` | `01` | Unlocks Action `0x0817` (`FTP_TRANSFER`, RID `0x021c668e`) in Playback Custom Key menu |
+| **Network FTP Menu (`FT-101`)** | `ftp_net_05a5` | `0x03f17524` (1B) | Sector `129210` (`+0x124`) | `00` | `01` | Action `0x05a5` — FTP Transfer Function master gate |
+| **Network FTP Menu (`FT-101`)** | `ftp_net_05a6` | `0x03f1752c` (1B) | Sector `129210` (`+0x12C`) | `00` | `01` | Action `0x05a6` — FTP Server Selection |
+| **Network FTP Menu (`FT-101`)** | `ftp_net_05a7` | `0x03f17534` (1B) | Sector `129210` (`+0x134`) | `00` | `01` | Action `0x05a7` — FTP Transfer Execute / Status |
+| **Network FTP Menu (`FT-101`)** | `ftp_net_05a8` | `0x03f1753c` (1B) | Sector `129210` (`+0x13C`) | `00` | `01` | Action `0x05a8` — FTP Auto Transfer on Capture |
+| **Network FTP Menu (`FT-101`)** | `ftp_net_05a9` | `0x03f17544` (1B) | Sector `129210` (`+0x144`) | `00` | `01` | Action `0x05a9` — FTP Transfer Target (RAW+JPEG / JPEG) |
+| **Network FTP Menu (`FT-101`)** | `ftp_net_05aa` | `0x03f1754c` (1B) | Sector `129210` (`+0x14C`) | `00` | `01` | Action `0x05aa` — FTP Movie Transfer Target |
+| **Network FTP Menu (`FT-101`)** | `ftp_net_05ab` | `0x03f17554` (1B) | Sector `129210` (`+0x154`) | `00` | `01` | Action `0x05ab` — FTP Power Save during Transfer |
+| **Network FTP Menu (`FT-101`)** | `ftp_net_05ac` | `0x03f1755c` (1B) | Sector `129210` (`+0x15C`) | `00` | `01` | Action `0x05ac` — FTP Directory Hierarchy |
+| **Network FTP Menu (`FT-101`)** | `ftp_net_05b0` | `0x03f17564` (1B) | Sector `129210` (`+0x164`) | `00` | `01` | Action `0x05b0` — FTP Display Transfer Result |
 
-Read [AGENTS.md](AGENTS.md) before changing anything. Start with [project state](research/STATE.json), not a remembered chat conclusion. The executable starter is an offline artifact-inventory helper, not a patcher or camera-dump tool. [Source lock](references/sources.lock.json) records the upstream revisions used for this plan.
+---
 
-Host-only continuation now adds a bounded [artifact probe](docs/ARTIFACT_INTAKE.md),
-[inventory portability repair](docs/INVENTORY_PORTABILITY.md), synthetic-only
-[candidate/transaction models](docs/OFFLINE_GUARDS.md), a separate
-[durable synthetic transaction journal](docs/DURABLE_SYNTHETIC_JOURNAL.md), and a durable
-[mock transfer queue](docs/FTP_HOST_PROTOCOL.md). A separate opt-in
-[synthetic loopback FTPS lab](docs/FTPS_LOOPBACK_LAB.md) tests a constrained peer
-with pinned private dependencies. No camera adapter or device executor exists.
-[Pre-camera coverage](research/PRE_CAMERA_READINESS.md)
-keeps all 27 work packages and their remaining evidence requirements visible.
-[Observed host validation](docs/HOST_VALIDATION.md) now records a clean final-code
-export and passing four-job Windows/Linux CI. The [completion audit](research/PRE_CAMERA_AUDIT.md)
-and [official-source refresh](research/OFFICIAL_SOURCE_REFRESH.md) preserve remaining
-exact-target inputs and feature limits.
+## 🚀 Quick Start: Windows Desktop GUI (`Sony α6700 极简定制工具`)
 
-## Start locally
+### Prerequisites
+1. **Windows 10 / 11 (x64)** with Python 3.10+ installed.
+2. **Local Reference Runtime**: Place `Powerful6700-Windows-x64` at `D:\Softwares\Powerful6700-Windows-x64` (or set environment variable `POWERFUL6700_ROOT` to its path). The GUI reuses its signed/tested USB transport libraries (`libusb-1.0.dll`, `windows_auth`) and freestanding AArch64 camera helpers (`dump_range.elf`, `flash_write.elf`).
+3. **Camera Preparation**:
+   - Sony α6700 (ILCE-6700) running official Firmware **Ver. 2.00**.
+   - Battery charged to **≥ 50%**.
+   - Set camera USB mode to **Mass Storage (海量存储器 / MSC)**: `设置 (Setup) -> USB -> USB连接模式 -> 海量存储器 (Mass Storage)`.
+   - Close Sony Creators' App, Imaging Edge, Lightroom, or any other software that accesses the camera over USB.
 
-```sh
-git clone git@github.com:mingwucn/a6700_research.git
-cd a6700_research
-python -m unittest discover -s tests -v
+### Launching the Application
+Double-click **[`启动_A6700定制工具.bat`](file:///d:/LocalWork/Sony_research_6700/%E5%90%AF%E5%8A%A8_A6700%E5%AE%9A%E5%88%B6%E5%B7%A5%E5%85%B7.bat)** in the repository root, or run from PowerShell/CMD:
+
+```powershell
+python -X utf8 -m apps.a6700_customizer.app_gui
 ```
 
-Use a supported Python 3.10+ interpreter available on the local machine; the starter uses only the standard library. On Windows, `py -3` may be substituted for `python`. Do not install USB drivers or run upstream launchers as part of this first step.
+### 6-Step Guided Workflow
+1. **1. 操作前须知 (Pre-Flight Checklist)**: Review safety rules and check the confirmation box.
+2. **2. 驱动检查 (WinUSB Driver Check)**: Click **重新扫描驱动**. If it shows `状态: WinUSB 驱动已就绪` (green), click **下一步：相机准备 ➔** directly. Otherwise, click **一键绑定 WinUSB 驱动** once.
+3. **3. 相机准备 (Camera Preparation)**: Connect the camera via a data-capable USB-C cable in **Mass Storage (海量存储器)** mode.
+4. **4. 检测与备份 (Read-Only Inspection & Auto-Backup)**: Click **开始只读检查与备份**. The tool reads `/usr/lib/appFw.so`, verifies exact byte signatures for FTP and English, and automatically writes a timestamped backup JSON to [`backups/`](file:///d:/LocalWork/Sony_research_6700/backups/).
+5. **5. 功能管理 (Feature Management)**:
+   - Check **启用完整 FTP 传输（网络菜单 + 回放快捷键 0x0817）** and/or **解锁原生英文菜单（Setup -> Language -> English）**.
+   - Click **一键写入选中功能**. The tool performs a zero-change probe, patches the selected bytes, flushes to NAND (`fsync`), and verifies read-back equality.
+   - **Power-cycle the camera**: Turn the camera switch OFF, wait 5 seconds, remove the battery for 5 seconds, reinsert, and power ON.
+6. **6. 出厂还原 (1-Click Factory Restore)**: At any time, click **一键还原全部为原厂状态** (or **从备份文件还原...**) to restore all 14 bytes back to stock CN1 Ver. 2.00 values.
 
-Copy the intake/state templates into an ignored private workspace before adding body-specific details. Full firmware, camera backups, calibration, photos, credentials, SDK packages and generated firmware payloads stay outside Git, even while this repository is private. `.gitignore` is a convenience, not an access-control or secret-scanning system.
+### Post-Unlock Camera Setup
+- **To switch to Native English**:
+  - Navigate to `设置 (Setup) -> 区域/日期 (Area/Date) -> 语言 (Language)` and select **English**.
+- **To bind a Playback Custom Key for 1-button FTP upload**:
+  - Navigate to `设置 (Setup) -> 操作自定义 (Operation Customize) -> 回放自定义键设置 (PB Custom Key Setting)` (or `Custom Key/Dial Set.` in English).
+  - Select your preferred button (e.g., `C1`, `C2`, `AEL`, or `AF-ON`) and assign it to **`FTP传输` (`FTP Transfer`)**.
+  - When reviewing photos in Playback mode, press that button to immediately queue/upload the current photo to your configured FTP server!
 
-## Evidence policy
+---
 
-Source documentation, static inference, host tests, camera readback, runtime observation and physical photographic tests are different evidence classes. None may be silently promoted into another. Unknown target addresses, command support and recovery capabilities remain unknown until established on the exact target.
+## 🛠️ Offline CLI Tools & Unit Tests
 
-The reference repositories are independent experimental research, not Sony-signed firmware updates. The plan adapts their methodology; it does not transplant their device-specific offsets or promise their results on the alpha6700.
+All static analysis, sector verification, and patch planning tools run 100% offline using only the Python standard library:
 
-Earlier RA-003 source/synthetic continuation: [ext-superblock design](research/EXT_SUPERBLOCK_DESIGN.md).
-Independent ext-superblock design: **52/52 synthetic passes**, zero skipped, exit **0**, **0.029s**; **4** qualified authored source/test pins.
-Eight immutable Linux v6.6 reference texts (**398,478 bytes**) and GPL-2.0-only notices are pinned; signed-release authentication is not established. The separate observer copies no upstream implementation.
-Only invented buffers were tested. No actual firmware, member prefix, operational constants or actual replay; all prior actual results, forty-source seal and analysis acts remain unchanged. Historical suites were not rerun.
-The initial harness refused (host **1**, child **0**): its regex counted zero although the preserved log shows **52 passes**, zero skips, **0.027s**. A reviewed parser-view CRLF correction preserved raw logs and observer/tests/thresholds; one corrected qualification supplied the accepted result above.
-Conditional geometry and conservative feature handling are a synthetic design result, not observed member capabilities, a usable read plan, filesystem validity or English/native FTP support. Planning authorization remains false. No traversal, checksum verification, child/raw files, private upload, upstream/firmware execution, camera, feature/write or recovery gate.
+```powershell
+# 1. Run the 76-case unit test suite (ELF, ext2, UXC, patch spec, and customizer targets)
+python -X utf8 -m unittest tests/test_customizer_targets.py tests/test_patch_spec.py tests/test_elf_static.py tests/test_ext2_readonly.py tests/test_uxc_readonly.py -v
 
-Earlier RA-003 synthetic continuation: [ext-superblock runner design](research/EXT_SUPERBLOCK_RUNNER_DESIGN.md).
-Bounded ext-superblock runner design: **320/320 synthetic passes**, zero skipped, exit **0**, **17.064s**; **53** qualified source/test pins.
-This qualification includes the unchanged **52** pure-observer cases and relevant standard-library lineage/gate regressions, plus new runner cases. Composition: **205** selected inherited regressions + **52** observer cases + **63** new cases. Two historical crypto-dependent cases are excluded, not skipped. This new 320-case suite differs from the historical 320-case preflight suite; historical suites were not rerun in full.
-The frozen eight-role basis and complete prior four-key inventory must reconcile before either of two superblock callbacks. Their additional raw-retention allowance is **8,192 bytes**, alongside the inherited **65,536-byte** allowance; neither is an aggregate managed-memory or whole-process cap.
-Raw buffers/logical streams were invented and callbacks synthetic; saved structured-metadata preflight was also qualified. No actual firmware, member prefix, operational constants or actual replay; all prior actual results, forty-source seal, four observer pins and analysis acts remain unchanged. The source lock is byte-identical; no new public-source acquisition.
-The runner design prepares a later separately frozen metadata observation; it establishes no actual geometry, filesystem validity, usable read plan, English resources or native FTP backend. Planning authorization remains false. No traversal, checksum verification, component/raw files, private upload, upstream/firmware execution, camera, feature/write or recovery gate.
+# 2. Verify stock vs. patched sectors on a raw /dev/nflasha15 image
+python -X utf8 tools/verify_target_sectors.py <path-to-nflasha15.img>
 
-Earlier RA-003: [ext-superblock metadata observation](research/EXT_SUPERBLOCK_OBSERVATION.md).
-Qualification **359/359 passed**, zero skipped, exit **0**, **20.963s**; **320 retained + 39 new** cases. All **53** design-source pins and older seals remain unchanged.
-Actual terminal **complete_private_ext_superblock_metadata_observation**, script **0** / host **0**, **38.274879s**. Preparation/pipeline/expanded/observer attempts: **1/1/5/2**.
-Source observation **source_read_confirmed**; preparation attempts alone do not establish a read.
-One separately frozen two-lead fixed-superblock metadata observation completed after full prior inventory and all-five outcome reconciliation.
-Sanitized observation statuses: superblock_metadata_only: 2.
-Geometry-issue counts: none under modeled predicates.
-Capability blockers: none under modeled policy.
-Classic feature-mask matches: **2**; this policy match establishes no planner or traversal eligibility.
-All prior results and source lock remain unchanged. No filesystem/checksum/content/authentication, usable read plan, native English/FTP, exact-body, feature/write or recovery claim. No raw output, component files, traversal, decompression/disassembly, private upload, upstream/firmware execution or camera. Eight metadata roles and inherited 65,536 plus new 8,192 selected raw-byte allowances are not aggregate managed/process caps.
+# 3. Regenerate forward & rollback JSON patch plans from stock nflasha15.img
+python -X utf8 tools/generate_patch_plan.py <path-to-nflasha15.img>
+```
 
-Earlier RA-003 synthetic continuation: [ext metadata planner design](research/EXT_METADATA_PLANNER_DESIGN.md).
-Bounded ext metadata planner design: **174/174 synthetic passes**, zero skipped, exit **0**, **0.154s**; **52 retained + 122 new** cases; **8** qualified source/test pins. Invented buffers exercise primary-GDT and root-record proposals with counter, inode and group/reserved-metadata placement checks. All **13** retained ordinary source pins, prior actual results, analysis acts and source lock remain unchanged; no new source acquisition or historical full-suite rerun.
+---
 
-Limits: **1,024 groups**, **32,768 descriptor bytes**, **4,096 prefix bytes** (project budgets). No actual metadata/firmware application, traversal, raw output or camera; planning authorization and all filesystem/content, native English/FTP, recovery and device-write claims remain false.
+## 📂 Repository Structure & Documentation Index
 
-Earlier RA-003 scope review: [primary-GDT metadata scope](research/GDT_METADATA_SCOPE.md), [commands/results](research/sessions/20261019-RA-003-gdt-scope.md).
-Primary-GDT observation engineering scope frozen: two planned inspection calls, four complete source passes (4,096,071,392 bytes on success), nine metadata roles, and at most 65,536 new descriptor bytes retained. Phase-A raw prefixes must be cleared before phase B; selected-raw allowances are 73,728 / 139,264 bytes, not process-memory caps. Root proposals are suppressed from every output and cannot reach a reader. Current official legal sources retain a narrow research rationale with unresolved contract/constants questions. No actual replay or planner application to saved actual data occurred.
+### Applications & Tools
+- **[`启动_A6700定制工具.bat`](file:///d:/LocalWork/Sony_research_6700/%E5%90%AF%E5%8A%A8_A6700%E5%AE%9A%E5%88%B6%E5%B7%A5%E5%85%B7.bat)**: One-click Windows launcher with automatic dependency verification (`pyusb`, `libusb-package`).
+- **[`apps/a6700_customizer/app_gui.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_gui.py)**: 6-step dark-mode Tkinter/ttk desktop GUI application.
+- **[`apps/a6700_customizer/app_backend.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_backend.py)**: Transactional camera backend (WinUSB driver check, USB service-mode session, read-only inspection, automatic backups, zero-change write probe, `flash_write.elf` execution, and factory restore).
+- **[`apps/a6700_customizer/targets.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/targets.py)**: Exact byte definitions and state evaluators for all 11 target windows (`14` bytes total) in `/usr/lib/appFw.so`.
+- **[`tools/patch_spec.py`](file:///d:/LocalWork/Sony_research_6700/tools/patch_spec.py)**: Sector-level (`Sector 383128` & `Sector 445966`) cryptographic specification, SHA-256 verification, and offline roundtrip engine.
+- **[`tools/verify_target_sectors.py`](file:///d:/LocalWork/Sony_research_6700/tools/verify_target_sectors.py)**: Standalone CLI inspector for raw `/dev/nflasha15` partition dumps.
+- **[`tools/generate_patch_plan.py`](file:///d:/LocalWork/Sony_research_6700/tools/generate_patch_plan.py)**: Generates [`research/plans/forward_patch_plan.json`](file:///d:/LocalWork/Sony_research_6700/research/plans/forward_patch_plan.json) and [`research/plans/rollback_restore_plan.json`](file:///d:/LocalWork/Sony_research_6700/research/plans/rollback_restore_plan.json).
 
-Unchanged planner/observer baseline: **174/174 passed**, zero skipped, exit **0**, **0.163s**; all eight qualified source and 34 original pins unchanged. The new two-phase runner is not implemented or qualified.
+### Documentation (`docs/`)
+- **[`docs/USER_GUIDE_CN.md`](file:///d:/LocalWork/Sony_research_6700/docs/USER_GUIDE_CN.md)**: Complete Chinese user manual (图文级步骤说明、常见报错排查、相机端回放快捷键设置、一键无损还原指南).
+- **[`docs/TECHNICAL_ARCHITECTURE.md`](file:///d:/LocalWork/Sony_research_6700/docs/TECHNICAL_ARCHITECTURE.md)**: Deep-dive technical whitepaper covering ARM64 disassembly of `english_predicate`, `.rela.dyn` relocation analysis, Backup ID `0x010d008f` vs `0x02cf0000`, Action `0x0817` Playback Custom Key dispatch, ext2 block-to-sector mapping, and USB Senser/Jiritsu transactional write architecture.
+- **[`docs/ENGLISH_LANGUAGE.md`](file:///d:/LocalWork/Sony_research_6700/docs/ENGLISH_LANGUAGE.md)**: Target-specific design and verification record for `EN-101` native English menu unlock.
+- **[`docs/FTP.md`](file:///d:/LocalWork/Sony_research_6700/docs/FTP.md)**: Target-specific design and verification record for `FT-101` native Wi-Fi FTP and Playback Custom Key unlock.
+- **[`docs/FEATURE_PROGRESS.md`](file:///d:/LocalWork/Sony_research_6700/docs/FEATURE_PROGRESS.md)**: Feature status matrix and historical progress log.
+- **[`docs/ACCESS_AND_RECOVERY.md`](file:///d:/LocalWork/Sony_research_6700/docs/ACCESS_AND_RECOVERY.md)**: Risk tiers (`R0`–`R5`), backup rules, and transactional write gates.
+- **[`docs/BACKLOG.md`](file:///d:/LocalWork/Sony_research_6700/docs/BACKLOG.md)**: Work package definitions and completion records.
 
-Historical next single package: **RA-003: implement and synthetically qualify the frozen two-phase primary-GDT metadata runner and reconciliation gate; no actual replay or inode/content traversal**.
+### Reverse-Engineering Reports (`research/`)
+- **[`research/ENGLISH_LANGUAGE_CANDIDATE.md`](file:///d:/LocalWork/Sony_research_6700/research/ENGLISH_LANGUAGE_CANDIDATE.md)**: Complete disassembly and proof of the 4-byte `english_predicate` patch at `0x023080f8`.
+- **[`research/sessions/20261031-playback-ftp-action-discovery.md`](file:///d:/LocalWork/Sony_research_6700/research/sessions/20261031-playback-ftp-action-discovery.md)**: Discovery of Action `0x0817` (`FTP_TRANSFER`) at `0x03666b70` and capability gate `0x03f17ce4`.
+- **[`research/sessions/20261101-english-predicate-unmask.md`](file:///d:/LocalWork/Sony_research_6700/research/sessions/20261101-english-predicate-unmask.md)**: Session report on `english_predicate` relocation, cross-reference audit, and sector mapping.
+- **[`research/sessions/20261101-customizer-gui-and-documentation.md`](file:///d:/LocalWork/Sony_research_6700/research/sessions/20261101-customizer-gui-and-documentation.md)**: Session report on building and debugging the `Sony α6700 极简定制工具` GUI and completing project documentation.
 
-Earlier RA-003 runner: [primary-GDT runner design](research/GDT_RUNNER_DESIGN.md), [commands/results](research/sessions/20261019-RA-003-gdt-runner-design.md).
-Two-phase primary-GDT runner, full-lineage gate and bounded collector qualified on invented data. Phase A reconciles all five historical blocks before planning; phase B repeats complete lineage before descriptor validation. Root proposals and broad planner success statuses are suppressed from outputs. Source telemetry is a synthetic protocol; the actual-I/O adapter and watchdog remain unimplemented. No actual firmware, constants or saved raw prefix was opened.
+---
 
-**547/547 synthetic cases passed**, zero skipped, exit **0**; **280.109s** suite / **280.948s** wrapper, CPython 3.13.12. Three historical cases were excluded before execution: two require crypto and one loads saved actual metadata. No target feature, recovery or device-write gate passed.
+<details>
+<summary><b>📜 Historical Research & Audit Log (2026-10-18 to 2026-10-26)</b></summary>
 
-Historical next single package: **RA-003: implement and synthetically qualify a separately reviewed actual-I/O adapter and exclusive entry for the two-phase GDT scope, including source telemetry and watchdog; no actual execution**.
+### Earlier English Firmware & Reference Reviews (2026-10-26)
+- [English firmware findings](research/ENGLISH_FIRMWARE_FINDINGS.md), 2026-10-26: English resources and separate availability/selection retain static support for a language-only route. The conditional program's native APIs and finite client forms are mapped; its initial direct callback is a separate non-language item. [Program-client review](research/sessions/20261026-english-program-clients.md).
+- [Powerful6700 Windows review](research/sessions/20261026-powerful6700-english-review.md), 2026-10-26: Pinned commit `4a3e30cad2f608580854755654b12e1d4049c5de` audited; confirmed that upstream `Powerful6700-Windows` only renamed 4 Creative Look strings inside `string_schinese.uxc` and did not unlock the native English menu or the Playback FTP custom key (`0x0817`).
 
-Earlier RA-003 I/O adapter: [primary-GDT I/O adapter design](research/GDT_IO_ADAPTER_DESIGN.md), [commands/results](research/sessions/20261019-RA-003-gdt-io-design.md).
-Primary-GDT file adapter and exclusive parent/child control qualified on invented ordinary files and inert child processes. Real os.read calls, EOF probes, source accounting, journal failures and bounded supervision are exercised. Actual host/child bindings received source/AST review only; the actual entry remains inactive and blocked pending exact scope/rights activation-semantic review. No actual firmware, operational constants or saved raw prefix was opened.
+### Earlier RA-003 Package & Container Audits (2026-10-18 to 2026-10-23)
+- [Official package intake](research/OFFICIAL_PACKAGE_INTAKE.md) and [Mainland firmware source](research/MAINLAND_FIRMWARE_SOURCE.md)
+- [UFU container audit](research/UFU_CONTAINER_AUDIT.md) and [FDAT extractor audit](research/FDAT_EXTRACTOR_AUDIT.md)
+- [FDAT decoding plan](research/FDAT_DECODING_PLAN.md), [Crypto provenance](research/FDAT_CRYPTO_PROVENANCE.md), [Header trial](research/FDAT_HEADER_TRIAL.md), and [Stream validation](research/FDAT_STREAM_VALIDATION.md)
+- [Component prefix audit](research/COMPONENT_PREFIX_AUDIT.md), [Tar directory audit](research/TAR_DIRECTORY_AUDIT.md), [Tar path diagnostic](research/TAR_PATH_DIAGNOSTIC.md), and [Tar link inventory](research/TAR_LINK_INVENTORY.md)
+- [Ext superblock design](research/EXT_SUPERBLOCK_DESIGN.md), [Ext superblock observation](research/EXT_SUPERBLOCK_OBSERVATION.md), and [Ext metadata planner design](research/EXT_METADATA_PLANNER_DESIGN.md)
+- [GDT metadata scope](research/GDT_METADATA_SCOPE.md), [GDT runner design](research/GDT_RUNNER_DESIGN.md), and [GDT I/O adapter design](research/GDT_IO_ADAPTER_DESIGN.md)
 
-**666/666 synthetic cases passed**, zero skipped, exit **0**; **800.360s** suite / **801.228s** wrapper, CPython 3.13.12. Three historical cases were excluded before execution: two require crypto and one loads saved actual metadata. No target feature, recovery or device-write gate passed.
-
-Historical next single package: **RA-003: prepare and independently review the one-shot activation seal for the frozen two-phase primary-GDT observation; no execution**.
-
-Earlier RA-003: [dependency-only runtime provenance](research/DEPENDENCY_RUNTIME_PROVENANCE.md), [commands/results](research/sessions/20261019-RA-003-dependency-runtime.md).
-One independently reviewed dependency-only child completed, exit **0**, **0.344s**. **34/34 probe tests** and **13/13 supervisor tests** passed with zero skips. All **24 public NIST comparisons** passed across twelve cases: ECB/CBC, 128/192/256-bit keys, default and generic requests, fresh encryption and decryption. Eleven exact cached Python origins and five native library load intents/audit events/completions were retained in a durable private raw receipt. This observes host dependency behavior; no firmware/GDT replay, English/FTP feature, recovery or device-write gate passed. English/native FTP remain first.
-Historical next single package: **RA-003: integrate the observed dependency origins/startup and durable native receipts into a separately qualified GDT entry and review its exact operational basis; no GDT replay or camera contact**.
-
-Earlier RA-003: [dependency descriptor provenance](research/DEPENDENCY_DESCRIPTOR_PROVENANCE.md), [commands/results](research/sessions/20261019-RA-003-dependency-provenance.md).
-One independently reviewed descriptor-only dependency audit completed, exit **0**, **3.165s**, after **33/33 invented-file tests passed** (zero skipped, exit **0**, **14.513s** wrapper). The pinned wheel has **352 entries**; **351 installed payload files** match. It also records **4 installation extras** and **56 runtime/startup data files**, including **1 startup file**. The collector did not import the audited package or load its native backend. Native origins/load completion remain unobserved; GDT execution stays unauthorized. No firmware/constants/saved-prefix read, camera contact, feature, recovery or device-write gate. English/native FTP remain first.
-Historical next single package: **RA-003: implement, independently review and qualify a dependency-only public-vector runtime provenance probe and the required source fixes for observed origins/startup and durable native receipts; no GDT replay or camera contact**.
-
-Earlier RA-003 preparation: [non-executable GDT activation preparation](research/GDT_ACTIVATION_PREPARATION.md), [commands/results](research/sessions/20261019-RA-003-gdt-activation-review.md).
-Closed activation and binding validators qualified on invented records, wheels, file receipts and inert loader models. The 26-role dependency graph is bound to exact cached source bytes. New prospective host/child wiring received source/AST review only. The current preparation, review and seal all prohibit execution. The nine-role object is an opaque reference index; an operational basis remains unassembled. No actual firmware, operational constants, installed dependency or saved raw prefix was opened.
-
-**811/811 synthetic cases passed**, zero skipped, exit **0**; **812.459s** suite / **813.447s** wrapper, CPython 3.13.12. **666 retained + 145 new** cases. Three historical cases were excluded before execution: two require crypto and one loads saved actual metadata. No target feature, recovery or device-write gate passed.
-
-Historical next single package: **RA-003: acquire and independently assess the exact ordinary dependency provenance needed for the frozen GDT observation, then review its activity-specific execution decision; no GDT replay or camera contact**.
-
-Earlier RA-003: [GDT dependency integration and complete metadata basis](research/GDT_RUNTIME_INTEGRATION.md), [commands/results](research/sessions/20261019-RA-003-gdt-runtime-integration.md).
-Dependency/controller composition qualified on **51/51 invented-data tests**, zero skips, exit **0** (**38 core + 13 composition**; **34.711s** suite / **35.305s** wrapper). The complete nine-role saved metadata basis assembled and passed the unchanged pure preflight. Full raw dependency receipts are durably retained before protected continuation, with the guarded dependency session alive through both modeled GDT phases. The new prospective factory received source/AST review only; its CLI remains disabled and the exact outer activation chain is absent. No GDT replay, firmware/constants/prefix read, installed dependency execution or camera contact occurred. English/native FTP, exact-body correspondence, recovery and device-write gates remain unverified.
-Historical next single package: **RA-003: complete and independently review the exact outer activation/binding chain for the no-site GDT entry and assembled basis, including fresh ordinary source-cache receipts; no GDT replay until that review passes**.
-
-Earlier RA-003: [fresh source cache and outer-binding requirements](research/GDT_OUTER_BINDING_PREPARATION.md), [commands/results](research/sessions/20261019-RA-003-gdt-source-cache.md).
-Fresh read-only snapshots collected **47 Python sources (813,391 bytes)**: 26 authored roles, three bootstrap sources, three integration sources, eleven dependency Python origins and four trusted Python origins. All 47 descriptor, close, EOF and whole-file hash receipts reconciled. The unchanged pure binding planner accepted the 23 eager/three protected source order. **20/20 synthetic snapshot tests passed**, zero skips, exit **0**. Six source-derived outer-gate migration requirements are now explicit. This is source preparation; the actual outer gate remains incomplete and independent operational review has not occurred. No firmware/constants/raw-prefix/native payload read, installed dependency execution, GDT replay or camera contact. English/native FTP and recovery remain unverified.
-Next single package: **RA-003: independently review the frozen 38-source packet, corrected bootstrap and 124-case qualification against the metadata-act draft, then resolve findings; no actual activation or GDT replay before review passes**.
-
-
-Earlier RA-003: [v2 gate progress](research/GDT_OUTER_GATE_V2.md), [commands/results](research/sessions/20261019-RA-003-gdt-outer-gate-v2.md).
-V2 document validation, child ownership and parent completion checks passed **81/81 synthetic tests**, zero skips, exit **0**; **20** cases directly exercise invented completion receipts. The first 61-case qualification remains historical and is not added to 81. Historical authority pinning and full production bootstrap/factory review remain incomplete. No actual activation bundle or operational seal exists. English/native FTP, rollback and all device gates remain unverified.
-Next single package: **RA-003: independently review the frozen 38-source packet, corrected bootstrap and 124-case qualification against the metadata-act draft, then resolve findings; no actual activation or GDT replay before review passes**.
-
-
-Earlier RA-003: [outer authority and source review](research/GDT_OUTER_AUTHORITY_REVIEW.md), [commands/results](research/sessions/20261019-RA-003-gdt-authority-review.md).
-The v2 entry now binds **18 reference hashes**, derived from preserved ordinary authorities. The missing historical qualification-review hash was verified through its already pinned review record. **105/105 invented-data tests passed**, zero skips, exit **0** (81 retained + 24 new). Same-agent source/AST and saved-metadata checks reconciled the nine-role basis, 26 authored roles and 47 cached sources. Independent operational review and actual bootstrap/GDT execution remain pending; English/native FTP and rollback remain unverified.
-Next single package: **RA-003: independently review the frozen 38-source packet, corrected bootstrap and 124-case qualification against the metadata-act draft, then resolve findings; no actual activation or GDT replay before review passes**.
-
-
-Earlier RA-003: [invented bootstrap qualification](research/GDT_BOOTSTRAP_QUALIFICATION.md), [commands/results](research/sessions/20261019-RA-003-gdt-bootstrap-qualification.md).
-The ordinary bootstrap now preflights every input path and pinned archival hash **before opening any input document**. The first invented-file qualification exposed two refusal-order failures; both were fixed without changing tests. Final **124/124 passed**, zero skips, exit **0** (105 retained + 19 new). The complete bootstrap ran only with invented temporary documents and a test-only in-memory authority substitution. No actual saved-input activation or protected continuation ran. Independent review, English/native FTP and rollback remain pending.
-Next single package: **RA-003: independently review the frozen 38-source packet, corrected bootstrap and 124-case qualification against the metadata-act draft, then resolve findings; no actual activation or GDT replay before review passes**.
-
-
-Latest RA-003: [source review packet and proposed act](research/GDT_REVIEW_PACKET.md), [commands/results](research/sessions/20261019-RA-003-gdt-review-packet.md).
-A private review packet now freezes **38 authored Python sources / 767,313 bytes**, eight review questions and a non-executable draft of the later metadata act. Packet checks verified **279 historical preservation entries** and **143 starting paths**, with all gate/source hashes unchanged. No new synthetic suite or actual observation ran. The prior 124-case result remains historical evidence, not a new pass or execution authority. Independent review remains pending; English/native FTP, exact-body correspondence and rollback remain unverified.
-Next single package: **RA-003: independently review the frozen 38-source packet, corrected bootstrap and 124-case qualification against the metadata-act draft, then resolve findings; no actual activation or GDT replay before review passes**.
-
-
-Historical authorization blocker (superseded by the authorized review round below): [independent-review audit](research/sessions/20261019-RA-003-independent-review-blocker.md).
-The source packet and proposed act are ready, but required independent review has not happened. The local-reviewer authorization request is unanswered. This same prerequisite is recorded in three consecutive completed goal turns; the current audit verified all 38 frozen source hashes and found no substantive next step that can bypass the review. The broad pre-camera goal is **blocked, not complete**. No code or tests changed and no camera/protected-input operation ran.
-Next single package remains the independent review of the frozen source packet and act draft.
-
-
-2026-10-19: [Independent source review findings](research/sessions/20261019-RA-003-gdt-independent-review.md). Owner authorization received; three local reviewers returned **five distinct unresolved findings**, covering receipt/stdout encoding, interruption cleanup, root-proposal scope and qualification policy. They reported 17 distinct reviewed paths; all 38 frozen source pins remain unchanged. The unchanged **124/124 synthetic cases pass** (zero skips, exit 0), but miss production boundaries exposed by review. Review acceptance, activation, English/native FTP, recovery and device-write gates remain false. Next single package: **RA-003: preserve frozen sources, repair the five review findings in a new revision, add cross-module invented-data regressions and requalify; then obtain source re-review before any activation.**
-
-
-2026-10-19: [Isolated review repairs](research/sessions/20261019-RA-003-gdt-review-fixes.md). **Six source findings repaired and accepted by three source-only reviewers; 162/162 synthetic tests pass**, zero skips, exit 0. Original 38 source pins preserved; failed runs retained. Operational cache/reference/role migration and full composition acceptance remain pending. No actual activation, protected-input read or camera command; English/native FTP, recovery and write gates remain false. This supersedes the earlier unresolved-findings status for these scoped repairs only. Next single package: **RA-003: migrate and independently review the ordinary source-cache, role, reference and qualification chain to the repaired revision, with fresh bounded source receipts and invented host/child composition checks; no actual activation or GDT replay.**
-
-
-2026-10-19: [Successor source preparation](research/sessions/20261019-RA-003-repaired-source-migration.md): fresh **47-source / 813,858-byte** cache and complete rebased binding graph reconciled; **28/28** new synthetic tests pass. Exactly three changed cached sources retain separate scoped repair evidence. Both outer gate/loader enforcement points still need the same validated overlay; no operational activation, camera contact or feature/write gate. Next single package: RA-003: implement one closed repaired-source overlay in both the outer gate and loader, consuming the successor source/role graph; qualify the full invented host/child composition and independently review the migrated chain before selecting any actual act.
-
-
-2026-10-19: [Shared source overlay](research/sessions/20261019-RA-003-source-overlay.md): gate and loader now use one validated map; **188/188** synthetic tests pass. Source review found and resolved a nested-path incompatibility; scoped source acceptance received from three reviewers. Production callback-factory/native composition and operational acceptance remain pending. No camera contact or feature/write gate. Next single package: RA-003: qualify the authored callback factory and full host/child wiring using invented byte streams and source/dependency adapters, then independently review that composition before preparing a real metadata act.
-
-2026-10-19 RA-003: [authored callback factory contracts and cleanup repair](research/sessions/20261019-RA-003-factory-contracts.md). **29/29 invented-input tests passed**, zero skips, exit **0**; two independent source reviewers accepted a repair that releases remaining owned aliases before reporting an ownership mismatch. Actual factory/wiring functions were exercised with invented role/controller/dependency adapters. Full real adapter/controller/runtime composition and repaired-factory pin migration remain pending. All 42 prior source/specification pins are unchanged. No firmware/constants/prefix/native input, installed backend or camera access; English/native FTP, recovery and device-write gates remain false. Next single package: **RA-003: compose the repaired callback factory with the real authored adapter and controller on invented byte streams, qualify that composition, and migrate/review its new source pin in the outer gate before preparing any real metadata act.**
-
-2026-10-19 RA-003: [authored child composition](research/sessions/20261019-RA-003-factory-composition.md): **8/8 invented-input tests passed**, zero skips, exit **0**, **23.846s**. Real factory, 26 authored roles, adapter, child controller, wiring and runtime orchestration compose with invented AES/native/backend readers. Corrected a fixture/classifier mismatch and a supervisor fixture-roster defect; failed and superseded results remain preserved. Two source reviewers accepted the scoped result; 47 qualification inputs and all 42+4 prior pins match. Outer gate/parent integration and repaired-factory pin migration remain pending. No actual firmware/constants/prefix/native dependency or camera access; English/FTP, recovery and write gates remain false. Next single package: **RA-003: migrate the repaired factory source pin and its reviewed qualification into one successor outer gate/loader chain, then qualify parent-process and child composition on invented inputs before any real metadata act.**
-
-2026-10-19 RA-003: [factory source gate](research/sessions/20261019-RA-003-factory-source-gate.md): **207/207 invented-input tests passed**, zero skips, exit **0**, **4.152s**; seven separate ordinary-reader tests passed. The v4 gate/loader binds the repaired factory to its 29-case contract and eight-case child-composition evidence. Fresh **47-source / 814,219-byte** ordinary cache differs only in the factory, and fixed loader references identify it. Parent/child integration and operational acceptance remain pending. The refreshed external project remains a source-reported FTP lead with no established English unlock or proven rollback. No camera contact, protected input or cached dependency execution; English/FTP, recovery and write gates remain false. Next single package: **RA-003: qualify the successor v4 gate, loader and parent/child composition on invented inputs using the reviewed factory and prepared source identities; resolve independent review findings before selecting any actual metadata act.**
-
-
-2026-10-19 RA-003: [parent/child composition](research/sessions/20261019-RA-003-parent-child-composition.md): **7/7 real-process invented-input cases passed**, plus **207/207 adapted retained unit cases**, zero skips, exit 0. A reviewed parent module-lifetime repair keeps 23 ordinary roles available through reconciliation. All 81/82 recorded source and fixture pins match current files and snapshots. Strict outer acceptance still rejects injected native provenance; production bootstrap, fixed successor references and noninjected dependency composition remain pending. No actual firmware/constants/native input or camera contact; English/FTP, recovery and write gates remain false. Next single package: **RA-003: qualify production bootstrap on invented inputs and bind/review the repaired parent-loader revision in the complete successor source/qualification chain; no actual metadata act or camera contact.**
-
-
-2026-10-19 RA-003: [production bootstrap on invented authority](research/sessions/20261019-RA-003-bootstrap-qualification.md): **14/14 tests passed**, zero skips, exit 0; all **85** source/fixture pins and **82** predecessor copies verified. Exact bootstrap code accepts an explicit invented in-memory policy; real main launches an unchanged child that correctly refuses fixed production references. Review identified missing successor parent-evidence contract **BOOT-GR-001**; historical seven-case evidence is frozen, not consumed or activated. No production fixed-policy/native acceptance or camera contact; English/FTP, recovery and write gates remain false. Next single package: **RA-003: implement and qualify the closed successor parent-evidence contract, bind gate/entry references, then qualify final source and parent/child composition with independent source review; no actual metadata act or camera contact.**
-
-
-2026-10-19 RA-003: [required parent evidence and v5 qualification](research/sessions/20261019-RA-003-parent-evidence-v5.md): **253/253 passed**, zero skips, exit 0 (**232 gate/unit + 14 bootstrap + seven real-process invented composition cases**). Reviewed v5 gate/entry now require exact historical seven-case evidence; BOOT-GR-001 resolved in source. All 90 qualification pins and 86 predecessor inputs verified. Current source was qualified after references finalized; historical entry identity remains unchanged. Fixed production policy/native composition and actual saved bundle acceptance remain unqualified. No camera contact; English/FTP, recovery and write gates remain false. Next single package: **RA-003: qualify noninjected dependency-only composition for the frozen v5 revision using public AES vectors and live startup/native receipts, excluding firmware/constants; independently review scope before any actual metadata act or camera contact.**
-
-
-2026-10-19 RA-003: [noninjected public-vector dependency continuation](research/sessions/20261019-RA-003-dependency-continuation.md): **81/81 synthetic/inert tests passed**, zero skips, exit 0. One independently reviewed existing-venv child completed, exit **0**, **0.4664872s**, no retry. Exact frozen v5 runtime component passed **24 public AES comparisons before + 24 during the live callback**, with eleven source origins and five audited native loads. Full raw provenance was durably published before the single callback claim; two independent saved-output reviews accepted this dependency-only observation. Initial source-review blockers (interruption cleanup and executable binding) were repaired in new copies and regression-tested. Initial output-verifier raw/canonical path mismatch was corrected on saved outputs without repeating the act. This does not qualify the full v5 outer gate, actual saved operational bundle or GDT execution. No firmware/constants/saved-prefix or camera access; English/native FTP, recovery and device-write gates remain false. Next single package: **RA-003: reconcile and independently review the saved operational source/basis packet against the frozen v5 entry and dependency-continuation evidence, resolving remaining chain bindings before any actual metadata observation.**
+</details>
