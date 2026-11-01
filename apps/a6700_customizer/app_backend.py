@@ -68,10 +68,17 @@ class DeviceBackend:
         except Exception as exc:
             return {"ok": False, "devices": [], "message": f"驱动检查异常: {exc}"}
 
-    def install_driver(self, pid: int = 0x0E76) -> bool:
-        """Trigger WinUSB driver binding via UAC."""
+    def install_driver(
+        self,
+        pids: Optional[List[int]] = None,
+        progress: Callable[[str], None] = lambda m: None,
+    ) -> Dict[str, object]:
+        """Trigger WinUSB driver binding via UAC for supported camera PIDs."""
         try:
-            return driver.install(pid)
+            target_pids = pids if pids is not None else list(driver.SUPPORTED_PIDS)
+            if not isinstance(target_pids, (list, tuple)):
+                target_pids = [target_pids]
+            return driver.install(target_pids, progress=progress)
         except Exception as exc:
             raise BackendError(f"安装驱动失败: {exc}")
 

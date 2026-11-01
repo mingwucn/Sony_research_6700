@@ -311,7 +311,13 @@ class SonyCustomizerApp(tk.Tk):
             btn_row, text="🛠️ 一键绑定 WinUSB 驱动", style="Primary.TButton",
             command=self._do_driver_install
         )
-        self.driver_install_btn.pack(side="left")
+        self.driver_install_btn.pack(side="left", padx=(0, 12))
+
+        self.driver_next_btn = ttk.Button(
+            btn_row, text="下一步：相机准备 ➔", style="Success.TButton",
+            command=lambda: self.show_page("prep")
+        )
+        self.driver_next_btn.pack(side="left")
 
         self.after(500, self._do_driver_scan)
 
@@ -324,17 +330,32 @@ class SonyCustomizerApp(tk.Tk):
         if res["ok"]:
             self.driver_status_lbl.configure(fg="#4ade80")
             self.set_status("驱动已就绪", "#4ade80")
+            if hasattr(self, "driver_next_btn"):
+                self.driver_next_btn.configure(state="normal")
         else:
             self.driver_status_lbl.configure(fg="#f87171")
 
     def _do_driver_install(self):
+        res = self.backend.check_driver()
+        if res.get("ok"):
+            messagebox.showinfo(
+                "驱动已就绪",
+                "当前 WinUSB 驱动已经处于就绪状态（已成功关联 WinUSB 服务）！\n\n"
+                "无需重复安装，您可以直接点击「下一步：相机准备」或进入「4. 检测与备份」。"
+            )
+            return
+
         self.log("正在请求管理员权限安装 WinUSB 驱动…")
-        try:
-            self.backend.install_driver()
-            self.log("驱动安装调用已发起，请确认 UAC 弹窗。")
-            self.after(3000, self._do_driver_scan)
-        except Exception as exc:
-            messagebox.showerror("安装驱动错误", str(exc))
+        def worker():
+            try:
+                self.backend.install_driver(progress=self.log)
+                self.log("驱动安装完成，正在更新状态…")
+                self.after(1000, self._do_driver_scan)
+            except Exception as exc:
+                self.log(f"驱动安装异常: {exc}")
+                self.after(0, lambda: messagebox.showerror("安装驱动错误", str(exc)))
+
+        threading.Thread(target=worker, daemon=True).start()
 
     # --- Page 3: Preparation ---
     def _build_prep_page(self):
