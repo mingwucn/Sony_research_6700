@@ -15,6 +15,12 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
+python -c "import usb.core" >nul 2>nul
+if %errorlevel% neq 0 (
+    echo [提示] 检测到缺少 pyusb 通信依赖，正在自动安装...
+    python -m pip install pyusb libusb-package
+)
+
 echo [信息] 正在启动图形界面...
 start "" python -X utf8 apps\a6700_customizer\app_gui.py
 exit /b 0

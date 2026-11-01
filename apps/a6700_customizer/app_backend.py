@@ -34,9 +34,28 @@ from .targets import (
     TargetWindow,
 )
 
-# Configure paths for flash payloads
+# Configure paths for flash payloads and third-party vendor modules
 paths.bundled_root = lambda: INTERNAL_DIR
 paths.project_root = lambda: INTERNAL_DIR
+paths.ensure_vendor_on_path()
+
+from a6700win import patches
+patches.install()
+
+# Provide fallback to _internal/libusb-1.0.dll
+from a6700win.usb import windows_auth
+_orig_libusb_path = windows_auth.libusb_library_path
+
+def _safe_libusb_library_path() -> str:
+    try:
+        return _orig_libusb_path()
+    except Exception:
+        fallback = INTERNAL_DIR / "libusb-1.0.dll"
+        if fallback.is_file():
+            return str(fallback)
+        raise
+
+windows_auth.libusb_library_path = _safe_libusb_library_path
 
 
 class BackendError(RuntimeError):
