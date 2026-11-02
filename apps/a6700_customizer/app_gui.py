@@ -463,7 +463,14 @@ class SonyCustomizerApp(tk.Tk):
 
     def _render_inspection_success(self, res: dict, backup_path: Path):
         en_str = "已解锁 (Patched)" if res["english_status"] == "PATCHED" else "原始锁定 (Stock)"
-        ftp_str = "完整开放 (Patched)" if res["ftp_status"] == "PATCHED" else ("部分启用 (Partial)" if res["ftp_status"] == "PARTIAL" else "原始锁定 (Stock)")
+        if res.get("ftp_note"):
+            ftp_str = res["ftp_note"]
+        elif res["ftp_status"] == "PATCHED":
+            ftp_str = "完整开放 (Patched)"
+        elif res["ftp_status"] == "PARTIAL":
+            ftp_str = "部分启用 (Partial)"
+        else:
+            ftp_str = "原始锁定 (Stock)"
 
         msg = (
             f"✅ 检测完成！固件版本: ILCE-6700 Ver. 2.00\n"
@@ -474,6 +481,14 @@ class SonyCustomizerApp(tk.Tk):
         )
         self.inspect_info_lbl.configure(text=msg)
         self.set_status("相机检测通过", "#4ade80")
+
+        # Update Features page banner for Powerful6700 upgrades
+        if hasattr(self, "ftp_upgrade_banner"):
+            if res.get("is_powerful6700_upgrade"):
+                self.ftp_upgrade_banner.pack(anchor="w", fill="x", pady=(10, 0))
+            else:
+                self.ftp_upgrade_banner.pack_forget()
+
         messagebox.showinfo("检测成功", "相机已成功连接，只读校验通过，原始备份已安全存盘！")
         self.show_page("features")
 
@@ -498,6 +513,13 @@ class SonyCustomizerApp(tk.Tk):
             "Action 0x0817 (FTP_TRANSFER) 自定义键绑定！按键即可秒传照片，仅改写 10 字节。"
         )
         ttk.Label(card_ftp, text=ftp_desc, style="CardMuted.TLabel", justify="left").pack(anchor="w")
+
+        self.ftp_upgrade_banner = tk.Label(
+            card_ftp,
+            text="💡 检测到此前已使用 Powerful6700 开启过网络 FTP 菜单。\n本次勾选将为您无损补齐【回放快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！",
+            font=(FONT_FAMILY, 9), bg="#042f2e", fg="#2dd4bf",
+            padx=10, pady=8, justify="left", bd=1, relief="solid"
+        )
 
         # Card 2: English Unlock
         card_en = ttk.Frame(page, style="Card.TFrame", padding=16)

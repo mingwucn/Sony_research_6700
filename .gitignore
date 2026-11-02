@@ -7,6 +7,7 @@
 /calibration/
 /captures/
 /payloads/
+apps/a6700_customizer/payloads/
 /candidates/
 /artifacts/
 /vendor-private/
@@ -48,6 +49,9 @@
 *.sqlite*
 *.log
 # Local development
+dist/
+build/
+*.spec
 .venv/
 venv/
 __pycache__/

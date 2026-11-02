@@ -54,10 +54,39 @@
 
 ## 🚀 Quick Start: Windows Desktop GUI (`Sony α6700 极简定制工具`)
 
-### Prerequisites
-1. **Windows 10 / 11 (x64)** with Python 3.10+ installed.
-2. **Local Reference Runtime**: Place `Powerful6700-Windows-x64` at `D:\Softwares\Powerful6700-Windows-x64` (or set environment variable `POWERFUL6700_ROOT` to its path). The GUI reuses its signed/tested USB transport libraries (`libusb-1.0.dll`, `windows_auth`) and freestanding AArch64 camera helpers (`dump_range.elf`, `flash_write.elf`).
-3. **Camera Preparation**:
+### 📦 运行方式选择（二选一）
+
+#### 方式 A（推荐 · 纯小白用户 · 免安装 Python 环境）：
+1. 直接使用已打包好的绿色便携发布包：**`dist/Sony_a6700_Customizer_v1.0.0_win64.zip`**（解压即用，体积仅 ~16MB，内置完整 Python 运行时、WinUSB 通信驱动载荷与 AArch64 固件读写工具，无需电脑安装任何环境）。
+2. 解压后双击运行 **`SonyA6700Customizer.exe`** 或 **`启动_Sony_a6700定制工具.bat`**。
+3. 开发者也可以在本地运行根目录下的 **[`打包独立发布版.bat`](file:///d:/LocalWork/Sony_research_6700/%E6%89%93%E5%8包%E7%8B%AC%E7%AB%8B%E5%8F%91%E5%87%86%E7%89%88.bat)**（或 `python tools/build_dist.py`）一键重新构建打包。
+
+#### 方式 B（开发者 / 源码运行）：
+1. **Windows 10 / 11 (x64)**，已安装 Python 3.10+。
+2. 双击运行 **[`启动_A6700定制工具.bat`](file:///d:/LocalWork/Sony_research_6700/%E5%90%AF%E5%8A%A8_A6700%E5%AE%9A%E5%88%B6%E5%B7%A5%E5%85%B7.bat)**，脚本会自动校验环境依赖并启动界面：
+   ```powershell
+   python -X utf8 run_customizer.py
+   ```
+
+---
+
+### 💡 针对曾用 Powerful6700 开启过 FTP 的用户：平滑兼容与无损升级
+
+如果你的相机此前已经使用过 `Powerful6700` 开启过 FTP：
+1. **智能识别提示**：在第 4 步只读检测时，本工具会自动识别出相机处于 `部分启用 (Partial)` 状态，并明确提示：
+   > *“检测到已开启基础网络 FTP（如曾使用 Powerful6700），回放快捷键未开启。本次勾选将为您无损补齐【回放快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！”*
+2. **精准补齐，零重复写入 (`no-op`)**：
+   - Powerful6700 写入的 9 处网络菜单标记在检测时已为 `01`，本工具在写入时会自动判断并直接跳过（`no-op`），不进行任何冗余重写。
+   - 本工具仅会精准写入此前缺失的 **`0x03f17ce4`（回放相册自定义键权限位）** 以及 **`0x023080f8`（真原生英文菜单断言）**。
+3. **相机内所有设置 100% 完整保留**：
+   - 索尼相机中用户配置的 FTP 服务器地址、账号密码、上传目录和 Wi-Fi 连接信息均存储在 Backup NVRAM 中。
+   - 本工具仅操作 `/usr/lib/appFw.so` 的程序代码与权限位，**绝不会破坏、重置或清除任何已保存的服务器配置**！
+4. **一键出厂还原保护**：
+   - 若日后点击“出厂还原”，本工具不仅能还原英文，还会将全部 10 处 FTP 标志位（包括 Powerful6700 此前改写的 9 处）统一还原为 100% 原厂状态。
+
+---
+
+### Camera Preparation
    - Sony α6700 (ILCE-6700) running official Firmware **Ver. 2.00**.
    - Battery charged to **≥ 50%**.
    - Set camera USB mode to **Mass Storage (海量存储器 / MSC)**: `设置 (Setup) -> USB -> USB连接模式 -> 海量存储器 (Mass Storage)`.
@@ -108,6 +137,18 @@ python -X utf8 tools/generate_patch_plan.py <path-to-nflasha15.img>
 
 ---
 
+## 🔍 Cross-Model Applicability: A7CR (`ILCE-7CR`) vs. A7M5 (`ILCE-7M5`) — Mainland China (`CN1`)
+
+See **[`docs/CROSS_MODEL_ENGLISH_COMPARISON.md`](file:///d:/LocalWork/Sony_research_6700/docs/CROSS_MODEL_ENGLISH_COMPARISON.md)** for the full technical analysis:
+
+| Camera Model (Mainland China `CN1`) | SoC / Generation | Shares Same `EN-101` Unmasking Process? | Key Technical Notes & Required Adaptations |
+| :--- | :--- | :--- | :--- |
+| **Sony α6700 (`ILCE-6700` Ver. 2.00)** | **BIONZ XR (`CXD90057`)** (2023) | ✅ **Baseline Target** | Patches `/usr/lib/appFw.so` at **`0x023080f8`** (`f4 17 9f 1a` ➔ `34 00 80 52`, `Sector 383128`) on `/dev/nflasha15`; MSC USB PID `054C:0E76` ➔ Service PID `054C:0336`. |
+| **Sony A7CR (`ILCE-7CR` Ver. 2.01)** | **BIONZ XR (`CXD90057`)** (2023) | ✅ **Yes — Identical Mechanism & Workflow** | Same `CXD90057_k8` FDAT encryption, `/dev/nflasha15`, `/usr/lib/appFw.so`, `string_english*.uxc`, Backup ID `0x010d008f`, and `054C:0336` `Senser` service mode. **Do not copy α6700's `0x023080f8` offset**: resolve A7CR's own `english_predicate` offset (`Choice 0` `0x0204e2be` / `0x010d008f`), use MSC PID `054C:0E8A`, and invalidate Warm-Boot Image `*wbi4` (`image_drop=1` ➔ `image_mode=0`) before cold reboot. |
+| **Sony A7M5 (`ILCE-7M5` / A7V)** | **BIONZ XR2** (Late 2025 / 2026) | ❌ **No — Blocked at USB `Senser` Auth Layer** | Retains the same user-space `.uxc` and `0x010d008f` localization design, but Sony updated the USB `Senser` challenge-response authentication protocol on **BIONZ XR2** (standard `CXD90057` / `pmca` handshakes fail with `Invalid response: 9` or immediate reboot). |
+
+---
+
 ## 📂 Repository Structure & Documentation Index
 
 ### Applications & Tools
@@ -122,6 +163,8 @@ python -X utf8 tools/generate_patch_plan.py <path-to-nflasha15.img>
 ### Documentation (`docs/`)
 - **[`docs/USER_GUIDE_CN.md`](file:///d:/LocalWork/Sony_research_6700/docs/USER_GUIDE_CN.md)**: Complete Chinese user manual (图文级步骤说明、常见报错排查、相机端回放快捷键设置、一键无损还原指南).
 - **[`docs/TECHNICAL_ARCHITECTURE.md`](file:///d:/LocalWork/Sony_research_6700/docs/TECHNICAL_ARCHITECTURE.md)**: Deep-dive technical whitepaper covering ARM64 disassembly of `english_predicate`, `.rela.dyn` relocation analysis, Backup ID `0x010d008f` vs `0x02cf0000`, Action `0x0817` Playback Custom Key dispatch, ext2 block-to-sector mapping, and USB Senser/Jiritsu transactional write architecture.
+- **[`docs/MASKED_FUNCTIONS_AND_TIERING.md`](file:///d:/LocalWork/Sony_research_6700/docs/MASKED_FUNCTIONS_AND_TIERING.md)**: In-depth analysis of why Sony masks FTP on α6700, commercial market tiering vs. FX30, technical gating in `appFw.so` (Network flags + Playback Custom Key Action `0x0817`), and a complete taxonomy of masked functions (regional locks, working firmware backends, and unsafe uncalibrated CP features).
+- **[`docs/CROSS_MODEL_ENGLISH_COMPARISON.md`](file:///d:/LocalWork/Sony_research_6700/docs/CROSS_MODEL_ENGLISH_COMPARISON.md)**: Cross-model comparison of the Native English menu unlock process across Mainland China (`CN1`) **α6700 (`ILCE-6700`)**, **A7CR (`ILCE-7CR`)**, and **A7M5 (`ILCE-7M5` / Alpha 7 V)** (BIONZ XR `CXD90057` vs. BIONZ XR2 platform differences, `appFw.so` offset resolution, WBI `wbi4` invalidation, and `Senser` authentication).
 - **[`docs/ENGLISH_LANGUAGE.md`](file:///d:/LocalWork/Sony_research_6700/docs/ENGLISH_LANGUAGE.md)**: Target-specific design and verification record for `EN-101` native English menu unlock.
 - **[`docs/FTP.md`](file:///d:/LocalWork/Sony_research_6700/docs/FTP.md)**: Target-specific design and verification record for `FT-101` native Wi-Fi FTP and Playback Custom Key unlock.
 - **[`docs/FEATURE_PROGRESS.md`](file:///d:/LocalWork/Sony_research_6700/docs/FEATURE_PROGRESS.md)**: Feature status matrix and historical progress log.
@@ -133,6 +176,8 @@ python -X utf8 tools/generate_patch_plan.py <path-to-nflasha15.img>
 - **[`research/sessions/20261031-playback-ftp-action-discovery.md`](file:///d:/LocalWork/Sony_research_6700/research/sessions/20261031-playback-ftp-action-discovery.md)**: Discovery of Action `0x0817` (`FTP_TRANSFER`) at `0x03666b70` and capability gate `0x03f17ce4`.
 - **[`research/sessions/20261101-english-predicate-unmask.md`](file:///d:/LocalWork/Sony_research_6700/research/sessions/20261101-english-predicate-unmask.md)**: Session report on `english_predicate` relocation, cross-reference audit, and sector mapping.
 - **[`research/sessions/20261101-customizer-gui-and-documentation.md`](file:///d:/LocalWork/Sony_research_6700/research/sessions/20261101-customizer-gui-and-documentation.md)**: Session report on building and debugging the `Sony α6700 极简定制工具` GUI and completing project documentation.
+- **[`research/sessions/20261101-cross-model-english-comparison.md`](file:///d:/LocalWork/Sony_research_6700/research/sessions/20261101-cross-model-english-comparison.md)**: Session report on cross-model Native English unlock applicability across Mainland China (`CN1`) α6700 (`ILCE-6700`), A7CR (`ILCE-7CR`), and A7M5 (`ILCE-7M5` / Alpha 7 V).
+- **[`research/sessions/20261101-masked-functions-and-commercial-tiering.md`](file:///d:/LocalWork/Sony_research_6700/research/sessions/20261101-masked-functions-and-commercial-tiering.md)**: Session report on why Sony masks FTP and taxonomy of masked functions across BIONZ XR firmware.
 
 ---
 

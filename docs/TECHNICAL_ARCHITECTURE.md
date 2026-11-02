@@ -173,3 +173,27 @@ During an inspection or write session (`_session_context()` in [`app_backend.py`
    - **Step B (Target Patch Application)**: Applies the requested byte patches (`0x023080f8` and/or the 10 FTP offsets), calling `fsync()` after each write.
    - **Step C (Independent Read-Back Verification)**: Re-runs `dump_range.elf` across all 11 target windows and verifies 100% byte equality against the desired target state.
    - **Step D (Session Exit)**: Cleans up `/tmp` binaries and exits service mode cleanly.
+
+
+---
+
+## 6. Cross-Model Applicability: Sony A7CR (`ILCE-7CR`) vs. A7M5 (`ILCE-7M5`) Mainland China (`CN1`)
+
+See **[`docs/CROSS_MODEL_ENGLISH_COMPARISON.md`](file:///d:/LocalWork/Sony_research_6700/docs/CROSS_MODEL_ENGLISH_COMPARISON.md)** for the complete cross-model analysis:
+- **Sony A7CR (`ILCE-7CR` CN1) — Shares the Exact Same Process (`CXD90057` Platform)**:
+  - Uses the identical `CXD90057_k8` FDAT encryption, `/dev/nflasha15` (`ext2` at `/usr`), `/usr/lib/appFw.so` `english_predicate` (`0x010d008f` check via `cset w20, eq`), and `Senser`/`Jiritsu` (`054C:0336`) service mode.
+  - Requires only: (1) resolving A7CR's own `english_predicate` file offset in A7CR's `appFw.so`, (2) using A7CR's Mass Storage PID (`054C:0E8A`), and (3) invalidating the `*wbi4` Warm-Boot Image (`image_drop=1` ➔ `image_mode=0`) before cold reboot.
+- **Sony A7M5 (`ILCE-7M5` / Alpha 7 V CN1) — Blocked at the USB `Senser` Authentication Layer (`BIONZ XR2` Platform)**:
+  - While its UI localization still uses `.uxc` string banks and `0x010d008f`–`0x010d00b1` flags, Sony updated the USB `Senser` authentication handshake on the late-2025 **BIONZ XR2** platform, causing standard `CXD90057` / `pmca` service-mode handshakes to fail (`Invalid response: 9` / disconnect).
+
+---
+
+## 7. Commercial Tiering & Masked Functions Analysis
+
+See **[`docs/MASKED_FUNCTIONS_AND_TIERING.md`](file:///d:/LocalWork/Sony_research_6700/docs/MASKED_FUNCTIONS_AND_TIERING.md)** for the complete research paper examining:
+1. Why Sony masks FTP on the α6700: shared BIONZ XR (`CXD90057`) architecture with the FX30 cinema body and market tiering segmentation.
+2. The exact Master Capability Table (`0x03f14c38`) and Playback Custom Key Action `0x0817` mechanism.
+3. Complete taxonomy of masked functions in α6700 firmware:
+   - **Category A (Regional Locks)**: Native English and 34 international languages.
+   - **Category B (Model-Tier Masks with Working Backends)**: Shutter Closed when Power Off, Flexible Exposure Mode, and Electronic Shutter Sound.
+   - **Category C (Unsafe / Incomplete Backends)**: Pixel Shift, Dynamic Active Stabilization, and Creative Looks FL2/FL3.

@@ -19,13 +19,18 @@
 
 ## 二、 运行前环境准备
 
-### 1. 电脑端准备
-- **操作系统**：Windows 10 / Windows 11 (64 位)。
-- **Python 环境**：已安装 Python 3.10 或更高版本（例如 Miniconda / 官方 Python）。
-- **底层通信组件依赖**：
-  - 本工具会自动调用本地 `D:\Softwares\Powerful6700-Windows-x64` 目录下的底层 USB 驱动组件与 AArch64 固件读写载荷（`libusb-1.0.dll`、`windows_auth`、`dump_range.elf`、`flash_write.elf`）。
-  - 如果你的 `Powerful6700-Windows-x64` 放在其他路径，只需在运行前设置环境变量 `POWERFUL6700_ROOT` 指向该目录即可。
-- **自动依赖安装**：双击 [`启动_A6700定制工具.bat`](file:///d:/LocalWork/Sony_research_6700/%E5%90%AF%E5%8A%A8_A6700%E5%AE%9A%E5%88%B6%E5%B7%A5%E5%85%B7.bat) 时，脚本会自动检测并安装所需的 `pyusb` 与 `libusb-package` 库。
+### 1. 运行方式（二选一）
+
+#### 选项 A：使用独立便携发布包（推荐 · 纯小白 · 无需安装 Python 环境）
+1. 下载解压 **`Sony_a6700_Customizer_v1.0.0_win64.zip`**（体积仅约 16MB，开箱即用）。
+2. 解压后直接双击运行 **`SonyA6700Customizer.exe`**（或 **`启动_Sony_a6700定制工具.bat`**）。
+3. 绿色免安装，内部已打包完整的 Python 运行时、WinUSB 通信驱动载荷与 AArch64 固件读写工具，任何 Windows 10/11 电脑均可直接运行。
+
+#### 选项 B：源码运行（适合开发者）
+1. **操作系统**：Windows 10 / Windows 11 (64 位)。
+2. **Python 环境**：已安装 Python 3.10 或更高版本。
+3. 双击根目录下的 **[`启动_A6700定制工具.bat`](file:///d:/LocalWork/Sony_research_6700/%E5%90%AF%E5%8A%A8_A6700%E5%AE%9A%E5%88%B6%E5%B7%A5%E5%85%B7.bat)**，脚本会自动校验环境并启动界面。
+4. 开发者可通过运行 **[`打包独立发布版.bat`](file:///d:/LocalWork/Sony_research_6700/%E6%89%93%E5%8C%85%E7%8B%AC%E7%AB%8B%E5%8F%91%E5%87%86%E7%89%88.bat)**（或 `python tools/build_dist.py`）一键重新构建打包。
 
 ### 2. 相机端准备
 1. **确认固件版本**：进入相机 `设置 (Setup) -> 版本 (Version)`，确认为 **Ver. 2.00**。
@@ -37,7 +42,25 @@
 
 ---
 
-## 三、 六步图形界面操作流程
+## 三、 针对曾用 Powerful6700 开启过 FTP 的用户：升级说明
+
+很多 α6700 用户之前使用过 `Powerful6700` 工具开启了相机菜单里的网络 FTP，但在看图时发现无法设置快捷键一键上传，且英文菜单也没真正解锁。
+
+**如果您此前已经用 Powerful6700 开启过 FTP，可以直接放心使用本工具升级：**
+1. **智能识别提示**：在第 4 步只读检测时，本工具会自动检测到相机网络 FTP 已处于启用状态，并在界面明确提示：
+   > *“检测到已开启基础网络 FTP（如曾使用 Powerful6700），回放快捷键未开启。本次勾选将为您无损补齐【回放快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！”*
+2. **零重复改写 (`no-op`)**：
+   - Powerful6700 改写过的 9 处网络菜单标记在检测时已为 `01`，本工具在写入时会自动识别并直接跳过，绝不重复写入；
+   - 仅会精准写入此前缺失的 **`0x03f17ce4`（回放相册自定义键权限位）** 以及 **`0x023080f8`（真原生英文菜单断言）**。
+3. **相机内所有设置 100% 完整保留**：
+   - 索尼相机中用户配置的 FTP 服务器地址、账号密码、上传目录和 Wi-Fi 连接信息均存储在 Backup NVRAM 专用配置区。
+   - 本工具仅操作 `/usr/lib/appFw.so` 的程序代码与权限位，**绝不会破坏、重置或清除任何已保存的服务器配置**！
+4. **一键出厂还原保护**：
+   - 如果后续需要出厂还原，本工具的一键还原功能会将包括 Powerful6700 此前改写的 9 处网络位在内的全部 10 处 FTP 标志位统一还原为 100% 出厂原始状态。
+
+---
+
+## 四、 六步图形界面操作流程
 
 双击项目根目录下的 **[`启动_A6700定制工具.bat`](file:///d:/LocalWork/Sony_research_6700/%E5%90%AF%E5%8A%A8_A6700%E5%AE%9A%E5%88%B6%E5%B7%A5%E5%85%B7.bat)** 启动深色模式桌面界面：
 
@@ -117,3 +140,12 @@
 2. 检查相机 `设置 -> USB -> USB连接模式` 是否明确设为 **`海量存储器 (Mass Storage)`**。
 3. 检查是否使用了仅支持充电的 USB-C 线（请更换支持数据传输的 USB-C 数据线，并插在电脑后置主板 USB 口）。
 4. 如果刚刚安装过 WinUSB 驱动，请拔插一次 USB 数据线并重启相机后再试。
+
+
+### Q4: 这套原生英文解锁流程是否适用于国行 A7CR (`ILCE-7CR`) 和 A7M5 (`ILCE-7M5`)？
+- **国行 A7CR (`ILCE-7CR`) —— ✅ 共享完全一致的解锁机制与执行流程**：
+  - A7CR 与 α6700 同属 2023 代 **BIONZ XR (`CXD90057`)** 平台，共享相同的 `/dev/nflasha15` 分区、`/usr/lib/appFw.so`、`string_english*.uxc` 原生英文字库、`0x010d008f` 语言权限项以及 USB `Senser`/`Jiritsu` (`054C:0336`) 服务模式链路，因此同样适用 **`english_predicate` 4 字节补丁 (`f4 17 9f 1a` ➔ `34 00 80 52`)**。
+  - **⚠️ 严禁直接将 α6700 工具用于 A7CR**：由于两款机型的 `appFw.so` 编译体积与偏移不同，适配 A7CR 时必须先在 A7CR 固件中定位其专属的 `english_predicate` 偏移（不可直接写入 α6700 的 `0x023080f8`），连接海量存储 PID `054C:0E8A`，并在写入后执行 `*wbi4` 快速启动镜像失效（`image_drop=1` ➔ `image_mode=0`）后冷启动。
+- **国行 A7M5 (`ILCE-7M5` / Alpha 7 V) —— ❌ 当前不适用**：
+  - A7M5 搭载了新一代 **BIONZ XR2** 处理器，索尼在 BIONZ XR2 平台上更新了 USB `Senser` 服务模式的挑战-响应鉴权协议（旧版握手会报 `Invalid response: 9` 或导致相机重启），因此在适配 BIONZ XR2 鉴权与解包密钥前无法共用本执行流程。
+- 详细跨机型技术对比请参阅：**[`docs/CROSS_MODEL_ENGLISH_COMPARISON.md`](file:///d:/LocalWork/Sony_research_6700/docs/CROSS_MODEL_ENGLISH_COMPARISON.md)**。

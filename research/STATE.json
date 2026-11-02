@@ -13853,5 +13853,41 @@
       "next_single_work_package": "RA-003: collect fresh host interpreter/cold-preload facts, the five trusted-runtime origins, ancestor root identities and five complete read-only runtime-file receipts; reconcile once with the existing mapping. Actual-host metadata observation is outside the current synthetic-only scope and remains pending. No bootstrap, package activation, protected processing or camera contact. English/native FTP remain first.",
       "goal_tool_returned_status": "blocked"
     }
-  ]
+  ],
+  "cross_model_english_comparison_20261101": {
+    "date": "2026-11-01",
+    "document": "docs/CROSS_MODEL_ENGLISH_COMPARISON.md",
+    "session_report": "research/sessions/20261101-cross-model-english-comparison.md",
+    "evidence_class": [
+      "static-inference",
+      "offline-tested",
+      "source-report"
+    ],
+    "camera_commands": [],
+    "models_compared": {
+      "ILCE-6700": "Baseline target (BIONZ XR CXD90057, Ver. 2.00 CN1): 4-byte english_predicate patch at 0x023080f8 in /usr/lib/appFw.so on /dev/nflasha15 (Sector 383128).",
+      "ILCE-7CR": "Shares the exact same BIONZ XR CXD90057 mechanism and execution chain (CXD90057_k8 FDAT, /dev/nflasha15, /usr/lib/appFw.so, string_english*.uxc, Backup ID 0x010d008f, Senser 054C:0336). Requires resolving A7CR own appFw.so english_predicate offset (never copying 0x023080f8), using MSC USB PID 054C:0E8A, and invalidating WBI *wbi4 (image_drop=1 -> image_mode=0).",
+      "ILCE-7M5": "Does not share the same execution process today: uses the newer BIONZ XR2 platform with updated USB Senser challenge-response authentication that rejects standard CXD90057 / pmca service-mode handshakes."
+    }
+  },
+  "masked_functions_and_tiering_analysis_20261101": {
+    "date": "2026-11-01",
+    "document": "docs/MASKED_FUNCTIONS_AND_TIERING.md",
+    "session_report": "research/sessions/20261101-masked-functions-and-commercial-tiering.md",
+    "evidence_class": [
+      "static-inference",
+      "offline-tested",
+      "source-report"
+    ],
+    "camera_commands": [],
+    "key_findings": {
+      "why_masked_ftp": "Market tiering segmentation between a6700 enthusiast hybrid and FX30/A7 IV cinema/press tiers running on the shared BIONZ XR CXD90057 appFw.so framework.",
+      "ftp_technical_gates": "Master Action Capability Table at 0x03f14c38 + (ActionID * 8) with 9 network menu flags (0x05a5-0x05b0 at 0x03f17524-0x03f17564) and Playback Custom Key Action 0x0817 at 0x03f17ce4.",
+      "taxonomy": {
+        "category_a_regional_locks": "Native English & 34 languages via english_predicate 0x023080f8 / Backup 0x010d008f (100% complete UXC resources present).",
+        "category_b_tiering_masks": "Working firmware backends: Shutter When Power Off, Flexible Video Exposure Mode, Electronic Shutter Sound.",
+        "category_c_unsafe_incomplete": "Missing CP microcode or calibration: Pixel Shift Multi Shooting, Dynamic Active Stabilization, Creative Looks FL2/FL3."
+      }
+    }
+  }
 }

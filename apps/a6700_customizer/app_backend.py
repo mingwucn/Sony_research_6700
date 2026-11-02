@@ -15,12 +15,46 @@ from pathlib import Path
 from typing import Callable, Dict, List, Optional, Tuple
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-SYS_SRC = Path(os.path.expandvars("%TEMP%/Codex/powerful6700-english-20261026/source/src"))
-INTERNAL_DIR = Path(r"D:\Softwares\Powerful6700-Windows-x64\_internal")
+PACKAGE_DIR = Path(__file__).resolve().parent
 
-# Add required paths safely
+# Ensure local vendored a6700win is available
+if str(PACKAGE_DIR) not in sys.path:
+    sys.path.insert(0, str(PACKAGE_DIR))
+
+SYS_SRC = Path(os.path.expandvars("%TEMP%/Codex/powerful6700-english-20261026/source/src"))
 if SYS_SRC.is_dir() and str(SYS_SRC) not in sys.path:
     sys.path.insert(0, str(SYS_SRC))
+
+def get_resource_root() -> Path:
+    """Resolve base directory containing native/ and third_party/ payloads."""
+    # 1. PyInstaller frozen environment
+    if getattr(sys, "frozen", False):
+        meipass = getattr(sys, "_MEIPASS", None)
+        if meipass and (Path(meipass) / "native").is_dir():
+            return Path(meipass)
+        exe_dir = Path(sys.executable).resolve().parent
+        for cand in [exe_dir / "_internal", exe_dir]:
+            if (cand / "native").is_dir():
+                return cand
+
+    # 2. Local payloads directory in source tree
+    local_payloads = PACKAGE_DIR / "payloads"
+    if (local_payloads / "native").is_dir():
+        return local_payloads
+
+    # 3. Environment override or external Powerful6700 fallback
+    env_root = os.environ.get("POWERFUL6700_ROOT")
+    if env_root:
+        p = Path(env_root) / "_internal"
+        if (p / "native").is_dir():
+            return p
+    powerful_internal = Path(r"D:\Softwares\Powerful6700-Windows-x64\_internal")
+    if (powerful_internal / "native").is_dir():
+        return powerful_internal
+
+    return local_payloads
+
+INTERNAL_DIR = get_resource_root()
 
 from a6700win import flash, paths, research
 from a6700win.usb import driver, setupapi
@@ -31,18 +65,20 @@ from .targets import (
     APPFW_SIZE,
     TARGET_ENGLISH,
     TARGET_FILE,
+    TARGET_FTP_NETWORK_SETTINGS,
+    TARGET_FTP_PLAYBACK_KEY,
     TargetWindow,
 )
 
 # Configure paths for flash payloads and third-party vendor modules
-paths.bundled_root = lambda: INTERNAL_DIR
-paths.project_root = lambda: INTERNAL_DIR
+paths.bundled_root = get_resource_root
+paths.project_root = get_resource_root
 paths.ensure_vendor_on_path()
 
 from a6700win import patches
 patches.install()
 
-# Provide fallback to _internal/libusb-1.0.dll
+# Provide robust fallback to libusb-1.0.dll
 from a6700win.usb import windows_auth
 _orig_libusb_path = windows_auth.libusb_library_path
 
@@ -50,10 +86,17 @@ def _safe_libusb_library_path() -> str:
     try:
         return _orig_libusb_path()
     except Exception:
-        fallback = INTERNAL_DIR / "libusb-1.0.dll"
-        if fallback.is_file():
-            return str(fallback)
-        raise
+        pass
+    root = get_resource_root()
+    for cand in [
+        root / "libusb-1.0.dll",
+        root / "_internal" / "libusb-1.0.dll",
+        PACKAGE_DIR / "payloads" / "libusb-1.0.dll",
+        Path(r"D:\Softwares\Powerful6700-Windows-x64\_internal\libusb-1.0.dll"),
+    ]:
+        if cand.is_file():
+            return str(cand)
+    raise BackendError("未找到 libusb-1.0.dll，请确认安装包完整。")
 
 windows_auth.libusb_library_path = _safe_libusb_library_path
 
@@ -132,17 +175,28 @@ class DeviceBackend:
         en_status = results[TARGET_ENGLISH.offset]["status"]
         ftp_statuses = [results[t.offset]["status"] for t in ALL_FTP_TARGETS]
 
-        if all(s == "PATCHED" for s in ftp_statuses):
+        network_patched = all(results[t.offset]["status"] == "PATCHED" for t in TARGET_FTP_NETWORK_SETTINGS)
+        playback_patched = (results[TARGET_FTP_PLAYBACK_KEY.offset]["status"] == "PATCHED")
+
+        if network_patched and playback_patched:
             overall_ftp = "PATCHED"
-        elif all(s == "STOCK" for s in ftp_statuses):
-            overall_ftp = "STOCK"
-        else:
+            ftp_note = "完整开放 (全网络菜单 + 回放按键已就绪)"
+        elif network_patched and not playback_patched:
             overall_ftp = "PARTIAL"
+            ftp_note = "检测到已开启基础网络 FTP（如曾使用 Powerful6700），回放快捷键未开启。本次写入将为您无损补齐回放一键上传快捷键，且完全保留相机内已存的服务器配置！"
+        elif not network_patched and playback_patched:
+            overall_ftp = "PARTIAL"
+            ftp_note = "检测到回放快捷键已开启，但网络菜单配置未完全开启。"
+        else:
+            overall_ftp = "STOCK"
+            ftp_note = "原厂未启用"
 
         return {
             "appfw_size": size,
             "english_status": en_status,
             "ftp_status": overall_ftp,
+            "ftp_note": ftp_note,
+            "is_powerful6700_upgrade": (network_patched and not playback_patched),
             "details": results,
             "timestamp": datetime.datetime.now().isoformat(),
         }
