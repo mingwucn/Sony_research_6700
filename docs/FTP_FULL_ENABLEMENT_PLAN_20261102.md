@@ -11,7 +11,7 @@
 
 Goal: a **camera-resident outbound FTP client** that can upload photographs from the α6700 over Wi-Fi to an owner-controlled server, **without a relay computer/phone**. First achieve manual upload, then automatic transfer, batch operation, reliability, and security. Do not implement an FTP *server* on the camera. Do not equate an English menu, visible network configuration, an installed byte, a successful readback, or an offline unit test with FTP functioning.
 
-**Current owner hardware observations (issue #1, 2026-11-02):** native English selection works; `Network → FTP Transfer` can be opened; the desired Playback/Gallery FTP controls remain unavailable. A successful camera-to-server file receipt is **not established** on this camera. The exact missing entry/disabled state is not yet discriminated. Labels: `physical-tested` for the menu observation, `unverified` for playback and actual upload.
+**Current owner correction (2026-11-02):** Native English selection works, but **FTP is absent from the main camera menu**, whereas the upstream demonstration displays it. An earlier report in issue #1 said `Network → FTP Transfer` could be opened and only Playback/Gallery FTP was missing; these observations are **in conflict and must be reconciled**, not treated as confirmed simultaneous facts. Determine whether the missing entry is specifically `Network → Transfer/Remote → FTP Transfer Function` versus a top-level tab or Playback control. Camera-to-server file upload remains unverified. See `research/FTP_NETWORK_MENU_MISSING_20261102.md` for the source-grounded differential diagnosis.
 
 **Source-supported upstream baseline:** `xyzhangxin/sony-a6700-powerful` reports camera-tested native FTP, including RAW+JPEG, but does not claim validation of every Playback filter, persisted cross-power-cycle queue, or every camera body. Upstream's published profile describes **242 FTP fields**: **90 App + 152 WBI**, of which **89 App + 151 WBI bytes change**, distributed across **82 sectors** in its implementation. This is *source-report* evidence for a specific build/profile, not approval to write those fields on this body. The upstream's 81 application-side menu records match the 81 offsets in our newest `targets.py`; they are **FTP menu hierarchy permission records**, not independently proven Gallery-specific records. One parent `0x262` field has enabled value equal to stock `00` and must not be counted as a changed byte. FTP has no CP patch in the upstream feature catalog.
 
@@ -64,10 +64,10 @@ No G5 experiment may be initiated merely because this plan, a PR, or a successfu
 
 ## 3. WP0 — Baseline and PR reconciliation (R0; start here)
 
-**Input:** `main` at `55054b9`, issue #1 and its owner-correction comment, draft PR #2, ``README.md`, ``docs/FTP.md`, ``docs/TECHNICAL_ARCHITECTURE.md`, ``docs/USER_GUIDE_CN.md`, `docs/TRANSACTION_RECOVERY_AND_GUI_REDESIGN.md`, and ``apps/a6700_customizer/{targets,app_backend,app_gui,recovery_journal}.py`.
+**Input:** `main` at `55054b9`, issue #1 and its owner-correction comment, draft PR #2, `README.md`, `docs/FTP.md`, `docs/TECHNICAL_ARCHITECTURE.md`, `docs/USER_GUIDE_CN.md`, `docs/TRANSACTION_RECOVERY_AND_GUI_REDESIGN.md`, and `apps/a6700_customizer/{targets,app_backend,app_gui,recovery_journal}.py`.
 
 1. Freeze exact `main` and draft PR #2 heads; inspect the PR diff relative to current `main`. PR #2 was prepared for an **older ten-FTP-byte target set**. Rebase/cherry-pick only semantically valid changes onto the **current 92-target/seven-span code**. Never overwrite the current journal/reconciliation implementation with old per-byte writer logic.
-2. Label `EN-101` English as owner-observed working, but `FT-101` as **network menu observed / playback unavailable / transfer unverified**.
+2. Label `EN-101` English as owner-observed working. Label `FT-101` as **current report: FTP missing from main menu; earlier report: Network page accessible, Playback unavailable; transfer unverified**. Reconcile the difference before assuming a cause.
 3. Correct `README` and GUI wording (no “complete FTP”, “Gallery solved”, “100% restore”, “instant upload”). Rename `TARGET_FTP_GALLERY_MENUS` toward `TARGET_FTP_MENU_PERMISSIONS` unless source evidence demonstrates a Gallery-only dependency.
 4. Record the misleading Network flag IDs in the README: upstream's actual sparse IDs at those offsets are `0x5a5, 0x5a6, 0x5a8, 0x5aa, 0x5ac, 0x5ad, 0x5ae, 0x5af, 0x5b0`, not a contiguous `0x5a5..0x5b0` series. No fabricated `0x5a7/0x5a9/0x5ab` entries.
 5. Confirm `tools/patch_spec.py` and `research/plans/{forward_patch_plan,rollback_restore_plan}.json` are historically scoped and cannot be marketed as a complete full-FTP patch plan.
@@ -147,7 +147,7 @@ Only after WP1–WP4 provide exact candidate semantics, introduce code changes o
 - `apps/a6700_customizer/recovery_journal.py`: append-only durable intent/expected/observed states with SHA-256 and raw private before/after units; extension to WBI only after its physical semantics are proved.
 - `apps/a6700_customizer/app_gui.py`: show distinct `Network flags / FTP menu permissions / Playback action / WBI snapshot (if known)` state and **actual functional acceptance status**, plus explicit `BLOCKED/UNKNOWN/NEEDS_REVIEW`.
 - `tools/patch_spec.py`, `tools/verify_target_sectors.py` and generated plans: regenerate from exact current profile, while retaining a clear historical scope for existing two-target plans.
-- ``tests/test_customizer_targets.py`, ``tests/test_customizer_recovery.py`, ``tests/test_recovery_journal.py` and new FTP manifest/action/WBI/state-machine tests.
+- `tests/test_customizer_targets.py`, `tests/test_customizer_recovery.py`, `tests/test_recovery_journal.py` and new FTP manifest/action/WBI/state-machine tests.
 
 **Required executor invariants:**
 1. Target body, firmware and profile must be established by more than file size; verify all critical known windows and a justified normalized file identity where possible.
@@ -165,7 +165,7 @@ Only after WP1–WP4 provide exact candidate semantics, introduce code changes o
 
 ## 9. WP6 — First physical acceptance (separate owner authorization)
 
-Perform **no new firmware writes** at this stage if the already-visible Network FTP route can be tested as-is.
+Perform **no new firmware writes** at this stage. First classify whether the expected `Network → Transfer/Remote → FTP Transfer Function` entry is absent, greyed, available under a different submenu, or simply absent from a top-level tab. The previous claim that the Network page was already visible is disputed by the owner's newer report.
 
 ### 9.1 Owner camera UI observation (R1)
 
@@ -238,13 +238,13 @@ Never transplant full donor binaries, model/calibration data, A7CR offsets, or C
 3. Pin source revision, build dependencies, portable ZIP hash and generation logs. Publish a **new immutable prerelease** when safe; do not mutate an existing `v1.0.0` asset/tag to imply identical source provenance.
 4. Show supported-state labels: **reference-known**, **candidate installed**, **menu observed**, **upload verified**, **reliability verified**. Allow “full native FTP working” only after P0 end-to-end plus sequential-upload acceptance, not after all bytes are 1.
 5. Keep separate `EN-101` status and tests; do not make FTP experimental state affect native English, region or wireless radio configuration.
-6. Update ``docs/FTP.md`, ``docs/USER_GUIDE_CN.md`, ``docs/BACKLOG.md`, ``docs/CODEX_HANDOFF.md`, `research/STATE.json` and a sanitized dated session report as work packages are completed. Mark legacy optimistic text as historical, not current truth.
+6. Update `docs/FTP.md`, `docs/USER_GUIDE_CN.md`, ``docs/BACKLOG.md`, `docs/CODEX_HANDOFF.md`, `research/STATE.json` and a sanitized dated session report as work packages are completed. Mark legacy optimistic text as historical, not current truth.
 7. Publish no firmware image, raw WBI/partition data, camera images, FTP credentials, body serial, MAC, real IP, complete capture, calibration data, or secret keys in GitHub issues/PRs.
 
 ## 13. Recommended small PR sequence
 
 - **PR-A (R0, status/safety):** Reconcile draft PR #2 against current main; evidence labels, accurate menus/byte counts, fail-closed byte validation, incorrect math correction. No new offsets or firmware writes.
-- **PR-B (R0, manifest):** Pinned upstream catalog reader, 242-field comparison, App/WBI address-domain validation, synthetic tests.
+- **PR-B (R0, manifest):** Pinned upstream catalog reader, 242-field comparison, App/WBI address-domain validation, **69 paired App/WBI menu IDs / 12 App-only parent-column permissions / nine WBI runtime availability records**, synthetic tests.
 - **PR-C (R0, root cause):** Detailed `0x0817` resolver and playback UI graph, WBI activation/load analysis, falsifiable diagnosis. No write payload.
 - **PR-D (R0, executor):** Safely staged App/WBI planner **only if proven**, no enabled live write for unsupported candidates; replay-safe journal, full-unit readback and simulation.
 - **Owner-approved hardware trial:** Independent approval per R1/R2/R4 step; record readback and physical test receipts without private data.
@@ -255,7 +255,7 @@ Never transplant full donor binaries, model/calibration data, A7CR offsets, or C
 
 **Scope:** PR-A and preparation of PR-B, **not** an unverified firmware patch.
 
-1. Read `AGENTS.md`, `README.md`, ``docs/CODEX_HANDOFF.md`, ``docs/MASTER_PLAN.md` and `research/STATE.json`.
+1. Read `AGENTS.md`, `README.md`, `docs/CODEX_HANDOFF.md`, `docs/MASTER_PLAN.md` and `research/STATE.json`.
 2. Check out fresh `main`. Inspect draft PR #2 against newest 92-target/seven-span writer; do **not** merge old per-byte code.
 3. Run the current focused offline tests (expected historical **106 cases**; record the *actual* result):
    `python -X utf8 -m unittest tests/test_recovery_journal.py tests/test_customizer_recovery.py tests/test_customizer_targets.py tests/test_patch_spec.py tests/test_elf_static.py tests/test_ext2_readonly.py tests/test_uxc_readonly.py -v`
@@ -267,6 +267,8 @@ Never transplant full donor binaries, model/calibration data, A7CR offsets, or C
 **Exit:** no new patch bytes, no new device access, no release retag, no fabricated FTP success. A reader should be able to understand exactly why a current camera may show Network FTP but not the desired Playback action, what would distinguish the hypotheses, and what must be proven before any next write.
 
 ## 15. References
+
+- Current owner's missing-Network-menu differential diagnosis: [FT-101 source audit](../research/FTP_NETWORK_MENU_MISSING_20261102.md)
 
 - Owner defect: https://github.com/mingwucn/Sony_research_6700/issues/1
 - Owner action-record correction: https://github.com/mingwucn/Sony_research_6700/issues/1#issuecomment-6574307599
