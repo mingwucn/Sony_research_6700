@@ -1,5 +1,8 @@
 # Sony α6700 (ILCE-6700) Firmware Research & Minimalist Customizer (Full FTP + Native English)
 
+> **Physical status update — 2026-11-02:** The owner has confirmed native English menus work. The Network FTP page opens, but playback/gallery FTP remains unavailable. **FT-101 is not hardware-complete** despite the prior offline-test claims. Do not repeat firmware writes just to make the menu appear; capture read-only state and follow [issue #1](https://github.com/mingwucn/Sony_research_6700/issues/1). The candidate playback patch and table-lookup analysis require further verification.
+
+
 **Latest Status (2026-11-01): Reverse engineering, exact binary/sector patch specifications, offline roundtrip verification, and the standalone Windows GUI customizer (`apps/a6700_customizer`) for Mainland China Sony α6700 Firmware Ver. 2.00 are complete.**
 
 ---
