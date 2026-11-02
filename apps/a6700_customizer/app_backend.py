@@ -71,6 +71,8 @@ from .targets import (
     TARGET_FTP_NETWORK_SETTINGS,
     TARGET_FTP_PLAYBACK_KEY,
     TargetWindow,
+    UnexpectedTargetState,
+    target_needs_change,
 )
 
 def get_writable_root() -> Path:
@@ -189,18 +191,21 @@ class DeviceBackend:
         network_patched = all(results[t.offset]["status"] == "PATCHED" for t in TARGET_FTP_NETWORK_SETTINGS)
         playback_patched = (results[TARGET_FTP_PLAYBACK_KEY.offset]["status"] == "PATCHED")
 
-        if network_patched and playback_patched:
+        if "MISMATCH" in ftp_statuses:
+            overall_ftp = "MISMATCH"
+            ftp_note = "检测到 FTP 目标字节异常；请停止写入并保存只读检查记录。"
+        elif network_patched and playback_patched:
             overall_ftp = "PATCHED"
-            ftp_note = "完整开放 (全网络菜单 + 回放按键已就绪)"
+            ftp_note = "10 个 FTP 候选字节均已设置；相册菜单及实际 FTP 上传尚未通过实机验证。"
         elif network_patched and not playback_patched:
             overall_ftp = "PARTIAL"
-            ftp_note = "检测到已开启基础网络 FTP（如曾使用 Powerful6700），回放快捷键未开启。本次写入将为您无损补齐回放一键上传快捷键，且完全保留相机内已存的服务器配置！"
-        elif not network_patched and playback_patched:
+            ftp_note = "网络 FTP 候选字节已设置，回放快捷键候选字节未设置；写入前需复核目标固件。"
+        elif any(status == "PATCHED" for status in ftp_statuses):
             overall_ftp = "PARTIAL"
-            ftp_note = "检测到回放快捷键已开启，但网络菜单配置未完全开启。"
+            ftp_note = "部分 FTP 候选字节已设置；具体菜单和传输行为尚待实机验证。"
         else:
             overall_ftp = "STOCK"
-            ftp_note = "原厂未启用"
+            ftp_note = "候选 FTP 字节均为原厂值"
 
         return {
             "appfw_size": size,
@@ -264,6 +269,11 @@ class DeviceBackend:
         done = []
 
         with research.ServiceSession(progress=progress) as session:
+            size = flash.stat(session, TARGET_FILE, elf)
+            if size != APPFW_SIZE:
+                raise BackendError(
+                    f"写入已拒绝：目标文件长度 {size} != 预期 {APPFW_SIZE}。"
+                )
             progress("写入前进行零变化探针自检 (Zero-Change Write Probe)…")
             flash.probe(session, TARGET_FILE, targets_to_write[0][0].offset, 512, elf)
 
@@ -271,7 +281,11 @@ class DeviceBackend:
                 progress(f"写入中: {target.name} (偏移 0x{target.offset:08x})…")
                 # Pre-read
                 before = flash.read_range(session, TARGET_FILE, target.offset, len(desired_bytes), elf)
-                if before == desired_bytes:
+                try:
+                    change_required = target_needs_change(target, before, desired_bytes)
+                except UnexpectedTargetState as exc:
+                    raise BackendError(f"固件字节不匹配，已拒绝写入：{exc}") from exc
+                if not change_required:
                     progress(f"已经是目标状态: 0x{target.offset:08x}")
                     done.append({"offset": target.offset, "status": "no-op"})
                     continue
@@ -303,13 +317,22 @@ class DeviceBackend:
         done = []
 
         with research.ServiceSession(progress=progress) as session:
+            size = flash.stat(session, TARGET_FILE, elf)
+            if size != APPFW_SIZE:
+                raise BackendError(
+                    f"回退已拒绝：目标文件长度 {size} != 预期 {APPFW_SIZE}。"
+                )
             progress("回退前进行零变化探针自检…")
             flash.probe(session, TARGET_FILE, ALL_TARGETS[0].offset, 512, elf)
 
             for target in ALL_TARGETS:
                 progress(f"恢复中: 0x{target.offset:08x} -> 原厂预置…")
                 before = flash.read_range(session, TARGET_FILE, target.offset, len(target.preimage), elf)
-                if before == target.preimage:
+                try:
+                    change_required = target_needs_change(target, before, target.preimage)
+                except UnexpectedTargetState as exc:
+                    raise BackendError(f"固件字节不匹配，已拒绝回退：{exc}") from exc
+                if not change_required:
                     done.append({"offset": target.offset, "status": "already-stock"})
                     continue
 
