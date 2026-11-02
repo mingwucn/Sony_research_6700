@@ -64,6 +64,14 @@ def run_pyinstaller():
         "--name", "SonyA6700Customizer",
         "--distpath", str(DIST_DIR),
         "--workpath", str(BUILD_DIR),
+    ]
+
+    # If running inside a Conda environment, add Library/bin to paths
+    conda_bin = Path(sys.prefix) / "Library" / "bin"
+    if conda_bin.is_dir():
+        cmd.extend(["--paths", str(conda_bin)])
+
+    cmd.extend([
         # Add payloads
         "--add-data", f"{native_src};native",
         "--add-data", f"{libwdi_src};third_party/libwdi",
@@ -73,12 +81,13 @@ def run_pyinstaller():
         "--hidden-import", "usb.core",
         "--hidden-import", "usb.util",
         "--hidden-import", "usb.backend.libusb1",
+        "--hidden-import", "ctypes",
         "--hidden-import", "tkinter",
         "--hidden-import", "tkinter.ttk",
         "--hidden-import", "tkinter.messagebox",
         # Main entry
         str(ENTRY_SCRIPT),
-    ]
+    ])
 
     print("  执行命令:", " ".join(cmd))
     res = subprocess.run(cmd, cwd=str(PROJECT_ROOT))
@@ -88,11 +97,24 @@ def run_pyinstaller():
 
 
 def copy_distribution_assets():
-    """Add user manuals and batch shortcuts to dist folder."""
-    print("\n[3/5] 复制发布文档与快捷启动引导...")
+    """Add user manuals, runtime DLLs, and batch shortcuts to dist folder."""
+    print("\n[3/5] 复制发布文档、运行时 DLL 与快捷启动引导...")
     out_dir = DIST_DIR / "SonyA6700Customizer"
     if not out_dir.is_dir():
         raise FileNotFoundError(f"未找到构建输出目录: {out_dir}")
+
+    internal_dir = out_dir / "_internal"
+
+    # Crucial: in Windows Conda environments, ensure ctypes/tk dependencies are bundled
+    conda_bin = Path(sys.prefix) / "Library" / "bin"
+    if conda_bin.is_dir():
+        dll_patterns = ["ffi*.dll", "tcl86t.dll", "tk86t.dll", "liblzma.dll"]
+        for pat in dll_patterns:
+            for dll_file in conda_bin.glob(pat):
+                dest = internal_dir / dll_file.name
+                if not dest.is_file():
+                    shutil.copy2(dll_file, dest)
+                    print(f"  ✓ 补充 Conda 运行时 DLL: {dll_file.name}")
 
     # Copy user guide
     user_guide_src = PROJECT_ROOT / "docs" / "USER_GUIDE_CN.md"
@@ -132,7 +154,7 @@ def create_zip_package() -> Path:
 
 def verify_dist():
     """Check integrity of the output."""
-    print("\n[5/5] 验证发布产物完整性...")
+    print("\n[5/5] 验证发布产物完整性与启动烟测...")
     exe_path = DIST_DIR / "SonyA6700Customizer" / "SonyA6700Customizer.exe"
     if not exe_path.is_file():
         raise FileNotFoundError(f"未找到主程序: {exe_path}")
@@ -146,6 +168,28 @@ def verify_dist():
         raise FileNotFoundError(f"构建目录缺少必要载荷: {native_elf}")
     if not libusb.is_file():
         raise FileNotFoundError(f"构建目录缺少 libusb: {libusb}")
+
+    # Verify ctypes / tk dependencies
+    ffi_dlls = list(internal_dir.glob("ffi*.dll"))
+    if not ffi_dlls:
+        raise FileNotFoundError(f"构建目录缺少 ctypes 依赖 ffi.dll: {internal_dir}")
+
+    # Smoke test: launch process briefly to ensure no DLL load exception
+    print("  执行可执行文件快速启动自测 (Smoke Test)...")
+    proc = subprocess.Popen([str(exe_path)])
+    try:
+        proc.wait(timeout=2.0)
+        # If it terminated in under 2 seconds, it crashed
+        if proc.returncode != 0:
+            raise RuntimeError(f"可执行文件启动立即异常退出，退出码: {proc.returncode}")
+    except subprocess.TimeoutExpired:
+        # Process is running normally! Terminate it
+        proc.terminate()
+        try:
+            proc.wait(timeout=1.0)
+        except subprocess.TimeoutExpired:
+            proc.kill()
+        print("  ✓ 可执行文件启动烟测成功（无 DLL 缺失弹窗或崩溃）！")
 
     print("  ✓ 主执行程序与底层载荷全部校验通过！")
     print(f"\n🎉 构建完成！发布目录: {DIST_DIR / 'SonyA6700Customizer'}")
