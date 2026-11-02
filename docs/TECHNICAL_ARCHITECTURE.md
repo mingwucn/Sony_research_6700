@@ -98,7 +98,9 @@ Disassembling `/usr/lib/appFw.so` at file offset `0x023080d0` (`VA 0x023080d0`):
 
 ---
 
-## 3. Feature 2: Complete Wi-Fi FTP & Playback Custom Key (`FT-101`)
+## 3. Feature 2: Candidate Wi-Fi FTP & Playback Custom Key (`FT-101`)
+
+> **Hardware regression (2026-11-02):** Native English works and the Network FTP page is accessible, but the owner's Playback/Gallery FTP remains unavailable. The following candidate mechanism is **static inference**, not a validated FTP unlock. See [issue #1](https://github.com/mingwucn/Sony_research_6700/issues/1).
 
 ### 3.1 Why Upstream `Powerful6700` Missed the Playback Custom Key
 Upstream `Powerful6700` patched 9 single-byte flags in the master action capability table (`0x03f14c38`) corresponding to Action IDs **`0x05a5` through `0x05b0`** (file offsets `0x03f17524`–`0x03f17564`). Those 9 flags unlock the **Network -> FTP Transfer** setup pages (Server configuration, Auto-transfer on capture, Target format, Directory hierarchy).
@@ -117,10 +119,13 @@ However, in Sony's UI architecture, **Custom Key assignment in Playback mode** (
    0x03666b80: 04 01 00 00   ; Sub-code = 0x0104
    0x03666b84: 22 02 00 00   ; Help String ID = 0x0222
    ```
-4. The custom key availability dispatcher at **`0x01440d0c`** checks whether an Action ID is assignable on the current camera model by indexing into the master 8-byte capability table at **`0x03f14c38`**:
-   $$\text{EntryOffset} = \text{0x03f14c38} + (\text{ActionID} \times 8)$$
-   For $\text{ActionID} = \text{0x0817}$ ($2071$):
-   $$\text{EntryOffset} = \text{0x03f14c38} + (\text{0x0817} \times 8) = \text{0x03f14c38} + \text{0x30b8} = \text{0x03f17ce0}$$
+4. The candidate custom-key availability dispatcher at `0x01440d0c` reportedly consults an 8-byte capability table beginning near `0x03f14c38`. **The previously stated direct-Action-ID-index formula is arithmetically incorrect**:
+   ```text
+   0x0817 * 8 = 0x40B8
+   0x03F14C38 + 0x40B8 = 0x03F18CF0, NOT 0x03F17CE0
+   0x03F17CE0 - 0x03F14C38 = 0x30A8 (0x615 records of 8 bytes)
+   ```
+   The distinct reported record at `0x03f17ce0` may still genuinely contain Action `0x0817`; however, its location is **not justified** by direct Action-ID indexing. Independently trace the actual table lookup/search mechanism and any other per-mode predicates.
 5. Inspecting **`0x03f17ce0`** in stock CN1 `/usr/lib/appFw.so`:
    ```text
    0x03f17ce0: 17 08 00 00  00  01 01 01
@@ -128,7 +133,7 @@ However, in Sony's UI architecture, **Custom Key assignment in Playback mode** (
                Action 0x817  |  Sub-flags (already 01)
                              +-- Availability gate at 0x03f17ce4 = 0x00 (DISABLED)
    ```
-6. **Surgical 1-Byte Fix**: Changing **`0x03f17ce4`** from `0x00` to `0x01` immediately enables Action `0x0817` (`FTP_TRANSFER`), making **`FTP传输` (`FTP Transfer`)** selectable in `PB Custom Key Setting` and functional during Playback review.
+6. **Unverified one-byte candidate:** `0x03f17ce4` (`00 -> 01`) was hypothesized to enable Action `0x0817`. It has not been proven to expose playback controls or cause successful upload on this camera. Do not change additional firmware bytes until actual on-camera state and relevant predicates have been established.
 
 ---
 
@@ -158,7 +163,7 @@ By traversing the block pointers (direct, indirect `786495`, and double-indirect
 To avoid Python C-extension ABI conflicts (`python312.dll` vs. host Python 3.13) while reusing the battle-tested USB service-mode transport from `Powerful6700-Windows-x64`:
 1. **[`apps/a6700_customizer/app_gui.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_gui.py)** implements the 6-step wizard using standard-library `tkinter`/`ttk` (Tk 8.6) with a custom high-DPI dark theme.
 2. **[`apps/a6700_customizer/app_backend.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_backend.py)** dynamically binds `third_party/a6700_unlock` and `_internal` data payloads (`libusb-1.0.dll`, `windows_auth`, `dump_range.elf`, `flash_write.elf`) without polluting `sys.path` with incompatible `.pyd` binaries.
-3. **[`apps/a6700_customizer/targets.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/targets.py)** defines the 11 `ByteTarget` specifications (`14` bytes total) and enforces strict tri-state validation (`STOCK`, `PATCHED`, or `UNKNOWN`). If any target window contains unexpected bytes (`UNKNOWN`), all write operations are immediately refused.
+3. **[`apps/a6700_customizer/targets.py`](../apps/a6700_customizer/targets.py)** defines 11 proposed byte targets (14 bytes total) and a known-preimage transition guard. This guards individual operations against unknown bytes, **not** against all possible firmware identity mismatches or multi-window partial-write failure. The field values do not establish that FTP works in Playback.
 
 ### 5.2 Camera-Side Execution Flow (`Senser` / `Jiritsu` Service Mode)
 During an inspection or write session (`_session_context()` in [`app_backend.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_backend.py)):
