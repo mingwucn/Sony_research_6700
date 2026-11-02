@@ -1,13 +1,18 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-01",
-  "phase": "candidate_patches_and_customizer_gui_qualified_ready_for_owner_verification",
+  "updated_on": "2026-11-02",
+  "phase": "gallery_playback_menu_mode_b_and_custom_key_mode_a_integrated_and_batched_written",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
-  "regional_variant": "Chinese mainland version (owner-reported; exact SKU unverified)",
-  "device_access_performed": false,
-  "device_writes_performed": false,
-  "validated_features": [],
+  "regional_variant": "Chinese mainland version (owner-verified; ILCE-6700 Ver. 2.00)",
+  "device_access_performed": true,
+  "device_writes_performed": true,
+  "validated_features": [
+    "native_english_menu_unlocked",
+    "network_ftp_settings_menu_unlocked",
+    "gallery_playback_menu_mode_b_integrated",
+    "playback_custom_key_mode_a_integrated"
+  ],
   "upstream_revisions_locked": true,
   "offline_inventory_synthetic_tests": {
     "passed": 27,

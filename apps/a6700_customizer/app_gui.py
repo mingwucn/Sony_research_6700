@@ -247,11 +247,11 @@ class SonyCustomizerApp(tk.Tk):
         notice_text = (
             "欢迎使用 Sony ILCE-6700 极简功能定制工具。\n\n"
             "本工具专门为实现两大核心需求而定制开发：\n"
-            "  1. 完整 FTP 传输支持：不仅包含常规网络菜单，更彻底攻克相册回放按键一键上传照片（Action 0x0817）\n"
+            "  1. 完整 FTP 传输支持：包含网络菜单、相册回放「选择传输」完整菜单树（81处权限）及回放按键秒传（Action 0x0817）\n"
             "  2. 原生英文菜单解锁：通过底层断言门禁原生开放 English 选项，绝不粗暴替换汉字文字包！\n\n"
             "【非协商性安全准则】\n"
             "● 硬件适用范围：仅支持 Sony ILCE-6700 (α6700) 国行版机身，固件版本 2.00。\n"
-            "● 极简修改足迹：全部操作仅涉及 /usr/lib/appFw.so 中共 14 个字节。绝不改动内核、bootloader、传感器标定和无线射频。\n"
+            "● 极简修改足迹：全部操作仅涉及 /usr/lib/appFw.so 中确证的安全权限位。绝不改动内核、bootloader、传感器标定和无线射频。\n"
             "● 严格只读回退机制：每次写入前均自动进行零变化硬件探针测试与双重快照存盘，支持一键 100% 还原回出厂值。"
         )
         lbl = ttk.Label(card, text=notice_text, style="Card.TLabel", justify="left")
@@ -503,20 +503,21 @@ class SonyCustomizerApp(tk.Tk):
 
         self.var_ftp = tk.BooleanVar(value=True)
         chk_ftp = ttk.Checkbutton(
-            card_ftp, text="完整 FTP 传输支持 (含相册回放界面按键一键上传)",
+            card_ftp, text="完整 FTP 传输支持 (网络菜单 + 完整相册回放传输菜单 + 回放自定义键)",
             variable=self.var_ftp
         )
         chk_ftp.pack(anchor="w", pady=(0, 6))
 
         ftp_desc = (
-            "包含 Network 菜单 0x05a5..0x05b0 完整功能配置，并攻克相册回放界面（Menu 0x02aa）\n"
-            "Action 0x0817 (FTP_TRANSFER) 自定义键绑定！按键即可秒传照片，仅改写 10 字节。"
+            "包含 Network 菜单 0x05a5..0x05b0 完整功能配置，并原生开启相册回放（Playback）->\n"
+            "「选择传输」完整菜单树（此影像、多个影像、该组中所有影像、评级影像等 81 处权限），\n"
+            "同时解锁 Action 0x0817 (FTP_TRANSFER) 回放自定义键绑定，看图一键秒传！"
         )
         ttk.Label(card_ftp, text=ftp_desc, style="CardMuted.TLabel", justify="left").pack(anchor="w")
 
         self.ftp_upgrade_banner = tk.Label(
             card_ftp,
-            text="💡 检测到此前已使用 Powerful6700 开启过网络 FTP 菜单。\n本次勾选将为您无损补齐【回放快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！",
+            text="💡 检测到此前已开启基础网络 FTP（如曾使用 Powerful6700 或早期版本）。\n本次勾选将为您无损补齐【相册回放传输完整菜单 + 快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！",
             font=(FONT_FAMILY, 9), bg="#042f2e", fg="#2dd4bf",
             padx=10, pady=8, justify="left", bd=1, relief="solid"
         )

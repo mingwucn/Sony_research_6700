@@ -19,13 +19,13 @@
 ### 3. Minimalist Windows Desktop GUI (`Sony α6700 极简定制工具`)
 - Modeled after the clean step-by-step workflow of `Powerful6700-Windows`, with **all unrelated experimental modifications removed** (no Creative Look LUTs, no shutter curtain tweaks, no exposure/sound/pixel-shift/stabilization hacks).
 - Provides **only**:
-  1. **原生完整 FTP 传输（含回放快捷键 `0x0817` + 网络菜单 `0x05a5`–`0x05b0`）**
+  1. **原生完整 FTP 传输（含相册回放「选择传输」完整菜单树 + 回放自定义键 `0x0817` + 网络菜单 `0x05a5`–`0x05b0`）**
   2. **原生英文菜单解锁（`Setup -> Language -> English` 谓词 `0x023080f8`）**
 - **Built-in Transactional Safety**:
-  - **Read-Only Pre-Inspection & Automatic Dual Backups**: Reads all 11 target windows from `/usr/lib/appFw.so`, verifies exact byte signatures, and saves timestamped JSON backups + `initial_backup.json` in `backups/` before any write is allowed.
-  - **Zero-Change Write Probe**: Writes the camera's existing stock byte back to `0x023080f8` with `fsync` + read-back verification before applying any real modification.
-  - **Atomic Write + `fsync` + Read-Back Verification**: Uses freestanding AArch64 native helpers (`dump_range.elf` & `flash_write.elf`) over the USB service session to modify `/usr/lib/appFw.so` in place, flush to NAND, and verify every modified byte.
-  - **1-Click Factory Restore**: Restores all 14 bytes back to stock CN1 Ver. 2.00 constants (or from a saved backup snapshot) at any time.
+  - **Read-Only Pre-Inspection & Automatic Dual Backups**: Reads all target windows from `/usr/lib/appFw.so` in 7 optimized I/O spans, verifies exact byte signatures, and saves timestamped JSON backups in `backups/` before any write is allowed.
+  - **Zero-Change Write Probe**: Performs zero-semantic-change hardware verification before modifying any data.
+  - **Atomic Batched Write + `fsync` + Read-Back Verification**: Uses freestanding AArch64 native helpers (`dump_range.elf` & `flash_write.elf`) over the USB service session. Targets are grouped into at most 7 contiguous spans ($\le 128\text{ KiB}$ each), eliminating Senser timeout drops and preserving all interleaved firmware data bit-for-bit.
+  - **1-Click Factory Restore**: Restores all modified targets back to stock CN1 Ver. 2.00 constants (or from a saved backup snapshot) at any time.
 
 ---
 
@@ -73,17 +73,17 @@
 
 ### 💡 针对曾用 Powerful6700 开启过 FTP 的用户：平滑兼容与无损升级
 
-如果你的相机此前已经使用过 `Powerful6700` 开启过 FTP：
+如果你的相机此前已经使用过 `Powerful6700` 或早期版本开启过 FTP：
 1. **智能识别提示**：在第 4 步只读检测时，本工具会自动识别出相机处于 `部分启用 (Partial)` 状态，并明确提示：
-   > *“检测到已开启基础网络 FTP（如曾使用 Powerful6700），回放快捷键未开启。本次勾选将为您无损补齐【回放快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！”*
+   > *“检测到已开启网络 FTP 菜单（如曾使用 Powerful6700 或早期版本），相册回放传输完整菜单尚未开启。本次写入将为您无损补齐【相册回放传输完整菜单 + 快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！”*
 2. **精准补齐，零重复写入 (`no-op`)**：
    - Powerful6700 写入的 9 处网络菜单标记在检测时已为 `01`，本工具在写入时会自动判断并直接跳过（`no-op`），不进行任何冗余重写。
-   - 本工具仅会精准写入此前缺失的 **`0x03f17ce4`（回放相册自定义键权限位）** 以及 **`0x023080f8`（真原生英文菜单断言）**。
+   - 本工具仅会精准写入此前缺失的 **相册回放传输菜单（81 处权限，Mode B）**、**`0x03f17ce4`（回放相册自定义键，Mode A）** 以及 **`0x023080f8`（真原生英文菜单断言）**。
 3. **相机内所有设置 100% 完整保留**：
    - 索尼相机中用户配置的 FTP 服务器地址、账号密码、上传目录和 Wi-Fi 连接信息均存储在 Backup NVRAM 中。
    - 本工具仅操作 `/usr/lib/appFw.so` 的程序代码与权限位，**绝不会破坏、重置或清除任何已保存的服务器配置**！
 4. **一键出厂还原保护**：
-   - 若日后点击“出厂还原”，本工具不仅能还原英文，还会将全部 10 处 FTP 标志位（包括 Powerful6700 此前改写的 9 处）统一还原为 100% 原厂状态。
+   - 若日后点击“出厂还原”，本工具不仅能还原英文，还会将全部 FTP 标志位（包括 Powerful6700 此前改写的网络菜单及全部相册回放菜单）统一安全还原为 100% 原厂状态。
 
 ---
 
@@ -114,10 +114,13 @@ python -X utf8 -m apps.a6700_customizer.app_gui
 ### Post-Unlock Camera Setup
 - **To switch to Native English**:
   - Navigate to `设置 (Setup) -> 区域/日期 (Area/Date) -> 语言 (Language)` and select **English**.
-- **To bind a Playback Custom Key for 1-button FTP upload**:
-  - Navigate to `设置 (Setup) -> 操作自定义 (Operation Customize) -> 回放自定义键设置 (PB Custom Key Setting)` (or `Custom Key/Dial Set.` in English).
+- **Mode B: Playback Gallery Transfer Menu (相册选择传输菜单)**:
+  - When viewing images, enter `播放 (Playback) -> 选择传输 (Select to Transfer)` (or press `Fn` in playback).
+  - You now have native access to: `此影像 (This Image)`, `多个影像 (Multiple Images)`, `该组中所有影像 (All in This Group)`, `评级影像 (Rating Images)`, `RAW+J/H传输目标 (RAW+J/H Transfer Target)`, and `传输JPEG/HEIF大小 (Transfer Size)`.
+- **Mode A: 1-Button Quick FTP Transfer via Playback Custom Key (回放自定义键秒传)**:
+  - Navigate to `设置 (Setup) -> 操作自定义 (Operation Customize) -> 回放自定义键设置 (PB Custom Key Setting)`.
   - Select your preferred button (e.g., `C1`, `C2`, `AEL`, or `AF-ON`) and assign it to **`FTP传输` (`FTP Transfer`)**.
-  - When reviewing photos in Playback mode, press that button to immediately queue/upload the current photo to your configured FTP server!
+  - When reviewing photos in Playback mode, simply press that button to immediately queue/upload the current photo to your configured FTP server!
 
 ---
 
@@ -126,7 +129,7 @@ python -X utf8 -m apps.a6700_customizer.app_gui
 All static analysis, sector verification, and patch planning tools run 100% offline using only the Python standard library:
 
 ```powershell
-# 1. Run the 76-case unit test suite (ELF, ext2, UXC, patch spec, and customizer targets)
+# 1. Run the 77-case unit test suite (ELF, ext2, UXC, patch spec, customizer targets & spans)
 python -X utf8 -m unittest tests/test_customizer_targets.py tests/test_patch_spec.py tests/test_elf_static.py tests/test_ext2_readonly.py tests/test_uxc_readonly.py -v
 
 # 2. Verify stock vs. patched sectors on a raw /dev/nflasha15 image
