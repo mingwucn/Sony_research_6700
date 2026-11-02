@@ -78,17 +78,64 @@ class TestRecoveryJournal(unittest.TestCase):
         self.assertEqual(meta["status"], JournalStatus.NEEDS_REVIEW.value)
 
     def test_find_latest_unresolved(self):
-        # Initial committed session
         j1 = RecoveryJournal.create(self.base_dir, "apply", [self.span1])
         j1.record_commit()
         self.assertIsNone(RecoveryJournal.find_latest_unresolved(self.base_dir))
 
-        # Interrupted session
         j2 = RecoveryJournal.create(self.base_dir, "apply", [self.span1])
         j2.update_status(JournalStatus.NEEDS_REVIEW)
         found = RecoveryJournal.find_latest_unresolved(self.base_dir)
         self.assertIsNotNone(found)
         self.assertEqual(found.read_meta()["session_id"], j2.read_meta()["session_id"])
+
+    def test_unresolved_lifecycle_includes_initialized_and_reconciled(self):
+        for status in (
+            JournalStatus.INITIALIZED,
+            JournalStatus.IN_PROGRESS,
+            JournalStatus.NEEDS_REVIEW,
+            JournalStatus.RECONCILED,
+        ):
+            with self.subTest(status=status):
+                base = self.base_dir / status.value
+                journal = RecoveryJournal.create(base, "apply", [self.span1])
+                journal.update_status(status)
+                self.assertIsNotNone(RecoveryJournal.find_latest_unresolved(base))
+
+    def test_terminal_lifecycle_states_are_resolved(self):
+        for status in (JournalStatus.COMMITTED, JournalStatus.REVERTED):
+            with self.subTest(status=status):
+                base = self.base_dir / status.value
+                journal = RecoveryJournal.create(base, "apply", [self.span1])
+                journal.update_status(status)
+                self.assertIsNone(RecoveryJournal.find_latest_unresolved(base))
+
+    def test_target_span_binary_roundtrip(self):
+        journal = RecoveryJournal.create(self.base_dir, "apply", [self.span1])
+        journal.save_target_span_binary(1, b"TARGET")
+        self.assertEqual(journal.load_target_span_binary(1), b"TARGET")
+
+    def test_damaged_or_unknown_metadata_fails_closed(self):
+        for index, content in enumerate(("{broken", "[]", json.dumps({"status": "UNRECOGNIZED"}))):
+            with self.subTest(content=content):
+                base = self.base_dir / str(index)
+                journal = RecoveryJournal.create(base, "apply", [self.span1])
+                journal.meta_file.write_text(content, encoding="utf-8")
+                self.assertIsNotNone(RecoveryJournal.find_latest_unresolved(base))
+
+    def test_session_ids_do_not_collide(self):
+        first = RecoveryJournal.create(self.base_dir, "apply", [self.span1])
+        second = RecoveryJournal.create(self.base_dir, "apply", [self.span1])
+        self.assertNotEqual(first.session_dir, second.session_dir)
+
+    def test_prepared_snapshots_are_idempotent_and_immutable(self):
+        journal = RecoveryJournal.create(self.base_dir, "apply", [self.span1])
+        stock = bytes(self.span1.length)
+        target = b"\x01" + bytes(self.span1.length - 1)
+        journal.record_span_prepared(1, self.span1, stock, target)
+        journal.record_span_prepared(1, self.span1, stock, target)
+        self.assertEqual(journal.load_stock_span_binary(1), stock)
+        with self.assertRaisesRegex(RuntimeError, "拒绝覆盖"):
+            journal.record_span_prepared(1, self.span1, b"\x02" + bytes(self.span1.length - 1), target)
 
 
 if __name__ == "__main__":

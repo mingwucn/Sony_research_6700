@@ -45,7 +45,7 @@ def _self_test(out_path: Path) -> int:
 
     if "app_gui" in state:
         from apps.a6700_customizer import app_backend
-        from a6700win import dump, flash
+        from a6700win import dump, flash, paths
         from a6700win.usb import driver, windows_auth
 
         def tk_window():
@@ -75,6 +75,7 @@ def _self_test(out_path: Path) -> int:
             return path
 
         def auth_modules():
+            paths.ensure_vendor_on_path()
             from a6700_unlock.usb import legacy  # loads PMCA reference modules
             return legacy.__file__
 

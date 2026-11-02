@@ -1,4 +1,5 @@
 # Private research inputs and generated body-specific artifacts
+/.data/
 /private/
 /local/
 /firmware/

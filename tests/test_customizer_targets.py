@@ -5,6 +5,11 @@ from apps.a6700_customizer.targets import (
     ALL_FTP_TARGETS,
     ALL_TARGETS,
     APPFW_SIZE,
+    INTERLEAVED_PRESERVED_BYTES,
+    LOGICAL_CHANGED_BYTES,
+    LOGICAL_TARGET_COUNT,
+    PHYSICAL_SPANS_COUNT,
+    PHYSICAL_WRITE_FOOTPRINT_BYTES,
     TARGET_ENGLISH,
     TARGET_FILE,
     TARGET_FTP_GALLERY_MENUS,
@@ -60,6 +65,13 @@ class TestCustomizerTargets(unittest.TestCase):
             for t in s.targets:
                 self.assertGreaterEqual(t.offset, s.offset)
                 self.assertLessEqual(t.offset + len(t.patched), s.offset + s.length)
+
+    def test_truth_in_labeling_metrics(self):
+        self.assertEqual(LOGICAL_TARGET_COUNT, 92)
+        self.assertEqual(LOGICAL_CHANGED_BYTES, 94)
+        self.assertEqual(PHYSICAL_SPANS_COUNT, 7)
+        self.assertEqual(PHYSICAL_WRITE_FOOTPRINT_BYTES, 236018)
+        self.assertEqual(INTERLEAVED_PRESERVED_BYTES, 235924)
 
 
 if __name__ == "__main__":

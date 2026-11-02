@@ -32,7 +32,7 @@ def project_root() -> Path:
     """可写项目根：源码运行时是 Powerful6700Win/，冻结运行时是 exe 所在目录。"""
     if frozen():
         return Path(sys.executable).resolve().parent
-    return SRC_DIR.parent
+    return SRC_DIR.parent.parent
 
 
 def bundled_root() -> Path:

@@ -1,6 +1,6 @@
 # Sony α6700 (ILCE-6700) Firmware Research & Minimalist Customizer (Full FTP + Native English)
 
-**Latest Status (2026-11-01): Reverse engineering, exact binary/sector patch specifications, offline roundtrip verification, and the standalone Windows GUI customizer (`apps/a6700_customizer`) for Mainland China Sony α6700 Firmware Ver. 2.00 are complete.**
+**Latest Status (2026-11-02): The Ver. 2.00 customizer now discloses 94 logical changed bytes versus 7 spans / 236,018 physical bytes, journals full raw span snapshots, requires read-only reconciliation after interruption, and passes 106 focused offline tests plus the portable clean-PATH self-test. Physical interrupted-session recovery and long-duration FTP reliability remain separate validation work.**
 
 ---
 
@@ -11,21 +11,22 @@
 - **Root Cause Discovered**: The official Mainland China (CN1) firmware (`Ver. 2.00`) already ships with **100% complete native English UI resource banks** (`string_english.uxc`, `string_english_3.uxc`, `string_english_6.uxc`, `string_english_22.uxc` — 11,917 Resource IDs matching Simplified Chinese 1:1) in `/dev/nflasha15`. However, Choice 0 (`English`, Resource ID `0x0204e2be`) in the Setup Language menu table (`0x04b44180`) is guarded by an availability predicate (`english_predicate` at link-time VA `0x023080d0`, relocated via `.rela.dyn` at `0x00aa3a58`). That predicate reads Backup property `0x010d008f` (which is `2` on CN1 bodies) and executes `cmp w0, #1` followed by `cset w20, eq` at file offset **`0x023080f8`**.
 - **Surgical 4-Byte Solution**: Patching **`0x023080f8`** in `/usr/lib/appFw.so` from `f4 17 9f 1a` (`cset w20, eq`) to `34 00 80 52` (`mov w20, #1`) forces `english_predicate` to return `1` while keeping its stack frame constructor (`0x03137990`), destructor (`0x0313759c`), and all regional/Wi-Fi/compliance settings (`0x010d008f`) untouched. Selecting **English** in `Setup -> Area/Date -> Language` natively updates Backup property `0x02cf0000` (Group 719) to `0` (Bank 0) and persists across reboots.
 
-### 2. Complete Native Wi-Fi FTP Support (`FT-101`) — Including Playback Custom Key (`0x0817`)
-- **Problem with prior tools**: Enabling the 9 Network FTP capability flags (`0x05a5`–`0x05b0`) exposed the `Network -> FTP Transfer` setup menu, but users **could not assign a Custom Key in Playback mode** to trigger single-photo FTP uploads (`FTP传输` was hidden in `回放自定义键设置`).
-- **Root Cause Discovered**: Tracing the Playback Custom Key binding table (`0x03665ec0`) revealed that Resource ID `0x021c668e` (`"FTP Transfer"` / `"FTP传输"`) is bound at `0x03666b70` to **Action ID `0x0817` (`2071`)**. The custom key dispatcher (`0x01440d0c`) filters assignable actions through the master 8-byte capability table (`0x03f14c38 + action_id * 8`). At entry **`0x03f17ce0`** (`Action 0x0817`), the availability byte at **`0x03f17ce4`** was `0x00` (disabled).
-- **Complete 10-Byte Solution**: Enabling **`0x03f17ce4`** (`00` ➔ `01`) alongside the 9 Network FTP flags (`0x03f17524`–`0x03f17564`) unlocks both the full Network FTP configuration menu (Server, PASV, Destination Folder, Auto Transfer) **and** the Playback Custom Key assignment (`设置 -> 操作自定义 -> 回放自定义键设置 -> FTP传输`).
+### 2. Native Wi-Fi FTP Menu and Playback Action Unlock (`FT-101`)
+- **Problem with prior tools**: Enabling only the 9 Network FTP capability flags (`0x05a5`–`0x05b0`) exposed the setup menu, but the Playback FTP action remained unavailable because its parent Playback/Gallery menu permissions were disabled.
+- **Menu and Action Scope**: The current target set enables the 9 Network flags, Action `0x0817` at `0x03f17ce4`, and 81 Playback/Gallery permissions. This exposes `Playback -> Select to Transfer` and permits `FTP传输` to be assigned in Playback Custom Key settings.
+- **Evidence Boundary**: Firmware static analysis and on-device menu readback support the menu/action claims. End-to-end transfer reliability, reconnect behavior, and long-duration network operation remain subject to the camera Wi-Fi/server environment and continuing validation.
 
 ### 3. Minimalist Windows Desktop GUI (`Sony α6700 极简定制工具`)
-- Modeled after the clean step-by-step workflow of `Powerful6700-Windows`, with **all unrelated experimental modifications removed** (no Creative Look LUTs, no shutter curtain tweaks, no exposure/sound/pixel-shift/stabilization hacks).
+- Modeled after the clean step-by-step workflow of `Powerful6700-Windows`, with unrelated experimental modifications excluded.
 - Provides **only**:
-  1. **原生完整 FTP 传输（含相册回放「选择传输」完整菜单树 + 回放自定义键 `0x0817` + 网络菜单 `0x05a5`–`0x05b0`）**
+  1. **FTP 网络配置菜单、相册回放「选择传输」菜单树与回放自定义键 `0x0817`**
   2. **原生英文菜单解锁（`Setup -> Language -> English` 谓词 `0x023080f8`）**
 - **Built-in Transactional Safety**:
-  - **Read-Only Pre-Inspection & Automatic Dual Backups**: Reads all target windows from `/usr/lib/appFw.so` in 7 optimized I/O spans, verifies exact byte signatures, and saves timestamped JSON backups in `backups/` before any write is allowed.
-  - **Zero-Change Write Probe**: Performs zero-semantic-change hardware verification before modifying any data.
-  - **Atomic Batched Write + `fsync` + Read-Back Verification**: Uses freestanding AArch64 native helpers (`dump_range.elf` & `flash_write.elf`) over the USB service session. Targets are grouped into at most 7 contiguous spans ($\le 128\text{ KiB}$ each), eliminating Senser timeout drops and preserving all interleaved firmware data bit-for-bit.
-  - **1-Click Factory Restore**: Restores all modified targets back to stock CN1 Ver. 2.00 constants (or from a saved backup snapshot) at any time.
+  - **Read-Only Pre-Inspection & JSON Backup**: Reads all 92 targets in 7 spans and saves timestamped target-state JSON in `backups/`.
+  - **Durable Raw Span Journal**: Before each mutating span write, saves and `fsync()`s the complete pre-write and target `.bin` buffers in an append-only JSONL session journal.
+  - **Sequential Independent Spans + Full Readback**: Each span is at most 128 KiB and is written and verified independently; every byte of the full span must match. This is not an atomic multi-span transaction.
+  - **Immediate `NEEDS_REVIEW` Lockout**: Timeout, disconnect, stale reconciliation, or mismatch stops the session without blind retry or automatic rollback. Page 7 requires a read-only reconciliation before guarded resume or rollback from raw snapshots.
+  - **Conditional Factory Restore**: Restores the managed fields to CN1 Ver. 2.00 constants only while USB service-mode communication and firmware access remain operational; hardware/inaccessible-firmware recovery is not guaranteed.
 
 ---
 
@@ -59,7 +60,7 @@
 #### 方式 A（推荐 · 纯小白用户 · 免安装 Python 环境）：
 1. **直接下载独立便携版**：前往 [GitHub Releases 页面](https://github.com/mingwucn/Sony_research_6700/releases/tag/v1.0.0) 或点击 **[直接下载 Sony_a6700_Customizer_v1.0.0_win64.zip (~22.7 MB)](https://github.com/mingwucn/Sony_research_6700/releases/download/v1.0.0/Sony_a6700_Customizer_v1.0.0_win64.zip)**。
 2. 解压至电脑任意目录（**无需安装 Python 或任何第三方环境**）。
-3. 双击运行 **`SonyA6700Customizer.exe`** 或 **`启动_Sony_a6700定制工具.bat`** 即可进入 6 步深色模式界面。
+3. 双击运行 **`SonyA6700Customizer.exe`** 或 **`启动_Sony_a6700定制工具.bat`** 即可进入深色模式界面（含条件启动的第 7 页会话恢复）。
 4. 开发者也可以在本地运行根目录下的 **[`打包独立发布版.bat`](file:///d:/LocalWork/Sony_research_6700/%E6%89%93%E5%8C%85%E7%8B%AC%E7%AB%8B%E5%8F%91%E5%87%86%E7%89%88.bat)**（或 `python tools/build_dist.py`）一键重新构建打包。
 
 #### 方式 B（开发者 / 源码运行）：
@@ -71,25 +72,18 @@
 
 ---
 
-### 💡 针对曾用 Powerful6700 开启过 FTP 的用户：平滑兼容与无损升级
+### 💡 针对曾用 Powerful6700 开启过 FTP 的用户
 
-如果你的相机此前已经使用过 `Powerful6700` 或早期版本开启过 FTP：
-1. **智能识别提示**：在第 4 步只读检测时，本工具会自动识别出相机处于 `部分启用 (Partial)` 状态，并明确提示：
-   > *“检测到已开启网络 FTP 菜单（如曾使用 Powerful6700 或早期版本），相册回放传输完整菜单尚未开启。本次写入将为您无损补齐【相册回放传输完整菜单 + 快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！”*
-2. **精准补齐，零重复写入 (`no-op`)**：
-   - Powerful6700 写入的 9 处网络菜单标记在检测时已为 `01`，本工具在写入时会自动判断并直接跳过（`no-op`），不进行任何冗余重写。
-   - 本工具仅会精准写入此前缺失的 **相册回放传输菜单（81 处权限，Mode B）**、**`0x03f17ce4`（回放相册自定义键，Mode A）** 以及 **`0x023080f8`（真原生英文菜单断言）**。
-3. **相机内所有设置 100% 完整保留**：
-   - 索尼相机中用户配置的 FTP 服务器地址、账号密码、上传目录和 Wi-Fi 连接信息均存储在 Backup NVRAM 中。
-   - 本工具仅操作 `/usr/lib/appFw.so` 的程序代码与权限位，**绝不会破坏、重置或清除任何已保存的服务器配置**！
-4. **一键出厂还原保护**：
-   - 若日后点击“出厂还原”，本工具不仅能还原英文，还会将全部 FTP 标志位（包括 Powerful6700 此前改写的网络菜单及全部相册回放菜单）统一安全还原为 100% 原厂状态。
+1. 第 4 步会识别 `部分启用 (Partial)` 状态；已符合目标值的网络菜单字段在写入时按段判断并跳过实际修改（`no-op`）。
+2. 本次可补齐相册回放传输菜单（81 处权限）、Action `0x0817` 和英文语言断言。
+3. FTP 服务器、账号和 Wi-Fi 配置位于 Backup NVRAM；本工具的目标仅为 `/usr/lib/appFw.so`，不主动读写或重置这些配置。
+4. “出厂还原”会把本工具管理的全部 FTP 与英文字段写回 Ver. 2.00 预置值，包括此前由其他工具改写的网络位。该操作依赖 USB 服务模式与固件文件保持可访问。
 
 ---
 
 ### Camera Preparation
    - Sony α6700 (ILCE-6700) running official Firmware **Ver. 2.00**.
-   - Battery charged to **≥ 50%**.
+   - Battery charged to **≥ 50%** (80% or reliable USB power recommended).
    - Set camera USB mode to **Mass Storage (海量存储器 / MSC)**: `设置 (Setup) -> USB -> USB连接模式 -> 海量存储器 (Mass Storage)`.
    - Close Sony Creators' App, Imaging Edge, Lightroom, or any other software that accesses the camera over USB.
 
@@ -100,37 +94,28 @@ Double-click **[`启动_A6700定制工具.bat`](file:///d:/LocalWork/Sony_resear
 python -X utf8 -m apps.a6700_customizer.app_gui
 ```
 
-### 6-Step Guided Workflow
-1. **1. 操作前须知 (Pre-Flight Checklist)**: Review safety rules and check the confirmation box.
-2. **2. 驱动检查 (WinUSB Driver Check)**: Click **重新扫描驱动**. If it shows `状态: WinUSB 驱动已就绪` (green), click **下一步：相机准备 ➔** directly. Otherwise, click **一键绑定 WinUSB 驱动** once.
-3. **3. 相机准备 (Camera Preparation)**: Connect the camera via a data-capable USB-C cable in **Mass Storage (海量存储器)** mode.
-4. **4. 检测与备份 (Read-Only Inspection & Auto-Backup)**: Click **开始只读检查与备份**. The tool reads `/usr/lib/appFw.so`, verifies exact byte signatures for FTP and English, and automatically writes a timestamped backup JSON to [`backups/`](file:///d:/LocalWork/Sony_research_6700/backups/).
-5. **5. 功能管理 (Feature Management)**:
-   - Check **启用完整 FTP 传输（网络菜单 + 回放快捷键 0x0817）** and/or **解锁原生英文菜单（Setup -> Language -> English）**.
-   - Click **一键写入选中功能**. The tool performs a zero-change probe, patches the selected bytes, flushes to NAND (`fsync`), and verifies read-back equality.
-   - **Power-cycle the camera**: Turn the camera switch OFF, wait 5 seconds, remove the battery for 5 seconds, reinsert, and power ON.
-6. **6. 出厂还原 (1-Click Factory Restore)**: At any time, click **一键还原全部为原厂状态** (or **从备份文件还原...**) to restore all 14 bytes back to stock CN1 Ver. 2.00 values.
+### Guided Workflow and Interrupted-Session Recovery
+1. **操作前须知 / 驱动检查 / 相机准备**：确认精确机型与固件、电量、WinUSB 和 MSC 连接，关闭所有其他相机访问程序。
+2. **检测与备份**：只读检查 92 个目标并保存时间戳 JSON。便携版数据位于程序目录 `data/`，源码运行位于 `.data/customizer/`。
+3. **功能管理**：页面同时披露 **94 个逻辑修改字节（92 处目标）**与两项全选时的 **7 段 / 236,018 字节（约 230.5 KiB）**计划物理足迹。其余 235,924 个段内字节来自预读并原样保留。
+4. **顺序分段写入**：每段独立且不超过 128 KiB；写入前保存完整原始/目标 `.bin` 并记录 JSONL 日志，写入后全段逐字节回读。多段整体不是原子事务。
+5. **异常恢复**：若启动时发现 `INITIALIZED`、`IN_PROGRESS`、`NEEDS_REVIEW` 或 `RECONCILED` 未闭环会话，应用进入第 7 页。先执行只读对账，再明确选择“回退全部修改段”或“续写未完成段”。异常/部分段禁止续写；任何异常都不会触发自动重试或自动回退。
+6. **有条件出厂还原**：第 6 页将管理字段恢复为原厂预置值，依赖 USB 服务模式正常通信与固件可访问，不保证硬件损坏或固件不可访问场景下的软件恢复。
 
 ### Post-Unlock Camera Setup
-- **To switch to Native English**:
-  - Navigate to `设置 (Setup) -> 区域/日期 (Area/Date) -> 语言 (Language)` and select **English**.
-- **Mode B: Playback Gallery Transfer Menu (相册选择传输菜单)**:
-  - When viewing images, enter `播放 (Playback) -> 选择传输 (Select to Transfer)` (or press `Fn` in playback).
-  - You now have native access to: `此影像 (This Image)`, `多个影像 (Multiple Images)`, `该组中所有影像 (All in This Group)`, `评级影像 (Rating Images)`, `RAW+J/H传输目标 (RAW+J/H Transfer Target)`, and `传输JPEG/HEIF大小 (Transfer Size)`.
-- **Mode A: 1-Button Quick FTP Transfer via Playback Custom Key (回放自定义键秒传)**:
-  - Navigate to `设置 (Setup) -> 操作自定义 (Operation Customize) -> 回放自定义键设置 (PB Custom Key Setting)`.
-  - Select your preferred button (e.g., `C1`, `C2`, `AEL`, or `AF-ON`) and assign it to **`FTP传输` (`FTP Transfer`)**.
-  - When reviewing photos in Playback mode, simply press that button to immediately queue/upload the current photo to your configured FTP server!
+- **To switch to Native English**: Navigate to `设置 (Setup) -> 区域/日期 (Area/Date) -> 语言 (Language)` and select **English**.
+- **Mode B: Playback Gallery Transfer Menu**: Enter `播放 (Playback) -> 选择传输 (Select to Transfer)` to access the enabled image-selection and transfer-target menu entries.
+- **Mode A: Playback Custom Key Binding**: Navigate to `设置 (Setup) -> 操作自定义 (Operation Customize) -> 回放自定义键设置 (PB Custom Key Setting)` and assign **`FTP传输` (`FTP Transfer`)** to a preferred key. Actual upload completion and long-term transfer reliability must be verified separately with the configured Wi-Fi/FTP server.
 
 ---
 
 ## 🛠️ Offline CLI Tools & Unit Tests
 
-All static analysis, sector verification, and patch planning tools run 100% offline using only the Python standard library:
+The focused customizer suite uses synthetic/mocked inputs and does not access a camera:
 
 ```powershell
-# 1. Run the 77-case unit test suite (ELF, ext2, UXC, patch spec, customizer targets & spans)
-python -X utf8 -m unittest tests/test_customizer_targets.py tests/test_patch_spec.py tests/test_elf_static.py tests/test_ext2_readonly.py tests/test_uxc_readonly.py -v
+# 106 cases: journal/recovery, targets/spans, patch spec, ELF, ext2 and UXC
+python -X utf8 -m unittest tests/test_recovery_journal.py tests/test_customizer_recovery.py tests/test_customizer_targets.py tests/test_patch_spec.py tests/test_elf_static.py tests/test_ext2_readonly.py tests/test_uxc_readonly.py -v
 
 # 2. Verify stock vs. patched sectors on a raw /dev/nflasha15 image
 python -X utf8 tools/verify_target_sectors.py <path-to-nflasha15.img>
@@ -157,9 +142,10 @@ See **[`docs/CROSS_MODEL_ENGLISH_COMPARISON.md`](file:///d:/LocalWork/Sony_resea
 
 ### Applications & Tools
 - **[`启动_A6700定制工具.bat`](file:///d:/LocalWork/Sony_research_6700/%E5%90%AF%E5%8A%A8_A6700%E5%AE%9A%E5%88%B6%E5%B7%A5%E5%85%B7.bat)**: One-click Windows launcher with automatic dependency verification (`pyusb`, `libusb-package`).
-- **[`apps/a6700_customizer/app_gui.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_gui.py)**: 6-step dark-mode Tkinter/ttk desktop GUI application.
-- **[`apps/a6700_customizer/app_backend.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_backend.py)**: Transactional camera backend (WinUSB driver check, USB service-mode session, read-only inspection, automatic backups, zero-change write probe, `flash_write.elf` execution, and factory restore).
-- **[`apps/a6700_customizer/targets.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/targets.py)**: Exact byte definitions and state evaluators for all 11 target windows (`14` bytes total) in `/usr/lib/appFw.so`.
+- **[`apps/a6700_customizer/app_gui.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_gui.py)**: Dark-mode Tkinter/ttk GUI with feature management, conditional factory restore, and startup reconciliation.
+- **[`apps/a6700_customizer/app_backend.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_backend.py)**: Guarded camera backend with read-only inspection, durable span writes, full readback, reconciled resume/rollback, and factory restore.
+- **[`apps/a6700_customizer/recovery_journal.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/recovery_journal.py)**: Append-only JSONL journal and `fsync()`ed raw pre-write/target span binaries.
+- **[`apps/a6700_customizer/targets.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/targets.py)**: Exact definitions for 92 targets / 94 logical changed bytes and 7 spans / 236,018 physical bytes in `/usr/lib/appFw.so`.
 - **[`tools/patch_spec.py`](file:///d:/LocalWork/Sony_research_6700/tools/patch_spec.py)**: Sector-level (`Sector 383128` & `Sector 445966`) cryptographic specification, SHA-256 verification, and offline roundtrip engine.
 - **[`tools/verify_target_sectors.py`](file:///d:/LocalWork/Sony_research_6700/tools/verify_target_sectors.py)**: Standalone CLI inspector for raw `/dev/nflasha15` partition dumps.
 - **[`tools/generate_patch_plan.py`](file:///d:/LocalWork/Sony_research_6700/tools/generate_patch_plan.py)**: Generates [`research/plans/forward_patch_plan.json`](file:///d:/LocalWork/Sony_research_6700/research/plans/forward_patch_plan.json) and [`research/plans/rollback_restore_plan.json`](file:///d:/LocalWork/Sony_research_6700/research/plans/rollback_restore_plan.json).

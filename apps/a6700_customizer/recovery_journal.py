@@ -68,10 +68,10 @@ class RecoveryJournal:
 
     @classmethod
     def create(cls, base_dir: Path, mode: str, spans: List[TargetSpan]) -> "RecoveryJournal":
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S_%f")
         session_id = f"sess_{timestamp}_{mode}"
         session_dir = base_dir / session_id
-        session_dir.mkdir(parents=True, exist_ok=True)
+        session_dir.mkdir(parents=True, exist_ok=False)
 
         journal = cls(session_dir)
         meta = {
@@ -104,20 +104,29 @@ class RecoveryJournal:
 
     @classmethod
     def find_latest_unresolved(cls, base_dir: Path) -> Optional["RecoveryJournal"]:
-        """Locate any session whose status is IN_PROGRESS or NEEDS_REVIEW."""
+        """Locate the latest session that has not committed or reverted."""
         if not base_dir.is_dir():
             return None
+        unresolved_statuses = {
+            JournalStatus.INITIALIZED.value,
+            JournalStatus.IN_PROGRESS.value,
+            JournalStatus.NEEDS_REVIEW.value,
+            JournalStatus.RECONCILED.value,
+        }
+        terminal_statuses = {JournalStatus.COMMITTED.value, JournalStatus.REVERTED.value}
         candidate_dirs = sorted(base_dir.glob("sess_*"), reverse=True)
         for d in candidate_dirs:
             meta_path = d / "meta.json"
-            if meta_path.is_file():
-                try:
-                    meta = json.loads(meta_path.read_text(encoding="utf-8"))
-                    st = meta.get("status")
-                    if st in (JournalStatus.IN_PROGRESS.value, JournalStatus.NEEDS_REVIEW.value):
-                        return cls(d)
-                except Exception:
-                    continue
+            try:
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            except (OSError, ValueError, TypeError):
+                # A damaged session record must fail closed, not unlock a new write.
+                return cls(d)
+            if not isinstance(meta, dict):
+                return cls(d)
+            status = meta.get("status")
+            if status in unresolved_statuses or status not in terminal_statuses:
+                return cls(d)
         return None
 
     def read_meta(self) -> Dict[str, Any]:
@@ -173,11 +182,47 @@ class RecoveryJournal:
             os.fsync(f.fileno())
         return bin_path
 
+    def load_target_span_binary(self, span_index: int) -> Optional[bytes]:
+        bin_path = self.session_dir / f"span_{span_index:02d}_patched.bin"
+        if bin_path.is_file():
+            return bin_path.read_bytes()
+        return None
+
+    def prepared_span_hashes(self, span_index: int) -> Dict[str, Optional[str]]:
+        """Return the latest recorded hashes used to validate host-side snapshots."""
+        if not self.journal_file.is_file():
+            return {}
+        with open(self.journal_file, "r", encoding="utf-8") as journal:
+            for line in journal:
+                event = json.loads(line)
+                if event.get("event_type") == "SPAN_PREPARED" and event.get("span_index") == span_index:
+                    return {
+                        "stock_sha256": event.get("stock_sha256"),
+                        "target_sha256": event.get("target_sha256"),
+                    }
+        return {}
+
+    def span_has_any_event(self, span_index: int, event_types: Tuple[str, ...]) -> bool:
+        if not self.journal_file.is_file():
+            return False
+        with open(self.journal_file, "r", encoding="utf-8") as journal:
+            for line in journal:
+                event = json.loads(line)
+                if event.get("span_index") == span_index and event.get("event_type") in event_types:
+                    return True
+        return False
+
     def record_span_prepared(
         self, span_index: int, span: TargetSpan, stock_data: bytes, patched_data: bytes
     ) -> None:
-        stock_path = self.save_stock_span_binary(span_index, stock_data)
-        target_path = self.save_target_span_binary(span_index, patched_data)
+        existing_stock = self.load_stock_span_binary(span_index)
+        existing_target = self.load_target_span_binary(span_index)
+        if existing_stock is not None or existing_target is not None:
+            if existing_stock == stock_data and existing_target == patched_data:
+                return
+            raise RuntimeError(f"拒绝覆盖固件段 {span_index} 已存在的恢复快照。")
+        self.save_stock_span_binary(span_index, stock_data)
+        self.save_target_span_binary(span_index, patched_data)
         stock_hash = hashlib.sha256(stock_data).hexdigest()
         target_hash = hashlib.sha256(patched_data).hexdigest()
 

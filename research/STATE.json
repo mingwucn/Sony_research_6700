@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_on": "2026-11-02",
-  "phase": "gallery_playback_menu_mode_b_and_custom_key_mode_a_integrated_and_batched_written",
+  "phase": "transaction_recovery_redesign_and_truth_in_labeling_complete",
   "model": "ILCE-6700",
   "installed_firmware": "2.00",
   "regional_variant": "Chinese mainland version (owner-verified; ILCE-6700 Ver. 2.00)",
@@ -53,6 +53,60 @@
     "command": "C:/ProgramData/miniconda3/python.exe -I -S -B -X utf8 private/sessions/20261019-RA-003-outer-successor/qualify.py full",
     "report": "research/sessions/20261019-RA-003-successor-outer.md",
     "source_scope": "748 public host cases before final private publication fix; public source/test pins unchanged; final private cases reported separately"
+  },
+  "transaction_recovery_gui": {
+    "status": "offline_verified_and_release_published_source_uncommitted",
+    "updated_on": "2026-11-02",
+    "report": "research/sessions/20261102-transaction-recovery-gui.md",
+    "branch": "codex/powerful6700-english-review-20261026",
+    "base_commit": "eaedd44",
+    "source_committed_or_pushed": false,
+    "metrics": {
+      "logical_targets": 92,
+      "logical_changed_bytes": 94,
+      "physical_spans": 7,
+      "physical_write_footprint_bytes": 236018,
+      "interleaved_preserved_bytes": 235924,
+      "max_span_bytes": 125593,
+      "multi_span_atomic": false
+    },
+    "focused_tests": {
+      "total": 106,
+      "passed": 106,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.409,
+      "exit_code": 0,
+      "interpreter": "C:\\Users\\mingwucn\\.conda\\envs\\ai\\python.exe",
+      "python_version": "3.10.20",
+      "command": "python -X utf8 -m unittest tests/test_recovery_journal.py tests/test_customizer_recovery.py tests/test_customizer_targets.py tests/test_patch_spec.py tests/test_elf_static.py tests/test_ext2_readonly.py tests/test_uxc_readonly.py",
+      "evidence_class": "offline-tested",
+      "hardware_coverage": false
+    },
+    "portable_build": {
+      "command": ".venv/Scripts/python.exe -X utf8 tools/build_dist.py",
+      "exit_code": 0,
+      "pyinstaller_version": "6.22.3",
+      "isolated_project_venv": true,
+      "clean_path_self_test_passed": true,
+      "clean_path_checks_passed": 7,
+      "zip_size_bytes": 20622587,
+      "zip_sha256": "28ebd066bb8a15d27d16b711123339e7418e977060d649e2e4b50c6f0423a0f1"
+    },
+    "release": {
+      "published": true,
+      "tag": "v1.0.0",
+      "url": "https://github.com/mingwucn/Sony_research_6700/releases/tag/v1.0.0",
+      "asset_name": "Sony_a6700_Customizer_v1.0.0_win64.zip",
+      "publication_command_exit_code": 0
+    },
+    "camera_commands": [],
+    "real_ftp_server_commands": [],
+    "physical_interrupted_recovery_validated": false,
+    "long_duration_ftp_validated": false,
+    "recovery_condition": "USB service-mode communication and target firmware access must remain operational; hardware or inaccessible-firmware recovery is not guaranteed",
+    "next_package": "Review, commit and push the current offline changes (R0), then separately define an explicitly owner-approved exact-body interrupted-session reconciliation drill"
   },
   "work_packages": {
     "RA-001": {
@@ -410,7 +464,7 @@
     "Owner pre-write requirement: verified target rollback/recovery system is not established; backup coverage, independent copies, exact inverse and applicable failure-state restore routes remain unverified.",
     "Two owner-approved Sony BusyBox source offers were audited privately, but final-build/stock-binary/running-body correspondence and native FTP/media/lifecycle integration remain unverified; their component licences do not establish rights in proprietary firmware."
   ],
-  "next_work_package": "RA-003: collect fresh host interpreter/cold-preload facts, the five trusted-runtime origins, ancestor root identities and five complete read-only runtime-file receipts; reconcile once with the existing mapping. Actual-host metadata observation is outside the current synthetic-only scope and remains pending. No bootstrap, package activation, protected processing or camera contact. English/native FTP remain first.",
+  "next_work_package": "Review, commit and push the current transaction-recovery GUI/test/documentation changes (R0 only), then separately define an explicitly owner-approved exact-body interrupted-session reconciliation drill with physical failure and recovery evidence.",
   "next_device_action": "None: camera contact is on explicit owner hold. Keep the prepared R1 packet unexecuted and do not repeat its approval request while the hold stands.",
   "private_state_location": "private/session-state.json (created locally; never commit)",
   "collaboration": "Webchat reviews sanitized evidence and plans; local Codex implements and tests; owner authorizes and observes hardware actions.",

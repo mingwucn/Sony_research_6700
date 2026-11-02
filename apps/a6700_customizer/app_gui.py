@@ -20,7 +20,16 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from apps.a6700_customizer.app_backend import BackendError, DeviceBackend
-from apps.a6700_customizer.targets import ALL_FTP_TARGETS, TARGET_ENGLISH
+from apps.a6700_customizer.targets import (
+    ALL_FTP_TARGETS,
+    INTERLEAVED_PRESERVED_BYTES,
+    LOGICAL_CHANGED_BYTES,
+    LOGICAL_TARGET_COUNT,
+    PHYSICAL_SPANS_COUNT,
+    PHYSICAL_WRITE_FOOTPRINT_BYTES,
+    TARGET_ENGLISH,
+    build_target_spans,
+)
 
 # Visual Constants (Dark Modern Theme)
 BG_MAIN = "#18181b"        # Zinc 900
@@ -48,10 +57,13 @@ class SonyCustomizerApp(tk.Tk):
         self.backend = DeviceBackend()
         self.busy = False
         self.inspection_result = None
+        self.unresolved_journal = self.backend.get_unresolved_journal()
+        self.reconciliation_result = None
 
         self._init_styles()
         self._build_layout()
-        self.show_page("notice")
+        self._render_recovery_journal()
+        self.show_page("reconcile" if self.unresolved_journal else "notice")
 
     def _init_styles(self):
         style = ttk.Style(self)
@@ -130,6 +142,7 @@ class SonyCustomizerApp(tk.Tk):
             ("inspect", "🔍 4. 检测与备份"),
             ("features", "⚡ 5. 功能管理"),
             ("restore", "🔄 6. 出厂还原"),
+            ("reconcile", "⚠️ 7. 会话恢复与对账"),
         ]
 
         for key, text in nav_items:
@@ -151,7 +164,7 @@ class SonyCustomizerApp(tk.Tk):
         badge_frame.pack(fill="x", padx=12, pady=16)
 
         badge_text = tk.Label(
-            badge_frame, text="🛡️ 离线安全保护已就绪\n严守只读预读与原子事务",
+            badge_frame, text="🛡️ R4 固件段级分段事务\n前置全量快照 · 逐字节回读校验",
             font=(FONT_FAMILY, 8), bg="#1c1917", fg="#a8a29e", justify="left"
         )
         badge_text.pack(anchor="w")
@@ -181,6 +194,7 @@ class SonyCustomizerApp(tk.Tk):
         self._build_inspect_page()
         self._build_features_page()
         self._build_restore_page()
+        self._build_reconcile_page()
 
         # Bottom Log Viewer / Progress area
         self.bottom_panel = ttk.Frame(self.main_container, padding=(24, 8, 24, 16))
@@ -232,7 +246,8 @@ class SonyCustomizerApp(tk.Tk):
             "prep": "3. 相机连接与模式准备",
             "inspect": "4. 相机只读检测与自动备份",
             "features": "5. 功能管理 (FTP 与英文语言)",
-            "restore": "6. 一键出厂无损还原",
+            "restore": "6. 有条件出厂还原",
+            "reconcile": "7. 会话恢复与只读对账",
         }
         self.page_title_label.configure(text=titles.get(key, ""))
 
@@ -246,13 +261,15 @@ class SonyCustomizerApp(tk.Tk):
 
         notice_text = (
             "欢迎使用 Sony ILCE-6700 极简功能定制工具。\n\n"
-            "本工具专门为实现两大核心需求而定制开发：\n"
-            "  1. 完整 FTP 传输支持：包含网络菜单、相册回放「选择传输」完整菜单树（81处权限）及回放按键秒传（Action 0x0817）\n"
-            "  2. 原生英文菜单解锁：通过底层断言门禁原生开放 English 选项，绝不粗暴替换汉字文字包！\n\n"
-            "【非协商性安全准则】\n"
-            "● 硬件适用范围：仅支持 Sony ILCE-6700 (α6700) 国行版机身，固件版本 2.00。\n"
-            "● 极简修改足迹：全部操作仅涉及 /usr/lib/appFw.so 中确证的安全权限位。绝不改动内核、bootloader、传感器标定和无线射频。\n"
-            "● 严格只读回退机制：每次写入前均自动进行零变化硬件探针测试与双重快照存盘，支持一键 100% 还原回出厂值。"
+            "本工具针对两项相机原生功能：\n"
+            "  1. FTP 菜单与动作：网络配置、相册回放「选择传输」菜单树（81 处权限）及自定义键 Action 0x0817。\n"
+            "     菜单与动作绑定已经静态分析和真机菜单回读验证；端到端网络长效传输仍属持续验证。\n"
+            "  2. 原生英文菜单：开放 English 选项，使用相机原生英文资源，不改写中文字库。\n\n"
+            "【R4 固件程序修改安全准则】\n"
+            "● 仅支持 Sony ILCE-6700 (α6700) 国行版、固件 Ver. 2.00 的精确目标。\n"
+            "● 修改范围仅涉及 /usr/lib/appFw.so 中已审查的权限位与语言断言，不包含内核、bootloader、传感器标定或射频配置。\n"
+            "● 写入前保存完整分段快照并执行零变化探针；超时或断连立即锁定 NEEDS_REVIEW，禁止盲目重试。\n"
+            "● 有条件出厂还原依赖 USB 服务模式正常通信；硬件损坏或固件不可访问时，软件层恢复无法保证。"
         )
         lbl = ttk.Label(card, text=notice_text, style="Card.TLabel", justify="left")
         lbl.pack(anchor="w", pady=(0, 20))
@@ -322,6 +339,8 @@ class SonyCustomizerApp(tk.Tk):
         self.after(500, self._do_driver_scan)
 
     def _do_driver_scan(self):
+        if self.busy:
+            return
         res = self.backend.check_driver()
         msg = f"状态: {res['message']}\n"
         if res.get("devices"):
@@ -336,6 +355,8 @@ class SonyCustomizerApp(tk.Tk):
             self.driver_status_lbl.configure(fg="#f87171")
 
     def _do_driver_install(self):
+        if self.busy:
+            return
         res = self.backend.check_driver()
         if res.get("ok"):
             messagebox.showinfo(
@@ -345,6 +366,8 @@ class SonyCustomizerApp(tk.Tk):
             )
             return
 
+        self._set_busy(True)
+        self.progress_bar.start(10)
         self.log("正在请求管理员权限安装 WinUSB 驱动…")
         def worker():
             try:
@@ -353,7 +376,9 @@ class SonyCustomizerApp(tk.Tk):
                 self.after(1000, self._do_driver_scan)
             except Exception as exc:
                 self.log(f"驱动安装异常: {exc}")
-                self.after(0, lambda: messagebox.showerror("安装驱动错误", str(exc)))
+                self.after(0, lambda exc=exc: messagebox.showerror("安装驱动错误", str(exc)))
+            finally:
+                self.after(0, self._finish_task)
 
         threading.Thread(target=worker, daemon=True).start()
 
@@ -455,7 +480,7 @@ class SonyCustomizerApp(tk.Tk):
                 self.after(0, self._render_inspection_success, res, backup_path)
             except Exception as exc:
                 self.log(f"检测失败: {exc}")
-                self.after(0, lambda: messagebox.showerror("检测失败", str(exc)))
+                self.after(0, lambda exc=exc: messagebox.showerror("检测失败", str(exc)))
             finally:
                 self.after(0, self._finish_task)
 
@@ -497,34 +522,34 @@ class SonyCustomizerApp(tk.Tk):
         page = ttk.Frame(self.pages_container)
         self.pages["features"] = page
 
-        # Card 1: Full FTP
-        card_ftp = ttk.Frame(page, style="Card.TFrame", padding=16)
-        card_ftp.pack(fill="x", pady=(0, 12))
+        card_ftp = ttk.Frame(page, style="Card.TFrame", padding=14)
+        card_ftp.pack(fill="x", pady=(0, 10))
 
         self.var_ftp = tk.BooleanVar(value=True)
         chk_ftp = ttk.Checkbutton(
-            card_ftp, text="完整 FTP 传输支持 (网络菜单 + 完整相册回放传输菜单 + 回放自定义键)",
+            card_ftp, text="FTP 网络菜单 + 相册选择传输菜单 + 回放自定义键动作",
             variable=self.var_ftp
         )
         chk_ftp.pack(anchor="w", pady=(0, 6))
 
         ftp_desc = (
-            "包含 Network 菜单 0x05a5..0x05b0 完整功能配置，并原生开启相册回放（Playback）->\n"
-            "「选择传输」完整菜单树（此影像、多个影像、该组中所有影像、评级影像等 81 处权限），\n"
-            "同时解锁 Action 0x0817 (FTP_TRANSFER) 回放自定义键绑定，看图一键秒传！"
+            "开启 Network 菜单 0x05a5..0x05b0、Playback「选择传输」菜单树（81 处权限），"
+            "并解锁 Action 0x0817 (FTP_TRANSFER) 自定义键绑定。\n"
+            "证据边界：固件静态分析与真机菜单回读已验证；端到端实际网络长效传输稳定性仍在持续验证。"
         )
-        ttk.Label(card_ftp, text=ftp_desc, style="CardMuted.TLabel", justify="left").pack(anchor="w")
+        ttk.Label(
+            card_ftp, text=ftp_desc, style="CardMuted.TLabel", justify="left", wraplength=650
+        ).pack(anchor="w")
 
         self.ftp_upgrade_banner = tk.Label(
             card_ftp,
-            text="💡 检测到此前已开启基础网络 FTP（如曾使用 Powerful6700 或早期版本）。\n本次勾选将为您无损补齐【相册回放传输完整菜单 + 快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！",
+            text="💡 检测到基础网络 FTP 已开启。本次仅补齐相册菜单、按键动作与所选语言断言；\n工具不主动修改 Backup NVRAM 中的 FTP 服务器或 Wi-Fi 配置。",
             font=(FONT_FAMILY, 9), bg="#042f2e", fg="#2dd4bf",
             padx=10, pady=8, justify="left", bd=1, relief="solid"
         )
 
-        # Card 2: English Unlock
-        card_en = ttk.Frame(page, style="Card.TFrame", padding=16)
-        card_en.pack(fill="x", pady=(0, 16))
+        card_en = ttk.Frame(page, style="Card.TFrame", padding=14)
+        card_en.pack(fill="x", pady=(0, 10))
 
         self.var_en = tk.BooleanVar(value=True)
         chk_en = ttk.Checkbutton(
@@ -534,17 +559,32 @@ class SonyCustomizerApp(tk.Tk):
         chk_en.pack(anchor="w", pady=(0, 6))
 
         en_desc = (
-            "通过底层 english_predicate (0x023080f8) 门禁断言放开 English 选项。\n"
-            "菜单中选中后由相机原生持久化为 Bank 0 英文文字包，绝不粗暴替换汉字文件，仅改写 4 字节。"
+            "通过 english_predicate (0x023080f8) 开放 English 选项；选择后由相机原生机制"
+            "持久化为 Bank 0 英文资源，不改写中文字库。逻辑修改为 4 字节。"
         )
-        ttk.Label(card_en, text=en_desc, style="CardMuted.TLabel", justify="left").pack(anchor="w")
+        ttk.Label(card_en, text=en_desc, style="CardMuted.TLabel", justify="left", wraplength=650).pack(anchor="w")
 
-        # Action Button
+        metrics_card = ttk.Frame(page, style="Card.TFrame", padding=14)
+        metrics_card.pack(fill="x", pady=(0, 6))
+        ttk.Label(
+            metrics_card, text="📊 写入范围与足迹披露 (Truth in Labeling)", style="CardTitle.TLabel"
+        ).pack(anchor="w", pady=(0, 6))
+        metrics_text = (
+            f"逻辑修改目标：{LOGICAL_CHANGED_BYTES} 字节（{LOGICAL_TARGET_COUNT} 处固件权限与语言断言）\n"
+            f"物理写入跨度：{PHYSICAL_SPANS_COUNT} 个固件段，共 {PHYSICAL_WRITE_FOOTPRINT_BYTES:,} 字节 "
+            f"(~{PHYSICAL_WRITE_FOOTPRINT_BYTES / 1024:.1f} KiB，两项全选时的计划上限)\n"
+            f"安全说明：顺序分段事务写入（各段独立，单段 <= 128 KiB）；段内其余 "
+            f"{INTERLEAVED_PRESERVED_BYTES:,} 字节来自只读预读并原样保留，写入前后均执行全段逐字节比对。"
+        )
+        ttk.Label(
+            metrics_card, text=metrics_text, style="CardMuted.TLabel", justify="left", wraplength=650
+        ).pack(anchor="w")
+
         self.apply_btn = ttk.Button(
             page, text="⚡ 写入所选功能至相机", style="Success.TButton",
             command=self._start_apply_task
         )
-        self.apply_btn.pack(anchor="e", pady=8)
+        self.apply_btn.pack(anchor="e", pady=6)
 
     def _start_apply_task(self):
         if self.busy:
@@ -554,39 +594,50 @@ class SonyCustomizerApp(tk.Tk):
         if not en and not ftp:
             messagebox.showwarning("提示", "请至少勾选一项功能！")
             return
+        if self.backend.get_unresolved_journal():
+            self._reload_recovery_journal()
+            self.show_page("reconcile")
+            messagebox.showwarning("安全锁定", "存在未闭环写入会话，请先完成只读对账。")
+            return
 
-        total_bytes = (4 if en else 0) + (10 if ftp else 0)
+        selected_targets = ([TARGET_ENGLISH] if en else []) + (ALL_FTP_TARGETS if ftp else [])
+        selected_spans = build_target_spans(selected_targets)
+        logical_bytes = sum(len(t.patched) for t in selected_targets if t.preimage != t.patched)
+        physical_bytes = sum(span.length for span in selected_spans)
         confirm = messagebox.askyesno(
-            "确认写入",
-            f"即将在相机 /usr/lib/appFw.so 中写入共计 {total_bytes} 字节。\n\n"
-            f"● 英文菜单解锁: {'是' if en else '否'}\n"
-            f"● 完整 FTP 支持: {'是' if ftp else '否'}\n\n"
-            "写入前将自动进行零变化探针比对与独立回读校验。\n"
-            "是否立即执行写入？"
+            "确认 R4 固件分段写入",
+            f"目标文件：/usr/lib/appFw.so\n"
+            f"逻辑修改：{logical_bytes} 字节 / {len(selected_targets)} 处目标\n"
+            f"计划物理足迹：{len(selected_spans)} 段 / {physical_bytes:,} 字节（已是目标值的段会跳过）\n\n"
+            f"● 英文菜单解锁：{'是' if en else '否'}\n"
+            f"● FTP 菜单与动作：{'是' if ftp else '否'}\n\n"
+            "写入前保存完整分段快照并执行零变化探针；每段写入后执行全段逐字节回读。\n"
+            "超时、断连或不匹配将立即锁定 NEEDS_REVIEW，不会自动重试或自动回退。\n"
+            "是否明确批准本次写入？"
         )
         if not confirm:
             return
 
         self._set_busy(True)
         self.progress_bar.start(10)
-        self.log("正在执行原子写入事务…")
+        self.log("正在执行顺序分段事务写入（各段独立写入与校验）…")
 
         def worker():
             try:
-                res = self.backend.apply_features(en, ftp, progress=self.log)
-                self.log("写入完成！")
+                self.backend.apply_features(en, ftp, progress=self.log)
+                self.log("所选目标状态确认完成；实际写入段已通过回读校验。")
                 self.after(0, lambda: messagebox.showinfo(
-                    "写入成功",
-                    "所选功能已成功写入相机并通过回读校验！\n\n"
+                    "目标状态确认完成",
+                    "所选功能字段均已达到目标状态；实际写入段已通过全段回读校验，未修改段已跳过。\n\n"
                     "【验收步骤】\n"
-                    "1. 安全断开 USB 连接\n"
-                    "2. 拔下相机数据线并关闭相机电源\n"
-                    "3. 等待约 30 秒至 1 分钟后重新开机\n"
-                    "4. 在相机菜单中即可验证 FTP 功能与英文语言选项！"
+                    "1. 安全断开 USB 连接并关闭相机电源\n"
+                    "2. 等待约 30 秒至 1 分钟后重新开机\n"
+                    "3. 在相机菜单中验证 FTP 菜单、动作绑定与英文选项\n\n"
+                    "菜单验证不等同于端到端网络长效传输验证。"
                 ))
             except Exception as exc:
-                self.log(f"写入失败: {exc}")
-                self.after(0, lambda: messagebox.showerror("写入异常", f"操作未能完成: {exc}"))
+                self.log(f"写入中断: {exc}")
+                self.after(0, self._handle_operation_error, "写入异常", str(exc))
             finally:
                 self.after(0, self._finish_task)
 
@@ -600,20 +651,21 @@ class SonyCustomizerApp(tk.Tk):
         card = ttk.Frame(page, style="Card.TFrame", padding=20)
         card.pack(fill="both", expand=True, pady=10)
 
-        title = ttk.Label(card, text="一键无损还原出厂状态", style="CardTitle.TLabel")
+        title = ttk.Label(card, text="有条件出厂还原", style="CardTitle.TLabel")
         title.pack(anchor="w", pady=(0, 6))
 
         desc = ttk.Label(
             card, text=(
-                "若您希望将相机彻底恢复为未经修改的原厂状态，可在此执行一键还原。\n"
-                "程序将把全部修改字段逐字节写回官方原厂预置数据，并进行逐块回读校验。"
+                "将本工具管理的 FTP、按键与英文语言字段恢复为 Ver. 2.00 原厂预置值，"
+                "并按 7 个独立固件段执行全段回读校验。\n"
+                "恢复依赖 USB 服务模式保持正常通信；硬件损坏或固件不可访问时，无法保证软件层恢复。"
             ),
-            style="CardMuted.TLabel", justify="left"
+            style="CardMuted.TLabel", justify="left", wraplength=650
         )
         desc.pack(anchor="w", pady=(0, 20))
 
         self.restore_btn = ttk.Button(
-            card, text="🔄 一键出厂无损还原", style="Danger.TButton",
+            card, text="🔄 还原管理字段为原厂预置值", style="Danger.TButton",
             command=self._start_restore_task
         )
         self.restore_btn.pack(anchor="w")
@@ -621,41 +673,294 @@ class SonyCustomizerApp(tk.Tk):
     def _start_restore_task(self):
         if self.busy:
             return
+        if self.backend.get_unresolved_journal():
+            self._reload_recovery_journal()
+            self.show_page("reconcile")
+            messagebox.showwarning("安全锁定", "存在未闭环写入会话，请先完成只读对账。")
+            return
         confirm = messagebox.askyesno(
-            "确认还原出厂",
-            "此操作将把所有修改字段（FTP、按键支持、英文语言门禁）恢复为官方出厂预置状态。\n\n"
-            "是否确认继续？"
+            "确认 R4 原厂字段还原",
+            "此操作将按 7 个独立固件段，把 FTP、按键支持、英文语言门禁恢复为官方 Ver. 2.00 预置值。\n"
+            "每段写入前保存完整快照，写入后执行全段逐字节回读；异常时立即锁定，不自动重试。\n\n"
+            "是否明确批准本次还原写入？"
         )
         if not confirm:
             return
 
         self._set_busy(True)
         self.progress_bar.start(10)
-        self.log("正在执行出厂还原事务…")
+        self.log("正在执行原厂字段顺序分段还原事务…")
 
         def worker():
             try:
-                res = self.backend.restore_factory(progress=self.log)
-                self.log("还原完成！")
+                self.backend.restore_factory(progress=self.log)
+                self.log("原厂目标状态确认完成；实际恢复段已通过回读校验。")
                 self.after(0, lambda: messagebox.showinfo(
-                    "还原完成",
-                    "相机已成功恢复为 100% 出厂原始状态！\n\n"
-                    "请安全断开数据线并重启相机。"
+                    "原厂目标状态确认完成",
+                    "本工具管理的字段均已达到原厂预置状态；实际恢复段已通过全段回读校验，未修改段已跳过。\n\n"
+                    "请安全断开数据线并重启相机。此结果不代表硬件故障场景下的恢复保证。"
                 ))
             except Exception as exc:
-                self.log(f"还原失败: {exc}")
-                self.after(0, lambda: messagebox.showerror("还原异常", str(exc)))
+                self.log(f"还原中断: {exc}")
+                self.after(0, self._handle_operation_error, "还原异常", str(exc))
             finally:
                 self.after(0, self._finish_task)
 
         threading.Thread(target=worker, daemon=True).start()
 
+    # --- Page 7: Interrupted session reconciliation ---
+    def _build_reconcile_page(self):
+        page = ttk.Frame(self.pages_container)
+        self.pages["reconcile"] = page
+
+        card = ttk.Frame(page, style="Card.TFrame", padding=16)
+        card.pack(fill="both", expand=True, pady=6)
+
+        self.recovery_warning_lbl = tk.Label(
+            card, text="", font=(FONT_FAMILY, 10, "bold"), bg="#451a03", fg="#fbbf24",
+            padx=12, pady=10, justify="left", wraplength=650
+        )
+        self.recovery_warning_lbl.pack(fill="x", pady=(0, 10))
+
+        self.recovery_session_lbl = ttk.Label(
+            card, text="", style="CardMuted.TLabel", justify="left", wraplength=650
+        )
+        self.recovery_session_lbl.pack(anchor="w", pady=(0, 10))
+
+        ttk.Label(
+            card,
+            text="先连接相机并执行只读对账。扫描完成前禁止回退或续写；任何写操作都需再次明确确认。",
+            style="CardMuted.TLabel", justify="left", wraplength=650
+        ).pack(anchor="w", pady=(0, 10))
+
+        self.recovery_findings_frame = ttk.Frame(card, style="Card.TFrame")
+        self.recovery_findings_frame.pack(fill="both", expand=True, pady=(0, 10))
+
+        btn_row = ttk.Frame(card, style="Card.TFrame")
+        btn_row.pack(fill="x")
+        self.reconcile_scan_btn = ttk.Button(
+            btn_row, text="🔍 开始只读对账扫描", style="Primary.TButton",
+            command=self._start_reconcile_task
+        )
+        self.reconcile_scan_btn.pack(side="left", padx=(0, 8))
+        self.rollback_session_btn = ttk.Button(
+            btn_row, text="🔄 回退全部修改段", style="Danger.TButton",
+            state="disabled", command=self._start_rollback_task
+        )
+        self.rollback_session_btn.pack(side="left", padx=(0, 8))
+        self.resume_session_btn = ttk.Button(
+            btn_row, text="▶️ 续写未完成段", style="Success.TButton",
+            state="disabled", command=self._start_resume_task
+        )
+        self.resume_session_btn.pack(side="left")
+
+    def _clear_recovery_findings(self):
+        for child in self.recovery_findings_frame.winfo_children():
+            child.destroy()
+
+    def _render_recovery_journal(self):
+        self._clear_recovery_findings()
+        if not self.unresolved_journal:
+            self.reconciliation_result = None
+            self.recovery_warning_lbl.configure(
+                text="✅ 当前没有未闭环的写入会话。", bg="#052e16", fg="#4ade80"
+            )
+            self.recovery_session_lbl.configure(
+                text="正常功能写入或原厂字段还原完成后，会话才会闭环。若发生断连，请重新打开本页面。"
+            )
+        else:
+            try:
+                meta = self.unresolved_journal.read_meta()
+            except (OSError, ValueError, TypeError) as exc:
+                meta = {
+                    "session_id": self.unresolved_journal.session_dir.name,
+                    "status": "METADATA_ERROR",
+                    "created_at": f"日志元数据无法读取: {exc}",
+                }
+            self.recovery_warning_lbl.configure(
+                text=(
+                    "⚠️ 检测到上次写入会话未正常闭环或被中断 "
+                    f"(状态: {meta.get('status', 'UNKNOWN')})"
+                ),
+                bg="#451a03", fg="#fbbf24"
+            )
+            self.recovery_session_lbl.configure(
+                text=(
+                    f"session_id: {meta.get('session_id', 'UNKNOWN')}\n"
+                    f"created_at: {meta.get('created_at', 'UNKNOWN')}  |  mode: {meta.get('mode', 'UNKNOWN')}  |  "
+                    f"spans: {meta.get('span_count', 'UNKNOWN')}\n"
+                    "原始分段快照保存在本机会话目录；请勿删除或手工修改 journal/bin 文件。"
+                )
+            )
+        self._update_recovery_buttons()
+
+    def _reload_recovery_journal(self):
+        self.unresolved_journal = self.backend.get_unresolved_journal()
+        self.reconciliation_result = None
+        self._render_recovery_journal()
+
+    def _update_recovery_buttons(self):
+        if not hasattr(self, "reconcile_scan_btn"):
+            return
+        has_journal = self.unresolved_journal is not None
+        self.reconcile_scan_btn.configure(
+            state="normal" if has_journal and not self.busy else "disabled"
+        )
+        result = self.reconciliation_result
+        can_rollback = bool(result and result.get("can_rollback"))
+        can_resume = bool(result and result.get("can_resume"))
+        self.rollback_session_btn.configure(
+            state="normal" if has_journal and can_rollback and not self.busy else "disabled"
+        )
+        self.resume_session_btn.configure(
+            state="normal" if has_journal and can_resume and not self.busy else "disabled"
+        )
+
+    def _start_reconcile_task(self):
+        if self.busy or not self.unresolved_journal:
+            return
+        journal = self.unresolved_journal
+        self._set_busy(True)
+        self.progress_bar.start(10)
+        self.log("开始只读对账；此步骤不发送固件写入命令…")
+
+        def worker():
+            try:
+                result = self.backend.reconcile_device(journal=journal, progress=self.log)
+                self.after(0, self._render_reconciliation, result)
+            except Exception as exc:
+                self.log(f"只读对账失败: {exc}")
+                self.after(0, self._handle_operation_error, "只读对账失败", str(exc))
+            finally:
+                self.after(0, self._finish_task)
+
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _render_reconciliation(self, result):
+        self.reconciliation_result = result
+        self._clear_recovery_findings()
+        colors = {
+            "UNTOUCHED_STOCK": "#4ade80",
+            "FULLY_PATCHED": "#60a5fa",
+            "CORRUPTED_OR_PARTIAL": "#f87171",
+        }
+        for finding in result.get("findings", []):
+            classification = finding.get("classification", "UNKNOWN")
+            row = tk.Label(
+                self.recovery_findings_frame,
+                text=(
+                    f"段 {finding.get('span_index')}: 0x{finding.get('offset', 0):08x}  |  "
+                    f"{finding.get('length', 0):,} B  |  {classification}  |  {finding.get('status_text', '')}"
+                ),
+                font=(FONT_FAMILY, 9), bg=BG_CARD, fg=colors.get(classification, "#f87171"),
+                justify="left", anchor="w"
+            )
+            row.pack(fill="x", pady=2)
+        self.recovery_warning_lbl.configure(
+            text=(
+                f"对账完成：写前状态 {result.get('untouched_stock', 0)} 段，"
+                f"目标状态 {result.get('fully_patched', 0)} 段，"
+                f"异常/部分 {result.get('corrupted_or_partial', 0)} 段。"
+            ),
+            bg="#172554" if result.get("corrupted_or_partial", 0) == 0 else "#450a0a",
+            fg="#93c5fd" if result.get("corrupted_or_partial", 0) == 0 else "#fca5a5"
+        )
+        self.set_status("只读对账完成", "#60a5fa")
+        self._update_recovery_buttons()
+
+    def _start_rollback_task(self):
+        if self.busy or not self.unresolved_journal or not self.reconciliation_result:
+            return
+        if not self.reconciliation_result.get("can_rollback"):
+            return
+        count = self.reconciliation_result.get("total_spans", 0)
+        confirm = messagebox.askyesno(
+            "确认回退中断会话",
+            f"将依据刚才的只读对账，把 {count} 个会话段中的已修改/异常段恢复至写前原始 .bin 快照。\n"
+            "未改动段跳过；每段写入后执行全段逐字节回读。若对账后数据变化，将在写入前停止。\n"
+            "此操作仍依赖 USB 服务模式正常通信，不是无条件恢复保证。\n\n"
+            "是否明确批准本次回退写入？"
+        )
+        if not confirm:
+            return
+        journal = self.unresolved_journal
+        reconciliation = self.reconciliation_result
+        self._set_busy(True)
+        self.progress_bar.start(10)
+
+        def worker():
+            try:
+                self.backend.rollback_interrupted_session(
+                    journal=journal, reconciliation=reconciliation, progress=self.log
+                )
+                self.after(0, self._finish_recovery, "回退")
+            except Exception as exc:
+                self.log(f"会话回退中断: {exc}")
+                self.after(0, self._handle_operation_error, "会话回退异常", str(exc))
+            finally:
+                self.after(0, self._finish_task)
+
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _start_resume_task(self):
+        if self.busy or not self.unresolved_journal or not self.reconciliation_result:
+            return
+        if not self.reconciliation_result.get("can_resume"):
+            messagebox.showwarning("禁止续写", "存在异常或部分写入段，请先重新对账并选择回退。")
+            return
+        confirm = messagebox.askyesno(
+            "确认续写中断会话",
+            "将依据刚才的只读对账，仅续写仍处于写前状态的段；已达到目标状态的段跳过。\n"
+            "若任何段在对账后变化，将在写入前停止；每段写入后执行全段逐字节回读。\n"
+            "超时或断连会立即锁定 NEEDS_REVIEW，不自动重试。\n\n"
+            "是否明确批准本次续写？"
+        )
+        if not confirm:
+            return
+        journal = self.unresolved_journal
+        reconciliation = self.reconciliation_result
+        self._set_busy(True)
+        self.progress_bar.start(10)
+
+        def worker():
+            try:
+                self.backend.resume_interrupted_session(
+                    journal=journal, reconciliation=reconciliation, progress=self.log
+                )
+                self.after(0, self._finish_recovery, "续写")
+            except Exception as exc:
+                self.log(f"会话续写中断: {exc}")
+                self.after(0, self._handle_operation_error, "会话续写异常", str(exc))
+            finally:
+                self.after(0, self._finish_task)
+
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _finish_recovery(self, operation):
+        self._reload_recovery_journal()
+        self.set_status("恢复会话已闭环", "#4ade80")
+        messagebox.showinfo(
+            f"{operation}完成",
+            f"中断会话的{operation}操作已完成，相关段均通过全段逐字节回读校验，会话已闭环。\n"
+            "请安全断开 USB 并重启相机后验证菜单状态。"
+        )
+
+    def _handle_operation_error(self, title, message):
+        self._reload_recovery_journal()
+        if self.unresolved_journal:
+            self.show_page("reconcile")
+            self.set_status("会话需要只读对账", "#f87171")
+        messagebox.showerror(title, message)
+
     def _set_busy(self, busy: bool):
         self.busy = busy
         state = "disabled" if busy else "normal"
+        self.driver_scan_btn.configure(state=state)
+        self.driver_install_btn.configure(state=state)
         self.inspect_btn.configure(state=state)
         self.apply_btn.configure(state=state)
         self.restore_btn.configure(state=state)
+        self._update_recovery_buttons()
 
     def _finish_task(self):
         self.progress_bar.stop()
