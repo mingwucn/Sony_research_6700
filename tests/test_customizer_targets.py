@@ -56,13 +56,13 @@ class TestCustomizerTargets(unittest.TestCase):
         for target in ALL_TARGETS:
             with self.subTest(target=target.name):
                 with self.assertRaises(UnexpectedTargetState):
-                    target_needs_change(target, b"\\xff" * len(target.preimage), target.patched)
+                    target_needs_change(target, bytes([0xFF]) * len(target.preimage), target.patched)
                 with self.assertRaises(UnexpectedTargetState):
                     target_needs_change(target, b"", target.preimage)
 
     def test_invalid_destination_fails_closed(self):
         with self.assertRaises(ValueError):
-            target_needs_change(TARGET_ENGLISH, TARGET_ENGLISH.preimage, b"\\xff" * 4)
+            target_needs_change(TARGET_ENGLISH, TARGET_ENGLISH.preimage, bytes([0xFF]) * 4)
 
 
 if __name__ == "__main__":
