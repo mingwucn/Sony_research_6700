@@ -189,3 +189,10 @@ def build_target_spans(
         spans.append(TargetSpan(offset=start, length=length, targets=curr_targets))
     return spans
 
+# Accurate Metrics for GUI and Reporting (Truth in Labeling)
+LOGICAL_TARGET_COUNT: int = len(ALL_TARGETS)  # 92 targets
+LOGICAL_CHANGED_BYTES: int = sum(len(t.patched) for t in ALL_TARGETS if t.preimage != t.patched)  # 94 bytes
+PHYSICAL_SPANS_COUNT: int = len(build_target_spans(ALL_TARGETS))  # 7 spans
+PHYSICAL_WRITE_FOOTPRINT_BYTES: int = sum(s.length for s in build_target_spans(ALL_TARGETS))  # 236,018 bytes (~230.5 KiB)
+INTERLEAVED_PRESERVED_BYTES: int = PHYSICAL_WRITE_FOOTPRINT_BYTES - LOGICAL_CHANGED_BYTES  # 235,924 bytes (~230.4 KiB)
+
