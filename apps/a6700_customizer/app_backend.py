@@ -17,13 +17,16 @@ from typing import Callable, Dict, List, Optional, Tuple
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PACKAGE_DIR = Path(__file__).resolve().parent
 
-# Ensure local vendored a6700win is available
+# Use only the vendored a6700win copy shipped next to this module.
 if str(PACKAGE_DIR) not in sys.path:
     sys.path.insert(0, str(PACKAGE_DIR))
 
-SYS_SRC = Path(os.path.expandvars("%TEMP%/Codex/powerful6700-english-20261026/source/src"))
-if SYS_SRC.is_dir() and str(SYS_SRC) not in sys.path:
-    sys.path.insert(0, str(SYS_SRC))
+
+def default_state_dir() -> Path:
+    """Writable state/backup directory: next to the exe when frozen."""
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent / "data"
+    return PROJECT_ROOT / ".data" / "customizer"
 
 def get_resource_root() -> Path:
     """Resolve base directory containing native/ and third_party/ payloads."""
@@ -70,9 +73,17 @@ from .targets import (
     TargetWindow,
 )
 
+def get_writable_root() -> Path:
+    """Resolve writable root directory (next to exe when frozen, repo root in source)."""
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+    return PROJECT_ROOT
+
+
 # Configure paths for flash payloads and third-party vendor modules
+paths._root = None
 paths.bundled_root = get_resource_root
-paths.project_root = get_resource_root
+paths.project_root = get_writable_root
 paths.ensure_vendor_on_path()
 
 from a6700win import patches
@@ -107,7 +118,7 @@ class BackendError(RuntimeError):
 
 class DeviceBackend:
     def __init__(self, state_dir: Optional[Path] = None):
-        self.state_dir = state_dir or (PROJECT_ROOT / ".data" / "customizer")
+        self.state_dir = state_dir or default_state_dir()
         self.backup_dir = self.state_dir / "backups"
         self.state_dir.mkdir(parents=True, exist_ok=True)
         self.backup_dir.mkdir(parents=True, exist_ok=True)

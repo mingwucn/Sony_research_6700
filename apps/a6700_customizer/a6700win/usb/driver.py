@@ -208,8 +208,11 @@ def scan() -> dict:
 def _self_command(request_path: Path) -> list[str]:
     if getattr(sys, "frozen", False):
         return [sys.executable, "--elevated-worker", str(request_path)]
-    entry = paths.project_root() / "main.py"
-    return [sys.executable, str(entry), "--elevated-worker", str(request_path)]
+    for name in ("run_customizer.py", "main.py"):
+        entry = paths.project_root() / name
+        if entry.is_file():
+            return [sys.executable, str(entry), "--elevated-worker", str(request_path)]
+    return [sys.executable, str(paths.project_root() / "run_customizer.py"), "--elevated-worker", str(request_path)]
 
 
 def _shell_execute_runas(command: list[str], working_directory: str) -> int:

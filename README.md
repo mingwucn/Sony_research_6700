@@ -57,7 +57,7 @@
 ### 📦 运行方式选择（二选一）
 
 #### 方式 A（推荐 · 纯小白用户 · 免安装 Python 环境）：
-1. **直接下载独立便携版**：前往 [GitHub Releases 页面](https://github.com/mingwucn/Sony_research_6700/releases/tag/v1.0.0) 或点击 **[直接下载 Sony_a6700_Customizer_v1.0.0_win64.zip (16.0 MB)](https://github.com/mingwucn/Sony_research_6700/releases/download/v1.0.0/Sony_a6700_Customizer_v1.0.0_win64.zip)**。
+1. **直接下载独立便携版**：前往 [GitHub Releases 页面](https://github.com/mingwucn/Sony_research_6700/releases/tag/v1.0.0) 或点击 **[直接下载 Sony_a6700_Customizer_v1.0.0_win64.zip (~22.7 MB)](https://github.com/mingwucn/Sony_research_6700/releases/download/v1.0.0/Sony_a6700_Customizer_v1.0.0_win64.zip)**。
 2. 解压至电脑任意目录（**无需安装 Python 或任何第三方环境**）。
 3. 双击运行 **`SonyA6700Customizer.exe`** 或 **`启动_Sony_a6700定制工具.bat`** 即可进入 6 步深色模式界面。
 4. 开发者也可以在本地运行根目录下的 **[`打包独立发布版.bat`](file:///d:/LocalWork/Sony_research_6700/%E6%89%93%E5%8C%85%E7%8B%AC%E7%AB%8B%E5%8F%91%E5%87%86%E7%89%88.bat)**（或 `python tools/build_dist.py`）一键重新构建打包。

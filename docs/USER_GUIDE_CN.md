@@ -22,8 +22,8 @@
 ### 1. 运行方式（二选一）
 
 #### 选项 A：使用独立便携发布包（推荐 · 纯小白 · 无需安装 Python 环境）
-1. 前往 **[GitHub Releases 页面](https://github.com/mingwucn/Sony_research_6700/releases/tag/v1.0.0)** 或点击 **[直接下载 Sony_a6700_Customizer_v1.0.0_win64.zip (16.0 MB)](https://github.com/mingwucn/Sony_research_6700/releases/download/v1.0.0/Sony_a6700_Customizer_v1.0.0_win64.zip)**。
-2. 下载解压至任意目录（体积仅约 16MB，开箱即用）。
+1. 前往 **[GitHub Releases 页面](https://github.com/mingwucn/Sony_research_6700/releases/tag/v1.0.0)** 或点击 **[直接下载 Sony_a6700_Customizer_v1.0.0_win64.zip (~22.7 MB)](https://github.com/mingwucn/Sony_research_6700/releases/download/v1.0.0/Sony_a6700_Customizer_v1.0.0_win64.zip)**。
+2. 下载解压至任意目录（体积约 22.7 MB，开箱即用）。
 3. 解压后直接双击运行 **`SonyA6700Customizer.exe`**（或 **`启动_Sony_a6700定制工具.bat`**）。
 4. 绿色免安装，内部已打包完整的 Python 运行时、WinUSB 通信驱动载荷与 AArch64 固件读写工具，任何 Windows 10/11 电脑均可直接运行。
 

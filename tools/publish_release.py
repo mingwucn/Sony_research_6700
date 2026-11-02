@@ -26,7 +26,7 @@ BODY = """## 🚀 Sony α6700 (ILCE-6700) 极简定制工具 v1.0.0
 ---
 
 ### 📦 资产下载与快速运行
-- **下载文件**：`Sony_a6700_Customizer_v1.0.0_win64.zip`（16.0 MB，绿色免安装）
+- **下载文件**：`Sony_a6700_Customizer_v1.0.0_win64.zip`（约 22.7 MB，独立绿色免安装版）
 - **运行说明**：
   1. 下载解压至任意目录（**无需安装 Python 或任何第三方环境**）。
   2. 双击运行 **`SonyA6700Customizer.exe`** 或 **`启动_Sony_a6700定制工具.bat`**。
@@ -87,17 +87,17 @@ def main():
         else:
             raise
 
-    # 2. Create release if not exists
+    # 2. Create or update release metadata
+    payload = {
+        "tag_name": TAG,
+        "target_commitish": "main",
+        "name": NAME,
+        "body": BODY,
+        "draft": False,
+        "prerelease": False,
+    }
     if not release_data:
         print(f"正在创建 Release {TAG}...")
-        payload = {
-            "tag_name": TAG,
-            "target_commitish": "main",
-            "name": NAME,
-            "body": BODY,
-            "draft": False,
-            "prerelease": False,
-        }
         create_req = urllib.request.Request(
             f"https://api.github.com/repos/{REPO}/releases",
             data=json.dumps(payload).encode("utf-8"),
@@ -107,6 +107,16 @@ def main():
         with urllib.request.urlopen(create_req) as resp:
             release_data = json.load(resp)
             print(f"✓ Release 创建成功: {release_data.get('html_url')}")
+    else:
+        print(f"正在同步更新 Release {TAG} 说明文档...")
+        patch_req = urllib.request.Request(
+            f"https://api.github.com/repos/{REPO}/releases/{release_data['id']}",
+            data=json.dumps({"name": NAME, "body": BODY}).encode("utf-8"),
+            headers={"Content-Type": "application/json", **headers},
+            method="PATCH",
+        )
+        with urllib.request.urlopen(patch_req) as resp:
+            release_data = json.load(resp)
 
     # 3. Check existing assets in release
     upload_url_template = release_data["upload_url"]  # format: https://uploads.github.com/.../assets{?name,label}

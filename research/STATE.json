@@ -13889,5 +13889,16 @@
         "category_c_unsafe_incomplete": "Missing CP microcode or calibration: Pixel Shift Multi Shooting, Dynamic Active Stabilization, Creative Looks FL2/FL3."
       }
     }
+  },
+  "standalone_portable_release_qualification_20261101": {
+    "date": "2026-11-01",
+    "session_report": "research/sessions/20261101-standalone-exe-verification.md",
+    "evidence_class": [
+      "offline-tested"
+    ],
+    "camera_commands": [],
+    "self_test_checks_passed": 8,
+    "unit_tests_passed": 76,
+    "summary": "Resolved Conda ffi.dll/TclTk --add-binary registration, ctypes.wintypes/AST hidden-import collection, third_party/a6700_unlock bundling, and --elevated-worker CLI dispatch for SonyA6700Customizer.exe; verified under stripped PATH from freshly extracted release archive."
   }
 }
