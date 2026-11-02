@@ -119,20 +119,25 @@ However, in Sony's UI architecture, **Custom Key assignment in Playback mode** (
    0x03666b80: 04 01 00 00   ; Sub-code = 0x0104
    0x03666b84: 22 02 00 00   ; Help String ID = 0x0222
    ```
-4. The candidate custom-key availability dispatcher at `0x01440d0c` reportedly consults an 8-byte capability table beginning near `0x03f14c38`. **The previously stated direct-Action-ID-index formula is arithmetically incorrect**:
+4. **Record location, independent of lookup formula.** The owner reports an 8-byte table of little-endian `{uint32_t action_id, uint32_t status}` records in the official CN1 2.00 `appFw.so`, with adjacent entries:
+   ```text
+   appFw.so file offset   ID bytes        status bytes      Action
+   0x03F17CD8             16 08 00 00     00 00 00 00       0x0816 DISPLAY_FTP_ERROR_INFO
+   0x03F17CE0             17 08 00 00     00 00 00 00       0x0817 FTP_TRANSFER
+   0x03F17CE8             18 08 00 00     00 00 00 00       0x0818 FTP_FUNCTION
+   ```
+   If confirmed against an actual firmware read, this **directly establishes the 0x0817 record at file offset `0x03F17CE0` and its first status byte at `0x03F17CE4`**, regardless of the erroneous arithmetic. The user-supplied byte row has not yet been independently re-read as part of this change.
+
+   The previous claim that the table is indexed from zero by Action ID is not supported:
    ```text
    0x0817 * 8 = 0x40B8
-   0x03F14C38 + 0x40B8 = 0x03F18CF0, NOT 0x03F17CE0
-   0x03F17CE0 - 0x03F14C38 = 0x30A8 (0x615 records of 8 bytes)
+   0x03F14C38 + 0x40B8 = 0x03F18CF0 (NOT 0x03F17CE0)
+   0x03F17CE0 - 0x03F14C38 = 0x30A8 = 0x615 * 8
+   0x0817 - 0x0615 = 0x0202
    ```
-   The distinct reported record at `0x03f17ce0` may still genuinely contain Action `0x0817`; however, its location is **not justified** by direct Action-ID indexing. Independently trace the actual table lookup/search mechanism and any other per-mode predicates.
-5. Inspecting **`0x03f17ce0`** in stock CN1 `/usr/lib/appFw.so`:
-   ```text
-   0x03f17ce0: 17 08 00 00  00  01 01 01
-               ^^^^^^^^^^^  ^^  ^^^^^^^^
-               Action 0x817  |  Sub-flags (already 01)
-                             +-- Availability gate at 0x03f17ce4 = 0x00 (DISABLED)
-   ```
+   A **nonzero-base, densely indexed table starting at Action ID 0x0202** would fit these offsets just as a sparse or searched record table might. Only inspection of the first records and the actual resolver/disassembly can establish the mechanism. Do not call the table sparse solely on the basis of these three adjacent IDs.
+
+5. **Conflicting reported status suffixes must be resolved before firmware changes.** The earlier research note encoded the `0x0817` record as `17 08 00 00 00 01 01 01`, whereas the owner now reports `17 08 00 00 00 00 00 00`. Both identify Action `0x0817` at `0x03F17CE0` and report a zero byte at `0x03F17CE4`, but differ in bytes `0x03F17CE5`–`0x03F17CE7`. Do not silently treat them as equal or assume the remaining bytes are irrelevant. Read the 24-byte window `0x03F17CD8`–`0x03F17CEF` on the correct firmware/build (or verify an authenticated offline image), compare stock and patched-state copies, and trace the status word interpretation. In particular, test whether neighboring Action `0x0818` (`FTP_FUNCTION`) is a separate global dependency; its location **alone** does not prove that it needs a write.
 6. **Unverified one-byte candidate:** `0x03f17ce4` (`00 -> 01`) was hypothesized to enable Action `0x0817`. It has not been proven to expose playback controls or cause successful upload on this camera. Do not change additional firmware bytes until actual on-camera state and relevant predicates have been established.
 
 ---
