@@ -57,3 +57,27 @@ TARGET_FTP_NETWORK_SETTINGS = [
 
 ALL_FTP_TARGETS: List[TargetWindow] = [TARGET_FTP_PLAYBACK_KEY] + TARGET_FTP_NETWORK_SETTINGS
 ALL_TARGETS: List[TargetWindow] = [TARGET_ENGLISH] + ALL_FTP_TARGETS
+
+class UnexpectedTargetState(ValueError):
+    """The camera contains neither the known stock nor the known patched bytes."""
+
+
+def target_needs_change(target: TargetWindow, actual: bytes, desired: bytes) -> bool:
+    """Return False for a no-op; fail closed before unknown-target writes.
+
+    Only the exact preimage -> patched and patched -> preimage transitions
+    are accepted. This validates byte identity, not on-camera FTP behavior.
+    """
+    if desired not in (target.preimage, target.patched):
+        raise ValueError(f"Unsupported destination for {target.name}")
+    if actual == desired:
+        return False
+
+    expected = target.preimage if desired == target.patched else target.patched
+    if actual != expected:
+        raise UnexpectedTargetState(
+            f"Unrecognized bytes at appFw.so+0x{target.offset:08x} "
+            f"({target.name}): observed {actual.hex()}, "
+            f"expected {expected.hex()}. No write permitted."
+        )
+    return True

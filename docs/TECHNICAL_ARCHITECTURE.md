@@ -98,7 +98,9 @@ Disassembling `/usr/lib/appFw.so` at file offset `0x023080d0` (`VA 0x023080d0`):
 
 ---
 
-## 3. Feature 2: Complete Wi-Fi FTP & Playback Custom Key (`FT-101`)
+## 3. Feature 2: Candidate Wi-Fi FTP & Playback Custom Key (`FT-101`)
+
+> **Hardware regression (2026-11-02):** Native English works and the Network FTP page is accessible, but the owner's Playback/Gallery FTP remains unavailable. The following candidate mechanism is **static inference**, not a validated FTP unlock. See [issue #1](https://github.com/mingwucn/Sony_research_6700/issues/1).
 
 ### 3.1 Why Upstream `Powerful6700` Missed the Playback Custom Key
 Upstream `Powerful6700` patched 9 single-byte flags in the master action capability table (`0x03f14c38`) corresponding to Action IDs **`0x05a5` through `0x05b0`** (file offsets `0x03f17524`–`0x03f17564`). Those 9 flags unlock the **Network -> FTP Transfer** setup pages (Server configuration, Auto-transfer on capture, Target format, Directory hierarchy).
@@ -117,18 +119,26 @@ However, in Sony's UI architecture, **Custom Key assignment in Playback mode** (
    0x03666b80: 04 01 00 00   ; Sub-code = 0x0104
    0x03666b84: 22 02 00 00   ; Help String ID = 0x0222
    ```
-4. The custom key availability dispatcher at **`0x01440d0c`** checks whether an Action ID is assignable on the current camera model by indexing into the master 8-byte capability table at **`0x03f14c38`**:
-   $$\text{EntryOffset} = \text{0x03f14c38} + (\text{ActionID} \times 8)$$
-   For $\text{ActionID} = \text{0x0817}$ ($2071$):
-   $$\text{EntryOffset} = \text{0x03f14c38} + (\text{0x0817} \times 8) = \text{0x03f14c38} + \text{0x30b8} = \text{0x03f17ce0}$$
-5. Inspecting **`0x03f17ce0`** in stock CN1 `/usr/lib/appFw.so`:
+4. **Record location, independent of lookup formula.** The owner reports an 8-byte table of little-endian `{uint32_t action_id, uint32_t status}` records in the official CN1 2.00 `appFw.so`, with adjacent entries:
    ```text
-   0x03f17ce0: 17 08 00 00  00  01 01 01
-               ^^^^^^^^^^^  ^^  ^^^^^^^^
-               Action 0x817  |  Sub-flags (already 01)
-                             +-- Availability gate at 0x03f17ce4 = 0x00 (DISABLED)
+   appFw.so file offset   ID bytes        status bytes      Action
+   0x03F17CD8             16 08 00 00     00 00 00 00       0x0816 DISPLAY_FTP_ERROR_INFO
+   0x03F17CE0             17 08 00 00     00 00 00 00       0x0817 FTP_TRANSFER
+   0x03F17CE8             18 08 00 00     00 00 00 00       0x0818 FTP_FUNCTION
    ```
-6. **Surgical 1-Byte Fix**: Changing **`0x03f17ce4`** from `0x00` to `0x01` immediately enables Action `0x0817` (`FTP_TRANSFER`), making **`FTP传输` (`FTP Transfer`)** selectable in `PB Custom Key Setting` and functional during Playback review.
+   If confirmed against an actual firmware read, this **directly establishes the 0x0817 record at file offset `0x03F17CE0` and its first status byte at `0x03F17CE4`**, regardless of the erroneous arithmetic. The user-supplied byte row has not yet been independently re-read as part of this change.
+
+   The previous claim that the table is indexed from zero by Action ID is not supported:
+   ```text
+   0x0817 * 8 = 0x40B8
+   0x03F14C38 + 0x40B8 = 0x03F18CF0 (NOT 0x03F17CE0)
+   0x03F17CE0 - 0x03F14C38 = 0x30A8 = 0x615 * 8
+   0x0817 - 0x0615 = 0x0202
+   ```
+   A **nonzero-base, densely indexed table starting at Action ID 0x0202** would fit these offsets just as a sparse or searched record table might. Only inspection of the first records and the actual resolver/disassembly can establish the mechanism. Do not call the table sparse solely on the basis of these three adjacent IDs.
+
+5. **Conflicting reported status suffixes must be resolved before firmware changes.** The earlier research note encoded the `0x0817` record as `17 08 00 00 00 01 01 01`, whereas the owner now reports `17 08 00 00 00 00 00 00`. Both identify Action `0x0817` at `0x03F17CE0` and report a zero byte at `0x03F17CE4`, but differ in bytes `0x03F17CE5`–`0x03F17CE7`. Do not silently treat them as equal or assume the remaining bytes are irrelevant. Read the 24-byte window `0x03F17CD8`–`0x03F17CEF` on the correct firmware/build (or verify an authenticated offline image), compare stock and patched-state copies, and trace the status word interpretation. In particular, test whether neighboring Action `0x0818` (`FTP_FUNCTION`) is a separate global dependency; its location **alone** does not prove that it needs a write.
+6. **Unverified one-byte candidate:** `0x03f17ce4` (`00 -> 01`) was hypothesized to enable Action `0x0817`. It has not been proven to expose playback controls or cause successful upload on this camera. Do not change additional firmware bytes until actual on-camera state and relevant predicates have been established.
 
 ---
 
@@ -158,7 +168,7 @@ By traversing the block pointers (direct, indirect `786495`, and double-indirect
 To avoid Python C-extension ABI conflicts (`python312.dll` vs. host Python 3.13) while reusing the battle-tested USB service-mode transport from `Powerful6700-Windows-x64`:
 1. **[`apps/a6700_customizer/app_gui.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_gui.py)** implements the 6-step wizard using standard-library `tkinter`/`ttk` (Tk 8.6) with a custom high-DPI dark theme.
 2. **[`apps/a6700_customizer/app_backend.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_backend.py)** dynamically binds `third_party/a6700_unlock` and `_internal` data payloads (`libusb-1.0.dll`, `windows_auth`, `dump_range.elf`, `flash_write.elf`) without polluting `sys.path` with incompatible `.pyd` binaries.
-3. **[`apps/a6700_customizer/targets.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/targets.py)** defines the 11 `ByteTarget` specifications (`14` bytes total) and enforces strict tri-state validation (`STOCK`, `PATCHED`, or `UNKNOWN`). If any target window contains unexpected bytes (`UNKNOWN`), all write operations are immediately refused.
+3. **[`apps/a6700_customizer/targets.py`](../apps/a6700_customizer/targets.py)** defines 11 proposed byte targets (14 bytes total) and a known-preimage transition guard. This guards individual operations against unknown bytes, **not** against all possible firmware identity mismatches or multi-window partial-write failure. The field values do not establish that FTP works in Playback.
 
 ### 5.2 Camera-Side Execution Flow (`Senser` / `Jiritsu` Service Mode)
 During an inspection or write session (`_session_context()` in [`app_backend.py`](file:///d:/LocalWork/Sony_research_6700/apps/a6700_customizer/app_backend.py)):

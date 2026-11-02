@@ -1,7 +1,7 @@
 """Sony α6700 极简定制工具 (Ver 2.00) - Desktop GUI.
 
 Dedicated interface focusing exclusively on:
-1. Full FTP Support (including Playback Gallery Custom Key Action 0x0817 fix)
+1. Candidate FTP byte patches (playback behavior NOT yet hardware-validated)
 2. True Native English Language Menu Unlock
 """
 from __future__ import annotations
@@ -247,12 +247,12 @@ class SonyCustomizerApp(tk.Tk):
         notice_text = (
             "欢迎使用 Sony ILCE-6700 极简功能定制工具。\n\n"
             "本工具专门为实现两大核心需求而定制开发：\n"
-            "  1. 完整 FTP 传输支持：不仅包含常规网络菜单，更彻底攻克相册回放按键一键上传照片（Action 0x0817）\n"
+            "  1. 实验性 FTP 解锁候选：网络菜单标记与回放按键 0x0817 候选字段；相册实际传输尚未实机验证\n"
             "  2. 原生英文菜单解锁：通过底层断言门禁原生开放 English 选项，绝不粗暴替换汉字文字包！\n\n"
             "【非协商性安全准则】\n"
             "● 硬件适用范围：仅支持 Sony ILCE-6700 (α6700) 国行版机身，固件版本 2.00。\n"
             "● 极简修改足迹：全部操作仅涉及 /usr/lib/appFw.so 中共 14 个字节。绝不改动内核、bootloader、传感器标定和无线射频。\n"
-            "● 严格只读回退机制：每次写入前均自动进行零变化硬件探针测试与双重快照存盘，支持一键 100% 还原回出厂值。"
+            "● 注意：字节回读成功仅表示候选目标被写入，不代表 FTP 功能可用；未知字节将拒绝写入，备份不保证能恢复无法启动的相机。"
         )
         lbl = ttk.Label(card, text=notice_text, style="Card.TLabel", justify="left")
         lbl.pack(anchor="w", pady=(0, 20))
@@ -462,7 +462,11 @@ class SonyCustomizerApp(tk.Tk):
         threading.Thread(target=worker, daemon=True).start()
 
     def _render_inspection_success(self, res: dict, backup_path: Path):
-        en_str = "已解锁 (Patched)" if res["english_status"] == "PATCHED" else "原始锁定 (Stock)"
+        en_str = {
+            "PATCHED": "已写入候选字节 (Patched)",
+            "STOCK": "原始锁定 (Stock)",
+            "MISMATCH": "字节异常 (Unknown) — 禁止写入",
+        }.get(res["english_status"], "未知状态")
         if res.get("ftp_note"):
             ftp_str = res["ftp_note"]
         elif res["ftp_status"] == "PATCHED":
@@ -476,11 +480,16 @@ class SonyCustomizerApp(tk.Tk):
             f"✅ 检测完成！固件版本: ILCE-6700 Ver. 2.00\n"
             f"● /usr/lib/appFw.so 文件大小: {res['appfw_size']:,} 字节 (校验通过)\n"
             f"● 原生英文语言状态: {en_str}\n"
-            f"● 完整 FTP 传输状态: {ftp_str}\n"
+            f"● FTP 候选字节状态（非实机功能验收）: {ftp_str}\n"
             f"● 自动快照保存位置: {backup_path.name}"
         )
         self.inspect_info_lbl.configure(text=msg)
-        self.set_status("相机检测通过", "#4ade80")
+        if res["english_status"] == "MISMATCH" or res["ftp_status"] == "MISMATCH":
+            self.set_status("发现未知固件字节 — 请停止写入", "#f59e0b")
+            self.apply_btn.configure(state="disabled")
+        else:
+            self.set_status("候选字节读取完成（需实机验证）", "#4ade80")
+            self.apply_btn.configure(state="normal")
 
         # Update Features page banner for Powerful6700 upgrades
         if hasattr(self, "ftp_upgrade_banner"):
@@ -503,20 +512,20 @@ class SonyCustomizerApp(tk.Tk):
 
         self.var_ftp = tk.BooleanVar(value=True)
         chk_ftp = ttk.Checkbutton(
-            card_ftp, text="完整 FTP 传输支持 (含相册回放界面按键一键上传)",
+            card_ftp, text="实验性 FTP 候选字段（Network + Playback 0x0817；尚未实机验收）",
             variable=self.var_ftp
         )
         chk_ftp.pack(anchor="w", pady=(0, 6))
 
         ftp_desc = (
-            "包含 Network 菜单 0x05a5..0x05b0 完整功能配置，并攻克相册回放界面（Menu 0x02aa）\n"
-            "Action 0x0817 (FTP_TRANSFER) 自定义键绑定！按键即可秒传照片，仅改写 10 字节。"
+            "包含 Network 菜单 9 个候选标志及回放 Action 0x0817，仍需检查相册界面（Menu 0x02aa）\n"
+            "Action 0x0817 (FTP_TRANSFER) 的其它门禁与上传功能尚未确认；切勿视作已修复。"
         )
         ttk.Label(card_ftp, text=ftp_desc, style="CardMuted.TLabel", justify="left").pack(anchor="w")
 
         self.ftp_upgrade_banner = tk.Label(
             card_ftp,
-            text="💡 检测到此前已使用 Powerful6700 开启过网络 FTP 菜单。\n本次勾选将为您无损补齐【回放快捷键 0x0817】，相机内原有的 FTP 服务器与 Wi-Fi 配置将被 100% 完整保留！",
+            text="💡 检测到此前已使用 Powerful6700 开启过网络 FTP 菜单。\n本次勾选只会尝试设置【回放快捷键 0x0817】候选字节，不保证相册菜单或 FTP 上传可用；须核实当前状态。",
             font=(FONT_FAMILY, 9), bg="#042f2e", fg="#2dd4bf",
             padx=10, pady=8, justify="left", bd=1, relief="solid"
         )
@@ -559,7 +568,7 @@ class SonyCustomizerApp(tk.Tk):
             "确认写入",
             f"即将在相机 /usr/lib/appFw.so 中写入共计 {total_bytes} 字节。\n\n"
             f"● 英文菜单解锁: {'是' if en else '否'}\n"
-            f"● 完整 FTP 支持: {'是' if ftp else '否'}\n\n"
+            f"● FTP 候选字节修改: {'是' if ftp else '否'}\n\n"
             "写入前将自动进行零变化探针比对与独立回读校验。\n"
             "是否立即执行写入？"
         )
@@ -581,7 +590,7 @@ class SonyCustomizerApp(tk.Tk):
                     "1. 安全断开 USB 连接\n"
                     "2. 拔下相机数据线并关闭相机电源\n"
                     "3. 等待约 30 秒至 1 分钟后重新开机\n"
-                    "4. 在相机菜单中即可验证 FTP 功能与英文语言选项！"
+                    "4. 相机菜单需分别验证英文与 FTP：候选字节写入成功不代表 FTP 已能传图！"
                 ))
             except Exception as exc:
                 self.log(f"写入失败: {exc}")
