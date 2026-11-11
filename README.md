@@ -187,3 +187,7 @@ See **[`docs/CROSS_MODEL_ENGLISH_COMPARISON.md`](file:///d:/LocalWork/Sony_resea
 - [GDT metadata scope](research/GDT_METADATA_SCOPE.md), [GDT runner design](research/GDT_RUNNER_DESIGN.md), and [GDT I/O adapter design](research/GDT_IO_ADAPTER_DESIGN.md)
 
 </details>
+
+## Playback FTP Shortcuts Experimental 0.6.0
+
+An experimental α6700 bundle with separate **FTP Transfer** and **FTP Trans. (This Img.)** playback actions is under release review. The camera was not tested with this build; assignment, restart persistence and end-to-end transfer remain unverified. The public binary will be attached to a versioned prerelease after the release review. See the [candidate notes and provenance](release-candidates/playback-extras-v0.6.0-experimental/RELEASE_NOTES.md).

@@ -1,0 +1,2 @@
+81c0b11f9ee577ce4380b93dc64c283c19fa034f27140603cdde4413f243fa54  SonyA6700PlaybackExtrasExperimental.exe
+ed0ff214c1d9e32a38c8fc3e62ff9d555bc5025f3f6b958a291f67ea7fb7d0c6  SonyA6700PlaybackExtrasExperimental_0.6.0.zip
